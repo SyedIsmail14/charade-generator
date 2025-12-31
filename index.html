@@ -2,54 +2,115 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Charade Generator | Free Charades Game</title>
+  <title>Charades Generator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Free Charade Generator for parties, kids, adults and classrooms. Generate random charades instantly." />
+  <meta name="description" content="Play funny, real-life charades online. Generate charades  for kids, families, parties, and classrooms. Free and easy to play.">
 
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- Header -->
-  <header class="header">
-    <div class="logo">
-      🎭 <span class="logo-main">Charade</span><span class="logo-sub">Generator</span>
-    </div>
-  </header>
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
+    <div class="logo">🎭 <strong>charades</strong>Generator</div>
 
-  <!-- Main -->
-  <main class="container">
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
 
-    <h1>Free Charade Generator</h1>
-    <p class="tagline">Click. Act. Guess. Have Fun.</p>
+    <!-- HEADER CATEGORIES (FOR FUTURE PAGES) -->
+    <nav class="nav-desktop">
+      <button>Kids Charades</button>
+      <button>Movie Charades</button>
+      <button>Character Charades</button>
+      <button>Reverse Charades</button>
+      <button>Christmas Charades</button>
+      <button>Islamic Charades</button>
+ </nav>
+  </div>
 
-    <select id="category">
-      <option value="all">All Categories</option>
-      <option value="kids">Kids</option>
-      <option value="movies">Movies</option>
-      <option value="actions">Actions</option>
-    </select>
+  <nav id="navMobile" class="nav-mobile">
+    <button>Kids Charades</button>
+    <button>Movie Charades</button>
+    <button>Character Charades</button>
+    <button>Reverse Charades</button>
+    <button>Christmas Charades</button>
+    <button>Islamic Charades</button>
 
-    <div id="charadeBox">
-      Click “Generate” to start 🎉
-    </div>
+  </nav>
+</header>
 
-    <button id="generateBtn">Generate Charade</button>
+<main class="main">
 
-  </main>
+  
 
-  <!-- Footer -->
-  <footer class="footer">
-    <p>© 2025 CharadeGenerator.com</p>
-    <p class="footer-links">
-      <a href="#">About</a> ·
-      <a href="#">Privacy</a> ·
-      <a href="#">Contact</a>
+  <h1>Charades Generator</h1>
+  <p class="seo-text">
+    Generate charades that anyone can act. Great for kids, families and party games.
+  </p>
+
+  <!-- GAME AREA -->
+  <section class="tool" id="gameArea">
+
+    <h2 class="category-title">Lets Play Charades</h2>
+
+    <p class="subtitle" id="statusText">
+      Ready to play! New charade
     </p>
-  </footer>
 
-  <script src="js/script.js"></script>
+    <div class="top-controls">
+      <button id="copyBtn" onclick="copyCharades()">Copy charades</button>
+      <button onclick="toggleFullScreen()">Full screen</button>
+    </div>
+
+    <!-- COUNT -->
+    <div class="quick-pick">
+      <button onclick="setCount(1)">1</button>
+      <button onclick="setCount(3)">3</button>
+      <button onclick="setCount(5)">5</button>
+      <button onclick="setCount(10)">10</button>
+      <button onclick="showCustom()">Custom</button>
+    </div>
+
+    <!-- CUSTOM -->
+    <div id="customBox" class="custom-box hidden">
+      <input type="number" id="customInput" min="1" max="12" placeholder="Enter number">
+      <button onclick="applyCustom()">Apply</button>
+    </div>
+
+    <!-- OUTPUT -->
+    <div id="cards" class="cards"></div>
+
+    <button class="generate-btn" onclick="generate()">Generate</button>
+
+  </section>
+
+  <!-- HOW TO -->
+  <section class="how-to">
+    <h2>How to Play Charades</h2>
+    <ol>
+      <li>Select how many charade you want on screen and start the game you play.</li>
+      <li>You Should also select custom charades for display on screen.
+      </li>
+      <li>Full screen option is also here you can play after click on full scrren button after that.</li>
+      <li>Click Generate</li>
+      <li>Act the charade without speaking</li>
+      <li>Use gestures and expressions</li>
+      <li>Let others guess</li>
+    </ol>
+  </section>
+
+</main>
+
+<footer class="footer">
+    <a href="#">About Us</a>
+  <a href="#">Contact Us</a>
+  <a href="#">Privacy Policy</a>
+  <a href="#">Terms & Conditions</a>
+  <a href="#">Disclaimer</a>
+  <p>© CharadeGenerator 2026</p>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
-
