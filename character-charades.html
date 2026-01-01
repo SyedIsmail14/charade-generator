@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Character Charades Generator | Guess the Character Game</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description" content="Play character charades online. Guess famous characters from movies, cartoons, and stories. Fun for kids, families, and parties.">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
+    <div class="logo">🎭 <strong>Charade</strong>Generator</div>
+
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    <!-- DESKTOP NAV -->
+    <nav class="nav-desktop">
+      <a href="kids-charade-generator.html"><button>Kids Charades</button></a>
+      <a href="movie-charades.html"><button>Movie Charades</button></a>
+      <a href="character-charades.html"><button class="active">Character Charades</button></a>
+      <a href="reverse-charades.html"><button>Reverse Charades</button></a>
+      <a href="christmas-charades.html"><button>Christmas Charades</button></a>
+      <a href="islamic-charades.html"><button>Islamic Charades</button></a>
+    </nav>
+  </div>
+
+  <!-- MOBILE NAV -->
+  <nav id="navMobile" class="nav-mobile">
+      <a href="kids-charade-generator.html"><button>Kids Charades</button></a>
+      <a href="movie-charades.html"><button>Movie Charades</button></a>
+      <a href="character-charades.html"><button class="active">Character Charades</button></a>
+      <a href="reverse-charades.html"><button>Reverse Charades</button></a>
+      <a href="christmas-charades.html"><button>Christmas Charades</button></a>
+      <a href="islamic-charades.html"><button>Islamic Charades</button></a>
+  </nav>
+</header>
+
+<main class="main">
+
+  <p class="seo-text">
+    Character charades generator featuring popular fictional and cartoon characters. Easy and fun guessing game for all ages.
+  </p>
+
+  <h1>Character Charades Generator</h1>
+
+  <!-- GAME AREA -->
+  <section class="tool" id="gameArea">
+
+    <h2 class="category-title">Character Charades</h2>
+
+    <p class="subtitle" id="statusText">
+      Ready to play! New charade
+    </p>
+
+    <div class="top-controls">
+      <button id="copyBtn" onclick="copyCharades()">Copy charades</button>
+      <button onclick="toggleFullScreen()">Full screen</button>
+    </div>
+
+    <!-- COUNT -->
+    <div class="quick-pick">
+      <button onclick="setCount(1)">1</button>
+      <button onclick="setCount(3)">3</button>
+      <button onclick="setCount(5)">5</button>
+      <button onclick="setCount(10)">10</button>
+      <button onclick="showCustom()">Custom</button>
+    </div>
+
+    <!-- CUSTOM -->
+    <div id="customBox" class="custom-box hidden">
+      <input type="number" id="customInput" min="1" max="12" placeholder="Enter number">
+      <button onclick="applyCustom()">Apply</button>
+    </div>
+
+    <!-- OUTPUT -->
+    <div id="cards" class="cards"></div>
+
+    <button class="generate-btn" onclick="generate()">Generate</button>
+
+  </section>
+
+  <!-- HOW TO (LOCKED VERSION) -->
+  <section class="how-to">
+    <h2>How to Play Charades</h2>
+    <ol>
+      <li>Select how many charades you want on screen and start the game you play.</li>
+      <li>You should also select custom charades for display on screen.</li>
+      <li>Full screen option is also here, you can play after clicking on the full screen button.</li>
+      <li>Click Generate</li>
+      <li>Act the charade without speaking</li>
+      <li>Use gestures and expressions</li>
+      <li>Let others guess</li>
+    </ol>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <a href="#">Privacy Policy</a>
+  <a href="#">Terms & Conditions</a>
+  <a href="#">Disclaimer</a>
+  <p>© CharadeGenerator 2026</p>
+</footer>
+
+<script src="js/character-charades.js"></script>
+</body>
+</html>
