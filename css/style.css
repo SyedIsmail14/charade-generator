@@ -47,16 +47,45 @@ button {
   display: flex;
   gap: 8px;
 }
+/* NAV BUTTONS – LIGHT DEFAULT, STRONG ACTIVE */
+.nav-desktop {
+  display: flex;
+  gap: 10px;
+}
+.nav-desktop a,
+.nav-mobile a {
+  text-decoration: none;
+}
 
-.nav-desktop button {
-  padding: 8px 14px;
-  border-radius: 18px;
+
+.nav-desktop button,
+.nav-mobile button {
+  padding: 10px 16px;
+  border-radius: 8px;
   font-size: 14px;
   font-weight: 600;
-  background:linear-gradient(180deg, #f0f6ff, #e6efff);
+  background: #eaf2ff;
   color: #2563eb;
   transition: all 0.25s ease;
 }
+
+.nav-desktop button:hover,
+.nav-mobile button:hover {
+  background: #dbeafe;
+}
+
+.nav-desktop button.active,
+.nav-mobile button.active {
+  background: #2563eb;
+  color: #fff;
+  box-shadow: 0 6px 14px rgba(37, 99, 235, 0.3);
+}
+
+.nav-mobile button {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
 
 .nav-desktop button:hover {
   background: #dbeafe;
@@ -84,16 +113,6 @@ button {
   border-top: 1px solid #eee;
 }
 
-.nav-mobile button {
-  width: 100%;
-  padding: 12px;
-  border-radius: 12px;
-  font-size: 15px;
-  font-weight: 600;
-  background:linear-gradient(180deg, #f0f6ff, #e6efff);;
-  color: #2563eb;
-  transition: all 0.2s ease;
-}
 
 .nav-mobile button:hover {
   background: #dbeafe;
