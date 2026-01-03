@@ -35,13 +35,6 @@ button {
   display: inline-block;
 }
 
-.logo-link:hover,
-.logo-link:focus,
-.logo-link:visited,
-.logo-link:active {
-  text-decoration: none;
-  color: #222;
-}
 
 .menu-btn {
   display: none;
