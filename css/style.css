@@ -124,8 +124,9 @@ button {
 }
 
 .seo-text {
-  font-size: 14px;
+  font-size: 20px;
   color: #666;
+    text-align: center;
 }
 
 /* TOOL */
@@ -281,6 +282,20 @@ button {
     white-space: nowrap;
     flex-shrink: 0;
   }
+  .logo-link {
+  text-decoration: none;   /* REMOVE underline */
+  color: #222;
+}
+
+.logo-link:hover,
+.logo-link:visited,
+.logo-link:active {
+  text-decoration: none;   /* Ensure underline never appears */
+  color: #222;
+}
+h1,h2 {
+    text-align: center;
+}
 
   /* Bigger tap targets for mobile nav */
   .nav-mobile button {
