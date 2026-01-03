@@ -251,6 +251,15 @@ button {
 .hidden {
   display: none;
 }
+.logo-link:hover,
+.logo-link:visited,
+.logo-link:active {
+  text-decoration: none;   /* Ensure underline never appears */
+  color: #222;
+}
+h1, h2 {
+    text-align: center;
+}
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
@@ -287,15 +296,6 @@ button {
   color: #222;
 }
 
-.logo-link:hover,
-.logo-link:visited,
-.logo-link:active {
-  text-decoration: none;   /* Ensure underline never appears */
-  color: #222;
-}
-h1, h2 {
-    text-align: center;
-}
 
   /* Bigger tap targets for mobile nav */
   .nav-mobile button {
