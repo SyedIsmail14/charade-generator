@@ -6,6 +6,13 @@ body {
   background: #ffffff;
   color: #222;
 }
+button {
+  all: unset;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-family: inherit;
+}
+
 /* HEADER */
 .header {
   border-bottom: 1px solid #eee;
@@ -30,12 +37,28 @@ body {
 }
 
 /* NAV */
+.nav-desktop {
+  display: flex;
+  gap: 8px;
+}
+
 .nav-desktop button {
-  margin-left: 8px;
-  padding: 6px 12px;
-  border-radius: 999px;
-  border: none;
-  background: #eee;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  background: #f1f5f9;
+  color: #0f172a;
+  transition: all 0.2s ease;
+}
+
+.nav-desktop button:hover {
+  background: #e2e8f0;
+}
+
+.nav-desktop button.active {
+  background: #2563eb;
+  color: #fff;
 }
 
 .nav-mobile {
@@ -47,11 +70,40 @@ body {
 .nav-mobile button {
   display: block;
   width: 100%;
-  margin-bottom: 8px;
-  padding: 10px;
-  border-radius: 6px;
-  border: none;
-  background: #f1f1f1;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  background: #f8fafc;
+  color: #0f172a;
+  transition: background 0.2s;
+}
+
+.nav-mobile button:hover {
+  background: #e2e8f0;
+}
+
+.nav-mobile button.active {
+  background: #2563eb;
+  color: #fff;
+}
+.top-controls button {
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  background: #2563eb;
+  color: #fff;
+  transition: all 0.2s ease;
+}
+
+.top-controls button:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.top-controls button:active {
+  transform: scale(0.97);
 }
 
 /* MAIN */
@@ -84,11 +136,23 @@ body {
   color: #555;
 }
 
-.top-controls {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  margin-top: 10px;
+.quick-pick button {
+  padding: 10px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  background: #f1f5f9;
+  color: #0f172a;
+  transition: all 0.2s ease;
+}
+
+.quick-pick button:hover {
+  background: #e2e8f0;
+}
+
+.quick-pick button.active {
+  background: #2563eb;
+  color: #fff;
 }
 
 /* BUTTONS */
@@ -139,16 +203,26 @@ body {
 
 /* GENERATE */
 .generate-btn {
-  margin-top: 20px;
+  margin-top: 22px;
   width: 100%;
-  padding: 14px;
-  background: #d62828;
+  padding: 16px;
+  background: #2563eb;
   color: #fff;
-  border: none;
-  border-radius: 10px;
-  font-size: 16px;
+  border-radius: 12px;
+  font-size: 17px;
+  font-weight: 600;
+  transition: all 0.25s ease;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
 }
 
+.generate-btn:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.generate-btn:active {
+  transform: scale(0.98);
+}
 /* FOOTER */
 .footer {
   text-align: center;
@@ -173,3 +247,33 @@ body {
   .nav-desktop { display: none; }
   .nav-mobile.open { display: block; }
 }
+@media (max-width: 768px) {
+
+  /* Stack top action buttons */
+  .top-controls {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .top-controls button {
+    width: 100%;
+  }
+
+  /* Smooth horizontal scroll for count buttons */
+  .quick-pick {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 6px;
+  }
+
+  .quick-pick button {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  /* Bigger tap targets for mobile nav */
+  .nav-mobile button {
+    min-height: 44px;
+  }
+}
+
