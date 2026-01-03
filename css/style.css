@@ -28,6 +28,20 @@ button {
 .logo {
   font-size: 22px;
 }
+/* LOGO LINK – GLOBAL FIX */
+.logo-link {
+  text-decoration: none;   /* REMOVE underline */
+  color: #222;
+  display: inline-block;
+}
+
+.logo-link:hover,
+.logo-link:focus,
+.logo-link:visited,
+.logo-link:active {
+  text-decoration: none;
+  color: #222;
+}
 
 .menu-btn {
   display: none;
@@ -251,12 +265,6 @@ button {
 .hidden {
   display: none;
 }
-.logo-link:hover,
-.logo-link:visited,
-.logo-link:active {
-  text-decoration: none;   /* Ensure underline never appears */
-  color: #222;
-}
 h1, h2 {
     text-align: center;
 }
@@ -291,10 +299,6 @@ h1, h2 {
     white-space: nowrap;
     flex-shrink: 0;
   }
-  .logo-link {
-  text-decoration: none;   /* REMOVE underline */
-  color: #222;
-}
 
 
   /* Bigger tap targets for mobile nav */
