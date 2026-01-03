@@ -74,12 +74,6 @@ button {
   background: #dbeafe;
 }
 
-.nav-desktop button.active,
-.nav-mobile button.active {
-  background: #2563eb;
-  color: #fff;
-  box-shadow: 0 6px 14px rgba(37, 99, 235, 0.3);
-}
 
 .nav-mobile button {
   width: 100%;
