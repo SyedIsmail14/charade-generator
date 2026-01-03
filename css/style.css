@@ -92,17 +92,8 @@ button {
   transform: translateY(-1px);
 }
 
-.nav-desktop button.active {
-  background:linear-gradient(180deg, #f0f6ff, #e6efff);;
-  color: #fff;
-  box-shadow: 0 6px 14px rgba(37, 99, 235, 0.25);
-}
 
 
-.nav-desktop button.active {
-  background:linear-gradient(180deg, #f0f6ff, #e6efff);;
-  color: #fff;
-}
 
 .nav-mobile {
   display: none;
@@ -112,10 +103,6 @@ button {
 
 
 
-.nav-mobile button.active {
-  background:linear-gradient(180deg, #f0f6ff, #e6efff);;
-  color: #fff;
-}
 .top-controls button {
   padding: 10px 16px;
   border-radius: 8px;
