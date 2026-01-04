@@ -5,27 +5,7 @@
 
 /* ACTIONS (PERMISSIBLE) */
 const ACTIONS = [
-  "Making",
-  "Reading",
-  "Giving",
-  "Helping",
-  "Sharing",
-  "Greeting",
-  "Learning",
-  "Teaching",
-  "Cleaning",
-  "Waiting",
-  "Walking",
-  "Visiting",
-  "Listening",
-  "Preparing",
-  "Breaking",
-  "Opening",
-  "Closing",
-  "Carrying",
-  "Respecting",
-  "Smiling"
-];
+"Making","Reading","Giving","Helping","Sharing","Greeting","Learning","Teaching","Cleaning","Waiting","Walking","Visiting","Listening","Preparing","Breaking","Opening","Closing","Carrying","Respecting","Smiling","Praying","Fasting","Worshipping","Bowing","Prostrating","Kneeling","Standing","Reciting","Memorizing","Studying","Contemplating","Reflecting","Meditating","Supplicating","Praising","Glorifying","Thanking","Seeking","Asking","Repenting","Forgiving","Pardoning","Apologizing","Accepting","Embracing","Welcoming","Hosting","Inviting","Serving","Feeding","Cooking","Baking","Preparing","Washing","Purifying","Cleansing","Bathing","Performing","Ablution","Rinsing","Wiping","Drying","Dressing","Covering","Wearing","Veiling","Wrapping","Adjusting","Tying","Fastening","Removing","Folding","Arranging","Organizing","Tidying","Sweeping","Mopping","Dusting","Polishing","Decorating","Adorning","Beautifying","Illuminating","Lighting","Hanging","Displaying","Spreading","Rolling","Unrolling","Placing","Positioning","Orienting","Facing","Turning","Directing","Guiding","Leading","Following","Accompanying","Escorting","Supporting","Assisting","Aiding","Comforting","Consoling","Encouraging","Motivating","Inspiring","Advising","Counseling","Recommending","Suggesting","Reminding","Informing","Notifying","Announcing","Declaring","Proclaiming","Testifying","Witnessing","Confirming","Affirming","Acknowledging","Recognizing","Honoring","Respecting","Revering","Venerating","Obeying","Submitting","Surrendering","Trusting","Believing","Having Faith","Hoping","Wishing","Desiring","Intending","Planning","Deciding","Choosing","Selecting","Preferring","Prioritizing","Focusing","Concentrating","Pondering","Thinking","Considering","Evaluating","Judging","Discerning","Understanding","Comprehending","Grasping","Absorbing","Retaining","Remembering","Recalling","Reviewing","Revising","Practicing","Rehearsing","Repeating","Chanting","Singing","Humming","Whispering","Speaking","Talking","Conversing","Discussing","Debating","Arguing","Agreeing","Disagreeing","Nodding","Shaking Head","Gesturing","Pointing","Indicating","Showing","Demonstrating","Explaining","Clarifying","Illustrating","Describing","Narrating","Relating","Telling","Sharing Stories","Conveying","Communicating","Expressing","Articulating","Pronouncing","Enunciating","Proclaiming","Broadcasting","Spreading","Distributing","Dispensing","Allocating","Dividing","Separating","Sorting","Categorizing","Classifying","Grouping","Gathering","Collecting","Assembling","Congregating","Meeting","Joining","Uniting","Connecting","Linking","Bonding","Befriending","Socializing","Interacting","Engaging","Participating","Contributing","Donating","Offering","Presenting","Bestowing","Granting","Providing","Supplying","Furnishing","Equipping","Preparing","Arranging","Coordinating","Managing","Organizing","Administering","Overseeing","Supervising","Monitoring","Observing","Watching","Noticing","Perceiving","Sensing","Feeling","Experiencing","Undergoing","Enduring","Persevering","Persisting","Continuing","Maintaining","Sustaining","Preserving","Protecting","Safeguarding","Defending","Shielding","Guarding","Securing","Locking","Storing","Keeping","Holding","Grasping","Clutching","Gripping","Releasing","Letting Go","Surrendering","Yielding","Submitting","Accepting","Receiving","Taking","Obtaining","Acquiring","Gaining","Earning","Achieving","Accomplishing","Completing","Finishing","Concluding","Ending","Terminating","Stopping","Pausing","Resting","Relaxing","Recuperating","Recovering","Healing","Curing","Treating","Caring","Nurturing","Tending","Attending","Serving","Ministering","Devoting","Dedicating","Committing","Pledging","Vowing","Promising","Assuring","Guaranteeing","Certifying","Validating","Verifying","Confirming","Checking","Inspecting","Examining","Investigating","Researching","Exploring","Discovering","Finding","Locating","Identifying","Naming","Labeling","Marking","Signing","Sealing","Stamping","Imprinting","Engraving","Inscribing","Writing","Recording","Documenting","Noting","Jotting","Scribing","Transcribing","Copying","Duplicating","Reproducing","Replicating","Imitating","Emulating","Mimicking","Modeling","Exemplifying","Demonstrating","Manifesting","Exhibiting","Displaying","Revealing","Disclosing","Uncovering","Exposing","Publishing","Announcing","Proclaiming"];
 
 /* ISLAMIC CONTEXTS (NON-PERSONIFICATION) */
 const CONTEXTS = [
