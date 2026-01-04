@@ -79,7 +79,6 @@ const VERBS = [
   "Pop bubble wrap","Crack knuckles","Bite nails","Pick teeth","Floss teeth","Gargle mouthwash","Apply deodorant","Spray perfume","Put on chapstick","Moisturize",
   "Hail taxi","Ride subway","Wait for bus","Check watch","Set alarm","Hit snooze","Oversleep","Rush out door","Tie tie","Adjust collar"
 ];
-];
 
 /* STYLES */
 const STYLES = [
