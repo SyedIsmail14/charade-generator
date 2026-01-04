@@ -211,39 +211,43 @@ const STYLES = [
 ];
 
 /* BUILD CHARADES */
-let CHARADES = [];
-for (let v of VERBS) {
-  for (let s of STYLES) {
-    CHARADES.push(`${v} ${s}`);
-  }
+function getRandomCharade() {
+  const verb = VERBS[Math.floor(Math.random() * VERBS.length)];
+  const style = STYLES[Math.floor(Math.random() * STYLES.length)];
+  return `${verb} ${style}`;
 }
-
-/* SHUFFLE ONCE */
-CHARADES.sort(() => Math.random() - 0.5);
-
-/* STATE */
-let currentCount = 1;
 
 /* MENU */
 function toggleMenu() {
   document.getElementById("navMobile").classList.toggle("open");
 }
 
-/* COUNT */
+/* QUICK COUNT BUTTONS */
 function setCount(n) {
   currentCount = n;
   generate();
 }
 
+/* CUSTOM INPUT */
 function showCustom() {
   document.getElementById("customBox").classList.remove("hidden");
 }
 
 function applyCustom() {
-  let n = parseInt(document.getElementById("customInput").value);
-  if (isNaN(n) || n < 1) return;
-  if (n > 12) n = 12;
+  const input = document.getElementById("customInput");
+  let n = parseInt(input.value, 10);
+
+  // HARD LIMIT LOGIC
+  if (isNaN(n) || n < 1) {
+    n = 1;
+  } else if (n > 12) {
+    n = 12; // 👈 CUT OFF ABOVE 12
+  }
+
+  input.value = n;
   currentCount = n;
+
+  document.getElementById("customBox").classList.add("hidden");
   generate();
 }
 
@@ -255,14 +259,13 @@ function generate() {
   box.innerHTML = "";
 
   for (let i = 0; i < currentCount; i++) {
-    const charade = CHARADES[Math.floor(Math.random() * CHARADES.length)];
     const div = document.createElement("div");
     div.className = "card";
-    div.textContent = charade;
+    div.textContent = getRandomCharade();
     box.appendChild(div);
   }
 
-  status.innerText =
+  status.textContent =
     currentCount === 1
       ? "Ready to play! New charade"
       : `Ready to play! ${currentCount} new charades`;
