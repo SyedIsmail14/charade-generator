@@ -209,6 +209,7 @@ const STYLES = [
   "like synchronized swimmer","like figure skater","like gymnast","like tightrope walker","like contortionist",
   "like escape artist","like stunt double","like daredevil","like thrill seeker","like adrenaline junkie"
 ];
+let currentCount = 3; // DEFAULT charades on page load
 
 /* BUILD CHARADES */
 function getRandomCharade() {
