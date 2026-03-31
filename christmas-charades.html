@@ -4,29 +4,22 @@
   <meta charset="UTF-8">
   <title>Christmas Charades Generator | Holiday Charades Game</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Standard favicon -->
-<link rel="icon" type="image/x-icon" href="/assests/favicon.ico">
 
-<!-- PNG favicons -->
+<link rel="icon" type="image/x-icon" href="/assests/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="/assests/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/assests/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="48x48" href="/assests/favicon-48x48.png">
-
-<!-- Apple Touch Icons -->
 <link rel="apple-touch-icon" sizes="180x180" href="/assests/apple-touch-icon-180x180.png">
 <link rel="apple-touch-icon" href="/assests/apple-touch-icon.png">
-
-<!-- Android Icons -->
 <link rel="icon" type="image/png" sizes="192x192" href="/assests/android-chrome-192x192.png">
 <link rel="icon" type="image/png" sizes="512x512" href="/assests/android-chrome-512x512.png">
 
-  <meta name="description" content="Play Christmas charades online. Fun and festive charades for Christmas parties, family gatherings, and holiday games.">
+<meta name="description" content="Play Christmas charades online. Fun and festive holiday charades for Christmas parties, family gatherings, and holiday games.">
 
-  <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<!-- HEADER -->
 <header class="header">
   <div class="header-inner">
 <div class="logo">
@@ -34,130 +27,166 @@
     🎭 <strong>Charades</strong>Generator
   </a>
 </div>
-    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+<button class="menu-btn" onclick="toggleMenu()">☰</button>
 
-    <!-- DESKTOP NAV -->
-    <nav class="nav-desktop">
-      <a href="kids-charade-generator.html"><button>Kids Charades</button></a>
-      <a href="movie-charades.html"><button>Movie Charades</button></a>
-      <a href="character-charades.html"><button>Character Charades</button></a>
-      <a href="reverse-charades.html"><button>Reverse Charades</button></a>
-      <a href="christmas-charades.html"><button class="active">Christmas Charades</button></a>
-      <a href="islamic-charades.html"><button>Islamic Charades</button></a>
-    </nav>
-  </div>
+<nav class="nav-desktop">
+  <a href="kids-charade-generator.html"><button>Kids Charades</button></a>
+  <a href="movie-charades.html"><button>Movie Charades</button></a>
+  <a href="character-charades.html"><button>Character Charades</button></a>
+  <a href="reverse-charades.html"><button>Reverse Charades</button></a>
+  <a href="christmas-charades.html"><button class="active">Christmas Charades</button></a>
+  <a href="islamic-charades.html"><button>Islamic Charades</button></a>
+</nav>
+</div>
 
-  <!-- MOBILE NAV -->
-  <nav id="navMobile" class="nav-mobile">
-    <a href="kids-charade-generator.html"><button>Kids Charades</button></a>
-    <a href="movie-charades.html"><button>Movie Charades</button></a>
-    <a href="character-charades.html"><button>Character Charades</button></a>
-    <a href="reverse-charades.html"><button>Reverse Charades</button></a>
-    <a href="christmas-charades.html"><button class="active">Christmas Charades</button></a>
-    <a href="islamic-charades.html"><button>Islamic Charades</button></a>
-  </nav>
+<nav id="navMobile" class="nav-mobile">
+  <a href="kids-charade-generator.html"><button>Kids Charades</button></a>
+  <a href="movie-charades.html"><button>Movie Charades</button></a>
+  <a href="character-charades.html"><button>Character Charades</button></a>
+  <a href="reverse-charades.html"><button>Reverse Charades</button></a>
+  <a href="christmas-charades.html"><button class="active">Christmas Charades</button></a>
+  <a href="islamic-charades.html"><button>Islamic Charades</button></a>
+</nav>
 </header>
 
 <main class="main">
 
-  <p class="seo-text">
-    Christmas charades generator with fun and festive holiday charades. Perfect for Christmas parties, family nights, and school events.
-  </p>
+<h1>Christmas Charades Generator – Fun Holiday Party Game</h1>
 
-  <h1>Christmas Charades Generator</h1>
+<p class="seo-text">
+  Make your holiday celebrations more fun with this Christmas Charades Generator. Instantly generate festive charades ideas for parties, family gatherings, school events, and Christmas nights.
+</p>
 
-  <!-- GAME AREA -->
-  <section class="tool" id="gameArea">
+<p class="seo-text">
+  Christmas charades is a fun game where players act out holiday-themed words or actions without speaking, while others guess. It’s perfect for kids and adults and requires no preparation.
+</p>
 
-    <h2 class="category-title">Christmas Charades</h2>
+<!-- GAME AREA -->
+<section class="tool" id="gameArea">
 
-    <p class="subtitle" id="statusText">
-      Ready to play! New charade
-    </p>
+<h2 class="category-title">Christmas Charades</h2>
 
-    <div class="top-controls">
-      <button id="copyBtn" onclick="copyCharades()">Copy charades</button>
-      <button onclick="toggleFullScreen()">Full screen</button>
-    </div>
+<p class="subtitle" id="statusText">
+  Ready to play! Generate your first Christmas charade 🎄
+</p>
 
-    <!-- COUNT -->
-    <div class="quick-pick">
-      <button onclick="setCount(1)">1</button>
-      <button onclick="setCount(3)">3</button>
-      <button onclick="setCount(5)">5</button>
-      <button onclick="setCount(10)">10</button>
-      <button onclick="showCustom()">Custom</button>
-    </div>
+<div class="top-controls">
+  <button id="copyBtn" onclick="copyCharades()">Copy charades</button>
+  <button onclick="toggleFullScreen()">Full screen</button>
+</div>
 
-    <!-- CUSTOM -->
-    <div id="customBox" class="custom-box hidden">
-      <input type="number" id="customInput" min="1" max="12" placeholder="Enter number">
-      <button onclick="applyCustom()">Apply</button>
-    </div>
+<div class="quick-pick">
+  <button onclick="setCount(1)">1</button>
+  <button onclick="setCount(3)">3</button>
+  <button onclick="setCount(5)">5</button>
+  <button onclick="setCount(10)">10</button>
+  <button onclick="showCustom()">Custom</button>
+</div>
 
-    <!-- OUTPUT -->
-    <div id="cards" class="cards"></div>
+<div id="customBox" class="custom-box hidden">
+  <input type="number" id="customInput" min="1" max="12" placeholder="Enter number">
+  <button onclick="applyCustom()">Apply</button>
+</div>
 
-    <button class="generate-btn" onclick="generate()">Generate</button>
+<div id="cards" class="cards"></div>
 
-  </section>
+<button class="generate-btn" onclick="generate()">Generate</button>
 
-  <!-- HOW TO (EXACT LOCKED VERSION) -->
+</section>
+
+<!-- NEW CONTENT -->
+<section class="content-section">
+
+<h2>Example What You Get</h2>
+
+<p>
+  This Christmas charades generator creates fun holiday-themed words and actions. The number of charades depends on your selection.
+</p>
+
+<p>
+  <strong>If you select 1:</strong> You will get 1 Christmas charade.<br>
+  <strong>If you select 3:</strong> You will get 3 charades.<br>
+  <strong>If you select 5 or 10:</strong> You will get multiple charades for longer gameplay.<br>
+  <strong>Custom option:</strong> You can generate up to 12 charades.
+</p>
+
+<p>
+  Each time you click <strong>Generate</strong>, new festive charades will appear instantly.
+</p>
+
+<h3>Sample Christmas Charades</h3>
+
+<ul>
+  <li>🎄 Decorating a Christmas tree</li>
+  <li>🎅 Santa delivering gifts</li>
+  <li>🎁 Opening presents</li>
+  <li>⛄ Building a snowman</li>
+  <li>🦌 Reindeer running</li>
+  <li>🎶 Singing Christmas carols</li>
+  <li>🔥 Sitting by the fireplace</li>
+  <li>🍪 Baking Christmas cookies</li>
+</ul>
+
+<p>
+  Use the <strong>Copy Charades</strong> button to copy and share ideas easily.
+</p>
+
+<p>
+  Click <strong>Full Screen</strong> for better group gameplay experience.
+</p>
+
+</section>
+
+<!-- EXTRA SEO -->
+<section class="content-section">
+<h2>Why Play Christmas Charades?</h2>
+
+<p>
+  Christmas charades adds excitement and laughter to your holiday celebrations. It’s simple, interactive, and enjoyable for everyone.
+</p>
+
+<ul>
+  <li>🎄 Perfect for Christmas parties</li>
+  <li>👨‍👩‍👧 Great for families and kids</li>
+  <li>🎉 No setup required</li>
+  <li>😂 Fun and engaging group activity</li>
+</ul>
+</section>
+
+<!-- KEEP HOW TO -->
 <section class="how-to">
-    <h2>How to Play Charades With Charade Generator</h2>
-  <p>
-    <strong>1. Select how many charades you want on screen and start the game you play.</strong><br>
-    First, decide how many charades (words or phrases) you want to appear on the screen at one time.
-    This helps you control the game length and difficulty. After selecting the number, start the game to begin playing.
-  </p>
+<h2>How to Play Charades With Charade Generator</h2>
+<p><strong>1. Select how many charades you want on screen</strong></p>
+<p><strong>2. Choose custom charades if needed</strong></p>
+<p><strong>3. Use full screen option</strong></p>
+<p><strong>4. Click Generate</strong></p>
+<p><strong>5. Act without speaking</strong></p>
+<p><strong>6. Use gestures</strong></p>
+<p><strong>7. Let others guess</strong></p>
+</section>
 
-  <p>
-    <strong>2. You should also select custom charades for display on screen.</strong><br>
-    You can choose custom charades based on your preference, such as movies, actions, animals, professions,
-    or funny phrases. This makes the game more interesting and suitable for different age groups or themes.
-  </p>
+<!-- OUTRO -->
+<section class="content-section">
+<h2>Start Playing Christmas Charades Now</h2>
 
-  <p>
-    <strong>3. Full screen option is also here, you can play after clicking on the full screen button.</strong><br>
-    The full screen option allows the game to fill the entire screen. This is useful when playing with a group,
-    as everyone can clearly see the charade without distractions from other buttons or content.
-  </p>
+<p>
+  Bring joy and laughter to your holiday moments. Generate Christmas charades instantly and start playing with friends and family.
+</p>
 
-  <p>
-    <strong>4. Click Generate</strong><br>
-    Once your selections are complete, click the <strong>Generate</strong> button. The system will randomly generate
-    the charades and display them on the screen, ready to be acted out.
-  </p>
-
-  <p>
-    <strong>5. Act the charade without speaking</strong><br>
-    The player must act out the displayed charade using only body movements, facial expressions, and actions.
-    Speaking, making sounds, or mouthing words is not allowed.
-  </p>
-
-  <p>
-    <strong>6. Use gestures and expressions</strong><br>
-    Use clear hand movements, body language, and facial expressions to give clues.
-    Creative gestures make it easier for others to understand and guess correctly.
-  </p>
-
-  <p>
-    <strong>7. Let others guess</strong><br>
-    The remaining players watch the performance and try to guess the charade.
-    The first person to guess correctly wins that round, or the team scores a point,
-    depending on the rules you choose.
-  </p>
+<p>
+  Click generate and enjoy unlimited festive fun anytime. 🎉
+</p>
 </section>
 
 </main>
 
 <footer class="footer">
-    <a href="about-us.html">About Us</a>
-    <a href="contact-us.html">Contact Us</a>
-    <a href="privacy-policy.html">Privacy Policy</a>
-    <a href="terms-and-conditions.html">Terms & Conditions</a>
-    <a href="disclaimer.html">Disclaimer</a>
-  <p>© CharadeGenerator 2026</p>
+<a href="about-us.html">About Us</a>
+<a href="contact-us.html">Contact Us</a>
+<a href="privacy-policy.html">Privacy Policy</a>
+<a href="terms-and-conditions.html">Terms & Conditions</a>
+<a href="disclaimer.html">Disclaimer</a>
+<p>© CharadeGenerator 2026</p>
 </footer>
 
 <script src="js/christmas-charades.js"></script>
