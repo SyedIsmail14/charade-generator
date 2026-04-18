@@ -11,7 +11,6 @@ const ACTIONS = [
 const NOUNS = [
 "Baby","Puppy","Kitten","Frog","Monkey","Elephant","Lion","Penguin","Bird","Butterfly","Dinosaur","Robot","Superhero","Princess","Pirate","Clown","Bear","Cat","Dog","Duck","Bunny","Tiger","Giraffe","Zebra","Panda","Koala","Kangaroo","Horse","Cow","Pig","Sheep","Goat","Chicken","Rooster","Turkey","Fish","Shark","Whale","Dolphin","Octopus","Crab","Turtle","Snail","Ladybug","Bee","Ant","Spider","Dragonfly","Owl","Eagle","Parrot","Swan","Peacock","Flamingo","Mouse","Rat","Squirrel","Hedgehog","Raccoon","Fox","Wolf","Deer","Moose","Camel","Hippo","Rhino","Crocodile","Alligator","Snake","Lizard","Dragon","Unicorn","Fairy","Wizard","Witch","Ghost","Monster","Alien","Astronaut","Cowboy","Knight","Ballerina","Doctor","Firefighter","Police","Teacher","Chef","Farmer","Builder","Artist","Musician","Dancer","Singer","Athlete","Soldier","Sailor","Pilot","Driver","Gardener","Baker","Nurse","Scientist","Explorer","Detective","Judge","King","Queen","Prince","Joker","Snowman","Scarecrow","Mermaid","Giant","Elf","Troll","Goblin","Ogre","Yeti","Vampire","Zombie","Skeleton","Mummy","Werewolf","Angel","Devil","Genie","Leprechaun","Gnome","Dwarf","Hobbit","Ninja","Samurai","Viking","Spartan","Gladiator","Pharaoh","Emperor","Sultan","Chief","Warrior","Hero","Villain","Champion","Legend","Titan","Colossus","Cyclops","Minotaur","Centaur","Pegasus","Phoenix","Sphinx","Chimera","Hydra","Cerberus","Medusa","Siren","Nymph"];
 
-/* BUILD CHARADES */
 let currentCount = 1;
 let currentCategory = "all";
 let usedCharades = [];
@@ -39,7 +38,7 @@ function getFilteredNouns() {
   return NOUNS;
 }
 
-/* UNIQUE GENERATION */
+/* RANDOM */
 function getRandomCharade() {
   const nouns = getFilteredNouns();
 
@@ -54,7 +53,6 @@ function getRandomCharade() {
   } while (usedCharades.includes(charade) && attempts < 20);
 
   usedCharades.push(charade);
-
   return charade;
 }
 
@@ -62,6 +60,8 @@ function getRandomCharade() {
 function generate() {
   const box = document.getElementById("cards");
   const status = document.getElementById("statusText");
+
+  if (!box) return;
 
   box.innerHTML = "";
 
@@ -72,19 +72,44 @@ function generate() {
     box.appendChild(div);
   }
 
-  status.innerText = `${currentCount} ${currentCategory} charades ready 🎉`;
+  if (status) {
+    status.innerText = `${currentCount} ${currentCategory} charades ready 🎉`;
+  }
 }
 
-/* CATEGORY SWITCH */
+/* CATEGORY */
 function setCategory(cat) {
   currentCategory = cat;
 
   document.querySelectorAll(".mode-btn").forEach(b => b.classList.remove("active"));
-  event.target.classList.add("active");
+  if (event && event.target) event.target.classList.add("active");
 
-  usedCharades = []; // reset uniqueness
+  usedCharades = [];
   generate();
 }
+
+/* COUNT */
+function setCount(n) {
+  currentCount = n;
+  generate();
+}
+
+/* CUSTOM */
+function showCustom() {
+  document.getElementById("customBox").classList.remove("hidden");
+}
+
+function applyCustom() {
+  let n = parseInt(document.getElementById("customInput").value);
+
+  if (isNaN(n) || n < 1) n = 1;
+  if (n > 12) n = 12;
+
+  currentCount = n;
+  generate();
+}
+
+/* COPY */
 function copyCharades() {
   const text = [...document.querySelectorAll(".card")]
     .map(c => c.textContent)
@@ -95,9 +120,27 @@ function copyCharades() {
   const msg = document.getElementById("copyMsg");
   if (msg) {
     msg.style.display = "inline";
-
-    setTimeout(() => {
-      msg.style.display = "none";
-    }, 1500);
+    setTimeout(() => msg.style.display = "none", 1500);
   }
 }
+
+/* FULLSCREEN */
+function toggleFullScreen() {
+  const elem = document.getElementById("gameArea");
+
+  if (!document.fullscreenElement) {
+    elem.requestFullscreen();
+  } else {
+    document.exitFullscreen();
+  }
+}
+
+/* MENU */
+function toggleMenu() {
+  document.getElementById("navMobile").classList.toggle("open");
+}
+
+/* AUTO RUN */
+document.addEventListener("DOMContentLoaded", () => {
+  generate();
+});
