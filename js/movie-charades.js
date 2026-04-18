@@ -10,29 +10,21 @@ const CHARADES = [
 CHARADES.sort(() => Math.random() - 0.5);
 
 /* STATE */
-let currentCount = 1;
+let currentCount = 3;
+let usedMovies = [];
 
-/* MENU */
-function toggleMenu() {
-  document.getElementById("navMobile").classList.toggle("open");
-}
+/* UNIQUE GENERATION */
+function getRandomMovie() {
+  let movie;
+  let attempts = 0;
 
-/* COUNT */
-function setCount(n) {
-  currentCount = n;
-  generate();
-}
+  do {
+    movie = MOVIES[Math.floor(Math.random() * MOVIES.length)];
+    attempts++;
+  } while (usedMovies.includes(movie) && attempts < 10);
 
-function showCustom() {
-  document.getElementById("customBox").classList.remove("hidden");
-}
-
-function applyCustom() {
-  let n = parseInt(document.getElementById("customInput").value);
-  if (isNaN(n) || n < 1) return;
-  if (n > 12) n = 12;
-  currentCount = n;
-  generate();
+  usedMovies.push(movie);
+  return movie;
 }
 
 /* GENERATE */
@@ -43,37 +35,57 @@ function generate() {
   box.innerHTML = "";
 
   for (let i = 0; i < currentCount; i++) {
-    const charade = CHARADES[Math.floor(Math.random() * CHARADES.length)];
     const div = document.createElement("div");
-    div.className = "card";
-    div.textContent = charade;
+    div.className = "card fade-in";
+    div.textContent = getRandomMovie();
     box.appendChild(div);
   }
 
-  status.innerText =
-    currentCount === 1
-      ? "Ready to play! New charade"
-      : `Ready to play! ${currentCount} new charades`;
+  status.innerText = `${currentCount} movie charades ready 🎬`;
+}
+
+/* COUNT */
+function setCount(n) {
+  currentCount = n;
+  usedMovies = [];
+  generate();
+}
+
+/* CUSTOM */
+function showCustom() {
+  document.getElementById("customBox").classList.remove("hidden");
+}
+
+function applyCustom() {
+  let n = parseInt(document.getElementById("customInput").value);
+
+  if (isNaN(n) || n < 1) n = 1;
+  if (n > 12) n = 12;
+
+  currentCount = n;
+  usedMovies = [];
+  generate();
 }
 
 /* COPY */
 function copyCharades() {
-  const btn = document.getElementById("copyBtn");
   const text = [...document.querySelectorAll(".card")]
     .map(c => c.textContent)
     .join(", ");
 
   navigator.clipboard.writeText(text);
-  btn.innerText = "Copied";
 
-  setTimeout(() => {
-    btn.innerText = "Copy charades";
-  }, 4000);
+  const msg = document.getElementById("copyMsg");
+  if (msg) {
+    msg.style.display = "inline";
+    setTimeout(() => msg.style.display = "none", 1500);
+  }
 }
 
-/* FULL SCREEN */
+/* FULLSCREEN */
 function toggleFullScreen() {
   const elem = document.getElementById("gameArea");
+
   if (!document.fullscreenElement) {
     elem.requestFullscreen();
   } else {
@@ -81,5 +93,11 @@ function toggleFullScreen() {
   }
 }
 
+/* MENU */
+function toggleMenu() {
+  document.getElementById("navMobile").classList.toggle("open");
+}
+
 /* INIT */
-generate();
+document.addEventListener("DOMContentLoaded", generate);
+💥
