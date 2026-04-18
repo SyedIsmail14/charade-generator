@@ -3,9 +3,10 @@
 body {
   margin: 0;
   font-family: system-ui, Arial;
-  background: #ffffff;
+  background: #f8fafc;
   color: #222;
 }
+
 button {
   all: unset;
   box-sizing: border-box;
@@ -16,6 +17,7 @@ button {
 /* HEADER */
 .header {
   border-bottom: 1px solid #eee;
+  background: #fff;
 }
 
 .header-inner {
@@ -28,42 +30,27 @@ button {
 .logo {
   font-size: 22px;
 }
-/* LOGO LINK – GLOBAL FIX */
-.logo-link {
-  text-decoration: none;   /* REMOVE underline */
-  color: #222;
-  display: inline-block;
-}
 
+.logo-link {
+  text-decoration: none;
+  color: #222;
+}
 
 .menu-btn {
   display: none;
   font-size: 20px;
-  background: none;
-  border: none;
 }
 
 /* NAV */
 .nav-desktop {
   display: flex;
-  gap: 8px;
-}
-
-/* HEADER NAV BUTTONS – LIGHT BLUE SYSTEM */
-.nav-desktop {
-  display: flex;
-  gap: 8px;
-}
-/* NAV BUTTONS – LIGHT DEFAULT, STRONG ACTIVE */
-.nav-desktop {
-  display: flex;
   gap: 10px;
 }
+
 .nav-desktop a,
 .nav-mobile a {
   text-decoration: none;
 }
-
 
 .nav-desktop button,
 .nav-mobile button {
@@ -79,22 +66,13 @@ button {
 .nav-desktop button:hover,
 .nav-mobile button:hover {
   background: #dbeafe;
-}
-
-
-.nav-mobile button {
-  width: 100%;
-  margin-bottom: 10px;
-}
-
-
-.nav-desktop button:hover {
-  background: #dbeafe;
   transform: translateY(-1px);
 }
 
-
-
+.nav-desktop button.active {
+  background: #2563eb;
+  color: #fff;
+}
 
 .nav-mobile {
   display: none;
@@ -102,25 +80,10 @@ button {
   border-top: 1px solid #eee;
 }
 
-
-
-.top-controls button {
-  padding: 10px 16px;
-  border-radius: 8px;
-  font-size: 14px;
-  font-weight: 600;
-  background: #2563eb;
-  color: #fff;
-  transition: all 0.2s ease;
-}
-
-.top-controls button:hover {
-  background: #1d4ed8;
-  transform: translateY(-1px);
-}
-
-.top-controls button:active {
-  transform: scale(0.97);
+.nav-mobile button {
+  width: 100%;
+  margin-bottom: 10px;
+  min-height: 44px;
 }
 
 /* MAIN */
@@ -130,50 +93,67 @@ button {
   padding: 0 16px;
 }
 
-.seo-text {
-  font-size: 20px;
-  color: #666;
-    text-align: center;
+/* HERO TEXT */
+h1 {
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
-/* TOOL */
-.tool {
-  background: #f5f5f5;
-  padding: 26px;
-  border-radius: 16px;
+h2 {
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+
+.seo-text {
+  font-size: 16px;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto 20px;
   text-align: center;
+  line-height: 1.6;
+}
+
+/* TOOL CARD */
+.tool {
+  background: #fff;
+  padding: 30px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
 .category-title {
-  font-size: 18px;
-  color: #2f6df6;
+  font-size: 20px;
+  color: #2563eb;
 }
 
 .subtitle {
   margin-top: 6px;
-  color: #555;
+  color: #666;
 }
 
-.quick-pick button {
+/* TOP CONTROLS */
+.top-controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.top-controls button {
   padding: 10px 16px;
-  border-radius: 20px;
-  font-size: 14px;
-  font-weight: 500;
-  background: #f1f5f9;
-  color: #0f172a;
-  transition: all 0.2s ease;
-}
-
-.quick-pick button:hover {
-  background: #e2e8f0;
-}
-
-.quick-pick button.active {
+  border-radius: 8px;
   background: #2563eb;
   color: #fff;
+  font-weight: 600;
 }
 
-/* BUTTONS */
+.top-controls button:hover {
+  background: #1d4ed8;
+}
+
+/* QUICK PICK */
 .quick-pick {
   display: flex;
   gap: 10px;
@@ -185,68 +165,86 @@ button {
 .quick-pick button {
   padding: 8px 14px;
   border-radius: 999px;
-  border: none;
-  background: #e0e0e0;
+  background: #e2e8f0;
+  font-weight: 500;
+}
+
+.quick-pick button.active {
+  background: #2563eb;
+  color: #fff;
 }
 
 /* CUSTOM */
 .custom-box {
-  margin: 20px auto 30px;
+  margin: 20px auto;
   display: flex;
   gap: 10px;
   justify-content: center;
 }
 
 .custom-box input {
-  width: 160px;
+  width: 150px;
   padding: 10px;
   border-radius: 6px;
   border: 1px solid #ccc;
 }
 
-/* OUTPUT */
+/* CARDS */
 .cards {
   margin-top: 20px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 12px;
+  gap: 14px;
 }
 
 .card {
   background: #fff;
-  padding: 14px;
-  border-radius: 10px;
-  font-weight: 500;
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid #eee;
+  transition: all 0.2s ease;
 }
 
-/* GENERATE */
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* GENERATE BUTTON */
 .generate-btn {
   margin-top: 22px;
   width: 100%;
   padding: 16px;
-  background: #2563eb;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
   color: #fff;
   border-radius: 12px;
   font-size: 17px;
   font-weight: 600;
-  transition: all 0.25s ease;
   box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
 }
 
 .generate-btn:hover {
-  background: #1d4ed8;
   transform: translateY(-1px);
 }
 
-.generate-btn:active {
-  transform: scale(0.98);
+/* CONTENT SECTIONS */
+.content-section {
+  margin-top: 60px;
+  text-align: left;
 }
+
+.content-section ul {
+  padding-left: 20px;
+  line-height: 1.8;
+}
+
 /* FOOTER */
 .footer {
   text-align: center;
   padding: 20px;
   border-top: 1px solid #eee;
   margin-top: 60px;
+  background: #fff;
 }
 
 .footer a {
@@ -255,48 +253,33 @@ button {
   text-decoration: none;
 }
 
+/* HIDDEN */
 .hidden {
   display: none;
-}
-h1, h2 {
-    text-align: center;
 }
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
+
   .menu-btn { display: block; }
   .nav-desktop { display: none; }
   .nav-mobile.open { display: block; }
-}
-@media (max-width: 768px) {
 
-  /* Stack top action buttons */
   .top-controls {
     flex-direction: column;
-    gap: 12px;
   }
 
-  .top-controls button {
-    width: 100%;
-    margin-bottom: 4px;
-  }
-
-  /* Smooth horizontal scroll for count buttons */
   .quick-pick {
     overflow-x: auto;
     flex-wrap: nowrap;
-    padding-bottom: 6px;
   }
 
   .quick-pick button {
-    white-space: nowrap;
     flex-shrink: 0;
   }
 
-
-  /* Bigger tap targets for mobile nav */
-  .nav-mobile button {
-    min-height: 44px;
+  .generate-btn {
+    position: sticky;
+    bottom: 10px;
   }
 }
-
