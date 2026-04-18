@@ -285,9 +285,7 @@ function copyCharades() {
   setTimeout(() => {
     btn.innerText = "Copy charades";
   }, 4000);
-}
-
-/* FULL SCREEN */
+}/* FULL SCREEN */
 function toggleFullScreen() {
   const elem = document.getElementById("gameArea");
 
