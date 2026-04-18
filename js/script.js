@@ -274,18 +274,19 @@ function generate() {
 
 /* COPY */
 function copyCharades() {
-  const btn = document.getElementById("copyBtn");
   const text = [...document.querySelectorAll(".card")]
     .map(c => c.textContent)
     .join(", ");
 
   navigator.clipboard.writeText(text);
-  btn.innerText = "Copied";
+
+  const msg = document.getElementById("copyMsg");
+  msg.style.display = "inline";
 
   setTimeout(() => {
-    btn.innerText = "Copy charades";
-  }, 4000);
-}/* FULL SCREEN */
+    msg.style.display = "none";
+  }, 1500);
+}}/* FULL SCREEN */
 function toggleFullScreen() {
   const elem = document.getElementById("gameArea");
 
