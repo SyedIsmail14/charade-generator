@@ -90,24 +90,29 @@
   <button onclick="toggleFullScreen()">⛶ Full Screen</button>
   <span id="copyMsg" class="copy-msg">Copied!</span>
 </div>
-    <div class="quick-pick">
-      <button onclick="setCount(1)">1</button>
-      <button onclick="setCount(3)">3</button>
-      <button onclick="setCount(5)">5</button>
-      <button onclick="setCount(10)">10</button>
-      <button onclick="showCustom()">Custom</button>
-    </div>
+<!-- 1. COUNT BUTTONS -->
 <div class="quick-pick">
-  <button>Kids Mode</button>
-  <button>Funny Mode</button>
-  <button>Hard Mode</button>
-  <button>Party Mode</button>
+  <button onclick="setCount(1)">1</button>
+  <button onclick="setCount(3)">3</button>
+  <button onclick="setCount(5)">5</button>
+  <button onclick="setCount(10)">10</button>
+  <button onclick="showCustom()">Custom</button>
 </div>
-    <div id="customBox" class="custom-box hidden">
-      <input type="number" id="customInput" min="1" max="12" placeholder="Enter number">
-      <button onclick="applyCustom()">Apply</button>
-    </div>
 
+<!-- 2. MODE BUTTONS (REPLACE your second quick-pick with THIS) -->
+<div class="mode-select">
+  <button class="mode-btn active" data-mode="default" onclick="setMode('default')">All</button>
+  <button class="mode-btn" data-mode="kids" onclick="setMode('kids')">Kids</button>
+  <button class="mode-btn" data-mode="funny" onclick="setMode('funny')">Funny</button>
+  <button class="mode-btn" data-mode="hard" onclick="setMode('hard')">Hard</button>
+  <button class="mode-btn" data-mode="party" onclick="setMode('party')">Party</button>
+</div>
+
+<!-- 3. CUSTOM INPUT -->
+<div id="customBox" class="custom-box hidden">
+  <input type="number" id="customInput" min="1" max="12" placeholder="Enter number">
+  <button onclick="applyCustom()">Apply</button>
+</div>
     <div id="cards" class="cards"></div>
 
     <button class="generate-btn" onclick="generate()">Generate</button>
