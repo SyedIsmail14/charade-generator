@@ -85,7 +85,12 @@ button {
   margin-bottom: 10px;
   min-height: 44px;
 }
-
+.copy-msg {
+  display: none;
+  font-size: 13px;
+  color: green;
+  align-self: center;
+}
 /* MAIN */
 .main {
   max-width: 900px;
