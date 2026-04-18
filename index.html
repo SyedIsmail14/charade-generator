@@ -64,7 +64,9 @@
 <main class="main">
 
   <h1>Charades Generator – Free Online Game for Kids & Adults</h1>
-
+<p class="seo-text">
+  🎮 Play instantly • No signup • Unlimited charades ideas
+</p>
   <p class="seo-text">
     Looking for a fun and easy party game? This free Charades Generator helps you instantly create charade ideas for kids, families, classrooms, and parties. 
     Whether you're playing with friends or hosting a game night, our tool generates random charades that are simple, exciting, and perfect for all age groups.
@@ -80,15 +82,14 @@
 
     <h2 class="category-title">Lets Play Charades</h2>
 
-    <p class="subtitle" id="statusText">
-      Ready to play! Generate your first charade now 🎭
-    </p>
-
-    <div class="top-controls">
-      <button id="copyBtn" onclick="copyCharades()">Copy charades</button>
-      <button onclick="toggleFullScreen()">Full screen</button>
-    </div>
-
+<p class="subtitle">
+  Click Generate to get instant charades 🎭
+</p>
+<div class="top-controls">
+  <button id="copyBtn" onclick="copyCharades()">📋 Copy</button>
+  <button onclick="toggleFullScreen()">⛶ Full Screen</button>
+  <span id="copyMsg" class="copy-msg">Copied!</span>
+</div>
     <div class="quick-pick">
       <button onclick="setCount(1)">1</button>
       <button onclick="setCount(3)">3</button>
@@ -96,7 +97,12 @@
       <button onclick="setCount(10)">10</button>
       <button onclick="showCustom()">Custom</button>
     </div>
-
+<div class="quick-pick">
+  <button>Kids Mode</button>
+  <button>Funny Mode</button>
+  <button>Hard Mode</button>
+  <button>Party Mode</button>
+</div>
     <div id="customBox" class="custom-box hidden">
       <input type="number" id="customInput" min="1" max="12" placeholder="Enter number">
       <button onclick="applyCustom()">Apply</button>
@@ -107,7 +113,19 @@
     <button class="generate-btn" onclick="generate()">Generate</button>
 
   </section>
+<!-- ADD HERE 👇 -->
+<section class="content-section">
+  <h2>Charades Ideas by Category</h2>
 
+  <h3>For Kids</h3>
+  <p>Easy actions like jumping, dancing, eating.</p>
+
+  <h3>For Adults</h3>
+  <p>Movies, professions, complex actions.</p>
+
+  <h3>Funny Charades</h3>
+  <p>Crazy and entertaining actions for parties.</p>
+</section>
   <!-- BENEFITS SECTION -->
   <section class="content-section">
     <h2>Why Use This Charades Generator?</h2>
