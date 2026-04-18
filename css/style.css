@@ -231,7 +231,31 @@ h2 {
 .generate-btn:hover {
   transform: translateY(-1px);
 }
+/* MODE BUTTONS */
+.mode-select {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
 
+.mode-btn {
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: #e2e8f0;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.mode-btn:hover {
+  background: #dbeafe;
+}
+
+.mode-btn.active {
+  background: #2563eb;
+  color: #fff;
+}
 /* CONTENT SECTIONS */
 .content-section {
   margin-top: 60px;
