@@ -85,3 +85,19 @@ function setCategory(cat) {
   usedCharades = []; // reset uniqueness
   generate();
 }
+function copyCharades() {
+  const text = [...document.querySelectorAll(".card")]
+    .map(c => c.textContent)
+    .join(", ");
+
+  navigator.clipboard.writeText(text);
+
+  const msg = document.getElementById("copyMsg");
+  if (msg) {
+    msg.style.display = "inline";
+
+    setTimeout(() => {
+      msg.style.display = "none";
+    }, 1500);
+  }
+}
