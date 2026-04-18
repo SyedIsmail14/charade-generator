@@ -209,50 +209,85 @@ const STYLES = [
   "like synchronized swimmer","like figure skater","like gymnast","like tightrope walker","like contortionist",
   "like escape artist","like stunt double","like daredevil","like thrill seeker","like adrenaline junkie"
 ];
-let currentCount = 3; // DEFAULT charades on page load
+/* ===============================
+   STATE
+================================ */
 
-/* BUILD CHARADES */
+let currentCount = 3;
+let currentMode = "default";
+
+/* ===============================
+   MODE FILTER LOGIC (NO DATA CUT)
+================================ */
+
+function getModeFilteredData() {
+  if (currentMode === "kids") {
+    return {
+      verbs: VERBS.filter(v =>
+        v.length < 12 && !v.includes("drink") && !v.includes("dead")
+      ),
+      styles: STYLES.filter(s =>
+        s.includes("baby") || s.includes("monkey") || s.includes("happy")
+      )
+    };
+  }
+
+  if (currentMode === "funny") {
+    return {
+      verbs: VERBS,
+      styles: STYLES.filter(s =>
+        s.includes("drunk") ||
+        s.includes("crazy") ||
+        s.includes("clown") ||
+        s.includes("funny")
+      )
+    };
+  }
+
+  if (currentMode === "hard") {
+    return {
+      verbs: VERBS.filter(v => v.split(" ").length > 1),
+      styles: STYLES.filter(s =>
+        s.includes("scientist") ||
+        s.includes("detective") ||
+        s.includes("spy")
+      )
+    };
+  }
+
+  if (currentMode === "party") {
+    return {
+      verbs: VERBS,
+      styles: STYLES.filter(s =>
+        s.includes("dance") ||
+        s.includes("celebrat") ||
+        s.includes("party")
+      )
+    };
+  }
+
+  return { verbs: VERBS, styles: STYLES };
+}
+
+/* ===============================
+   GENERATE CHARADE
+================================ */
+
 function getRandomCharade() {
-  const verb = VERBS[Math.floor(Math.random() * VERBS.length)];
-  const style = STYLES[Math.floor(Math.random() * STYLES.length)];
+  const data = getModeFilteredData();
+
+  const verb =
+    data.verbs[Math.floor(Math.random() * data.verbs.length)];
+  const style =
+    data.styles[Math.floor(Math.random() * data.styles.length)];
+
   return `${verb} ${style}`;
 }
 
-/* MENU */
-function toggleMenu() {
-  document.getElementById("navMobile").classList.toggle("open");
-}
+/* ===============================
+   GENERATE UI
+================================ */
 
-/* QUICK COUNT BUTTONS */
-function setCount(n) {
-  currentCount = n;
-  generate();
-}
-
-/* CUSTOM INPUT */
-function showCustom() {
-  document.getElementById("customBox").classList.remove("hidden");
-}
-
-function applyCustom() {
-  const input = document.getElementById("customInput");
-  let n = parseInt(input.value, 10);
-
-  // HARD LIMIT LOGIC
-  if (isNaN(n) || n < 1) {
-    n = 1;
-  } else if (n > 12) {
-    n = 12; // 👈 CUT OFF ABOVE 12
-  }
-
-  input.value = n;
-  currentCount = n;
-
-  document.getElementById("customBox").classList.add("hidden");
-  generate();
-}
-
-/* GENERATE */
 function generate() {
   const box = document.getElementById("cards");
   const status = document.getElementById("statusText");
@@ -266,13 +301,62 @@ function generate() {
     box.appendChild(div);
   }
 
-  status.textContent =
-    currentCount === 1
-      ? "Ready to play! New charade"
-      : `Ready to play! ${currentCount} new charades`;
+  status.textContent = `${currentCount} ${currentMode} charades ready 🎭`;
 }
 
-/* COPY */
+/* ===============================
+   MODE SWITCH
+================================ */
+
+function setMode(mode) {
+  currentMode = mode;
+
+  document.querySelectorAll(".mode-btn").forEach(btn =>
+    btn.classList.remove("active")
+  );
+
+  const btn = document.querySelector(`[data-mode="${mode}"]`);
+  if (btn) btn.classList.add("active");
+
+  generate();
+}
+
+/* ===============================
+   COUNT
+================================ */
+
+function setCount(n) {
+  currentCount = n;
+  generate();
+}
+
+/* ===============================
+   CUSTOM INPUT
+================================ */
+
+function showCustom() {
+  document.getElementById("customBox").classList.remove("hidden");
+}
+
+function applyCustom() {
+  const input = document.getElementById("customInput");
+  let n = parseInt(input.value, 10);
+
+  if (isNaN(n) || n < 1) n = 1;
+  if (n > 12) n = 12;
+
+  currentCount = n;
+  input.value = n;
+
+  document.getElementById("customBox").classList.add("hidden");
+
+  generate();
+}
+
+/* ===============================
+   COPY
+================================ */
+
 function copyCharades() {
   const text = [...document.querySelectorAll(".card")]
     .map(c => c.textContent)
@@ -281,12 +365,16 @@ function copyCharades() {
   navigator.clipboard.writeText(text);
 
   const msg = document.getElementById("copyMsg");
-  msg.style.display = "inline";
+  if (msg) {
+    msg.style.display = "inline";
+    setTimeout(() => (msg.style.display = "none"), 1500);
+  }
+}
 
-  setTimeout(() => {
-    msg.style.display = "none";
-  }, 1500);
-}}/* FULL SCREEN */
+/* ===============================
+   FULL SCREEN
+================================ */
+
 function toggleFullScreen() {
   const elem = document.getElementById("gameArea");
 
@@ -297,6 +385,13 @@ function toggleFullScreen() {
   }
 }
 
-/* INIT */
-generate();
+/* ===============================
+   MENU
+================================ */
 
+function toggleMenu() {
+  document.getElementById("navMobile").classList.toggle("open");
+}
+
+/* INIT */
+document.addEventListener("DOMContentLoaded", generate);
