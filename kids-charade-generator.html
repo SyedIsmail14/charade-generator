@@ -83,7 +83,12 @@
   <button onclick="setCount(10)">10</button>
   <button onclick="showCustom()">Custom</button>
 </div>
-
+<div class="mode-select">
+  <button class="mode-btn active" onclick="setCategory('all')">All</button>
+  <button class="mode-btn" onclick="setCategory('animals')">Animals</button>
+  <button class="mode-btn" onclick="setCategory('people')">People</button>
+  <button class="mode-btn" onclick="setCategory('fantasy')">Fantasy</button>
+</div>
 <div id="customBox" class="custom-box hidden">
   <input type="number" id="customInput" min="1" max="12" placeholder="Enter number">
   <button onclick="applyCustom()">Apply</button>
