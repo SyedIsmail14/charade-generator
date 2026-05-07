@@ -4,38 +4,265 @@
   <meta charset="UTF-8">
   <title>Disclaimer | Charade Generator</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Standard favicon -->
-<link rel="icon" type="image/x-icon" href="/assests/favicon.ico">
 
-<!-- PNG favicons -->
-<link rel="icon" type="image/png" sizes="16x16" href="/assests/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/assests/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="48x48" href="/assests/favicon-48x48.png">
-
-<!-- Apple Touch Icons -->
-<link rel="apple-touch-icon" sizes="180x180" href="/assests/apple-touch-icon-180x180.png">
-<link rel="apple-touch-icon" href="/assests/apple-touch-icon.png">
-
-<!-- Android Icons -->
-<link rel="icon" type="image/png" sizes="192x192" href="/assests/android-chrome-192x192.png">
-<link rel="icon" type="image/png" sizes="512x512" href="/assests/android-chrome-512x512.png">
+  <link rel="icon" type="image/x-icon" href="/assests/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assests/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assests/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assests/favicon-48x48.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assests/apple-touch-icon-180x180.png">
+  <link rel="apple-touch-icon" href="/assests/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assests/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assests/android-chrome-512x512.png">
 
   <meta name="description" content="Disclaimer for Charade Generator.">
 
   <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    .disc-wrapper {
+      max-width: 860px;
+      margin: 60px auto;
+      padding: 0 20px 60px;
+      font-family: 'DM Sans', system-ui, sans-serif;
+    }
+
+    /* HERO */
+    .disc-hero {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .disc-hero .eyebrow {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #6366f1;
+      background: #e0e7ff;
+      padding: 5px 14px;
+      border-radius: 999px;
+      margin-bottom: 18px;
+    }
+
+    .disc-hero h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(32px, 6vw, 50px);
+      color: #0f172a;
+      margin: 0 0 14px;
+      line-height: 1.15;
+    }
+
+    .disc-hero .lead {
+      font-size: 16px;
+      color: #64748b;
+      max-width: 540px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    .disc-divider {
+      width: 56px;
+      height: 3px;
+      background: #6366f1;
+      border-radius: 2px;
+      margin: 36px auto 48px;
+    }
+
+    /* SUMMARY STRIP */
+    .disc-summary {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-bottom: 40px;
+    }
+
+    .summary-card {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 22px 16px;
+      text-align: center;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .summary-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(99,102,241,0.10);
+      border-color: #c7d2fe;
+    }
+
+    .summary-card .s-icon {
+      font-size: 26px;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .summary-card strong {
+      display: block;
+      font-size: 14px;
+      color: #1e293b;
+      margin-bottom: 5px;
+    }
+
+    .summary-card p {
+      font-size: 13px;
+      color: #64748b;
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    /* INTRO BANNER */
+    .disc-intro {
+      background: #0f172a;
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin-bottom: 32px;
+      color: #cbd5e1;
+      font-size: 15px;
+      line-height: 1.75;
+    }
+
+    .disc-intro strong {
+      color: #a5b4fc;
+    }
+
+    /* SECTION CARD */
+    .disc-card {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin-bottom: 20px;
+      transition: box-shadow 0.2s;
+    }
+
+    .disc-card:hover {
+      box-shadow: 0 4px 20px rgba(99,102,241,0.08);
+      border-color: #c7d2fe;
+    }
+
+    .disc-card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .disc-card-icon {
+      width: 40px;
+      height: 40px;
+      min-width: 40px;
+      background: #e0e7ff;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+
+    .disc-card h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 19px;
+      color: #0f172a;
+      margin: 0;
+      font-weight: 700;
+    }
+
+    .disc-card p {
+      font-size: 14px;
+      color: #475569;
+      line-height: 1.8;
+      margin: 0 0 12px;
+    }
+
+    .disc-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .disc-card strong {
+      color: #1e293b;
+      font-weight: 600;
+    }
+
+    /* EMAIL CTA */
+    .disc-email {
+      background: #f5f3ff;
+      border: 1px solid #c7d2fe;
+      border-radius: 14px;
+      padding: 24px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .disc-email p {
+      margin: 0;
+      font-size: 15px;
+      color: #3730a3;
+    }
+
+    .disc-email a.email-btn {
+      display: inline-block;
+      padding: 11px 22px;
+      background: #6366f1;
+      color: #fff;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 14px;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .disc-email a.email-btn:hover {
+      background: #4f46e5;
+      transform: translateY(-1px);
+    }
+
+    /* Animations */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(18px);
+      animation: fadeUp 0.5s ease forwards;
+    }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-up:nth-child(1) { animation-delay: 0.05s; }
+    .fade-up:nth-child(2) { animation-delay: 0.10s; }
+    .fade-up:nth-child(3) { animation-delay: 0.15s; }
+    .fade-up:nth-child(4) { animation-delay: 0.20s; }
+    .fade-up:nth-child(5) { animation-delay: 0.25s; }
+    .fade-up:nth-child(6) { animation-delay: 0.30s; }
+    .fade-up:nth-child(7) { animation-delay: 0.35s; }
+    .fade-up:nth-child(8) { animation-delay: 0.40s; }
+
+    @media (max-width: 600px) {
+      .disc-summary { grid-template-columns: 1fr 1fr; }
+      .disc-card { padding: 22px 18px; }
+      .disc-intro { padding: 22px 18px; }
+      .disc-email { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
 </head>
 <body>
 
 <!-- COMMON HEADER -->
 <header class="header">
   <div class="header-inner">
-<div class="logo">
-  <a href="https://charadegenerator.com/" class="logo-link">
-    🎭 <strong>Charades</strong>Generator
-  </a>
-</div>
+    <div class="logo">
+      <a href="https://charadegenerator.com/" class="logo-link">
+        🎭 <strong>Charades</strong>Generator
+      </a>
+    </div>
     <button class="menu-btn" onclick="toggleMenu()">☰</button>
-
     <nav class="nav-desktop">
       <a href="kids-charade-generator.html"><button>Kids Charades</button></a>
       <a href="movie-charades.html"><button>Movie Charades</button></a>
@@ -45,7 +272,6 @@
       <a href="islamic-charades.html"><button>Islamic Charades</button></a>
     </nav>
   </div>
-
   <nav id="navMobile" class="nav-mobile">
     <a href="kids-charade-generator.html"><button>Kids Charades</button></a>
     <a href="movie-charades.html"><button>Movie Charades</button></a>
@@ -57,83 +283,105 @@
 </header>
 
 <main class="main">
-<section style="max-width:850px;margin:40px auto;padding:0 16px;line-height:1.8;font-family:system-ui,Arial;color:#444;">
+  <div class="disc-wrapper">
 
-<h1 style="text-align:center;margin-bottom:20px;color:#222;">
-    Disclaimer
-  </h1>
-  <p>
-    Welcome to <strong>Charades Generator</strong>. By accessing and using this website, you
-    acknowledge that you have read, understood, and agreed to the terms outlined in this
-    disclaimer. If you do not agree with any part of this disclaimer, we kindly ask that you
-    discontinue use of the website.
-  </p>
+    <!-- HERO -->
+    <div class="disc-hero fade-up">
+      <span class="eyebrow">Legal</span>
+      <h1>Disclaimer</h1>
+      <p class="lead">Please read this carefully. By using Charades Generator, you agree to the terms outlined below.</p>
+    </div>
 
-  <h2 style="margin-top:28px;color:#222;">General Information</h2>
-  <p>
-    All content, tools, and games provided on Charades Generator are intended for
-    <strong>general informational and entertainment purposes only</strong>. While we make every
-    effort to ensure that the content on this website is accurate, current, and helpful, we make
-    no warranties or representations of any kind — express or implied — regarding the
-    completeness, reliability, suitability, or availability of any information or tools provided.
-  </p>
+    <div class="disc-divider"></div>
 
-  <h2 style="margin-top:28px;color:#222;">Limitation of Liability</h2>
-  <p>
-    Any reliance you place on the information or tools available on this website is strictly at
-    your own risk. Charades Generator, its owner, and its contributors shall not be held liable
-    for any direct, indirect, incidental, or consequential losses or damages arising from the use
-    of — or inability to use — this website or its content.
-  </p>
+    <!-- SUMMARY STRIP -->
+    <div class="disc-summary fade-up">
+      <div class="summary-card">
+        <span class="s-icon">🎯</span>
+        <strong>Entertainment Only</strong>
+        <p>All tools are for fun and general use — not professional advice.</p>
+      </div>
+      <div class="summary-card">
+        <span class="s-icon">🔗</span>
+        <strong>External Links</strong>
+        <p>We're not responsible for third-party sites or their content.</p>
+      </div>
+      <div class="summary-card">
+        <span class="s-icon">🔄</span>
+        <strong>Subject to Change</strong>
+        <p>This disclaimer may be updated at any time without prior notice.</p>
+      </div>
+    </div>
 
-  <h2 style="margin-top:28px;color:#222;">External Links</h2>
-  <p>
-    Our website may contain links to third-party websites or display advertisements provided by
-    external advertising partners, including Google AdSense. These external websites operate
-    independently and are governed by their own privacy policies and terms of use. We have no
-    control over the content, nature, or availability of those sites and are not responsible for
-    their practices or accuracy.
-  </p>
-  <p>
-    The inclusion of any external links or advertisements on this website does not constitute an
-    endorsement, recommendation, or approval of the views, products, or services expressed
-    within them. We encourage users to read the terms and privacy policies of any external sites
-    they visit.
-  </p>
+    <!-- INTRO BANNER -->
+    <div class="disc-intro fade-up">
+      Welcome to <strong>Charades Generator</strong>. By accessing and using this website, you acknowledge that you have read, understood, and agreed to the terms outlined in this disclaimer. If you do not agree with any part of this disclaimer, we kindly ask that you discontinue use of the website.
+    </div>
 
-  <h2 style="margin-top:28px;color:#222;">Advertising</h2>
-  <p>
-    Charades Generator may display third-party advertisements through services such as Google
-    AdSense. These advertisements are served automatically based on site content and user
-    activity. We do not personally endorse any advertised products or services. Advertisers are
-    solely responsible for the content of their own ads and the claims made within them.
-  </p>
+    <!-- SECTION: General Information -->
+    <div class="disc-card fade-up">
+      <div class="disc-card-header">
+        <div class="disc-card-icon">📋</div>
+        <h2>General Information</h2>
+      </div>
+      <p>All content, tools, and games provided on Charades Generator are intended for <strong>general informational and entertainment purposes only</strong>. While we make every effort to ensure that the content on this website is accurate, current, and helpful, we make no warranties or representations of any kind — express or implied — regarding the completeness, reliability, suitability, or availability of any information or tools provided.</p>
+    </div>
 
-  <h2 style="margin-top:28px;color:#222;">Content Accuracy</h2>
-  <p>
-    We regularly review and update our content to maintain accuracy and relevance. However, some
-    information may become outdated over time. Users are advised to independently verify any
-    information obtained from this website before relying on it for any purpose.
-  </p>
+    <!-- SECTION: Limitation of Liability -->
+    <div class="disc-card fade-up">
+      <div class="disc-card-header">
+        <div class="disc-card-icon">⚖️</div>
+        <h2>Limitation of Liability</h2>
+      </div>
+      <p>Any reliance you place on the information or tools available on this website is strictly at your own risk. Charades Generator, its owner, and its contributors shall not be held liable for any direct, indirect, incidental, or consequential losses or damages arising from the use of — or inability to use — this website or its content.</p>
+    </div>
 
-  <h2 style="margin-top:28px;color:#222;">Changes to This Disclaimer</h2>
-  <p>
-    We reserve the right to update or modify this disclaimer at any time without prior notice.
-    Any changes will be reflected on this page with immediate effect. We encourage you to review
-    this page periodically to stay informed of any updates.
-  </p>
+    <!-- SECTION: External Links -->
+    <div class="disc-card fade-up">
+      <div class="disc-card-header">
+        <div class="disc-card-icon">🔗</div>
+        <h2>External Links</h2>
+      </div>
+      <p>Our website may contain links to third-party websites or display advertisements provided by external advertising partners, including Google AdSense. These external websites operate independently and are governed by their own privacy policies and terms of use. We have no control over the content, nature, or availability of those sites and are not responsible for their practices or accuracy.</p>
+      <p>The inclusion of any external links or advertisements does not constitute an endorsement, recommendation, or approval of the views, products, or services expressed within them. We encourage users to read the terms and privacy policies of any external sites they visit.</p>
+    </div>
 
-  <h2 style="margin-top:28px;color:#222;">Contact Us</h2>
-  <p>
-    If you have any questions, concerns, or require further clarification about this disclaimer,
-    please do not hesitate to reach out to us. We are happy to assist.
-  </p>
-  <p style="font-weight:600;">
-    📧 Email:
-    <a href="mailto:isyed486@gmail.com" style="color:#2563eb;text-decoration:none;">
-      isyed486@gmail.com
-    </a>
-  </p>
+    <!-- SECTION: Advertising -->
+    <div class="disc-card fade-up">
+      <div class="disc-card-header">
+        <div class="disc-card-icon">📢</div>
+        <h2>Advertising</h2>
+      </div>
+      <p>Charades Generator may display third-party advertisements through services such as <strong>Google AdSense</strong>. These advertisements are served automatically based on site content and user activity. We do not personally endorse any advertised products or services. Advertisers are solely responsible for the content of their own ads and the claims made within them.</p>
+    </div>
+
+    <!-- SECTION: Content Accuracy -->
+    <div class="disc-card fade-up">
+      <div class="disc-card-header">
+        <div class="disc-card-icon">✅</div>
+        <h2>Content Accuracy</h2>
+      </div>
+      <p>We regularly review and update our content to maintain accuracy and relevance. However, some information may become outdated over time. Users are advised to independently verify any information obtained from this website before relying on it for any purpose.</p>
+    </div>
+
+    <!-- SECTION: Changes -->
+    <div class="disc-card fade-up">
+      <div class="disc-card-header">
+        <div class="disc-card-icon">🔄</div>
+        <h2>Changes to This Disclaimer</h2>
+      </div>
+      <p>We reserve the right to update or modify this disclaimer at any time without prior notice. Any changes will be reflected on this page with immediate effect. We encourage you to review this page periodically to stay informed of any updates.</p>
+    </div>
+
+    <!-- EMAIL CTA -->
+    <div class="disc-email fade-up">
+      <p>📬 Have questions about this disclaimer? We're happy to help clarify anything.</p>
+      <a href="mailto:isyed486@gmail.com" class="email-btn">isyed486@gmail.com</a>
+    </div>
+
+  </div>
+</main>
+
 <!-- COMMON FOOTER -->
 <footer class="footer">
   <div class="footer-links">
@@ -145,6 +393,12 @@
   </div>
   <p>© CharadeGenerator 2026</p>
 </footer>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('navMobile').classList.toggle('open');
+  }
+</script>
 
 </body>
 </html>
