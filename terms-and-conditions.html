@@ -4,37 +4,326 @@
   <meta charset="UTF-8">
   <title>Terms and Conditions | Charade Generator</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Standard favicon -->
-<link rel="icon" type="image/x-icon" href="/assests/favicon.ico">
 
-<!-- PNG favicons -->
-<link rel="icon" type="image/png" sizes="16x16" href="/assests/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/assests/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="48x48" href="/assests/favicon-48x48.png">
-
-<!-- Apple Touch Icons -->
-<link rel="apple-touch-icon" sizes="180x180" href="/assests/apple-touch-icon-180x180.png">
-<link rel="apple-touch-icon" href="/assests/apple-touch-icon.png">
-
-<!-- Android Icons -->
-<link rel="icon" type="image/png" sizes="192x192" href="/assests/android-chrome-192x192.png">
-<link rel="icon" type="image/png" sizes="512x512" href="/assests/android-chrome-512x512.png">
+  <link rel="icon" type="image/x-icon" href="/assests/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assests/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assests/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assests/favicon-48x48.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assests/apple-touch-icon-180x180.png">
+  <link rel="apple-touch-icon" href="/assests/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assests/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assests/android-chrome-512x512.png">
 
   <meta name="description" content="Terms and conditions for using Charade Generator.">
 
   <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    .tc-wrapper {
+      max-width: 860px;
+      margin: 60px auto;
+      padding: 0 20px 60px;
+      font-family: 'DM Sans', system-ui, sans-serif;
+    }
+
+    /* HERO */
+    .tc-hero {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .tc-hero .eyebrow {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #6366f1;
+      background: #e0e7ff;
+      padding: 5px 14px;
+      border-radius: 999px;
+      margin-bottom: 18px;
+    }
+
+    .tc-hero h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(32px, 6vw, 50px);
+      color: #0f172a;
+      margin: 0 0 14px;
+      line-height: 1.15;
+    }
+
+    .tc-hero .lead {
+      font-size: 16px;
+      color: #64748b;
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    .tc-divider {
+      width: 56px;
+      height: 3px;
+      background: #6366f1;
+      border-radius: 2px;
+      margin: 36px auto 48px;
+    }
+
+    /* SUMMARY STRIP */
+    .tc-summary {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 40px;
+    }
+
+    .tc-sum-card {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 18px 14px;
+      text-align: center;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .tc-sum-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(99,102,241,0.10);
+      border-color: #c7d2fe;
+    }
+
+    .tc-sum-card .s-icon {
+      font-size: 24px;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .tc-sum-card strong {
+      display: block;
+      font-size: 13px;
+      color: #1e293b;
+      margin-bottom: 4px;
+    }
+
+    .tc-sum-card p {
+      font-size: 12px;
+      color: #64748b;
+      margin: 0;
+      line-height: 1.45;
+    }
+
+    /* INTRO BANNER */
+    .tc-intro {
+      background: #0f172a;
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin-bottom: 32px;
+      color: #cbd5e1;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .tc-intro strong {
+      color: #a5b4fc;
+    }
+
+    /* SECTION CARD */
+    .tc-card {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin-bottom: 20px;
+      transition: box-shadow 0.2s;
+    }
+
+    .tc-card:hover {
+      box-shadow: 0 4px 20px rgba(99,102,241,0.08);
+      border-color: #c7d2fe;
+    }
+
+    .tc-card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .tc-card-icon {
+      width: 40px;
+      height: 40px;
+      min-width: 40px;
+      background: #e0e7ff;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+
+    .tc-card h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 19px;
+      color: #0f172a;
+      margin: 0;
+      font-weight: 700;
+    }
+
+    .tc-card p {
+      font-size: 14px;
+      color: #475569;
+      line-height: 1.8;
+      margin: 0 0 12px;
+    }
+
+    .tc-card p:last-child { margin-bottom: 0; }
+    .tc-card strong { color: #1e293b; font-weight: 600; }
+
+    /* LISTS */
+    .tc-card ul {
+      padding-left: 0;
+      list-style: none;
+      margin: 0 0 12px;
+    }
+
+    .tc-card ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      color: #475569;
+      line-height: 1.65;
+      padding: 8px 0;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .tc-card ul li:last-child { border-bottom: none; }
+
+    .tc-card ul li::before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      min-width: 7px;
+      background: #6366f1;
+      border-radius: 50%;
+      margin-top: 7px;
+    }
+
+    /* WARNING BANNER */
+    .tc-warning {
+      background: #fef9c3;
+      border: 1px solid #fde68a;
+      border-left: 4px solid #f59e0b;
+      border-radius: 0 12px 12px 0;
+      padding: 16px 20px;
+      margin-top: 14px;
+      font-size: 13px;
+      color: #92400e;
+      line-height: 1.65;
+    }
+
+    /* PRIVACY REF */
+    .tc-ref {
+      background: #f5f3ff;
+      border: 1px solid #c7d2fe;
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-top: 0;
+      font-size: 14px;
+      color: #3730a3;
+      line-height: 1.65;
+    }
+
+    .tc-ref a {
+      color: #6366f1;
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 1px solid #c7d2fe;
+    }
+
+    .tc-ref a:hover { color: #4f46e5; }
+
+    /* EMAIL CTA */
+    .tc-email {
+      background: #f5f3ff;
+      border: 1px solid #c7d2fe;
+      border-radius: 14px;
+      padding: 24px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .tc-email p {
+      margin: 0;
+      font-size: 15px;
+      color: #3730a3;
+    }
+
+    .tc-email a.email-btn {
+      display: inline-block;
+      padding: 11px 22px;
+      background: #6366f1;
+      color: #fff;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 14px;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .tc-email a.email-btn:hover {
+      background: #4f46e5;
+      transform: translateY(-1px);
+    }
+
+    /* Animations */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(18px);
+      animation: fadeUp 0.5s ease forwards;
+    }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-up:nth-child(1)  { animation-delay: 0.04s; }
+    .fade-up:nth-child(2)  { animation-delay: 0.08s; }
+    .fade-up:nth-child(3)  { animation-delay: 0.12s; }
+    .fade-up:nth-child(4)  { animation-delay: 0.16s; }
+    .fade-up:nth-child(5)  { animation-delay: 0.20s; }
+    .fade-up:nth-child(6)  { animation-delay: 0.24s; }
+    .fade-up:nth-child(7)  { animation-delay: 0.28s; }
+    .fade-up:nth-child(8)  { animation-delay: 0.32s; }
+    .fade-up:nth-child(9)  { animation-delay: 0.36s; }
+    .fade-up:nth-child(10) { animation-delay: 0.40s; }
+    .fade-up:nth-child(11) { animation-delay: 0.44s; }
+
+    @media (max-width: 640px) {
+      .tc-summary { grid-template-columns: 1fr 1fr; }
+      .tc-card { padding: 22px 18px; }
+      .tc-intro { padding: 22px 18px; }
+      .tc-email { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
 </head>
 <body>
 
 <!-- COMMON HEADER -->
 <header class="header">
   <div class="header-inner">
-<div class="logo">
-  <a href="https://charadegenerator.com/" class="logo-link">
-    🎭 <strong>Charades</strong>Generator
-  </a>
-</div>    <button class="menu-btn" onclick="toggleMenu()">☰</button>
-
+    <div class="logo">
+      <a href="https://charadegenerator.com/" class="logo-link">
+        🎭 <strong>Charades</strong>Generator
+      </a>
+    </div>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
     <nav class="nav-desktop">
       <a href="kids-charade-generator.html"><button>Kids Charades</button></a>
       <a href="movie-charades.html"><button>Movie Charades</button></a>
@@ -44,7 +333,6 @@
       <a href="islamic-charades.html"><button>Islamic Charades</button></a>
     </nav>
   </div>
-
   <nav id="navMobile" class="nav-mobile">
     <a href="kids-charade-generator.html"><button>Kids Charades</button></a>
     <a href="movie-charades.html"><button>Movie Charades</button></a>
@@ -56,131 +344,145 @@
 </header>
 
 <main class="main">
-<section style="max-width:850px;margin:40px auto;padding:0 16px;line-height:1.8;font-family:system-ui,Arial;color:#444;">
+  <div class="tc-wrapper">
 
-<section style="max-width:850px;margin:40px auto;padding:0 16px;line-height:1.8;font-family:system-ui,Arial;color:#444;">
+    <!-- HERO -->
+    <div class="tc-hero fade-up">
+      <span class="eyebrow">Legal</span>
+      <h1>Terms &amp; Conditions</h1>
+      <p class="lead">By using Charades Generator, you agree to these terms. Please read them carefully before continuing.</p>
+    </div>
 
-<h1 style="text-align:center;margin-bottom:20px;color:#222;">
-    Terms &amp; Conditions
-  </h1>
-  <p>
-    Welcome to <strong>Charades Generator</strong>. By accessing, browsing, or using any part of
-    this website, you confirm that you have read, understood, and agreed to be bound by these
-    Terms and Conditions. These terms apply to all visitors, users, and anyone who accesses our
-    website or makes use of our tools and games.
-  </p>
-  <p>
-    If you do not agree with any part of these Terms and Conditions, we kindly ask that you
-    discontinue use of our website immediately. Your continued use of this website following any
-    updates to these terms constitutes your acceptance of the revised terms.
-  </p>
+    <div class="tc-divider"></div>
 
-  <h2 style="margin-top:30px;color:#222;">Use of Our Website</h2>
-  <p>
-    Charades Generator provides free, browser-based tools and games for entertainment, education,
-    and general use. All content, tools, and features are provided <strong>"as is"</strong>
-    without any warranties of any kind, either express or implied, including but not limited to
-    warranties of accuracy, availability, or fitness for a particular purpose.
-  </p>
-  <p>
-    By using this website, you agree to use it only for lawful, personal, and non-commercial
-    purposes. You agree not to:
-  </p>
-  <ul style="padding-left:20px;">
-    <li>Misuse, disrupt, or attempt to gain unauthorized access to any part of the website</li>
-    <li>Use the platform to transmit harmful, offensive, or unlawful content</li>
-    <li>Attempt to reverse engineer, copy, or replicate any tool or feature on this website</li>
-    <li>Use automated bots, scrapers, or scripts to access or extract content from this website</li>
-    <li>Engage in any activity that could damage, disable, or impair the website's functionality</li>
-  </ul>
-  <p>
-    We reserve the right to restrict or terminate access to any user who violates these terms
-    without prior notice.
-  </p>
+    <!-- SUMMARY STRIP -->
+    <div class="tc-summary fade-up">
+      <div class="tc-sum-card">
+        <span class="s-icon">✅</span>
+        <strong>Free to Use</strong>
+        <p>All tools are provided free for personal, non-commercial use.</p>
+      </div>
+      <div class="tc-sum-card">
+        <span class="s-icon">🛡️</span>
+        <strong>Our IP</strong>
+        <p>All content is original property of Charades Generator.</p>
+      </div>
+      <div class="tc-sum-card">
+        <span class="s-icon">⚖️</span>
+        <strong>No Liability</strong>
+        <p>Use of the site is at your own risk; we limit our liability.</p>
+      </div>
+      <div class="tc-sum-card">
+        <span class="s-icon">🔄</span>
+        <strong>May Change</strong>
+        <p>Terms can be updated at any time without prior notice.</p>
+      </div>
+    </div>
 
-  <h2 style="margin-top:30px;color:#222;">Intellectual Property</h2>
-  <p>
-    All content available on Charades Generator — including but not limited to text, tool
-    designs, game logic, graphics, layouts, and written content — is the original property of
-    <strong>Charades Generator</strong> and its owner, <strong>Syed Ismail</strong>, unless
-    otherwise explicitly stated.
-  </p>
-  <p>
-    Unauthorized copying, reproduction, redistribution, modification, or commercial use of any
-    content from this website is strictly prohibited without prior written permission from the
-    website owner. Any permitted use must include clear attribution to Charades Generator.
-  </p>
+    <!-- INTRO BANNER -->
+    <div class="tc-intro fade-up">
+      Welcome to <strong>Charades Generator</strong>. By accessing, browsing, or using any part of this website, you confirm that you have read, understood, and agreed to be bound by these Terms and Conditions. They apply to all visitors, users, and anyone who accesses our tools and games. If you do not agree, please discontinue use of our website immediately. Your continued use following any updates constitutes acceptance of the revised terms.
+    </div>
 
-  <h2 style="margin-top:30px;color:#222;">Third-Party Services and Advertising</h2>
-  <p>
-    Our website may display advertisements served by third-party advertising networks, including
-    <strong>Google AdSense</strong>. These advertisements are provided automatically and we do
-    not personally endorse any advertised product, service, or brand. Advertisers are solely
-    responsible for the content of their own advertisements.
-  </p>
-  <p>
-    Our website may also contain links to external third-party websites for reference purposes.
-    We have no control over the content, availability, or privacy practices of those websites
-    and accept no responsibility for any loss or damage that may arise from your use of them.
-    Visiting any linked external website is entirely at your own risk.
-  </p>
+    <!-- Use of Website -->
+    <div class="tc-card fade-up">
+      <div class="tc-card-header">
+        <div class="tc-card-icon">🌐</div>
+        <h2>Use of Our Website</h2>
+      </div>
+      <p>Charades Generator provides free, browser-based tools and games for entertainment, education, and general use. All content and features are provided <strong>"as is"</strong> without warranties of any kind. By using this website, you agree to use it only for lawful, personal, and non-commercial purposes. You agree <strong>not</strong> to:</p>
+      <ul>
+        <li>Misuse, disrupt, or attempt to gain unauthorized access to any part of the website</li>
+        <li>Use the platform to transmit harmful, offensive, or unlawful content</li>
+        <li>Attempt to reverse engineer, copy, or replicate any tool or feature on this website</li>
+        <li>Use automated bots, scrapers, or scripts to access or extract content</li>
+        <li>Engage in any activity that could damage, disable, or impair the website's functionality</li>
+      </ul>
+      <div class="tc-warning">
+        ⚠️ We reserve the right to restrict or terminate access to any user who violates these terms without prior notice.
+      </div>
+    </div>
 
-  <h2 style="margin-top:30px;color:#222;">Disclaimer of Warranties</h2>
-  <p>
-    While we make every effort to keep our website operational and our content accurate, we do
-    not guarantee uninterrupted availability, freedom from errors, or that the website will be
-    free from viruses or other harmful components. We strongly recommend that users maintain
-    up-to-date security software on their devices.
-  </p>
+    <!-- Intellectual Property -->
+    <div class="tc-card fade-up">
+      <div class="tc-card-header">
+        <div class="tc-card-icon">©️</div>
+        <h2>Intellectual Property</h2>
+      </div>
+      <p>All content on Charades Generator — including text, tool designs, game logic, graphics, layouts, and written content — is the original property of <strong>Charades Generator</strong> and its owner, <strong>Syed Ismail</strong>, unless otherwise explicitly stated.</p>
+      <p>Unauthorized copying, reproduction, redistribution, modification, or commercial use of any content from this website is strictly prohibited without prior written permission. Any permitted use must include clear attribution to Charades Generator.</p>
+    </div>
 
-  <h2 style="margin-top:30px;color:#222;">Limitation of Liability</h2>
-  <p>
-    To the fullest extent permitted by applicable law, Charades Generator, its owner, and any
-    associated contributors shall not be held liable for any direct, indirect, incidental,
-    consequential, or punitive damages arising from:
-  </p>
-  <ul style="padding-left:20px;">
-    <li>Your use of or inability to use this website or its tools</li>
-    <li>Any errors or inaccuracies in the content provided</li>
-    <li>Unauthorized access to or alteration of your data</li>
-    <li>Any third-party content or advertisements displayed on the website</li>
-  </ul>
+    <!-- Third-Party Services -->
+    <div class="tc-card fade-up">
+      <div class="tc-card-header">
+        <div class="tc-card-icon">🔗</div>
+        <h2>Third-Party Services and Advertising</h2>
+      </div>
+      <p>Our website may display advertisements served by third-party advertising networks, including <strong>Google AdSense</strong>. These are provided automatically and we do not personally endorse any advertised product, service, or brand. Advertisers are solely responsible for the content of their own advertisements.</p>
+      <p>Our website may also contain links to external third-party websites for reference purposes. We have no control over the content, availability, or privacy practices of those websites and accept no responsibility for any loss or damage that may arise from your use of them. Visiting any linked external website is entirely at your own risk.</p>
+    </div>
 
-  <h2 style="margin-top:30px;color:#222;">Privacy</h2>
-  <p>
-    Your use of this website is also governed by our <strong>Privacy Policy</strong>, which is
-    incorporated into these Terms and Conditions by reference. By agreeing to these terms, you
-    also acknowledge and accept the practices described in our Privacy Policy.
-  </p>
+    <!-- Disclaimer of Warranties -->
+    <div class="tc-card fade-up">
+      <div class="tc-card-header">
+        <div class="tc-card-icon">⚠️</div>
+        <h2>Disclaimer of Warranties</h2>
+      </div>
+      <p>While we make every effort to keep our website operational and content accurate, we do not guarantee uninterrupted availability, freedom from errors, or that the website will be free from viruses or other harmful components. We strongly recommend that users maintain up-to-date security software on their devices.</p>
+    </div>
 
-  <h2 style="margin-top:30px;color:#222;">Governing Law</h2>
-  <p>
-    These Terms and Conditions shall be governed by and construed in accordance with applicable
-    laws. Any disputes arising from the use of this website shall be subject to the exclusive
-    jurisdiction of the relevant courts in the owner's country of residence.
-  </p>
+    <!-- Limitation of Liability -->
+    <div class="tc-card fade-up">
+      <div class="tc-card-header">
+        <div class="tc-card-icon">⚖️</div>
+        <h2>Limitation of Liability</h2>
+      </div>
+      <p>To the fullest extent permitted by applicable law, Charades Generator, its owner, and any associated contributors shall not be held liable for any direct, indirect, incidental, consequential, or punitive damages arising from:</p>
+      <ul>
+        <li>Your use of or inability to use this website or its tools</li>
+        <li>Any errors or inaccuracies in the content provided</li>
+        <li>Unauthorized access to or alteration of your data</li>
+        <li>Any third-party content or advertisements displayed on the website</li>
+      </ul>
+    </div>
 
-  <h2 style="margin-top:30px;color:#222;">Changes to These Terms</h2>
-  <p>
-    We reserve the right to update, revise, or modify these Terms and Conditions at any time.
-    Any changes will be posted on this page and will take effect immediately upon publication.
-    We encourage you to review this page regularly to stay informed of any updates. Your
-    continued use of the website following any changes constitutes your acceptance of the
-    revised terms.
-  </p>
+    <!-- Privacy -->
+    <div class="tc-card fade-up">
+      <div class="tc-card-header">
+        <div class="tc-card-icon">🔒</div>
+        <h2>Privacy</h2>
+      </div>
+      <div class="tc-ref">
+        🔐 Your use of this website is also governed by our <a href="privacy-policy.html">Privacy Policy</a>, which is incorporated into these Terms and Conditions by reference. By agreeing to these terms, you also acknowledge and accept the practices described in our Privacy Policy.
+      </div>
+    </div>
 
-  <h2 style="margin-top:30px;color:#222;">Contact Information</h2>
-  <p>
-    If you have any questions, concerns, or requests related to these Terms and Conditions,
-    please contact us. We aim to respond to all inquiries within 1–3 business days.
-  </p>
-  <p style="font-weight:600;">
-    📧 Email:
-    <a href="mailto:isyed486@gmail.com" style="color:#2563eb;text-decoration:none;">
-      isyed486@gmail.com
-    </a>
-  </p>
-</section>
+    <!-- Governing Law -->
+    <div class="tc-card fade-up">
+      <div class="tc-card-header">
+        <div class="tc-card-icon">🏛️</div>
+        <h2>Governing Law</h2>
+      </div>
+      <p>These Terms and Conditions shall be governed by and construed in accordance with applicable laws. Any disputes arising from the use of this website shall be subject to the exclusive jurisdiction of the relevant courts in the owner's country of residence.</p>
+    </div>
+
+    <!-- Changes -->
+    <div class="tc-card fade-up">
+      <div class="tc-card-header">
+        <div class="tc-card-icon">🔄</div>
+        <h2>Changes to These Terms</h2>
+      </div>
+      <p>We reserve the right to update, revise, or modify these Terms and Conditions at any time. Any changes will be posted on this page and will take effect immediately upon publication. We encourage you to review this page regularly. Your continued use of the website following any changes constitutes your acceptance of the revised terms.</p>
+    </div>
+
+    <!-- EMAIL CTA -->
+    <div class="tc-email fade-up">
+      <p>📬 Questions about these Terms? We aim to reply within 1–3 business days.</p>
+      <a href="mailto:isyed486@gmail.com" class="email-btn">isyed486@gmail.com</a>
+    </div>
+
+  </div>
 </main>
 
 <!-- COMMON FOOTER -->
@@ -194,6 +496,12 @@
   </div>
   <p>© CharadeGenerator 2026</p>
 </footer>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('navMobile').classList.toggle('open');
+  }
+</script>
 
 </body>
 </html>
