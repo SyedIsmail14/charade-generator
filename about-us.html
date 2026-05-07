@@ -4,40 +4,277 @@
   <meta charset="UTF-8">
   <title>About Us | Charade Generator</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Standard favicon -->
-<link rel="icon" type="image/x-icon" href="/assests/favicon.ico">
 
-<!-- PNG favicons -->
-<link rel="icon" type="image/png" sizes="16x16" href="/assests/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/assests/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="48x48" href="/assests/favicon-48x48.png">
-
-<!-- Apple Touch Icons -->
-<link rel="apple-touch-icon" sizes="180x180" href="/assests/apple-touch-icon-180x180.png">
-<link rel="apple-touch-icon" href="/assests/apple-touch-icon.png">
-
-<!-- Android Icons -->
-<link rel="icon" type="image/png" sizes="192x192" href="/assests/android-chrome-192x192.png">
-<link rel="icon" type="image/png" sizes="512x512" href="/assests/android-chrome-512x512.png">
-
+  <link rel="icon" type="image/x-icon" href="/assests/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assests/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assests/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assests/favicon-48x48.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assests/apple-touch-icon-180x180.png">
+  <link rel="apple-touch-icon" href="/assests/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assests/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assests/android-chrome-512x512.png">
 
   <meta name="description" content="Learn more about Charade Generator, created by Syed Ismail, a web developer specializing in useful and interactive online tools.">
 
   <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    .about-wrapper {
+      max-width: 860px;
+      margin: 60px auto;
+      padding: 0 20px 60px;
+      font-family: 'DM Sans', system-ui, sans-serif;
+    }
+
+    /* HERO */
+    .about-hero {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .about-hero .eyebrow {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #6366f1;
+      background: #e0e7ff;
+      padding: 5px 14px;
+      border-radius: 999px;
+      margin-bottom: 18px;
+    }
+
+    .about-hero h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(34px, 6vw, 52px);
+      color: #0f172a;
+      margin: 0 0 16px;
+      line-height: 1.15;
+      font-weight: 700;
+    }
+
+    .about-hero .lead {
+      font-size: 17px;
+      color: #64748b;
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* DIVIDER */
+    .about-divider {
+      width: 56px;
+      height: 3px;
+      background: #6366f1;
+      border-radius: 2px;
+      margin: 40px auto;
+    }
+
+    /* STAT STRIP */
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 56px;
+    }
+
+    .stat-card {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 24px 16px;
+      text-align: center;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(99,102,241,0.10);
+      border-color: #c7d2fe;
+    }
+
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      color: #6366f1;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .stat-label {
+      font-size: 13px;
+      color: #64748b;
+      font-weight: 500;
+    }
+
+    /* VALUE CARDS */
+    .about-values {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-bottom: 52px;
+    }
+
+    .value-card {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 22px 20px;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .value-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(99,102,241,0.10);
+      border-color: #c7d2fe;
+    }
+
+    .value-icon {
+      font-size: 26px;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .value-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: #1e293b;
+      margin: 0 0 6px;
+    }
+
+    .value-desc {
+      font-size: 14px;
+      color: #64748b;
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    /* STORY SECTION */
+    .about-story {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 18px;
+      padding: 36px 40px;
+      margin-bottom: 40px;
+    }
+
+    .about-story h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      color: #0f172a;
+      margin: 0 0 20px;
+    }
+
+    .about-story p {
+      font-size: 15px;
+      color: #475569;
+      line-height: 1.8;
+      margin: 0 0 16px;
+    }
+
+    .about-story p:last-child {
+      margin-bottom: 0;
+    }
+
+    .about-story strong {
+      color: #1e293b;
+      font-weight: 600;
+    }
+
+    /* HIGHLIGHT QUOTE */
+    .about-quote {
+      border-left: 4px solid #6366f1;
+      background: #f5f3ff;
+      border-radius: 0 12px 12px 0;
+      padding: 20px 24px;
+      margin: 28px 0;
+    }
+
+    .about-quote p {
+      font-size: 16px;
+      color: #3730a3;
+      font-style: italic;
+      margin: 0;
+      line-height: 1.7;
+    }
+
+    /* CTA */
+    .about-cta {
+      background: #0f172a;
+      border-radius: 18px;
+      padding: 40px;
+      text-align: center;
+      color: #fff;
+    }
+
+    .about-cta h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      margin: 0 0 12px;
+      color: #fff;
+    }
+
+    .about-cta p {
+      font-size: 15px;
+      color: #94a3b8;
+      margin: 0 0 24px;
+      line-height: 1.6;
+    }
+
+    .about-cta a {
+      display: inline-block;
+      padding: 13px 30px;
+      background: #6366f1;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 15px;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .about-cta a:hover {
+      background: #4f46e5;
+      transform: translateY(-1px);
+    }
+
+    /* Animations */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(18px);
+      animation: fadeUp 0.5s ease forwards;
+    }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-up:nth-child(1) { animation-delay: 0.05s; }
+    .fade-up:nth-child(2) { animation-delay: 0.12s; }
+    .fade-up:nth-child(3) { animation-delay: 0.19s; }
+    .fade-up:nth-child(4) { animation-delay: 0.26s; }
+
+    @media (max-width: 600px) {
+      .about-stats { grid-template-columns: 1fr 1fr; }
+      .about-story { padding: 24px 20px; }
+      .about-cta { padding: 28px 20px; }
+    }
+  </style>
 </head>
 <body>
 
 <!-- COMMON HEADER -->
 <header class="header">
   <div class="header-inner">
-<div class="logo">
-  <a href="https://charadegenerator.com/" class="logo-link">
-    🎭 <strong>Charades</strong>Generator
-  </a>
-</div>
-    
+    <div class="logo">
+      <a href="https://charadegenerator.com/" class="logo-link">
+        🎭 <strong>Charades</strong>Generator
+      </a>
+    </div>
     <button class="menu-btn" onclick="toggleMenu()">☰</button>
-
     <nav class="nav-desktop">
       <a href="kids-charade-generator.html"><button>Kids Charades</button></a>
       <a href="movie-charades.html"><button>Movie Charades</button></a>
@@ -47,7 +284,6 @@
       <a href="islamic-charades.html"><button>Islamic Charades</button></a>
     </nav>
   </div>
-
   <nav id="navMobile" class="nav-mobile">
     <a href="kids-charade-generator.html"><button>Kids Charades</button></a>
     <a href="movie-charades.html"><button>Movie Charades</button></a>
@@ -59,58 +295,84 @@
 </header>
 
 <main class="main">
+  <div class="about-wrapper">
 
-<section style="max-width:850px;margin:40px auto;padding:0 16px;line-height:1.8;font-family:system-ui,Arial;color:#444;">
-  
-<h1 style="text-align:center;margin-bottom:20px;color:#222;">
-    About Us
-  </h1>
-  <p>
-    We are a passionate <strong>web tools and games development team</strong> dedicated to building
-    simple, reliable, and genuinely useful online experiences for everyday users. This platform is
-    independently developed and managed by <strong>Syed Ismail</strong>, with a strong commitment to
-    quality content, original development, and long-term user value.
-  </p>
-  <p>
-    Our mission is to provide free, accessible, and practical tools and games that bring people
-    together — whether for fun, learning, or productivity. We design every product to be intuitive,
-    safe, and suitable for users of all age groups, including students, families, educators, and
-    working professionals.
-  </p>
-  <p>
-    The <strong>Charades Generator</strong> is one of our flagship tools, created to offer an engaging
-    and inclusive group game experience with no downloads, no sign-ups, and no complicated setup. It is
-    designed to encourage creativity, communication, and meaningful social interaction through clear
-    gameplay and thoughtfully curated word categories.
-  </p>
-  <p>
-    We are committed to <strong>original content creation</strong>. Every tool and game on this
-    platform is built in-house, thoroughly tested, and regularly updated to ensure accuracy, relevance,
-    and a positive experience. We do not promote misleading, harmful, or deceptive material of any
-    kind.
-  </p>
-  <p>
-    <strong>User privacy and transparency</strong> are core values we uphold. We do not collect,
-    sell, or misuse personal data. We are fully transparent about how our website operates through our
-    dedicated <strong>Privacy Policy</strong>, <strong>Terms &amp; Conditions</strong>, and
-    <strong>Disclaimer</strong> pages, which we encourage all visitors to read.
-  </p>
-  <p>
-    We also comply with applicable advertising and content guidelines to maintain a safe, respectful,
-    and trustworthy environment for all users. Our website is regularly reviewed to meet evolving web
-    standards and best practices.
-  </p>
-  <p>
-    Our long-term vision is to expand our collection of web-based tools and interactive experiences
-    that support <strong>learning, entertainment, and everyday creativity</strong>. We are continuously
-    improving existing features and exploring new ideas based on user feedback and real-world needs.
-  </p>
-  <p>
-    Thank you for visiting. If you have any questions, suggestions, or feedback, please do not hesitate
-    to reach out to us through our <strong>Contact</strong> page. We value every interaction and strive
-    to respond promptly.
-  </p>
-</section>
+    <!-- HERO -->
+    <div class="about-hero fade-up">
+      <span class="eyebrow">Who We Are</span>
+      <h1>Built for People,<br>Powered by Play</h1>
+      <p class="lead">We create free, simple, and genuinely fun web tools that bring people together — no downloads, no sign-ups, just good times.</p>
+    </div>
+
+    <div class="about-divider"></div>
+
+    <!-- STATS -->
+    <div class="about-stats">
+      <div class="stat-card fade-up">
+        <div class="stat-num">6+</div>
+        <div class="stat-label">Game Categories</div>
+      </div>
+      <div class="stat-card fade-up">
+        <div class="stat-num">100%</div>
+        <div class="stat-label">Free to Play</div>
+      </div>
+      <div class="stat-card fade-up">
+        <div class="stat-num">All Ages</div>
+        <div class="stat-label">Family Friendly</div>
+      </div>
+    </div>
+
+    <!-- VALUES -->
+    <div class="about-values">
+      <div class="value-card fade-up">
+        <span class="value-icon">🎯</span>
+        <p class="value-title">Original & In-House</p>
+        <p class="value-desc">Every tool is built from scratch, thoroughly tested, and regularly updated — no shortcuts, no borrowed content.</p>
+      </div>
+      <div class="value-card fade-up">
+        <span class="value-icon">🔒</span>
+        <p class="value-title">Privacy First</p>
+        <p class="value-desc">We don't collect, sell, or misuse your personal data. Full transparency through our Privacy Policy.</p>
+      </div>
+      <div class="value-card fade-up">
+        <span class="value-icon">👨‍👩‍👧</span>
+        <p class="value-title">Safe for Everyone</p>
+        <p class="value-desc">Designed for students, families, educators, and professionals — clean, inclusive, and age-appropriate.</p>
+      </div>
+      <div class="value-card fade-up">
+        <span class="value-icon">🚀</span>
+        <p class="value-title">Always Improving</p>
+        <p class="value-desc">We actively listen to feedback and keep evolving our tools to meet real-world needs and web standards.</p>
+      </div>
+    </div>
+
+    <!-- STORY -->
+    <div class="about-story fade-up">
+      <h2>Our Story</h2>
+      <p>
+        We are a passionate <strong>web tools and games development team</strong> dedicated to building simple, reliable, and genuinely useful online experiences. This platform is independently developed and managed by <strong>Syed Ismail</strong>, with a strong commitment to quality content, original development, and long-term user value.
+      </p>
+
+      <div class="about-quote">
+        <p>"Our mission is to provide free, accessible tools that bring people together — whether for fun, learning, or everyday creativity."</p>
+      </div>
+
+      <p>
+        The <strong>Charades Generator</strong> is our flagship tool — an engaging group game experience with no complicated setup. It encourages creativity, communication, and meaningful social interaction through thoughtfully curated word categories that work for every occasion.
+      </p>
+      <p>
+        We also comply with all applicable advertising and content guidelines to maintain a safe, respectful, and trustworthy environment. Our long-term vision is to expand our collection of interactive experiences that support <strong>learning, entertainment, and everyday creativity</strong>.
+      </p>
+    </div>
+
+    <!-- CTA -->
+    <div class="about-cta fade-up">
+      <h3>Got a Question or Idea?</h3>
+      <p>We value every interaction and strive to respond promptly. Reach out — we'd love to hear from you.</p>
+      <a href="contact-us.html">Contact Us →</a>
+    </div>
+
+  </div>
 </main>
 
 <!-- COMMON FOOTER -->
@@ -122,9 +384,14 @@
     <a href="terms-and-conditions.html">Terms & Conditions</a>
     <a href="disclaimer.html">Disclaimer</a>
   </div>
-
   <p>© CharadeGenerator 2026</p>
 </footer>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('navMobile').classList.toggle('open');
+  }
+</script>
 
 </body>
 </html>
