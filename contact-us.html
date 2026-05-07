@@ -4,38 +4,292 @@
   <meta charset="UTF-8">
   <title>Contact Us | Charade Generator</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Standard favicon -->
-<link rel="icon" type="image/x-icon" href="/assests/favicon.ico">
 
-<!-- PNG favicons -->
-<link rel="icon" type="image/png" sizes="16x16" href="/assests/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/assests/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="48x48" href="/assests/favicon-48x48.png">
-
-<!-- Apple Touch Icons -->
-<link rel="apple-touch-icon" sizes="180x180" href="/assests/apple-touch-icon-180x180.png">
-<link rel="apple-touch-icon" href="/assests/apple-touch-icon.png">
-
-<!-- Android Icons -->
-<link rel="icon" type="image/png" sizes="192x192" href="/assests/android-chrome-192x192.png">
-<link rel="icon" type="image/png" sizes="512x512" href="/assests/android-chrome-512x512.png">
+  <link rel="icon" type="image/x-icon" href="/assests/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assests/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assests/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assests/favicon-48x48.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assests/apple-touch-icon-180x180.png">
+  <link rel="apple-touch-icon" href="/assests/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assests/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assests/android-chrome-512x512.png">
 
   <meta name="description" content="Contact Charade Generator for feedback, suggestions, or support.">
 
   <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    .contact-wrapper {
+      max-width: 860px;
+      margin: 60px auto;
+      padding: 0 20px 60px;
+      font-family: 'DM Sans', system-ui, sans-serif;
+    }
+
+    /* HERO */
+    .contact-hero {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .contact-hero .eyebrow {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #6366f1;
+      background: #e0e7ff;
+      padding: 5px 14px;
+      border-radius: 999px;
+      margin-bottom: 18px;
+    }
+
+    .contact-hero h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(32px, 6vw, 50px);
+      color: #0f172a;
+      margin: 0 0 14px;
+      line-height: 1.15;
+    }
+
+    .contact-hero .lead {
+      font-size: 17px;
+      color: #64748b;
+      max-width: 520px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    .about-divider {
+      width: 56px;
+      height: 3px;
+      background: #6366f1;
+      border-radius: 2px;
+      margin: 36px auto 48px;
+    }
+
+    /* EMAIL HIGHLIGHT */
+    .contact-email-card {
+      background: #0f172a;
+      border-radius: 18px;
+      padding: 36px 40px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .contact-email-card .email-label {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #94a3b8;
+      margin-bottom: 10px;
+    }
+
+    .contact-email-card a {
+      display: inline-block;
+      font-size: clamp(18px, 3.5vw, 26px);
+      font-family: 'Playfair Display', serif;
+      color: #a5b4fc;
+      text-decoration: none;
+      font-weight: 700;
+      margin-bottom: 14px;
+      word-break: break-all;
+      transition: color 0.2s;
+    }
+
+    .contact-email-card a:hover {
+      color: #fff;
+    }
+
+    .contact-email-card .reply-badge {
+      display: inline-block;
+      background: #1e293b;
+      color: #6ee7b7;
+      font-size: 13px;
+      font-weight: 500;
+      padding: 6px 16px;
+      border-radius: 999px;
+    }
+
+    /* TWO COL LAYOUT */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    /* INFO CARD */
+    .contact-info-card {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 28px 26px;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .contact-info-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(99,102,241,0.10);
+      border-color: #c7d2fe;
+    }
+
+    .contact-info-card .card-icon {
+      font-size: 28px;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .contact-info-card h3 {
+      font-size: 16px;
+      font-weight: 600;
+      color: #1e293b;
+      margin: 0 0 8px;
+    }
+
+    .contact-info-card p {
+      font-size: 14px;
+      color: #64748b;
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    /* REASONS LIST */
+    .contact-reasons {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 30px 32px;
+      margin-bottom: 40px;
+    }
+
+    .contact-reasons h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      color: #0f172a;
+      margin: 0 0 20px;
+    }
+
+    .reasons-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .reason-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      color: #475569;
+      line-height: 1.6;
+    }
+
+    .reason-dot {
+      width: 8px;
+      height: 8px;
+      min-width: 8px;
+      background: #6366f1;
+      border-radius: 50%;
+      margin-top: 6px;
+    }
+
+    /* TIP BANNER */
+    .contact-tip {
+      border-left: 4px solid #6366f1;
+      background: #f5f3ff;
+      border-radius: 0 12px 12px 0;
+      padding: 18px 22px;
+      margin-bottom: 40px;
+    }
+
+    .contact-tip p {
+      font-size: 14px;
+      color: #3730a3;
+      margin: 0;
+      line-height: 1.7;
+    }
+
+    .contact-tip strong {
+      color: #312e81;
+    }
+
+    /* TRUST STRIP */
+    .contact-trust {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .trust-item {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 18px 16px;
+      text-align: center;
+    }
+
+    .trust-item .t-icon {
+      font-size: 22px;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .trust-item p {
+      font-size: 13px;
+      color: #64748b;
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .trust-item strong {
+      display: block;
+      font-size: 14px;
+      color: #1e293b;
+      margin-bottom: 4px;
+    }
+
+    /* Animations */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(18px);
+      animation: fadeUp 0.5s ease forwards;
+    }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-up:nth-child(1) { animation-delay: 0.05s; }
+    .fade-up:nth-child(2) { animation-delay: 0.12s; }
+    .fade-up:nth-child(3) { animation-delay: 0.18s; }
+    .fade-up:nth-child(4) { animation-delay: 0.24s; }
+    .fade-up:nth-child(5) { animation-delay: 0.30s; }
+
+    @media (max-width: 600px) {
+      .contact-grid { grid-template-columns: 1fr; }
+      .reasons-grid { grid-template-columns: 1fr; }
+      .contact-trust { grid-template-columns: 1fr 1fr; }
+      .contact-email-card { padding: 26px 18px; }
+      .contact-reasons { padding: 22px 18px; }
+    }
+  </style>
 </head>
 <body>
 
 <!-- COMMON HEADER -->
 <header class="header">
   <div class="header-inner">
-<div class="logo">
-  <a href="https://charadegenerator.com/" class="logo-link">
-    🎭 <strong>Charades</strong>Generator
-  </a>
-</div>    
+    <div class="logo">
+      <a href="https://charadegenerator.com/" class="logo-link">
+        🎭 <strong>Charades</strong>Generator
+      </a>
+    </div>
     <button class="menu-btn" onclick="toggleMenu()">☰</button>
-
     <nav class="nav-desktop">
       <a href="kids-charade-generator.html"><button>Kids Charades</button></a>
       <a href="movie-charades.html"><button>Movie Charades</button></a>
@@ -45,7 +299,6 @@
       <a href="islamic-charades.html"><button>Islamic Charades</button></a>
     </nav>
   </div>
-
   <nav id="navMobile" class="nav-mobile">
     <a href="kids-charade-generator.html"><button>Kids Charades</button></a>
     <a href="movie-charades.html"><button>Movie Charades</button></a>
@@ -57,58 +310,77 @@
 </header>
 
 <main class="main">
-<section style="max-width:850px;margin:40px auto;padding:0 16px;line-height:1.8;font-family:system-ui,Arial;color:#444;">
-  
-<h1 style="text-align:center;margin-bottom:20px;color:#222;">
-    Contact Us
-  </h1>
-  <p>
-    We genuinely value every visitor and user of our platform. Whether you have a question about one
-    of our tools, want to report a technical issue, or simply wish to share your thoughts, we
-    encourage you to get in touch. Your feedback plays an important role in helping us improve and
-    grow.
-  </p>
-  <p>
-    This platform is independently developed and managed by <strong>Syed Ismail</strong>. We are
-    committed to responding to all genuine inquiries in a timely, respectful, and helpful manner.
-    We treat every message seriously and aim to reply within <strong>1–3 business days</strong>.
-  </p>
-  <p>
-    You can reach us directly via email at:
-  </p>
-  <p style="font-weight:600;">
-    📧 Email:
-    <a href="mailto:isyed486@gmail.com" style="color:#2563eb;text-decoration:none;">
-      isyed486@gmail.com
-    </a>
-  </p>
-  <p>
-    Please feel free to contact us for any of the following reasons:
-  </p>
-  <ul style="padding-left:20px;">
-    <li>General questions about our tools, games, or website content</li>
-    <li>Technical issues, bugs, or unexpected behavior on our platform</li>
-    <li>Suggestions for new features, improvements, or content ideas</li>
-    <li>Concerns related to content accuracy or appropriateness</li>
-    <li>Advertising, partnership, or collaboration inquiries</li>
-    <li>Privacy-related requests or data concerns</li>
-  </ul>
-  <p>
-    To help us assist you more efficiently, please include a clear description of your query when
-    writing to us. If you are reporting a technical issue, kindly mention the device and browser
-    you are using so we can investigate and resolve it faster.
-  </p>
-  <p>
-    We are fully committed to maintaining <strong>transparency, user trust, and a safe browsing
-    environment</strong> for all visitors. We do not engage in spam, unsolicited outreach, or
-    misuse of any information shared through our contact channels.
-  </p>
-  <p>
-    For further information about how we collect, use, and protect your data, please review our
-    <strong>Privacy Policy</strong>. For details about acceptable use of our platform, see our
-    <strong>Terms &amp; Conditions</strong> and <strong>Disclaimer</strong> pages.
-  </p>
-</section>
+  <div class="contact-wrapper">
+
+    <!-- HERO -->
+    <div class="contact-hero fade-up">
+      <span class="eyebrow">Get In Touch</span>
+      <h1>We'd Love to<br>Hear From You</h1>
+      <p class="lead">Questions, bug reports, ideas, or just a hello — every message matters and we read each one personally.</p>
+    </div>
+
+    <div class="about-divider"></div>
+
+    <!-- EMAIL CARD -->
+    <div class="contact-email-card fade-up">
+      <p class="email-label">📧 Reach us directly</p>
+      <a href="mailto:isyed486@gmail.com">isyed486@gmail.com</a>
+      <br>
+      <span class="reply-badge">✓ Replies within 1–3 business days</span>
+    </div>
+
+    <!-- TWO INFO CARDS -->
+    <div class="contact-grid fade-up">
+      <div class="contact-info-card">
+        <span class="card-icon">🙋</span>
+        <h3>Personal & Prompt</h3>
+        <p>This platform is independently managed by <strong>Syed Ismail</strong>. Every message is read personally — you're not talking to a bot.</p>
+      </div>
+      <div class="contact-info-card">
+        <span class="card-icon">🔐</span>
+        <h3>Private & Secure</h3>
+        <p>We don't spam, share, or misuse any information you send us. Your message stays between us, period.</p>
+      </div>
+    </div>
+
+    <!-- REASONS -->
+    <div class="contact-reasons fade-up">
+      <h2>What Can You Contact Us About?</h2>
+      <div class="reasons-grid">
+        <div class="reason-item"><span class="reason-dot"></span>General questions about our tools or games</div>
+        <div class="reason-item"><span class="reason-dot"></span>Technical bugs or unexpected behaviour</div>
+        <div class="reason-item"><span class="reason-dot"></span>Feature suggestions or content ideas</div>
+        <div class="reason-item"><span class="reason-dot"></span>Content accuracy or appropriateness concerns</div>
+        <div class="reason-item"><span class="reason-dot"></span>Advertising, partnership, or collaboration</div>
+        <div class="reason-item"><span class="reason-dot"></span>Privacy-related requests or data concerns</div>
+      </div>
+    </div>
+
+    <!-- TIP -->
+    <div class="contact-tip fade-up">
+      <p><strong>Tip for faster replies:</strong> Include a clear description of your query. If reporting a bug, mention your device and browser so we can investigate and fix it faster.</p>
+    </div>
+
+    <!-- TRUST STRIP -->
+    <div class="contact-trust fade-up">
+      <div class="trust-item">
+        <span class="t-icon">📄</span>
+        <strong>Privacy Policy</strong>
+        <p>How we handle your data</p>
+      </div>
+      <div class="trust-item">
+        <span class="t-icon">📋</span>
+        <strong>Terms & Conditions</strong>
+        <p>Acceptable use guidelines</p>
+      </div>
+      <div class="trust-item">
+        <span class="t-icon">⚠️</span>
+        <strong>Disclaimer</strong>
+        <p>Platform limitations</p>
+      </div>
+    </div>
+
+  </div>
 </main>
 
 <!-- COMMON FOOTER -->
@@ -122,6 +394,12 @@
   </div>
   <p>© CharadeGenerator 2026</p>
 </footer>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('navMobile').classList.toggle('open');
+  }
+</script>
 
 </body>
 </html>
