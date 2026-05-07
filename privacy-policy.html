@@ -4,37 +4,333 @@
   <meta charset="UTF-8">
   <title>Privacy Policy | Charade Generator</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Standard favicon -->
-<link rel="icon" type="image/x-icon" href="/assests/favicon.ico">
 
-<!-- PNG favicons -->
-<link rel="icon" type="image/png" sizes="16x16" href="/assests/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/assests/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="48x48" href="/assests/favicon-48x48.png">
-
-<!-- Apple Touch Icons -->
-<link rel="apple-touch-icon" sizes="180x180" href="/assests/apple-touch-icon-180x180.png">
-<link rel="apple-touch-icon" href="/assests/apple-touch-icon.png">
-
-<!-- Android Icons -->
-<link rel="icon" type="image/png" sizes="192x192" href="/assests/android-chrome-192x192.png">
-<link rel="icon" type="image/png" sizes="512x512" href="/assests/android-chrome-512x512.png">
+  <link rel="icon" type="image/x-icon" href="/assests/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assests/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assests/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assests/favicon-48x48.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assests/apple-touch-icon-180x180.png">
+  <link rel="apple-touch-icon" href="/assests/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assests/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assests/android-chrome-512x512.png">
 
   <meta name="description" content="Privacy policy for Charade Generator explaining how user data is handled.">
 
   <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    .pp-wrapper {
+      max-width: 860px;
+      margin: 60px auto;
+      padding: 0 20px 60px;
+      font-family: 'DM Sans', system-ui, sans-serif;
+    }
+
+    /* HERO */
+    .pp-hero {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .pp-hero .eyebrow {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #6366f1;
+      background: #e0e7ff;
+      padding: 5px 14px;
+      border-radius: 999px;
+      margin-bottom: 18px;
+    }
+
+    .pp-hero h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(32px, 6vw, 50px);
+      color: #0f172a;
+      margin: 0 0 14px;
+      line-height: 1.15;
+    }
+
+    .pp-hero .lead {
+      font-size: 16px;
+      color: #64748b;
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    .pp-divider {
+      width: 56px;
+      height: 3px;
+      background: #6366f1;
+      border-radius: 2px;
+      margin: 36px auto 48px;
+    }
+
+    /* SUMMARY STRIP */
+    .pp-summary {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 40px;
+    }
+
+    .pp-sum-card {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 18px 14px;
+      text-align: center;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .pp-sum-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(99,102,241,0.10);
+      border-color: #c7d2fe;
+    }
+
+    .pp-sum-card .s-icon {
+      font-size: 24px;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .pp-sum-card strong {
+      display: block;
+      font-size: 13px;
+      color: #1e293b;
+      margin-bottom: 4px;
+    }
+
+    .pp-sum-card p {
+      font-size: 12px;
+      color: #64748b;
+      margin: 0;
+      line-height: 1.45;
+    }
+
+    /* INTRO BANNER */
+    .pp-intro {
+      background: #0f172a;
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin-bottom: 32px;
+      color: #cbd5e1;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .pp-intro strong {
+      color: #a5b4fc;
+    }
+
+    /* SECTION CARD */
+    .pp-card {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin-bottom: 20px;
+      transition: box-shadow 0.2s;
+    }
+
+    .pp-card:hover {
+      box-shadow: 0 4px 20px rgba(99,102,241,0.08);
+      border-color: #c7d2fe;
+    }
+
+    .pp-card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .pp-card-icon {
+      width: 40px;
+      height: 40px;
+      min-width: 40px;
+      background: #e0e7ff;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+
+    .pp-card h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 19px;
+      color: #0f172a;
+      margin: 0;
+      font-weight: 700;
+    }
+
+    .pp-card p {
+      font-size: 14px;
+      color: #475569;
+      line-height: 1.8;
+      margin: 0 0 12px;
+    }
+
+    .pp-card p:last-child { margin-bottom: 0; }
+
+    .pp-card strong { color: #1e293b; font-weight: 600; }
+
+    /* LIST INSIDE CARD */
+    .pp-card ul {
+      padding-left: 0;
+      list-style: none;
+      margin: 0 0 12px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .pp-card ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 14px;
+      color: #475569;
+      line-height: 1.6;
+    }
+
+    .pp-card ul li::before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      min-width: 7px;
+      background: #6366f1;
+      border-radius: 50%;
+      margin-top: 7px;
+    }
+
+    .pp-card ul.single-col {
+      grid-template-columns: 1fr;
+    }
+
+    /* EXTERNAL LINKS */
+    .pp-link {
+      color: #6366f1;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid #c7d2fe;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .pp-link:hover {
+      color: #4f46e5;
+      border-color: #6366f1;
+    }
+
+    /* OPT-OUT STRIP */
+    .pp-optout {
+      background: #f5f3ff;
+      border: 1px solid #c7d2fe;
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-top: 12px;
+      font-size: 13px;
+      color: #3730a3;
+      line-height: 1.65;
+    }
+
+    .pp-optout a {
+      color: #6366f1;
+      font-weight: 500;
+      text-decoration: none;
+      border-bottom: 1px solid #c7d2fe;
+    }
+
+    .pp-optout a:hover { color: #4f46e5; }
+
+    /* EMAIL CTA */
+    .pp-email {
+      background: #f5f3ff;
+      border: 1px solid #c7d2fe;
+      border-radius: 14px;
+      padding: 24px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .pp-email p {
+      margin: 0;
+      font-size: 15px;
+      color: #3730a3;
+    }
+
+    .pp-email a.email-btn {
+      display: inline-block;
+      padding: 11px 22px;
+      background: #6366f1;
+      color: #fff;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 14px;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .pp-email a.email-btn:hover {
+      background: #4f46e5;
+      transform: translateY(-1px);
+    }
+
+    /* Animations */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(18px);
+      animation: fadeUp 0.5s ease forwards;
+    }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-up:nth-child(1)  { animation-delay: 0.04s; }
+    .fade-up:nth-child(2)  { animation-delay: 0.08s; }
+    .fade-up:nth-child(3)  { animation-delay: 0.12s; }
+    .fade-up:nth-child(4)  { animation-delay: 0.16s; }
+    .fade-up:nth-child(5)  { animation-delay: 0.20s; }
+    .fade-up:nth-child(6)  { animation-delay: 0.24s; }
+    .fade-up:nth-child(7)  { animation-delay: 0.28s; }
+    .fade-up:nth-child(8)  { animation-delay: 0.32s; }
+    .fade-up:nth-child(9)  { animation-delay: 0.36s; }
+    .fade-up:nth-child(10) { animation-delay: 0.40s; }
+    .fade-up:nth-child(11) { animation-delay: 0.44s; }
+    .fade-up:nth-child(12) { animation-delay: 0.48s; }
+
+    @media (max-width: 640px) {
+      .pp-summary { grid-template-columns: 1fr 1fr; }
+      .pp-card ul { grid-template-columns: 1fr; }
+      .pp-card { padding: 22px 18px; }
+      .pp-intro { padding: 22px 18px; }
+      .pp-email { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
 </head>
 <body>
 
 <!-- COMMON HEADER -->
 <header class="header">
   <div class="header-inner">
-<div class="logo">
-  <a href="https://charadegenerator.com/" class="logo-link">
-    🎭 <strong>Charades</strong>Generator
-  </a>
-</div>    <button class="menu-btn" onclick="toggleMenu()">☰</button>
-
+    <div class="logo">
+      <a href="https://charadegenerator.com/" class="logo-link">
+        🎭 <strong>Charades</strong>Generator
+      </a>
+    </div>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
     <nav class="nav-desktop">
       <a href="kids-charade-generator.html"><button>Kids Charades</button></a>
       <a href="movie-charades.html"><button>Movie Charades</button></a>
@@ -44,7 +340,6 @@
       <a href="islamic-charades.html"><button>Islamic Charades</button></a>
     </nav>
   </div>
-
   <nav id="navMobile" class="nav-mobile">
     <a href="kids-charade-generator.html"><button>Kids Charades</button></a>
     <a href="movie-charades.html"><button>Movie Charades</button></a>
@@ -56,165 +351,170 @@
 </header>
 
 <main class="main">
-<section style="max-width:850px;margin:40px auto;padding:0 16px;line-height:1.8;font-family:system-ui,Arial;color:#444;">
+  <div class="pp-wrapper">
 
-<h1 style="text-align:center;margin-bottom:20px;color:#222;">
-    Privacy Policy
-  </h1>
-  <p>
-    At <strong>Charades Generator</strong>, your privacy is a priority. This Privacy Policy
-    outlines in detail how we collect, use, store, and protect information when you visit or
-    interact with our website. We encourage you to read this page carefully. By continuing to
-    use our website, you acknowledge and agree to the practices described below.
-  </p>
-  <p>
-    This policy applies to all pages, tools, games, and content hosted on the Charades Generator
-    website. It does not apply to any third-party websites that may be linked from our platform.
-  </p>
+    <!-- HERO -->
+    <div class="pp-hero fade-up">
+      <span class="eyebrow">Legal</span>
+      <h1>Privacy Policy</h1>
+      <p class="lead">Your privacy matters. Here's exactly how we collect, use, and protect your information when you visit Charades Generator.</p>
+    </div>
 
-  <h2 style="margin-top:30px;color:#222;">Information We Collect</h2>
-  <p>
-    We do not require users to register, create an account, or submit any personal details to
-    use our tools and games. However, certain non-personal information may be collected
-    automatically when you visit our website, including:
-  </p>
-  <ul style="padding-left:20px;">
-    <li>Browser type and version</li>
-    <li>Device type and operating system</li>
-    <li>IP address (in anonymized form)</li>
-    <li>Pages visited and time spent on the website</li>
-    <li>Referring website or source</li>
-    <li>General geographic location (country or region level only)</li>
-  </ul>
-  <p>
-    This data is collected in aggregate and is used solely to monitor website performance,
-    identify technical issues, and improve the overall user experience.
-  </p>
+    <div class="pp-divider"></div>
 
-  <h2 style="margin-top:30px;color:#222;">Cookies and Tracking Technologies</h2>
-  <p>
-    We use cookies and similar web technologies to enhance your browsing experience, analyze
-    traffic patterns, and understand how users interact with our content. Cookies are small text
-    files stored on your device and do not contain personally identifiable information.
-  </p>
-  <p>
-    You can choose to disable cookies through your browser settings at any time. Please note
-    that disabling cookies may affect the functionality of certain features on our website.
-  </p>
-  <p>
-    Third-party services, including advertising partners such as <strong>Google AdSense</strong>,
-    may also set cookies on your device to deliver relevant advertisements based on your browsing
-    history and interests.
-  </p>
+    <!-- SUMMARY STRIP -->
+    <div class="pp-summary fade-up">
+      <div class="pp-sum-card">
+        <span class="s-icon">🚫</span>
+        <strong>No Sign-Up</strong>
+        <p>No account or personal details required to use our tools.</p>
+      </div>
+      <div class="pp-sum-card">
+        <span class="s-icon">🔒</span>
+        <strong>Not Sold</strong>
+        <p>We never sell or trade your data to third parties.</p>
+      </div>
+      <div class="pp-sum-card">
+        <span class="s-icon">👧</span>
+        <strong>Child Safe</strong>
+        <p>We don't knowingly collect data from under-13s.</p>
+      </div>
+      <div class="pp-sum-card">
+        <span class="s-icon">🔄</span>
+        <strong>Updated</strong>
+        <p>Policy may change — check back periodically.</p>
+      </div>
+    </div>
 
-  <h2 style="margin-top:30px;color:#222;">Google AdSense and Advertising</h2>
-  <p>
-    Charades Generator participates in the <strong>Google AdSense</strong> program to display
-    advertisements on our website. Google, as a third-party advertising vendor, uses cookies —
-    including the DoubleClick cookie — to serve ads based on a user's prior visits to this
-    website and other websites across the internet.
-  </p>
-  <p>
-    Google's use of advertising cookies enables it and its partners to serve ads to our users
-    based on their visit to our site and/or other sites on the internet. Users may opt out of
-    personalized advertising at any time by visiting
-    <a href="https://www.google.com/settings/ads" style="color:#2563eb;text-decoration:none;" target="_blank" rel="noopener noreferrer">
-      Google's Ad Settings
-    </a>.
-    Alternatively, users can opt out of third-party vendor cookies by visiting
-    <a href="https://www.networkadvertising.org/choices/" style="color:#2563eb;text-decoration:none;" target="_blank" rel="noopener noreferrer">
-      Network Advertising Initiative opt-out page
-    </a>.
-  </p>
-  <p>
-    We do not have access to or control over the cookies used by Google or other third-party
-    advertisers. For more details, please review
-    <a href="https://policies.google.com/privacy" style="color:#2563eb;text-decoration:none;" target="_blank" rel="noopener noreferrer">
-      Google's Privacy Policy
-    </a>.
-  </p>
+    <!-- INTRO BANNER -->
+    <div class="pp-intro fade-up">
+      At <strong>Charades Generator</strong>, your privacy is a priority. This policy outlines how we collect, use, store, and protect information when you visit our website. By continuing to use our website, you acknowledge and agree to the practices described below. This policy applies to all pages, tools, and games hosted on Charades Generator and does not apply to any third-party websites linked from our platform.
+    </div>
 
-  <h2 style="margin-top:30px;color:#222;">How We Use Collected Information</h2>
-  <p>
-    Any information we collect is used exclusively for the following purposes:
-  </p>
-  <ul style="padding-left:20px;">
-    <li>To maintain, operate, and improve our website and tools</li>
-    <li>To analyze usage trends and optimize performance</li>
-    <li>To detect and resolve technical issues or bugs</li>
-    <li>To ensure the security and integrity of our platform</li>
-    <li>To comply with applicable legal obligations</li>
-  </ul>
-  <p>
-    We do <strong>not</strong> sell, trade, rent, or otherwise transfer any user information to
-    third parties for commercial purposes.
-  </p>
+    <!-- Information We Collect -->
+    <div class="pp-card fade-up">
+      <div class="pp-card-header">
+        <div class="pp-card-icon">📊</div>
+        <h2>Information We Collect</h2>
+      </div>
+      <p>We do not require users to register or submit personal details. However, certain non-personal information may be collected automatically when you visit:</p>
+      <ul>
+        <li>Browser type and version</li>
+        <li>Device type and operating system</li>
+        <li>IP address (anonymized)</li>
+        <li>Pages visited and time spent</li>
+        <li>Referring website or source</li>
+        <li>General geographic location (country/region only)</li>
+      </ul>
+      <p>This data is collected in aggregate and used solely to monitor performance, identify issues, and improve the user experience.</p>
+    </div>
 
-  <h2 style="margin-top:30px;color:#222;">Third-Party Links</h2>
-  <p>
-    Our website may occasionally contain links to external third-party websites for reference or
-    informational purposes. These websites operate independently and are governed by their own
-    privacy policies. We are not responsible for the content, security, or privacy practices of
-    any third-party websites. We strongly encourage users to review the privacy policy of every
-    external website they visit.
-  </p>
+    <!-- Cookies -->
+    <div class="pp-card fade-up">
+      <div class="pp-card-header">
+        <div class="pp-card-icon">🍪</div>
+        <h2>Cookies and Tracking Technologies</h2>
+      </div>
+      <p>We use cookies and similar technologies to enhance your browsing experience, analyze traffic, and understand how users interact with our content. Cookies are small text files stored on your device and do not contain personally identifiable information.</p>
+      <p>You can disable cookies through your browser settings at any time. Note that doing so may affect certain features on our website.</p>
+      <p>Third-party services, including <strong>Google AdSense</strong>, may also set cookies on your device to deliver relevant advertisements based on your browsing history and interests.</p>
+    </div>
 
-  <h2 style="margin-top:30px;color:#222;">Children's Privacy</h2>
-  <p>
-    Protecting the privacy of children is of utmost importance to us. Charades Generator is
-    designed to be family-friendly and safe for all age groups. However, our website does not
-    knowingly collect any personally identifiable information from children under the age of
-    <strong>13</strong>.
-  </p>
-  <p>
-    If you are a parent or guardian and believe that your child has inadvertently provided
-    personal information on our website, please contact us immediately at the email address
-    provided below. We will take prompt steps to remove such information from our records.
-  </p>
+    <!-- Google AdSense -->
+    <div class="pp-card fade-up">
+      <div class="pp-card-header">
+        <div class="pp-card-icon">📢</div>
+        <h2>Google AdSense and Advertising</h2>
+      </div>
+      <p>Charades Generator participates in the <strong>Google AdSense</strong> program. Google, as a third-party advertising vendor, uses cookies — including the DoubleClick cookie — to serve ads based on a user's prior visits to this and other websites.</p>
+      <p>We do not have access to or control over the cookies used by Google or other third-party advertisers.</p>
+      <div class="pp-optout">
+        🔧 <strong>Opt out of personalized ads:</strong><br>
+        Visit <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer">Google's Ad Settings</a> or the <a href="https://www.networkadvertising.org/choices/" target="_blank" rel="noopener noreferrer">Network Advertising Initiative opt-out page</a>. For more details, see <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a>.
+      </div>
+    </div>
 
-  <h2 style="margin-top:30px;color:#222;">Data Security</h2>
-  <p>
-    We take reasonable technical and organizational precautions to protect any information
-    associated with the use of our website. While no method of data transmission over the
-    internet is 100% secure, we are committed to maintaining appropriate safeguards and
-    continuously reviewing our security practices.
-  </p>
+    <!-- How We Use Info -->
+    <div class="pp-card fade-up">
+      <div class="pp-card-header">
+        <div class="pp-card-icon">⚙️</div>
+        <h2>How We Use Collected Information</h2>
+      </div>
+      <p>Any information we collect is used exclusively for:</p>
+      <ul class="single-col">
+        <li>To maintain, operate, and improve our website and tools</li>
+        <li>To analyze usage trends and optimize performance</li>
+        <li>To detect and resolve technical issues or bugs</li>
+        <li>To ensure the security and integrity of our platform</li>
+        <li>To comply with applicable legal obligations</li>
+      </ul>
+      <p>We do <strong>not</strong> sell, trade, rent, or otherwise transfer any user information to third parties for commercial purposes.</p>
+    </div>
 
-  <h2 style="margin-top:30px;color:#222;">Your Rights</h2>
-  <p>
-    Depending on your location, you may have certain rights regarding your personal data,
-    including the right to access, correct, or request deletion of information associated with
-    your use of our website. To exercise any of these rights, please contact us using the
-    details provided below.
-  </p>
+    <!-- Third-Party Links -->
+    <div class="pp-card fade-up">
+      <div class="pp-card-header">
+        <div class="pp-card-icon">🔗</div>
+        <h2>Third-Party Links</h2>
+      </div>
+      <p>Our website may occasionally contain links to external third-party websites for reference or informational purposes. These websites operate independently under their own privacy policies. We are not responsible for the content, security, or privacy practices of any third-party websites and strongly encourage users to review them before engaging.</p>
+    </div>
 
-  <h2 style="margin-top:30px;color:#222;">Changes to This Privacy Policy</h2>
-  <p>
-    We reserve the right to update or revise this Privacy Policy at any time to reflect changes
-    in our practices, legal requirements, or website functionality. Any updates will be posted
-    on this page and will take effect immediately upon publication. We encourage you to revisit
-    this page periodically to stay informed about how we protect your information.
-  </p>
+    <!-- Children's Privacy -->
+    <div class="pp-card fade-up">
+      <div class="pp-card-header">
+        <div class="pp-card-icon">👧</div>
+        <h2>Children's Privacy</h2>
+      </div>
+      <p>Protecting children's privacy is of utmost importance to us. Charades Generator is designed to be family-friendly and safe for all age groups. However, our website does not knowingly collect any personally identifiable information from children under the age of <strong>13</strong>.</p>
+      <p>If you are a parent or guardian and believe your child has inadvertently provided personal information on our website, please contact us immediately. We will take prompt steps to remove such information from our records.</p>
+    </div>
 
-  <h2 style="margin-top:30px;color:#222;">Consent</h2>
-  <p>
-    By using Charades Generator, you hereby consent to this Privacy Policy and agree to its
-    terms in full. If you do not agree with any part of this policy, please discontinue use of
-    our website.
-  </p>
+    <!-- Data Security -->
+    <div class="pp-card fade-up">
+      <div class="pp-card-header">
+        <div class="pp-card-icon">🛡️</div>
+        <h2>Data Security</h2>
+      </div>
+      <p>We take reasonable technical and organizational precautions to protect any information associated with the use of our website. While no method of data transmission over the internet is 100% secure, we are committed to maintaining appropriate safeguards and continuously reviewing our security practices.</p>
+    </div>
 
-  <h2 style="margin-top:30px;color:#222;">Contact Us</h2>
-  <p>
-    If you have any questions, concerns, or requests related to this Privacy Policy or how we
-    handle your information, please reach out to us. We aim to respond to all inquiries within
-    1–3 business days.
-  </p>
-  <p style="font-weight:600;">
-    📧 Email:
-    <a href="mailto:isyed486@gmail.com" style="color:#2563eb;text-decoration:none;">
-      isyed486@gmail.com
-    </a>
-  </p>
+    <!-- Your Rights -->
+    <div class="pp-card fade-up">
+      <div class="pp-card-header">
+        <div class="pp-card-icon">⚖️</div>
+        <h2>Your Rights</h2>
+      </div>
+      <p>Depending on your location, you may have certain rights regarding your personal data — including the right to access, correct, or request deletion of information associated with your use of our website. To exercise any of these rights, please contact us using the details below.</p>
+    </div>
+
+    <!-- Changes -->
+    <div class="pp-card fade-up">
+      <div class="pp-card-header">
+        <div class="pp-card-icon">🔄</div>
+        <h2>Changes to This Privacy Policy</h2>
+      </div>
+      <p>We reserve the right to update or revise this Privacy Policy at any time to reflect changes in our practices, legal requirements, or website functionality. Any updates will be posted on this page and take effect immediately. We encourage you to revisit this page periodically to stay informed.</p>
+    </div>
+
+    <!-- Consent -->
+    <div class="pp-card fade-up">
+      <div class="pp-card-header">
+        <div class="pp-card-icon">✅</div>
+        <h2>Consent</h2>
+      </div>
+      <p>By using Charades Generator, you hereby consent to this Privacy Policy and agree to its terms in full. If you do not agree with any part of this policy, please discontinue use of our website.</p>
+    </div>
+
+    <!-- EMAIL CTA -->
+    <div class="pp-email fade-up">
+      <p>📬 Questions about this Privacy Policy? We aim to reply within 1–3 business days.</p>
+      <a href="mailto:isyed486@gmail.com" class="email-btn">isyed486@gmail.com</a>
+    </div>
+
+  </div>
+</main>
+
 <!-- COMMON FOOTER -->
 <footer class="footer">
   <div class="footer-links">
@@ -226,6 +526,12 @@
   </div>
   <p>© CharadeGenerator 2026</p>
 </footer>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('navMobile').classList.toggle('open');
+  }
+</script>
 
 </body>
 </html>
