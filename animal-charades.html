@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Animal Charades Generator – Free Online Game for Kids & Adults</title>
+  <title>Animal Charades Generator – 100+ Animals to Act Out | Free Online Game</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Free Animal Charades Generator with 100+ animals across 6 categories. Act out farm animals, wild animals, ocean creatures, birds, reptiles and insects. Perfect for kids, families and parties.">
 
-  <!-- Standard favicon -->
+  <!-- Favicons -->
   <link rel="icon" type="image/x-icon" href="/assests/favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="/assests/favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/assests/favicon-32x32.png">
@@ -15,11 +16,292 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/assests/android-chrome-192x192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="/assests/android-chrome-512x512.png">
 
-  <meta name="description" content="Generate fun animal charades online. Act out animals for kids, parties, and families. Free, instant, no signup needed.">
+  <!-- hreflang for language versions -->
+  <link rel="alternate" hreflang="en" href="https://charadegenerator.com/animal-charades.html" />
+  <link rel="alternate" hreflang="hi" href="https://charadegenerator.com/hi/animal-charades.html" />
+  <link rel="alternate" hreflang="ur" href="https://charadegenerator.com/ur/animal-charades.html" />
+
+  <!-- ✅ SCHEMA: WebApplication + FAQPage + BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Animal Charades Generator",
+        "url": "https://charadegenerator.com/animal-charades.html",
+        "description": "Free online animal charades generator with 100+ animals across 6 categories. Perfect for kids, families, classrooms, and parties.",
+        "applicationCategory": "GameApplication",
+        "operatingSystem": "Any",
+        "browserRequirements": "Requires JavaScript. Works on Chrome, Firefox, Safari, Edge.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "CharadeGenerator Team",
+          "url": "https://charadegenerator.com/about-us.html"
+        },
+        "featureList": [
+          "100+ unique animal charade prompts",
+          "6 animal categories: Farm, Wild, Ocean, Birds, Reptiles, Insects",
+          "Kids, Funny, Hard, Party modes",
+          "Full-screen game mode",
+          "Copy to clipboard",
+          "Mobile-friendly"
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is an animal charades generator?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "An animal charades generator is an online tool that randomly selects an animal or animal behaviour for players to act out silently. Other players must guess the animal from the acting alone. This tool has 100+ animal prompts across farm, wild, ocean, bird, reptile, and insect categories."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which animal charades mode is best for young kids?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The Kids mode is best for young children. It only uses familiar animals like dogs, cats, horses, cows, frogs, and birds that children aged 4 and above can easily recognise and act out. All prompts in Kids mode are simple, safe, and fun for early childhood."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is Funny mode in animal charades?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Funny mode generates absurd and comedic animal scenarios such as a penguin trying to fly, a sloth arriving four hours late to a party, a cat knocking everything off a table, or a dog chasing its own tail in circles. These prompts are designed for maximum laughs at adult and teen parties."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What animals are in Hard mode?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Hard mode includes rare and unusual animal behaviours that are difficult to act and identify. Examples include a mantis shrimp punching through glass, a lyrebird mimicking a chainsaw, a platypus detecting electric fields, or an archerfish shooting water jets at insects. These challenge even knowledgeable adults."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How many animal charade ideas does this tool have?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "This animal charades generator has over 100 unique animal prompts across six categories: farm animals, wild animals, ocean creatures, birds, reptiles, and insects. The generator avoids repeats until the entire pool is exhausted."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I use animal charades in a classroom?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Animal charades is an excellent classroom activity. It builds vocabulary, improves physical expression, teaches animal facts, and encourages teamwork. Use Kids mode for primary school and Hard mode for secondary school science classes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does this tool work on mobile phones?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, the animal charades generator is fully mobile-optimised. The Full Screen mode is especially useful when holding your phone up so the actor can see the animal prompt while keeping it hidden from the rest of the group."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://charadegenerator.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Animal Charades",
+            "item": "https://charadegenerator.com/animal-charades.html"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 
   <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* Language Bar */
+    .lang-bar {
+      background: #f0f4ff;
+      border-bottom: 1px solid #dde4f5;
+      padding: 6px 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      font-size: 13px;
+    }
+    .lang-bar span { color: #555; font-weight: 600; }
+    .lang-bar a {
+      text-decoration: none;
+      color: #3b5bdb;
+      padding: 2px 8px;
+      border-radius: 4px;
+      transition: background 0.2s;
+    }
+    .lang-bar a:hover { background: #dde4f5; }
+    .lang-bar a.active { background: #3b5bdb; color: #fff; }
+
+    /* Stats Bar */
+    .stats-bar {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      background: #2f9e44;
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin: 24px 0;
+      color: #fff;
+    }
+    .stat-item { text-align: center; flex: 1; min-width: 100px; }
+    .stat-num { font-size: 28px; font-weight: 700; }
+    .stat-label { font-size: 12px; opacity: .8; margin-top: 2px; }
+
+    /* Word Columns */
+    .word-columns {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .word-col h4 {
+      margin: 0 0 8px;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      color: #2f9e44;
+    }
+    .word-col ul {
+      margin: 0;
+      padding-left: 18px;
+      font-size: 14px;
+      line-height: 1.9;
+      color: #333;
+    }
+
+    /* Tips Grid */
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .tip-card {
+      background: #f0fff4;
+      border-left: 4px solid #2f9e44;
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+    .tip-card h4 { margin: 0 0 6px; font-size: 15px; }
+    .tip-card p { margin: 0; font-size: 13px; color: #555; line-height: 1.6; }
+
+    /* Related Tools */
+    .related-tools {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .rel-card {
+      background: #fff;
+      border: 1px solid #dde4f5;
+      border-radius: 10px;
+      padding: 14px 12px;
+      text-align: center;
+      text-decoration: none;
+      color: #222;
+      font-size: 14px;
+      font-weight: 500;
+      transition: box-shadow 0.2s, transform 0.15s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+    .rel-card:hover {
+      box-shadow: 0 4px 16px rgba(47,158,68,0.15);
+      transform: translateY(-2px);
+    }
+    .rel-card .ri { font-size: 24px; }
+    .rel-card .rn { font-weight: 600; font-size: 13px; }
+
+    /* Difficulty Table */
+    .diff-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      margin-top: 16px;
+    }
+    .diff-table th {
+      background: #2f9e44;
+      color: #fff;
+      padding: 10px 14px;
+      text-align: left;
+    }
+    .diff-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid #eee;
+    }
+    .diff-table tr:nth-child(even) td { background: #f6fff8; }
+
+    /* Age Guide */
+    .age-guide {
+      background: #f6fff8;
+      border: 1px solid #b2f5c8;
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin: 24px 0;
+    }
+    .age-guide h3 { margin-top: 0; color: #2f9e44; }
+    .age-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+    .age-card {
+      flex: 1;
+      min-width: 130px;
+      background: #fff;
+      border: 1px solid #c8f5d8;
+      border-radius: 8px;
+      padding: 12px;
+      text-align: center;
+      font-size: 13px;
+    }
+    .age-card strong { display: block; font-size: 15px; margin-bottom: 4px; }
+  </style>
 </head>
 <body>
+
+<!-- LANGUAGE BAR -->
+<div class="lang-bar">
+  <span>🌐 Language:</span>
+  <a href="/animal-charades.html" class="active">English</a>
+  <a href="/hi/animal-charades.html">हिंदी</a>
+  <a href="/ur/animal-charades.html">اردو</a>
+  <a href="/es/animal-charades.html">Español</a>
+  <a href="/fr/animal-charades.html">Français</a>
+  <a href="/ar/animal-charades.html">العربية</a>
+</div>
 
 <!-- HEADER -->
 <header class="header">
@@ -29,10 +311,7 @@
         🎭 <strong>Charades</strong>Generator
       </a>
     </div>
-
     <button class="menu-btn" onclick="toggleMenu()">☰</button>
-
-    <!-- DESKTOP NAV -->
     <nav class="nav-desktop">
       <a href="kids-charade-generator.html"><button>Kids Charades</button></a>
       <a href="movie-charades.html"><button>Movie Charades</button></a>
@@ -43,8 +322,6 @@
       <a href="animal-charades.html"><button>Animal Charades</button></a>
     </nav>
   </div>
-
-  <!-- MOBILE NAV -->
   <nav id="navMobile" class="nav-mobile">
     <a href="kids-charade-generator.html"><button>Kids Charades</button></a>
     <a href="movie-charades.html"><button>Movie Charades</button></a>
@@ -58,36 +335,36 @@
 
 <main class="main">
 
-  <h1>Animal Charades Generator – Free Online Game for Kids & Adults</h1>
+  <h1>Animal Charades Generator – 100+ Animals to Act Out Free</h1>
+  <p class="seo-text">🐾 Play instantly • No signup • 100+ animal prompts • 6 animal categories</p>
 
   <p class="seo-text">
-    🐾 Play instantly • No signup • Unlimited animal charades
+    Looking for a fun animal-themed party game? This free Animal Charades Generator instantly creates charade ideas based on real animals — perfect for kids, families, classrooms, and game nights.
+    From farm animals to deep-sea creatures, every round brings a new wild challenge with over <strong>100 unique animal prompts</strong> across 6 categories.
   </p>
 
   <p class="seo-text">
-    Looking for a fun animal-themed party game? This free Animal Charades Generator instantly creates charade ideas based on real animals — perfect for kids, families, classrooms, and game nights. From farm animals to ocean creatures, every round brings a new wild challenge.
+    Players act out an animal — how it moves, what it eats, how it sounds — without speaking a single word, while others try to guess. Use this generator to skip all preparation and jump straight into the fun.
+    Just pick your mode, click Generate, and start acting. Works on any phone, tablet, or computer.
   </p>
 
-  <p class="seo-text">
-    Players act out an animal — how it moves, what it eats, how it sounds — without speaking a single word while the others try to guess. Use this generator to skip the prep work and jump straight into the fun. Just pick your mode, click Generate, and start acting!
-  </p>
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="stat-item"><div class="stat-num">100+</div><div class="stat-label">Animal Prompts</div></div>
+    <div class="stat-item"><div class="stat-num">6</div><div class="stat-label">Animal Categories</div></div>
+    <div class="stat-item"><div class="stat-num">4</div><div class="stat-label">Difficulty Modes</div></div>
+    <div class="stat-item"><div class="stat-num">100%</div><div class="stat-label">Free to Play</div></div>
+  </div>
 
-  <!-- GAME AREA -->
+  <!-- GAME AREA — unchanged -->
   <section class="tool" id="gameArea">
-
     <h2 class="category-title">Animal Charades 🐾</h2>
-
-    <p class="subtitle">
-      Click Generate to get an animal to act out 🎭
-    </p>
-
+    <p class="subtitle">Click Generate to get an animal to act out 🎭</p>
     <div class="top-controls">
       <button id="copyBtn" onclick="copyCharades()">📋 Copy</button>
       <button onclick="toggleFullScreen()">⛶ Full Screen</button>
       <span id="copyMsg" class="copy-msg">Copied!</span>
     </div>
-
-    <!-- COUNT BUTTONS -->
     <div class="quick-pick">
       <button onclick="setCount(1)">1</button>
       <button onclick="setCount(3)">3</button>
@@ -95,8 +372,6 @@
       <button onclick="setCount(10)">10</button>
       <button onclick="showCustom()">Custom</button>
     </div>
-
-    <!-- MODE BUTTONS -->
     <div class="mode-select">
       <button class="mode-btn active" data-mode="default" onclick="setMode('default')">All</button>
       <button class="mode-btn" data-mode="kids"   onclick="setMode('kids')">Kids</button>
@@ -104,156 +379,346 @@
       <button class="mode-btn" data-mode="hard"   onclick="setMode('hard')">Hard</button>
       <button class="mode-btn" data-mode="party"  onclick="setMode('party')">Party</button>
     </div>
-
-    <!-- CUSTOM INPUT -->
     <div id="customBox" class="custom-box hidden">
       <input type="number" id="customInput" min="1" max="12" placeholder="Enter number">
       <button onclick="applyCustom()">Apply</button>
     </div>
-
     <div id="cards" class="cards"></div>
-
     <button class="generate-btn" onclick="generate()">Generate</button>
+  </section>
 
+  <!-- AGE GUIDE -->
+  <div class="age-guide">
+    <h3>🎯 Which Mode Should You Pick?</h3>
+    <div class="age-row">
+      <div class="age-card"><strong>👶 Kids</strong>Ages 4–10<br>Farm animals, pets, common birds. Simple movements only.</div>
+      <div class="age-card"><strong>😂 Funny</strong>All ages<br>Absurd animal scenarios. Best for party laughs.</div>
+      <div class="age-card"><strong>🎉 Party</strong>Teens & Adults<br>Energetic and competitive. Mixed animal types.</div>
+      <div class="age-card"><strong>🧠 Hard</strong>Adults<br>Rare behaviours and obscure creatures. Real challenge.</div>
+    </div>
+  </div>
+
+  <!-- WORD LIST -->
+  <section class="content-section">
+    <h2>100+ Animal Charades Word List by Category</h2>
+    <p>
+      Below is a sample of the animal prompts in our generator. Each category has its own word pool so selecting a mode gives you prompts that match the right difficulty and theme for your group.
+    </p>
+    <div class="word-columns">
+      <div class="word-col">
+        <h4>🐄 Farm Animals</h4>
+        <ul>
+          <li>Cow being milked</li>
+          <li>Horse galloping</li>
+          <li>Chicken laying egg</li>
+          <li>Pig rolling in mud</li>
+          <li>Sheep being sheared</li>
+          <li>Rooster crowing at dawn</li>
+          <li>Goat headbutting fence</li>
+          <li>Duck waddling to pond</li>
+          <li>Donkey carrying load</li>
+          <li>Dog herding sheep</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>🦁 Wild Animals</h4>
+        <ul>
+          <li>Lion roaring at herd</li>
+          <li>Elephant spraying water</li>
+          <li>Giraffe eating tall leaves</li>
+          <li>Cheetah sprinting fast</li>
+          <li>Gorilla beating chest</li>
+          <li>Monkey swinging tree</li>
+          <li>Zebra running from lion</li>
+          <li>Hippo yawning wide</li>
+          <li>Rhino charging forward</li>
+          <li>Meerkat standing guard</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>🐬 Ocean Animals</h4>
+        <ul>
+          <li>Dolphin leaping wave</li>
+          <li>Crab scuttling sideways</li>
+          <li>Octopus squirting ink</li>
+          <li>Shark circling prey</li>
+          <li>Sea turtle swimming</li>
+          <li>Jellyfish drifting current</li>
+          <li>Seahorse clinging coral</li>
+          <li>Clownfish hiding anemone</li>
+          <li>Lobster pinching claws</li>
+          <li>Sea otter cracking shell</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>🦚 Birds</h4>
+        <ul>
+          <li>Peacock spreading feathers</li>
+          <li>Owl swivelling head</li>
+          <li>Hummingbird hovering flower</li>
+          <li>Eagle diving for fish</li>
+          <li>Parrot mimicking human</li>
+          <li>Flamingo standing one leg</li>
+          <li>Penguin waddling on ice</li>
+          <li>Woodpecker drilling tree</li>
+          <li>Toucan tapping large beak</li>
+          <li>Swan gliding on water</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>🐊 Reptiles</h4>
+        <ul>
+          <li>Chameleon changing colour</li>
+          <li>Gecko climbing glass</li>
+          <li>Cobra rising with hood</li>
+          <li>Crocodile lying still</li>
+          <li>Tortoise moving slowly</li>
+          <li>Iguana doing push-ups</li>
+          <li>Komodo dragon flicking tongue</li>
+          <li>Frilled lizard neck frill</li>
+          <li>Alligator snapping jaw</li>
+          <li>Chameleon catching fly</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>🐝 Insects</h4>
+        <ul>
+          <li>Bee waggle dancing</li>
+          <li>Butterfly emerging cocoon</li>
+          <li>Praying mantis striking</li>
+          <li>Firefly blinking dark</li>
+          <li>Ant carrying food</li>
+          <li>Grasshopper jumping tall</li>
+          <li>Spider spinning web</li>
+          <li>Ladybug opening wings</li>
+          <li>Dragonfly hovering pond</li>
+          <li>Stick insect staying still</li>
+        </ul>
+      </div>
+    </div>
   </section>
 
   <!-- CATEGORY IDEAS -->
   <section class="content-section">
-    <h2>Animal Charades Ideas by Category</h2>
+    <h2>Animal Charades Ideas by Category – Full Guide</h2>
 
     <h3>🐄 Farm Animals</h3>
-    <p>Classic and easy to act out — milking a cow, riding a horse, chasing a chicken, or herding sheep. Great for younger kids and beginners.</p>
+    <p>
+      Farm animal charades are the best starting point for mixed-age groups. Every child and adult knows a cow, horse, or chicken, making guessing fast and rewarding. The best farm animal prompts focus on specific behaviours rather than just the animal name — "horse trotting slowly while being brushed" is far more entertaining to act than simply "horse." Farm rounds work brilliantly in Kids mode and are the go-to category for primary school classroom games.
+    </p>
 
     <h3>🦁 Wild Animals</h3>
-    <p>Lions roaring, elephants spraying water, cheetahs sprinting. Wild animal charades are dramatic and perfect for competitive players.</p>
+    <p>
+      Wild animal charades are the heart of the game. Lions, elephants, giraffes, and cheetahs all have immediately recognisable behaviours that make for dramatic, funny, and competitive rounds. Wild animal prompts in Party and Funny modes often combine an animal with an unexpected situation — "elephant trying to use a smartphone" or "cheetah forgetting how to run" — turning familiar animals into hilarious scenarios.
+    </p>
 
     <h3>🐬 Ocean Animals</h3>
-    <p>Dolphins leaping, crabs scuttling sideways, octopuses squirting ink. Ocean rounds bring loads of creative movement and laughs.</p>
+    <p>
+      Ocean animals bring unique movement challenges. Acting like a crab walking sideways, an octopus extending all eight arms, or a jellyfish drifting through a current requires full-body creativity. Ocean rounds are particularly popular at beach-themed parties and summer events. Hard mode features deep-sea creatures like anglerfish, mantis shrimp, and bioluminescent jellyfish for an extra challenge.
+    </p>
 
     <h3>🦚 Birds</h3>
-    <p>Peacocks fanning their feathers, owls swivelling their heads, hummingbirds hovering — bird charades test balance and body control.</p>
+    <p>
+      Bird charades test balance, arm movement, and spatial awareness. A flamingo balancing on one leg, a hummingbird hovering, or a penguin waddling in a tuxedo are all guaranteed crowd-pleasers. Bird rounds are great for all ages because the movements are distinctive and children especially love flapping their arms dramatically.
+    </p>
 
     <h3>🐊 Reptiles</h3>
-    <p>Chameleons changing colour, geckos climbing walls, cobras rising with hood spread. Reptile rounds challenge creative acting skills.</p>
+    <p>
+      Reptile charades are surprisingly tricky. Acting out a chameleon slowly changing colour, an iguana doing dominance push-ups, or a frilled lizard suddenly expanding its neck frill requires creative mime skills. Reptile rounds work best in Hard or Party mode where the unusual behaviours create maximum entertainment value.
+    </p>
 
     <h3>🐝 Insects</h3>
-    <p>Bees waggle-dancing, butterflies emerging from cocoons, praying mantises striking — insect charades are surprisingly tricky and fun.</p>
+    <p>
+      Insect charades are deceptively difficult and incredibly fun. A bee performing its waggle dance to communicate flower locations, a praying mantis in attack stance, or a stick insect staying perfectly motionless — these prompts challenge players to think beyond simple "wings" or "crawling" into the specific identity of each creature. Insect rounds work best for older children and adults.
+    </p>
   </section>
 
-  <!-- BENEFITS SECTION -->
+  <!-- DIFFICULTY TABLE -->
+  <section class="content-section">
+    <h2>🎯 Animal Charades Difficulty Guide</h2>
+    <p>Not sure which mode to pick? Use this table to match the right difficulty to your group.</p>
+    <table class="diff-table">
+      <thead>
+        <tr>
+          <th>Mode</th>
+          <th>Best For</th>
+          <th>Animal Types</th>
+          <th>Example Prompt</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>🧒 Kids</td><td>Ages 4–10, classrooms</td><td>Pets, farm animals, common birds</td><td>Dog chasing its tail</td></tr>
+        <tr><td>😂 Funny</td><td>All ages, party nights</td><td>Any animal + absurd situation</td><td>Penguin trying to fly south</td></tr>
+        <tr><td>🎉 Party</td><td>Teens, mixed adults</td><td>Wild, ocean, birds</td><td>Octopus playing 8 instruments</td></tr>
+        <tr><td>🧠 Hard</td><td>Adults, competitive play</td><td>Rare species, unusual behaviours</td><td>Lyrebird mimicking chainsaw</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- TIPS -->
+  <section class="content-section">
+    <h2>🏆 Tips for Acting Out Animals in Charades</h2>
+    <p>Acting animals convincingly is an art. These tips will help players communicate animal identity faster and more clearly.</p>
+    <div class="tips-grid">
+      <div class="tip-card">
+        <h4>Show the Movement First</h4>
+        <p>Every animal has a unique way of moving. Show whether it walks on four legs, hops, slithers, swims, or flies before acting out other features. Movement is the fastest identifier.</p>
+      </div>
+      <div class="tip-card">
+        <h4>Act the Size</h4>
+        <p>Make yourself very big for an elephant, very small for a mouse, or very slow for a tortoise. Scale and pace are powerful visual clues that narrow guessing immediately.</p>
+      </div>
+      <div class="tip-card">
+        <h4>Use Signature Behaviours</h4>
+        <p>Don't just act "lion" — act a lion roaring and flicking its mane. Every animal has one behaviour everyone knows. Find it and lead with it.</p>
+      </div>
+      <div class="tip-card">
+        <h4>Show What It Eats</h4>
+        <p>If movement and size aren't working, mime the animal's diet. A giraffe stretching up to eat leaves or a pelican scooping fish in its pouch are unmistakable clues.</p>
+      </div>
+      <div class="tip-card">
+        <h4>Use Your Face</h4>
+        <p>Facial expressions help enormously. A wide peacock display needs a proud face. A nervous rabbit needs wide eyes and a twitching nose. Your face is part of the costume.</p>
+      </div>
+      <div class="tip-card">
+        <h4>Try the Habitat</h4>
+        <p>If the animal itself is hard to act, mime the environment — swimming for ocean animals, climbing for tree animals, or burrowing underground for moles and meerkats.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
   <section class="content-section">
     <h2>Why Use This Animal Charades Generator?</h2>
     <p>
-      This tool removes all the prep work from game night. Instead of brainstorming animal actions yourself, get unlimited ideas in one click.
+      This tool removes all prep work from game night. Instead of brainstorming animal actions yourself or writing cards by hand, you get unlimited ideas in one click. Our animal word pool is larger and more creative than any printed card game — with unusual behaviours, specific actions, and scenario-based prompts that make every round different from the last.
     </p>
-
+    <p>
+      Unlike basic word lists you find on other sites, each prompt in this generator is written as an action phrase, not just an animal name. "Elephant spraying water" is immediately more fun to act than just "elephant." This deliberate design choice makes the game more entertaining and easier to guess without removing the challenge.
+    </p>
     <ul>
-      <li>🎉 Perfect for parties, classrooms, and family game nights</li>
-      <li>👨‍👩‍👧 Works for kids, teens, and adults with different difficulty modes</li>
-      <li>⚡ Instant random animal charade ideas — no repeats until the pool runs out</li>
-      <li>📱 Works on mobile, tablet, and desktop</li>
-      <li>🐾 Over 100 unique animal actions across 6 categories</li>
-      <li>🎭 Improves creativity, body language, and teamwork</li>
+      <li>🎉 Perfect for parties, classrooms, birthday games, and family nights</li>
+      <li>👨‍👩‍👧 Suitable for children ages 4+ through adults with four difficulty modes</li>
+      <li>⚡ Instant generation — no preparation, no card printing</li>
+      <li>📱 Fully mobile-optimised with full-screen mode for group play</li>
+      <li>🐾 100+ unique animal action prompts across 6 animal categories</li>
+      <li>🎭 Builds creativity, body language, animal knowledge, and teamwork</li>
+      <li>♾️ Unlimited rounds — generator avoids repeats until the full pool resets</li>
+      <li>🔒 No login, no ads during play, no download required</li>
     </ul>
   </section>
 
-  <!-- WHAT YOU GET -->
+  <!-- EDUCATIONAL -->
   <section class="content-section">
-    <h2>Example Animal Charades You May Get</h2>
-
+    <h2>Animal Charades as an Educational Tool</h2>
     <p>
-      Each card shows an animal action to act out. The number of cards depends on what you select above.
+      Beyond entertainment, animal charades serves as a powerful classroom and home-learning activity. When children research how a chameleon changes colour, how bees communicate through dance, or what makes a platypus scientifically unusual, they are learning biology in the most engaging way possible.
     </p>
-
     <p>
-      <strong>If you select 1:</strong> One animal charade on the screen.<br>
-      <strong>If you select 3:</strong> Three different animal charades.<br>
-      <strong>If you select 5 or 10:</strong> Multiple animals for longer gameplay.<br>
-      <strong>Custom option:</strong> Enter any number up to 12.
+      Teachers use animal charades in science classes to reinforce animal taxonomy, in English classes to build descriptive vocabulary, and in PE classes as a creative warm-up activity. The physical nature of the game helps kinaesthetic learners especially — children who struggle with textbook learning often shine in charades because their body intelligence is directly rewarded.
     </p>
-
-    <h3>Sample Charades You May Get</h3>
-    <ul>
-      <li>🐾 Elephant spraying water with trunk</li>
-      <li>🐾 Penguin waddling with wings out</li>
-      <li>🐾 Bee waggle dancing to share flower location</li>
-      <li>🐾 Peacock spreading tail feathers</li>
-      <li>🐾 Sea otter cracking a shell on its belly</li>
-      <li>🐾 Chameleon changing colour slowly</li>
-      <li>🐾 Gorilla beating chest</li>
-      <li>🐾 Firefly blinking in the dark</li>
-    </ul>
-
     <p>
-      Use the <strong>Copy</strong> button to share your generated charades with teammates.
-    </p>
-
-    <p>
-      Switch to <strong>Funny</strong> or <strong>Party</strong> mode for hilarious animal scenarios like a penguin trying to fly, a cat knocking everything off a table, or a sloth doing everything in extreme slow motion.
-    </p>
-
-    <p>
-      Try <strong>Hard</strong> mode for rare and unusual animal behaviours that will stump even the most knowledgeable players.
+      Parents can use animal rounds as a dinner table game, a car journey activity, or a screen-free evening alternative. Children who play animal charades regularly develop stronger observation skills, better spatial awareness, and a broader animal vocabulary than peers who don't engage with physical guessing games.
     </p>
   </section>
 
   <!-- HOW TO PLAY -->
   <section class="how-to">
-    <h2>How to Play Animal Charades</h2>
+    <h2>How to Play Animal Charades – Step by Step</h2>
 
     <p><strong>1. Pick a mode and count</strong><br>
-    Choose how many charades you need and select a category mode — All, Kids, Funny, Hard, or Party.</p>
+    Choose how many charades you need using the number buttons. Then select a category mode — All for mixed play, Kids for young children, Funny for party laughs, Hard for competitive adults.</p>
 
     <p><strong>2. Click Generate</strong><br>
-    Hit the Generate button and animal charades appear instantly on the screen.</p>
+    Hit the Generate button and animal charades appear instantly. Each card shows an animal and an action or behaviour to act out.</p>
 
     <p><strong>3. Keep it secret</strong><br>
-    Only the actor sees the card. Everyone else must keep their eyes away until the round starts.</p>
+    Only the actor sees the card. Use Full Screen mode — the actor holds up the phone face-out so only they can see the prompt as they walk away from the group.</p>
 
     <p><strong>4. Act without speaking</strong><br>
-    Use your body only — no sounds, no mouthing words. Show how the animal moves, eats, and behaves.</p>
+    Use your body only. No sounds, no mouthing words, no pointing to objects in the room. Show how the animal moves, eats, and behaves using gesture and expression alone.</p>
 
-    <p><strong>5. Use the full screen</strong><br>
-    Click Full Screen to display the animal clearly for the actor when playing in a group.</p>
+    <p><strong>5. Set a 60-second timer</strong><br>
+    One round equals 60 seconds. If the team guesses correctly in time, they score a point. If not, the opposing team gets one chance to steal.</p>
 
     <p><strong>6. Let the team guess</strong><br>
-    First person to correctly name the animal wins the round.</p>
+    First person to correctly name the animal wins the round. For action-based prompts, they may need to name both the animal and the behaviour.</p>
 
-    <p><strong>7. Keep going</strong><br>
-    Click Generate again for a fresh animal. The tool avoids repeats automatically.</p>
+    <p><strong>7. Rotate and repeat</strong><br>
+    Take turns clockwise. Each player acts at least once. Click Generate for unlimited fresh prompts — the tool avoids repeating until the full pool cycles through.</p>
+  </section>
+
+  <!-- WHAT YOU GET -->
+  <section class="content-section">
+    <h2>Example Animal Charades You Will Get</h2>
+    <p>
+      Each card shows a specific animal action — not just a name. Here are sample prompts from each mode to give you an idea of what to expect.
+    </p>
+    <p>
+      <strong>Kids Mode:</strong> Dog fetching a stick, cat chasing yarn, frog jumping on lily pads, rabbit twitching nose.<br>
+      <strong>Funny Mode:</strong> Penguin trying to fly south for winter, sloth arriving four hours late to a party, cat knocking everything off a table, dog meeting its reflection.<br>
+      <strong>Party Mode:</strong> Octopus playing eight instruments, flamingo in a yoga class, meerkat watching a thriller movie.<br>
+      <strong>Hard Mode:</strong> Lyrebird mimicking a chainsaw, mantis shrimp punching through glass, archerfish shooting water at insects, platypus detecting electric fields.
+    </p>
+    <p>
+      Use the <strong>Copy</strong> button to share all generated charades via WhatsApp or any chat app for virtual game nights.
+      The <strong>Full Screen</strong> button turns your phone into a proper game card for group play.
+    </p>
   </section>
 
   <!-- FAQ -->
   <section class="content-section">
-    <h2>Frequently Asked Questions</h2>
+    <h2>Frequently Asked Questions – Animal Charades</h2>
 
-    <p><strong>Is this animal charades generator free?</strong><br>
-    Yes, completely free with unlimited rounds and no login required.</p>
+    <p><strong>What is an animal charades generator?</strong><br>
+    An animal charades generator is an online tool that randomly selects an animal or animal behaviour for players to act out silently. Other players guess the animal from the acting alone. This tool has 100+ unique animal prompts across farm, wild, ocean, bird, reptile, and insect categories.</p>
 
     <p><strong>Which mode is best for young children?</strong><br>
-    Select the <strong>Kids</strong> mode — it pulls only from farm animals, birds, and insects for simple, recognisable actions.</p>
+    Kids mode is best for ages 4–10. It only uses familiar animals like dogs, cats, horses, cows, frogs, and birds that children can easily recognise and act out. All prompts are simple, safe, and fun.</p>
 
     <p><strong>What is Funny mode?</strong><br>
-    Funny mode gives you silly and absurd animal scenarios — like a cat knocking everything off a table or a sloth arriving four hours late to a party.</p>
+    Funny mode generates absurd and comedic animal scenarios — a penguin trying to fly, a sloth arriving four hours late to a party, or a cat knocking everything off a table. Perfect for maximum laughs at adult and teen parties.</p>
 
-    <p><strong>What is Hard mode?</strong><br>
-    Hard mode features rare animal behaviours like a mantis shrimp punching through glass or a lyrebird mimicking a chainsaw — challenging even for adults.</p>
+    <p><strong>What animals are in Hard mode?</strong><br>
+    Hard mode features rare and unusual animal behaviours — a mantis shrimp punching through glass, a lyrebird mimicking a chainsaw, a platypus detecting electric fields. These challenge even knowledgeable adults.</p>
 
-    <p><strong>Will I get the same animal twice?</strong><br>
-    No. The generator tracks used charades and only resets once the pool is exhausted, so every round feels fresh.</p>
+    <p><strong>How many animal prompts are in this tool?</strong><br>
+    Over 100 unique animal prompts across six categories. The generator avoids repeats until the entire pool is exhausted, so every round feels fresh.</p>
+
+    <p><strong>Can I use this in a classroom?</strong><br>
+    Yes. Animal charades builds vocabulary, improves physical expression, teaches animal facts, and encourages teamwork. Use Kids mode for primary school and Hard mode for secondary school science classes.</p>
+
+    <p><strong>Does this work on mobile phones?</strong><br>
+    Yes. Fully mobile-optimised. Full Screen mode is especially useful when holding your phone up so the actor sees the prompt while keeping it hidden from the group.</p>
 
     <p><strong>Do I need to download anything?</strong><br>
-    No — everything runs directly in your browser on any device.</p>
+    No. Everything runs in your browser on any device. No app, no plugin, no installation.</p>
+  </section>
+
+  <!-- RELATED TOOLS -->
+  <section class="content-section">
+    <h2>🎮 Explore More Charades Tools</h2>
+    <p>Try these other free charades generators from the same site.</p>
+    <div class="related-tools">
+      <a href="kids-charade-generator.html" class="rel-card"><span class="ri">👦</span><span class="rn">Kids Charades</span></a>
+      <a href="movie-charades.html" class="rel-card"><span class="ri">🎬</span><span class="rn">Movie Charades</span></a>
+      <a href="character-charades.html" class="rel-card"><span class="ri">🦸</span><span class="rn">Character Charades</span></a>
+      <a href="reverse-charades.html" class="rel-card"><span class="ri">🔄</span><span class="rn">Reverse Charades</span></a>
+      <a href="christmas-charades.html" class="rel-card"><span class="ri">🎄</span><span class="rn">Christmas Charades</span></a>
+      <a href="islamic-charades.html" class="rel-card"><span class="ri">🕌</span><span class="rn">Islamic Charades</span></a>
+      <a href="funny-charades.html" class="rel-card"><span class="ri">😂</span><span class="rn">Funny Charades</span></a>
+      <a href="sports-charades.html" class="rel-card"><span class="ri">⚽</span><span class="rn">Sports Charades</span></a>
+    </div>
   </section>
 
   <!-- OUTRO -->
   <section class="content-section">
-    <h2>Start Playing Animal Charades Now!</h2>
+    <h2>Start Playing Animal Charades Right Now</h2>
     <p>
-      Animal charades bring people together in the most entertaining way — acting like a frilled lizard or a penguin in a tuxedo never gets old. Whether you're at a party, school event, or family night, this generator has you covered.
+      Animal charades is one of those games where even the people watching howl with laughter. Watching someone try to convincingly act out a mantis shrimp or an iguana doing dominance push-ups is entertainment in itself, regardless of whether the team guesses correctly.
     </p>
     <p>
-      Click Generate above and let the wild fun begin! 🐾🎉
+      Whether you are at a birthday party, a school event, a family evening, or a virtual game night — scroll up, pick your mode, click Generate, and let the wild fun begin. 🐾🎉
     </p>
   </section>
 
@@ -263,7 +728,7 @@
   <a href="about-us.html">About Us</a>
   <a href="contact-us.html">Contact Us</a>
   <a href="privacy-policy.html">Privacy Policy</a>
-  <a href="terms-and-conditions.html">Terms & Conditions</a>
+  <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
   <a href="disclaimer.html">Disclaimer</a>
   <p>© CharadeGenerator 2026</p>
 </footer>
