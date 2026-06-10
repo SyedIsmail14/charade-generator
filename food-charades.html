@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Food Charades Generator – 100+ Delicious Ideas for Parties & Families</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Free Food Charades Generator with 100+ food and cooking prompts. Act out dishes, ingredients, cooking actions and restaurant scenes. Perfect for families, parties and classrooms. No signup needed.">
+
+  <link rel="icon" type="image/x-icon" href="/assests/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assests/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assests/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assests/favicon-48x48.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assests/apple-touch-icon-180x180.png">
+  <link rel="apple-touch-icon" href="/assests/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assests/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assests/android-chrome-512x512.png">
+
+  <link rel="alternate" hreflang="en" href="https://charadegenerator.com/food-charades.html" />
+  <link rel="alternate" hreflang="hi" href="https://charadegenerator.com/hi/food-charades.html" />
+  <link rel="alternate" hreflang="ur" href="https://charadegenerator.com/ur/food-charades.html" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Food Charades Generator",
+        "url": "https://charadegenerator.com/food-charades.html",
+        "description": "Free online food charades generator with 100+ prompts covering dishes, ingredients, cooking actions, street food and restaurant scenes. Perfect for families, parties and classrooms.",
+        "applicationCategory": "GameApplication",
+        "operatingSystem": "Any",
+        "browserRequirements": "Requires JavaScript.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "author": { "@type": "Person", "name": "CharadeGenerator Team", "url": "https://charadegenerator.com/about-us.html" },
+        "featureList": ["100+ food charade prompts","6 food categories","Easy, Medium, Hard, World Food modes","Full-screen mode","Copy to clipboard","Mobile-friendly"]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type":"Question","name":"What is food charades?","acceptedAnswer":{"@type":"Answer","text":"Food charades is a themed version of the classic charades game where all prompts are related to food, cooking, drinks, and eating. Players act out dishes, ingredients, cooking techniques, and food-related scenarios without speaking while others guess. It is perfect for foodies, families, cooking enthusiasts, and any group that loves food culture."}},
+          {"@type":"Question","name":"What are good food charades ideas?","acceptedAnswer":{"@type":"Answer","text":"Good food charades ideas include cooking actions like chopping onions and crying, stirring a giant pot, kneading bread dough, and flipping pancakes. Dish-based prompts like eating spaghetti messily, cracking a crab, peeling a banana, or blowing on hot soup also work brilliantly. Our generator has 100+ food prompts specifically chosen because they are fun and possible to act silently."}},
+          {"@type":"Question","name":"Is food charades suitable for kids?","acceptedAnswer":{"@type":"Answer","text":"Yes. Easy mode uses simple, familiar food actions that children aged 4 and above can easily understand and act — eating ice cream, blowing birthday candles, peeling a banana, or drinking through a straw. Food charades is one of the most universally accessible themes because every child has personal experience with food."}},
+          {"@type":"Question","name":"Can I use food charades at a dinner party?","acceptedAnswer":{"@type":"Answer","text":"Yes. Food charades is the perfect after-dinner party game because the theme matches the occasion. After a shared meal, everyone is relaxed, food is fresh in mind, and the prompts create natural conversation about dishes, cuisines, and cooking experiences. It works equally well as a pre-dinner warm-up or post-dinner entertainment."}},
+          {"@type":"Question","name":"Is this food charades generator free?","acceptedAnswer":{"@type":"Answer","text":"Yes. Completely free with no signup, no download, and no time limit. Generate unlimited food charade prompts for any party, family night, or classroom activity."}},
+          {"@type":"Question","name":"What is World Food mode?","acceptedAnswer":{"@type":"Answer","text":"World Food mode features dishes and food traditions from different global cuisines — Indian biryani, Japanese sushi, Italian pasta, Mexican tacos, Chinese dim sum, Turkish kebab, and more. This mode celebrates international food culture and works especially well for multicultural groups and food-loving adult gatherings."}}
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type":"ListItem","position":1,"name":"Home","item":"https://charadegenerator.com/"},
+          {"@type":"ListItem","position":2,"name":"Food Charades","item":"https://charadegenerator.com/food-charades.html"}
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .lang-bar{background:#fff5f0;border-bottom:1px solid #ffd8c2;padding:6px 16px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:13px;}
+    .lang-bar span{color:#555;font-weight:600;}
+    .lang-bar a{text-decoration:none;color:#d9480f;padding:2px 8px;border-radius:4px;transition:background .2s;}
+    .lang-bar a:hover{background:#ffe8d8;}
+    .lang-bar a.active{background:#d9480f;color:#fff;}
+    .stats-bar{display:flex;gap:24px;flex-wrap:wrap;background:linear-gradient(135deg,#d9480f 0%,#f76707 100%);border-radius:12px;padding:20px 24px;margin:24px 0;color:#fff;}
+    .stat-item{text-align:center;flex:1;min-width:100px;}
+    .stat-num{font-size:28px;font-weight:700;}
+    .stat-label{font-size:12px;opacity:.9;margin-top:2px;}
+    .word-columns{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;margin-top:16px;}
+    .word-col h4{margin:0 0 8px;font-size:14px;text-transform:uppercase;letter-spacing:.5px;color:#d9480f;}
+    .word-col ul{margin:0;padding-left:18px;font-size:14px;line-height:1.9;color:#333;}
+    .tips-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-top:16px;}
+    .tip-card{background:#fff5f0;border-left:4px solid #d9480f;border-radius:8px;padding:14px 16px;}
+    .tip-card h4{margin:0 0 6px;font-size:15px;}
+    .tip-card p{margin:0;font-size:13px;color:#555;line-height:1.6;}
+    .diff-table{width:100%;border-collapse:collapse;font-size:14px;margin-top:16px;}
+    .diff-table th{background:#d9480f;color:#fff;padding:10px 14px;text-align:left;}
+    .diff-table td{padding:10px 14px;border-bottom:1px solid #eee;}
+    .diff-table tr:nth-child(even) td{background:#fff5f0;}
+    .age-guide{background:#fff5f0;border:1px solid #ffd8c2;border-radius:10px;padding:20px 24px;margin:24px 0;}
+    .age-guide h3{margin-top:0;color:#d9480f;}
+    .age-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px;}
+    .age-card{flex:1;min-width:130px;background:#fff;border:1px solid #ffd8c2;border-radius:8px;padding:12px;text-align:center;font-size:13px;}
+    .age-card strong{display:block;font-size:15px;margin-bottom:4px;}
+    .related-tools{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:12px;margin-top:16px;}
+    .rel-card{background:#fff;border:1px solid #dde4f5;border-radius:10px;padding:12px 10px;text-align:center;text-decoration:none;color:#222;font-size:13px;font-weight:500;transition:box-shadow .2s,transform .15s;display:flex;flex-direction:column;align-items:center;gap:5px;}
+    .rel-card:hover{box-shadow:0 4px 16px rgba(217,72,15,.15);transform:translateY(-2px);}
+    .rel-card .ri{font-size:22px;}
+    .rel-card .rn{font-weight:600;font-size:12px;}
+  </style>
+</head>
+<body>
+
+<div class="lang-bar">
+  <span>🌐 Language:</span>
+  <a href="/food-charades.html" class="active">English</a>
+  <a href="/hi/food-charades.html">हिंदी</a>
+  <a href="/ur/food-charades.html">اردو</a>
+  <a href="/es/food-charades.html">Español</a>
+  <a href="/fr/food-charades.html">Français</a>
+  <a href="/ar/food-charades.html">العربية</a>
+</div>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="logo"><a href="https://charadegenerator.com/" class="logo-link">🎭 <strong>Charades</strong>Generator</a></div>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <nav class="nav-desktop">
+      <a href="kids-charade-generator.html"><button>Kids Charades</button></a>
+      <a href="movie-charades.html"><button>Movie Charades</button></a>
+      <a href="character-charades.html"><button>Character Charades</button></a>
+      <a href="reverse-charades.html"><button>Reverse Charades</button></a>
+      <a href="christmas-charades.html"><button>Christmas Charades</button></a>
+      <a href="islamic-charades.html"><button>Islamic Charades</button></a>
+      <a href="animal-charades.html"><button>Animal Charades</button></a>
+    </nav>
+  </div>
+  <nav id="navMobile" class="nav-mobile">
+    <a href="kids-charade-generator.html"><button>Kids Charades</button></a>
+    <a href="movie-charades.html"><button>Movie Charades</button></a>
+    <a href="character-charades.html"><button>Character Charades</button></a>
+    <a href="reverse-charades.html"><button>Reverse Charades</button></a>
+    <a href="christmas-charades.html"><button>Christmas Charades</button></a>
+    <a href="islamic-charades.html"><button>Islamic Charades</button></a>
+    <a href="animal-charades.html"><button>Animal Charades</button></a>
+  </nav>
+</header>
+
+<main class="main">
+
+  <h1>Food Charades Generator – 100+ Delicious Ideas for Parties &amp; Families</h1>
+  <p class="seo-text">🍕 Play instantly • No signup • 100+ food prompts • 6 tasty categories</p>
+
+  <p class="seo-text">
+    Bring the kitchen to the game table with this free Food Charades Generator. Every prompt is food-themed — cooking actions, famous dishes, ingredients, street food, restaurant scenes, and world cuisines — making it the perfect game for foodies, families, dinner parties, and cooking enthusiasts.
+    With over <strong>100 unique food prompts</strong> across 6 categories, every round serves up fresh entertainment from the first act to the last guess.
+  </p>
+
+  <p class="seo-text">
+    Food charades works for every age — toddlers know what eating ice cream looks like, teens know how to mime making a pizza, and adults can act out the drama of chopping onions while sobbing or flambéing a Christmas pudding. No preparation, no cards, no limits. Generate and play instantly on any device.
+  </p>
+
+  <div class="stats-bar">
+    <div class="stat-item"><div class="stat-num">100+</div><div class="stat-label">Food Prompts</div></div>
+    <div class="stat-item"><div class="stat-num">6</div><div class="stat-label">Food Categories</div></div>
+    <div class="stat-item"><div class="stat-num">4</div><div class="stat-label">Play Modes</div></div>
+    <div class="stat-item"><div class="stat-num">100%</div><div class="stat-label">Free to Play</div></div>
+  </div>
+
+  <section class="tool" id="gameArea">
+    <h2 class="category-title">Food Charades 🍕</h2>
+    <p class="subtitle">Click Generate to get a tasty charade 🍕</p>
+    <div class="top-controls">
+      <button id="copyBtn" onclick="copyCharades()">📋 Copy</button>
+      <button onclick="toggleFullScreen()">⛶ Full Screen</button>
+      <span id="copyMsg" class="copy-msg">Copied!</span>
+    </div>
+    <div class="quick-pick">
+      <button onclick="setCount(1)">1</button>
+      <button onclick="setCount(3)">3</button>
+      <button onclick="setCount(5)">5</button>
+      <button onclick="setCount(10)">10</button>
+      <button onclick="showCustom()">Custom</button>
+    </div>
+    <div class="mode-select">
+      <button class="mode-btn active" data-mode="all"       onclick="setMode('all')">All</button>
+      <button class="mode-btn"        data-mode="easy"      onclick="setMode('easy')">Easy</button>
+      <button class="mode-btn"        data-mode="cooking"   onclick="setMode('cooking')">Cooking</button>
+      <button class="mode-btn"        data-mode="hard"      onclick="setMode('hard')">Hard</button>
+      <button class="mode-btn"        data-mode="worldfood" onclick="setMode('worldfood')">World Food</button>
+    </div>
+    <div id="customBox" class="custom-box hidden">
+      <input type="number" id="customInput" min="1" max="12" placeholder="Enter number">
+      <button onclick="applyCustom()">Apply</button>
+    </div>
+    <div id="cards" class="cards"></div>
+    <button class="generate-btn" onclick="generate()">Generate</button>
+  </section>
+
+  <div class="age-guide">
+    <h3>🎯 Which Mode Should You Pick?</h3>
+    <div class="age-row">
+      <div class="age-card"><strong>🟢 Easy</strong>All ages 4+<br>Simple familiar food actions. Perfect for kids and families.</div>
+      <div class="age-card"><strong>👨‍🍳 Cooking</strong>All ages<br>Kitchen actions, cooking techniques, chef scenarios.</div>
+      <div class="age-card"><strong>🔴 Hard</strong>Adults<br>Complex dishes, food culture, restaurant scenes.</div>
+      <div class="age-card"><strong>🌍 World Food</strong>Foodies<br>Global cuisines from 20+ countries. Best for food lovers.</div>
+    </div>
+  </div>
+
+  <section class="content-section">
+    <h2>100+ Food Charades Word List by Category</h2>
+    <p>Every prompt is action-based — not just a food name — making them instantly fun to act and easy to guess. From eating ice cream to flambéing a dessert, each card gives players a specific food moment to perform.</p>
+    <div class="word-columns">
+      <div class="word-col">
+        <h4>🍦 Easy Food Actions</h4>
+        <ul>
+          <li>Eating ice cream fast before it melts</li>
+          <li>Blowing birthday cake candles</li>
+          <li>Peeling a banana</li>
+          <li>Drinking through a very long straw</li>
+          <li>Eating spaghetti very messily</li>
+          <li>Cracking open a boiled egg</li>
+          <li>Biting into a very sour lemon</li>
+          <li>Eating popcorn watching a film</li>
+          <li>Blowing on very hot soup</li>
+          <li>Shaking a bottle of ketchup</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>👨‍🍳 Cooking Actions</h4>
+        <ul>
+          <li>Chopping onions and crying</li>
+          <li>Kneading bread dough</li>
+          <li>Flipping pancakes in a pan</li>
+          <li>Stirring a giant pot of soup</li>
+          <li>Rolling out pizza dough</li>
+          <li>Cracking eggs one-handed</li>
+          <li>Whisking eggs very vigorously</li>
+          <li>Grating cheese on pasta</li>
+          <li>Frosting a layered cake</li>
+          <li>Flambéing a Christmas pudding</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>🍣 Famous Dishes</h4>
+        <ul>
+          <li>Eating sushi with chopsticks</li>
+          <li>Twirling spaghetti on fork</li>
+          <li>Cracking a whole crab</li>
+          <li>Dipping bread in fondue</li>
+          <li>Stacking a giant burger</li>
+          <li>Eating corn on the cob</li>
+          <li>Unwrapping a burrito</li>
+          <li>Slurping ramen noodles</li>
+          <li>Eating a whole lobster</li>
+          <li>Building a club sandwich</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>🌍 World Food</h4>
+        <ul>
+          <li>Making biryani and stirring rice</li>
+          <li>Rolling sushi mat tightly</li>
+          <li>Flipping a French crêpe</li>
+          <li>Wrapping a doner kebab</li>
+          <li>Serving dim sum from steamer</li>
+          <li>Making tortillas by hand</li>
+          <li>Stirring a tagine slowly</li>
+          <li>Rolling grape leaves</li>
+          <li>Serving jollof rice proudly</li>
+          <li>Making fresh pasta by hand</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>🍽️ Restaurant Scenes</h4>
+        <ul>
+          <li>Waiter balancing multiple plates</li>
+          <li>Chef tasting and adding salt again</li>
+          <li>Customer sending food back rudely</li>
+          <li>Sommelier smelling wine cork</li>
+          <li>Splitting a bill and arguing</li>
+          <li>Waiter writing down huge order</li>
+          <li>Chef presenting dish dramatically</li>
+          <li>Customer photographing food first</li>
+          <li>Maitre d seating VIP guest</li>
+          <li>Dessert trolley arriving slowly</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>🍰 Baking & Desserts</h4>
+        <ul>
+          <li>Decorating a wedding cake</li>
+          <li>Piping cream roses precisely</li>
+          <li>Pulling sugar for spun sugar</li>
+          <li>Tempering chocolate carefully</li>
+          <li>Making a soufflé and it collapsing</li>
+          <li>Lighting a crème brûlée torch</li>
+          <li>Dipping strawberries in chocolate</li>
+          <li>Stacking a croquembouche tower</li>
+          <li>Drizzling honey over baklava</li>
+          <li>Cutting a perfectly layered cake</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>Food Charades by Category – Full Guide</h2>
+
+    <h3>🍦 Easy Food Actions</h3>
+    <p>Easy food prompts are the most universally accessible charades category because every human being has personal emotional and physical experience with the actions involved. Eating ice cream before it melts — the urgency, the dripping, the frantic licking — is a physical performance every child and adult can relate to immediately. Biting into a sour lemon creates a guaranteed face that every player will recognise without a single word. Easy food actions are the fastest-guessing category in the entire generator and the perfect warm-up for any food charades session.</p>
+
+    <h3>👨‍🍳 Cooking Actions</h3>
+    <p>Cooking action prompts draw on the specific physical vocabulary of the kitchen — actions that have distinctive movements, rhythms, and expressions that make them immediately identifiable. Chopping onions and crying, kneading bread dough with full body weight, whisking eggs with increasing arm fatigue — these are kitchen experiences that most players have lived. Cooking rounds work brilliantly for foodie groups and families who cook together, and they create natural conversations about recipes and cooking techniques after each round.</p>
+
+    <h3>🍣 Famous Dishes</h3>
+    <p>Famous dish prompts challenge players to represent a specific food through the experience of eating or making it rather than just the food itself. Twirling spaghetti on a fork with increasing desperation as it keeps sliding off, cracking a whole crab with a mallet and getting splattered, or dipping bread into fondue and losing it in the pot — these eating experiences are rich with physical comedy and cultural recognition that makes guessing both challenging and satisfying.</p>
+
+    <h3>🌍 World Food</h3>
+    <p>World Food mode is the most culturally rich and educationally valuable category in the generator. Rolling a sushi mat tightly with careful precision, wrapping a doner kebab while spinning the meat, serving dim sum from a bamboo steamer, or making tortillas by hand with practiced palm pressure — these prompts celebrate global food culture and reward players who have knowledge of and appreciation for international cuisines. World Food rounds work especially well for multicultural groups and travel-loving food enthusiast gatherings.</p>
+
+    <h3>🍽️ Restaurant Scenes</h3>
+    <p>Restaurant scene prompts are the most theatrical and character-rich category. A waiter balancing three plates while maintaining a professional smile, a chef dramatically presenting a tiny portion on an enormous plate, or a customer photographing their food from fifteen different angles before allowing anyone to eat — these social scenarios are immediately recognisable to anyone who has visited a restaurant. Restaurant rounds produce the best character acting performances and the funniest group reactions of any food charades session.</p>
+
+    <h3>🍰 Baking &amp; Desserts</h3>
+    <p>Baking and dessert prompts are the hardest food category because they involve precise, technical actions that require the actor to communicate both the process and the result. Tempering chocolate — stirring and spreading on a marble surface, testing temperature on your wrist — demands genuine baking knowledge to act convincingly. A soufflé collapsing at the moment of presentation is both technically specific and emotionally devastating, creating a comic performance that baking-literate groups will identify immediately and non-bakers will appreciate as pure physical comedy.</p>
+  </section>
+
+  <section class="content-section">
+    <h2>🎯 Food Charades Mode Guide</h2>
+    <table class="diff-table">
+      <thead><tr><th>Mode</th><th>Best For</th><th>Prompt Types</th><th>Example</th></tr></thead>
+      <tbody>
+        <tr><td>🟢 Easy</td><td>All ages 4+, family nights</td><td>Simple familiar food actions</td><td>Eating ice cream before it melts</td></tr>
+        <tr><td>👨‍🍳 Cooking</td><td>All ages, food lovers</td><td>Kitchen actions and cooking techniques</td><td>Chopping onions and crying</td></tr>
+        <tr><td>🔴 Hard</td><td>Adults, competitive groups</td><td>Complex dishes, restaurant drama</td><td>Soufflé collapsing at presentation</td></tr>
+        <tr><td>🌍 World Food</td><td>Foodies, multicultural groups</td><td>Global cuisine dishes and traditions</td><td>Rolling sushi mat tightly</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="content-section">
+    <h2>🏆 Tips for Playing Food Charades</h2>
+    <div class="tips-grid">
+      <div class="tip-card"><h4>Show the Eating Experience</h4><p>For dish prompts, act the experience of eating the food — the mess, the temperature, the texture, the utensils — rather than just pointing at your mouth. Eating spaghetti messily communicates far more than just miming eating.</p></div>
+      <div class="tip-card"><h4>Act the Cooking Process Step by Step</h4><p>For cooking prompts, show the full process from preparation to result. Chopping, adding, stirring, tasting, reacting — the sequence of steps is more recognisable than any single action.</p></div>
+      <div class="tip-card"><h4>Use Imaginary Utensils</h4><p>Mime your specific utensils clearly — a whisk moves differently from a wooden spoon, chopsticks are held differently from a fork. The utensil often identifies the cuisine or dish before the food itself does.</p></div>
+      <div class="tip-card"><h4>React to the Food</h4><p>Facial reactions to food are universal — the wince at sourness, the bliss at sweetness, the shock at spiciness, the disappointment at blandness. Lead with the reaction and the food becomes immediately identifiable.</p></div>
+      <div class="tip-card"><h4>Show the Country for World Food</h4><p>For World Food prompts, start with a quick geographical gesture — point East for Asian food, mime a beret for French, mime a sombrero for Mexican. Category context cuts guessing time dramatically.</p></div>
+      <div class="tip-card"><h4>Play After Dinner</h4><p>Food charades is most fun when played after a shared meal — everyone is relaxed, food is fresh in mind, and the prompts spark natural conversation about dishes and cuisines. It is the perfect post-dinner entertainment for any gathering.</p></div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>Why Use This Food Charades Generator?</h2>
+    <p>Food is the most universally shared human experience — every person on the planet has a relationship with food that is personal, emotional, and physical. Food charades taps into that shared experience to create a game that is instantly accessible to any group regardless of age, background, or cultural origin. The eating experience translates directly into physical mime in a way that abstract concepts never can.</p>
+    <p>This generator saves you from inventing food prompts on the spot — which is harder than it sounds. The best food charades prompts are specific enough to be identifiable but universal enough for the whole group to guess. Our curated pool of 100+ prompts finds that balance perfectly across all difficulty levels and food cultures.</p>
+    <ul>
+      <li>🍕 100+ unique food prompts across 6 delicious categories</li>
+      <li>🎉 Perfect for dinner parties, family nights, food-themed events and classrooms</li>
+      <li>👨‍👩‍👧 Four modes cover toddlers through adult food enthusiasts</li>
+      <li>🌍 World Food mode celebrates global cuisine from 20+ countries</li>
+      <li>⚡ One click generates 1, 3, 5, 10 or custom number instantly</li>
+      <li>📱 Fully mobile-optimised with full-screen mode for group play</li>
+      <li>♾️ Generator avoids repeats — fresh prompts every round</li>
+      <li>🔒 No login, no ads during play, completely free</li>
+    </ul>
+  </section>
+
+  <section class="how-to">
+    <h2>How to Play Food Charades – Step by Step</h2>
+    <p><strong>1. Pick a mode and count</strong><br>Choose Easy for all ages, Cooking for kitchen enthusiasts, Hard for competitive adults, or World Food for foodies and multicultural groups.</p>
+    <p><strong>2. Click Generate</strong><br>Hit Generate and food charade prompts appear instantly. The actor reads privately while everyone else looks away.</p>
+    <p><strong>3. Use Full Screen</strong><br>Switch to Full Screen so only the actor sees the prompt as they move to their acting spot.</p>
+    <p><strong>4. Signal the food category</strong><br>Before acting, mime whether the prompt is a dish, a cooking action, or a restaurant scene. This narrows the guessing field immediately.</p>
+    <p><strong>5. Act the full food experience</strong><br>Show preparation, eating, reactions, utensils, temperature — the complete food experience, not just the food name. The more specific the physical detail, the faster the correct guess.</p>
+    <p><strong>6. Set a 60-second timer</strong><br>One round equals 60 seconds. A correct guess scores a point. After the round, let players share their own experience with the food — these conversations are often as entertaining as the game.</p>
+    <p><strong>7. Rotate and keep going</strong><br>Take turns so every player acts at least twice. Click Generate for unlimited fresh food prompts all evening.</p>
+  </section>
+
+  <section class="content-section">
+    <h2>Frequently Asked Questions – Food Charades</h2>
+    <p><strong>What is food charades?</strong><br>Food charades uses food, cooking, and eating prompts exclusively. Players act out dishes, cooking actions, restaurant scenes, and food experiences without speaking while others guess. Perfect for foodies, families, and dinner parties.</p>
+    <p><strong>What are good food charades ideas?</strong><br>Chopping onions and crying, eating spaghetti messily, flipping pancakes, making sushi, a soufflé collapsing, eating ice cream before it melts — any food action with distinctive physical movement and universal recognition works perfectly.</p>
+    <p><strong>Is food charades suitable for kids?</strong><br>Yes. Easy mode uses simple food actions — eating ice cream, blowing birthday candles, peeling a banana — that children aged 4 and above can easily act and guess.</p>
+    <p><strong>What is World Food mode?</strong><br>World Food mode features dishes and food traditions from global cuisines — Indian biryani, Japanese sushi, French crêpes, Mexican tortillas, Chinese dim sum, Turkish kebab, and more. Perfect for multicultural groups and food lovers.</p>
+    <p><strong>Can I use this at a dinner party?</strong><br>Yes. Food charades is the perfect after-dinner party game — everyone is relaxed, food is fresh in mind, and the prompts spark natural conversation about dishes and cuisines.</p>
+    <p><strong>Is this generator free?</strong><br>Yes. Completely free with no signup, no download, and no time limit.</p>
+  </section>
+
+  <section class="content-section">
+    <h2>🎮 Explore All Charades Tools – 25+ Free Generators</h2>
+    <p>Try any of these free charades generators. Every tool is free, instant, and works on all devices.</p>
+    <div class="related-tools">
+      <a href="kids-charade-generator.html" class="rel-card"><span class="ri">👦</span><span class="rn">Kids Charades</span></a>
+      <a href="movie-charades.html" class="rel-card"><span class="ri">🎬</span><span class="rn">Movie Charades</span></a>
+      <a href="character-charades.html" class="rel-card"><span class="ri">🦸</span><span class="rn">Character Charades</span></a>
+      <a href="reverse-charades.html" class="rel-card"><span class="ri">🔄</span><span class="rn">Reverse Charades</span></a>
+      <a href="christmas-charades.html" class="rel-card"><span class="ri">🎄</span><span class="rn">Christmas Charades</span></a>
+      <a href="islamic-charades.html" class="rel-card"><span class="ri">🕌</span><span class="rn">Islamic Charades</span></a>
+      <a href="animal-charades.html" class="rel-card"><span class="ri">🐾</span><span class="rn">Animal Charades</span></a>
+      <a href="funny-charades.html" class="rel-card"><span class="ri">😂</span><span class="rn">Funny Charades</span></a>
+      <a href="hard-charades.html" class="rel-card"><span class="ri">🧠</span><span class="rn">Hard Charades</span></a>
+      <a href="sports-charades.html" class="rel-card"><span class="ri">⚽</span><span class="rn">Sports Charades</span></a>
+      <a href="halloween-charades.html" class="rel-card"><span class="ri">🎃</span><span class="rn">Halloween Charades</span></a>
+      <a href="birthday-charades.html" class="rel-card"><span class="ri">🎂</span><span class="rn">Birthday Charades</span></a>
+      <a href="school-charades.html" class="rel-card"><span class="ri">🏫</span><span class="rn">School Charades</span></a>
+      <a href="emoji-charades.html" class="rel-card"><span class="ri">😀</span><span class="rn">Emoji Charades</span></a>
+      <a href="bollywood-charades.html" class="rel-card"><span class="ri">🎥</span><span class="rn">Bollywood Charades</span></a>
+      <a href="bible-charades.html" class="rel-card"><span class="ri">📖</span><span class="rn">Bible Charades</span></a>
+      <a href="thanksgiving-charades.html" class="rel-card"><span class="ri">🦃</span><span class="rn">Thanksgiving Charades</span></a>
+      <a href="valentines-charades.html" class="rel-card"><span class="ri">❤️</span><span class="rn">Valentine Charades</span></a>
+      <a href="summer-charades.html" class="rel-card"><span class="ri">☀️</span><span class="rn">Summer Charades</span></a>
+      <a href="superhero-charades.html" class="rel-card"><span class="ri">🦸‍♂️</span><span class="rn">Superhero Charades</span></a>
+      <a href="nature-charades.html" class="rel-card"><span class="ri">🌿</span><span class="rn">Nature Charades</span></a>
+      <a href="occupation-charades.html" class="rel-card"><span class="ri">👨‍⚕️</span><span class="rn">Occupation Charades</span></a>
+      <a href="fairy-tale-charades.html" class="rel-card"><span class="ri">🧚</span><span class="rn">Fairy Tale Charades</span></a>
+      <a href="ramadan-charades.html" class="rel-card"><span class="ri">🌙</span><span class="rn">Ramadan Charades</span></a>
+      <a href="index.html" class="rel-card"><span class="ri">🎭</span><span class="rn">All Charades</span></a>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>Start Playing Food Charades Right Now</h2>
+    <p>Food charades is the game that brings the joy of shared meals into your game night. When someone perfectly mimes the desperation of eating ice cream before it melts, or the pride of a chef presenting a tiny portion on an enormous plate, or the concentration of rolling a sushi mat — those moments create the kind of shared laughter that lingers long after the plates are cleared.</p>
+    <p>Scroll up, pick your mode, click Generate, and let the feast of fun begin. 🍕🎉</p>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <a href="about-us.html">About Us</a>
+  <a href="contact-us.html">Contact Us</a>
+  <a href="privacy-policy.html">Privacy Policy</a>
+  <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+  <a href="disclaimer.html">Disclaimer</a>
+  <p>© CharadeGenerator 2026</p>
+</footer>
+
+<script src="js/food-charades.js"></script>
+</body>
+</html>
