@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sports Charades Generator – 100+ Sports & Activities to Act Out Free</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Free Sports Charades Generator with 100+ sports prompts. Act out football, cricket, Olympics, extreme sports and athlete moments. Perfect for sports fans, families and parties. No signup needed.">
+
+  <link rel="icon" type="image/x-icon" href="/assests/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assests/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assests/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assests/favicon-48x48.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assests/apple-touch-icon-180x180.png">
+  <link rel="apple-touch-icon" href="/assests/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assests/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assests/android-chrome-512x512.png">
+
+  <link rel="alternate" hreflang="en" href="https://charadegenerator.com/sports-charades.html" />
+  <link rel="alternate" hreflang="hi" href="https://charadegenerator.com/hi/sports-charades.html" />
+  <link rel="alternate" hreflang="ur" href="https://charadegenerator.com/ur/sports-charades.html" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Sports Charades Generator",
+        "url": "https://charadegenerator.com/sports-charades.html",
+        "description": "Free online sports charades generator with 100+ prompts covering football, cricket, Olympics, extreme sports, water sports and famous athlete moments. Perfect for sports fans, families and parties.",
+        "applicationCategory": "GameApplication",
+        "operatingSystem": "Any",
+        "browserRequirements": "Requires JavaScript.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "author": { "@type": "Person", "name": "CharadeGenerator Team", "url": "https://charadegenerator.com/about-us.html" },
+        "featureList": ["100+ sports charade prompts","6 sports categories","Easy, Team Sports, Individual, Extreme modes","Full-screen mode","Copy to clipboard","Mobile-friendly"]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type":"Question","name":"What is sports charades?","acceptedAnswer":{"@type":"Answer","text":"Sports charades is a themed version of the classic charades game where all prompts are related to sports, athletics, and physical activities. Players act out sports moves, famous athlete celebrations, sporting events, and athletic scenarios without speaking while others guess. It is perfect for sports fans, PE classes, sports-themed parties, and active family game nights."}},
+          {"@type":"Question","name":"What sports are included in this generator?","acceptedAnswer":{"@type":"Answer","text":"The generator covers football, cricket, basketball, tennis, swimming, athletics, boxing, gymnastics, cycling, rugby, badminton, hockey, extreme sports like skateboarding and surfing, water sports, and Olympic events. There are also famous athlete celebration moments and sports commentator scenarios across all difficulty modes."}},
+          {"@type":"Question","name":"Is sports charades good for PE classes?","acceptedAnswer":{"@type":"Answer","text":"Yes. Sports charades is an excellent PE class warm-up and cool-down activity. It reinforces sports vocabulary, encourages physical expression, and builds knowledge of different sports and athletic movements. Easy mode is ideal for primary school PE and the full mode works for secondary school sport studies."}},
+          {"@type":"Question","name":"How do you act out a sport in charades?","acceptedAnswer":{"@type":"Answer","text":"To act out a sport in charades, mime the most distinctive physical movement of that sport. Cricket has a unique batting stance and bowling action. Swimming has specific stroke movements. Golf has the distinctive swing and follow-through. Lead with the signature movement before adding context like winning or losing. The sport's most iconic physical action is always your fastest route to a correct guess."}},
+          {"@type":"Question","name":"Is this sports charades generator free?","acceptedAnswer":{"@type":"Answer","text":"Yes. Completely free with no signup, no download, and no time limit. Generate unlimited sports charade prompts for any sports party, PE class, or family game night."}},
+          {"@type":"Question","name":"What is Extreme mode in sports charades?","acceptedAnswer":{"@type":"Answer","text":"Extreme mode features adrenaline sports and unusual athletic activities — skydiving, base jumping, parkour, big wave surfing, free solo climbing, and competitive eating. These prompts are the most physically dramatic and entertaining to act, producing the most energetic and surprising rounds of any sports charades session."}}
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type":"ListItem","position":1,"name":"Home","item":"https://charadegenerator.com/"},
+          {"@type":"ListItem","position":2,"name":"Sports Charades","item":"https://charadegenerator.com/sports-charades.html"}
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .lang-bar{background:#f0fff4;border-bottom:1px solid #b2f5c8;padding:6px 16px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:13px;}
+    .lang-bar span{color:#555;font-weight:600;}
+    .lang-bar a{text-decoration:none;color:#2f9e44;padding:2px 8px;border-radius:4px;transition:background .2s;}
+    .lang-bar a:hover{background:#d3f9d8;}
+    .lang-bar a.active{background:#2f9e44;color:#fff;}
+    .stats-bar{display:flex;gap:24px;flex-wrap:wrap;background:linear-gradient(135deg,#2f9e44 0%,#40c057 100%);border-radius:12px;padding:20px 24px;margin:24px 0;color:#fff;}
+    .stat-item{text-align:center;flex:1;min-width:100px;}
+    .stat-num{font-size:28px;font-weight:700;}
+    .stat-label{font-size:12px;opacity:.9;margin-top:2px;}
+    .word-columns{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;margin-top:16px;}
+    .word-col h4{margin:0 0 8px;font-size:14px;text-transform:uppercase;letter-spacing:.5px;color:#2f9e44;}
+    .word-col ul{margin:0;padding-left:18px;font-size:14px;line-height:1.9;color:#333;}
+    .tips-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-top:16px;}
+    .tip-card{background:#f0fff4;border-left:4px solid #2f9e44;border-radius:8px;padding:14px 16px;}
+    .tip-card h4{margin:0 0 6px;font-size:15px;}
+    .tip-card p{margin:0;font-size:13px;color:#555;line-height:1.6;}
+    .diff-table{width:100%;border-collapse:collapse;font-size:14px;margin-top:16px;}
+    .diff-table th{background:#2f9e44;color:#fff;padding:10px 14px;text-align:left;}
+    .diff-table td{padding:10px 14px;border-bottom:1px solid #eee;}
+    .diff-table tr:nth-child(even) td{background:#f0fff4;}
+    .age-guide{background:#f0fff4;border:1px solid #b2f5c8;border-radius:10px;padding:20px 24px;margin:24px 0;}
+    .age-guide h3{margin-top:0;color:#2f9e44;}
+    .age-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px;}
+    .age-card{flex:1;min-width:130px;background:#fff;border:1px solid #b2f5c8;border-radius:8px;padding:12px;text-align:center;font-size:13px;}
+    .age-card strong{display:block;font-size:15px;margin-bottom:4px;}
+    .related-tools{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:12px;margin-top:16px;}
+    .rel-card{background:#fff;border:1px solid #dde4f5;border-radius:10px;padding:12px 10px;text-align:center;text-decoration:none;color:#222;font-size:13px;font-weight:500;transition:box-shadow .2s,transform .15s;display:flex;flex-direction:column;align-items:center;gap:5px;}
+    .rel-card:hover{box-shadow:0 4px 16px rgba(47,158,68,.15);transform:translateY(-2px);}
+    .rel-card .ri{font-size:22px;}
+    .rel-card .rn{font-weight:600;font-size:12px;}
+  </style>
+</head>
+<body>
+
+<div class="lang-bar">
+  <span>🌐 Language:</span>
+  <a href="/sports-charades.html" class="active">English</a>
+  <a href="/hi/sports-charades.html">हिंदी</a>
+  <a href="/ur/sports-charades.html">اردو</a>
+  <a href="/es/sports-charades.html">Español</a>
+  <a href="/fr/sports-charades.html">Français</a>
+  <a href="/ar/sports-charades.html">العربية</a>
+</div>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="logo"><a href="https://charadegenerator.com/" class="logo-link">🎭 <strong>Charades</strong>Generator</a></div>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <nav class="nav-desktop">
+      <a href="kids-charade-generator.html"><button>Kids Charades</button></a>
+      <a href="movie-charades.html"><button>Movie Charades</button></a>
+      <a href="character-charades.html"><button>Character Charades</button></a>
+      <a href="reverse-charades.html"><button>Reverse Charades</button></a>
+      <a href="christmas-charades.html"><button>Christmas Charades</button></a>
+      <a href="islamic-charades.html"><button>Islamic Charades</button></a>
+      <a href="animal-charades.html"><button>Animal Charades</button></a>
+    </nav>
+  </div>
+  <nav id="navMobile" class="nav-mobile">
+    <a href="kids-charade-generator.html"><button>Kids Charades</button></a>
+    <a href="movie-charades.html"><button>Movie Charades</button></a>
+    <a href="character-charades.html"><button>Character Charades</button></a>
+    <a href="reverse-charades.html"><button>Reverse Charades</button></a>
+    <a href="christmas-charades.html"><button>Christmas Charades</button></a>
+    <a href="islamic-charades.html"><button>Islamic Charades</button></a>
+    <a href="animal-charades.html"><button>Animal Charades</button></a>
+  </nav>
+</header>
+
+<main class="main">
+
+  <h1>Sports Charades Generator – 100+ Sports &amp; Activities to Act Out Free</h1>
+  <p class="seo-text">⚽ Play instantly • No signup • 100+ sports prompts • 6 sports categories</p>
+
+  <p class="seo-text">
+    Get active and competitive with this free Sports Charades Generator. Every prompt is sports-themed — from football goal celebrations and cricket batting stances to Olympic gymnastics routines and extreme sports wipeouts.
+    With over <strong>100 unique sports prompts</strong> across 6 categories, this is the perfect game for sports fans, PE classes, sports-themed parties, and active families who want to bring the energy of the stadium into their living room.
+  </p>
+
+  <p class="seo-text">
+    Sports charades works for every age — young children know what kicking a football looks like, teens can mime a slam dunk or a cricket six, and adults can act out a famous athlete celebration or an extreme sports moment. No preparation, no equipment. Generate and play instantly on any device.
+  </p>
+
+  <div class="stats-bar">
+    <div class="stat-item"><div class="stat-num">100+</div><div class="stat-label">Sports Prompts</div></div>
+    <div class="stat-item"><div class="stat-num">6</div><div class="stat-label">Sports Categories</div></div>
+    <div class="stat-item"><div class="stat-num">4</div><div class="stat-label">Play Modes</div></div>
+    <div class="stat-item"><div class="stat-num">100%</div><div class="stat-label">Free to Play</div></div>
+  </div>
+
+  <section class="tool" id="gameArea">
+    <h2 class="category-title">Sports Charades ⚽</h2>
+    <p class="subtitle">Click Generate to get a sporty charade ⚽</p>
+    <div class="top-controls">
+      <button id="copyBtn" onclick="copyCharades()">📋 Copy</button>
+      <button onclick="toggleFullScreen()">⛶ Full Screen</button>
+      <span id="copyMsg" class="copy-msg">Copied!</span>
+    </div>
+    <div class="quick-pick">
+      <button onclick="setCount(1)">1</button>
+      <button onclick="setCount(3)">3</button>
+      <button onclick="setCount(5)">5</button>
+      <button onclick="setCount(10)">10</button>
+      <button onclick="showCustom()">Custom</button>
+    </div>
+    <div class="mode-select">
+      <button class="mode-btn active" data-mode="all"      onclick="setMode('all')">All</button>
+      <button class="mode-btn"        data-mode="easy"     onclick="setMode('easy')">Easy</button>
+      <button class="mode-btn"        data-mode="team"     onclick="setMode('team')">Team Sports</button>
+      <button class="mode-btn"        data-mode="solo"     onclick="setMode('solo')">Individual</button>
+      <button class="mode-btn"        data-mode="extreme"  onclick="setMode('extreme')">Extreme</button>
+    </div>
+    <div id="customBox" class="custom-box hidden">
+      <input type="number" id="customInput" min="1" max="12" placeholder="Enter number">
+      <button onclick="applyCustom()">Apply</button>
+    </div>
+    <div id="cards" class="cards"></div>
+    <button class="generate-btn" onclick="generate()">Generate</button>
+  </section>
+
+  <div class="age-guide">
+    <h3>🎯 Which Mode Should You Pick?</h3>
+    <div class="age-row">
+      <div class="age-card"><strong>🟢 Easy</strong>All ages 5+<br>Simple familiar sports everyone knows.</div>
+      <div class="age-card"><strong>👥 Team Sports</strong>All ages<br>Football, cricket, basketball, rugby and more.</div>
+      <div class="age-card"><strong>🏃 Individual</strong>Teens & adults<br>Athletics, tennis, golf, gymnastics, boxing.</div>
+      <div class="age-card"><strong>🤙 Extreme</strong>Adults<br>Skydiving, surfing, parkour, base jumping.</div>
+    </div>
+  </div>
+
+  <section class="content-section">
+    <h2>100+ Sports Charades Word List by Category</h2>
+    <p>Every prompt is written as a specific sports action or moment — not just a sport name — making each card instantly fun to act and satisfying to guess. From a goalkeeper diving for a penalty to a golfer watching their ball sail into a bunker, every round brings a new athletic challenge.</p>
+    <div class="word-columns">
+      <div class="word-col">
+        <h4>⚽ Easy Sports</h4>
+        <ul>
+          <li>Kicking a football into goal</li>
+          <li>Hitting a cricket six</li>
+          <li>Shooting a basketball hoop</li>
+          <li>Swimming freestyle in pool</li>
+          <li>Running a sprint race</li>
+          <li>Serving a tennis ball</li>
+          <li>Jumping rope very fast</li>
+          <li>Doing a forward roll</li>
+          <li>Riding a bicycle uphill</li>
+          <li>Throwing a javelin</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>👥 Team Sports</h4>
+        <ul>
+          <li>Goalkeeper diving for penalty</li>
+          <li>Cricket bowler running up</li>
+          <li>Rugby player breaking through</li>
+          <li>Basketball slam dunk celebration</li>
+          <li>Volleyball spike at net</li>
+          <li>Hockey player dribbling fast</li>
+          <li>American football quarterback throw</li>
+          <li>Water polo player treading water</li>
+          <li>Rowing team in perfect sync</li>
+          <li>Tug of war team pulling hard</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>🏃 Individual Sports</h4>
+        <ul>
+          <li>Boxer doing rope skipping</li>
+          <li>Gymnast on balance beam</li>
+          <li>Golfer watching ball go in bunker</li>
+          <li>Tennis player disputing line call</li>
+          <li>Long jump athlete landing in sand</li>
+          <li>Weightlifter failing to lift bar</li>
+          <li>Swimmer diving off starting block</li>
+          <li>Pole vaulter clearing the bar</li>
+          <li>Cyclist climbing steep mountain</li>
+          <li>Marathon runner hitting the wall</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>🤙 Extreme Sports</h4>
+        <ul>
+          <li>Skydiver free falling from plane</li>
+          <li>Surfer riding a giant wave</li>
+          <li>Skateboarder landing a trick</li>
+          <li>Rock climber reaching the summit</li>
+          <li>Bungee jumper at the edge</li>
+          <li>Snowboarder hitting a half pipe</li>
+          <li>Parkour athlete jumping rooftops</li>
+          <li>Base jumper leaping off cliff</li>
+          <li>Motocross rider catching air</li>
+          <li>Kitesurfer pulled by the wind</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>🏅 Olympic Moments</h4>
+        <ul>
+          <li>Usain Bolt lightning bolt pose</li>
+          <li>Gymnast perfect dismount landing</li>
+          <li>Swimmer touching wall at finish</li>
+          <li>Sprinter crossing finish line first</li>
+          <li>Weightlifter total collapse after lift</li>
+          <li>Diver entering water with no splash</li>
+          <li>Athlete kissing gold medal</li>
+          <li>High jumper Fosbury flop</li>
+          <li>Discus thrower spinning release</li>
+          <li>Triple jumper hop step jump</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>😂 Funny Sports</h4>
+        <ul>
+          <li>Golfer missing easy putt angrily</li>
+          <li>Footballer faking injury dramatically</li>
+          <li>Cricketer hit on helmet by ball</li>
+          <li>Tennis player smashing racket</li>
+          <li>Goalkeeper letting in easy goal</li>
+          <li>Runner tripping at finish line</li>
+          <li>Darts player throwing all in wall</li>
+          <li>Bowler getting zero pins in alley</li>
+          <li>Cyclist falling off stationary bike</li>
+          <li>Wrestler dramatically falling out of ring</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>Sports Charades by Category – Full Guide</h2>
+
+    <h3>⚽ Easy Sports</h3>
+    <p>Easy sports prompts use the most universally familiar physical actions in sport. Kicking a football, shooting a basketball, serving a tennis ball, swimming freestyle — these are movements that children and adults across the world can both perform and recognise immediately. Easy mode is the perfect starting point for mixed-age groups, school PE classes, and any gathering where players have different levels of sports knowledge. The distinctive physicality of each sport makes guessing fast, competitive, and satisfying from the very first round.</p>
+
+    <h3>👥 Team Sports</h3>
+    <p>Team sports prompts focus on the specific physical moments that define each team game. A goalkeeper diving full-length for a penalty, a cricket bowler with their full run-up and delivery stride, a basketball player's slam dunk celebration — these are iconic sporting moments that fans of each sport will recognise instantly and non-fans will find entertaining to watch even without knowing the game. Team sports rounds work especially well for mixed groups because the physical drama communicates the sport even to players who have never watched it.</p>
+
+    <h3>🏃 Individual Sports</h3>
+    <p>Individual sports prompts focus on the athlete's personal battle with the sport itself. A marathon runner hitting the wall at kilometre 35, a golfer watching in disbelief as their ball rolls into a bunker, a weightlifter failing catastrophically to lift a bar — these moments capture the emotional as well as physical dimension of individual athletic performance. Individual sports rounds produce the most expressive acting performances because players invest in portraying the athlete's inner experience as well as the physical action.</p>
+
+    <h3>🤙 Extreme Sports</h3>
+    <p>Extreme sports prompts produce the most dramatic and physically committed acting performances of any sports charades session. A skydiver in free fall, a surfer on a giant wave face, a parkour athlete jumping between rooftops, or a base jumper standing at the edge of a cliff — these prompts demand that actors fully embody the physical sensation and emotional state of the activity. Extreme rounds work best when actors use their whole body and the full space available to convey the scale and intensity of the sport.</p>
+
+    <h3>🏅 Olympic Moments</h3>
+    <p>Olympic moment prompts are the most specific and rewarding category for sports enthusiasts. Usain Bolt's lightning bolt pose, the Fosbury flop in high jump, the moment a swimmer touches the wall in a photo finish, the complete collapse of a weightlifter after a maximum lift — these are iconic images that sports fans have watched hundreds of times and can identify from a single physical moment. Olympic rounds reward sports knowledge and create the most competitive guessing energy of any sports charades session.</p>
+
+    <h3>😂 Funny Sports</h3>
+    <p>Funny sports prompts take the most comedic and relatable sporting moments — the experiences every fan has either witnessed or feared. A footballer's theatrical diving performance, a golfer's meltdown over a missed tap-in putt, a goalkeeper's moment of absolute horror as they let in a soft goal — these are universal sporting disasters that transcend fandom and create immediate recognition and laughter from anyone who has ever watched sport at any level.</p>
+  </section>
+
+  <section class="content-section">
+    <h2>🎯 Sports Charades Mode Guide</h2>
+    <table class="diff-table">
+      <thead><tr><th>Mode</th><th>Best For</th><th>Prompt Types</th><th>Example</th></tr></thead>
+      <tbody>
+        <tr><td>🟢 Easy</td><td>All ages 5+, PE classes</td><td>Simple familiar sports movements</td><td>Kicking a football into goal</td></tr>
+        <tr><td>👥 Team Sports</td><td>Sports fans, mixed groups</td><td>Team game iconic moments</td><td>Goalkeeper diving for penalty</td></tr>
+        <tr><td>🏃 Individual</td><td>Teens, adults, athletes</td><td>Solo sport actions and emotions</td><td>Marathon runner hitting the wall</td></tr>
+        <tr><td>🤙 Extreme</td><td>Adults, thrill seekers</td><td>Adrenaline sports, high drama</td><td>Skydiver free falling from plane</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="content-section">
+    <h2>🏆 Tips for Playing Sports Charades</h2>
+    <div class="tips-grid">
+      <div class="tip-card"><h4>Lead With the Signature Move</h4><p>Every sport has one movement that defines it. Cricket has the batting stance, golf has the swing follow-through, swimming has the specific stroke. Lead with that signature move before adding context — it identifies the sport in seconds.</p></div>
+      <div class="tip-card"><h4>Show the Equipment</h4><p>Mime using the sport's equipment before acting the movement. A racket is held differently from a bat, a golf club differently from a hockey stick. The equipment shape communicates the sport before you even begin the action.</p></div>
+      <div class="tip-card"><h4>Act the Emotion as Well</h4><p>Sports is as much about emotion as action. The despair of missing a penalty, the ecstasy of a winning goal, the disbelief of a missed putt — emotional acting often communicates the sport faster than the physical movement alone.</p></div>
+      <div class="tip-card"><h4>Use the Scoreboard Context</h4><p>Show whether the athlete is winning or losing before the key action. A goalkeeper saving a penalty feels different from one conceding — the stakes communicate the sport and the moment simultaneously.</p></div>
+      <div class="tip-card"><h4>Signal Team vs Individual</h4><p>Before acting, mime whether it is a team sport (show two groups) or individual sport (point to yourself only). This single signal halves the guessing field immediately and helps the team focus.</p></div>
+      <div class="tip-card"><h4>Use the Whole Body</h4><p>Sports charades demands full-body commitment. A sprint is not just legs moving — it is arms pumping, head down, full explosive effort. The more physical energy you bring to the acting, the more clearly the sport communicates.</p></div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>Why Use This Sports Charades Generator?</h2>
+    <p>Sports charades brings the competitive energy of the stadium directly into your game night. The physical vocabulary of sport — stances, movements, celebrations, disasters — is universally understood across languages and cultures, making sports prompts some of the most accessible and fastest-guessing in any charades session.</p>
+    <p>This generator covers sports from around the world — not just Western sports but cricket, kabaddi, polo, and more — making it genuinely inclusive for players from any sporting background. The Funny Sports mode ensures that even non-sports fans enjoy the game through the universal comedy of sporting failure.</p>
+    <ul>
+      <li>⚽100+ unique sports prompts across 6 categories</li>
+      <li>🎉 Perfect for sports-themed parties, PE classes, family nights and team events</li>
+      <li>👨‍👩‍👧 Four modes cover young children through adult sports enthusiasts</li>
+      <li>🌍 Global sports coverage including cricket, kabaddi and Olympic events</li>
+      <li>⚡ One click generates 1, 3, 5, 10 or custom number instantly</li>
+      <li>📱 Fully mobile-optimised with full-screen mode</li>
+      <li>♾️ Generator avoids repeats — fresh sports action every round</li>
+      <li>🔒 No login, no ads during play, completely free</li>
+    </ul>
+  </section>
+
+  <section class="how-to">
+    <h2>How to Play Sports Charades – Step by Step</h2>
+    <p><strong>1. Pick a mode and count</strong><br>Choose Easy for all ages, Team Sports for football and cricket fans, Individual for athletics lovers, or Extreme for adrenaline seekers.</p>
+    <p><strong>2. Click Generate</strong><br>Hit Generate and sports charade prompts appear instantly. The actor reads privately while everyone else looks away.</p>
+    <p><strong>3. Use Full Screen</strong><br>Switch to Full Screen so only the actor sees the prompt as they move to their acting spot.</p>
+    <p><strong>4. Signal team or individual sport</strong><br>Before acting, show whether it is a team or individual sport. Then mime the equipment. These two signals identify the sport before you even perform the action.</p>
+    <p><strong>5. Lead with the signature move</strong><br>Perform the sport's most distinctive physical movement first — the batting stance, the swim stroke, the skating glide. Add emotion and context around it.</p>
+    <p><strong>6. Set a 60-second timer</strong><br>Sports charades moves fast. Most prompts get guessed within 30 seconds by sports-literate groups. Use 90 seconds for Extreme and Olympic moment prompts.</p>
+    <p><strong>7. Rotate and keep competing</strong><br>Take turns so every player acts at least twice. Keep a running score for extra competitive energy. Click Generate for unlimited fresh sports prompts.</p>
+  </section>
+
+  <section class="content-section">
+    <h2>Frequently Asked Questions – Sports Charades</h2>
+    <p><strong>What is sports charades?</strong><br>Sports charades uses sports, athletics, and physical activity prompts. Players act out sports moves, famous athlete moments, and sporting scenarios without speaking while others guess. Perfect for sports fans, PE classes, and active families.</p>
+    <p><strong>What sports are included?</strong><br>Football, cricket, basketball, tennis, swimming, athletics, boxing, gymnastics, cycling, rugby, extreme sports like skateboarding and surfing, water sports, and Olympic events.</p>
+    <p><strong>Is sports charades good for PE classes?</strong><br>Yes. It reinforces sports vocabulary, encourages physical expression, and builds knowledge of different sports. Easy mode is ideal for primary school and the full mode for secondary school sport studies.</p>
+    <p><strong>How do you act out a sport?</strong><br>Mime the sport's most distinctive physical movement first — the batting stance, the swim stroke, the skating glide. Show the equipment shape, then add emotion and context around the signature move.</p>
+    <p><strong>What is Extreme mode?</strong><br>Extreme mode features skydiving, surfing, parkour, base jumping, motocross and more — the most physically dramatic prompts that produce the most energetic acting performances.</p>
+    <p><strong>Is this generator free?</strong><br>Yes. Completely free with no signup, no download, and no time limit.</p>
+  </section>
+
+  <section class="content-section">
+    <h2>🎮 Explore All Charades Tools – 25+ Free Generators</h2>
+    <p>Try any of these free charades generators. Every tool is free, instant, and works on all devices.</p>
+    <div class="related-tools">
+      <a href="kids-charade-generator.html" class="rel-card"><span class="ri">👦</span><span class="rn">Kids Charades</span></a>
+      <a href="movie-charades.html" class="rel-card"><span class="ri">🎬</span><span class="rn">Movie Charades</span></a>
+      <a href="character-charades.html" class="rel-card"><span class="ri">🦸</span><span class="rn">Character Charades</span></a>
+      <a href="reverse-charades.html" class="rel-card"><span class="ri">🔄</span><span class="rn">Reverse Charades</span></a>
+      <a href="christmas-charades.html" class="rel-card"><span class="ri">🎄</span><span class="rn">Christmas Charades</span></a>
+      <a href="islamic-charades.html" class="rel-card"><span class="ri">🕌</span><span class="rn">Islamic Charades</span></a>
+      <a href="animal-charades.html" class="rel-card"><span class="ri">🐾</span><span class="rn">Animal Charades</span></a>
+      <a href="funny-charades.html" class="rel-card"><span class="ri">😂</span><span class="rn">Funny Charades</span></a>
+      <a href="hard-charades.html" class="rel-card"><span class="ri">🧠</span><span class="rn">Hard Charades</span></a>
+      <a href="food-charades.html" class="rel-card"><span class="ri">🍕</span><span class="rn">Food Charades</span></a>
+      <a href="halloween-charades.html" class="rel-card"><span class="ri">🎃</span><span class="rn">Halloween Charades</span></a>
+      <a href="birthday-charades.html" class="rel-card"><span class="ri">🎂</span><span class="rn">Birthday Charades</span></a>
+      <a href="school-charades.html" class="rel-card"><span class="ri">🏫</span><span class="rn">School Charades</span></a>
+      <a href="emoji-charades.html" class="rel-card"><span class="ri">😀</span><span class="rn">Emoji Charades</span></a>
+      <a href="bollywood-charades.html" class="rel-card"><span class="ri">🎥</span><span class="rn">Bollywood Charades</span></a>
+      <a href="bible-charades.html" class="rel-card"><span class="ri">📖</span><span class="rn">Bible Charades</span></a>
+      <a href="thanksgiving-charades.html" class="rel-card"><span class="ri">🦃</span><span class="rn">Thanksgiving Charades</span></a>
+      <a href="valentines-charades.html" class="rel-card"><span class="ri">❤️</span><span class="rn">Valentine Charades</span></a>
+      <a href="summer-charades.html" class="rel-card"><span class="ri">☀️</span><span class="rn">Summer Charades</span></a>
+      <a href="superhero-charades.html" class="rel-card"><span class="ri">🦸‍♂️</span><span class="rn">Superhero Charades</span></a>
+      <a href="nature-charades.html" class="rel-card"><span class="ri">🌿</span><span class="rn">Nature Charades</span></a>
+      <a href="occupation-charades.html" class="rel-card"><span class="ri">👨‍⚕️</span><span class="rn">Occupation Charades</span></a>
+      <a href="fairy-tale-charades.html" class="rel-card"><span class="ri">🧚</span><span class="rn">Fairy Tale Charades</span></a>
+      <a href="ramadan-charades.html" class="rel-card"><span class="ri">🌙</span><span class="rn">Ramadan Charades</span></a>
+      <a href="index.html" class="rel-card"><span class="ri">🎭</span><span class="rn">All Charades</span></a>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>Start Playing Sports Charades Right Now</h2>
+    <p>Sports charades is the game where athletic knowledge becomes a party superpower. The person who knows exactly how a cricket bowler runs in, who can perfectly mime Usain Bolt's lightning bolt pose, who commits fully to a skydiver in free fall — they win not just the round but the room. Every player becomes an athlete for 60 seconds.</p>
+    <p>Scroll up, pick your mode, click Generate, and let the games begin. ⚽🎉</p>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <a href="about-us.html">About Us</a>
+  <a href="contact-us.html">Contact Us</a>
+  <a href="privacy-policy.html">Privacy Policy</a>
+  <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+  <a href="disclaimer.html">Disclaimer</a>
+  <p>© CharadeGenerator 2026</p>
+</footer>
+
+<script src="js/sports-charades.js"></script>
+</body>
+</html>
