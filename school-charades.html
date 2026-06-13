@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>School Charades Generator – 100+ Classroom Ideas for Kids & Teachers</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Free School Charades Generator with 100+ classroom-safe prompts. Act out school subjects, teacher moments, student life and school events. Perfect for classrooms, teachers and kids. No signup needed.">
+
+  <link rel="icon" type="image/x-icon" href="/assests/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assests/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assests/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assests/favicon-48x48.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assests/apple-touch-icon-180x180.png">
+  <link rel="apple-touch-icon" href="/assests/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assests/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assests/android-chrome-512x512.png">
+
+  <link rel="alternate" hreflang="en" href="https://charadegenerator.com/school-charades.html" />
+  <link rel="alternate" hreflang="hi" href="https://charadegenerator.com/hi/school-charades.html" />
+  <link rel="alternate" hreflang="ur" href="https://charadegenerator.com/ur/school-charades.html" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "School Charades Generator",
+        "url": "https://charadegenerator.com/school-charades.html",
+        "description": "Free online school charades generator with 100+ classroom-safe prompts covering school subjects, teacher moments, student life, school events and funny classroom scenarios.",
+        "applicationCategory": "GameApplication",
+        "operatingSystem": "Any",
+        "browserRequirements": "Requires JavaScript.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "author": { "@type": "Person", "name": "CharadeGenerator Team", "url": "https://charadegenerator.com/about-us.html" },
+        "featureList": ["100+ school charade prompts","6 classroom categories","Primary, Secondary, Teacher, Funny modes","Full-screen mode","Copy to clipboard","Mobile-friendly"]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type":"Question","name":"What is school charades?","acceptedAnswer":{"@type":"Answer","text":"School charades is a classroom-themed version of the classic charades game where all prompts are related to school life — subjects, teachers, students, school events, and classroom moments. It is an excellent educational activity that builds vocabulary, improves physical expression, and makes learning fun. Perfect for classroom ice-breakers, end-of-term parties, and educational game nights."}},
+          {"@type":"Question","name":"Can teachers use school charades in the classroom?","acceptedAnswer":{"@type":"Answer","text":"Yes. School charades is one of the best classroom activities for teachers. It works as a lesson warm-up, a subject review game, an end-of-term activity, or a reward game. All prompts are curriculum-connected and classroom-safe. Primary mode is ideal for ages 5-10 and Secondary mode for ages 11-16."}},
+          {"@type":"Question","name":"What subjects are covered in school charades?","acceptedAnswer":{"@type":"Answer","text":"School charades covers all major school subjects including maths, science, English, history, geography, PE, art, music, and computing. Each subject has prompts based on specific classroom activities and learning moments that students will immediately recognise from their school experience."}},
+          {"@type":"Question","name":"Is school charades suitable for all ages?","acceptedAnswer":{"@type":"Answer","text":"Yes. Primary mode uses simple school actions suitable for ages 5-10. Secondary mode covers secondary school subjects and student life for ages 11-16. Teacher mode is designed for adult educators at professional development events. Funny mode works for all ages and celebrates the universal comedy of school life."}},
+          {"@type":"Question","name":"Is this school charades generator free?","acceptedAnswer":{"@type":"Answer","text":"Yes. Completely free with no signup, no download, and no time limit. Generate unlimited school charade prompts for any classroom activity, school event, or educational game night."}},
+          {"@type":"Question","name":"How can school charades help with learning?","acceptedAnswer":{"@type":"Answer","text":"School charades reinforces subject vocabulary through physical, embodied learning. When a student acts out photosynthesis, the water cycle, or long division, they create a physical memory of the concept that outlasts textbook reading. Research consistently shows that kinaesthetic learning — learning through physical movement — produces stronger long-term retention than passive study."}}
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type":"ListItem","position":1,"name":"Home","item":"https://charadegenerator.com/"},
+          {"@type":"ListItem","position":2,"name":"School Charades","item":"https://charadegenerator.com/school-charades.html"}
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .lang-bar{background:#e8f4fd;border-bottom:1px solid #b8d9f5;padding:6px 16px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:13px;}
+    .lang-bar span{color:#555;font-weight:600;}
+    .lang-bar a{text-decoration:none;color:#1971c2;padding:2px 8px;border-radius:4px;transition:background .2s;}
+    .lang-bar a:hover{background:#d0ebff;}
+    .lang-bar a.active{background:#1971c2;color:#fff;}
+    .stats-bar{display:flex;gap:24px;flex-wrap:wrap;background:linear-gradient(135deg,#1971c2 0%,#339af0 100%);border-radius:12px;padding:20px 24px;margin:24px 0;color:#fff;}
+    .stat-item{text-align:center;flex:1;min-width:100px;}
+    .stat-num{font-size:28px;font-weight:700;}
+    .stat-label{font-size:12px;opacity:.9;margin-top:2px;}
+    .word-columns{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;margin-top:16px;}
+    .word-col h4{margin:0 0 8px;font-size:14px;text-transform:uppercase;letter-spacing:.5px;color:#1971c2;}
+    .word-col ul{margin:0;padding-left:18px;font-size:14px;line-height:1.9;color:#333;}
+    .tips-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-top:16px;}
+    .tip-card{background:#e8f4fd;border-left:4px solid #1971c2;border-radius:8px;padding:14px 16px;}
+    .tip-card h4{margin:0 0 6px;font-size:15px;}
+    .tip-card p{margin:0;font-size:13px;color:#555;line-height:1.6;}
+    .diff-table{width:100%;border-collapse:collapse;font-size:14px;margin-top:16px;}
+    .diff-table th{background:#1971c2;color:#fff;padding:10px 14px;text-align:left;}
+    .diff-table td{padding:10px 14px;border-bottom:1px solid #eee;}
+    .diff-table tr:nth-child(even) td{background:#e8f4fd;}
+    .age-guide{background:#e8f4fd;border:1px solid #b8d9f5;border-radius:10px;padding:20px 24px;margin:24px 0;}
+    .age-guide h3{margin-top:0;color:#1971c2;}
+    .age-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px;}
+    .age-card{flex:1;min-width:130px;background:#fff;border:1px solid #b8d9f5;border-radius:8px;padding:12px;text-align:center;font-size:13px;}
+    .age-card strong{display:block;font-size:15px;margin-bottom:4px;}
+    .related-tools{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:12px;margin-top:16px;}
+    .rel-card{background:#fff;border:1px solid #dde4f5;border-radius:10px;padding:12px 10px;text-align:center;text-decoration:none;color:#222;font-size:13px;font-weight:500;transition:box-shadow .2s,transform .15s;display:flex;flex-direction:column;align-items:center;gap:5px;}
+    .rel-card:hover{box-shadow:0 4px 16px rgba(25,113,194,.15);transform:translateY(-2px);}
+    .rel-card .ri{font-size:22px;}
+    .rel-card .rn{font-weight:600;font-size:12px;}
+  </style>
+</head>
+<body>
+
+<div class="lang-bar">
+  <span>🌐 Language:</span>
+  <a href="/school-charades.html" class="active">English</a>
+  <a href="/hi/school-charades.html">हिंदी</a>
+  <a href="/ur/school-charades.html">اردو</a>
+  <a href="/es/school-charades.html">Español</a>
+  <a href="/fr/school-charades.html">Français</a>
+  <a href="/ar/school-charades.html">العربية</a>
+</div>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="logo"><a href="https://charadegenerator.com/" class="logo-link">🎭 <strong>Charades</strong>Generator</a></div>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <nav class="nav-desktop">
+      <a href="kids-charade-generator.html"><button>Kids Charades</button></a>
+      <a href="movie-charades.html"><button>Movie Charades</button></a>
+      <a href="character-charades.html"><button>Character Charades</button></a>
+      <a href="reverse-charades.html"><button>Reverse Charades</button></a>
+      <a href="christmas-charades.html"><button>Christmas Charades</button></a>
+      <a href="islamic-charades.html"><button>Islamic Charades</button></a>
+      <a href="animal-charades.html"><button>Animal Charades</button></a>
+    </nav>
+  </div>
+  <nav id="navMobile" class="nav-mobile">
+    <a href="kids-charade-generator.html"><button>Kids Charades</button></a>
+    <a href="movie-charades.html"><button>Movie Charades</button></a>
+    <a href="character-charades.html"><button>Character Charades</button></a>
+    <a href="reverse-charades.html"><button>Reverse Charades</button></a>
+    <a href="christmas-charades.html"><button>Christmas Charades</button></a>
+    <a href="islamic-charades.html"><button>Islamic Charades</button></a>
+    <a href="animal-charades.html"><button>Animal Charades</button></a>
+  </nav>
+</header>
+
+<main class="main">
+
+  <h1>School Charades Generator – 100+ Classroom Ideas for Kids &amp; Teachers</h1>
+  <p class="seo-text">🏫 Play instantly • No signup • 100+ school prompts • 6 classroom categories</p>
+
+  <p class="seo-text">
+    Bring learning to life with this free School Charades Generator. Every prompt is school-themed and classroom-safe — subjects, teachers, students, school events, and the universal moments every student experiences from their first day to their last exam.
+    With over <strong>100 unique school prompts</strong> across 6 categories, this is the perfect educational game for classroom ice-breakers, end-of-term parties, school events, and family game nights with school-age children.
+  </p>
+
+  <p class="seo-text">
+    School charades makes learning physical and memorable. When students act out photosynthesis, the water cycle, or long division, they create kinaesthetic memories that outlast any textbook. Teachers love it as a lesson warm-up. Students love it as a reward game. Parents love it as an educational family activity that feels like pure fun.
+  </p>
+
+  <div class="stats-bar">
+    <div class="stat-item"><div class="stat-num">100+</div><div class="stat-label">School Prompts</div></div>
+    <div class="stat-item"><div class="stat-num">6</div><div class="stat-label">School Categories</div></div>
+    <div class="stat-item"><div class="stat-num">4</div><div class="stat-label">Classroom Modes</div></div>
+    <div class="stat-item"><div class="stat-num">100%</div><div class="stat-label">Free to Use</div></div>
+  </div>
+
+  <section class="tool" id="gameArea">
+    <h2 class="category-title">School Charades 🏫</h2>
+    <p class="subtitle">Click Generate to get a school charade 🏫</p>
+    <div class="top-controls">
+      <button id="copyBtn" onclick="copyCharades()">📋 Copy</button>
+      <button onclick="toggleFullScreen()">⛶ Full Screen</button>
+      <span id="copyMsg" class="copy-msg">Copied!</span>
+    </div>
+    <div class="quick-pick">
+      <button onclick="setCount(1)">1</button>
+      <button onclick="setCount(3)">3</button>
+      <button onclick="setCount(5)">5</button>
+      <button onclick="setCount(10)">10</button>
+      <button onclick="showCustom()">Custom</button>
+    </div>
+    <div class="mode-select">
+      <button class="mode-btn active" data-mode="all"       onclick="setMode('all')">All</button>
+      <button class="mode-btn"        data-mode="primary"   onclick="setMode('primary')">Primary</button>
+      <button class="mode-btn"        data-mode="secondary" onclick="setMode('secondary')">Secondary</button>
+      <button class="mode-btn"        data-mode="teacher"   onclick="setMode('teacher')">Teacher</button>
+      <button class="mode-btn"        data-mode="funny"     onclick="setMode('funny')">Funny</button>
+    </div>
+    <div id="customBox" class="custom-box hidden">
+      <input type="number" id="customInput" min="1" max="12" placeholder="Enter number">
+      <button onclick="applyCustom()">Apply</button>
+    </div>
+    <div id="cards" class="cards"></div>
+    <button class="generate-btn" onclick="generate()">Generate</button>
+  </section>
+
+  <div class="age-guide">
+    <h3>🎯 Which Classroom Mode Should You Pick?</h3>
+    <div class="age-row">
+      <div class="age-card"><strong>📗 Primary</strong>Ages 5–10<br>Simple school actions, basic subjects, classroom routines.</div>
+      <div class="age-card"><strong>📘 Secondary</strong>Ages 11–16<br>Subject-specific, exams, student life, school events.</div>
+      <div class="age-card"><strong>👩‍🏫 Teacher</strong>Educators<br>Teacher moments, staffroom life, parent evenings.</div>
+      <div class="age-card"><strong>😂 Funny</strong>All ages<br>Universal school disasters everyone has lived through.</div>
+    </div>
+  </div>
+
+  <section class="content-section">
+    <h2>100+ School Charades Word List by Category</h2>
+    <p>Every prompt is a specific school action or moment — not just a subject name — making each card immediately fun to act and educationally meaningful. From a teacher writing on the board to a student panicking in an exam, every round brings authentic school energy.</p>
+    <div class="word-columns">
+      <div class="word-col">
+        <h4>📗 Primary School</h4>
+        <ul>
+          <li>Teacher writing on blackboard</li>
+          <li>Student raising hand to answer</li>
+          <li>Reading a big book aloud</li>
+          <li>Painting a picture carefully</li>
+          <li>Lining up quietly for assembly</li>
+          <li>Counting on fingers in maths</li>
+          <li>Singing in school choir</li>
+          <li>Playing at break time</li>
+          <li>Putting on PE kit quickly</li>
+          <li>Show and tell presentation</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>📘 Secondary School</h4>
+        <ul>
+          <li>Dissecting a frog in science</li>
+          <li>Performing a Shakespeare play</li>
+          <li>Presenting a history project</li>
+          <li>Doing a geography fieldwork survey</li>
+          <li>Playing in school orchestra</li>
+          <li>Running a science experiment</li>
+          <li>Doing long division on board</li>
+          <li>Debating in English class</li>
+          <li>Making pottery in art class</li>
+          <li>Coding first computer programme</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>🔬 School Subjects</h4>
+        <ul>
+          <li>Photosynthesis in science</li>
+          <li>Water cycle diagram drawing</li>
+          <li>Solving algebra equation</li>
+          <li>Reading Shakespeare aloud</li>
+          <li>Drawing a world map</li>
+          <li>Dissecting a plant stem</li>
+          <li>Playing recorder in music</li>
+          <li>Vaulting over horse in PE</li>
+          <li>Painting self-portrait in art</li>
+          <li>Typing first code in computing</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>👩‍🏫 Teacher Moments</h4>
+        <ul>
+          <li>Marking a huge pile of homework</li>
+          <li>Explaining concept three different ways</li>
+          <li>Calling on student who is not listening</li>
+          <li>Writing report cards late at night</li>
+          <li>Parent evening difficult conversation</li>
+          <li>Projector not working before lesson</li>
+          <li>Whole class silent reading</li>
+          <li>Taking register at start of day</li>
+          <li>Breaking up playground argument</li>
+          <li>Staying after school for detention</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>📝 Exam & Study</h4>
+        <ul>
+          <li>Panicking in exam hall</li>
+          <li>Running out of time in exam</li>
+          <li>Revising with flashcards</li>
+          <li>All-night study session</li>
+          <li>Forgetting answer you knew perfectly</li>
+          <li>Getting results envelope nervously</li>
+          <li>Celebrating after last exam</li>
+          <li>Mind going blank in oral exam</li>
+          <li>Realising you revised wrong topic</li>
+          <li>Finishing exam and walking out</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>😂 Funny School</h4>
+        <ul>
+          <li>Falling asleep in class</li>
+          <li>Autocorrect ruining school project</li>
+          <li>Printer jamming before deadline</li>
+          <li>Wrong classroom for ten minutes</li>
+          <li>Lunch box opening exploding</li>
+          <li>Pen exploding all over face</li>
+          <li>Chair scraping in silent exam</li>
+          <li>Tripping on stage at assembly</li>
+          <li>Forgetting PE kit on sports day</li>
+          <li>Getting name wrong by teacher all year</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>School Charades by Category – Full Guide</h2>
+
+    <h3>📗 Primary School</h3>
+    <p>Primary school prompts capture the warm, colourful world of early childhood education. A student raising their hand so urgently it threatens to leave their shoulder, lining up quietly for assembly while trying not to wobble, or doing show and tell with trembling excitement — these are universal primary school memories that both children and adults recognise with immediate warmth. Primary mode is the gentlest and most universally accessible school category, working for students currently in primary school and adults reliving their earliest educational memories.</p>
+
+    <h3>📘 Secondary School</h3>
+    <p>Secondary school prompts bring the more complex, subject-specific, and emotionally intense world of teenage education to life. Dissecting a frog in biology, performing Shakespeare in English, presenting a history project with varying confidence levels, or running a science experiment that goes slightly wrong — these are the shared academic experiences that unite every secondary school student. Secondary rounds work brilliantly for teenage groups, families with secondary school children, and adult groups reminiscing about their school years.</p>
+
+    <h3>🔬 School Subjects</h3>
+    <p>Subject-specific prompts are the most educationally valuable category in school charades. Acting out photosynthesis — the absorption of sunlight through leaf-arm surfaces, the production of oxygen through breath — creates a kinaesthetic memory of the biological process that reading a textbook rarely achieves. The water cycle becomes a full-body journey from evaporation to precipitation. Long division becomes a physical sequence of steps. Subject prompts reinforce curriculum content while making the learning process active, social, and genuinely fun.</p>
+
+    <h3>👩‍🏫 Teacher Moments</h3>
+    <p>Teacher moment prompts give players the rare and delightful perspective of the educator rather than the student. Marking a towering pile of homework at 11pm, explaining the same concept in three completely different ways hoping one will land, or navigating a difficult parent evening conversation — these are the universal teacher experiences that educators find deeply relatable and students find fascinating. Teacher mode works brilliantly for teacher professional development events, school staff parties, and parent gatherings where adults want to celebrate the teaching profession with humour.</p>
+
+    <h3>📝 Exam &amp; Study</h3>
+    <p>Exam and study prompts tap into the most universally shared and emotionally intense school experience — assessment anxiety. Panicking in the exam hall when the question paper is flipped over, the mind going completely blank mid-oral exam, realising with horror that you revised the wrong topic, and the explosive joy of walking out of your last exam — these are emotional peaks of school life that every student lives through. Exam prompts produce the most committed and emotionally authentic acting performances of any school charades category.</p>
+
+    <h3>😂 Funny School</h3>
+    <p>Funny school prompts are the most universally beloved category because they celebrate the small, embarrassing, and chaotic moments that define real school life rather than the idealised version. Falling asleep in class and waking up confused, sitting in the wrong classroom for ten full minutes before realising, or tripping on stage during the school assembly — these are experiences that unite every student who has ever walked through a school gate. Funny school rounds create the most nostalgic and good-natured laughter of any school charades session.</p>
+  </section>
+
+  <section class="content-section">
+    <h2>🎯 School Charades Mode Guide</h2>
+    <table class="diff-table">
+      <thead><tr><th>Mode</th><th>Best For</th><th>Prompt Types</th><th>Example</th></tr></thead>
+      <tbody>
+        <tr><td>📗 Primary</td><td>Ages 5–10, classroom warm-ups</td><td>Simple school actions, basic subjects</td><td>Student raising hand to answer</td></tr>
+        <tr><td>📘 Secondary</td><td>Ages 11–16, school events</td><td>Subject-specific, exams, student life</td><td>Dissecting a frog in science</td></tr>
+        <tr><td>👩‍🏫 Teacher</td><td>Educators, staff events</td><td>Teacher life, parent evenings, staffroom</td><td>Marking homework pile at midnight</td></tr>
+        <tr><td>😂 Funny</td><td>All ages, end-of-term parties</td><td>Universal school disasters and comedy</td><td>Tripping on stage at assembly</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="content-section">
+    <h2>🏆 Tips for Playing School Charades</h2>
+    <div class="tips-grid">
+      <div class="tip-card"><h4>Signal the Subject First</h4><p>For subject prompts, mime the subject before the concept — draw a beaker for science, a globe for geography, a musical note for music. Subject context helps the team narrow their guessing to the right curriculum area immediately.</p></div>
+      <div class="tip-card"><h4>Act the Student AND the Teacher</h4><p>For classroom prompts, show both perspectives. A student raising their hand means nothing without the teacher choosing someone else. A teacher explaining a concept means nothing without showing the confused students. Context makes school charades richer.</p></div>
+      <div class="tip-card"><h4>Use as a Lesson Review</h4><p>For classroom use, generate subject-specific prompts after a lesson to review key concepts. Students acting out photosynthesis, the water cycle, or historical events create physical memories that reinforce classroom learning effectively.</p></div>
+      <div class="tip-card"><h4>Show the Emotion of School Life</h4><p>School is deeply emotional — the anxiety of exams, the joy of understanding a difficult concept, the embarrassment of getting an answer wrong publicly. Emotional acting communicates school scenarios faster and more authentically than physical action alone.</p></div>
+      <div class="tip-card"><h4>Use Full Screen for Classroom Play</h4><p>When playing in a classroom, generate a prompt on Full Screen and walk to the front of the class. The phone screen facing the actor is naturally hidden from other students, making it a perfect classroom game without any extra setup.</p></div>
+      <div class="tip-card"><h4>End-of-Term Best Use</h4><p>School charades works best as an end-of-term or pre-holiday classroom activity. Students are energised, academic pressure has lifted, and the school-themed prompts create perfect nostalgia for the year just completed together.</p></div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>Why Use This School Charades Generator?</h2>
+    <p>School charades sits at the perfect intersection of education and entertainment. It is active, social, curriculum-connected, and genuinely funny — four things that rarely appear together in educational settings. For teachers, it provides a structured, no-prep activity that students request to play again. For parents, it turns study time into family game time. For students, it makes school feel less like obligation and more like shared experience.</p>
+    <p>This generator covers the full spectrum of school life — from the simplest primary classroom actions to the most intense exam room emotions — ensuring that every player, regardless of age or education level, finds prompts that resonate with their own school experience.</p>
+    <ul>
+      <li>🏫 100+ unique school prompts across 6 classroom categories</li>
+      <li>🎉 Perfect for classrooms, school events, end-of-term parties and family nights</li>
+      <li>👩‍🏫 Four modes cover primary students through to teachers and educators</li>
+      <li>📚 Subject prompts reinforce curriculum content through kinaesthetic learning</li>
+      <li>⚡ One click generates 1, 3, 5, 10 or custom number instantly</li>
+      <li>📱 Full Screen mode works perfectly for classroom front-of-class play</li>
+      <li>♾️ Generator avoids repeats — fresh school moments every round</li>
+      <li>🔒 No login, no ads during play, completely free</li>
+    </ul>
+  </section>
+
+  <section class="how-to">
+    <h2>How to Play School Charades – Step by Step</h2>
+    <p><strong>1. Pick a classroom mode and count</strong><br>Choose Primary for young children, Secondary for teens, Teacher for educator groups, or Funny for end-of-term parties and family nights.</p>
+    <p><strong>2. Click Generate</strong><br>Hit Generate and school prompts appear instantly. The actor reads privately while everyone else looks away — just like the real school experience of waiting for your turn.</p>
+    <p><strong>3. Use Full Screen for classroom play</strong><br>Switch to Full Screen and walk to the front. The phone faces the actor naturally, keeping the prompt hidden from the class. No extra setup needed.</p>
+    <p><strong>4. Signal the subject or school category</strong><br>Before acting, mime whether it is a science, maths, English, or PE prompt. Category context helps the class narrow their guessing to the right subject area immediately.</p>
+    <p><strong>5. Act the school moment completely</strong><br>Show both the action and the emotion. Exam panic needs both the physical pen-over-paper and the wide-eyed frozen expression. Teacher explaining needs both the gesture to the board and the patient expression trying every available approach.</p>
+    <p><strong>6. Set a 60-second timer</strong><br>School charades moves fast when the group shares school experience. Use 60 seconds for Primary and Funny modes and 90 seconds for Subject-specific and Teacher prompts.</p>
+    <p><strong>7. Discuss after subject prompts</strong><br>For educational use, briefly discuss the school concept after each subject prompt is guessed. This review moment consolidates the kinaesthetic learning created by the acting into lasting subject knowledge.</p>
+  </section>
+
+  <section class="content-section">
+    <h2>Frequently Asked Questions – School Charades</h2>
+    <p><strong>What is school charades?</strong><br>School charades uses school-themed prompts — subjects, teacher moments, student life, and school events. Players act without speaking while others guess. An excellent educational activity and classroom game for all ages.</p>
+    <p><strong>Can teachers use this in the classroom?</strong><br>Yes. Works as a lesson warm-up, subject review game, end-of-term activity, or reward game. All prompts are curriculum-connected and classroom-safe. Primary mode for ages 5-10, Secondary for ages 11-16.</p>
+    <p><strong>What subjects are covered?</strong><br>Maths, science, English, history, geography, PE, art, music, and computing — all with specific classroom action prompts that students will immediately recognise from their school experience.</p>
+    <p><strong>How does school charades help with learning?</strong><br>Acting out photosynthesis, the water cycle, or long division creates kinaesthetic memories that outlast textbook reading. Physical, embodied learning produces stronger long-term retention than passive study.</p>
+    <p><strong>Is this suitable for all ages?</strong><br>Yes. Primary mode for ages 5-10, Secondary for ages 11-16, Teacher mode for adult educators, and Funny mode for all ages at school events and family nights.</p>
+    <p><strong>Is this generator free?</strong><br>Yes. Completely free with no signup, no download, and no time limit.</p>
+  </section>
+
+  <section class="content-section">
+    <h2>🎮 Explore All Charades Tools – 25+ Free Generators</h2>
+    <p>Try any of these free charades generators. Every tool is free, instant, and works on all devices.</p>
+    <div class="related-tools">
+      <a href="kids-charade-generator.html" class="rel-card"><span class="ri">👦</span><span class="rn">Kids Charades</span></a>
+      <a href="movie-charades.html" class="rel-card"><span class="ri">🎬</span><span class="rn">Movie Charades</span></a>
+      <a href="character-charades.html" class="rel-card"><span class="ri">🦸</span><span class="rn">Character Charades</span></a>
+      <a href="reverse-charades.html" class="rel-card"><span class="ri">🔄</span><span class="rn">Reverse Charades</span></a>
+      <a href="christmas-charades.html" class="rel-card"><span class="ri">🎄</span><span class="rn">Christmas Charades</span></a>
+      <a href="islamic-charades.html" class="rel-card"><span class="ri">🕌</span><span class="rn">Islamic Charades</span></a>
+      <a href="animal-charades.html" class="rel-card"><span class="ri">🐾</span><span class="rn">Animal Charades</span></a>
+      <a href="funny-charades.html" class="rel-card"><span class="ri">😂</span><span class="rn">Funny Charades</span></a>
+      <a href="hard-charades.html" class="rel-card"><span class="ri">🧠</span><span class="rn">Hard Charades</span></a>
+      <a href="food-charades.html" class="rel-card"><span class="ri">🍕</span><span class="rn">Food Charades</span></a>
+      <a href="sports-charades.html" class="rel-card"><span class="ri">⚽</span><span class="rn">Sports Charades</span></a>
+      <a href="halloween-charades.html" class="rel-card"><span class="ri">🎃</span><span class="rn">Halloween Charades</span></a>
+      <a href="birthday-charades.html" class="rel-card"><span class="ri">🎂</span><span class="rn">Birthday Charades</span></a>
+      <a href="emoji-charades.html" class="rel-card"><span class="ri">😀</span><span class="rn">Emoji Charades</span></a>
+      <a href="bollywood-charades.html" class="rel-card"><span class="ri">🎥</span><span class="rn">Bollywood Charades</span></a>
+      <a href="bible-charades.html" class="rel-card"><span class="ri">📖</span><span class="rn">Bible Charades</span></a>
+      <a href="thanksgiving-charades.html" class="rel-card"><span class="ri">🦃</span><span class="rn">Thanksgiving Charades</span></a>
+      <a href="valentines-charades.html" class="rel-card"><span class="ri">❤️</span><span class="rn">Valentine Charades</span></a>
+      <a href="summer-charades.html" class="rel-card"><span class="ri">☀️</span><span class="rn">Summer Charades</span></a>
+      <a href="superhero-charades.html" class="rel-card"><span class="ri">🦸‍♂️</span><span class="rn">Superhero Charades</span></a>
+      <a href="nature-charades.html" class="rel-card"><span class="ri">🌿</span><span class="rn">Nature Charades</span></a>
+      <a href="occupation-charades.html" class="rel-card"><span class="ri">👨‍⚕️</span><span class="rn">Occupation Charades</span></a>
+      <a href="fairy-tale-charades.html" class="rel-card"><span class="ri">🧚</span><span class="rn">Fairy Tale Charades</span></a>
+      <a href="ramadan-charades.html" class="rel-card"><span class="ri">🌙</span><span class="rn">Ramadan Charades</span></a>
+      <a href="index.html" class="rel-card"><span class="ri">🎭</span><span class="rn">All Charades</span></a>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>Start Playing School Charades Right Now</h2>
+    <p>School charades is the game that makes every student realise how much they actually know — and how funny school really is when you step back and look at it. When someone perfectly mimes exam panic, a teacher explaining for the third time, or tripping on stage at assembly, the whole room lights up with shared recognition and laughter.</p>
+    <p>Scroll up, pick your classroom mode, click Generate, and bring school to life in the most entertaining way possible. 🏫🎉</p>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <a href="about-us.html">About Us</a>
+  <a href="contact-us.html">Contact Us</a>
+  <a href="privacy-policy.html">Privacy Policy</a>
+  <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+  <a href="disclaimer.html">Disclaimer</a>
+  <p>© CharadeGenerator 2026</p>
+</footer>
+
+<script src="js/school-charades.js"></script>
+</body>
+</html>
