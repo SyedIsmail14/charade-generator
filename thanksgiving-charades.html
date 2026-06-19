@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Thanksgiving Charades Generator – 100+ Holiday Ideas for Families</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Free Thanksgiving Charades Generator with 100+ holiday prompts. Act out turkey, family traditions, Thanksgiving dinner and gratitude moments. Perfect for family gatherings and kids. No signup needed.">
+
+  <link rel="icon" type="image/x-icon" href="/assests/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assests/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assests/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assests/favicon-48x48.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assests/apple-touch-icon-180x180.png">
+  <link rel="apple-touch-icon" href="/assests/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assests/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assests/android-chrome-512x512.png">
+
+  <link rel="alternate" hreflang="en" href="https://charadegenerator.com/thanksgiving-charades.html" />
+  <link rel="alternate" hreflang="es" href="https://charadegenerator.com/es/thanksgiving-charades.html" />
+  <link rel="alternate" hreflang="fr" href="https://charadegenerator.com/fr/thanksgiving-charades.html" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Thanksgiving Charades Generator",
+        "url": "https://charadegenerator.com/thanksgiving-charades.html",
+        "description": "Free online Thanksgiving charades generator with 100+ holiday prompts covering turkey, family traditions, Thanksgiving dinner, football and gratitude moments. Perfect for family gatherings and kids.",
+        "applicationCategory": "GameApplication",
+        "operatingSystem": "Any",
+        "browserRequirements": "Requires JavaScript.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "author": { "@type": "Person", "name": "CharadeGenerator Team", "url": "https://charadegenerator.com/about-us.html" },
+        "featureList": ["100+ Thanksgiving charade prompts","6 holiday categories","Kids, Family, Food, Funny modes","Full-screen mode","Copy to clipboard","Mobile-friendly"]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type":"Question","name":"What is Thanksgiving charades?","acceptedAnswer":{"@type":"Answer","text":"Thanksgiving charades is a holiday-themed version of the classic charades game where players act out Thanksgiving traditions, foods, family moments, and gratitude scenes without speaking while others guess. It is the perfect activity for filling time before dinner, entertaining relatives, and bringing extended families together during the Thanksgiving holiday."}},
+          {"@type":"Question","name":"What are good Thanksgiving charades ideas?","acceptedAnswer":{"@type":"Answer","text":"Great Thanksgiving charades ideas include carving the turkey, watching the Thanksgiving Day parade, falling asleep after dinner, the Macy's parade balloons, a turkey running from the chef, family members fighting over the last roll, and Black Friday shopping chaos. Our generator has 100+ Thanksgiving prompts ready to use instantly."}},
+          {"@type":"Question","name":"Is Thanksgiving charades good for kids?","acceptedAnswer":{"@type":"Answer","text":"Yes. Kids mode uses simple, familiar Thanksgiving actions like a turkey gobbling, picking pumpkins, and helping set the table. These prompts are suitable for children aged 4 and above and keep young relatives entertained while the adults finish cooking."}},
+          {"@type":"Question","name":"Can I play Thanksgiving charades before dinner?","acceptedAnswer":{"@type":"Answer","text":"Yes. Thanksgiving charades is the perfect activity to fill the waiting time before dinner is served. It brings together relatives of all ages who may not see each other often, breaks the ice between family members, and creates shared laughter before the meal that sets a warm tone for the rest of the gathering."}},
+          {"@type":"Question","name":"Is this Thanksgiving charades generator free?","acceptedAnswer":{"@type":"Answer","text":"Yes. Completely free with no signup, no download, and no time limit. Generate unlimited Thanksgiving charade prompts for any family gathering or holiday celebration."}},
+          {"@type":"Question","name":"What is Funny mode in Thanksgiving charades?","acceptedAnswer":{"@type":"Answer","text":"Funny mode features the comedic disasters of Thanksgiving — turkey coming out dry, gravy boat tipping over, uncle falling asleep during the game, someone bringing a controversial dish, and the chaos of carving a turkey badly. These prompts celebrate the relatable chaos every family experiences at Thanksgiving."}}
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type":"ListItem","position":1,"name":"Home","item":"https://charadegenerator.com/"},
+          {"@type":"ListItem","position":2,"name":"Thanksgiving Charades","item":"https://charadegenerator.com/thanksgiving-charades.html"}
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .lang-bar{background:#fff4e6;border-bottom:1px solid #ffd8a8;padding:6px 16px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:13px;}
+    .lang-bar span{color:#555;font-weight:600;}
+    .lang-bar a{text-decoration:none;color:#bf5b04;padding:2px 8px;border-radius:4px;transition:background .2s;}
+    .lang-bar a:hover{background:#ffe8cc;}
+    .lang-bar a.active{background:#bf5b04;color:#fff;}
+    .stats-bar{display:flex;gap:24px;flex-wrap:wrap;background:linear-gradient(135deg,#9c4a1a 0%,#bf5b04 50%,#d9740f 100%);border-radius:12px;padding:20px 24px;margin:24px 0;color:#fff;}
+    .stat-item{text-align:center;flex:1;min-width:100px;}
+    .stat-num{font-size:28px;font-weight:700;}
+    .stat-label{font-size:12px;opacity:.9;margin-top:2px;}
+    .word-columns{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;margin-top:16px;}
+    .word-col h4{margin:0 0 8px;font-size:14px;text-transform:uppercase;letter-spacing:.5px;color:#bf5b04;}
+    .word-col ul{margin:0;padding-left:18px;font-size:14px;line-height:1.9;color:#333;}
+    .tips-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-top:16px;}
+    .tip-card{background:#fff4e6;border-left:4px solid #bf5b04;border-radius:8px;padding:14px 16px;}
+    .tip-card h4{margin:0 0 6px;font-size:15px;}
+    .tip-card p{margin:0;font-size:13px;color:#555;line-height:1.6;}
+    .diff-table{width:100%;border-collapse:collapse;font-size:14px;margin-top:16px;}
+    .diff-table th{background:#bf5b04;color:#fff;padding:10px 14px;text-align:left;}
+    .diff-table td{padding:10px 14px;border-bottom:1px solid #eee;}
+    .diff-table tr:nth-child(even) td{background:#fff4e6;}
+    .age-guide{background:#fff4e6;border:1px solid #ffd8a8;border-radius:10px;padding:20px 24px;margin:24px 0;}
+    .age-guide h3{margin-top:0;color:#bf5b04;}
+    .age-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px;}
+    .age-card{flex:1;min-width:130px;background:#fff;border:1px solid #ffd8a8;border-radius:8px;padding:12px;text-align:center;font-size:13px;}
+    .age-card strong{display:block;font-size:15px;margin-bottom:4px;}
+    .related-tools{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:12px;margin-top:16px;}
+    .rel-card{background:#fff;border:1px solid #dde4f5;border-radius:10px;padding:12px 10px;text-align:center;text-decoration:none;color:#222;font-size:13px;font-weight:500;transition:box-shadow .2s,transform .15s;display:flex;flex-direction:column;align-items:center;gap:5px;}
+    .rel-card:hover{box-shadow:0 4px 16px rgba(191,91,4,.15);transform:translateY(-2px);}
+    .rel-card .ri{font-size:22px;}
+    .rel-card .rn{font-weight:600;font-size:12px;}
+  </style>
+</head>
+<body>
+
+<div class="lang-bar">
+  <span>🌐 Language:</span>
+  <a href="/thanksgiving-charades.html" class="active">English</a>
+  <a href="/es/thanksgiving-charades.html">Español</a>
+  <a href="/fr/thanksgiving-charades.html">Français</a>
+  <a href="/hi/thanksgiving-charades.html">हिंदी</a>
+  <a href="/de/thanksgiving-charades.html">Deutsch</a>
+  <a href="/pt/thanksgiving-charades.html">Português</a>
+</div>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="logo"><a href="https://charadegenerator.com/" class="logo-link">🎭 <strong>Charades</strong>Generator</a></div>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <nav class="nav-desktop">
+      <a href="kids-charade-generator.html"><button>Kids Charades</button></a>
+      <a href="movie-charades.html"><button>Movie Charades</button></a>
+      <a href="character-charades.html"><button>Character Charades</button></a>
+      <a href="reverse-charades.html"><button>Reverse Charades</button></a>
+      <a href="christmas-charades.html"><button>Christmas Charades</button></a>
+      <a href="islamic-charades.html"><button>Islamic Charades</button></a>
+      <a href="animal-charades.html"><button>Animal Charades</button></a>
+    </nav>
+  </div>
+  <nav id="navMobile" class="nav-mobile">
+    <a href="kids-charade-generator.html"><button>Kids Charades</button></a>
+    <a href="movie-charades.html"><button>Movie Charades</button></a>
+    <a href="character-charades.html"><button>Character Charades</button></a>
+    <a href="reverse-charades.html"><button>Reverse Charades</button></a>
+    <a href="christmas-charades.html"><button>Christmas Charades</button></a>
+    <a href="islamic-charades.html"><button>Islamic Charades</button></a>
+    <a href="animal-charades.html"><button>Animal Charades</button></a>
+  </nav>
+</header>
+
+<main class="main">
+
+  <h1>Thanksgiving Charades Generator – 100+ Holiday Ideas for Families</h1>
+  <p class="seo-text">🦃 Play instantly • No signup • 100+ Thanksgiving prompts • 6 holiday categories</p>
+
+  <p class="seo-text">
+    Make this Thanksgiving the most entertaining one yet with this free Thanksgiving Charades Generator. Every prompt is holiday-themed — turkey traditions, family dinner moments, parade watching, football games, and the gratitude that defines this special holiday.
+    With over <strong>100 unique Thanksgiving prompts</strong> across 6 categories, this is the perfect game to fill the time before dinner and bring together relatives of all ages.
+  </p>
+
+  <p class="seo-text">
+    Thanksgiving charades works for every generation at the table — young children love acting out turkeys and pumpkins, teens enjoy the parade and football prompts, and adults will laugh at the relatable chaos of cooking disasters and family dinner dynamics. No preparation needed — generate and play instantly while the turkey roasts.
+  </p>
+
+  <div class="stats-bar">
+    <div class="stat-item"><div class="stat-num">100+</div><div class="stat-label">Thanksgiving Prompts</div></div>
+    <div class="stat-item"><div class="stat-num">6</div><div class="stat-label">Holiday Categories</div></div>
+    <div class="stat-item"><div class="stat-num">4</div><div class="stat-label">Play Modes</div></div>
+    <div class="stat-item"><div class="stat-num">100%</div><div class="stat-label">Free to Play</div></div>
+  </div>
+
+  <section class="tool" id="gameArea">
+    <h2 class="category-title">Thanksgiving Charades 🦃</h2>
+    <p class="subtitle">Click Generate to get a Thanksgiving charade 🦃</p>
+    <div class="top-controls">
+      <button id="copyBtn" onclick="copyCharades()">📋 Copy</button>
+      <button onclick="toggleFullScreen()">⛶ Full Screen</button>
+      <span id="copyMsg" class="copy-msg">Copied!</span>
+    </div>
+    <div class="quick-pick">
+      <button onclick="setCount(1)">1</button>
+      <button onclick="setCount(3)">3</button>
+      <button onclick="setCount(5)">5</button>
+      <button onclick="setCount(10)">10</button>
+      <button onclick="showCustom()">Custom</button>
+    </div>
+    <div class="mode-select">
+      <button class="mode-btn active" data-mode="all"    onclick="setMode('all')">All</button>
+      <button class="mode-btn"        data-mode="kids"   onclick="setMode('kids')">Kids</button>
+      <button class="mode-btn"        data-mode="family" onclick="setMode('family')">Family</button>
+      <button class="mode-btn"        data-mode="food"   onclick="setMode('food')">Food</button>
+      <button class="mode-btn"        data-mode="funny"  onclick="setMode('funny')">Funny</button>
+    </div>
+    <div id="customBox" class="custom-box hidden">
+      <input type="number" id="customInput" min="1" max="12" placeholder="Enter number">
+      <button onclick="applyCustom()">Apply</button>
+    </div>
+    <div id="cards" class="cards"></div>
+    <button class="generate-btn" onclick="generate()">Generate</button>
+  </section>
+
+  <div class="age-guide">
+    <h3>🎯 Which Mode Should You Pick?</h3>
+    <div class="age-row">
+      <div class="age-card"><strong>🦃 Kids</strong>Ages 4–10<br>Turkeys, pumpkins, simple holiday fun.</div>
+      <div class="age-card"><strong>👨‍👩‍👧 Family</strong>All ages<br>Traditions, parade, football, gratitude moments.</div>
+      <div class="age-card"><strong>🍽️ Food</strong>All ages<br>Turkey, stuffing, pie and the Thanksgiving feast.</div>
+      <div class="age-card"><strong>😂 Funny</strong>All ages<br>Relatable Thanksgiving dinner disasters.</div>
+    </div>
+  </div>
+
+  <section class="content-section">
+    <h2>100+ Thanksgiving Charades Word List by Category</h2>
+    <p>Every prompt is a specific Thanksgiving moment — not just a holiday word — making each card instantly fun to act and deeply relatable for any family gathered around the table this Thanksgiving.</p>
+    <div class="word-columns">
+      <div class="word-col">
+        <h4>🦃 Kids Thanksgiving</h4>
+        <ul>
+          <li>Turkey gobbling proudly</li>
+          <li>Picking the perfect pumpkin</li>
+          <li>Tracing hand to make turkey art</li>
+          <li>Helping set the dinner table</li>
+          <li>Watching parade balloons float by</li>
+          <li>Making a paper Pilgrim hat</li>
+          <li>Counting how many cousins arrived</li>
+          <li>Squirrel gathering acorns for winter</li>
+          <li>Raking autumn leaves into piles</li>
+          <li>Saying one thing you are thankful for</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>👨‍👩‍👧 Family Traditions</h4>
+        <ul>
+          <li>Whole family going around table sharing thanks</li>
+          <li>Watching the Macy's parade on TV</li>
+          <li>Grandma's secret recipe being guarded</li>
+          <li>Family football game in the backyard</li>
+          <li>Setting up the kids table separately</li>
+          <li>Saying grace before the big meal</li>
+          <li>Extended family arriving all at once</li>
+          <li>Taking the annual family photo</li>
+          <li>Watching football game after dinner</li>
+          <li>Lighting the centrepiece candles</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>🍽️ Thanksgiving Food</h4>
+        <ul>
+          <li>Carving the turkey at the table</li>
+          <li>Basting turkey in the oven</li>
+          <li>Mashing potatoes vigorously</li>
+          <li>Stuffing the turkey carefully</li>
+          <li>Pouring gravy over everything</li>
+          <li>Slicing the pumpkin pie</li>
+          <li>Passing the cranberry sauce around</li>
+          <li>Whipping the cream for dessert</li>
+          <li>Setting out the green bean casserole</li>
+          <li>Fighting over the last dinner roll</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>🏈 Parade & Football</h4>
+        <ul>
+          <li>Giant balloon floating through streets</li>
+          <li>Marching band performing in parade</li>
+          <li>Quarterback throwing winning touchdown</li>
+          <li>Crowd cheering at football game</li>
+          <li>Coach calling timeout dramatically</li>
+          <li>Cheerleaders doing halftime routine</li>
+          <li>Dad falling asleep watching football</li>
+          <li>Kids playing touch football outside</li>
+          <li>Parade float covered in flowers</li>
+          <li>Referee making controversial call</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>🙏 Gratitude Moments</h4>
+        <ul>
+          <li>Thanking someone sincerely for help</li>
+          <li>Volunteering at a community shelter</li>
+          <li>Writing a thank you note</li>
+          <li>Reflecting quietly on the past year</li>
+          <li>Hugging a relative you have not seen</li>
+          <li>Sharing a happy memory at the table</li>
+          <li>Giving thanks before the meal</li>
+          <li>Helping a neighbour in need</li>
+          <li>Counting blessings on fingers</li>
+          <li>Welcoming a new family member warmly</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>😂 Funny Thanksgiving</h4>
+        <ul>
+          <li>Turkey coming out completely dry</li>
+          <li>Gravy boat tipping over dramatically</li>
+          <li>Uncle falling asleep during dinner</li>
+          <li>Someone bringing a controversial dish</li>
+          <li>Smoke alarm going off from oven</li>
+          <li>Family political debate at table</li>
+          <li>Trying to fit through door with too much food</li>
+          <li>Pretending to like the same gift every year</li>
+          <li>Black Friday door buster sprint</li>
+          <li>Falling asleep on couch after dinner</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>Thanksgiving Charades by Category – Full Guide</h2>
+
+    <h3>🦃 Kids Thanksgiving</h3>
+    <p>Kids Thanksgiving prompts are designed to entertain younger relatives while the adults finish preparing the big meal. A turkey proudly gobbling, tracing your hand to make turkey art, and counting how many cousins have arrived are simple, joyful actions that young children can both perform and recognise immediately. This category is the perfect activity to occupy energetic kids during the long wait between arrival and dinner being served.</p>
+
+    <h3>👨‍👩‍👧 Family Traditions</h3>
+    <p>Family tradition prompts capture the rituals that make Thanksgiving feel like Thanksgiving in every household. Going around the table sharing what everyone is thankful for, watching the Macy's parade together on the couch, and the sacred mystery of grandma's secret recipe are universal experiences that every family recognises, even though the specific details differ. These prompts create warm, nostalgic energy and often spark genuine conversation about family traditions after each round.</p>
+
+    <h3>🍽️ Thanksgiving Food</h3>
+    <p>Food prompts are the centrepiece of Thanksgiving charades, quite literally. Carving the turkey with appropriate ceremony, the vigorous arm motion of mashing potatoes, and the dramatic fight over the last dinner roll are physical comedy moments specific to this one holiday meal. Thanksgiving food prompts work especially well right before dinner is served, building anticipation and appetite while the final dishes are completed in the kitchen.</p>
+
+    <h3>🏈 Parade &amp; Football</h3>
+    <p>Parade and football prompts celebrate the two great American Thanksgiving entertainments. A giant balloon floating through Manhattan streets, a marching band's synchronised performance, a dramatic touchdown catch, and dad inevitably falling asleep on the couch during the game — these prompts work brilliantly for mixed-age groups where some relatives care deeply about football and others are happy to laugh at the universal comedy of post-dinner napping.</p>
+
+    <h3>🙏 Gratitude Moments</h3>
+    <p>Gratitude prompts bring the genuine heart of Thanksgiving into the game. Volunteering at a community shelter, writing a heartfelt thank you note, and quietly reflecting on the past year's blessings are emotionally meaningful prompts that ground the holiday in its true purpose. These rounds often produce the warmest reactions of any Thanksgiving charades session and can lead naturally into the family's actual gratitude-sharing tradition at the table.</p>
+
+    <h3>😂 Funny Thanksgiving</h3>
+    <p>Funny Thanksgiving prompts celebrate the universal chaos that every family experiences during this holiday. The inevitably dry turkey, the gravy boat catastrophe, uncle falling asleep mid-conversation, and the Black Friday door-buster sprint are shared comedic experiences that unite every family regardless of their specific traditions. These prompts create the most relaxed and laughter-filled rounds, perfect for after the meal when everyone needs to unwind.</p>
+  </section>
+
+  <section class="content-section">
+    <h2>🎯 Thanksgiving Charades Mode Guide</h2>
+    <table class="diff-table">
+      <thead><tr><th>Mode</th><th>Best For</th><th>Prompt Types</th><th>Example</th></tr></thead>
+      <tbody>
+        <tr><td>🦃 Kids</td><td>Ages 4–10, pre-dinner activity</td><td>Turkeys, pumpkins, simple fun</td><td>Turkey gobbling proudly</td></tr>
+        <tr><td>👨‍👩‍👧 Family</td><td>All ages, mixed gatherings</td><td>Traditions, parade, gratitude</td><td>Watching the Macy's parade</td></tr>
+        <tr><td>🍽️ Food</td><td>All ages, before/during dinner</td><td>Turkey, sides, dessert prep</td><td>Carving the turkey at the table</td></tr>
+        <tr><td>😂 Funny</td><td>All ages, after-dinner laughs</td><td>Dinner disasters and chaos</td><td>Uncle falling asleep during dinner</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="content-section">
+    <h2>🏆 Tips for Playing Thanksgiving Charades</h2>
+    <div class="tips-grid">
+      <div class="tip-card"><h4>Play Before Dinner is Served</h4><p>Thanksgiving charades is the perfect activity to fill the often long wait between everyone arriving and dinner being ready. It keeps relatives entertained and breaks the ice between family members who only see each other once a year.</p></div>
+      <div class="tip-card"><h4>Let Kids Go First</h4><p>Starting with Kids mode lets younger relatives participate confidently before the more complex Family and Food prompts begin. It builds excitement and gets the whole multigenerational table engaged from round one.</p></div>
+      <div class="tip-card"><h4>Use the Dinner Table Setting</h4><p>Many Thanksgiving prompts relate directly to the meal happening around you. Use the actual table, chairs, and serving dishes as props when appropriate — pointing to the real gravy boat while acting "pouring gravy over everything" adds a fun meta layer to the game.</p></div>
+      <div class="tip-card"><h4>Share Real Gratitude After Gratitude Prompts</h4><p>After acting out a gratitude-themed prompt, invite the actor to share something real they are thankful for this year. This blends the game naturally into the holiday's true meaning and creates a touching family moment.</p></div>
+      <div class="tip-card"><h4>Save Funny Mode for After Dinner</h4><p>Funny Thanksgiving prompts about dinner disasters land best after the meal, when everyone can laugh at the specific chaos of their own dinner that just happened. Save this mode for the post-meal lull before dessert or football.</p></div>
+      <div class="tip-card"><h4>Great for Virtual Thanksgiving</h4><p>For family members joining via video call, use the Copy button to share prompts in the group chat for in-person actors while the remote guesser watches the call. This includes everyone even when the whole family cannot be together in person.</p></div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>Why Use This Thanksgiving Charades Generator?</h2>
+    <p>Thanksgiving brings together relatives who may only see each other once a year — siblings, cousins, grandparents, and in-laws who need an easy way to break the ice and bond quickly. Thanksgiving charades provides exactly that: a zero-preparation, universally relatable activity that gets every generation laughing together within minutes.</p>
+    <p>This generator captures everything that makes Thanksgiving uniquely itself — the specific food traditions, the parade, the football, the gratitude, and the chaos — ensuring that every prompt resonates immediately with anyone who has experienced an American Thanksgiving.</p>
+    <ul>
+      <li>🦃 100+ unique Thanksgiving prompts across 6 holiday categories</li>
+      <li>🎉 Perfect for family gatherings, pre-dinner activities and post-meal entertainment</li>
+      <li>👨‍👩‍👧 Four modes cover young children through adult relatives</li>
+      <li>⚡ One click generates 1, 3, 5, 10 or custom number instantly</li>
+      <li>📱 Fully mobile-optimised — play right at the dinner table</li>
+      <li>♾️ Generator avoids repeats — fresh Thanksgiving fun every round</li>
+      <li>🔒 No login, no ads during play, completely free</li>
+    </ul>
+  </section>
+
+  <section class="how-to">
+    <h2>How to Play Thanksgiving Charades – Step by Step</h2>
+    <p><strong>1. Pick a mode and count</strong><br>Choose Kids for younger relatives, Family for mixed-age groups, Food for meal-time fun, or Funny for post-dinner laughs.</p>
+    <p><strong>2. Click Generate</strong><br>Hit Generate and Thanksgiving prompts appear instantly. The actor reads privately while everyone else looks away, ideally before the meal is served.</p>
+    <p><strong>3. Use Full Screen</strong><br>Switch to Full Screen so only the actor sees the prompt. The phone passed around the family table naturally builds anticipation before each round.</p>
+    <p><strong>4. Act the holiday moment fully</strong><br>Thanksgiving prompts reward specific physical detail — the exact motion of carving a turkey, the dramatic tip of a gravy boat, the lean of falling asleep on the couch. Specificity speeds up guessing.</p>
+    <p><strong>5. Set a 60-second timer</strong><br>One round equals 60 seconds. Most Thanksgiving prompts get guessed quickly because the whole family shares the holiday experience being acted out.</p>
+    <p><strong>6. Share real gratitude after gratitude prompts</strong><br>When a Gratitude Moments prompt is correctly guessed, invite the actor to briefly share something they are genuinely thankful for this year. This adds real meaning to the game.</p>
+    <p><strong>7. Rotate through generations</strong><br>Make sure every generation at the table gets a turn — grandparents, parents, and children all acting and guessing together. Click Generate for unlimited fresh prompts until dinner is ready.</p>
+  </section>
+
+  <section class="content-section">
+    <h2>Frequently Asked Questions – Thanksgiving Charades</h2>
+    <p><strong>What is Thanksgiving charades?</strong><br>Thanksgiving charades uses holiday-themed prompts — turkey, family traditions, food, and gratitude moments — for players to act out without speaking while others guess. Perfect for filling time before dinner and bringing families together.</p>
+    <p><strong>What are good Thanksgiving charades ideas?</strong><br>Carving the turkey, watching the parade, falling asleep after dinner, the gravy boat tipping over, family football game, and Black Friday shopping chaos all make excellent Thanksgiving charades prompts.</p>
+    <p><strong>Is Thanksgiving charades good for kids?</strong><br>Yes. Kids mode uses simple familiar actions — turkey gobbling, picking pumpkins, helping set the table — suitable for children aged 4 and above.</p>
+    <p><strong>Can I play this before dinner?</strong><br>Yes. Thanksgiving charades is the perfect activity to fill waiting time before dinner is served, bringing together relatives of all ages and breaking the ice between family members.</p>
+    <p><strong>What is Funny mode?</strong><br>Funny mode features Thanksgiving dinner disasters — dry turkey, gravy spills, uncle falling asleep, and Black Friday chaos. Celebrates the relatable chaos every family experiences.</p>
+    <p><strong>Is this generator free?</strong><br>Yes. Completely free with no signup, no download, and no time limit.</p>
+  </section>
+
+  <section class="content-section">
+    <h2>🎮 Explore All Charades Tools – 25+ Free Generators</h2>
+    <p>Try any of these free charades generators. Every tool is free, instant, and works on all devices.</p>
+    <div class="related-tools">
+      <a href="kids-charade-generator.html" class="rel-card"><span class="ri">👦</span><span class="rn">Kids Charades</span></a>
+      <a href="movie-charades.html" class="rel-card"><span class="ri">🎬</span><span class="rn">Movie Charades</span></a>
+      <a href="character-charades.html" class="rel-card"><span class="ri">🦸</span><span class="rn">Character Charades</span></a>
+      <a href="reverse-charades.html" class="rel-card"><span class="ri">🔄</span><span class="rn">Reverse Charades</span></a>
+      <a href="christmas-charades.html" class="rel-card"><span class="ri">🎄</span><span class="rn">Christmas Charades</span></a>
+      <a href="islamic-charades.html" class="rel-card"><span class="ri">🕌</span><span class="rn">Islamic Charades</span></a>
+      <a href="animal-charades.html" class="rel-card"><span class="ri">🐾</span><span class="rn">Animal Charades</span></a>
+      <a href="funny-charades.html" class="rel-card"><span class="ri">😂</span><span class="rn">Funny Charades</span></a>
+      <a href="hard-charades.html" class="rel-card"><span class="ri">🧠</span><span class="rn">Hard Charades</span></a>
+      <a href="food-charades.html" class="rel-card"><span class="ri">🍕</span><span class="rn">Food Charades</span></a>
+      <a href="sports-charades.html" class="rel-card"><span class="ri">⚽</span><span class="rn">Sports Charades</span></a>
+      <a href="halloween-charades.html" class="rel-card"><span class="ri">🎃</span><span class="rn">Halloween Charades</span></a>
+      <a href="birthday-charades.html" class="rel-card"><span class="ri">🎂</span><span class="rn">Birthday Charades</span></a>
+      <a href="school-charades.html" class="rel-card"><span class="ri">🏫</span><span class="rn">School Charades</span></a>
+      <a href="emoji-charades.html" class="rel-card"><span class="ri">😀</span><span class="rn">Emoji Charades</span></a>
+      <a href="bollywood-charades.html" class="rel-card"><span class="ri">🎥</span><span class="rn">Bollywood Charades</span></a>
+      <a href="bible-charades.html" class="rel-card"><span class="ri">📖</span><span class="rn">Bible Charades</span></a>
+      <a href="valentines-charades.html" class="rel-card"><span class="ri">❤️</span><span class="rn">Valentine Charades</span></a>
+      <a href="summer-charades.html" class="rel-card"><span class="ri">☀️</span><span class="rn">Summer Charades</span></a>
+      <a href="superhero-charades.html" class="rel-card"><span class="ri">🦸‍♂️</span><span class="rn">Superhero Charades</span></a>
+      <a href="nature-charades.html" class="rel-card"><span class="ri">🌿</span><span class="rn">Nature Charades</span></a>
+      <a href="occupation-charades.html" class="rel-card"><span class="ri">👨‍⚕️</span><span class="rn">Occupation Charades</span></a>
+      <a href="fairy-tale-charades.html" class="rel-card"><span class="ri">🧚</span><span class="rn">Fairy Tale Charades</span></a>
+      <a href="ramadan-charades.html" class="rel-card"><span class="ri">🌙</span><span class="rn">Ramadan Charades</span></a>
+      <a href="index.html" class="rel-card"><span class="ri">🎭</span><span class="rn">All Charades</span></a>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>Start Playing Thanksgiving Charades Right Now</h2>
+    <p>Thanksgiving charades is the game that turns waiting time into bonding time. When cousins who have not spoken in a year are laughing together over someone's dramatic turkey-carving performance, or when grandpa nails the "falling asleep on the couch" prompt a little too convincingly, those are the moments that make Thanksgiving memorable beyond just the meal.</p>
+    <p>Scroll up, pick your mode, click Generate, and give thanks for a little extra laughter this year. 🦃🎉</p>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <a href="about-us.html">About Us</a>
+  <a href="contact-us.html">Contact Us</a>
+  <a href="privacy-policy.html">Privacy Policy</a>
+  <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+  <a href="disclaimer.html">Disclaimer</a>
+  <p>© CharadeGenerator 2026</p>
+</footer>
+
+<script src="js/thanksgiving-charades.js"></script>
+</body>
+</html>
