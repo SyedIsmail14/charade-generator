@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Occupation Charades Generator – 100+ Jobs & Professions to Act Out</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Free Occupation Charades Generator with 100+ job and profession prompts. Act out doctors, firefighters, chefs and dream careers. Perfect for kids, classrooms and career day activities. No signup needed.">
+
+  <link rel="icon" type="image/x-icon" href="/assests/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assests/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assests/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assests/favicon-48x48.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assests/apple-touch-icon-180x180.png">
+  <link rel="apple-touch-icon" href="/assests/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assests/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assests/android-chrome-512x512.png">
+
+  <link rel="alternate" hreflang="en" href="https://charadegenerator.com/occupation-charades.html" />
+  <link rel="alternate" hreflang="hi" href="https://charadegenerator.com/hi/occupation-charades.html" />
+  <link rel="alternate" hreflang="es" href="https://charadegenerator.com/es/occupation-charades.html" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Occupation Charades Generator",
+        "url": "https://charadegenerator.com/occupation-charades.html",
+        "description": "Free online occupation charades generator with 100+ job and profession prompts covering community helpers, medical jobs, creative careers, and skilled trades. Perfect for kids, classrooms and career day activities.",
+        "applicationCategory": "GameApplication",
+        "operatingSystem": "Any",
+        "browserRequirements": "Requires JavaScript.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "author": { "@type": "Person", "name": "CharadeGenerator Team", "url": "https://charadegenerator.com/about-us.html" },
+        "featureList": ["100+ occupation charade prompts","6 career categories","Kids, Community, Medical, Skilled Trades modes","Full-screen mode","Copy to clipboard","Mobile-friendly"]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type":"Question","name":"What is occupation charades?","acceptedAnswer":{"@type":"Answer","text":"Occupation charades is a career-themed version of the classic charades game where players act out different jobs and professions without speaking while others guess. Prompts cover community helpers, medical professionals, creative careers, and skilled trades. It is an excellent educational activity for career day events and classroom learning about different jobs."}},
+          {"@type":"Question","name":"What occupations are included in this generator?","acceptedAnswer":{"@type":"Answer","text":"The generator includes community helpers like firefighters and police officers, medical professionals like doctors and nurses, creative careers like artists and musicians, and skilled trades like electricians and plumbers. It covers over 100 different jobs across six career categories."}},
+          {"@type":"Question","name":"Is occupation charades good for career day at school?","acceptedAnswer":{"@type":"Answer","text":"Yes. Occupation charades is an excellent career day activity. It introduces children to a wide variety of jobs and professions through physical, memorable play, helping them understand what different careers actually involve in a fun, engaging way that classroom discussion alone cannot achieve."}},
+          {"@type":"Question","name":"How do you act out an occupation in charades?","acceptedAnswer":{"@type":"Answer","text":"To act out an occupation in charades, mime the most distinctive physical action associated with that job. A firefighter sprays a hose, a chef stirs a pot, a doctor checks a heartbeat with a stethoscope. Show the specific tools and movements unique to that profession rather than just standing still."}},
+          {"@type":"Question","name":"Is this occupation charades generator free?","acceptedAnswer":{"@type":"Answer","text":"Yes. Completely free with no signup, no download, and no time limit. Generate unlimited occupation charade prompts for any classroom activity, career day, or family game night."}},
+          {"@type":"Question","name":"What is Skilled Trades mode in occupation charades?","acceptedAnswer":{"@type":"Answer","text":"Skilled Trades mode focuses specifically on hands-on, practical professions like electricians, plumbers, carpenters, and mechanics. These prompts celebrate trade careers that involve specific tools and physical skills, helping children see these professions as valuable and interesting career paths."}}
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type":"ListItem","position":1,"name":"Home","item":"https://charadegenerator.com/"},
+          {"@type":"ListItem","position":2,"name":"Occupation Charades","item":"https://charadegenerator.com/occupation-charades.html"}
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .lang-bar{background:#edf2ff;border-bottom:1px solid #bac8ff;padding:6px 16px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:13px;}
+    .lang-bar span{color:#555;font-weight:600;}
+    .lang-bar a{text-decoration:none;color:#364fc7;padding:2px 8px;border-radius:4px;transition:background .2s;}
+    .lang-bar a:hover{background:#dbe4ff;}
+    .lang-bar a.active{background:#364fc7;color:#fff;}
+    .stats-bar{display:flex;gap:24px;flex-wrap:wrap;background:linear-gradient(135deg,#364fc7 0%,#4263eb 50%,#5c7cfa 100%);border-radius:12px;padding:20px 24px;margin:24px 0;color:#fff;}
+    .stat-item{text-align:center;flex:1;min-width:100px;}
+    .stat-num{font-size:28px;font-weight:700;}
+    .stat-label{font-size:12px;opacity:.9;margin-top:2px;}
+    .word-columns{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;margin-top:16px;}
+    .word-col h4{margin:0 0 8px;font-size:14px;text-transform:uppercase;letter-spacing:.5px;color:#364fc7;}
+    .word-col ul{margin:0;padding-left:18px;font-size:14px;line-height:1.9;color:#333;}
+    .tips-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-top:16px;}
+    .tip-card{background:#edf2ff;border-left:4px solid #364fc7;border-radius:8px;padding:14px 16px;}
+    .tip-card h4{margin:0 0 6px;font-size:15px;}
+    .tip-card p{margin:0;font-size:13px;color:#555;line-height:1.6;}
+    .diff-table{width:100%;border-collapse:collapse;font-size:14px;margin-top:16px;}
+    .diff-table th{background:#364fc7;color:#fff;padding:10px 14px;text-align:left;}
+    .diff-table td{padding:10px 14px;border-bottom:1px solid #eee;}
+    .diff-table tr:nth-child(even) td{background:#edf2ff;}
+    .age-guide{background:#edf2ff;border:1px solid #bac8ff;border-radius:10px;padding:20px 24px;margin:24px 0;}
+    .age-guide h3{margin-top:0;color:#364fc7;}
+    .age-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px;}
+    .age-card{flex:1;min-width:130px;background:#fff;border:1px solid #bac8ff;border-radius:8px;padding:12px;text-align:center;font-size:13px;}
+    .age-card strong{display:block;font-size:15px;margin-bottom:4px;}
+    .related-tools{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:12px;margin-top:16px;}
+    .rel-card{background:#fff;border:1px solid #dde4f5;border-radius:10px;padding:12px 10px;text-align:center;text-decoration:none;color:#222;font-size:13px;font-weight:500;transition:box-shadow .2s,transform .15s;display:flex;flex-direction:column;align-items:center;gap:5px;}
+    .rel-card:hover{box-shadow:0 4px 16px rgba(54,79,199,.15);transform:translateY(-2px);}
+    .rel-card .ri{font-size:22px;}
+    .rel-card .rn{font-weight:600;font-size:12px;}
+  </style>
+</head>
+<body>
+
+<div class="lang-bar">
+  <span>🌐 Language:</span>
+  <a href="/occupation-charades.html" class="active">English</a>
+  <a href="/hi/occupation-charades.html">हिंदी</a>
+  <a href="/es/occupation-charades.html">Español</a>
+  <a href="/fr/occupation-charades.html">Français</a>
+  <a href="/ar/occupation-charades.html">العربية</a>
+  <a href="/de/occupation-charades.html">Deutsch</a>
+</div>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="logo"><a href="https://charadegenerator.com/" class="logo-link">🎭 <strong>Charades</strong>Generator</a></div>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <nav class="nav-desktop">
+      <a href="kids-charade-generator.html"><button>Kids Charades</button></a>
+      <a href="movie-charades.html"><button>Movie Charades</button></a>
+      <a href="character-charades.html"><button>Character Charades</button></a>
+      <a href="reverse-charades.html"><button>Reverse Charades</button></a>
+      <a href="christmas-charades.html"><button>Christmas Charades</button></a>
+      <a href="islamic-charades.html"><button>Islamic Charades</button></a>
+      <a href="animal-charades.html"><button>Animal Charades</button></a>
+    </nav>
+  </div>
+  <nav id="navMobile" class="nav-mobile">
+    <a href="kids-charade-generator.html"><button>Kids Charades</button></a>
+    <a href="movie-charades.html"><button>Movie Charades</button></a>
+    <a href="character-charades.html"><button>Character Charades</button></a>
+    <a href="reverse-charades.html"><button>Reverse Charades</button></a>
+    <a href="christmas-charades.html"><button>Christmas Charades</button></a>
+    <a href="islamic-charades.html"><button>Islamic Charades</button></a>
+    <a href="animal-charades.html"><button>Animal Charades</button></a>
+  </nav>
+</header>
+
+<main class="main">
+
+  <h1>Occupation Charades Generator – 100+ Jobs &amp; Professions to Act Out</h1>
+  <p class="seo-text">👨‍⚕️ Play instantly • No signup • 100+ job prompts • 6 career categories</p>
+
+  <p class="seo-text">
+    Explore the world of work with this free Occupation Charades Generator. Every prompt is career-themed — community helpers, medical professionals, creative careers, skilled trades, and the dream jobs that children imagine for their future.
+    With over <strong>100 unique occupation prompts</strong> across 6 categories, this is the perfect educational and entertaining game for career day events, classroom learning, and family game nights about the world of work.
+  </p>
+
+  <p class="seo-text">
+    Occupation charades helps children understand what different jobs actually involve through physical, memorable play. When a child acts out a firefighter spraying a hose or a chef tasting a sauce, they build genuine understanding of that profession that classroom discussion alone cannot achieve. No preparation needed — generate and explore careers instantly.
+  </p>
+
+  <div class="stats-bar">
+    <div class="stat-item"><div class="stat-num">100+</div><div class="stat-label">Job Prompts</div></div>
+    <div class="stat-item"><div class="stat-num">6</div><div class="stat-label">Career Categories</div></div>
+    <div class="stat-item"><div class="stat-num">4</div><div class="stat-label">Play Modes</div></div>
+    <div class="stat-item"><div class="stat-num">100%</div><div class="stat-label">Free to Play</div></div>
+  </div>
+
+  <section class="tool" id="gameArea">
+    <h2 class="category-title">Occupation Charades 👨‍⚕️</h2>
+    <p class="subtitle">Click Generate to get a job to act out 👨‍⚕️</p>
+    <div class="top-controls">
+      <button id="copyBtn" onclick="copyCharades()">📋 Copy</button>
+      <button onclick="toggleFullScreen()">⛶ Full Screen</button>
+      <span id="copyMsg" class="copy-msg">Copied!</span>
+    </div>
+    <div class="quick-pick">
+      <button onclick="setCount(1)">1</button>
+      <button onclick="setCount(3)">3</button>
+      <button onclick="setCount(5)">5</button>
+      <button onclick="setCount(10)">10</button>
+      <button onclick="showCustom()">Custom</button>
+    </div>
+    <div class="mode-select">
+      <button class="mode-btn active" data-mode="all"       onclick="setMode('all')">All</button>
+      <button class="mode-btn"        data-mode="kids"      onclick="setMode('kids')">Kids</button>
+      <button class="mode-btn"        data-mode="medical"   onclick="setMode('medical')">Medical</button>
+      <button class="mode-btn"        data-mode="creative"  onclick="setMode('creative')">Creative</button>
+      <button class="mode-btn"        data-mode="trades"    onclick="setMode('trades')">Trades</button>
+    </div>
+    <div id="customBox" class="custom-box hidden">
+      <input type="number" id="customInput" min="1" max="12" placeholder="Enter number">
+      <button onclick="applyCustom()">Apply</button>
+    </div>
+    <div id="cards" class="cards"></div>
+    <button class="generate-btn" onclick="generate()">Generate</button>
+  </section>
+
+  <div class="age-guide">
+    <h3>🎯 Which Mode Should You Pick?</h3>
+    <div class="age-row">
+      <div class="age-card"><strong>👧 Kids</strong>Ages 4–10<br>Community helpers everyone recognises easily.</div>
+      <div class="age-card"><strong>🩺 Medical</strong>All ages<br>Doctors, nurses, vets and healthcare professions.</div>
+      <div class="age-card"><strong>🎨 Creative</strong>All ages<br>Artists, musicians, writers and performers.</div>
+      <div class="age-card"><strong>🔧 Trades</strong>All ages<br>Electricians, plumbers, mechanics and builders.</div>
+    </div>
+  </div>
+
+  <section class="content-section">
+    <h2>100+ Occupation Charades Word List by Category</h2>
+    <p>Every prompt is a specific job action — not just a profession name — making each card immediately fun to act and educational for understanding what different careers actually involve day to day.</p>
+    <div class="word-columns">
+      <div class="word-col">
+        <h4>👧 Community Helpers</h4>
+        <ul>
+          <li>Firefighter spraying a hose</li>
+          <li>Police officer directing traffic</li>
+          <li>Postman delivering letters</li>
+          <li>Teacher writing on the board</li>
+          <li>Librarian stamping a book</li>
+          <li>Bus driver steering carefully</li>
+          <li>Crossing guard stopping traffic</li>
+          <li>Garbage collector lifting bins</li>
+          <li>Lifeguard watching the pool</li>
+          <li>Farmer milking a cow</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>🩺 Medical Professions</h4>
+        <ul>
+          <li>Doctor checking heartbeat with stethoscope</li>
+          <li>Nurse taking blood pressure</li>
+          <li>Dentist looking inside a mouth</li>
+          <li>Surgeon performing careful operation</li>
+          <li>Veterinarian examining a dog</li>
+          <li>Paramedic rushing with a stretcher</li>
+          <li>Pharmacist counting out pills</li>
+          <li>Optician testing eyesight</li>
+          <li>Physiotherapist stretching a leg</li>
+          <li>X-ray technician positioning patient</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>🎨 Creative Careers</h4>
+        <ul>
+          <li>Painter creating a masterpiece</li>
+          <li>Musician playing the violin</li>
+          <li>Photographer adjusting camera lens</li>
+          <li>Writer typing furiously at desk</li>
+          <li>Dancer performing graceful leap</li>
+          <li>Fashion designer sketching outfit</li>
+          <li>Sculptor chiselling marble carefully</li>
+          <li>Film director shouting action</li>
+          <li>Architect drawing building plans</li>
+          <li>Chef plating food artistically</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>🔧 Skilled Trades</h4>
+        <ul>
+          <li>Electrician fixing a wire</li>
+          <li>Plumber unclogging a pipe</li>
+          <li>Carpenter sawing a plank</li>
+          <li>Mechanic fixing a car engine</li>
+          <li>Builder laying bricks</li>
+          <li>Welder joining metal pieces</li>
+          <li>Painter decorating a wall</li>
+          <li>Roofer climbing onto a roof</li>
+          <li>Locksmith picking a lock</li>
+          <li>Tailor measuring fabric</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>💼 Office &amp; Business</h4>
+        <ul>
+          <li>Accountant counting money carefully</li>
+          <li>CEO giving important presentation</li>
+          <li>Salesperson making a pitch</li>
+          <li>Receptionist answering phone calls</li>
+          <li>Banker counting cash at counter</li>
+          <li>Lawyer arguing in courtroom</li>
+          <li>Real estate agent showing house</li>
+          <li>Marketing manager brainstorming ideas</li>
+          <li>Translator interpreting two languages</li>
+          <li>Air traffic controller guiding planes</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>🌟 Dream Jobs</h4>
+        <ul>
+          <li>Astronaut floating in space</li>
+          <li>Pilot flying an aeroplane</li>
+          <li>Professional athlete scoring a goal</li>
+          <li>Scientist mixing chemicals carefully</li>
+          <li>Marine biologist studying sea life</li>
+          <li>Game designer testing video game</li>
+          <li>Zookeeper feeding the animals</li>
+          <li>Vlogger filming a video</li>
+          <li>Stunt performer doing a backflip</li>
+          <li>Wildlife photographer tracking animals</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>Occupation Charades by Category – Full Guide</h2>
+
+    <h3>👧 Community Helpers</h3>
+    <p>Community helper prompts feature the professionals children encounter most often in daily life. A firefighter spraying a hose with full body commitment, a police officer directing traffic with confident hand signals, and a librarian carefully stamping a date inside a book are jobs every child recognises from their own community. This category is the foundational starting point for occupation charades, especially for primary school career awareness lessons.</p>
+
+    <h3>🩺 Medical Professions</h3>
+    <p>Medical profession prompts introduce children and adults to the wide range of healthcare careers beyond just "doctor." A surgeon's careful, precise hand movements during an operation, a veterinarian gently examining a nervous dog, and a physiotherapist guiding a patient's leg through a stretch all have distinctive physical signatures specific to that exact medical role. This category works brilliantly for career day events focused on healthcare pathways.</p>
+
+    <h3>🎨 Creative Careers</h3>
+    <p>Creative career prompts celebrate professions in the arts and entertainment industries. A painter's deliberate brushstroke, a musician's specific instrument-playing posture, and a film director's commanding "action" call all capture the physical and personality-driven nature of creative work. These prompts encourage children to see artistic pursuits as legitimate career paths, not just hobbies, and create some of the most theatrically interesting rounds in occupation charades.</p>
+
+    <h3>🔧 Skilled Trades</h3>
+    <p>Skilled trades prompts highlight hands-on, practical professions that involve specific tools and physical expertise. An electrician carefully testing a wire, a plumber wrestling with a stubborn pipe, and a carpenter's rhythmic sawing motion all require distinctive, recognisable physical actions. This category is particularly valuable for showing children that trade careers are skilled, valuable, and interesting professions worthy of consideration alongside more traditionally celebrated academic careers.</p>
+
+    <h3>💼 Office &amp; Business</h3>
+    <p>Office and business prompts introduce the less physically dramatic but equally important world of professional and corporate careers. A lawyer's passionate courtroom argument, an air traffic controller's intense focus guiding planes, and a translator's rapid mental switching between two languages all require players to convey intellectual and professional intensity through physical performance. This category rewards creative interpretation since these jobs are less inherently physical than trades or medical professions.</p>
+
+    <h3>🌟 Dream Jobs</h3>
+    <p>Dream job prompts capture the aspirational, exciting careers that capture children's imaginations. An astronaut's careful floating movement in zero gravity, a professional athlete's triumphant goal celebration, and a marine biologist's careful examination of sea creatures all represent careers that combine adventure, expertise, and wonder. This category creates the most enthusiastic and imaginative acting performances, as both children and adults enjoy embodying these aspirational professional identities, even briefly.</p>
+  </section>
+
+  <section class="content-section">
+    <h2>🎯 Occupation Charades Mode Guide</h2>
+    <table class="diff-table">
+      <thead><tr><th>Mode</th><th>Best For</th><th>Prompt Types</th><th>Example</th></tr></thead>
+      <tbody>
+        <tr><td>👧 Kids</td><td>Ages 4–10, career day</td><td>Community helpers everyone knows</td><td>Firefighter spraying a hose</td></tr>
+        <tr><td>🩺 Medical</td><td>All ages, healthcare interest</td><td>Doctors, nurses, vets, specialists</td><td>Surgeon performing careful operation</td></tr>
+        <tr><td>🎨 Creative</td><td>All ages, arts interest</td><td>Artists, musicians, designers</td><td>Musician playing the violin</td></tr>
+        <tr><td>🔧 Trades</td><td>All ages, practical careers</td><td>Electricians, plumbers, builders</td><td>Electrician fixing a wire</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="content-section">
+    <h2>🏆 Tips for Playing Occupation Charades</h2>
+    <div class="tips-grid">
+      <div class="tip-card"><h4>Use the Signature Tool</h4><p>Every occupation has a defining tool or prop. Mime holding a stethoscope, a hammer, a paintbrush, or a steering wheel before doing anything else. The tool often identifies the profession faster than the action alone.</p></div>
+      <div class="tip-card"><h4>Show the Specific Movement</h4><p>Generic "working" gestures are too vague. Show the precise, specific movement unique to that job — a surgeon's careful steady hands versus a builder's forceful hammering versus a pianist's delicate finger movement.</p></div>
+      <div class="tip-card"><h4>Use for Career Day Events</h4><p>Generate prompts from specific categories matching your career day theme — Medical mode for healthcare day, Creative mode for arts week, Trades mode for vocational education events. This connects the game directly to learning objectives.</p></div>
+      <div class="tip-card"><h4>Discuss the Real Job After Guessing</h4><p>After each correct guess, briefly discuss what that job actually involves day to day. This turns entertainment into genuine career education and can spark children's interest in professions they had not previously considered.</p></div>
+      <div class="tip-card"><h4>Show the Work Environment</h4><p>If the action alone is unclear, add environmental context — crouch low for an underground miner, reach up high for an aircraft engineer, hunch over a desk for an accountant. Setting communicates profession alongside action.</p></div>
+      <div class="tip-card"><h4>Encourage Trade Career Respect</h4><p>When playing Trades mode, take time to genuinely celebrate these professions as skilled, valuable careers. This is an excellent opportunity to broaden children's understanding of what success and good careers can look like.</p></div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>Why Use This Occupation Charades Generator?</h2>
+    <p>Occupation charades turns abstract career exploration into physical, memorable, and genuinely fun learning. Children who might find a career day presentation boring will eagerly engage with acting out a firefighter or astronaut, building real understanding and interest in professions through embodied play rather than passive listening.</p>
+    <p>This generator covers the full spectrum of the working world — from familiar community helpers to specialised medical professionals, from creative arts to practical trades, and even aspirational dream jobs — ensuring every child finds careers that spark their curiosity and imagination.</p>
+    <ul>
+      <li>👨‍⚕️ 100+ unique occupation prompts across 6 career categories</li>
+      <li>🎉 Perfect for career day events, classroom learning and family game nights</li>
+      <li>👨‍👩‍👧 Four modes cover community helpers through specialised professions</li>
+      <li>📚 Builds genuine career awareness through kinaesthetic, memorable play</li>
+      <li>⚡ One click generates 1, 3, 5, 10 or custom number instantly</li>
+      <li>📱 Fully mobile-optimised — perfect for classroom and career day settings</li>
+      <li>♾️ Generator avoids repeats — fresh careers every round</li>
+      <li>🔒 No login, no ads during play, completely free</li>
+    </ul>
+  </section>
+
+  <section class="how-to">
+    <h2>How to Play Occupation Charades – Step by Step</h2>
+    <p><strong>1. Pick a mode and count</strong><br>Choose Kids for community helpers, Medical or Creative for specific career interests, or Trades for practical, hands-on professions.</p>
+    <p><strong>2. Click Generate</strong><br>Hit Generate and occupation prompts appear instantly. The actor reads privately while everyone else looks away.</p>
+    <p><strong>3. Use Full Screen</strong><br>Switch to Full Screen so only the actor sees the prompt — perfect for classroom and career day settings.</p>
+    <p><strong>4. Mime the signature tool first</strong><br>Show the defining tool or prop of that profession before any other action. This single signal often identifies the career faster than anything else.</p>
+    <p><strong>5. Show the specific movement</strong><br>Avoid generic "working" gestures. Show the precise, distinctive movement unique to that exact job for the fastest, most accurate guessing.</p>
+    <p><strong>6. Set a 60-second timer</strong><br>One round equals 60 seconds. A correct guess scores a point. Discuss the real job briefly after each round for added educational value.</p>
+    <p><strong>7. Rotate through career categories</strong><br>Mix modes throughout your session so players explore community helpers, medical, creative, and trade careers all in one game, building broad career awareness.</p>
+  </section>
+
+  <section class="content-section">
+    <h2>Frequently Asked Questions – Occupation Charades</h2>
+    <p><strong>What is occupation charades?</strong><br>Occupation charades uses job and profession prompts for players to act out without speaking while others guess. An excellent educational activity for career day events and classroom learning about different jobs.</p>
+    <p><strong>What occupations are included?</strong><br>Community helpers like firefighters and police officers, medical professionals like doctors and nurses, creative careers like artists and musicians, and skilled trades like electricians and plumbers.</p>
+    <p><strong>Is this good for career day at school?</strong><br>Yes. It introduces children to a wide variety of jobs through physical, memorable play, helping them understand what different careers actually involve in a fun, engaging way.</p>
+    <p><strong>How do you act out an occupation?</strong><br>Mime the most distinctive physical action and tool associated with that job. A firefighter sprays a hose, a chef stirs a pot, a doctor checks a heartbeat with a stethoscope.</p>
+    <p><strong>What is Skilled Trades mode?</strong><br>Skilled Trades mode focuses on hands-on professions like electricians, plumbers, carpenters, and mechanics, celebrating trade careers as valuable and interesting paths.</p>
+    <p><strong>Is this generator free?</strong><br>Yes. Completely free with no signup, no download, and no time limit.</p>
+  </section>
+
+  <section class="content-section">
+    <h2>🎮 Explore All Charades Tools – 25+ Free Generators</h2>
+    <p>Try any of these free charades generators. Every tool is free, instant, and works on all devices.</p>
+    <div class="related-tools">
+      <a href="kids-charade-generator.html" class="rel-card"><span class="ri">👦</span><span class="rn">Kids Charades</span></a>
+      <a href="movie-charades.html" class="rel-card"><span class="ri">🎬</span><span class="rn">Movie Charades</span></a>
+      <a href="character-charades.html" class="rel-card"><span class="ri">🦸</span><span class="rn">Character Charades</span></a>
+      <a href="reverse-charades.html" class="rel-card"><span class="ri">🔄</span><span class="rn">Reverse Charades</span></a>
+      <a href="christmas-charades.html" class="rel-card"><span class="ri">🎄</span><span class="rn">Christmas Charades</span></a>
+      <a href="islamic-charades.html" class="rel-card"><span class="ri">🕌</span><span class="rn">Islamic Charades</span></a>
+      <a href="animal-charades.html" class="rel-card"><span class="ri">🐾</span><span class="rn">Animal Charades</span></a>
+      <a href="funny-charades.html" class="rel-card"><span class="ri">😂</span><span class="rn">Funny Charades</span></a>
+      <a href="hard-charades.html" class="rel-card"><span class="ri">🧠</span><span class="rn">Hard Charades</span></a>
+      <a href="food-charades.html" class="rel-card"><span class="ri">🍕</span><span class="rn">Food Charades</span></a>
+      <a href="sports-charades.html" class="rel-card"><span class="ri">⚽</span><span class="rn">Sports Charades</span></a>
+      <a href="halloween-charades.html" class="rel-card"><span class="ri">🎃</span><span class="rn">Halloween Charades</span></a>
+      <a href="birthday-charades.html" class="rel-card"><span class="ri">🎂</span><span class="rn">Birthday Charades</span></a>
+      <a href="school-charades.html" class="rel-card"><span class="ri">🏫</span><span class="rn">School Charades</span></a>
+      <a href="emoji-charades.html" class="rel-card"><span class="ri">😀</span><span class="rn">Emoji Charades</span></a>
+      <a href="bollywood-charades.html" class="rel-card"><span class="ri">🎥</span><span class="rn">Bollywood Charades</span></a>
+      <a href="bible-charades.html" class="rel-card"><span class="ri">📖</span><span class="rn">Bible Charades</span></a>
+      <a href="thanksgiving-charades.html" class="rel-card"><span class="ri">🦃</span><span class="rn">Thanksgiving Charades</span></a>
+      <a href="valentines-charades.html" class="rel-card"><span class="ri">❤️</span><span class="rn">Valentine Charades</span></a>
+      <a href="summer-charades.html" class="rel-card"><span class="ri">☀️</span><span class="rn">Summer Charades</span></a>
+      <a href="superhero-charades.html" class="rel-card"><span class="ri">🦸‍♂️</span><span class="rn">Superhero Charades</span></a>
+      <a href="nature-charades.html" class="rel-card"><span class="ri">🌿</span><span class="rn">Nature Charades</span></a>
+      <a href="fairy-tale-charades.html" class="rel-card"><span class="ri">🧚</span><span class="rn">Fairy Tale Charades</span></a>
+      <a href="ramadan-charades.html" class="rel-card"><span class="ri">🌙</span><span class="rn">Ramadan Charades</span></a>
+      <a href="index.html" class="rel-card"><span class="ri">🎭</span><span class="rn">All Charades</span></a>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>Start Playing Occupation Charades Right Now</h2>
+    <p>Occupation charades opens children's eyes to the incredible variety of careers that exist in the world. When a child enthusiastically acts out being an astronaut, a vet examining a nervous puppy, or an electrician carefully testing a wire, they are not just playing a game — they are building a mental map of possible futures for themselves.</p>
+    <p>Scroll up, pick your mode, click Generate, and discover the world of work together. 👨‍⚕️🎉</p>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <a href="about-us.html">About Us</a>
+  <a href="contact-us.html">Contact Us</a>
+  <a href="privacy-policy.html">Privacy Policy</a>
+  <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+  <a href="disclaimer.html">Disclaimer</a>
+  <p>© CharadeGenerator 2026</p>
+</footer>
+
+<script src="js/occupation-charades.js"></script>
+</body>
+</html>
