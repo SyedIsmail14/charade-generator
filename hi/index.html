@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <title>चराड्स जनरेटर – बच्चों, परिवार और पार्टियों के लिए मुफ्त ऑनलाइन गेम</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="मुफ्त ऑनलाइन चराड्स जनरेटर – बच्चों, परिवार और पार्टियों के लिए मज़ेदार चराड्स आइडियाज़। 500+ प्रॉम्प्ट, कई कैटेगरी, कोई साइनअप नहीं।">
+
+  <!-- Favicon (keep your existing ones) -->
+  <link rel="icon" type="image/x-icon" href="/assests/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assests/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assests/apple-touch-icon-180x180.png">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* ── LANGUAGE SWITCHER ── */
+    .lang-bar {
+      background: #f0f4ff;
+      border-bottom: 1px solid #dde4f5;
+      padding: 6px 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      font-size: 13px;
+    }
+    .lang-bar span { color: #555; font-weight: 600; }
+    .lang-bar a {
+      text-decoration: none;
+      color: #3b5bdb;
+      padding: 2px 8px;
+      border-radius: 4px;
+      transition: background 0.2s;
+    }
+    .lang-bar a:hover { background: #dde4f5; }
+    .lang-bar a.active { background: #3b5bdb; color: #fff; }
+
+    /* ── TOOL COUNT BADGE ── */
+    .tool-grid-section {
+      background: #f8faff;
+      border: 1px solid #e2e8f8;
+      border-radius: 12px;
+      padding: 28px 24px;
+      margin: 32px 0;
+    }
+    .tool-grid-section h2 { margin-top: 0; }
+    .tool-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .tool-card {
+      background: #fff;
+      border: 1px solid #dde4f5;
+      border-radius: 10px;
+      padding: 14px 12px;
+      text-align: center;
+      text-decoration: none;
+      color: #222;
+      font-size: 14px;
+      font-weight: 500;
+      transition: box-shadow 0.2s, transform 0.15s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+    .tool-card:hover {
+      box-shadow: 0 4px 16px rgba(59,91,219,0.13);
+      transform: translateY(-2px);
+    }
+    .tool-card .tool-icon { font-size: 26px; }
+    .tool-card .tool-name { font-weight: 600; }
+    .tool-card .tool-desc { font-size: 12px; color: #666; }
+
+    /* ── WORD LIST TABLE ── */
+    .word-table-section { margin: 32px 0; }
+    .word-columns {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .word-col h4 {
+      margin: 0 0 8px;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      color: #3b5bdb;
+    }
+    .word-col ul {
+      margin: 0;
+      padding-left: 18px;
+      font-size: 14px;
+      line-height: 1.9;
+      color: #333;
+    }
+
+    /* ── TIPS GRID ── */
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .tip-card {
+      background: #fff8f0;
+      border-left: 4px solid #f76707;
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+    .tip-card h4 { margin: 0 0 6px; font-size: 15px; }
+    .tip-card p { margin: 0; font-size: 13px; color: #555; line-height: 1.6; }
+
+    /* ── COMPARISON TABLE ── */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      margin-top: 16px;
+    }
+    .compare-table th {
+      background: #3b5bdb;
+      color: #fff;
+      padding: 10px 14px;
+      text-align: left;
+    }
+    .compare-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid #eee;
+    }
+    .compare-table tr:nth-child(even) td { background: #f6f8ff; }
+
+    /* ── LANGUAGE GUIDE BOX ── */
+    .lang-guide {
+      background: #f0fff4;
+      border: 1px solid #b2f5c8;
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin: 32px 0;
+    }
+    .lang-guide h3 { margin-top: 0; color: #2d6a4f; }
+    .lang-guide p { font-size: 14px; color: #333; line-height: 1.7; }
+    .lang-guide code {
+      background: #e8f5e9;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 13px;
+      color: #1b5e20;
+    }
+
+    /* ── AUTHOR BIO PLACEHOLDER ── */
+    .author-bio-note {
+      background: #fff3cd;
+      border: 1px dashed #ffc107;
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin: 32px 0;
+      font-size: 14px;
+      color: #555;
+    }
+    .author-bio-note strong { color: #856404; }
+
+    /* ── STATS BAR ── */
+    .stats-bar {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      background: #3b5bdb;
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin: 24px 0;
+      color: #fff;
+    }
+    .stat-item { text-align: center; flex: 1; min-width: 100px; }
+    .stat-num { font-size: 28px; font-weight: 700; }
+    .stat-label { font-size: 12px; opacity: .8; margin-top: 2px; }
+  </style>
+</head>
+<body>
+
+<!-- LANGUAGE BAR -->
+<div class="lang-bar">
+  <span>🌐 भाषा:</span>
+  <a href="/">English</a>
+  <a href="/hi/" class="active">हिंदी</a>
+  <a href="/ur/">اردو</a>
+  <a href="/es/">Español</a>
+  <a href="/fr/">Français</a>
+  <a href="/ar/">العربية</a>
+  <a href="/de/">Deutsch</a>
+  <a href="/pt/">Português</a>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
+    <div class="logo">
+      <a href="https://charadegenerator.com/hi/" class="logo-link">
+        🎭 <strong>चराड्स</strong>जनरेटर
+      </a>
+    </div>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <nav class="nav-desktop">
+      <a href="kids-charade-generator.html"><button>बच्चों के चराड्स</button></a>
+      <a href="movie-charades.html"><button>फिल्म चराड्स</button></a>
+      <a href="character-charades.html"><button>किरदार चराड्स</button></a>
+      <a href="reverse-charades.html"><button>रिवर्स चराड्स</button></a>
+      <a href="christmas-charades.html"><button>क्रिसमस चराड्स</button></a>
+      <a href="islamic-charades.html"><button>इस्लामिक चराड्स</button></a>
+      <a href="animal-charades.html"><button>जानवर चराड्स</button></a>
+    </nav>
+  </div>
+  <nav id="navMobile" class="nav-mobile">
+    <a href="kids-charade-generator.html"><button>बच्चों के चराड्स</button></a>
+    <a href="movie-charades.html"><button>फिल्म चराड्स</button></a>
+    <a href="character-charades.html"><button>किरदार चराड्स</button></a>
+    <a href="reverse-charades.html"><button>रिवर्स चराड्स</button></a>
+    <a href="christmas-charades.html"><button>क्रिसमस चराड्स</button></a>
+    <a href="islamic-charades.html"><button>इस्लामिक चराड्स</button></a>
+    <a href="animal-charades.html"><button>जानवर चराड्स</button></a>
+  </nav>
+</header>
+
+<main class="main">
+
+  <h1>चराड्स जनरेटर – बच्चों और बड़ों के लिए मुफ्त ऑनलाइन गेम</h1>
+  <p class="seo-text">🎮 तुरंत खेलें • कोई साइनअप नहीं • 500+ चराड्स आइडियाज़ • 7 कैटेगरी</p>
+
+  <p class="seo-text">
+    एक मज़ेदार और आसान पार्टी गेम की तलाश है? यह मुफ्त चराड्स जनरेटर आपको बच्चों, परिवार, क्लासरूम और पार्टियों के लिए तुरंत चराड्स आइडियाज़ बनाने में मदद करता है।
+    चाहे आप दोस्तों के साथ खेल रहे हों या गेम नाइट होस्ट कर रहे हों, हमारा टूल रैंडम चराड्स जेनरेट करता है जो सरल, रोमांचक और सभी उम्र के लिए बिल्कुल सही हैं।
+    <strong>500+ यूनिक चराड्स प्रॉम्प्ट</strong> और 7 कैटेगरी के साथ, आपके पास आइडियाज़ की कभी कमी नहीं होगी।
+  </p>
+
+  <p class="seo-text">
+    चराड्स एक क्लासिक गेसिंग गेम है जहाँ खिलाड़ी बिना बोले एक शब्द या वाक्यांश का अभिनय करते हैं, जबकि बाकी लोग उसका अनुमान लगाते हैं।
+    इस ऑनलाइन चराड्स जनरेटर का उपयोग करके समय बचाएं और तुरंत असीमित आइडियाज़ पाएं। कोई तैयारी नहीं — बस जेनरेट बटन दबाएं और खेलना शुरू करें।
+    यह आपके फोन, टैबलेट या कंप्यूटर पर पूरी तरह से काम करता है, जिसमें ग्रुप प्ले के लिए समर्पित फुल-स्क्रीन मोड भी है।
+  </p>
+
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="stat-item"><div class="stat-num">500+</div><div class="stat-label">चराड्स प्रॉम्प्ट</div></div>
+    <div class="stat-item"><div class="stat-num">7</div><div class="stat-label">कैटेगरी</div></div>
+    <div class="stat-item"><div class="stat-num">25+</div><div class="stat-label">टूल्स उपलब्ध</div></div>
+    <div class="stat-item"><div class="stat-num">100%</div><div class="stat-label">हमेशा मुफ्त</div></div>
+  </div>
+
+  <!-- GAME AREA (keep your existing tool — no change) -->
+  <section class="tool" id="gameArea">
+    <h2 class="category-title">चलो चराड्स खेलें</h2>
+    <p class="subtitle">तुरंत चराड्स पाने के लिए जेनरेट पर क्लिक करें 🎭</p>
+    <div class="top-controls">
+      <button id="copyBtn" onclick="copyCharades()">📋 कॉपी करें</button>
+      <button onclick="toggleFullScreen()">⛶ फुल स्क्रीन</button>
+      <span id="copyMsg" class="copy-msg">कॉपी हुआ!</span>
+    </div>
+    <div class="quick-pick">
+      <button onclick="setCount(1)">1</button>
+      <button onclick="setCount(3)">3</button>
+      <button onclick="setCount(5)">5</button>
+      <button onclick="setCount(10)">10</button>
+      <button onclick="showCustom()">कस्टम</button>
+    </div>
+    <div class="mode-select">
+      <button class="mode-btn active" data-mode="default" onclick="setMode('default')">सभी</button>
+      <button class="mode-btn" data-mode="kids" onclick="setMode('kids')">बच्चे</button>
+      <button class="mode-btn" data-mode="funny" onclick="setMode('funny')">मज़ेदार</button>
+      <button class="mode-btn" data-mode="hard" onclick="setMode('hard')">मुश्किल</button>
+      <button class="mode-btn" data-mode="party" onclick="setMode('party')">पार्टी</button>
+    </div>
+    <div id="customBox" class="custom-box hidden">
+      <input type="number" id="customInput" min="1" max="12" placeholder="संख्या डालें">
+      <button onclick="applyCustom()">लागू करें</button>
+    </div>
+    <div id="cards" class="cards"></div>
+    <button class="generate-btn" onclick="generate()">जेनरेट करें</button>
+  </section>
+
+  <!-- ── ALL TOOLS SECTION ── -->
+  <section class="tool-grid-section">
+    <h2>🎮 सभी चराड्स टूल्स – 25+ मुफ्त जनरेटर</h2>
+    <p>हर अवसर, उम्र और थीम के लिए चराड्स टूल्स। खेलना शुरू करने के लिए किसी भी टूल पर क्लिक करें।</p>
+    <div class="tool-grid">
+      <a href="kids-charade-generator.html" class="tool-card"><span class="tool-icon">👦</span><span class="tool-name">बच्चों के चराड्स</span><span class="tool-desc">4-12 साल, सरल शब्द</span></a>
+      <a href="movie-charades.html" class="tool-card"><span class="tool-icon">🎬</span><span class="tool-name">फिल्म चराड्स</span><span class="tool-desc">लोकप्रिय फिल्में</span></a>
+      <a href="character-charades.html" class="tool-card"><span class="tool-icon">🦸</span><span class="tool-name">किरदार चराड्स</span><span class="tool-desc">मशहूर किरदार</span></a>
+      <a href="reverse-charades.html" class="tool-card"><span class="tool-icon">🔄</span><span class="tool-name">रिवर्स चराड्स</span><span class="tool-desc">ग्रुप एक्ट, एक गेस</span></a>
+      <a href="christmas-charades.html" class="tool-card"><span class="tool-icon">🎄</span><span class="tool-name">क्रिसमस चराड्स</span><span class="tool-desc">त्योहारी मजा</span></a>
+      <a href="islamic-charades.html" class="tool-card"><span class="tool-icon">🕌</span><span class="tool-name">इस्लामिक चराड्स</span><span class="tool-desc">इस्लामी शब्द</span></a>
+      <a href="animal-charades.html" class="tool-card"><span class="tool-icon">🐾</span><span class="tool-name">जानवर चराड्स</span><span class="tool-desc">जानवरों का अभिनय</span></a>
+      <!-- PLACEHOLDER TOOLS -->
+      <a href="funny-charades.html" class="tool-card"><span class="tool-icon">😂</span><span class="tool-name">मज़ेदार चराड्स</span><span class="tool-desc">पार्टी के लिए हास्य</span></a>
+      <a href="hard-charades.html" class="tool-card"><span class="tool-icon">🧠</span><span class="tool-name">मुश्किल चराड्स</span><span class="tool-desc">बड़ों के लिए चुनौती</span></a>
+      <a href="food-charades.html" class="tool-card"><span class="tool-icon">🍕</span><span class="tool-name">खाना चराड्स</span><span class="tool-desc">व्यंजन और सामग्री</span></a>
+      <a href="sports-charades.html" class="tool-card"><span class="tool-icon">⚽</span><span class="tool-name">खेल चराड्स</span><span class="tool-desc">खेल और गतिविधियाँ</span></a>
+      <a href="halloween-charades.html" class="tool-card"><span class="tool-icon">🎃</span><span class="tool-name">हैलोवीन चराड्स</span><span class="tool-desc">डरावने शब्द</span></a>
+      <a href="birthday-charades.html" class="tool-card"><span class="tool-icon">🎂</span><span class="tool-name">जन्मदिन चराड्स</span><span class="tool-desc">पार्टियों के लिए</span></a>
+      <a href="school-charades.html" class="tool-card"><span class="tool-icon">🏫</span><span class="tool-name">स्कूल चराड्स</span><span class="tool-desc">क्लासरूम थीम</span></a>
+      <a href="emoji-charades.html" class="tool-card"><span class="tool-icon">😀</span><span class="tool-name">इमोजी चराड्स</span><span class="tool-desc">इमोजी का अभिनय</span></a>
+      <a href="bollywood-charades.html" class="tool-card"><span class="tool-icon">🎥</span><span class="tool-name">बॉलीवुड चराड्स</span><span class="tool-desc">हिंदी फिल्में</span></a>
+      <a href="bible-charades.html" class="tool-card"><span class="tool-icon">📖</span><span class="tool-name">बाइबल चराड्स</span><span class="tool-desc">बाइबिल शब्द</span></a>
+      <a href="thanksgiving-charades.html" class="tool-card"><span class="tool-icon">🦃</span><span class="tool-name">थैंक्सगिविंग चराड्स</span><span class="tool-desc">त्योहारी थीम</span></a>
+      <a href="valentines-charades.html" class="tool-card"><span class="tool-icon">❤️</span><span class="tool-name">वैलेंटाइन चराड्स</span><span class="tool-desc">रोमांटिक शब्द</span></a>
+      <a href="summer-charades.html" class="tool-card"><span class="tool-icon">☀️</span><span class="tool-name">समर चराड्स</span><span class="tool-desc">बीच और आउटडोर</span></a>
+      <a href="superhero-charades.html" class="tool-card"><span class="tool-icon">🦸‍♂️</span><span class="tool-name">सुपरहीरो चराड्स</span><span class="tool-desc">मार्वल, DC</span></a>
+      <a href="nature-charades.html" class="tool-card"><span class="tool-icon">🌿</span><span class="tool-name">प्रकृति चराड्स</span><span class="tool-desc">पौधे, मौसम</span></a>
+      <a href="occupation-charades.html" class="tool-card"><span class="tool-icon">👨‍⚕️</span><span class="tool-name">पेशा चराड्स</span><span class="tool-desc">नौकरियाँ</span></a>
+      <a href="fairy-tale-charades.html" class="tool-card"><span class="tool-icon">🧚</span><span class="tool-name">परी कथा चराड्स</span><span class="tool-desc">कहानी के किरदार</span></a>
+      <a href="ramadan-charades.html" class="tool-card"><span class="tool-icon">🌙</span><span class="tool-name">रमज़ान चराड्स</span><span class="tool-desc">रमज़ान विशेष</span></a>
+    </div>
+  </section>
+
+  <!-- ── CHARADE WORD LISTS ── -->
+  <section class="content-section word-table-section">
+    <h2>500+ चराड्स आइडियाज़ – कैटेगरी के अनुसार</h2>
+    <p>नीचे हमारे जनरेटर द्वारा उपयोग किए जाने वाले शब्दों और वाक्यांशों के नमूने दिए गए हैं। ये हर कठिनाई स्तर और थीम को कवर करते हैं, ताकि आपका गेम पहले राउंड से आखिरी तक रोमांचक बना रहे। जब भी आप जेनरेट पर क्लिक करेंगे, जनरेटर इस पूल में से रैंडम पिक करता है, इसलिए आपको हमेशा ताज़ा आइडियाज़ मिलते हैं।</p>
+
+    <div class="word-columns">
+      <div class="word-col">
+        <h4>🧒 बच्चे (आसान)</h4>
+        <ul>
+          <li>उछलता मेंढक</li>
+          <li>सोता कुत्ता</li>
+          <li>उड़ता हवाई जहाज</li>
+          <li>आइसक्रीम खाना</li>
+          <li>तैरती मछली</li>
+          <li>पेड़ पर चढ़ना</li>
+          <li>नाचती तितली</li>
+          <li>टॉय कार चलाना</li>
+          <li>पौधों को पानी देना</li>
+          <li>गेंद पकड़ना</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>😂 मज़ेदार / पार्टी</h4>
+        <ul>
+          <li>कैक्टस पर बैठना</li>
+          <li>मुर्गी का पीछा करना</li>
+          <li>रोबोट डांस</li>
+          <li>बच्चे से छिपकर जाना</li>
+          <li>पेंगुइन चलना</li>
+          <li>अदृश्य दीवार</li>
+          <li>गुस्से में बूढ़ा आदमी</li>
+          <li>धीमी गति से दौड़</li>
+          <li>यूनिकॉर्न की सवारी</li>
+          <li>पिघलती आइसक्रीम</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>🧠 मुश्किल (एडवांस)</h4>
+        <ul>
+          <li>क्वांटम फिजिक्स</li>
+          <li>शेयर बाजार क्रैश</li>
+          <li>आर्टिफिशियल इंटेलिजेंस</li>
+          <li>सूर्य ग्रहण</li>
+          <li>टेक्टोनिक प्लेट्स</li>
+          <li>पुरातात्विक खुदाई</li>
+          <li>प्रकाश संश्लेषण</li>
+          <li>जैवप्रकाश</li>
+          <li>समानांतर ब्रह्मांड</li>
+          <li>गुरुत्वाकर्षण तरंग</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>🎬 फिल्में</h4>
+        <ul>
+          <li>द लायन किंग</li>
+          <li>स्पाइडर-मैन</li>
+          <li>टाइटैनिक</li>
+          <li>जुरासिक पार्क</li>
+          <li>फ्रोजन</li>
+          <li>द अवेंजर्स</li>
+          <li>होम अलोन</li>
+          <li>टॉय स्टोरी</li>
+          <li>द मैट्रिक्स</li>
+          <li>फाइंडिंग निमो</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>🐾 जानवर</h4>
+        <ul>
+          <li>हाथी पीना</li>
+          <li>सांप रेंगना</li>
+          <li>बंदर चढ़ना</li>
+          <li>शेर दहाड़ना</li>
+          <li>केकड़ा चलना</li>
+          <li>तोता बोलना</li>
+          <li>घोड़ा सरपट</li>
+          <li>कछुआ छिपना</li>
+          <li>कंगारू कूदना</li>
+          <li>मोर नाचना</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>🎄 मौसमी</h4>
+        <ul>
+          <li>पेड़ सजाना</li>
+          <li>तोहफे खोलना</li>
+          <li>स्नोमैन बनाना</li>
+          <li>ईद की नमाज़</li>
+          <li>दिया जलाना</li>
+          <li>ट्रिक ऑर ट्रीट</li>
+          <li>कद्दू तराशना</li>
+          <li>बर्थडे केक फूँकना</li>
+          <li>कंफेटी उछालना</li>
+          <li>आतिशबाजी गिनना</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TIPS SECTION ── -->
+  <section class="content-section">
+    <h2>🏆 चराड्स जीतने के लिए प्रो टिप्स</h2>
+    <p>चाहे आप पहली बार खेल रहे हों या चराड्स के विशेषज्ञ हों, ये टिप्स आपको बेहतर अभिनय करने, तेजी से अनुमान लगाने और अधिक मज़ा करने में मदद करेंगे।</p>
+    <div class="tips-grid">
+      <div class="tip-card">
+        <h4>कैटेगरी से शुरू करें</h4>
+        <p>अभिनय से पहले, शब्दों की संख्या दिखाने के लिए उंगलियाँ उठाएँ। "समान ध्वनि" के लिए कलाई की ओर इशारा करें। इससे अनुमान तेज़ होता है।</p>
+      </div>
+      <div class="tip-card">
+        <h4>पूरे शरीर का उपयोग करें</h4>
+        <p>सिर्फ हाथों का इस्तेमाल न करें। आपका चेहरा, मुद्रा और चलने का तरीका भावनाओं और अर्थ को स्पष्ट रूप से व्यक्त कर सकता है।</p>
+      </div>
+      <div class="tip-card">
+        <h4>शब्द दर शब्द अभिनय करें</h4>
+        <p>बहु-शब्द वाक्यांशों के लिए, प्रति शब्द उंगली की संख्या दिखाएँ, फिर प्रत्येक शब्द का अभिनय करें। टीम इस लय को जल्दी सीख जाती है।</p>
+      </div>
+      <div class="tip-card">
+        <h4>ऊर्जा बनाए रखें</h4>
+        <p>उत्साह संक्रामक होता है। भले ही आपका संकेत सही न हो, आत्मविश्वास से अभिनय करने से आपकी टीम सही अनुमान तक पहुँचती है।</p>
+      </div>
+      <div class="tip-card">
+        <h4>"समान ध्वनि" सिग्नल का उपयोग करें</h4>
+        <p>"समान ध्वनि" के लिए कान के पीछे हाथ रखें, फिर तुकबंदी या समान शब्द का अभिनय करें। मुश्किल शब्दों के लिए बहुत उपयोगी।</p>
+      </div>
+      <div class="tip-card">
+        <h4>समय सीमा तय करें</h4>
+        <p>प्रति टर्न 60-90 सेकंड रखें। समय का दबाव गेम को और रोमांचक बनाता है। फोन टाइमर या काउंटडाउन ऐप का उपयोग करें।</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── COMPARISON TABLE ── -->
+  <section class="content-section">
+    <h2>🆚 चराड्स vs अन्य पार्टी गेम्स</h2>
+    <p>जानें कि चराड्स की तुलना अन्य लोकप्रिय पार्टी गेम्स से कैसे होती है, ताकि आप अपने अगले इवेंट के लिए सही गेम चुन सकें।</p>
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>गेम</th>
+          <th>खिलाड़ी</th>
+          <th>उपकरण</th>
+          <th>उम्र</th>
+          <th>ऊर्जा स्तर</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>चराड्स</td><td>4+</td><td>कोई नहीं (या यह टूल)</td><td>4+</td><td>⚡⚡⚡ हाई</td></tr>
+        <tr><td>पिक्शनरी</td><td>4+</td><td>कागज + कलम</td><td>8+</td><td>⚡⚡ मीडियम</td></tr>
+        <tr><td>टैबू</td><td>4+</td><td>कार्ड डेक</td><td>12+</td><td>⚡⚡ मीडियम</td></tr>
+        <tr><td>20 सवाल</td><td>2+</td><td>कोई नहीं</td><td>6+</td><td>⚡ लो</td></tr>
+        <tr><td>डंब चराड्स</td><td>4+</td><td>कोई नहीं (या यह टूल)</td><td>8+</td><td>⚡⚡⚡ हाई</td></tr>
+        <tr><td>वर्ड स्क्रैम्बल</td><td>2+</td><td>कागज + कलम</td><td>10+</td><td>⚡ लो</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ── HOW TO PLAY ── -->
+  <section class="how-to">
+    <h2>चराड्स कैसे खेलें – पूरी गाइड</h2>
+    <p>
+      चराड्स 200 सालों से खेला जा रहा है और आज भी दुनिया के सबसे लोकप्रिय पार्टी गेम्स में से एक है। नियम सरल हैं, लेकिन यह गेम अंतहीन हँसी और यादगार पल बनाता है। नए और अनुभवी खिलाड़ियों के लिए यहाँ पूरी गाइड है।
+    </p>
+
+    <p><strong>1. दो टीमों में बाँटें</strong><br>
+    अपने ग्रुप को दो बराबर टीमों में विभाजित करें। प्रत्येक टीम बारी-बारी से एक अभिनेता को सामने भेजती है, जबकि बाकी अनुमान लगाते हैं।</p>
+
+    <p><strong>2. अपना चराड्स जेनरेट करें</strong><br>
+    इस टूल का उपयोग करके एक रैंडम चराड्स प्रॉम्प्ट जेनरेट करें। अभिनेता शब्द को चुपचाप पढ़ता है — टीम के सदस्यों को इसे नहीं देखना चाहिए।</p>
+
+    <p><strong>3. कैटेगरी सिग्नल दिखाएँ</strong><br>
+    क्लासिक हाथ सिग्नल का उपयोग करें: शब्द गिनती के लिए उंगलियाँ, "समान ध्वनि" के लिए कान, "किताब" के लिए किताब का आकार, या "फिल्म" के लिए फिल्म रील का घुमाव।</p>
+
+    <p><strong>4. बिना बोले या होंठ हिलाए अभिनय करें</strong><br>
+    अभिनेता केवल बॉडी लैंग्वेज, इशारों और चेहरे के भावों का उपयोग करता है। कोई आवाज़, कोई होंठ हिलाना, कोई हवा में लिखना नहीं।</p>
+
+    <p><strong>5. 60 सेकंड का टाइमर सेट करें</strong><br>
+    एक राउंड = 60 सेकंड। अगर टीम समय के भीतर सही अनुमान लगाती है, तो उन्हें एक अंक मिलता है। अगर नहीं, तो दूसरी टीम प्रयास कर सकती है।</p>
+
+    <p><strong>6. घुमाएँ और दोहराएँ</strong><br>
+    दक्षिणावर्त दिशा में बारी-बारी से खेलें। प्रत्येक खिलाड़ी को कम से कम एक बार अभिनय करने का मौका मिलता है। आप जितने चाहें उतने राउंड खेल सकते हैं — असीमित प्रॉम्प्ट के लिए जेनरेट पर क्लिक करें।</p>
+
+    <p><strong>7. फुल स्क्रीन मोड का उपयोग करें</strong><br>
+    फुल स्क्रीन पर क्लिक करें ताकि अभिनेता फोन उठा सके और शब्द केवल उन्हें दिखाई दे, इससे पहले कि वे स्क्रीन को दूसरों से हटा लें।</p>
+  </section>
+
+  <!-- ── BENEFITS ── -->
+  <section class="content-section">
+    <h2>इस चराड्स जनरेटर का उपयोग क्यों करें?</h2>
+    <p>हमारा चराड्स जनरेटर आपके गेम से सारी तैयारी को हटाने के लिए बनाया गया था। कार्ड लिखने की ज़रूरत नहीं, लिस्ट प्रिंट करने की ज़रूरत नहीं, शब्दों को लेकर बहस करने की ज़रूरत नहीं। बस साइट खोलें, जेनरेट दबाएँ, और आपका गेम सेकंडों में शुरू हो जाएगा।</p>
+    <p>अन्य जगहों पर मिलने वाली बुनियादी शब्द सूचियों के विपरीत, यह टूल <strong>कई मोड</strong> प्रदान करता है (बच्चे, मज़ेदार, मुश्किल, पार्टी) ताकि आप अपने ग्रुप के अनुसार कठिनाई और स्वर को समायोजित कर सकें। <strong>फुल स्क्रीन बटन</strong> आपके फोन को एक उचित गेम कार्ड में बदल देता है जिसे एक खिलाड़ी पकड़ता है जबकि अन्य अनुमान लगाते हैं। <strong>कॉपी बटन</strong> आपको वर्चुअल गेम नाइट्स के लिए वर्ड लिस्ट को व्हाट्सएप या किसी भी मैसेजिंग ऐप के माध्यम से रिमोट खिलाड़ियों के साथ साझा करने देता है।</p>
+    <ul>
+      <li>🎉 पार्टियों, क्लासरूम और फैमिली गेम नाइट्स के लिए एकदम सही</li>
+      <li>👨‍👩‍👧 4 साल से बच्चों से लेकर वयस्कों तक सभी के लिए उपयुक्त</li>
+      <li>⚡ 1, 3, 5, 10 या कस्टम संख्या में चराड्स जेनरेट करें</li>
+      <li>📱 फुल-स्क्रीन गेम मोड के साथ मोबाइल-ऑप्टिमाइज़्ड</li>
+      <li>🎭 रचनात्मकता, शब्दावली और संचार कौशल को बढ़ाता है</li>
+      <li>🌐 कई भाषाओं में उपलब्ध</li>
+      <li>♾️ 500+ यूनिक प्रॉम्प्ट, कभी रिपीट नहीं</li>
+      <li>🔒 कोई लॉगिन नहीं, खेल के दौरान कोई विज्ञापन नहीं, कोई डाउनलोड नहीं</li>
+    </ul>
+  </section>
+
+  <!-- ── CHARADES HISTORY ── -->
+  <section class="content-section">
+    <h2>चराड्स का इतिहास</h2>
+    <p>चराड्स की उत्पत्ति 18वीं सदी के फ्रांस में एक लिखित पहेली खेल के रूप में हुई थी, जहाँ संकेत शब्द के प्रत्येक शब्दांश का वर्णन करते थे। 19वीं सदी तक, यह शारीरिक अभिनय के खेल में विकसित हो गया, जो विक्टोरियन इंग्लैंड में एक पार्लर मनोरंजन के रूप में विशेष रूप से लोकप्रिय हो गया।</p>
+    <p>20वीं सदी के माध्यम से यह खेल दुनिया भर में फैल गया, भारत में <em>डंब चराड्स</em> और पश्चिम में <em>सेलेब्रिटी नेम गेम</em> जैसे टेलीविजन शो के माध्यम से लोकप्रियता हासिल की। आज, चराड्स दुनिया भर में सबसे अधिक खेले जाने वाले पार्टी गेम्स में से एक है और संचार कौशल, शब्दावली और रचनात्मक सोच विकसित करने के लिए कक्षाओं में एक शैक्षिक गतिविधि के रूप में भी उपयोग किया जाता है।</p>
+    <p>डिजिटल संस्करण — जैसे यह जनरेटर — ने गेम में एकमात्र बाधा को हटा दिया है: तैयारी का समय। अब आपको हाथ से लिखे कार्डों के ढेर की आवश्यकता नहीं है। एक टैप आपको अगला दौर तुरंत देता है।</p>
+  </section>
+
+  <!-- ── CATEGORIES SECTION ── -->
+  <section class="content-section">
+    <h2>चराड्स आइडियाज़ – कैटेगरी के अनुसार</h2>
+
+    <h3>बच्चों के चराड्स (4-12 साल)</h3>
+    <p>बच्चों के चराड्स छोटे, परिचित क्रियाओं और जानवरों का उपयोग करते हैं जिन्हें बच्चे आसानी से समझ सकते हैं और उनका अभिनय कर सकते हैं। शब्दों को एक या दो शब्दांशों में रखा जाता है और वे रोज़मर्रा की वस्तुओं, गतिविधियों और सरल प्राणियों पर केंद्रित होते हैं। उदाहरणों में मेंढक की तरह उछलना, आइसक्रीम खाना, पक्षी की तरह उड़ना, या कार चलाना शामिल हैं। ये प्रॉम्प्ट बच्चों को व्यस्त, हँसाते और बिना किसी निराशा के सक्रिय रखने के लिए डिज़ाइन किए गए हैं।</p>
+
+    <h3>पार्टियों के लिए मज़ेदार चराड्स</h3>
+    <p>पार्टी चराड्स बेतुकेपन को बढ़ावा देते हैं। सबसे अच्छी हँसी अप्रत्याशित संयोजनों से आती है जैसे "भागती हुई विग का पीछा करना," "धीमी गति से छींक," या "कमरे में अदृश्य हाथी।" हमारा मज़ेदार मोड ऐसे प्रॉम्प्ट चुनता है जो अभिनय करने पर स्वाभाविक रूप से हास्यपूर्ण होते हैं, जो उन्हें वयस्कों, किशोरों और मिश्रित समूहों के लिए आदर्श बनाता है जो पूरी रात उच्च ऊर्जा बनाए रखना चाहते हैं।</p>
+
+    <h3>वयस्कों के लिए मुश्किल चराड्स</h3>
+    <p>मुश्किल मोड खिलाड़ियों को अमूर्त अवधारणाओं, यौगिक शब्दों और बहु-शब्दांश वाक्यांशों जैसे "आर्टिफिशियल इंटेलिजेंस," "गुरुत्वाकर्षण तरंग," या "पुरातात्विक खोज" के साथ चुनौती देता है। ये प्रतिस्पर्धी समूहों के लिए सबसे अच्छे हैं जो वास्तविक चुनौती और अनुमान प्रक्रिया में बहुत सारी बहस चाहते हैं।</p>
+
+    <h3>फिल्म चराड्स</h3>
+    <p>फिल्म चराड्स हॉलीवुड और बॉलीवुड की लोकप्रिय फिल्मों के शीर्षकों का उपयोग करते हैं। "जुरासिक पार्क" या "द लायन किंग" जैसे शीर्षक का अभिनय करना अधिकांश समूहों में तुरंत पहचान लाता है। यह मोड फिल्म प्रेमियों के लिए एकदम सही है और विशेष रूप से तब अच्छा काम करता है जब खिलाड़ी अभिनय से पहले क्लासिक "फिल्म रील घुमाने" का हाथ सिग्नल का उपयोग करते हैं।</p>
+  </section>
+
+  <!-- ── LANGUAGE GUIDE ── -->
+  <div class="lang-guide">
+    <h3>🌐 भाषा संस्करण गाइड – और भाषाएँ कैसे जोड़ें</h3>
+    <p>इस पृष्ठ के शीर्ष पर लैंग्वेज स्विचर बार उपयोगकर्ताओं को अपनी पसंदीदा भाषा में स्विच करने देता है। नई भाषा का संस्करण जोड़ने के लिए, हिंदी के लिए <code>/hi/</code> या स्पेनिश के लिए <code>/es/</code> जैसी सबफ़ोल्डर बनाएँ, अंदर एक अनुवादित <code>index.html</code> रखें, और HTML टैग पर <code>lang</code> एट्रिब्यूट को अपडेट करें (जैसे, <code>lang="hi"</code>)।</p>
+    <p>प्रत्येक भाषा संस्करण के लिए अपने <code>&lt;head&gt;</code> के अंदर एक <code>hreflang</code> टैग जोड़ें ताकि Google उन्हें अलग से इंडेक्स कर सके। उदाहरण:</p>
+    <p><code>&lt;link rel="alternate" hreflang="hi" href="https://charadegenerator.com/hi/" /&gt;</code><br>
+    <code>&lt;link rel="alternate" hreflang="en" href="https://charadegenerator.com/" /&gt;</code></p>
+    <p>अपनी JS फ़ाइल में चराड्स शब्द सूचियों का अनुवाद करें। प्रत्येक भाषा के लिए एक अलग शब्द ऐरे रखें और URL या भाषा कुकी के आधार पर सही को लोड करें। <strong>प्राथमिकता वाली भाषाएँ:</strong> हिंदी (विशाल खोज वॉल्यूम), उर्दू, अरबी, स्पेनिश और पुर्तगाली।</p>
+  </div>
+
+  <!-- ── AUTHOR NOTE (PLACEHOLDER FOR ABOUT US) ── -->
+  <div class="author-bio-note">
+    <strong>📝 लेखक बायो नोट (आपके 'हमारे बारे में' पेज के लिए):</strong>
+    अपने 'हमारे बारे में' पेज पर एक सेक्शन जोड़ें:<br><br>
+    <em>"नमस्ते, मैं [आपका नाम], [शहर] का एक गेम उत्साही और डेवलपर हूँ। मैंने [वर्ष] में चराड्स जनरेटर बनाया क्योंकि मैं एक सरल, मुफ्त टूल चाहता था जिसका उपयोग परिवार बिना किसी सेटअप के कर सके। मैं हर शब्द सूची का व्यक्तिगत रूप से अपने परिवार के साथ परीक्षण करता हूँ और उपयोगकर्ताओं की प्रतिक्रिया के आधार पर टूल को नियमित रूप से अपडेट करता हूँ।"</em><br><br>
+    एक वास्तविक फोटो, कम से कम अपना पहला नाम, और अपने सोशल प्रोफ़ाइल या ईमेल का लिंक शामिल करें। इससे Google के E-E-A-T ट्रस्ट सिग्नल बनते हैं और आपके AdSense अनुमोदन की संभावना काफी बढ़ जाती है।
+  </div>
+
+  <!-- ── HOW TO USE ── -->
+  <section class="content-section">
+    <h2>उदाहरण: जब आप जेनरेट पर क्लिक करते हैं तो क्या मिलता है</h2>
+    <p>यह चराड्स जनरेटर रैंडम शब्द या वाक्यांश बनाता है जिन्हें खिलाड़ी तुरंत अभिनय कर सकते हैं। आपको कितने चराड्स मिलते हैं यह इस पर निर्भर करता है कि आप ऊपर क्या चुनते हैं।</p>
+    <p><strong>यदि आप 1 चुनते हैं:</strong> एक चराड्स कार्ड स्क्रीन पर दिखाई देता है — तेज़ एक-पर-एक खेल के लिए आदर्श।<br>
+    <strong>यदि आप 3 चुनते हैं:</strong> तीन चराड्स दिखाई देते हैं — प्रत्येक का उपयोग एक राउंड के लिए करें और देखें कि कौन सा अभिनय करने में सबसे मज़ेदार है।<br>
+    <strong>यदि आप 5 या 10 चुनते हैं:</strong> बिना फिर से जेनरेट किए कई चराड्स — विस्तारित राउंड के लिए।<br>
+    <strong>कस्टम विकल्प:</strong> पूरी तरह से कस्टम गेम लंबाई के लिए 12 तक कोई भी संख्या डालें।</p>
+    <h3>आपको मिलने वाले नमूना चराड्स</h3>
+    <ul>
+      <li>🎭 पहाड़ पर चढ़ना</li>
+      <li>🎭 बिरयानी पकाना</li>
+      <li>🎭 स्कूल बस चलाना</li>
+      <li>🎭 सुपरहीरो की तरह उड़ना</li>
+      <li>🎭 नर्वस टीचर का अभिनय</li>
+      <li>🎭 रेत का महल बनाना</li>
+      <li>🎭 रेगिस्तान में ऊँट की सवारी</li>
+      <li>🎭 बारिश में क्रिकेट खेलना</li>
+      <li>🎭 बादल पर सोना</li>
+      <li>🎭 जंगली शेर को वश में करना</li>
+    </ul>
+    <p><strong>चराड्स कॉपी करें</strong> बटन का उपयोग करके सभी जेनरेटेड आइडियाज़ को तुरंत कॉपी करें और वर्चुअल गेम नाइट्स के लिए व्हाट्सएप, मैसेंजर या किसी चैट ऐप पर साझा करें। <strong>फुल स्क्रीन</strong> विकल्प पूरे स्क्रीन पर शब्द को प्रमुखता से प्रदर्शित करके ग्रुप सेटिंग्स में गेम को आसान बनाता है।</p>
+  </section>
+
+  <!-- ── FAQ ── -->
+  <section class="content-section">
+    <h2>अक्सर पूछे जाने वाले सवाल</h2>
+
+    <p><strong>चराड्स जनरेटर क्या है?</strong><br>
+    चराड्स जनरेटर एक ऑनलाइन टूल है जो खिलाड़ियों के लिए अभिनय करने के लिए रैंडम शब्द या वाक्यांश चुनता है। अपनी खुद की सूची लिखने के बजाय, टूल आपको कैटेगरी जैसे बच्चे, मज़ेदार, मुश्किल या पार्टी के अनुसार क्रमबद्ध असीमित आइडियाज़ देता है। यह सारी तैयारी को हटा देता है और गेम को तुरंत शुरू करने देता है।</p>
+
+    <p><strong>क्या यह चराड्स जनरेटर मुफ्त है?</strong><br>
+    हाँ, पूरी तरह से मुफ्त। कोई अकाउंट नहीं, कोई डाउनलोड नहीं, कोई समय सीमा नहीं। जितनी देर चाहें उतने चराड्स आइडियाज़ जेनरेट करें।</p>
+
+    <p><strong>क्या बच्चे इस गेम का उपयोग कर सकते हैं?</strong><br>
+    बिल्कुल। बच्चों का मोड 4 साल और उससे अधिक उम्र के बच्चों के लिए सरल, आयु-उपयुक्त शब्द जेनरेट करता है। सभी प्रॉम्प्ट फैमिली-फ्रेंडली हैं और क्लासरूम और घरेलू उपयोग के लिए सुरक्षित हैं।</p>
+
+    <p><strong>इस टूल में कितने चराड्स आइडियाज़ हैं?</strong><br>
+    सभी कैटेगरी में 500 से अधिक यूनिक प्रॉम्प्ट। जनरेटर इस पूल में से रैंडम पिक करता है, इसलिए आपको एक सेशन में शायद ही कभी एक ही शब्द दो बार दिखे।</p>
+
+    <p><strong>क्या मैं अपने फोन पर चराड्स खेल सकता हूँ?</strong><br>
+    हाँ। यह टूल पूरी तरह से मोबाइल-ऑप्टिमाइज़्ड है। फुल स्क्रीन मोड विशेष रूप से तब उपयोगी होता है जब आप अपना फोन पकड़ते हैं ताकि ग्रुप खेल के दौरान शब्द स्पष्ट रूप से देख सके।</p>
+
+    <p><strong>रिवर्स चराड्स क्या है?</strong><br>
+    रिवर्स चराड्स में, पूरा ग्रुप एक साथ अभिनय करता है जबकि एक व्यक्ति अनुमान लगाता है। यह क्लासिक चराड्स से अधिक जोरदार, तेज़ और अव्यवस्थित है — बड़ी पार्टियों के लिए बढ़िया।</p>
+
+    <p><strong>क्या मैं इसका उपयोग वर्चुअल गेम नाइट्स के लिए कर सकता हूँ?</strong><br>
+    हाँ। अपने चराड्स जेनरेट करें, कॉपी बटन का उपयोग करके उन्हें अपने ग्रुप चैट में पेस्ट करें, और हर कोई वीडियो कॉल पर रिमोट से खेल सकता है। Zoom, Google Meet या WhatsApp वीडियो पर बढ़िया काम करता है।</p>
+
+    <p><strong>क्या मुझे कुछ डाउनलोड करने की आवश्यकता है?</strong><br>
+    नहीं। सब कुछ सीधे आपके ब्राउज़र में चलता है। कोई ऐप, कोई प्लगइन, कोई इंस्टॉलेशन नहीं।</p>
+
+    <p><strong>क्या यह टूल अन्य भाषाओं में उपलब्ध है?</strong><br>
+    हम भाषा संस्करण जोड़ रहे हैं। हिंदी, उर्दू और अरबी संस्करण विकास में हैं। उपलब्ध होने पर स्विच करने के लिए पृष्ठ के शीर्ष पर लैंग्वेज बार का उपयोग करें।</p>
+
+    <p><strong>यह भौतिक चराड्स कार्ड गेम से कैसे अलग है?</strong><br>
+    भौतिक कार्ड गेम्स में एक निश्चित शब्द सूची होती है जो समय के साथ याद हो जाती है और उन्हें खरीदना पड़ता है। यह डिजिटल जनरेटर मुफ्त है, इसमें लगातार बढ़ता शब्द पूल है, आप कठिनाई और कैटेगरी को कस्टमाइज़ कर सकते हैं, और इसे कभी भी रिप्लेसमेंट कार्ड की आवश्यकता नहीं होती।</p>
+  </section>
+
+  <!-- OUTRO -->
+  <section class="content-section">
+    <h2>अभी चराड्स खेलना शुरू करें</h2>
+    <p>चराड्स उन सबसे अच्छे गेम्स में से एक है जो लोगों को एक साथ लाते हैं। इसे किसी उपकरण की आवश्यकता नहीं है, यह कुछ भी खर्च नहीं करता है, किसी भी भाषा में काम करता है, और वास्तविक हँसी पैदा करता है जिसे कोई स्क्रीन-आधारित गेम दोहरा नहीं सकता है। चाहे आप जन्मदिन की पार्टी में हों, स्कूल क्लासरूम में, पारिवारिक समारोह में, या वर्चुअल हैंगआउट में, यह टूल आपको दस सेकंड से भी कम समय में खेलना शुरू करने में मदद करता है।</p>
+    <p>ऊपर स्क्रॉल करें, जेनरेट पर क्लिक करें, और अपने दोस्तों और परिवार के साथ असीमित मज़ा लें। 🎉</p>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <a href="about-us.html">हमारे बारे में</a>
+  <a href="contact-us.html">संपर्क करें</a>
+  <a href="privacy-policy.html">गोपनीयता नीति</a>
+  <a href="terms-and-conditions.html">नियम और शर्तें</a>
+  <a href="disclaimer.html">अस्वीकरण</a>
+  <p>© CharadeGenerator 2026</p>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
