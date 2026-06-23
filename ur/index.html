@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>چارڈز جنریٹر – بچوں، خاندان اور پارٹیوں کے لیے مفت آن لائن گیم</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="مفت آن لائن چارڈز جنریٹر – بچوں، خاندان اور پارٹیوں کے لیے مزیدار چارڈز آئیڈیاز۔ 500+ پرامپٹس، کئی کیٹیگریز، کوئی سائن اپ نہیں۔">
+
+  <!-- Favicon (keep your existing ones) -->
+  <link rel="icon" type="image/x-icon" href="/assests/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assests/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assests/apple-touch-icon-180x180.png">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* ── LANGUAGE SWITCHER ── */
+    .lang-bar {
+      background: #f0f4ff;
+      border-bottom: 1px solid #dde4f5;
+      padding: 6px 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      font-size: 13px;
+    }
+    .lang-bar span { color: #555; font-weight: 600; }
+    .lang-bar a {
+      text-decoration: none;
+      color: #3b5bdb;
+      padding: 2px 8px;
+      border-radius: 4px;
+      transition: background 0.2s;
+    }
+    .lang-bar a:hover { background: #dde4f5; }
+    .lang-bar a.active { background: #3b5bdb; color: #fff; }
+
+    /* ── TOOL COUNT BADGE ── */
+    .tool-grid-section {
+      background: #f8faff;
+      border: 1px solid #e2e8f8;
+      border-radius: 12px;
+      padding: 28px 24px;
+      margin: 32px 0;
+    }
+    .tool-grid-section h2 { margin-top: 0; }
+    .tool-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .tool-card {
+      background: #fff;
+      border: 1px solid #dde4f5;
+      border-radius: 10px;
+      padding: 14px 12px;
+      text-align: center;
+      text-decoration: none;
+      color: #222;
+      font-size: 14px;
+      font-weight: 500;
+      transition: box-shadow 0.2s, transform 0.15s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+    .tool-card:hover {
+      box-shadow: 0 4px 16px rgba(59,91,219,0.13);
+      transform: translateY(-2px);
+    }
+    .tool-card .tool-icon { font-size: 26px; }
+    .tool-card .tool-name { font-weight: 600; }
+    .tool-card .tool-desc { font-size: 12px; color: #666; }
+
+    /* ── WORD LIST TABLE ── */
+    .word-table-section { margin: 32px 0; }
+    .word-columns {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .word-col h4 {
+      margin: 0 0 8px;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      color: #3b5bdb;
+    }
+    .word-col ul {
+      margin: 0;
+      padding-left: 18px;
+      font-size: 14px;
+      line-height: 1.9;
+      color: #333;
+      list-style-position: inside;
+    }
+    .word-col ul li { text-align: right; }
+
+    /* ── TIPS GRID ── */
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .tip-card {
+      background: #fff8f0;
+      border-right: 4px solid #f76707;
+      border-left: none;
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+    .tip-card h4 { margin: 0 0 6px; font-size: 15px; }
+    .tip-card p { margin: 0; font-size: 13px; color: #555; line-height: 1.6; }
+
+    /* ── COMPARISON TABLE ── */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      margin-top: 16px;
+    }
+    .compare-table th {
+      background: #3b5bdb;
+      color: #fff;
+      padding: 10px 14px;
+      text-align: right;
+    }
+    .compare-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid #eee;
+      text-align: right;
+    }
+    .compare-table tr:nth-child(even) td { background: #f6f8ff; }
+
+    /* ── LANGUAGE GUIDE BOX ── */
+    .lang-guide {
+      background: #f0fff4;
+      border: 1px solid #b2f5c8;
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin: 32px 0;
+    }
+    .lang-guide h3 { margin-top: 0; color: #2d6a4f; }
+    .lang-guide p { font-size: 14px; color: #333; line-height: 1.7; }
+    .lang-guide code {
+      background: #e8f5e9;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 13px;
+      color: #1b5e20;
+    }
+
+    /* ── AUTHOR BIO PLACEHOLDER ── */
+    .author-bio-note {
+      background: #fff3cd;
+      border: 1px dashed #ffc107;
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin: 32px 0;
+      font-size: 14px;
+      color: #555;
+    }
+    .author-bio-note strong { color: #856404; }
+
+    /* ── STATS BAR ── */
+    .stats-bar {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      background: #3b5bdb;
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin: 24px 0;
+      color: #fff;
+    }
+    .stat-item { text-align: center; flex: 1; min-width: 100px; }
+    .stat-num { font-size: 28px; font-weight: 700; }
+    .stat-label { font-size: 12px; opacity: .8; margin-top: 2px; }
+
+    /* RTL fixes for buttons and controls */
+    .top-controls { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+    .quick-pick { display: flex; gap: 6px; flex-wrap: wrap; justify-content: center; }
+    .mode-select { display: flex; gap: 6px; flex-wrap: wrap; justify-content: center; }
+    .generate-btn { display: block; margin: 16px auto; }
+    .cards { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; }
+    .card-item { 
+      background: #f8faff; 
+      border: 2px solid #3b5bdb; 
+      border-radius: 12px; 
+      padding: 20px 24px; 
+      font-size: 22px; 
+      font-weight: 600; 
+      min-width: 140px; 
+      text-align: center; 
+    }
+    .custom-box { display: flex; gap: 8px; justify-content: center; margin: 10px 0; }
+    .custom-box input { padding: 6px 12px; border-radius: 6px; border: 1px solid #ccc; width: 100px; }
+    .custom-box button { padding: 6px 16px; border-radius: 6px; background: #3b5bdb; color: #fff; border: none; cursor: pointer; }
+    .hidden { display: none; }
+    .copy-msg { display: none; color: #2d6a4f; font-weight: 600; }
+  </style>
+</head>
+<body>
+
+<!-- LANGUAGE BAR -->
+<div class="lang-bar">
+  <span>🌐 زبان:</span>
+  <a href="/">English</a>
+  <a href="/hi/">हिंदी</a>
+  <a href="/ur/" class="active">اردو</a>
+  <a href="/es/">Español</a>
+  <a href="/fr/">Français</a>
+  <a href="/ar/">العربية</a>
+  <a href="/de/">Deutsch</a>
+  <a href="/pt/">Português</a>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
+    <div class="logo">
+      <a href="https://charadegenerator.com/ur/" class="logo-link">
+        🎭 <strong>چارڈز</strong>جنریٹر
+      </a>
+    </div>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <nav class="nav-desktop">
+      <a href="kids-charade-generator.html"><button>بچوں کے چارڈز</button></a>
+      <a href="movie-charades.html"><button>فلم چارڈز</button></a>
+      <a href="character-charades.html"><button>کردار چارڈز</button></a>
+      <a href="reverse-charades.html"><button>ریورس چارڈز</button></a>
+      <a href="christmas-charades.html"><button>کرسمس چارڈز</button></a>
+      <a href="islamic-charades.html"><button>اسلامی چارڈز</button></a>
+      <a href="animal-charades.html"><button>جانور چارڈز</button></a>
+    </nav>
+  </div>
+  <nav id="navMobile" class="nav-mobile">
+    <a href="kids-charade-generator.html"><button>بچوں کے چارڈز</button></a>
+    <a href="movie-charades.html"><button>فلم چارڈز</button></a>
+    <a href="character-charades.html"><button>کردار چارڈز</button></a>
+    <a href="reverse-charades.html"><button>ریورس چارڈز</button></a>
+    <a href="christmas-charades.html"><button>کرسمس چارڈز</button></a>
+    <a href="islamic-charades.html"><button>اسلامی چارڈز</button></a>
+    <a href="animal-charades.html"><button>جانور چارڈز</button></a>
+  </nav>
+</header>
+
+<main class="main">
+
+  <h1>چارڈز جنریٹر – بچوں اور بڑوں کے لیے مفت آن لائن گیم</h1>
+  <p class="seo-text">🎮 فوری کھیلیں • کوئی سائن اپ نہیں • 500+ چارڈز آئیڈیاز • 7 کیٹیگریز</p>
+
+  <p class="seo-text">
+    ایک مزیدار اور آسان پارٹی گیم کی تلاش ہے؟ یہ مفت چارڈز جنریٹر آپ کو بچوں، خاندان، کلاس روم اور پارٹیوں کے لیے فوری چارڈز آئیڈیاز بنانے میں مدد کرتا ہے۔
+    چاہے آپ دوستوں کے ساتھ کھیل رہے ہوں یا گیم نائٹ ہوسٹ کر رہے ہوں، ہمارا ٹول رینڈم چارڈز جنریٹ کرتا ہے جو سادہ، پرجوش اور تمام عمروں کے لیے بالکل موزوں ہیں۔
+    <strong>500+ منفرد چارڈز پرامپٹس</strong> اور 7 کیٹیگریز کے ساتھ، آپ کے پاس آئیڈیاز کی کبھی کمی نہیں ہوگی۔
+  </p>
+
+  <p class="seo-text">
+    چارڈز ایک کلاسک گیسنگ گیم ہے جہاں کھلاڑی بغیر بولے ایک لفظ یا فقرے کا ایکٹنگ کرتے ہیں، جبکہ باقی لوگ اس کا اندازہ لگاتے ہیں۔
+    اس آن لائن چارڈز جنریٹر کا استعمال کرکے وقت بچائیں اور فوری طور پر لامحدود آئیڈیاز حاصل کریں۔ کوئی تیاری نہیں — بس جنریٹ بٹن دبائیں اور کھیلنا شروع کریں۔
+    یہ آپ کے فون، ٹیبلیٹ یا کمپیوٹر پر پوری طرح کام کرتا ہے، جس میں گروپ پلے کے لیے وقف فل اسکرین موڈ بھی شامل ہے۔
+  </p>
+
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="stat-item"><div class="stat-num">500+</div><div class="stat-label">چارڈز پرامپٹس</div></div>
+    <div class="stat-item"><div class="stat-num">7</div><div class="stat-label">کیٹیگریز</div></div>
+    <div class="stat-item"><div class="stat-num">25+</div><div class="stat-label">ٹولز دستیاب</div></div>
+    <div class="stat-item"><div class="stat-num">100%</div><div class="stat-label">ہمیشہ مفت</div></div>
+  </div>
+
+  <!-- GAME AREA -->
+  <section class="tool" id="gameArea">
+    <h2 class="category-title">چلو چارڈز کھیلیں</h2>
+    <p class="subtitle">فوری چارڈز حاصل کرنے کے لیے جنریٹ پر کلک کریں 🎭</p>
+    <div class="top-controls">
+      <button id="copyBtn" onclick="copyCharades()">📋 کاپی کریں</button>
+      <button onclick="toggleFullScreen()">⛶ فل اسکرین</button>
+      <span id="copyMsg" class="copy-msg">کاپی ہوگیا!</span>
+    </div>
+    <div class="quick-pick">
+      <button onclick="setCount(1)">1</button>
+      <button onclick="setCount(3)">3</button>
+      <button onclick="setCount(5)">5</button>
+      <button onclick="setCount(10)">10</button>
+      <button onclick="showCustom()">کسٹم</button>
+    </div>
+    <div class="mode-select">
+      <button class="mode-btn active" data-mode="default" onclick="setMode('default')">تمام</button>
+      <button class="mode-btn" data-mode="kids" onclick="setMode('kids')">بچے</button>
+      <button class="mode-btn" data-mode="funny" onclick="setMode('funny')">مزیدار</button>
+      <button class="mode-btn" data-mode="hard" onclick="setMode('hard')">مشکل</button>
+      <button class="mode-btn" data-mode="party" onclick="setMode('party')">پارٹی</button>
+    </div>
+    <div id="customBox" class="custom-box hidden">
+      <input type="number" id="customInput" min="1" max="12" placeholder="نمبر ڈالیں">
+      <button onclick="applyCustom()">لاگو کریں</button>
+    </div>
+    <div id="cards" class="cards"></div>
+    <button class="generate-btn" onclick="generate()">جنریٹ کریں</button>
+  </section>
+
+  <!-- ── ALL TOOLS SECTION ── -->
+  <section class="tool-grid-section">
+    <h2>🎮 تمام چارڈز ٹولز – 25+ مفت جنریٹرز</h2>
+    <p>ہر موقع، عمر اور تھیم کے لیے چارڈز ٹولز۔ کھیلنا شروع کرنے کے لیے کسی بھی ٹول پر کلک کریں۔</p>
+    <div class="tool-grid">
+      <a href="kids-charade-generator.html" class="tool-card"><span class="tool-icon">👦</span><span class="tool-name">بچوں کے چارڈز</span><span class="tool-desc">4-12 سال، سادہ الفاظ</span></a>
+      <a href="movie-charades.html" class="tool-card"><span class="tool-icon">🎬</span><span class="tool-name">فلم چارڈز</span><span class="tool-desc">مشہور فلمیں</span></a>
+      <a href="character-charades.html" class="tool-card"><span class="tool-icon">🦸</span><span class="tool-name">کردار چارڈز</span><span class="tool-desc">مشہور کردار</span></a>
+      <a href="reverse-charades.html" class="tool-card"><span class="tool-icon">🔄</span><span class="tool-name">ریورس چارڈز</span><span class="tool-desc">گروپ ایکٹ، ایک گیس</span></a>
+      <a href="christmas-charades.html" class="tool-card"><span class="tool-icon">🎄</span><span class="tool-name">کرسمس چارڈز</span><span class="tool-desc">تہوار کا مزہ</span></a>
+      <a href="islamic-charades.html" class="tool-card"><span class="tool-icon">🕌</span><span class="tool-name">اسلامی چارڈز</span><span class="tool-desc">اسلامی الفاظ</span></a>
+      <a href="animal-charades.html" class="tool-card"><span class="tool-icon">🐾</span><span class="tool-name">جانور چارڈز</span><span class="tool-desc">جانوروں کا ایکٹنگ</span></a>
+      <!-- PLACEHOLDER TOOLS -->
+      <a href="funny-charades.html" class="tool-card"><span class="tool-icon">😂</span><span class="tool-name">مزیدار چارڈز</span><span class="tool-desc">پارٹی کے لیے مزاح</span></a>
+      <a href="hard-charades.html" class="tool-card"><span class="tool-icon">🧠</span><span class="tool-name">مشکل چارڈز</span><span class="tool-desc">بڑوں کے لیے چیلنج</span></a>
+      <a href="food-charades.html" class="tool-card"><span class="tool-icon">🍕</span><span class="tool-name">کھانا چارڈز</span><span class="tool-desc">پکوان اور اجزاء</span></a>
+      <a href="sports-charades.html" class="tool-card"><span class="tool-icon">⚽</span><span class="tool-name">کھیل چارڈز</span><span class="tool-desc">کھیل اور سرگرمیاں</span></a>
+      <a href="halloween-charades.html" class="tool-card"><span class="tool-icon">🎃</span><span class="tool-name">ہالووین چارڈز</span><span class="tool-desc">خوفناک الفاظ</span></a>
+      <a href="birthday-charades.html" class="tool-card"><span class="tool-icon">🎂</span><span class="tool-name">سالگرہ چارڈز</span><span class="tool-desc">پارٹیوں کے لیے</span></a>
+      <a href="school-charades.html" class="tool-card"><span class="tool-icon">🏫</span><span class="tool-name">اسکول چارڈز</span><span class="tool-desc">کلاس روم تھیم</span></a>
+      <a href="emoji-charades.html" class="tool-card"><span class="tool-icon">😀</span><span class="tool-name">ایموجی چارڈز</span><span class="tool-desc">ایموجی کا ایکٹنگ</span></a>
+      <a href="bollywood-charades.html" class="tool-card"><span class="tool-icon">🎥</span><span class="tool-name">بالی ووڈ چارڈز</span><span class="tool-desc">ہندی فلمیں</span></a>
+      <a href="bible-charades.html" class="tool-card"><span class="tool-icon">📖</span><span class="tool-name">بائبل چارڈز</span><span class="tool-desc">بائبل کے الفاظ</span></a>
+      <a href="thanksgiving-charades.html" class="tool-card"><span class="tool-icon">🦃</span><span class="tool-name">تھینکس گیونگ چارڈز</span><span class="tool-desc">تہوار تھیم</span></a>
+      <a href="valentines-charades.html" class="tool-card"><span class="tool-icon">❤️</span><span class="tool-name">ویلنٹائن چارڈز</span><span class="tool-desc">رومانوی الفاظ</span></a>
+      <a href="summer-charades.html" class="tool-card"><span class="tool-icon">☀️</span><span class="tool-name">سمر چارڈز</span><span class="tool-desc">بیچ اور آؤٹ ڈور</span></a>
+      <a href="superhero-charades.html" class="tool-card"><span class="tool-icon">🦸‍♂️</span><span class="tool-name">سپر ہیرو چارڈز</span><span class="tool-desc">مارول، ڈی سی</span></a>
+      <a href="nature-charades.html" class="tool-card"><span class="tool-icon">🌿</span><span class="tool-name">قدرت چارڈز</span><span class="tool-desc">پودے، موسم</span></a>
+      <a href="occupation-charades.html" class="tool-card"><span class="tool-icon">👨‍⚕️</span><span class="tool-name">پیشہ چارڈز</span><span class="tool-desc">نوکریاں</span></a>
+      <a href="fairy-tale-charades.html" class="tool-card"><span class="tool-icon">🧚</span><span class="tool-name">پری کہانی چارڈز</span><span class="tool-desc">کہانی کے کردار</span></a>
+      <a href="ramadan-charades.html" class="tool-card"><span class="tool-icon">🌙</span><span class="tool-name">رمضان چارڈز</span><span class="tool-desc">رمضان خصوصی</span></a>
+    </div>
+  </section>
+
+  <!-- ── CHARADE WORD LISTS ── -->
+  <section class="content-section word-table-section">
+    <h2>500+ چارڈز آئیڈیاز – کیٹیگری کے مطابق</h2>
+    <p>ذیل میں ہمارے جنریٹر کے ذریعہ استعمال ہونے والے الفاظ اور فقروں کے نمونے دیئے گئے ہیں۔ یہ ہر مشکل سطح اور تھیم کا احاطہ کرتے ہیں، تاکہ آپ کا گیم پہلے راؤنڈ سے آخری تک پرجوش رہے۔ جب بھی آپ جنریٹ پر کلک کریں گے، جنریٹر اس پول میں سے رینڈم پک کرتا ہے، اس لیے آپ کو ہمیشہ تازہ آئیڈیاز ملتے ہیں۔</p>
+
+    <div class="word-columns">
+      <div class="word-col">
+        <h4>🧒 بچے (آسان)</h4>
+        <ul>
+          <li>چھلانگ لگاتا مینڈک</li>
+          <li>سوتا کتا</li>
+          <li>اڑتا ہوائی جہاز</li>
+          <li>آئس کریم کھانا</li>
+          <li>تیرتی مچھلی</li>
+          <li>درخت پر چڑھنا</li>
+          <li>ناچتی تتلی</li>
+          <li>ٹائے کار چلانا</li>
+          <li>پودوں کو پانی دینا</li>
+          <li>گیند پکڑنا</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>😂 مزیدار / پارٹی</h4>
+        <ul>
+          <li>کیکٹس پر بیٹھنا</li>
+          <li>مرغی کا پیچھا کرنا</li>
+          <li>روبوٹ ڈانس</li>
+          <li>بچے سے چھپ کر جانا</li>
+          <li>پینگوئن چلنا</li>
+          <li>غائب دیوار</li>
+          <li>غصے میں بوڑھا آدمی</li>
+          <li>سست رفتار دوڑ</li>
+          <li>یونیکورن کی سواری</li>
+          <li>پگھلتی آئس کریم</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>🧠 مشکل (ایڈوانس)</h4>
+        <ul>
+          <li>کوانٹم فزکس</li>
+          <li>سٹاک مارکیٹ کریش</li>
+          <li>مصنوعی ذہانت</li>
+          <li>سورج گرہن</li>
+          <li>ٹیکٹونک پلیٹس</li>
+          <li>آثار قدیمہ کی کھدائی</li>
+          <li>روشنی ترکیب</li>
+          <li>حیاتیاتی روشنی</li>
+          <li>متوازی کائنات</li>
+          <li>کشش ثقل کی لہر</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>🎬 فلمیں</h4>
+        <ul>
+          <li>دی لائن کنگ</li>
+          <li>سپائیڈر مین</li>
+          <li>ٹائٹینک</li>
+          <li>جوراسک پارک</li>
+          <li>فروزن</li>
+          <li>دی ایونجرز</li>
+          <li>ہوم الون</li>
+          <li>ٹائے اسٹوری</li>
+          <li>دی میٹرکس</li>
+          <li>فائنڈنگ نیمو</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>🐾 جانور</h4>
+        <ul>
+          <li>ہاتھی پینا</li>
+          <li>سانپ رینگنا</li>
+          <li>بندر چڑھنا</li>
+          <li>شیر دہاڑنا</li>
+          <li>کیکڑا چلنا</li>
+          <li>طوطا بولنا</li>
+          <li>گھوڑا سرپٹ</li>
+          <li>کچھوا چھپنا</li>
+          <li>کنگارو کودنا</li>
+          <li>مور ناچنا</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>🎄 موسمی</h4>
+        <ul>
+          <li>درخت سجانا</li>
+          <li>تحفے کھولنا</li>
+          <li>سنو مین بنانا</li>
+          <li>عید کی نماز</li>
+          <li>دیا جلانا</li>
+          <li>ٹرک اور ٹریٹ</li>
+          <li>کدو تراشنا</li>
+          <li>سالگرہ کیک پھونکنا</li>
+          <li>کنفیٹی اچھالنا</li>
+          <li>آتش بازی گننا</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TIPS SECTION ── -->
+  <section class="content-section">
+    <h2>🏆 چارڈز جیتنے کے لیے پرو ٹپس</h2>
+    <p>چاہے آپ پہلی بار کھیل رہے ہوں یا چارڈز کے ماہر ہوں، یہ ٹپس آپ کو بہتر ایکٹنگ کرنے، تیزی سے اندازہ لگانے اور مزید مزہ کرنے میں مدد کریں گی۔</p>
+    <div class="tips-grid">
+      <div class="tip-card">
+        <h4>کیٹیگری سے شروع کریں</h4>
+        <p>ایکٹنگ سے پہلے، الفاظ کی تعداد دکھانے کے لیے انگلیاں اٹھائیں۔ "یکساں آواز" کے لیے کلائی کی طرف اشارہ کریں۔ اس سے اندازہ تیز ہوتا ہے۔</p>
+      </div>
+      <div class="tip-card">
+        <h4>پورے جسم کا استعمال کریں</h4>
+        <p>صرف ہاتھوں کا استعمال نہ کریں۔ آپ کا چہرہ، کرنسی اور چلنے کا انداز جذبات اور معنی کو واضح طور پر ظاہر کر سکتا ہے۔</p>
+      </div>
+      <div class="tip-card">
+        <h4>لفظ بہ لفظ ایکٹنگ کریں</h4>
+        <p>متعدد الفاظ والے فقروں کے لیے، فی لفظ انگلی کی تعداد دکھائیں، پھر ہر لفظ کا ایکٹنگ کریں۔ ٹیم اس تال کو جلدی سیکھ جاتی ہے۔</p>
+      </div>
+      <div class="tip-card">
+        <h4>توانائی برقرار رکھیں</h4>
+        <p>جوش متعدی ہوتا ہے۔ چاہے آپ کا اشارہ صحیح نہ ہو، اعتماد کے ساتھ ایکٹنگ کرنے سے آپ کی ٹیم صحیح اندازے تک پہنچتی ہے۔</p>
+      </div>
+      <div class="tip-card">
+        <h4>"یکساں آواز" سگنل کا استعمال کریں</h4>
+        <p>"یکساں آواز" کے لیے کان کے پیچھے ہاتھ رکھیں، پھر قافیہ یا یکساں لفظ کا ایکٹنگ کریں۔ مشکل الفاظ کے لیے بہت مفید۔</p>
+      </div>
+      <div class="tip-card">
+        <h4>وقت کی حد مقرر کریں</h4>
+        <p>فی ٹرن 60-90 سیکنڈ رکھیں۔ وقت کا دباؤ گیم کو مزید پرجوش بناتا ہے۔ فون ٹائمر یا کاؤنٹ ڈاؤن ایپ کا استعمال کریں۔</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── COMPARISON TABLE ── -->
+  <section class="content-section">
+    <h2>🆚 چارڈز بمقابلہ دیگر پارٹی گیمز</h2>
+    <p>جانیں کہ چارڈز کا موازنہ دیگر مقبول پارٹی گیمز سے کیسے ہوتا ہے، تاکہ آپ اپنے اگلے ایونٹ کے لیے صحیح گیم کا انتخاب کر سکیں۔</p>
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>گیم</th>
+          <th>کھلاڑی</th>
+          <th>آلات</th>
+          <th>عمر</th>
+          <th>توانائی کی سطح</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>چارڈز</td><td>4+</td><td>کوئی نہیں (یا یہ ٹول)</td><td>4+</td><td>⚡⚡⚡ ہائی</td></tr>
+        <tr><td>پکشنری</td><td>4+</td><td>کاغذ + قلم</td><td>8+</td><td>⚡⚡ میڈیم</td></tr>
+        <tr><td>ٹیبو</td><td>4+</td><td>کارڈ ڈیک</td><td>12+</td><td>⚡⚡ میڈیم</td></tr>
+        <tr><td>20 سوالات</td><td>2+</td><td>کوئی نہیں</td><td>6+</td><td>⚡ لو</td></tr>
+        <tr><td>ڈمب چارڈز</td><td>4+</td><td>کوئی نہیں (یا یہ ٹول)</td><td>8+</td><td>⚡⚡⚡ ہائی</td></tr>
+        <tr><td>ورڈ سکریمبل</td><td>2+</td><td>کاغذ + قلم</td><td>10+</td><td>⚡ لو</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ── HOW TO PLAY ── -->
+  <section class="how-to">
+    <h2>چارڈز کیسے کھیلیں – مکمل گائیڈ</h2>
+    <p>چارڈز 200 سالوں سے کھیلا جا رہا ہے اور آج بھی دنیا کے مقبول ترین پارٹی گیمز میں سے ایک ہے۔ اصول سادہ ہیں، لیکن یہ گیم لامتناہی ہنسی اور یادگار لمحات پیدا کرتا ہے۔ نئے اور تجربہ کار کھلاڑیوں کے لیے یہاں مکمل گائیڈ ہے۔</p>
+
+    <p><strong>1. دو ٹیموں میں تقسیم کریں</strong><br>
+    اپنے گروپ کو دو برابر ٹیموں میں تقسیم کریں۔ ہر ٹیم باری باری ایک ایکٹر کو سامنے بھیجتی ہے، جبکہ باقی اندازہ لگاتے ہیں۔</p>
+
+    <p><strong>2. اپنا چارڈز جنریٹ کریں</strong><br>
+    اس ٹول کا استعمال کرتے ہوئے ایک رینڈم چارڈز پرامپٹ جنریٹ کریں۔ ایکٹر لفظ کو خاموشی سے پڑھتا ہے — ٹیم کے ارکان کو اسے نہیں دیکھنا چاہیے۔</p>
+
+    <p><strong>3. کیٹیگری سگنل دکھائیں</strong><br>
+    کلاسک ہاتھ سگنلز کا استعمال کریں: لفظ گنتی کے لیے انگلیاں، "یکساں آواز" کے لیے کان، "کتاب" کے لیے کتاب کی شکل، یا "فلم" کے لیے فلم ریل کا گھوماؤ۔</p>
+
+    <p><strong>4. بغیر بولے یا ہونٹ ہلائے ایکٹنگ کریں</strong><br>
+    ایکٹر صرف باڈی لینگویج، اشاروں اور چہرے کے تاثرات کا استعمال کرتا ہے۔ کوئی آواز، کوئی ہونٹ ہلانا، کوئی ہوا میں لکھنا نہیں۔</p>
+
+    <p><strong>5. 60 سیکنڈ کا ٹائمر سیٹ کریں</strong><br>
+    ایک راؤنڈ = 60 سیکنڈ۔ اگر ٹیم وقت کے اندر صحیح اندازہ لگاتی ہے، تو انہیں ایک پوائنٹ ملتا ہے۔ اگر نہیں، تو دوسری ٹیم کوشش کر سکتی ہے۔</p>
+
+    <p><strong>6. گھمائیں اور دہرائیں</strong><br>
+    گھڑی کی سمت باری باری کھیلیں۔ ہر کھلاڑی کو کم از کم ایک بار ایکٹنگ کرنے کا موقع ملتا ہے۔ آپ جتنے چاہیں راؤنڈ کھیل سکتے ہیں — لامحدود پرامپٹس کے لیے جنریٹ پر کلک کریں۔</p>
+
+    <p><strong>7. فل اسکرین موڈ کا استعمال کریں</strong><br>
+    فل اسکرین پر کلک کریں تاکہ ایکٹر فون اٹھا سکے اور لفظ صرف انہیں دکھائی دے، اس سے پہلے کہ وہ سکرین کو دوسروں سے ہٹا لیں۔</p>
+  </section>
+
+  <!-- ── BENEFITS ── -->
+  <section class="content-section">
+    <h2>اس چارڈز جنریٹر کا استعمال کیوں کریں؟</h2>
+    <p>ہمارا چارڈز جنریٹر آپ کے گیم سے تمام تیاری کو ہٹانے کے لیے بنایا گیا تھا۔ کارڈ لکھنے کی ضرورت نہیں، لسٹ پرنٹ کرنے کی ضرورت نہیں، الفاظ کو لے کر بحث کرنے کی ضرورت نہیں۔ بس سائٹ کھولیں، جنریٹ دبائیں، اور آپ کا گیم سیکنڈوں میں شروع ہو جائے گا۔</p>
+    <p>دیگر جگہوں پر ملنے والی بنیادی لفظوں کی فہرستوں کے برعکس، یہ ٹول <strong>متعدد موڈز</strong> پیش کرتا ہے (بچے، مزیدار، مشکل، پارٹی) تاکہ آپ اپنے گروپ کے مطابق مشکل اور لہجے کو ایڈجسٹ کر سکیں۔ <strong>فل اسکرین بٹن</strong> آپ کے فون کو ایک مناسب گیم کارڈ میں تبدیل کر دیتا ہے جسے ایک کھلاڑی پکڑتا ہے جبکہ دوسرے اندازہ لگاتے ہیں۔ <strong>کاپی بٹن</strong> آپ کو ورچوئل گیم نائٹس کے لیے ورڈ لسٹ کو واٹس ایپ یا کسی بھی میسجنگ ایپ کے ذریعے ریموٹ کھلاڑیوں کے ساتھ شیئر کرنے دیتا ہے۔</p>
+    <ul>
+      <li>🎉 پارٹیوں، کلاس روم اور فیملی گیم نائٹس کے لیے بہترین</li>
+      <li>👨‍👩‍👧 4 سال سے بچوں سے لے کر بالغوں تک سب کے لیے موزوں</li>
+      <li>⚡ 1، 3، 5، 10 یا کسٹم تعداد میں چارڈز جنریٹ کریں</li>
+      <li>📱 فل اسکرین گیم موڈ کے ساتھ موبائل آپٹمائزڈ</li>
+      <li>🎭 تخلیقی صلاحیتوں، الفاظ اور مواصلاتی مہارتوں کو بڑھاتا ہے</li>
+      <li>🌐 متعدد زبانوں میں دستیاب</li>
+      <li>♾️ 500+ منفرد پرامپٹس، کبھی ریپیٹ نہیں</li>
+      <li>🔒 کوئی لاگ ان نہیں، کھیل کے دوران کوئی اشتہار نہیں، کوئی ڈاؤن لوڈ نہیں</li>
+    </ul>
+  </section>
+
+  <!-- ── CHARADES HISTORY ── -->
+  <section class="content-section">
+    <h2>چارڈز کی تاریخ</h2>
+    <p>چارڈز کی ابتدا 18ویں صدی کے فرانس میں ایک تحریری پہیلی کھیل کے طور پر ہوئی تھی، جہاں اشارے لفظ کے ہر حرف کا بیان کرتے تھے۔ 19ویں صدی تک، یہ جسمانی ایکٹنگ کے کھیل میں تبدیل ہو گیا، جو وکٹورین انگلینڈ میں ایک پارلر تفریح کے طور پر خاص طور پر مقبول ہوا۔</p>
+    <p>20ویں صدی کے ذریعے یہ کھیل دنیا بھر میں پھیل گیا، ہندوستان میں <em>ڈمب چارڈز</em> اور مغرب میں <em>سیلیبریٹی نیم گیم</em> جیسے ٹیلی ویژن شوز کے ذریعے مقبولیت حاصل کی۔ آج، چارڈز دنیا بھر میں سب سے زیادہ کھیلے جانے والے پارٹی گیمز میں سے ایک ہے اور مواصلاتی مہارتوں، الفاظ اور تخلیقی سوچ کو فروغ دینے کے لیے کلاس رومز میں ایک تعلیمی سرگرمی کے طور پر بھی استعمال ہوتا ہے۔</p>
+    <p>ڈیجیٹل ورژن — جیسے یہ جنریٹر — نے گیم میں واحد رکاوٹ کو ہٹا دیا ہے: تیاری کا وقت۔ اب آپ کو ہاتھ سے لکھے کارڈز کے ڈھیر کی ضرورت نہیں ہے۔ ایک ٹیپ آپ کو اگلا راؤنڈ فوری طور پر دیتا ہے۔</p>
+  </section>
+
+  <!-- ── CATEGORIES SECTION ── -->
+  <section class="content-section">
+    <h2>چارڈز آئیڈیاز – کیٹیگری کے مطابق</h2>
+
+    <h3>بچوں کے چارڈز (4-12 سال)</h3>
+    <p>بچوں کے چارڈز چھوٹے، مانوس افعال اور جانوروں کا استعمال کرتے ہیں جنہیں بچے آسانی سے سمجھ سکتے ہیں اور ان کا ایکٹنگ کر سکتے ہیں۔ الفاظ کو ایک یا دو حرفوں میں رکھا جاتا ہے اور وہ روزمرہ کی اشیاء، سرگرمیوں اور سادہ مخلوقات پر مرکوز ہوتے ہیں۔ مثالوں میں مینڈک کی طرح اچھلنا، آئس کریم کھانا، پرندے کی طرح اڑنا، یا کار چلانا شامل ہیں۔ یہ پرامپٹس بچوں کو مصروف، ہنساتے اور بغیر کسی مایوسی کے متحرک رکھنے کے لیے ڈیزائن کیے گئے ہیں۔</p>
+
+    <h3>پارٹیوں کے لیے مزیدار چارڈز</h3>
+    <p>پارٹی چارڈز بیہودگی کو فروغ دیتے ہیں۔ بہترین ہنسی غیر متوقع امتزاجات سے آتی ہے جیسے "بھاگتی ہوئی وگ کا پیچھا کرنا،" "سست رفتار چھینک،" یا "کمرے میں غائب ہاتھی۔" ہمارا مزیدار موڈ ایسے پرامپٹس چنتا ہے جو ایکٹنگ کرنے پر فطری طور پر مزاحیہ ہوتے ہیں، جو انہیں بالغوں، نوعمروں اور مخلوط گروپوں کے لیے مثالی بناتا ہے جو پوری رات اعلی توانائی برقرار رکھنا چاہتے ہیں۔</p>
+
+    <h3>بالغوں کے لیے مشکل چارڈز</h3>
+    <p>مشکل موڈ کھلاڑیوں کو تجریدی تصورات، مرکب الفاظ اور متعدد حرفی فقروں جیسے "مصنوعی ذہانت،" "کشش ثقل کی لہر،" یا "آثار قدیمہ کی دریافت" کے ساتھ چیلنج کرتا ہے۔ یہ مسابقتی گروپوں کے لیے بہترین ہیں جو حقیقی چیلنج اور اندازے کے عمل میں بہت سی بحث چاہتے ہیں۔</p>
+
+    <h3>فلم چارڈز</h3>
+    <p>فلم چارڈز ہالی وڈ اور بالی وڈ کی مشہور فلموں کے عنوانات استعمال کرتے ہیں۔ "جوراسک پارک" یا "دی لائن کنگ" جیسے عنوان کا ایکٹنگ کرنا بیشتر گروپوں میں فوری پہچان لاتا ہے۔ یہ موڈ فلم شائقین کے لیے بہترین ہے اور خاص طور پر اس وقت اچھا کام کرتا ہے جب کھلاڑی ایکٹنگ سے پہلے کلاسک "فلم ریل گھمانے" کا ہاتھ سگنل استعمال کرتے ہیں۔</p>
+  </section>
+
+  <!-- ── LANGUAGE GUIDE ── -->
+  <div class="lang-guide">
+    <h3>🌐 زبان کے ورژن کی گائیڈ – مزید زبانیں کیسے شامل کریں</h3>
+    <p>اس صفحہ کے اوپر لینگویج سوئچر بار صارفین کو اپنی پسندیدہ زبان میں سوئچ کرنے دیتا ہے۔ نئی زبان کا ورژن شامل کرنے کے لیے، ہندی کے لیے <code>/hi/</code> یا ہسپانوی کے لیے <code>/es/</code> جیسی سب فولڈر بنائیں، اندر ایک ترجمہ شدہ <code>index.html</code> رکھیں، اور HTML ٹیگ پر <code>lang</code> ایٹریبیوٹ کو اپ ڈیٹ کریں (جیسے، <code>lang="ur"</code>)۔</p>
+    <p>ہر زبان کے ورژن کے لیے اپنے <code>&lt;head&gt;</code> کے اندر ایک <code>hreflang</code> ٹیگ شامل کریں تاکہ Google انہیں الگ سے انڈیکس کر سکے۔ مثال:</p>
+    <p><code>&lt;link rel="alternate" hreflang="ur" href="https://charadegenerator.com/ur/" /&gt;</code><br>
+    <code>&lt;link rel="alternate" hreflang="en" href="https://charadegenerator.com/" /&gt;</code></p>
+    <p>اپنی JS فائل میں چارڈز الفاظ کی فہرستوں کا ترجمہ کریں۔ ہر زبان کے لیے ایک الگ الفاظ کی صف رکھیں اور URL یا زبان کوکی کی بنیاد پر صحیح کو لوڈ کریں۔ <strong>ترجیحی زبانیں:</strong> اردو (بڑی تلاش والیوم)، ہندی، عربی، ہسپانوی اور پرتگالی۔</p>
+  </div>
+
+  <!-- ── AUTHOR NOTE ── -->
+  <div class="author-bio-note">
+    <strong>📝 مصنف کا تعارف (آپ کے 'ہمارے بارے میں' صفحے کے لیے):</strong>
+    اپنے 'ہمارے بارے میں' صفحے پر ایک سیکشن شامل کریں:<br><br>
+    <em>"السلام علیکم، میں [آپ کا نام]، [شہر] کا ایک گیم کے شوقین اور ڈویلپر ہوں۔ میں نے [سال] میں چارڈز جنریٹر بنایا کیونکہ میں ایک آسان، مفت ٹول چاہتا تھا جسے خاندان بغیر کسی سیٹ اپ کے استعمال کر سکے۔ میں ہر لفظ کی فہرست کا ذاتی طور پر اپنے خاندان کے ساتھ تجربہ کرتا ہوں اور صارفین کے تاثرات کی بنیاد پر ٹول کو باقاعدگی سے اپ ڈیٹ کرتا ہوں۔"</em><br><br>
+    ایک حقیقی تصویر، کم از کم اپنا پہلا نام، اور اپنے سوشل پروفائل یا ای میل کا لنک شامل کریں۔ اس سے Google کے E-E-A-T ٹرسٹ سگنلز بنتے ہیں اور آپ کے AdSense کی منظوری کا امکان کافی بڑھ جاتا ہے۔
+  </div>
+
+  <!-- ── HOW TO USE ── -->
+  <section class="content-section">
+    <h2>مثال: جب آپ جنریٹ پر کلک کرتے ہیں تو کیا ملتا ہے</h2>
+    <p>یہ چارڈز جنریٹر رینڈم الفاظ یا فقرے بناتا ہے جنہیں کھلاڑی فوری طور پر ایکٹنگ کر سکتے ہیں۔ آپ کو کتنے چارڈز ملتے ہیں یہ اس پر منحصر ہے کہ آپ اوپر کیا منتخب کرتے ہیں۔</p>
+    <p><strong>اگر آپ 1 منتخب کرتے ہیں:</strong> ایک چارڈز کارڈ سکرین پر ظاہر ہوتا ہے — تیز ایک پر ایک کھیل کے لیے مثالی۔<br>
+    <strong>اگر آپ 3 منتخب کرتے ہیں:</strong> تین چارڈز ظاہر ہوتے ہیں — ہر ایک کو ایک راؤنڈ کے لیے استعمال کریں اور دیکھیں کہ کون سا ایکٹنگ کرنے میں سب سے مزیدار ہے۔<br>
+    <strong>اگر آپ 5 یا 10 منتخب کرتے ہیں:</strong> بغیر دوبارہ جنریٹ کیے متعدد چارڈز — توسیعی راؤنڈز کے لیے۔<br>
+    <strong>کسٹم آپشن:</strong> مکمل طور پر کسٹم گیم لمبائی کے لیے 12 تک کوئی بھی تعداد ڈالیں۔</p>
+    <h3>آپ کو ملنے والے نمونے چارڈز</h3>
+    <ul>
+      <li>🎭 پہاڑ پر چڑھنا</li>
+      <li>🎭 بریانی پکانا</li>
+      <li>🎭 اسکول بس چلانا</li>
+      <li>🎭 سپر ہیرو کی طرح اڑنا</li>
+      <li>🎭 گھبرائے ہوئے استاد کا ایکٹنگ</li>
+      <li>🎭 ریت کا قلعہ بنانا</li>
+      <li>🎭 صحرا میں اونٹ کی سواری</li>
+      <li>🎭 بارش میں کرکٹ کھیلنا</li>
+      <li>🎭 بادل پر سونا</li>
+      <li>🎭 جنگلی شیر کو قابو کرنا</li>
+    </ul>
+    <p><strong>چارڈز کاپی کریں</strong> بٹن کا استعمال کرکے تمام جنریٹڈ آئیڈیاز کو فوری طور پر کاپی کریں اور ورچوئل گیم نائٹس کے لیے واٹس ایپ، میسنجر یا کسی چیٹ ایپ پر شیئر کریں۔ <strong>فل اسکرین</strong> آپشن پوری سکرین پر لفظ کو نمایاں طور پر ظاہر کرکے گروپ سیٹنگز میں گیم کو آسان بناتا ہے۔</p>
+  </section>
+
+  <!-- ── FAQ ── -->
+  <section class="content-section">
+    <h2>اکثر پوچھے جانے والے سوالات</h2>
+
+    <p><strong>چارڈز جنریٹر کیا ہے؟</strong><br>
+    چارڈز جنریٹر ایک آن لائن ٹول ہے جو کھلاڑیوں کے لیے ایکٹنگ کرنے کے لیے رینڈم الفاظ یا فقرے چنتا ہے۔ اپنی خود کی فہرست لکھنے کے بجائے، ٹول آپ کو کیٹیگری جیسے بچے، مزیدار، مشکل یا پارٹی کے مطابق ترتیب شدہ لامحدود آئیڈیاز دیتا ہے۔ یہ تمام تیاری کو ہٹا دیتا ہے اور گیم کو فوری طور پر شروع کرنے دیتا ہے۔</p>
+
+    <p><strong>کیا یہ چارڈز جنریٹر مفت ہے؟</strong><br>
+    ہاں، مکمل طور پر مفت۔ کوئی اکاؤنٹ نہیں، کوئی ڈاؤن لوڈ نہیں، کوئی وقت کی حد نہیں۔ جتنی دیر چاہیں چارڈز آئیڈیاز جنریٹ کریں۔</p>
+
+    <p><strong>کیا بچے اس گیم کا استعمال کر سکتے ہیں؟</strong><br>
+    بالکل۔ بچوں کا موڈ 4 سال اور اس سے زیادہ عمر کے بچوں کے لیے سادہ، عمر کے مطابق الفاظ جنریٹ کرتا ہے۔ تمام پرامپٹس فیملی فرینڈلی ہیں اور کلاس روم اور گھریلو استعمال کے لیے محفوظ ہیں۔</p>
+
+    <p><strong>اس ٹول میں کتنے چارڈز آئیڈیاز ہیں؟</strong><br>
+    تمام کیٹیگریز میں 500 سے زیادہ منفرد پرامپٹس۔ جنریٹر اس پول میں سے رینڈم پک کرتا ہے، اس لیے آپ کو ایک سیشن میں شاید ہی کبھی ایک ہی لفظ دو بار نظر آئے۔</p>
+
+    <p><strong>کیا میں اپنے فون پر چارڈز کھیل سکتا ہوں؟</strong><br>
+    ہاں۔ یہ ٹول مکمل طور پر موبائل آپٹمائزڈ ہے۔ فل اسکرین موڈ خاص طور پر اس وقت مفید ہوتا ہے جب آپ اپنا فون پکڑتے ہیں تاکہ گروپ کھیل کے دوران لفظ واضح طور پر دیکھ سکے۔</p>
+
+    <p><strong>ریورس چارڈز کیا ہے؟</strong><br>
+    ریورس چارڈز میں، پورا گروپ ایک ساتھ ایکٹنگ کرتا ہے جبکہ ایک شخص اندازہ لگاتا ہے۔ یہ کلاسک چارڈز سے زیادہ زوردار، تیز اور بے ترتیب ہے — بڑی پارٹیوں کے لیے بہترین۔</p>
+
+    <p><strong>کیا میں اسے ورچوئل گیم نائٹس کے لیے استعمال کر سکتا ہوں؟</strong><br>
+    ہاں۔ اپنے چارڈز جنریٹ کریں، کاپی بٹن کا استعمال کرکے انہیں اپنے گروپ چیٹ میں پیسٹ کریں، اور ہر کوئی ویڈیو کال پر ریموٹ سے کھیل سکتا ہے۔ Zoom، Google Meet یا WhatsApp ویڈیو پر بہترین کام کرتا ہے۔</p>
+
+    <p><strong>کیا مجھے کچھ ڈاؤن لوڈ کرنے کی ضرورت ہے؟</strong><br>
+    نہیں۔ سب کچھ براہ راست آپ کے براؤزر میں چلتا ہے۔ کوئی ایپ، کوئی پلگ ان، کوئی انسٹالیشن نہیں۔</p>
+
+    <p><strong>کیا یہ ٹول دوسری زبانوں میں دستیاب ہے؟</strong><br>
+    ہم زبان کے ورژن شامل کر رہے ہیں۔ اردو، ہندی اور عربی ورژن تیار ہیں۔ دستیاب ہونے پر سوئچ کرنے کے لیے صفحہ کے اوپر لینگویج بار کا استعمال کریں۔</p>
+
+    <p><strong>یہ جسمانی چارڈز کارڈ گیم سے کیسے مختلف ہے؟</strong><br>
+    جسمانی کارڈ گیمز میں ایک مقررہ لفظ کی فہرست ہوتی ہے جو وقت کے ساتھ یاد ہو جاتی ہے اور انہیں خریدنا پڑتا ہے۔ یہ ڈیجیٹل جنریٹر مفت ہے، اس میں مسلسل بڑھتا ہوا لفظ کا پول ہے، آپ مشکل اور کیٹیگری کو کسٹمائز کر سکتے ہیں، اور اسے کبھی بھی ریپلیسمنٹ کارڈز کی ضرورت نہیں ہوتی۔</p>
+  </section>
+
+  <!-- OUTRO -->
+  <section class="content-section">
+    <h2>ابھی چارڈز کھیلنا شروع کریں</h2>
+    <p>چارڈز ان بہترین گیمز میں سے ایک ہے جو لوگوں کو ایک ساتھ لاتے ہیں۔ اسے کسی آلے کی ضرورت نہیں ہے، یہ کچھ بھی خرچ نہیں کرتا ہے، کسی بھی زبان میں کام کرتا ہے، اور حقیقی ہنسی پیدا کرتا ہے جسے کوئی سکرین بیسڈ گیم نقل نہیں کر سکتا ہے۔ چاہے آپ سالگرہ کی پارٹی میں ہوں، اسکول کلاس روم میں، خاندانی تقریب میں، یا ورچوئل ہینگ آؤٹ میں، یہ ٹول آپ کو دس سیکنڈ سے بھی کم وقت میں کھیلنا شروع کرنے میں مدد کرتا ہے۔</p>
+    <p>اوپر سکرول کریں، جنریٹ پر کلک کریں، اور اپنے دوستوں اور خاندان کے ساتھ لامحدود مزہ کریں۔ 🎉</p>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <a href="about-us.html">ہمارے بارے میں</a>
+  <a href="contact-us.html">رابطہ کریں</a>
+  <a href="privacy-policy.html">رازداری کی پالیسی</a>
+  <a href="terms-and-conditions.html">شرائط و ضوابط</a>
+  <a href="disclaimer.html">دستبرداری</a>
+  <p>© CharadeGenerator 2026</p>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
