@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>مولد التمثيليات – لعبة مجانية عبر الإنترنت للأطفال والعائلات والحفلات</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="مولد تمثيليات مجاني عبر الإنترنت – أفكار ممتعة للأطفال والعائلات والحفلات. أكثر من 500 فكرة، فئات متعددة، بدون تسجيل.">
+
+  <!-- Favicon (keep your existing ones) -->
+  <link rel="icon" type="image/x-icon" href="/assests/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assests/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assests/apple-touch-icon-180x180.png">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* ── LANGUAGE SWITCHER ── */
+    .lang-bar {
+      background: #f0f4ff;
+      border-bottom: 1px solid #dde4f5;
+      padding: 6px 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      font-size: 13px;
+    }
+    .lang-bar span { color: #555; font-weight: 600; }
+    .lang-bar a {
+      text-decoration: none;
+      color: #3b5bdb;
+      padding: 2px 8px;
+      border-radius: 4px;
+      transition: background 0.2s;
+    }
+    .lang-bar a:hover { background: #dde4f5; }
+    .lang-bar a.active { background: #3b5bdb; color: #fff; }
+
+    /* ── TOOL COUNT BADGE ── */
+    .tool-grid-section {
+      background: #f8faff;
+      border: 1px solid #e2e8f8;
+      border-radius: 12px;
+      padding: 28px 24px;
+      margin: 32px 0;
+    }
+    .tool-grid-section h2 { margin-top: 0; }
+    .tool-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .tool-card {
+      background: #fff;
+      border: 1px solid #dde4f5;
+      border-radius: 10px;
+      padding: 14px 12px;
+      text-align: center;
+      text-decoration: none;
+      color: #222;
+      font-size: 14px;
+      font-weight: 500;
+      transition: box-shadow 0.2s, transform 0.15s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+    .tool-card:hover {
+      box-shadow: 0 4px 16px rgba(59,91,219,0.13);
+      transform: translateY(-2px);
+    }
+    .tool-card .tool-icon { font-size: 26px; }
+    .tool-card .tool-name { font-weight: 600; }
+    .tool-card .tool-desc { font-size: 12px; color: #666; }
+
+    /* ── WORD LIST TABLE ── */
+    .word-table-section { margin: 32px 0; }
+    .word-columns {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .word-col h4 {
+      margin: 0 0 8px;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      color: #3b5bdb;
+      text-align: right;
+    }
+    .word-col ul {
+      margin: 0;
+      padding-right: 18px;
+      font-size: 14px;
+      line-height: 1.9;
+      color: #333;
+      list-style-position: inside;
+    }
+    .word-col ul li { text-align: right; }
+
+    /* ── TIPS GRID ── */
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .tip-card {
+      background: #fff8f0;
+      border-right: 4px solid #f76707;
+      border-left: none;
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+    .tip-card h4 { margin: 0 0 6px; font-size: 15px; text-align: right; }
+    .tip-card p { margin: 0; font-size: 13px; color: #555; line-height: 1.6; text-align: right; }
+
+    /* ── COMPARISON TABLE ── */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      margin-top: 16px;
+    }
+    .compare-table th {
+      background: #3b5bdb;
+      color: #fff;
+      padding: 10px 14px;
+      text-align: right;
+    }
+    .compare-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid #eee;
+      text-align: right;
+    }
+    .compare-table tr:nth-child(even) td { background: #f6f8ff; }
+
+    /* ── LANGUAGE GUIDE BOX ── */
+    .lang-guide {
+      background: #f0fff4;
+      border: 1px solid #b2f5c8;
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin: 32px 0;
+    }
+    .lang-guide h3 { margin-top: 0; color: #2d6a4f; text-align: right; }
+    .lang-guide p { font-size: 14px; color: #333; line-height: 1.7; text-align: right; }
+    .lang-guide code {
+      background: #e8f5e9;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 13px;
+      color: #1b5e20;
+    }
+
+    /* ── AUTHOR BIO PLACEHOLDER ── */
+    .author-bio-note {
+      background: #fff3cd;
+      border: 1px dashed #ffc107;
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin: 32px 0;
+      font-size: 14px;
+      color: #555;
+    }
+    .author-bio-note strong { color: #856404; }
+
+    /* ── STATS BAR ── */
+    .stats-bar {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      background: #3b5bdb;
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin: 24px 0;
+      color: #fff;
+    }
+    .stat-item { text-align: center; flex: 1; min-width: 100px; }
+    .stat-num { font-size: 28px; font-weight: 700; }
+    .stat-label { font-size: 12px; opacity: .8; margin-top: 2px; }
+
+    /* Game area styles - RTL friendly */
+    .top-controls { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+    .quick-pick { display: flex; gap: 6px; flex-wrap: wrap; justify-content: center; }
+    .mode-select { display: flex; gap: 6px; flex-wrap: wrap; justify-content: center; }
+    .generate-btn { display: block; margin: 16px auto; padding: 12px 32px; background: #3b5bdb; color: #fff; border: none; border-radius: 8px; font-size: 18px; cursor: pointer; }
+    .generate-btn:hover { background: #2a4ab5; }
+    .cards { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; margin: 16px 0; }
+    .card-item { 
+      background: #f8faff; 
+      border: 2px solid #3b5bdb; 
+      border-radius: 12px; 
+      padding: 20px 24px; 
+      font-size: 22px; 
+      font-weight: 600; 
+      min-width: 140px; 
+      text-align: center; 
+    }
+    .custom-box { display: flex; gap: 8px; justify-content: center; margin: 10px 0; }
+    .custom-box input { padding: 6px 12px; border-radius: 6px; border: 1px solid #ccc; width: 100px; }
+    .custom-box button { padding: 6px 16px; border-radius: 6px; background: #3b5bdb; color: #fff; border: none; cursor: pointer; }
+    .hidden { display: none; }
+    .copy-msg { display: none; color: #2d6a4f; font-weight: 600; }
+    .mode-btn { padding: 8px 16px; border-radius: 6px; border: 2px solid #3b5bdb; background: #fff; color: #3b5bdb; cursor: pointer; font-weight: 500; }
+    .mode-btn.active { background: #3b5bdb; color: #fff; }
+    .mode-btn:hover { background: #dde4f5; }
+    .quick-pick button { padding: 6px 14px; border-radius: 6px; border: 1px solid #ccc; background: #fff; cursor: pointer; }
+    .quick-pick button:hover { background: #e8ecf5; }
+    .top-controls button { padding: 8px 16px; border-radius: 6px; border: 1px solid #3b5bdb; background: #fff; color: #3b5bdb; cursor: pointer; }
+    .top-controls button:hover { background: #dde4f5; }
+
+    /* RTL text alignments */
+    .seo-text { text-align: right; }
+    .content-section h2, .content-section h3, .content-section p, .content-section ul, .content-section li { text-align: right; }
+    .content-section ul { padding-right: 20px; }
+    .how-to h2, .how-to p, .how-to strong { text-align: right; }
+    .footer { text-align: center; }
+    .category-title, .subtitle { text-align: center; }
+  </style>
+</head>
+<body>
+
+<!-- LANGUAGE BAR -->
+<div class="lang-bar">
+  <span>🌐 اللغة:</span>
+  <a href="/">English</a>
+  <a href="/hi/">हिंदी</a>
+  <a href="/ur/">اردو</a>
+  <a href="/es/">Español</a>
+  <a href="/fr/">Français</a>
+  <a href="/ar/" class="active">العربية</a>
+  <a href="/de/">Deutsch</a>
+  <a href="/pt/">Português</a>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
+    <div class="logo">
+      <a href="https://charadegenerator.com/ar/" class="logo-link">
+        🎭 <strong>مولد</strong>التمثيليات
+      </a>
+    </div>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <nav class="nav-desktop">
+      <a href="kids-charade-generator.html"><button>تمثيليات للأطفال</button></a>
+      <a href="movie-charades.html"><button>تمثيليات الأفلام</button></a>
+      <a href="character-charades.html"><button>تمثيليات الشخصيات</button></a>
+      <a href="reverse-charades.html"><button>التمثيليات العكسية</button></a>
+      <a href="christmas-charades.html"><button>تمثيليات عيد الميلاد</button></a>
+      <a href="islamic-charades.html"><button>تمثيليات إسلامية</button></a>
+      <a href="animal-charades.html"><button>تمثيليات الحيوانات</button></a>
+    </nav>
+  </div>
+  <nav id="navMobile" class="nav-mobile">
+    <a href="kids-charade-generator.html"><button>تمثيليات للأطفال</button></a>
+    <a href="movie-charades.html"><button>تمثيليات الأفلام</button></a>
+    <a href="character-charades.html"><button>تمثيليات الشخصيات</button></a>
+    <a href="reverse-charades.html"><button>التمثيليات العكسية</button></a>
+    <a href="christmas-charades.html"><button>تمثيليات عيد الميلاد</button></a>
+    <a href="islamic-charades.html"><button>تمثيليات إسلامية</button></a>
+    <a href="animal-charades.html"><button>تمثيليات الحيوانات</button></a>
+  </nav>
+</header>
+
+<main class="main">
+
+  <h1>مولد التمثيليات – لعبة مجانية عبر الإنترنت للأطفال والكبار</h1>
+  <p class="seo-text">🎮 العب فوراً • بدون تسجيل • أكثر من 500 فكرة تمثيلية • 7 فئات</p>
+
+  <p class="seo-text">
+    هل تبحث عن لعبة حفلات ممتعة وسهلة؟ يساعدك مولد التمثيليات المجاني هذا في إنشاء أفكار تمثيلية فورية للأطفال والعائلات والفصول الدراسية والحفلات.
+    سواء كنت تلعب مع الأصدقاء أو تستضيف ليلة ألعاب، فإن أداتنا تولد تمثيليات عشوائية بسيطة ومثيرة ومناسبة لجميع الأعمار.
+    مع أكثر من <strong>500 فكرة تمثيلية فريدة</strong> في 7 فئات، لن تنفد لديك الأفكار أبداً.
+  </p>
+
+  <p class="seo-text">
+    التمثيليات هي لعبة تخمين كلاسيكية حيث يقوم اللاعبون بتمثيل كلمة أو عبارة دون التحدث، بينما يحاول الآخرون تخمينها.
+    استخدم مولد التمثيليات عبر الإنترنت هذا لتوفير الوقت والحصول على أفكار غير محدودة فوراً. لا حاجة للتحضير — فقط اضغط على توليد وابدأ اللعب.
+    يعمل بشكل مثالي على هاتفك أو جهازك اللوحي أو الكمبيوتر مع وضع ملء الشاشة المخصص للعب الجماعي.
+  </p>
+
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="stat-item"><div class="stat-num">500+</div><div class="stat-label">فكرة تمثيلية</div></div>
+    <div class="stat-item"><div class="stat-num">7</div><div class="stat-label">فئات</div></div>
+    <div class="stat-item"><div class="stat-num">25+</div><div class="stat-label">أداة متاحة</div></div>
+    <div class="stat-item"><div class="stat-num">100%</div><div class="stat-label">مجاني دائماً</div></div>
+  </div>
+
+  <!-- GAME AREA -->
+  <section class="tool" id="gameArea">
+    <h2 class="category-title">هيا نلعب التمثيليات</h2>
+    <p class="subtitle">انقر على توليد للحصول على تمثيليات فورية 🎭</p>
+    <div class="top-controls">
+      <button id="copyBtn" onclick="copyCharades()">📋 نسخ</button>
+      <button onclick="toggleFullScreen()">⛶ ملء الشاشة</button>
+      <span id="copyMsg" class="copy-msg">تم النسخ!</span>
+    </div>
+    <div class="quick-pick">
+      <button onclick="setCount(1)">1</button>
+      <button onclick="setCount(3)">3</button>
+      <button onclick="setCount(5)">5</button>
+      <button onclick="setCount(10)">10</button>
+      <button onclick="showCustom()">مخصص</button>
+    </div>
+    <div class="mode-select">
+      <button class="mode-btn active" data-mode="default" onclick="setMode('default')">الكل</button>
+      <button class="mode-btn" data-mode="kids" onclick="setMode('kids')">أطفال</button>
+      <button class="mode-btn" data-mode="funny" onclick="setMode('funny')">مضحكة</button>
+      <button class="mode-btn" data-mode="hard" onclick="setMode('hard')">صعبة</button>
+      <button class="mode-btn" data-mode="party" onclick="setMode('party')">حفلة</button>
+    </div>
+    <div id="customBox" class="custom-box hidden">
+      <input type="number" id="customInput" min="1" max="12" placeholder="أدخل رقماً">
+      <button onclick="applyCustom()">تطبيق</button>
+    </div>
+    <div id="cards" class="cards"></div>
+    <button class="generate-btn" onclick="generate()">توليد</button>
+  </section>
+
+  <!-- ── ALL TOOLS SECTION ── -->
+  <section class="tool-grid-section">
+    <h2>🎮 جميع أدوات التمثيليات – 25+ مولداً مجانياً</h2>
+    <p>نقدم مجموعة واسعة من أدوات التمثيليات لكل مناسبة وفئة عمرية وموضوع. انقر على أي أداة لبدء اللعب فوراً.</p>
+    <div class="tool-grid">
+      <a href="kids-charade-generator.html" class="tool-card"><span class="tool-icon">👦</span><span class="tool-name">تمثيليات للأطفال</span><span class="tool-desc">4-12 سنة، كلمات بسيطة</span></a>
+      <a href="movie-charades.html" class="tool-card"><span class="tool-icon">🎬</span><span class="tool-name">تمثيليات الأفلام</span><span class="tool-desc">عناوين أفلام شهيرة</span></a>
+      <a href="character-charades.html" class="tool-card"><span class="tool-icon">🦸</span><span class="tool-name">تمثيليات الشخصيات</span><span class="tool-desc">شخصيات مشهورة</span></a>
+      <a href="reverse-charades.html" class="tool-card"><span class="tool-icon">🔄</span><span class="tool-name">التمثيليات العكسية</span><span class="tool-desc">المجموعة تمثل، واحد يخمن</span></a>
+      <a href="christmas-charades.html" class="tool-card"><span class="tool-icon">🎄</span><span class="tool-name">تمثيليات عيد الميلاد</span><span class="tool-desc">مرح بموضوع العيد</span></a>
+      <a href="islamic-charades.html" class="tool-card"><span class="tool-icon">🕌</span><span class="tool-name">تمثيليات إسلامية</span><span class="tool-desc">كلمات وقيم إسلامية</span></a>
+      <a href="animal-charades.html" class="tool-card"><span class="tool-icon">🐾</span><span class="tool-name">تمثيليات الحيوانات</span><span class="tool-desc">حيوانات للتمثيل</span></a>
+      <!-- PLACEHOLDER TOOLS -->
+      <a href="funny-charades.html" class="tool-card"><span class="tool-icon">😂</span><span class="tool-name">تمثيليات مضحكة</span><span class="tool-desc">أفكار مهرجانية للحفلات</span></a>
+      <a href="hard-charades.html" class="tool-card"><span class="tool-icon">🧠</span><span class="tool-name">تمثيليات صعبة</span><span class="tool-desc">تحدي للكبار</span></a>
+      <a href="food-charades.html" class="tool-card"><span class="tool-icon">🍕</span><span class="tool-name">تمثيليات الطعام</span><span class="tool-desc">أطباق ومكونات</span></a>
+      <a href="sports-charades.html" class="tool-card"><span class="tool-icon">⚽</span><span class="tool-name">تمثيليات رياضية</span><span class="tool-desc">رياضات وأنشطة</span></a>
+      <a href="halloween-charades.html" class="tool-card"><span class="tool-icon">🎃</span><span class="tool-name">تمثيليات الهالوين</span><span class="tool-desc">كلمات وأفعال مخيفة</span></a>
+      <a href="birthday-charades.html" class="tool-card"><span class="tool-icon">🎂</span><span class="tool-name">تمثيليات أعياد الميلاد</span><span class="tool-desc">مثالية للحفلات</span></a>
+      <a href="school-charades.html" class="tool-card"><span class="tool-icon">🏫</span><span class="tool-name">تمثيليات مدرسية</span><span class="tool-desc">موضوعات آمنة للفصل</span></a>
+      <a href="emoji-charades.html" class="tool-card"><span class="tool-icon">😀</span><span class="tool-name">تمثيليات الإيموجي</span><span class="tool-desc">مثل الإيموجي</span></a>
+      <a href="bollywood-charades.html" class="tool-card"><span class="tool-icon">🎥</span><span class="tool-name">تمثيليات بوليوود</span><span class="tool-desc">عناوين أفلام هندية</span></a>
+      <a href="bible-charades.html" class="tool-card"><span class="tool-icon">📖</span><span class="tool-name">تمثيليات كتابية</span><span class="tool-desc">كلمات وقصص كتابية</span></a>
+      <a href="thanksgiving-charades.html" class="tool-card"><span class="tool-icon">🦃</span><span class="tool-name">تمثيليات عيد الشكر</span><span class="tool-desc">موضوع العيد</span></a>
+      <a href="valentines-charades.html" class="tool-card"><span class="tool-icon">❤️</span><span class="tool-name">تمثيليات عيد الحب</span><span class="tool-desc">كلمات رومانسية</span></a>
+      <a href="summer-charades.html" class="tool-card"><span class="tool-icon">☀️</span><span class="tool-name">تمثيليات الصيف</span><span class="tool-desc">شاطئ وأنشطة خارجية</span></a>
+      <a href="superhero-charades.html" class="tool-card"><span class="tool-icon">🦸‍♂️</span><span class="tool-name">تمثيليات الأبطال الخارقين</span><span class="tool-desc">مارفل، دي سي والمزيد</span></a>
+      <a href="nature-charades.html" class="tool-card"><span class="tool-icon">🌿</span><span class="tool-name">تمثيليات الطبيعة</span><span class="tool-desc">نباتات، طقس، خارجيات</span></a>
+      <a href="occupation-charades.html" class="tool-card"><span class="tool-icon">👨‍⚕️</span><span class="tool-name">تمثيليات المهن</span><span class="tool-desc">وظائف ومهن</span></a>
+      <a href="fairy-tale-charades.html" class="tool-card"><span class="tool-icon">🧚</span><span class="tool-name">تمثيليات القصص الخيالية</span><span class="tool-desc">شخصيات القصص</span></a>
+      <a href="ramadan-charades.html" class="tool-card"><span class="tool-icon">🌙</span><span class="tool-name">تمثيليات رمضان</span><span class="tool-desc">كلمات خاصة برمضان</span></a>
+    </div>
+  </section>
+
+  <!-- ── CHARADE WORD LISTS ── -->
+  <section class="content-section word-table-section">
+    <h2>أكثر من 500 فكرة تمثيلية حسب الفئة</h2>
+    <p>فيما يلي عينة من الكلمات والعبارات التي يستخدمها المولد. تغطي هذه جميع مستويات الصعوبة والموضوعات لجعل لعبتك مثيرة من الجولة الأولى إلى الأخيرة. يختار المولد عشوائياً من هذه المجموعة لتحصل دائماً على أفكار جديدة في كل مرة تنقر فيها على توليد.</p>
+
+    <div class="word-columns">
+      <div class="word-col">
+        <h4>🧒 أطفال (سهلة)</h4>
+        <ul>
+          <li>ضفدع يقفز</li>
+          <li>كلب نائم</li>
+          <li>طائرة تطير</li>
+          <li>تناول الآيس كريم</li>
+          <li>سمكة تسبح</li>
+          <li>تسلق شجرة</li>
+          <li>فراشة ترقص</li>
+          <li>قيادة سيارة لعبة</li>
+          <li>سقي النباتات</li>
+          <li>التقاط كرة</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>😂 مضحكة / حفلة</h4>
+        <ul>
+          <li>الجلوس على صبار</li>
+          <li>مطاردة دجاجة</li>
+          <li>رقصة الروبوت</li>
+          <li>التسلل بجوار طفل</li>
+          <li>مشي البطريق</li>
+          <li>جدار غير مرئي</li>
+          <li>رجل عجوز غاضب</li>
+          <li>جري بطيء الحركة</li>
+          <li>ركوب حصان وحيد القرن</li>
+          <li>آيس كريم يذوب</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>🧠 صعبة (متقدمة)</h4>
+        <ul>
+          <li>فيزياء الكم</li>
+          <li>انهيار سوق الأسهم</li>
+          <li>الذكاء الاصطناعي</li>
+          <li>كسوف الشمس</li>
+          <li>الصفائح التكتونية</li>
+          <li>حفر أثري</li>
+          <li>البناء الضوئي</li>
+          <li>التلألؤ البيولوجي</li>
+          <li>كون موازي</li>
+          <li>موجة جاذبية</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>🎬 أفلام</h4>
+        <ul>
+          <li>الأسد الملك</li>
+          <li>سبايدر مان</li>
+          <li>تيتانيك</li>
+          <li>جوراسيك بارك</li>
+          <li>فروزن</li>
+          <li>المنتقمون</li>
+          <li>وحيد في المنزل</li>
+          <li>حكاية لعبة</li>
+          <li>ماتريكس</li>
+          <li>البحث عن نيمو</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>🐾 حيوانات</h4>
+        <ul>
+          <li>فيل يشرب</li>
+          <li>ثعبان يزحف</li>
+          <li>قرد يتسلق</li>
+          <li>أسد يزأر</li>
+          <li>سلطعون يمشي</li>
+          <li>ببغاء يتكلم</li>
+          <li>حصان يعدو</li>
+          <li>سلحفاة تختبئ</li>
+          <li>كنغر يقفز</li>
+          <li>طاووس يستعرض</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>🎄 موسمية</h4>
+        <ul>
+          <li>تزيين الشجرة</li>
+          <li>فتح الهدايا</li>
+          <li>بناء رجل الثلج</li>
+          <li>صلاة العيد</li>
+          <li>إشعال ديا</li>
+          <li>خدعة أو حلوى</li>
+          <li>نحت القرع</li>
+          <li>نفخ شموع عيد الميلاد</li>
+          <li>رمي الحلوى الورقية</li>
+          <li>عد الألعاب النارية</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TIPS SECTION ── -->
+  <section class="content-section">
+    <h2>🏆 نصائح احترافية للفوز في التمثيليات</h2>
+    <p>سواء كنت لاعباً مبتدئاً أو محترفاً في التمثيليات، ستساعدك هذه النصائح على التمثيل بشكل أفضل والتخمين بشكل أسرع والاستمتاع أكثر.</p>
+    <div class="tips-grid">
+      <div class="tip-card">
+        <h4>ابدأ بالفئة</h4>
+        <p>قبل التمثيل، ارفع أصابعك لإظهار عدد الكلمات. أشر إلى معصمك للإشارة إلى "تشبه". هذا يسرع التخمين.</p>
+      </div>
+      <div class="tip-card">
+        <h4>استخدم جسمك بالكامل</h4>
+        <p>لا تستخدم يديك فقط. وجهك ووضعيتك وحتى طريقة مشيك يمكنها التواصل بوضوح مع المشاعر والمعنى.</p>
+      </div>
+      <div class="tip-card">
+        <h4>مثل كلمة بكلمة</h4>
+        <p>للعبارات متعددة الكلمات، أظهر عدد الأصابع لكل كلمة، ثم مثل كل كلمة على حدة. يتعلم الفريق هذا الإيقاع بسرعة.</p>
+      </div>
+      <div class="tip-card">
+        <h4>حافظ على طاقة عالية</h4>
+        <p>الحماس معدٍ. حتى لو لم يكن دليلك مثالياً، فإن التمثيل بثقة يدفع فريقك نحو التخمين الصحيح.</p>
+      </div>
+      <div class="tip-card">
+        <h4>استخدم إشارات "تشبه"</h4>
+        <p>ضع يدك خلف أذنك للإشارة إلى "تشبه"، ثم مثل كلمة مقافية أو مشابهة. فعال جداً للكلمات الصعبة.</p>
+      </div>
+      <div class="tip-card">
+        <h4>حدد وقتاً محدداً</h4>
+        <p>استخدم 60-90 ثانية لكل دور. ضغط الوقت يجعل اللعبة أكثر إثارة. استخدم مؤقت هاتفك أو تطبيق العد التنازلي.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── COMPARISON TABLE ── -->
+  <section class="content-section">
+    <h2>🆚 التمثيليات مقابل ألعاب الحفلات الأخرى</h2>
+    <p>هل تتساءل كيف تقارن التمثيليات بألعاب الحفلات الشهيرة الأخرى؟ إليك مقارنة سريعة لمساعدتك في اختيار اللعبة المناسبة لحدثك القادم.</p>
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>اللعبة</th>
+          <th>اللاعبون</th>
+          <th>المعدات</th>
+          <th>العمر</th>
+          <th>مستوى الطاقة</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>التمثيليات</td><td>4+</td><td>لا شيء (أو هذه الأداة)</td><td>4+</td><td>⚡⚡⚡ عالي</td></tr>
+        <tr><td>بيكشنري</td><td>4+</td><td>ورق + قلم</td><td>8+</td><td>⚡⚡ متوسط</td></tr>
+        <tr><td>تابو</td><td>4+</td><td>مجموعة بطاقات</td><td>12+</td><td>⚡⚡ متوسط</td></tr>
+        <tr><td>20 سؤالاً</td><td>2+</td><td>لا شيء</td><td>6+</td><td>⚡ منخفض</td></tr>
+        <tr><td>التمثيليات الصامتة</td><td>4+</td><td>لا شيء (أو هذه الأداة)</td><td>8+</td><td>⚡⚡⚡ عالي</td></tr>
+        <tr><td>تشفير الكلمات</td><td>2+</td><td>ورق + قلم</td><td>10+</td><td>⚡ منخفض</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ── HOW TO PLAY ── -->
+  <section class="how-to">
+    <h2>كيفية لعب التمثيليات – دليل كامل</h2>
+    <p>تُلعب التمثيليات منذ أكثر من 200 عام ولا تزال واحدة من أكثر ألعاب الحفلات شهرة في العالم. القواعد بسيطة ولكن اللعبة تخلق ضحكات لا نهاية لها ولحظات لا تُنسى. إليك دليل كامل للاعبين الجدد وذوي الخبرة.</p>
+
+    <p><strong>1. انقسموا إلى فريقين</strong><br>
+    قسّم مجموعتك إلى فريقين متساويين. يتناوب كل فريق على إرسال ممثل إلى الأمام بينما يخمن الباقون.</p>
+
+    <p><strong>2. ولّد تمثيليتك</strong><br>
+    استخدم هذه الأداة لتوليد تمثيلية عشوائية. يقرأ الممثل الكلمة بصمت — يجب ألا يراها زملاء الفريق.</p>
+
+    <p><strong>3. أظهر إشارة الفئة</strong><br>
+    استخدم إشارات اليد الكلاسيكية: الأصابع لعدد الكلمات، أشر إلى أذنك لـ"تشبه"، شكل كتاب لـ"كتاب"، أو دوران فيلم لـ"فيلم".</p>
+
+    <p><strong>4. مثل بدون التحدث أو تحريك الشفاه</strong><br>
+    يستخدم الممثل فقط لغة الجسد والإيماءات والتعابير. لا أصوات، لا حركات شفاه، لا كتابة في الهواء.</p>
+
+    <p><strong>5. اضبط مؤقتاً لمدة 60 ثانية</strong><br>
+    جولة واحدة = 60 ثانية. إذا خمّن الفريق بشكل صحيح خلال الوقت، يحصلون على نقطة. إذا لم يخمنوا، يمكن للفريق الآخر المحاولة.</p>
+
+    <p><strong>6. تناوبوا وكرروا</strong><br>
+    تناوبوا في اتجاه عقارب الساعة. كل لاعب يمثل مرة واحدة على الأقل. العب عدد الجولات التي تريدها — انقر على توليد للحصول على أفكار غير محدودة.</p>
+
+    <p><strong>7. استخدم وضع ملء الشاشة</strong><br>
+    انقر على ملء الشاشة حتى يتمكن الممثل من حمل الهاتف وتكون الكلمة مرئية له فقط قبل إبعادها عن الشاشة.</p>
+  </section>
+
+  <!-- ── BENEFITS ── -->
+  <section class="content-section">
+    <h2>لماذا تستخدم مولد التمثيليات هذا؟</h2>
+    <p>تم تصميم مولد التمثيليات الخاص بنا لإزالة كل التحضير من لعبتك. لا حاجة لكتابة بطاقات، ولا طباعة قوائم، ولا جدال حول من يختار الكلمات. فقط افتح الموقع، واضغط على توليد، وتبدأ لعبتك في ثوانٍ.</p>
+    <p>على عكس قوائم الكلمات الأساسية التي تجدها في أماكن أخرى، تقدم هذه الأداة <strong>عدة أوضاع</strong> (أطفال، مضحكة، صعبة، حفلة) حتى تتمكن من ضبط الصعوبة والنبرة حسب مجموعتك. يحول <strong>زر ملء الشاشة</strong> هاتفك إلى بطاقة لعب مناسبة يمسكها لاعب واحد بينما يخمن الآخرون. يتيح لك <strong>زر النسخ</strong> مشاركة قائمة الكلمات مع اللاعبين عن بعد عبر واتساب أو أي تطبيق مراسلة لأمسيات الألعاب الافتراضية.</p>
+    <ul>
+      <li>🎉 مثالي للحفلات والفصول الدراسية وليالي الألعاب العائلية</li>
+      <li>👨‍👩‍👧 مناسب للأطفال من سن 4 سنوات فما فوق حتى البالغين</li>
+      <li>⚡ يولد 1، 3، 5، 10 أو عدداً مخصصاً من التمثيليات</li>
+      <li>📱 محسّن للجوال مع وضع ملء الشاشة للعب</li>
+      <li>🎭 يحسن الإبداع والمفردات ومهارات الاتصال</li>
+      <li>🌐 متوفر بلغات متعددة</li>
+      <li>♾️ أكثر من 500 فكرة فريدة، لا تتكرر أبداً</li>
+      <li>🔒 بدون تسجيل دخول، بدون إعلانات أثناء اللعب، بدون تنزيل</li>
+    </ul>
+  </section>
+
+  <!-- ── CHARADES HISTORY ── -->
+  <section class="content-section">
+    <h2>تاريخ التمثيليات</h2>
+    <p>نشأت التمثيليات في فرنسا في القرن الثامن عشر كلعبة ألغاز مكتوبة حيث تصف الأدلة كل مقطع من كلمة. بحلول القرن التاسع عشر، تطورت إلى لعبة التمثيل الجسدي التي نعرفها اليوم، وأصبحت شائعة بشكل خاص في إنجلترا الفيكتورية كترفيه صالوني.</p>
+    <p>انتشرت اللعبة في جميع أنحاء العالم خلال القرن العشرين، واكتسبت شهرة من خلال البرامج التلفزيونية مثل <em>التمثيليات الصامتة</em> في الهند و<em>لعبة اسم المشاهير</em> في الغرب. اليوم، تظل التمثيليات واحدة من أكثر خمس ألعاب حفلات لعباً على مستوى العالم وتستخدم في الفصول الدراسية كنشاط تعليمي لتطوير مهارات الاتصال والمفردات والتفكير الإبداعي.</p>
+    <p>النسخة الرقمية — مثل هذا المولد — تزيل العائق الوحيد الذي كانت تواجهه اللعبة دائماً: وقت التحضير. لم تعد بحاجة إلى كومة من البطاقات المكتوبة بخط اليد. نقرة واحدة تعطيك الجولة التالية فوراً.</p>
+  </section>
+
+  <!-- ── CATEGORIES SECTION ── -->
+  <section class="content-section">
+    <h2>أفكار التمثيليات حسب الفئة</h2>
+
+    <h3>تمثيليات للأطفال (4-12 سنة)</h3>
+    <p>تستخدم تمثيليات الأطفال أفعالاً وحيوانات قصيرة ومألوفة يمكن للأطفال فهمها وتمثيلها بسهولة. تُحفظ الكلمات في مقطع أو مقطعين وتركز على الأشياء اليومية والحركات والمخلوقات البسيطة. تشمل الأمثلة القفز مثل الضفدع، وتناول الآيس كريم، والطيران مثل الطائر، أو قيادة السيارة. تم تصميم هذه المطالبات لإبقاء الأطفال منخرطين وضحكين ونشطين دون أي إحباط.</p>
+
+    <h3>تمثيليات مضحكة للحفلات</h3>
+    <p>تدفع تمثيليات الحفلات العبث إلى أقصى حد. تأتي أفضل الضحكات من مجموعات غير متوقعة مثل "مطاردة شعر مستعار هارب"، أو "عطسة بطيئة الحركة"، أو "فيل غير مرئي في الغرفة". يختار وضعنا المضحك مطالبات مضحكة بطبيعتها عند تمثيلها، مما يجعلها مثالية للبالغين والمراهقين والمجموعات المختلطة الذين يرغبون في الحفاظ على طاقة عالية طوال الليل.</p>
+
+    <h3>تمثيليات صعبة للكبار</h3>
+    <p>يتحدى الوضع الصعب اللاعبين بمفاهيم مجردة وكلمات مركبة وعبارات متعددة المقاطع مثل "الذكاء الاصطناعي"، أو "موجة الجاذبية"، أو "اكتشاف أثري". هذه هي الأفضل للمجموعات التنافسية التي تريد تحدياً حقيقياً والكثير من النقاش في عملية التخمين.</p>
+
+    <h3>تمثيليات الأفلام</h3>
+    <p>تستخدم تمثيليات الأفلام عناوين أفلام شهيرة من هوليوود وبوليوود. تمثيل عنوان مثل "جوراسيك بارك" أو "الأسد الملك" يجلب اعترافاً فورياً من معظم المجموعات. هذا الوضع مثالي لعشاق السينما ويعمل بشكل جيد خاصة عندما يستخدم اللاعبون إشارة اليد الكلاسيكية "لف الفيلم" قبل التمثيل.</p>
+  </section>
+
+  <!-- ── LANGUAGE GUIDE ── -->
+  <div class="lang-guide">
+    <h3>🌐 دليل إصدارات اللغة – كيفية إضافة المزيد من اللغات</h3>
+    <p>يسمح شريط تبديل اللغة في أعلى هذه الصفحة للمستخدمين بالتبديل إلى لغتهم المفضلة. لإضافة إصدار لغة جديد، أنشئ مجلداً فرعياً مثل <code>/ar/</code> للعربية أو <code>/fr/</code> للفرنسية، وضع <code>index.html</code> مترجماً داخله، وحدّث السمة <code>lang</code> في علامة HTML لتتوافق (مثل <code>lang="ar"</code>).</p>
+    <p>أضف علامة <code>hreflang</code> داخل <code>&lt;head&gt;</code> لكل إصدار لغة حتى يقوم Google بفهرستها بشكل منفصل. مثال:</p>
+    <p><code>&lt;link rel="alternate" hreflang="ar" href="https://charadegenerator.com/ar/" /&gt;</code><br>
+    <code>&lt;link rel="alternate" hreflang="en" href="https://charadegenerator.com/" /&gt;</code></p>
+    <p>ترجم قوائم كلمات التمثيليات في ملف JS الخاص بك أيضاً. احتفظ بمصفوفة كلمات منفصلة لكل لغة وقم بتحميل الصحيحة بناءً على عنوان URL أو ملف تعريف الارتباط للغة. <strong>اللغات التي يجب تحديد أولوياتها:</strong> العربية (حجم بحث كبير)، الهندية، الأردية، الإسبانية والبرتغالية.</p>
+  </div>
+
+  <!-- ── AUTHOR NOTE ── -->
+  <div class="author-bio-note">
+    <strong>📝 ملاحظة المؤلف (لصفحة 'من نحن'):</strong>
+    أضف قسماً في صفحة من نحن مثل:<br><br>
+    <em>"مرحباً، أنا [اسمك]، عاشق للألعاب ومطور من [مدينتك]. بنيت مولد التمثيليات في [السنة] لأنني أردت أداة بسيطة ومجانية يمكن للعائلات استخدامها دون أي إعداد. أنا شخصياً أختبر كل قائمة كلمات مع عائلتي وأحدّث الأداة بانتظام بناءً على ملاحظات المستخدمين."</em><br><br>
+    قم بتضمين صورة حقيقية، على الأقل اسمك الأول، ورابط إلى ملفك الشخصي على وسائل التواصل الاجتماعي أو بريدك الإلكتروني. هذا يبني إشارات الثقة E-E-A-T من Google ويحسن بشكل كبير فرصة موافقة AdSense الخاصة بك.
+  </div>
+
+  <!-- ── HOW TO USE ── -->
+  <section class="content-section">
+    <h2>مثال: ما تحصل عليه عند النقر على توليد</h2>
+    <p>ينشئ مولد التمثيليات هذا كلمات أو عبارات عشوائية يمكن للاعبين تمثيلها فوراً. يعتمد عدد التمثيليات التي تحصل عليها على ما تحدده أعلاه.</p>
+    <p><strong>إذا حددت 1:</strong> تظهر بطاقة تمثيلية واحدة على الشاشة — مثالية للعب السريع واحد لواحد.<br>
+    <strong>إذا حددت 3:</strong> تظهر ثلاث تمثيليات — استخدم كل واحدة لجولة وانظر أيها أكثر متعة في التمثيل.<br>
+    <strong>إذا حددت 5 أو 10:</strong> تمثيليات متعددة لجولات ممتدة دون الحاجة للنقر على توليد مرة أخرى.<br>
+    <strong>خيار مخصص:</strong> أدخل أي رقم حتى 12 لطول لعبة مخصص بالكامل.</p>
+    <h3>نماذج من التمثيليات التي قد تحصل عليها</h3>
+    <ul>
+      <li>🎭 تسلق جبل</li>
+      <li>🎭 طهي البرياني</li>
+      <li>🎭 قيادة حافلة مدرسية</li>
+      <li>🎭 الطيران مثل البطل الخارق</li>
+      <li>🎭 التمثيل كمعلم متوتر</li>
+      <li>🎭 بناء قلعة رملية</li>
+      <li>🎭 ركوب جمل في الصحراء</li>
+      <li>🎭 لعب الكريكيت تحت المطر</li>
+      <li>🎭 النوم على سحابة</li>
+      <li>🎭 ترويض أسد بري</li>
+    </ul>
+    <p>استخدم زر <strong>نسخ التمثيليات</strong> لنسخ جميع الأفكار المولدة ومشاركتها عبر واتساب أو ماسنجر أو أي تطبيق دردشة لأمسيات الألعاب الافتراضية. يجعل خيار <strong>ملء الشاشة</strong> اللعبة أسهل في إعدادات المجموعة من خلال عرض الكلمة بشكل بارز على الشاشة بأكملها.</p>
+  </section>
+
+  <!-- ── FAQ ── -->
+  <section class="content-section">
+    <h2>الأسئلة الشائعة</h2>
+
+    <p><strong>ما هو مولد التمثيليات؟</strong><br>
+    مولد التمثيليات هو أداة عبر الإنترنت تختار كلمات أو عبارات عشوائية للاعبين لتمثيلها. بدلاً من كتابة قائمتك الخاصة، تمنحك الأداة أفكاراً غير محدودة مصنفة حسب الفئة مثل الأطفال أو المضحكة أو الصعبة أو موضوعات الحفلات. هذا يزيل كل التحضير ويسمح للعبة بالبدء فوراً.</p>
+
+    <p><strong>هل مولد التمثيليات هذا مجاني؟</strong><br>
+    نعم، مجاني تماماً. لا حاجة لحساب، ولا تنزيلات، ولا حدود زمنية. ولّد أفكار تمثيلية غير محدودة للمدة التي تريدها.</p>
+
+    <p><strong>هل يمكن للأطفال استخدام هذه اللعبة؟</strong><br>
+    بالتأكيد. يولد وضع الأطفال كلمات بسيطة ومناسبة للعمر للأطفال من سن 4 سنوات فما فوق. جميع المطالبات مناسبة للعائلة وآمنة للفصول الدراسية والمنزل.</p>
+
+    <p><strong>كم عدد أفكار التمثيليات في هذه الأداة؟</strong><br>
+    أكثر من 500 مطالبة فريدة في جميع الفئات. يختار المولد عشوائياً من هذه المجموعة بحيث نادراً ما ترى نفس الكلمة مرتين في جلسة واحدة.</p>
+
+    <p><strong>هل يمكنني لعب التمثيليات على هاتفي؟</strong><br>
+    نعم. هذه الأداة محسّنة بالكامل للجوال. وضع ملء الشاشة مفيد بشكل خاص عندما تمسك هاتفك حتى يتمكن المجموعة من رؤية الكلمة بوضوح أثناء اللعب.</p>
+
+    <p><strong>ما هي التمثيليات العكسية؟</strong><br>
+    في التمثيليات العكسية، يمثل المجموعة بأكملها في وقت واحد بينما يخمن شخص واحد. إنها أكثر ضجيجاً وأسرع وأكثر فوضوية من التمثيليات الكلاسيكية — مثالية للحفلات الكبيرة.</p>
+
+    <p><strong>هل يمكنني استخدام هذا لليالي الألعاب الافتراضية؟</strong><br>
+    نعم. ولّد تمثيلياتك، واستخدم زر النسخ للصقها في دردشة مجموعتك، ويمكن للجميع اللعب عن بعد عبر مكالمة فيديو. تعمل بشكل رائع على Zoom أو Google Meet أو مكالمة فيديو WhatsApp.</p>
+
+    <p><strong>هل أحتاج لتنزيل أي شيء؟</strong><br>
+    لا. كل شيء يعمل مباشرة في متصفحك. لا تطبيق، لا إضافة، لا تثبيت.</p>
+
+    <p><strong>هل هذه الأداة متاحة بلغات أخرى؟</strong><br>
+    نحن نضيف إصدارات لغوية. الإصدارات العربية والإسبانية والفرنسية والهندية والأردية متاحة. استخدم شريط اللغة في أعلى الصفحة للتبديل عند توفرها.</p>
+
+    <p><strong>كيف يختلف هذا عن لعبة بطاقات التمثيليات المادية؟</strong><br>
+    ألعاب البطاقات المادية لها قائمة كلمات ثابتة يتم حفظها بمرور الوقت ويجب شراؤها. هذا المولد الرقمي مجاني، وله مجموعة كلمات متنامية باستمرار، ويتيح لك تخصيص الصعوبة والفئة، ولا يحتاج أبداً إلى بطاقات بديلة.</p>
+  </section>
+
+  <!-- OUTRO -->
+  <section class="content-section">
+    <h2>ابدأ بلعب التمثيليات الآن</h2>
+    <p>التمثيليات هي واحدة من أفضل الألعاب لجمع الناس معاً. لا تحتاج إلى معدات، ولا تكلف شيئاً، وتعمل بأي لغة، وتخلق ضحكات حقيقية لا يمكن لأي لعبة شاشة محاكاتها. سواء كنت في حفلة عيد ميلاد، أو فصل دراسي، أو تجمع عائلي، أو لقاء افتراضي، تساعدك هذه الأداة على بدء اللعب في أقل من عشر ثوانٍ.</p>
+    <p>مرر لأعلى، انقر على توليد، واستمتع بمرح غير محدود مع أصدقائك وعائلتك. 🎉</p>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <a href="about-us.html">من نحن</a>
+  <a href="contact-us.html">اتصل بنا</a>
+  <a href="privacy-policy.html">سياسة الخصوصية</a>
+  <a href="terms-and-conditions.html">الشروط والأحكام</a>
+  <a href="disclaimer.html">إخلاء المسؤولية</a>
+  <p>© CharadeGenerator 2026</p>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
