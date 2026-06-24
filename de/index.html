@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Scharaden-Generator – Kostenloses Online-Spiel für Kinder, Familien & Partys</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Kostenloser Online-Scharaden-Generator – lustige Ideen für Kinder, Familien und Partys. Über 500 Begriffe, mehrere Kategorien, ohne Anmeldung.">
+
+  <!-- Favicon (keep your existing ones) -->
+  <link rel="icon" type="image/x-icon" href="/assests/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assests/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assests/apple-touch-icon-180x180.png">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* ── LANGUAGE SWITCHER ── */
+    .lang-bar {
+      background: #f0f4ff;
+      border-bottom: 1px solid #dde4f5;
+      padding: 6px 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      font-size: 13px;
+    }
+    .lang-bar span { color: #555; font-weight: 600; }
+    .lang-bar a {
+      text-decoration: none;
+      color: #3b5bdb;
+      padding: 2px 8px;
+      border-radius: 4px;
+      transition: background 0.2s;
+    }
+    .lang-bar a:hover { background: #dde4f5; }
+    .lang-bar a.active { background: #3b5bdb; color: #fff; }
+
+    /* ── TOOL COUNT BADGE ── */
+    .tool-grid-section {
+      background: #f8faff;
+      border: 1px solid #e2e8f8;
+      border-radius: 12px;
+      padding: 28px 24px;
+      margin: 32px 0;
+    }
+    .tool-grid-section h2 { margin-top: 0; }
+    .tool-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .tool-card {
+      background: #fff;
+      border: 1px solid #dde4f5;
+      border-radius: 10px;
+      padding: 14px 12px;
+      text-align: center;
+      text-decoration: none;
+      color: #222;
+      font-size: 14px;
+      font-weight: 500;
+      transition: box-shadow 0.2s, transform 0.15s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+    .tool-card:hover {
+      box-shadow: 0 4px 16px rgba(59,91,219,0.13);
+      transform: translateY(-2px);
+    }
+    .tool-card .tool-icon { font-size: 26px; }
+    .tool-card .tool-name { font-weight: 600; }
+    .tool-card .tool-desc { font-size: 12px; color: #666; }
+
+    /* ── WORD LIST TABLE ── */
+    .word-table-section { margin: 32px 0; }
+    .word-columns {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .word-col h4 {
+      margin: 0 0 8px;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      color: #3b5bdb;
+    }
+    .word-col ul {
+      margin: 0;
+      padding-left: 18px;
+      font-size: 14px;
+      line-height: 1.9;
+      color: #333;
+    }
+
+    /* ── TIPS GRID ── */
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .tip-card {
+      background: #fff8f0;
+      border-left: 4px solid #f76707;
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+    .tip-card h4 { margin: 0 0 6px; font-size: 15px; }
+    .tip-card p { margin: 0; font-size: 13px; color: #555; line-height: 1.6; }
+
+    /* ── COMPARISON TABLE ── */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      margin-top: 16px;
+    }
+    .compare-table th {
+      background: #3b5bdb;
+      color: #fff;
+      padding: 10px 14px;
+      text-align: left;
+    }
+    .compare-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid #eee;
+    }
+    .compare-table tr:nth-child(even) td { background: #f6f8ff; }
+
+    /* ── LANGUAGE GUIDE BOX ── */
+    .lang-guide {
+      background: #f0fff4;
+      border: 1px solid #b2f5c8;
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin: 32px 0;
+    }
+    .lang-guide h3 { margin-top: 0; color: #2d6a4f; }
+    .lang-guide p { font-size: 14px; color: #333; line-height: 1.7; }
+    .lang-guide code {
+      background: #e8f5e9;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 13px;
+      color: #1b5e20;
+    }
+
+    /* ── AUTHOR BIO PLACEHOLDER ── */
+    .author-bio-note {
+      background: #fff3cd;
+      border: 1px dashed #ffc107;
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin: 32px 0;
+      font-size: 14px;
+      color: #555;
+    }
+    .author-bio-note strong { color: #856404; }
+
+    /* ── STATS BAR ── */
+    .stats-bar {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      background: #3b5bdb;
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin: 24px 0;
+      color: #fff;
+    }
+    .stat-item { text-align: center; flex: 1; min-width: 100px; }
+    .stat-num { font-size: 28px; font-weight: 700; }
+    .stat-label { font-size: 12px; opacity: .8; margin-top: 2px; }
+
+    /* Game area styles */
+    .top-controls { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+    .quick-pick { display: flex; gap: 6px; flex-wrap: wrap; justify-content: center; }
+    .mode-select { display: flex; gap: 6px; flex-wrap: wrap; justify-content: center; }
+    .generate-btn { display: block; margin: 16px auto; padding: 12px 32px; background: #3b5bdb; color: #fff; border: none; border-radius: 8px; font-size: 18px; cursor: pointer; }
+    .generate-btn:hover { background: #2a4ab5; }
+    .cards { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; margin: 16px 0; }
+    .card-item { 
+      background: #f8faff; 
+      border: 2px solid #3b5bdb; 
+      border-radius: 12px; 
+      padding: 20px 24px; 
+      font-size: 22px; 
+      font-weight: 600; 
+      min-width: 140px; 
+      text-align: center; 
+    }
+    .custom-box { display: flex; gap: 8px; justify-content: center; margin: 10px 0; }
+    .custom-box input { padding: 6px 12px; border-radius: 6px; border: 1px solid #ccc; width: 100px; }
+    .custom-box button { padding: 6px 16px; border-radius: 6px; background: #3b5bdb; color: #fff; border: none; cursor: pointer; }
+    .hidden { display: none; }
+    .copy-msg { display: none; color: #2d6a4f; font-weight: 600; }
+    .mode-btn { padding: 8px 16px; border-radius: 6px; border: 2px solid #3b5bdb; background: #fff; color: #3b5bdb; cursor: pointer; font-weight: 500; }
+    .mode-btn.active { background: #3b5bdb; color: #fff; }
+    .mode-btn:hover { background: #dde4f5; }
+    .quick-pick button { padding: 6px 14px; border-radius: 6px; border: 1px solid #ccc; background: #fff; cursor: pointer; }
+    .quick-pick button:hover { background: #e8ecf5; }
+    .top-controls button { padding: 8px 16px; border-radius: 6px; border: 1px solid #3b5bdb; background: #fff; color: #3b5bdb; cursor: pointer; }
+    .top-controls button:hover { background: #dde4f5; }
+  </style>
+</head>
+<body>
+
+<!-- LANGUAGE BAR -->
+<div class="lang-bar">
+  <span>🌐 Sprache:</span>
+  <a href="/">English</a>
+  <a href="/hi/">हिंदी</a>
+  <a href="/ur/">اردو</a>
+  <a href="/es/">Español</a>
+  <a href="/fr/">Français</a>
+  <a href="/ar/">العربية</a>
+  <a href="/de/" class="active">Deutsch</a>
+  <a href="/pt/">Português</a>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
+    <div class="logo">
+      <a href="https://charadegenerator.com/de/" class="logo-link">
+        🎭 <strong>Scharaden</strong>Generator
+      </a>
+    </div>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <nav class="nav-desktop">
+      <a href="kids-charade-generator.html"><button>Scharaden für Kinder</button></a>
+      <a href="movie-charades.html"><button>Filmscharaden</button></a>
+      <a href="character-charades.html"><button>Charakter-Scharaden</button></a>
+      <a href="reverse-charades.html"><button>Umgekehrte Scharaden</button></a>
+      <a href="christmas-charades.html"><button>Weihnachtsscharaden</button></a>
+      <a href="islamic-charades.html"><button>Islamische Scharaden</button></a>
+      <a href="animal-charades.html"><button>Tierscharaden</button></a>
+    </nav>
+  </div>
+  <nav id="navMobile" class="nav-mobile">
+    <a href="kids-charade-generator.html"><button>Scharaden für Kinder</button></a>
+    <a href="movie-charades.html"><button>Filmscharaden</button></a>
+    <a href="character-charades.html"><button>Charakter-Scharaden</button></a>
+    <a href="reverse-charades.html"><button>Umgekehrte Scharaden</button></a>
+    <a href="christmas-charades.html"><button>Weihnachtsscharaden</button></a>
+    <a href="islamic-charades.html"><button>Islamische Scharaden</button></a>
+    <a href="animal-charades.html"><button>Tierscharaden</button></a>
+  </nav>
+</header>
+
+<main class="main">
+
+  <h1>Scharaden-Generator – Kostenloses Online-Spiel für Kinder & Erwachsene</h1>
+  <p class="seo-text">🎮 Sofort spielen • Ohne Anmeldung • Über 500 Scharaden-Ideen • 7 Kategorien</p>
+
+  <p class="seo-text">
+    Du suchst ein unterhaltsames und einfaches Partyspiel? Dieser kostenlose Scharaden-Generator hilft dir, sofort Scharaden-Ideen für Kinder, Familien, Klassenzimmer und Partys zu erstellen.
+    Egal, ob du mit Freunden spielst oder einen Spieleabend veranstaltest, unser Tool generiert zufällige Scharaden, die einfach, aufregend und für alle Altersgruppen perfekt geeignet sind.
+    Mit über <strong>500 einzigartigen Scharaden-Begriffen</strong> in 7 Kategorien gehen dir nie die Ideen aus.
+  </p>
+
+  <p class="seo-text">
+    Scharaden sind ein klassisches Ratespiel, bei dem die Spieler ein Wort oder einen Satz darstellen, ohne zu sprechen, während die anderen versuchen, es zu erraten.
+    Verwende diesen Online-Scharaden-Generator, um Zeit zu sparen und sofort unbegrenzte Ideen zu erhalten. Keine Vorbereitung nötig — klicke einfach auf Generieren und fang an zu spielen.
+    Es funktioniert perfekt auf deinem Handy, Tablet oder Computer mit einem speziellen Vollbildmodus für Gruppenspiele.
+  </p>
+
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="stat-item"><div class="stat-num">500+</div><div class="stat-label">Scharaden-Begriffe</div></div>
+    <div class="stat-item"><div class="stat-num">7</div><div class="stat-label">Kategorien</div></div>
+    <div class="stat-item"><div class="stat-num">25+</div><div class="stat-label">Tools Verfügbar</div></div>
+    <div class="stat-item"><div class="stat-num">100%</div><div class="stat-label">Immer Kostenlos</div></div>
+  </div>
+
+  <!-- GAME AREA -->
+  <section class="tool" id="gameArea">
+    <h2 class="category-title">Lass uns Scharaden spielen</h2>
+    <p class="subtitle">Klicke auf Generieren, um sofort Scharaden zu erhalten 🎭</p>
+    <div class="top-controls">
+      <button id="copyBtn" onclick="copyCharades()">📋 Kopieren</button>
+      <button onclick="toggleFullScreen()">⛶ Vollbild</button>
+      <span id="copyMsg" class="copy-msg">Kopiert!</span>
+    </div>
+    <div class="quick-pick">
+      <button onclick="setCount(1)">1</button>
+      <button onclick="setCount(3)">3</button>
+      <button onclick="setCount(5)">5</button>
+      <button onclick="setCount(10)">10</button>
+      <button onclick="showCustom()">Benutzerdefiniert</button>
+    </div>
+    <div class="mode-select">
+      <button class="mode-btn active" data-mode="default" onclick="setMode('default')">Alle</button>
+      <button class="mode-btn" data-mode="kids" onclick="setMode('kids')">Kinder</button>
+      <button class="mode-btn" data-mode="funny" onclick="setMode('funny')">Lustig</button>
+      <button class="mode-btn" data-mode="hard" onclick="setMode('hard')">Schwer</button>
+      <button class="mode-btn" data-mode="party" onclick="setMode('party')">Party</button>
+    </div>
+    <div id="customBox" class="custom-box hidden">
+      <input type="number" id="customInput" min="1" max="12" placeholder="Gib eine Zahl ein">
+      <button onclick="applyCustom()">Anwenden</button>
+    </div>
+    <div id="cards" class="cards"></div>
+    <button class="generate-btn" onclick="generate()">Generieren</button>
+  </section>
+
+  <!-- ── ALL TOOLS SECTION ── -->
+  <section class="tool-grid-section">
+    <h2>🎮 Alle Scharaden-Tools – 25+ Kostenlose Generatoren</h2>
+    <p>Wir bieten eine breite Palette von Scharaden-Tools für jeden Anlass, jede Altersgruppe und jedes Thema. Klicke auf ein beliebiges Tool, um sofort mit dem Spielen zu beginnen.</p>
+    <div class="tool-grid">
+      <a href="kids-charade-generator.html" class="tool-card"><span class="tool-icon">👦</span><span class="tool-name">Scharaden für Kinder</span><span class="tool-desc">4-12 Jahre, einfache Wörter</span></a>
+      <a href="movie-charades.html" class="tool-card"><span class="tool-icon">🎬</span><span class="tool-name">Filmscharaden</span><span class="tool-desc">Beliebte Filmtitel</span></a>
+      <a href="character-charades.html" class="tool-card"><span class="tool-icon">🦸</span><span class="tool-name">Charakter-Scharaden</span><span class="tool-desc">Berühmte Charaktere</span></a>
+      <a href="reverse-charades.html" class="tool-card"><span class="tool-icon">🔄</span><span class="tool-name">Umgekehrte Scharaden</span><span class="tool-desc">Die Gruppe spielt, einer errät</span></a>
+      <a href="christmas-charades.html" class="tool-card"><span class="tool-icon">🎄</span><span class="tool-name">Weihnachtsscharaden</span><span class="tool-desc">Festlicher Spaß</span></a>
+      <a href="islamic-charades.html" class="tool-card"><span class="tool-icon">🕌</span><span class="tool-name">Islamische Scharaden</span><span class="tool-desc">Islamische Wörter & Werte</span></a>
+      <a href="animal-charades.html" class="tool-card"><span class="tool-icon">🐾</span><span class="tool-name">Tierscharaden</span><span class="tool-desc">Tiere zum Darstellen</span></a>
+      <!-- PLACEHOLDER TOOLS -->
+      <a href="funny-charades.html" class="tool-card"><span class="tool-icon">😂</span><span class="tool-name">Lustige Scharaden</span><span class="tool-desc">Hilfreiche Partyprompts</span></a>
+      <a href="hard-charades.html" class="tool-card"><span class="tool-icon">🧠</span><span class="tool-name">Schwere Scharaden</span><span class="tool-desc">Herausfordernd für Erwachsene</span></a>
+      <a href="food-charades.html" class="tool-card"><span class="tool-icon">🍕</span><span class="tool-name">Essensscharaden</span><span class="tool-desc">Gerichte & Zutaten</span></a>
+      <a href="sports-charades.html" class="tool-card"><span class="tool-icon">⚽</span><span class="tool-name">Sportsscharaden</span><span class="tool-desc">Sport & Aktivitäten</span></a>
+      <a href="halloween-charades.html" class="tool-card"><span class="tool-icon">🎃</span><span class="tool-name">Halloween-Scharaden</span><span class="tool-desc">Gruselige Wörter & Aktionen</span></a>
+      <a href="birthday-charades.html" class="tool-card"><span class="tool-icon">🎂</span><span class="tool-name">Geburtstagsscharaden</span><span class="tool-desc">Perfekt für Partys</span></a>
+      <a href="school-charades.html" class="tool-card"><span class="tool-icon">🏫</span><span class="tool-name">Schulscharaden</span><span class="tool-desc">Klassenzimmertaugliche Themen</span></a>
+      <a href="emoji-charades.html" class="tool-card"><span class="tool-icon">😀</span><span class="tool-name">Emoji-Scharaden</span><span class="tool-desc">Stelle Emojis dar</span></a>
+      <a href="bollywood-charades.html" class="tool-card"><span class="tool-icon">🎥</span><span class="tool-name">Bollywood-Scharaden</span><span class="tool-desc">Hindi-Filmtitel</span></a>
+      <a href="bible-charades.html" class="tool-card"><span class="tool-icon">📖</span><span class="tool-name">Biblische Scharaden</span><span class="tool-desc">Biblische Wörter & Geschichten</span></a>
+      <a href="thanksgiving-charades.html" class="tool-card"><span class="tool-icon">🦃</span><span class="tool-name">Thanksgiving-Scharaden</span><span class="tool-desc">Festliche Themen</span></a>
+      <a href="valentines-charades.html" class="tool-card"><span class="tool-icon">❤️</span><span class="tool-name">Valentins-Scharaden</span><span class="tool-desc">Romantische Wörter</span></a>
+      <a href="summer-charades.html" class="tool-card"><span class="tool-icon">☀️</span><span class="tool-name">Sommerscharaden</span><span class="tool-desc">Strand & Outdoor-Spaß</span></a>
+      <a href="superhero-charades.html" class="tool-card"><span class="tool-icon">🦸‍♂️</span><span class="tool-name">Superhelden-Scharaden</span><span class="tool-desc">Marvel, DC & mehr</span></a>
+      <a href="nature-charades.html" class="tool-card"><span class="tool-icon">🌿</span><span class="tool-name">Natur-Scharaden</span><span class="tool-desc">Pflanzen, Wetter, Outdoor</span></a>
+      <a href="occupation-charades.html" class="tool-card"><span class="tool-icon">👨‍⚕️</span><span class="tool-name">Berufs-Scharaden</span><span class="tool-desc">Jobs & Berufe</span></a>
+      <a href="fairy-tale-charades.html" class="tool-card"><span class="tool-icon">🧚</span><span class="tool-name">Märchen-Scharaden</span><span class="tool-desc">Märchenfiguren</span></a>
+      <a href="ramadan-charades.html" class="tool-card"><span class="tool-icon">🌙</span><span class="tool-name">Ramadan-Scharaden</span><span class="tool-desc">Spezielle Ramadan-Wörter</span></a>
+    </div>
+  </section>
+
+  <!-- ── CHARADE WORD LISTS ── -->
+  <section class="content-section word-table-section">
+    <h2>Über 500 Scharaden-Ideen nach Kategorie</h2>
+    <p>Nachfolgend findest du eine Auswahl der Wörter und Phrasen, die unser Generator verwendet. Sie decken alle Schwierigkeitsgrade und Themen ab, damit dein Spiel von der ersten bis zur letzten Runde spannend bleibt. Der Generator wählt zufällig aus diesem Pool, sodass du bei jedem Klick auf Generieren frische Ideen erhältst.</p>
+
+    <div class="word-columns">
+      <div class="word-col">
+        <h4>🧒 Kinder (Einfach)</h4>
+        <ul>
+          <li>Hüpfender Frosch</li>
+          <li>Schlafender Hund</li>
+          <li>Fliegendes Flugzeug</li>
+          <li>Eis essen</li>
+          <li>Schwimmender Fisch</li>
+          <li>Baum klettern</li>
+          <li>Tanzender Schmetterling</li>
+          <li>Spielzeugauto fahren</li>
+          <li>Pflanzen gießen</li>
+          <li>Ball fangen</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>😂 Lustig / Party</h4>
+        <ul>
+          <li>Auf einem Kaktus sitzen</li>
+          <li>Ein Huhn jagen</li>
+          <li>Roboter-Tanz</li>
+          <li>An Baby vorbeischleichen</li>
+          <li>Pinguin-Gehen</li>
+          <li>Unsichtbare Wand</li>
+          <li>Wütender alter Mann</li>
+          <li>Zeitlupen-Rennen</li>
+          <li>Einhorn reiten</li>
+          <li>Schmelzendes Eis</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>🧠 Schwer (Fortgeschritten)</h4>
+        <ul>
+          <li>Quantenphysik</li>
+          <li>Börsencrash</li>
+          <li>Künstliche Intelligenz</li>
+          <li>Sonnenfinsternis</li>
+          <li>Tektonische Platten</li>
+          <li>Archäologische Ausgrabung</li>
+          <li>Fotosynthese</li>
+          <li>Biolumineszenz</li>
+          <li>Paralleluniversum</li>
+          <li>Gravitationswelle</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>🎬 Filme</h4>
+        <ul>
+          <li>Der König der Löwen</li>
+          <li>Spider-Man</li>
+          <li>Titanic</li>
+          <li>Jurassic Park</li>
+          <li>Die Eiskönigin</li>
+          <li>Die Avengers</li>
+          <li>Kevin allein zu Haus</li>
+          <li>Toy Story</li>
+          <li>Matrix</li>
+          <li>Findet Nemo</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>🐾 Tiere</h4>
+        <ul>
+          <li>Elefant trinkt</li>
+          <li>Schlange kriecht</li>
+          <li>Affe klettert</li>
+          <li>Löwe brüllt</li>
+          <li>Krabbe läuft</li>
+          <li>Papagei spricht</li>
+          <li>Pferd galoppiert</li>
+          <li>Schildkröte versteckt sich</li>
+          <li>Känguru hüpft</li>
+          <li>Pfau zeigt sein Rad</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>🎄 Saisonal</h4>
+        <ul>
+          <li>Baum schmücken</li>
+          <li>Geschenke auspacken</li>
+          <li>Schneemann bauen</li>
+          <li>Eid-Gebet</li>
+          <li>Diya anzünden</li>
+          <li>Süßes oder Saures</li>
+          <li>Kürbis schnitzen</li>
+          <li>Geburtstagskerzen auspusten</li>
+          <li>Konfetti werfen</li>
+          <li>Feuerwerk zählen</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TIPS SECTION ── -->
+  <section class="content-section">
+    <h2>🏆 Profi-Tipps, um bei Scharaden zu gewinnen</h2>
+    <p>Egal, ob du ein Neuling oder ein Scharaden-Veteran bist, diese Tipps helfen dir, besser zu spielen, schneller zu raten und mehr Spaß zu haben.</p>
+    <div class="tips-grid">
+      <div class="tip-card">
+        <h4>Beginne mit der Kategorie</h4>
+        <p>Zeige vor dem Spielen die Anzahl der Wörter mit den Fingern an. Zeige auf dein Handgelenk für "klingt wie". Das beschleunigt das Raten.</p>
+      </div>
+      <div class="tip-card">
+        <h4>Nutze deinen ganzen Körper</h4>
+        <p>Verwende nicht nur deine Hände. Dein Gesicht, deine Haltung und sogar deine Art zu gehen können Emotionen und Bedeutung klar vermitteln.</p>
+      </div>
+      <div class="tip-card">
+        <h4>Stelle Wort für Wort dar</h4>
+        <p>Bei mehrteiligen Phrasen zeige die Anzahl der Finger pro Wort an und stelle dann jedes Wort einzeln dar. Das Team lernt diesen Rhythmus schnell.</p>
+      </div>
+      <div class="tip-card">
+        <h4>Bleibe energiegeladen</h4>
+        <p>Begeisterung ist ansteckend. Auch wenn dein Hinweis nicht perfekt ist, führt selbstbewusstes Spielen dein Team zur richtigen Antwort.</p>
+      </div>
+      <div class="tip-card">
+        <h4>Verwende "Klingt wie"-Signale</h4>
+        <p>Halte deine Hand hinters Ohr, um "klingt wie" zu signalisieren, und stelle dann ein Reimwort oder ein ähnliches Wort dar. Sehr hilfreich für schwere Wörter.</p>
+      </div>
+      <div class="tip-card">
+        <h4>Setze ein Zeitlimit</h4>
+        <p>Verwende 60–90 Sekunden pro Zug. Zeitdruck macht das Spiel spannender. Nutze den Timer deines Handys oder eine Countdown-App.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── COMPARISON TABLE ── -->
+  <section class="content-section">
+    <h2>🆚 Scharaden vs. Andere Partyspiele</h2>
+    <p>Du fragst dich, wie Scharaden im Vergleich zu anderen beliebten Partyspielen abschneiden? Hier ist ein schneller Vergleich, der dir hilft, das richtige Spiel für deine nächste Veranstaltung auszuwählen.</p>
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Spiel</th>
+          <th>Spieler</th>
+          <th>Ausrüstung</th>
+          <th>Alter</th>
+          <th>Energieniveau</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Scharaden</td><td>4+</td><td>Keine (oder dieses Tool)</td><td>4+</td><td>⚡⚡⚡ Hoch</td></tr>
+        <tr><td>Pictionary</td><td>4+</td><td>Papier + Stift</td><td>8+</td><td>⚡⚡ Mittel</td></tr>
+        <tr><td>Tabu</td><td>4+</td><td>Kartendeck</td><td>12+</td><td>⚡⚡ Mittel</td></tr>
+        <tr><td>20 Fragen</td><td>2+</td><td>Keine</td><td>6+</td><td>⚡ Niedrig</td></tr>
+        <tr><td>Stumme Scharaden</td><td>4+</td><td>Keine (oder dieses Tool)</td><td>8+</td><td>⚡⚡⚡ Hoch</td></tr>
+        <tr><td>Wortgewirr</td><td>2+</td><td>Papier + Stift</td><td>10+</td><td>⚡ Niedrig</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ── HOW TO PLAY ── -->
+  <section class="how-to">
+    <h2>Wie man Scharaden spielt – Vollständige Anleitung</h2>
+    <p>Scharaden werden seit über 200 Jahren gespielt und sind nach wie vor eines der beliebtesten Partyspiele der Welt. Die Regeln sind einfach, aber das Spiel sorgt für endloses Lachen und unvergessliche Momente. Hier ist eine vollständige Anleitung für neue und erfahrene Spieler.</p>
+
+    <p><strong>1. Teilt euch in zwei Teams auf</strong><br>
+    Teilt eure Gruppe in zwei gleich große Teams auf. Jedes Team schickt abwechselnd einen Spieler nach vorne, während die anderen raten.</p>
+
+    <p><strong>2. Generiere deine Scharade</strong><br>
+    Verwende dieses Tool, um eine zufällige Scharade zu generieren. Der Spieler liest das Wort still — die Teamkollegen dürfen es nicht sehen.</p>
+
+    <p><strong>3. Zeige das Kategoriensignal</strong><br>
+    Verwende klassische Handzeichen: Finger für die Anzahl der Wörter, zeige auf dein Ohr für "klingt wie", mache eine Buchform für "Buch" oder eine Filmrolle für "Film".</p>
+
+    <p><strong>4. Stelle dar, ohne zu sprechen oder die Lippen zu bewegen</strong><br>
+    Der Spieler verwendet nur Körpersprache, Gesten und Gesichtsausdrücke. Keine Geräusche, keine Lippenbewegungen, kein Schreiben in die Luft.</p>
+
+    <p><strong>5. Stelle einen 60-Sekunden-Timer ein</strong><br>
+    Eine Runde = 60 Sekunden. Wenn das Team innerhalb der Zeit richtig rät, erhält es einen Punkt. Wenn nicht, darf das andere Team es versuchen.</p>
+
+    <p><strong>6. Wechselt und wiederholt</strong><br>
+    Wechselt im Uhrzeigersinn. Jeder Spieler darf mindestens einmal darstellen. Spiele so viele Runden, wie du möchtest — klicke auf Generieren für unbegrenzte Begriffe.</p>
+
+    <p><strong>7. Verwende den Vollbildmodus</strong><br>
+    Klicke auf Vollbild, damit der Spieler das Handy halten kann und das Wort nur für ihn sichtbar ist, bevor er es vom Bildschirm wegnimmt.</p>
+  </section>
+
+  <!-- ── BENEFITS ── -->
+  <section class="content-section">
+    <h2>Warum diesen Scharaden-Generator verwenden?</h2>
+    <p>Unser Scharaden-Generator wurde entwickelt, um die gesamte Vorbereitung aus deinem Spiel zu nehmen. Kein Karten schreiben, keine Listen ausdrucken, keine Streitereien darüber, wer die Wörter auswählt. Öffne einfach die Seite, drücke Generieren, und dein Spiel beginnt in Sekundenschnelle.</p>
+    <p>Im Gegensatz zu einfachen Wortlisten, die du anderswo findest, bietet dieses Tool <strong>mehrere Modi</strong> (Kinder, Lustig, Schwer, Party), damit du den Schwierigkeitsgrad und die Stimmung an deine Gruppe anpassen kannst. Der <strong>Vollbild-Button</strong> verwandelt dein Handy in eine richtige Spielkarte, die ein Spieler hält, während die anderen raten. Der <strong>Kopieren-Button</strong> ermöglicht es dir, die Wortliste mit entfernten Spielern über WhatsApp oder jede Messaging-App für virtuelle Spieleabende zu teilen.</p>
+    <ul>
+      <li>🎉 Perfekt für Partys, Klassenzimmer und Familien-Spieleabende</li>
+      <li>👨‍👩‍👧 Geeignet für Kinder ab 4 Jahren bis zu Erwachsenen</li>
+      <li>⚡ Generiert 1, 3, 5, 10 oder eine benutzerdefinierte Anzahl von Scharaden</li>
+      <li>📱 Mobiloptimiert mit Vollbild-Spielmodus</li>
+      <li>🎭 Fördert Kreativität, Wortschatz und Kommunikationsfähigkeiten</li>
+      <li>🌐 In mehreren Sprachen verfügbar</li>
+      <li>♾️ Über 500 einzigartige Begriffe, wiederholen sich nie</li>
+      <li>🔒 Kein Login, keine Werbung während des Spiels, kein Download</li>
+    </ul>
+  </section>
+
+  <!-- ── CHARADES HISTORY ── -->
+  <section class="content-section">
+    <h2>Die Geschichte der Scharaden</h2>
+    <p>Scharaden entstanden im Frankreich des 18. Jahrhunderts als schriftliches Rätselspiel, bei dem Hinweise jede Silbe eines Wortes beschrieben. Im 19. Jahrhundert entwickelten sie sich zu dem physischen Schauspiel, das wir heute kennen, und wurden besonders im viktorianischen England als Salonunterhaltung beliebt.</p>
+    <p>Das Spiel verbreitete sich im 20. Jahrhundert weltweit und erlangte durch Fernsehsendungen wie <em>Dumb Charades</em> in Indien und <em>Celebrity Name Game</em> im Westen Bekanntheit. Heute gehören Scharaden immer noch zu den fünf meistgespielten Partyspielen weltweit und werden im Klassenzimmer als pädagogische Aktivität zur Entwicklung von Kommunikationsfähigkeiten, Wortschatz und kreativem Denken eingesetzt.</p>
+    <p>Die digitale Version – wie dieser Generator – beseitigt die einzige Hürde, die das Spiel je hatte: die Vorbereitungszeit. Du brauchst keinen Stapel handgeschriebener Karten mehr. Ein einziger Tipp gibt dir die nächste Runde sofort.</p>
+  </section>
+
+  <!-- ── CATEGORIES SECTION ── -->
+  <section class="content-section">
+    <h2>Scharaden-Ideen nach Kategorie</h2>
+
+    <h3>Scharaden für Kinder (4–12 Jahre)</h3>
+    <p>Scharaden für Kinder verwenden kurze, vertraute Aktionen und Tiere, die Kinder leicht verstehen und darstellen können. Die Wörter werden auf ein oder zwei Silben beschränkt und konzentrieren sich auf alltägliche Gegenstände, Bewegungen und einfache Kreaturen. Beispiele sind Hüpfen wie ein Frosch, Eis essen, Fliegen wie ein Vogel oder Autofahren. Diese Begriffe sind darauf ausgelegt, Kinder zu beschäftigen, zum Lachen zu bringen und ohne Frustration in Bewegung zu halten.</p>
+
+    <h3>Lustige Scharaden für Partys</h3>
+    <p>Partyscharaden treiben die Absurdität auf die Spitze. Die besten Lacher entstehen durch unerwartete Kombinationen wie "eine fliehende Perücke verfolgen", "Zeitlupen-Niesen" oder "unsichtbarer Elefant im Raum". Unser lustiger Modus wählt Begriffe aus, die beim Darstellen von Natur aus komisch sind, was sie ideal für Erwachsene, Teenager und gemischte Gruppen macht, die die Energie die ganze Nacht hochhalten wollen.</p>
+
+    <h3>Schwere Scharaden für Erwachsene</h3>
+    <p>Der schwere Modus fordert die Spieler mit abstrakten Konzepten, zusammengesetzten Wörtern und mehrsilbigen Phrasen wie "künstliche Intelligenz", "Gravitationswelle" oder "archäologische Entdeckung" heraus. Diese sind am besten für wettbewerbsorientierte Gruppen geeignet, die eine echte Herausforderung und viel Diskussion beim Raten wünschen.</p>
+
+    <h3>Filmscharaden</h3>
+    <p>Filmscharaden verwenden beliebte Filmtitel aus Hollywood und Bollywood. Das Darstellen eines Titels wie "Jurassic Park" oder "Der König der Löwen" sorgt in den meisten Gruppen für sofortige Wiedererkennung. Dieser Modus ist perfekt für Filmliebhaber und funktioniert besonders gut, wenn die Spieler vor dem Darstellen das klassische "Filmrolle drehen"-Handzeichen verwenden.</p>
+  </section>
+
+  <!-- ── LANGUAGE GUIDE ── -->
+  <div class="lang-guide">
+    <h3>🌐 Sprachversions-Leitfaden – So fügst du weitere Sprachen hinzu</h3>
+    <p>Die Sprachumschaltleiste oben auf dieser Seite ermöglicht es den Nutzern, zu ihrer bevorzugten Sprache zu wechseln. Um eine neue Sprachversion hinzuzufügen, erstelle einen Unterordner wie <code>/de/</code> für Deutsch oder <code>/fr/</code> für Französisch, platziere eine übersetzte <code>index.html</code> darin und aktualisiere das <code>lang</code>-Attribut im HTML-Tag entsprechend (z.B. <code>lang="de"</code>).</p>
+    <p>Füge für jede Sprachversion ein <code>hreflang</code>-Tag in deinen <code>&lt;head&gt;</code> ein, damit Google sie separat indiziert. Beispiel:</p>
+    <p><code>&lt;link rel="alternate" hreflang="de" href="https://charadegenerator.com/de/" /&gt;</code><br>
+    <code>&lt;link rel="alternate" hreflang="en" href="https://charadegenerator.com/" /&gt;</code></p>
+    <p>Übersetze auch die Scharaden-Wortlisten in deiner JS-Datei. Behalte ein separates Wort-Array für jede Sprache und lade das richtige basierend auf der URL oder einem Sprach-Cookie. <strong>Zu priorisierende Sprachen:</strong> Deutsch (großes Suchvolumen), Spanisch, Französisch, Hindi, Arabisch und Portugiesisch.</p>
+  </div>
+
+  <!-- ── AUTHOR NOTE ── -->
+  <div class="author-bio-note">
+    <strong>📝 Autoren-Hinweis (für deine 'Über uns'-Seite):</strong>
+    Füge einen Abschnitt auf deiner Über-uns-Seite hinzu wie:<br><br>
+    <em>"Hallo, ich bin [Dein Name], ein Spiele-Enthusiast und Entwickler aus [Stadt]. Ich habe den Scharaden-Generator im Jahr [Jahr] gebaut, weil ich ein einfaches, kostenloses Tool wollten, das Familien ohne jegliche Einrichtung nutzen können. Ich teste jede Wortliste persönlich mit meiner eigenen Familie und aktualisiere das Tool regelmäßig basierend auf dem Feedback der Nutzer."</em><br><br>
+    Füge ein echtes Foto, mindestens deinen Vornamen und einen Link zu deinem Social-Media-Profil oder deiner E-Mail hinzu. Das schafft E-E-A-T-Vertrauenssignale von Google und verbessert deine AdSense-Genehmigungschancen erheblich.
+  </div>
+
+  <!-- ── HOW TO USE ── -->
+  <section class="content-section">
+    <h2>Beispiel: Was du beim Klicken auf Generieren erhältst</h2>
+    <p>Dieser Scharaden-Generator erstellt zufällige Wörter oder Phrasen, die die Spieler sofort darstellen können. Die Anzahl der Scharaden, die du erhältst, hängt davon ab, was du oben auswählst.</p>
+    <p><strong>Wenn du 1 auswählst:</strong> Eine Scharaden-Karte erscheint auf dem Bildschirm — ideal für schnelle Eins-gegen-Eins-Spiele.<br>
+    <strong>Wenn du 3 auswählst:</strong> Drei Scharaden erscheinen — verwende jede für eine Runde und schau, welche am lustigsten darzustellen ist.<br>
+    <strong>Wenn du 5 oder 10 auswählst:</strong> Mehrere Scharaden für längere Runden, ohne erneut auf Generieren klicken zu müssen.<br>
+    <strong>Benutzerdefinierte Option:</strong> Gib eine beliebige Zahl bis 12 für eine vollständig angepasste Spieldauer ein.</p>
+    <h3>Beispiel-Scharaden, die du erhalten könntest</h3>
+    <ul>
+      <li>🎭 Einen Berg besteigen</li>
+      <li>🎭 Biryani kochen</li>
+      <li>🎭 Einen Schulbus fahren</li>
+      <li>🎭 Wie ein Superheld fliegen</li>
+      <li>🎭 Einen nervösen Lehrer darstellen</li>
+      <li>🎭 Eine Sandburg bauen</li>
+      <li>🎭 In der Wüste Kamel reiten</li>
+      <li>🎭 Im Regen Cricket spielen</li>
+      <li>🎭 Auf einer Wolke schlafen</li>
+      <li>🎭 Einen wilden Löwen zähmen</li>
+    </ul>
+    <p>Verwende den <strong>Scharaden kopieren</strong>-Button, um alle generierten Ideen sofort zu kopieren und über WhatsApp, Messenger oder jede Chat-App für virtuelle Spieleabende zu teilen. Die <strong>Vollbild</strong>-Option erleichtert das Spiel in Gruppen, indem sie das Wort prominent auf dem gesamten Bildschirm anzeigt.</p>
+  </section>
+
+  <!-- ── FAQ ── -->
+  <section class="content-section">
+    <h2>Häufig gestellte Fragen</h2>
+
+    <p><strong>Was ist ein Scharaden-Generator?</strong><br>
+    Ein Scharaden-Generator ist ein Online-Tool, das zufällig Wörter oder Phrasen auswählt, die die Spieler darstellen können. Anstatt deine eigene Liste zu schreiben, gibt dir das Tool unbegrenzte Ideen, sortiert nach Kategorien wie Kinder, Lustig, Schwer oder Partys. Das eliminiert jede Vorbereitung und lässt das Spiel sofort beginnen.</p>
+
+    <p><strong>Ist dieser Scharaden-Generator kostenlos?</strong><br>
+    Ja, komplett kostenlos. Kein Konto nötig, keine Downloads, keine Zeitlimits. Generiere so viele Scharaden-Ideen, wie du möchtest.</p>
+
+    <p><strong>Können Kinder dieses Spiel nutzen?</strong><br>
+    Absolut. Der Kindermodus generiert einfache, altersgerechte Wörter für Kinder ab 4 Jahren. Alle Begriffe sind familienfreundlich und für den Einsatz im Klassenzimmer und zu Hause geeignet.</p>
+
+    <p><strong>Wie viele Scharaden-Ideen gibt es in diesem Tool?</strong><br>
+    Über 500 einzigartige Begriffe in allen Kategorien. Der Generator wählt zufällig aus diesem Pool, sodass du in einer Sitzung selten dasselbe Wort zweimal siehst.</p>
+
+    <p><strong>Kann ich Scharaden auf meinem Handy spielen?</strong><br>
+    Ja. Dieses Tool ist vollständig mobiloptimiert. Der Vollbildmodus ist besonders nützlich, wenn du dein Handy hältst, damit die Gruppe das Wort während des Spiels klar sehen kann.</p>
+
+    <p><strong>Was sind umgekehrte Scharaden?</strong><br>
+    Bei umgekehrten Scharaden spielt die ganze Gruppe gleichzeitig, während eine Person rät. Es ist lauter, schneller und chaotischer als klassische Scharaden — ideal für große Partys.</p>
+
+    <p><strong>Kann ich dies für virtuelle Spieleabende nutzen?</strong><br>
+    Ja. Generiere deine Scharaden, verwende den Kopieren-Button, um sie in deinen Gruppen-Chat einzufügen, und alle können per Videoanruf von überall aus mitspielen. Funktioniert hervorragend mit Zoom, Google Meet oder WhatsApp Video.</p>
+
+    <p><strong>Muss ich etwas herunterladen?</strong><br>
+    Nein. Alles läuft direkt in deinem Browser. Keine App, kein Plugin, keine Installation.</p>
+
+    <p><strong>Ist dieses Tool in anderen Sprachen verfügbar?</strong><br>
+    Wir fügen Sprachversionen hinzu. Deutsch, Spanisch, Französisch, Hindi und Arabisch sind verfügbar. Verwende die Sprachleiste oben auf der Seite, um zu wechseln.</p>
+
+    <p><strong>Wie unterscheidet sich dies von einem physischen Scharaden-Kartenspiel?</strong><br>
+    Physische Kartenspiele haben eine feste Wortliste, die mit der Zeit auswendig gelernt wird, und müssen gekauft werden. Dieser digitale Generator ist kostenlos, hat einen ständig wachsenden Wortpool, ermöglicht es dir, Schwierigkeitsgrad und Kategorie anzupassen, und benötigt nie Ersatzkarten.</p>
+  </section>
+
+  <!-- OUTRO -->
+  <section class="content-section">
+    <h2>Jetzt mit Scharaden spielen beginnen</h2>
+    <p>Scharaden sind eines der besten Spiele, um Menschen zusammenzubringen. Sie benötigen keine Ausrüstung, kosten nichts, funktionieren in jeder Sprache und sorgen für echte Lacher, die kein Bildschirmspiel ersetzen kann. Egal, ob du auf einer Geburtstagsparty, in einem Klassenzimmer, bei einem Familientreffen oder in einem virtuellen Treffen bist, dieses Tool hilft dir, in weniger als zehn Sekunden mit dem Spielen zu beginnen.</p>
+    <p>Scrolle nach oben, klicke auf Generieren und genieße unbegrenzten Spaß mit deinen Freunden und deiner Familie. 🎉</p>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <a href="about-us.html">Über uns</a>
+  <a href="contact-us.html">Kontakt</a>
+  <a href="privacy-policy.html">Datenschutz</a>
+  <a href="terms-and-conditions.html">AGB</a>
+  <a href="disclaimer.html">Haftungsausschluss</a>
+  <p>© CharadeGenerator 2026</p>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
