@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Gerador de Charadas – Jogo Grátis Online para Crianças, Famílias e Festas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Gerador de charadas grátis online – ideias divertidas para crianças, famílias e festas. Mais de 500 ideias, várias categorias, sem inscrição.">
+
+  <!-- Favicon (keep your existing ones) -->
+  <link rel="icon" type="image/x-icon" href="/assests/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assests/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assests/apple-touch-icon-180x180.png">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* ── LANGUAGE SWITCHER ── */
+    .lang-bar {
+      background: #f0f4ff;
+      border-bottom: 1px solid #dde4f5;
+      padding: 6px 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      font-size: 13px;
+    }
+    .lang-bar span { color: #555; font-weight: 600; }
+    .lang-bar a {
+      text-decoration: none;
+      color: #3b5bdb;
+      padding: 2px 8px;
+      border-radius: 4px;
+      transition: background 0.2s;
+    }
+    .lang-bar a:hover { background: #dde4f5; }
+    .lang-bar a.active { background: #3b5bdb; color: #fff; }
+
+    /* ── TOOL COUNT BADGE ── */
+    .tool-grid-section {
+      background: #f8faff;
+      border: 1px solid #e2e8f8;
+      border-radius: 12px;
+      padding: 28px 24px;
+      margin: 32px 0;
+    }
+    .tool-grid-section h2 { margin-top: 0; }
+    .tool-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .tool-card {
+      background: #fff;
+      border: 1px solid #dde4f5;
+      border-radius: 10px;
+      padding: 14px 12px;
+      text-align: center;
+      text-decoration: none;
+      color: #222;
+      font-size: 14px;
+      font-weight: 500;
+      transition: box-shadow 0.2s, transform 0.15s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+    .tool-card:hover {
+      box-shadow: 0 4px 16px rgba(59,91,219,0.13);
+      transform: translateY(-2px);
+    }
+    .tool-card .tool-icon { font-size: 26px; }
+    .tool-card .tool-name { font-weight: 600; }
+    .tool-card .tool-desc { font-size: 12px; color: #666; }
+
+    /* ── WORD LIST TABLE ── */
+    .word-table-section { margin: 32px 0; }
+    .word-columns {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .word-col h4 {
+      margin: 0 0 8px;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      color: #3b5bdb;
+    }
+    .word-col ul {
+      margin: 0;
+      padding-left: 18px;
+      font-size: 14px;
+      line-height: 1.9;
+      color: #333;
+    }
+
+    /* ── TIPS GRID ── */
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .tip-card {
+      background: #fff8f0;
+      border-left: 4px solid #f76707;
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+    .tip-card h4 { margin: 0 0 6px; font-size: 15px; }
+    .tip-card p { margin: 0; font-size: 13px; color: #555; line-height: 1.6; }
+
+    /* ── COMPARISON TABLE ── */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      margin-top: 16px;
+    }
+    .compare-table th {
+      background: #3b5bdb;
+      color: #fff;
+      padding: 10px 14px;
+      text-align: left;
+    }
+    .compare-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid #eee;
+    }
+    .compare-table tr:nth-child(even) td { background: #f6f8ff; }
+
+    /* ── LANGUAGE GUIDE BOX ── */
+    .lang-guide {
+      background: #f0fff4;
+      border: 1px solid #b2f5c8;
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin: 32px 0;
+    }
+    .lang-guide h3 { margin-top: 0; color: #2d6a4f; }
+    .lang-guide p { font-size: 14px; color: #333; line-height: 1.7; }
+    .lang-guide code {
+      background: #e8f5e9;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 13px;
+      color: #1b5e20;
+    }
+
+    /* ── AUTHOR BIO PLACEHOLDER ── */
+    .author-bio-note {
+      background: #fff3cd;
+      border: 1px dashed #ffc107;
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin: 32px 0;
+      font-size: 14px;
+      color: #555;
+    }
+    .author-bio-note strong { color: #856404; }
+
+    /* ── STATS BAR ── */
+    .stats-bar {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      background: #3b5bdb;
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin: 24px 0;
+      color: #fff;
+    }
+    .stat-item { text-align: center; flex: 1; min-width: 100px; }
+    .stat-num { font-size: 28px; font-weight: 700; }
+    .stat-label { font-size: 12px; opacity: .8; margin-top: 2px; }
+
+    /* Game area styles */
+    .top-controls { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+    .quick-pick { display: flex; gap: 6px; flex-wrap: wrap; justify-content: center; }
+    .mode-select { display: flex; gap: 6px; flex-wrap: wrap; justify-content: center; }
+    .generate-btn { display: block; margin: 16px auto; padding: 12px 32px; background: #3b5bdb; color: #fff; border: none; border-radius: 8px; font-size: 18px; cursor: pointer; }
+    .generate-btn:hover { background: #2a4ab5; }
+    .cards { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; margin: 16px 0; }
+    .card-item { 
+      background: #f8faff; 
+      border: 2px solid #3b5bdb; 
+      border-radius: 12px; 
+      padding: 20px 24px; 
+      font-size: 22px; 
+      font-weight: 600; 
+      min-width: 140px; 
+      text-align: center; 
+    }
+    .custom-box { display: flex; gap: 8px; justify-content: center; margin: 10px 0; }
+    .custom-box input { padding: 6px 12px; border-radius: 6px; border: 1px solid #ccc; width: 100px; }
+    .custom-box button { padding: 6px 16px; border-radius: 6px; background: #3b5bdb; color: #fff; border: none; cursor: pointer; }
+    .hidden { display: none; }
+    .copy-msg { display: none; color: #2d6a4f; font-weight: 600; }
+    .mode-btn { padding: 8px 16px; border-radius: 6px; border: 2px solid #3b5bdb; background: #fff; color: #3b5bdb; cursor: pointer; font-weight: 500; }
+    .mode-btn.active { background: #3b5bdb; color: #fff; }
+    .mode-btn:hover { background: #dde4f5; }
+    .quick-pick button { padding: 6px 14px; border-radius: 6px; border: 1px solid #ccc; background: #fff; cursor: pointer; }
+    .quick-pick button:hover { background: #e8ecf5; }
+    .top-controls button { padding: 8px 16px; border-radius: 6px; border: 1px solid #3b5bdb; background: #fff; color: #3b5bdb; cursor: pointer; }
+    .top-controls button:hover { background: #dde4f5; }
+  </style>
+</head>
+<body>
+
+<!-- LANGUAGE BAR -->
+<div class="lang-bar">
+  <span>🌐 Idioma:</span>
+  <a href="/">English</a>
+  <a href="/hi/">हिंदी</a>
+  <a href="/ur/">اردو</a>
+  <a href="/es/">Español</a>
+  <a href="/fr/">Français</a>
+  <a href="/ar/">العربية</a>
+  <a href="/de/">Deutsch</a>
+  <a href="/pt/" class="active">Português</a>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
+    <div class="logo">
+      <a href="https://charadegenerator.com/pt/" class="logo-link">
+        🎭 <strong>Charadas</strong>Gerador
+      </a>
+    </div>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <nav class="nav-desktop">
+      <a href="kids-charade-generator.html"><button>Charadas para Crianças</button></a>
+      <a href="movie-charades.html"><button>Charadas de Filmes</button></a>
+      <a href="character-charades.html"><button>Charadas de Personagens</button></a>
+      <a href="reverse-charades.html"><button>Charadas Invertidas</button></a>
+      <a href="christmas-charades.html"><button>Charadas de Natal</button></a>
+      <a href="islamic-charades.html"><button>Charadas Islâmicas</button></a>
+      <a href="animal-charades.html"><button>Charadas de Animais</button></a>
+    </nav>
+  </div>
+  <nav id="navMobile" class="nav-mobile">
+    <a href="kids-charade-generator.html"><button>Charadas para Crianças</button></a>
+    <a href="movie-charades.html"><button>Charadas de Filmes</button></a>
+    <a href="character-charades.html"><button>Charadas de Personagens</button></a>
+    <a href="reverse-charades.html"><button>Charadas Invertidas</button></a>
+    <a href="christmas-charades.html"><button>Charadas de Natal</button></a>
+    <a href="islamic-charades.html"><button>Charadas Islâmicas</button></a>
+    <a href="animal-charades.html"><button>Charadas de Animais</button></a>
+  </nav>
+</header>
+
+<main class="main">
+
+  <h1>Gerador de Charadas – Jogo Grátis Online para Crianças e Adultos</h1>
+  <p class="seo-text">🎮 Jogue instantaneamente • Sem inscrição • Mais de 500 ideias de charadas • 7 categorias</p>
+
+  <p class="seo-text">
+    Procura um jogo de festa divertido e fácil? Este gerador de charadas gratuito ajuda-te a criar ideias de charadas instantaneamente para crianças, famílias, salas de aula e festas.
+    Quer estejas a jogar com amigos ou a organizar uma noite de jogos, a nossa ferramenta gera charadas aleatórias que são simples, emocionantes e perfeitas para todas as idades.
+    Com mais de <strong>500 ideias únicas de charadas</strong> em 7 categorias, nunca ficarás sem ideias.
+  </p>
+
+  <p class="seo-text">
+    As charadas são um jogo de adivinhação clássico onde os jogadores representam uma palavra ou frase sem falar, enquanto os outros tentam adivinhar.
+    Usa este gerador de charadas online para poupar tempo e obter ideias ilimitadas instantaneamente. Sem preparação necessária — basta clicar em gerar e começar a jogar.
+    Funciona perfeitamente no teu telemóvel, tablet ou computador com um modo de ecrã inteiro dedicado para jogos em grupo.
+  </p>
+
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="stat-item"><div class="stat-num">500+</div><div class="stat-label">Ideias de Charadas</div></div>
+    <div class="stat-item"><div class="stat-num">7</div><div class="stat-label">Categorias</div></div>
+    <div class="stat-item"><div class="stat-num">25+</div><div class="stat-label">Ferramentas Disponíveis</div></div>
+    <div class="stat-item"><div class="stat-num">100%</div><div class="stat-label">Sempre Grátis</div></div>
+  </div>
+
+  <!-- GAME AREA -->
+  <section class="tool" id="gameArea">
+    <h2 class="category-title">Vamos Jogar Charadas</h2>
+    <p class="subtitle">Clica em Gerar para obter charadas instantaneamente 🎭</p>
+    <div class="top-controls">
+      <button id="copyBtn" onclick="copyCharades()">📋 Copiar</button>
+      <button onclick="toggleFullScreen()">⛶ Ecrã Inteiro</button>
+      <span id="copyMsg" class="copy-msg">Copiado!</span>
+    </div>
+    <div class="quick-pick">
+      <button onclick="setCount(1)">1</button>
+      <button onclick="setCount(3)">3</button>
+      <button onclick="setCount(5)">5</button>
+      <button onclick="setCount(10)">10</button>
+      <button onclick="showCustom()">Personalizado</button>
+    </div>
+    <div class="mode-select">
+      <button class="mode-btn active" data-mode="default" onclick="setMode('default')">Todos</button>
+      <button class="mode-btn" data-mode="kids" onclick="setMode('kids')">Crianças</button>
+      <button class="mode-btn" data-mode="funny" onclick="setMode('funny')">Divertidas</button>
+      <button class="mode-btn" data-mode="hard" onclick="setMode('hard')">Difíceis</button>
+      <button class="mode-btn" data-mode="party" onclick="setMode('party')">Festa</button>
+    </div>
+    <div id="customBox" class="custom-box hidden">
+      <input type="number" id="customInput" min="1" max="12" placeholder="Insere um número">
+      <button onclick="applyCustom()">Aplicar</button>
+    </div>
+    <div id="cards" class="cards"></div>
+    <button class="generate-btn" onclick="generate()">Gerar</button>
+  </section>
+
+  <!-- ── ALL TOOLS SECTION ── -->
+  <section class="tool-grid-section">
+    <h2>🎮 Todas as Ferramentas de Charadas – 25+ Geradores Grátis</h2>
+    <p>Oferecemos uma ampla gama de ferramentas de charadas para cada ocasião, faixa etária e tema. Clica em qualquer ferramenta para começar a jogar instantaneamente.</p>
+    <div class="tool-grid">
+      <a href="kids-charade-generator.html" class="tool-card"><span class="tool-icon">👦</span><span class="tool-name">Charadas para Crianças</span><span class="tool-desc">4-12 anos, palavras simples</span></a>
+      <a href="movie-charades.html" class="tool-card"><span class="tool-icon">🎬</span><span class="tool-name">Charadas de Filmes</span><span class="tool-desc">Títulos de filmes populares</span></a>
+      <a href="character-charades.html" class="tool-card"><span class="tool-icon">🦸</span><span class="tool-name">Charadas de Personagens</span><span class="tool-desc">Personagens famosos</span></a>
+      <a href="reverse-charades.html" class="tool-card"><span class="tool-icon">🔄</span><span class="tool-name">Charadas Invertidas</span><span class="tool-desc">O grupo representa, um adivinha</span></a>
+      <a href="christmas-charades.html" class="tool-card"><span class="tool-icon">🎄</span><span class="tool-name">Charadas de Natal</span><span class="tool-desc">Diversão temática natalina</span></a>
+      <a href="islamic-charades.html" class="tool-card"><span class="tool-icon">🕌</span><span class="tool-name">Charadas Islâmicas</span><span class="tool-desc">Palavras e valores islâmicos</span></a>
+      <a href="animal-charades.html" class="tool-card"><span class="tool-icon">🐾</span><span class="tool-name">Charadas de Animais</span><span class="tool-desc">Animais para representar</span></a>
+      <!-- PLACEHOLDER TOOLS -->
+      <a href="funny-charades.html" class="tool-card"><span class="tool-icon">😂</span><span class="tool-name">Charadas Divertidas</span><span class="tool-desc">Ideias hilariantes para festas</span></a>
+      <a href="hard-charades.html" class="tool-card"><span class="tool-icon">🧠</span><span class="tool-name">Charadas Difíceis</span><span class="tool-desc">Desafiadoras para adultos</span></a>
+      <a href="food-charades.html" class="tool-card"><span class="tool-icon">🍕</span><span class="tool-name">Charadas de Comida</span><span class="tool-desc">Pratos e ingredientes</span></a>
+      <a href="sports-charades.html" class="tool-card"><span class="tool-icon">⚽</span><span class="tool-name">Charadas Desportivas</span><span class="tool-desc">Desportos e atividades</span></a>
+      <a href="halloween-charades.html" class="tool-card"><span class="tool-icon">🎃</span><span class="tool-name">Charadas de Halloween</span><span class="tool-desc">Palavras e ações assustadoras</span></a>
+      <a href="birthday-charades.html" class="tool-card"><span class="tool-icon">🎂</span><span class="tool-name">Charadas de Aniversário</span><span class="tool-desc">Perfeitas para festas</span></a>
+      <a href="school-charades.html" class="tool-card"><span class="tool-icon">🏫</span><span class="tool-name">Charadas Escolares</span><span class="tool-desc">Tópicos seguros para a sala de aula</span></a>
+      <a href="emoji-charades.html" class="tool-card"><span class="tool-icon">😀</span><span class="tool-name">Charadas de Emojis</span><span class="tool-desc">Representa emojis</span></a>
+      <a href="bollywood-charades.html" class="tool-card"><span class="tool-icon">🎥</span><span class="tool-name">Charadas de Bollywood</span><span class="tool-desc">Títulos de filmes hindi</span></a>
+      <a href="bible-charades.html" class="tool-card"><span class="tool-icon">📖</span><span class="tool-name">Charadas Bíblicas</span><span class="tool-desc">Palavras e histórias bíblicas</span></a>
+      <a href="thanksgiving-charades.html" class="tool-card"><span class="tool-icon">🦃</span><span class="tool-name">Charadas de Ação de Graças</span><span class="tool-desc">Temática de feriado</span></a>
+      <a href="valentines-charades.html" class="tool-card"><span class="tool-icon">❤️</span><span class="tool-name">Charadas de Dia dos Namorados</span><span class="tool-desc">Palavras românticas</span></a>
+      <a href="summer-charades.html" class="tool-card"><span class="tool-icon">☀️</span><span class="tool-name">Charadas de Verão</span><span class="tool-desc">Praia e diversão ao ar livre</span></a>
+      <a href="superhero-charades.html" class="tool-card"><span class="tool-icon">🦸‍♂️</span><span class="tool-name">Charadas de Super-heróis</span><span class="tool-desc">Marvel, DC e mais</span></a>
+      <a href="nature-charades.html" class="tool-card"><span class="tool-icon">🌿</span><span class="tool-name">Charadas da Natureza</span><span class="tool-desc">Plantas, clima, ar livre</span></a>
+      <a href="occupation-charades.html" class="tool-card"><span class="tool-icon">👨‍⚕️</span><span class="tool-name">Charadas de Profissões</span><span class="tool-desc">Empregos e profissões</span></a>
+      <a href="fairy-tale-charades.html" class="tool-card"><span class="tool-icon">🧚</span><span class="tool-name">Charadas de Contos de Fadas</span><span class="tool-desc">Personagens de contos</span></a>
+      <a href="ramadan-charades.html" class="tool-card"><span class="tool-icon">🌙</span><span class="tool-name">Charadas de Ramadã</span><span class="tool-desc">Palavras especiais do Ramadã</span></a>
+    </div>
+  </section>
+
+  <!-- ── CHARADE WORD LISTS ── -->
+  <section class="content-section word-table-section">
+    <h2>Mais de 500 Ideias de Charadas por Categoria</h2>
+    <p>Abaixo está uma amostra das palavras e frases que o nosso gerador utiliza. Estas cobrem todos os níveis de dificuldade e temas para que o teu jogo continue emocionante da primeira à última ronda. O gerador escolhe aleatoriamente deste conjunto para que recebas sempre ideias frescas cada vez que clicares em Gerar.</p>
+
+    <div class="word-columns">
+      <div class="word-col">
+        <h4>🧒 Crianças (Fáceis)</h4>
+        <ul>
+          <li>Sapo a saltar</li>
+          <li>Cão a dormir</li>
+          <li>Avião a voar</li>
+          <li>A comer gelado</li>
+          <li>Peixe a nadar</li>
+          <li>A trepar uma árvore</li>
+          <li>Borboleta a dançar</li>
+          <li>A conduzir um carro de brinquedo</li>
+          <li>A regar plantas</li>
+          <li>A apanhar uma bola</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>😂 Divertidas / Festa</h4>
+        <ul>
+          <li>Sentado num cacto</li>
+          <li>A perseguir uma galinha</li>
+          <li>Dança de robô</li>
+          <li>A esgueirar-se de um bebé</li>
+          <li>Andar de pinguim</li>
+          <li>Parede invisível</li>
+          <li>Velho zangado</li>
+          <li>Corrida em câmara lenta</li>
+          <li>A montar um unicórnio</li>
+          <li>Gelado a derreter</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>🧠 Difíceis (Avançado)</h4>
+        <ul>
+          <li>Física quântica</li>
+          <li>Crash do mercado de ações</li>
+          <li>Inteligência artificial</li>
+          <li>Eclipse solar</li>
+          <li>Placas tectónicas</li>
+          <li>Escavação arqueológica</li>
+          <li>Fotossíntese</li>
+          <li>Bioluminescência</li>
+          <li>Universo paralelo</li>
+          <li>Onda gravitacional</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>🎬 Filmes</h4>
+        <ul>
+          <li>O Rei Leão</li>
+          <li>Homem-Aranha</li>
+          <li>Titanic</li>
+          <li>Parque Jurássico</li>
+          <li>Frozen</li>
+          <li>Os Vingadores</li>
+          <li>Sozinho em Casa</li>
+          <li>Toy Story</li>
+          <li>Matrix</li>
+          <li>Procurando Nemo</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>🐾 Animais</h4>
+        <ul>
+          <li>Elefante a beber</li>
+          <li>Cobra a rastejar</li>
+          <li>Macaco a trepar</li>
+          <li>Leão a rugir</li>
+          <li>Caranguejo a andar</li>
+          <li>Papagaio a falar</li>
+          <li>Cavalo a galopar</li>
+          <li>Tartaruga a esconder-se</li>
+          <li>Canguru a saltar</li>
+          <li>Pavão a exibir-se</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>🎄 Sazonais</h4>
+        <ul>
+          <li>A decorar a árvore</li>
+          <li>A abrir presentes</li>
+          <li>A construir um boneco de neve</li>
+          <li>Oração do Eid</li>
+          <li>A acender uma diya</li>
+          <li>Doce ou travessura</li>
+          <li>A esculpir uma abóbora</li>
+          <li>A soprar as velas de aniversário</li>
+          <li>A lançar confetis</li>
+          <li>A contar fogos de artifício</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TIPS SECTION ── -->
+  <section class="content-section">
+    <h2>🏆 Dicas de Pro para Ganhar nas Charadas</h2>
+    <p>Quer sejas um jogador iniciante ou um veterano das charadas, estas dicas vão ajudar-te a representar melhor, adivinhar mais rápido e divertir-te mais.</p>
+    <div class="tips-grid">
+      <div class="tip-card">
+        <h4>Começa pela Categoria</h4>
+        <p>Antes de representar, levanta os dedos para mostrar o número de palavras. Aponta para o teu pulso para "soa como". Isto acelera a adivinhação.</p>
+      </div>
+      <div class="tip-card">
+        <h4>Usa Todo o Teu Corpo</h4>
+        <p>Não uses apenas as mãos. A tua cara, postura e até a forma como andas podem comunicar emoção e significado claramente.</p>
+      </div>
+      <div class="tip-card">
+        <h4>Representa Palavra por Palavra</h4>
+        <p>Para frases com várias palavras, mostra o número de dedos por palavra e depois representa cada palavra uma de cada vez. A equipa aprende este ritmo rapidamente.</p>
+      </div>
+      <div class="tip-card">
+        <h4>Mantém a Energia Elevada</h4>
+        <p>O entusiasmo é contagiante. Mesmo que a tua pista não seja perfeita, representar com confiança leva a tua equipa à resposta correta.</p>
+      </div>
+      <div class="tip-card">
+        <h4>Usa Sinais de "Soa Como"</h4>
+        <p>Coloca a mão atrás da orelha para indicar "soa como" e depois representa uma palavra que rime ou seja semelhante. Muito útil para palavras difíceis.</p>
+      </div>
+      <div class="tip-card">
+        <h4>Define um Limite de Tempo</h4>
+        <p>Usa 60–90 segundos por turno. A pressão do tempo torna o jogo mais emocionante. Usa o temporizador do teu telemóvel ou uma aplicação de contagem regressiva.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── COMPARISON TABLE ── -->
+  <section class="content-section">
+    <h2>🆚 Charadas vs Outros Jogos de Festa</h2>
+    <p>Estás a perguntar-te como as charadas se comparam a outros jogos de festa populares? Aqui está uma comparação rápida para te ajudar a escolher o jogo certo para o teu próximo evento.</p>
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Jogo</th>
+          <th>Jogadores</th>
+          <th>Equipamento</th>
+          <th>Idade</th>
+          <th>Nível de Energia</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Charadas</td><td>4+</td><td>Nenhum (ou esta ferramenta)</td><td>4+</td><td>⚡⚡⚡ Alto</td></tr>
+        <tr><td>Pictionary</td><td>4+</td><td>Papel + caneta</td><td>8+</td><td>⚡⚡ Médio</td></tr>
+        <tr><td>Tabu</td><td>4+</td><td>Baralho de cartas</td><td>12+</td><td>⚡⚡ Médio</td></tr>
+        <tr><td>20 Perguntas</td><td>2+</td><td>Nenhum</td><td>6+</td><td>⚡ Baixo</td></tr>
+        <tr><td>Charadas Mudas</td><td>4+</td><td>Nenhum (ou esta ferramenta)</td><td>8+</td><td>⚡⚡⚡ Alto</td></tr>
+        <tr><td>Palavras Embaralhadas</td><td>2+</td><td>Papel + caneta</td><td>10+</td><td>⚡ Baixo</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ── HOW TO PLAY ── -->
+  <section class="how-to">
+    <h2>Como Jogar Charadas – Guia Completo</h2>
+    <p>As charadas são jogadas há mais de 200 anos e continuam a ser um dos jogos de festa mais populares do mundo. As regras são simples, mas o jogo cria risos intermináveis e momentos memoráveis. Aqui está um guia completo para jogadores novos e experientes.</p>
+
+    <p><strong>1. Dividam-se em duas equipas</strong><br>
+    Divide o teu grupo em duas equipas iguais. Cada equipa envia alternadamente um ator para a frente enquanto os outros adivinham.</p>
+
+    <p><strong>2. Gera a tua charada</strong><br>
+    Usa esta ferramenta para gerar uma charada aleatória. O ator lê a palavra em silêncio — os colegas de equipa não a devem ver.</p>
+
+    <p><strong>3. Mostra o sinal da categoria</strong><br>
+    Usa sinais de mão clássicos: dedos para o número de palavras, aponta para a orelha para "soa como", faz forma de livro para "livro", ou roda como um filme para "filme".</p>
+
+    <p><strong>4. Representa sem falar ou mexer os lábios</strong><br>
+    O ator usa apenas linguagem corporal, gestos e expressões. Sem sons, sem movimentos de lábios, sem escrever no ar.</p>
+
+    <p><strong>5. Define um temporizador de 60 segundos</strong><br>
+    Uma ronda = 60 segundos. Se a equipa adivinhar corretamente dentro do tempo, ganha um ponto. Se não, a outra equipa pode tentar.</p>
+
+    <p><strong>6. Rodem e repitam</strong><br>
+    Alternem no sentido dos ponteiros do relógio. Cada jogador representa pelo menos uma vez. Joga tantas rondas quanto quiseres — clica em Gerar para ideias ilimitadas.</p>
+
+    <p><strong>7. Usa o modo Ecrã Inteiro</strong><br>
+    Clica em Ecrã Inteiro para que o ator possa segurar o telemóvel e a palavra seja visível apenas para ele antes de a afastar do ecrã.</p>
+  </section>
+
+  <!-- ── BENEFITS ── -->
+  <section class="content-section">
+    <h2>Porquê Usar Este Gerador de Charadas?</h2>
+    <p>O nosso gerador de charadas foi criado para eliminar toda a preparação do teu jogo. Sem escrever cartões, sem imprimir listas, sem discussões sobre quem escolhe as palavras. Abre o site, carrega em Gerar e o teu jogo começa em segundos.</p>
+    <p>Ao contrário das listas de palavras básicas que encontras noutros lugares, esta ferramenta oferece <strong>vários modos</strong> (Crianças, Divertidas, Difíceis, Festa) para que possas ajustar a dificuldade e o tom ao teu grupo. O <strong>botão de Ecrã Inteiro</strong> transforma o teu telemóvel num cartão de jogo adequado que um jogador segura enquanto os outros adivinham. O <strong>botão Copiar</strong> permite-te partilhar a lista de palavras com jogadores remotos através do WhatsApp ou qualquer aplicação de mensagens para noites de jogos virtuais.</p>
+    <ul>
+      <li>🎉 Perfeito para festas, salas de aula e noites de jogos em família</li>
+      <li>👨‍👩‍👧 Adequado para crianças a partir dos 4 anos até adultos</li>
+      <li>⚡ Gera 1, 3, 5, 10 ou um número personalizado de charadas</li>
+      <li>📱 Otimizado para telemóveis com modo de jogo em ecrã inteiro</li>
+      <li>🎭 Melhora a criatividade, vocabulário e habilidades de comunicação</li>
+      <li>🌐 Disponível em vários idiomas</li>
+      <li>♾️ Mais de 500 ideias únicas, nunca se repetem</li>
+      <li>🔒 Sem login, sem anúncios durante o jogo, sem downloads</li>
+    </ul>
+  </section>
+
+  <!-- ── CHARADES HISTORY ── -->
+  <section class="content-section">
+    <h2>A História das Charadas</h2>
+    <p>As charadas originaram-se na França do século XVIII como um jogo de charadas escritas onde as pistas descreviam cada sílaba de uma palavra. No século XIX, evoluíram para o jogo de atuação física que conhecemos hoje, tornando-se especialmente populares na Inglaterra vitoriana como entretenimento de salão.</p>
+    <p>O jogo espalhou-se pelo mundo durante o século XX, ganhando destaque através de programas de televisão como <em>Charadas Mudas</em> na Índia e <em>Jogo do Nome das Celebridades</em> no Ocidente. Hoje, as charadas continuam a ser um dos cinco jogos de festa mais jogados globalmente e são usadas em salas de aula como uma atividade educativa para desenvolver habilidades de comunicação, vocabulário e pensamento criativo.</p>
+    <p>A versão digital — como este gerador — remove a única barreira que o jogo sempre teve: o tempo de preparação. Já não precisas de uma pilha de cartões escritos à mão. Um toque dá-te a próxima ronda instantaneamente.</p>
+  </section>
+
+  <!-- ── CATEGORIES SECTION ── -->
+  <section class="content-section">
+    <h2>Ideias de Charadas por Categoria</h2>
+
+    <h3>Charadas para Crianças (4–12 anos)</h3>
+    <p>As charadas para crianças usam ações e animais curtos e familiares que as crianças podem facilmente entender e representar. As palavras são mantidas em uma ou duas sílabas e focam-se em objetos do quotidiano, movimentos e criaturas simples. Os exemplos incluem saltar como um sapo, comer gelado, voar como um pássaro ou conduzir um carro. Estes prompts são projetados para manter as crianças envolvidas, a rir e em movimento sem qualquer frustração.</p>
+
+    <h3>Charadas Divertidas para Festas</h3>
+    <p>As charadas de festa levam o absurdo ao limite. As melhores risadas vêm de combinações inesperadas como "perseguir uma peruca a fugir", "espirro em câmara lenta" ou "elefante invisível na sala". O nosso modo divertido seleciona prompts que são inerentemente cómicos quando representados, tornando-os ideais para adultos, adolescentes e grupos mistos que querem manter a energia alta durante toda a noite.</p>
+
+    <h3>Charadas Difíceis para Adultos</h3>
+    <p>O modo difícil desafia os jogadores com conceitos abstratos, palavras compostas e frases de várias sílabas como "inteligência artificial", "onda gravitacional" ou "descoberta arqueológica". Estes são melhores para grupos competitivos que querem um verdadeiro desafio e muita discussão no processo de adivinhação.</p>
+
+    <h3>Charadas de Filmes</h3>
+    <p>As charadas de filmes usam títulos de filmes populares de Hollywood e Bollywood. Representar um título como "Parque Jurássico" ou "O Rei Leão" traz reconhecimento instantâneo na maioria dos grupos. Este modo é perfeito para amantes de cinema e funciona especialmente bem quando os jogadores usam o sinal de mão clássico de "rolo de filme" antes de representar.</p>
+  </section>
+
+  <!-- ── LANGUAGE GUIDE ── -->
+  <div class="lang-guide">
+    <h3>🌐 Guia de Versões de Idioma – Como Adicionar Mais Idiomas</h3>
+    <p>A barra de alternância de idioma no topo desta página permite que os utilizadores mudem para o seu idioma preferido. Para adicionar uma nova versão de idioma, cria uma subpasta como <code>/pt/</code> para português ou <code>/es/</code> para espanhol, coloca um <code>index.html</code> traduzido lá dentro e atualiza o atributo <code>lang</code> na tag HTML para corresponder (ex., <code>lang="pt"</code>).</p>
+    <p>Adiciona uma tag <code>hreflang</code> dentro do teu <code>&lt;head&gt;</code> para cada versão de idioma para que o Google as indexe separadamente. Exemplo:</p>
+    <p><code>&lt;link rel="alternate" hreflang="pt" href="https://charadegenerator.com/pt/" /&gt;</code><br>
+    <code>&lt;link rel="alternate" hreflang="en" href="https://charadegenerator.com/" /&gt;</code></p>
+    <p>Traduz também as listas de palavras de charadas no teu ficheiro JS. Mantém um array de palavras separado para cada idioma e carrega o correto com base no URL ou num cookie de idioma. <strong>Idiomas a priorizar:</strong> Português (grande volume de pesquisa), Espanhol, Francês, Alemão, Hindi e Árabe.</p>
+  </div>
+
+  <!-- ── AUTHOR NOTE ── -->
+  <div class="author-bio-note">
+    <strong>📝 Nota do Autor (para a tua página 'Sobre Nós'):</strong>
+    Adiciona uma secção na tua página Sobre Nós como:<br><br>
+    <em>"Olá, sou o [Teu Nome], um entusiasta de jogos e programador de [Cidade]. Construí o Gerador de Charadas em [Ano] porque queria uma ferramenta simples e gratuita que as famílias pudessem usar sem qualquer configuração. Testo pessoalmente cada lista de palavras com a minha própria família e atualizo a ferramenta regularmente com base no feedback dos utilizadores."</em><br><br>
+    Inclui uma foto real, pelo menos o teu primeiro nome e um link para o teu perfil social ou e-mail. Isto cria sinais de confiança E-E-A-T do Google e melhora significativamente as tuas hipóteses de aprovação do AdSense.
+  </div>
+
+  <!-- ── HOW TO USE ── -->
+  <section class="content-section">
+    <h2>Exemplo: O Que Obténs ao Clicar em Gerar</h2>
+    <p>Este gerador de charadas cria palavras ou frases aleatórias que os jogadores podem representar instantaneamente. O número de charadas que recebes depende do que selecionas acima.</p>
+    <p><strong>Se selecionares 1:</strong> Um cartão de charada aparece no ecrã — ideal para jogos rápidos um contra um.<br>
+    <strong>Se selecionares 3:</strong> Três charadas aparecem — usa cada uma para uma ronda e vê qual é a mais divertida de representar.<br>
+    <strong>Se selecionares 5 ou 10:</strong> Várias charadas para rondas estendidas sem teres de clicar em Gerar novamente.<br>
+    <strong>Opção personalizada:</strong> Insere qualquer número até 12 para uma duração de jogo totalmente personalizada.</p>
+    <h3>Exemplos de Charadas que Podes Obter</h3>
+    <ul>
+      <li>🎭 A escalar uma montanha</li>
+      <li>🎭 A cozinhar biryani</li>
+      <li>🎭 A conduzir um autocarro escolar</li>
+      <li>🎭 A voar como um super-herói</li>
+      <li>🎭 A representar um professor nervoso</li>
+      <li>🎭 A construir um castelo de areia</li>
+      <li>🎭 A montar um camelo no deserto</li>
+      <li>🎭 A jogar críquete à chuva</li>
+      <li>🎭 A dormir numa nuvem</li>
+      <li>🎭 A domar um leão selvagem</li>
+    </ul>
+    <p>Usa o botão <strong>Copiar Charadas</strong> para copiar instantaneamente todas as ideias geradas e partilhá-las através do WhatsApp, Messenger ou qualquer aplicação de chat para noites de jogos virtuais. A opção <strong>Ecrã Inteiro</strong> facilita o jogo em grupo ao exibir a palavra de forma proeminente em todo o ecrã.</p>
+  </section>
+
+  <!-- ── FAQ ── -->
+  <section class="content-section">
+    <h2>Perguntas Frequentes</h2>
+
+    <p><strong>O que é um gerador de charadas?</strong><br>
+    Um gerador de charadas é uma ferramenta online que escolhe palavras ou frases aleatórias para os jogadores representarem. Em vez de escreveres a tua própria lista, a ferramenta dá-te ideias ilimitadas classificadas por categoria como crianças, divertidas, difíceis ou temas de festa. Isto elimina toda a preparação e permite que o jogo comece instantaneamente.</p>
+
+    <p><strong>Este gerador de charadas é gratuito?</strong><br>
+    Sim, completamente gratuito. Sem necessidade de conta, sem downloads, sem limites de tempo. Gera ideias de charadas ilimitadas durante o tempo que quiseres.</p>
+
+    <p><strong>As crianças podem usar este jogo?</strong><br>
+    Absolutamente. O modo Crianças gera palavras simples e adequadas à idade para crianças a partir dos 4 anos. Todos os prompts são adequados para a família e seguros para salas de aula e casa.</p>
+
+    <p><strong>Quantas ideias de charadas existem nesta ferramenta?</strong><br>
+    Mais de 500 prompts únicos em todas as categorias. O gerador escolhe aleatoriamente deste conjunto para que raramente vejas a mesma palavra duas vezes numa sessão.</p>
+
+    <p><strong>Posso jogar charadas no meu telemóvel?</strong><br>
+    Sim. Esta ferramenta está totalmente otimizada para telemóveis. O modo de Ecrã Inteiro é especialmente útil quando seguras o teu telemóvel para que o grupo possa ver claramente a palavra durante o jogo.</p>
+
+    <p><strong>O que são charadas invertidas?</strong><br>
+    Nas charadas invertidas, todo o grupo representa simultaneamente enquanto uma pessoa adivinha. É mais barulhento, mais rápido e mais caótico do que as charadas clássicas — ideal para grandes festas.</p>
+
+    <p><strong>Posso usar isto para noites de jogos virtuais?</strong><br>
+    Sim. Gera as tuas charadas, usa o botão Copiar para as colar no chat do teu grupo e todos podem jogar remotamente através de videochamada. Funciona muito bem no Zoom, Google Meet ou videochamada do WhatsApp.</p>
+
+    <p><strong>Preciso de descarregar alguma coisa?</strong><br>
+    Não. Tudo funciona diretamente no teu navegador. Sem aplicação, sem plugin, sem instalação.</p>
+
+    <p><strong>Esta ferramenta está disponível noutros idiomas?</strong><br>
+    Estamos a adicionar versões em vários idiomas. As versões em português, espanhol, francês, alemão, hindi e árabe estão disponíveis. Usa a barra de idiomas no topo da página para mudar quando estiverem disponíveis.</p>
+
+    <p><strong>Como é que isto é diferente de um jogo de cartas de charadas físico?</strong><br>
+    Os jogos de cartas físicos têm uma lista de palavras fixa que é memorizada com o tempo e precisam de ser comprados. Este gerador digital é gratuito, tem um conjunto de palavras em constante crescimento, permite-te personalizar a dificuldade e a categoria, e nunca precisa de cartas de substituição.</p>
+  </section>
+
+  <!-- OUTRO -->
+  <section class="content-section">
+    <h2>Começa a Jogar Charadas Agora Mesmo</h2>
+    <p>As charadas são um dos melhores jogos para unir as pessoas. Não precisam de equipamento, não custam nada, funcionam em qualquer idioma e criam risos genuínos que nenhum jogo de ecrã pode replicar. Quer estejas numa festa de aniversário, numa sala de aula, numa reunião familiar ou num encontro virtual, esta ferramenta ajuda-te a começar a jogar em menos de dez segundos.</p>
+    <p>Rola para cima, clica em Gerar e desfruta de diversão ilimitada com os teus amigos e família. 🎉</p>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <a href="about-us.html">Sobre Nós</a>
+  <a href="contact-us.html">Contacta-nos</a>
+  <a href="privacy-policy.html">Política de Privacidade</a>
+  <a href="terms-and-conditions.html">Termos e Condições</a>
+  <a href="disclaimer.html">Isenção de Responsabilidade</a>
+  <p>© CharadeGenerator 2026</p>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
