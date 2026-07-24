@@ -162,6 +162,83 @@ const partyAnimals = [
   "Sloth arriving four hours late"
 ];
 
+// ── TIMER STATE ──────────────────────────────────────────────────────────────
+const TIMER_TOTAL = 30;
+let timeLeft = TIMER_TOTAL;
+let timerInterval = null;
+let timerRunning = false;
+
+// ── TIMER FUNCTIONS ──────────────────────────────────────────────────────────
+function drawTimer(seconds) {
+  const radius = 44;
+  const circ = 2 * Math.PI * radius;
+  const dash = (seconds / TIMER_TOTAL) * circ;
+  const colour = seconds > 15 ? '#40c057' : seconds > 8 ? '#f59f00' : '#fa5252';
+  const el = document.getElementById('timerRing');
+  if (!el) return;
+  el.innerHTML = `
+    <svg width="110" height="110" viewBox="0 0 110 110">
+      <circle cx="55" cy="55" r="${radius}" fill="none" stroke="#e9ecef" stroke-width="8"/>
+      <circle cx="55" cy="55" r="${radius}" fill="none" stroke="${colour}" stroke-width="8"
+        stroke-linecap="round"
+        stroke-dasharray="${dash} ${circ}"
+        stroke-dashoffset="0"
+        transform="rotate(-90 55 55)"
+        style="transition:stroke-dasharray .35s ease,stroke .35s"/>
+      <text x="55" y="50" text-anchor="middle" font-size="26" font-weight="700"
+        fill="${colour}" font-family="system-ui,sans-serif">${seconds}</text>
+      <text x="55" y="68" text-anchor="middle" font-size="11" fill="#868e96"
+        font-family="system-ui,sans-serif">sec</text>
+    </svg>`;
+}
+
+function startTimer() {
+  if (timerRunning) return;
+  timerRunning = true;
+  updateTimerBtn();
+  timerInterval = setInterval(() => {
+    timeLeft--;
+    drawTimer(timeLeft);
+    if (timeLeft <= 0) timeUp();
+  }, 1000);
+}
+
+function pauseTimer() {
+  clearInterval(timerInterval);
+  timerRunning = false;
+  updateTimerBtn();
+}
+
+function resetTimer(autoStart) {
+  clearInterval(timerInterval);
+  timerRunning = false;
+  timeLeft = TIMER_TOTAL;
+  drawTimer(timeLeft);
+  hideTimeOver();
+  updateTimerBtn();
+  if (autoStart) startTimer();
+}
+
+function timeUp() {
+  pauseTimer();
+  showTimeOver();
+}
+
+function updateTimerBtn() {
+  const btn = document.getElementById('timerToggleBtn');
+  if (btn) btn.textContent = timerRunning ? '⏸ Pause' : '▶ Start';
+}
+
+function showTimeOver() {
+  const el = document.getElementById('timeOverOverlay');
+  if (el) el.style.display = 'flex';
+}
+
+function hideTimeOver() {
+  const el = document.getElementById('timeOverOverlay');
+  if (el) el.style.display = 'none';
+}
+
 // ── State ─────────────────────────────────────────────────────────────────────
 let currentCount = 1;
 let currentMode  = "default";
@@ -241,6 +318,9 @@ function generate() {
     container.appendChild(card);
   });
 
+  // Reset and start timer on generate
+  resetTimer(true);
+
   // Scroll to cards smoothly
   container.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
@@ -276,4 +356,5 @@ function toggleMenu() {
 // ── Init ──────────────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
   setCount(1);
+  drawTimer(TIMER_TOTAL);
 });
