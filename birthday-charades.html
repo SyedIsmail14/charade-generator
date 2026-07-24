@@ -89,10 +89,91 @@
     .rel-card:hover{box-shadow:0 4px 16px rgba(230,73,128,.15);transform:translateY(-2px);}
     .rel-card .ri{font-size:22px;}
     .rel-card .rn{font-weight:600;font-size:12px;}
+
+    /* ── GAME LAYOUT ────────────────────────────────── */
+    .game-layout{display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap;}
+
+    /* LEFT – timer */
+    .timer-col{display:flex;flex-direction:column;align-items:center;gap:10px;flex-shrink:0;min-width:110px;}
+    #timerRing{display:block;}
+    .timer-btn-row{display:flex;flex-direction:column;gap:8px;width:100%;}
+    #timerToggleBtn{background:#e64980;color:#fff;border:none;border-radius:8px;padding:8px 0;font-size:13px;font-weight:700;cursor:pointer;width:100%;transition:background .2s;}
+    #timerToggleBtn:hover{background:#c2255c;}
+    #timerResetBtn{background:#fff0f6;color:#e64980;border:1px solid #fcc2d7;border-radius:8px;padding:7px 0;font-size:13px;font-weight:600;cursor:pointer;width:100%;transition:background .2s;}
+    #timerResetBtn:hover{background:#ffe0eb;}
+
+    /* RIGHT – content */
+    .game-content{flex:1;min-width:240px;}
+
+    /* cards */
+    #cards{margin-bottom:14px;min-height:60px;}
+
+    /* round picker */
+    .round-pick{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;}
+    .round-btn{background:#fff0f6;border:2px solid #fcc2d7;border-radius:8px;padding:8px 22px;font-size:16px;font-weight:700;cursor:pointer;transition:all .2s;color:#e64980;}
+    .round-btn.active,.round-btn:hover{background:#e64980;border-color:#e64980;color:#fff;}
+
+    /* ── TIME OVER OVERLAY ──────────────────────────── */
+    #timeOverOverlay{display:none;position:fixed;inset:0;background:rgba(10,5,0,.85);z-index:9999;align-items:center;justify-content:center;flex-direction:column;gap:20px;animation:fadeInBG .3s ease;}
+    @keyframes fadeInBG{from{opacity:0}to{opacity:1}}
+
+    .timeover-box{background:#fff;border-radius:22px;padding:40px 32px;text-align:center;box-shadow:0 28px 70px rgba(0,0,0,.4);max-width:340px;width:90%;animation:popIn .4s cubic-bezier(.34,1.56,.64,1);}
+    @keyframes popIn{from{transform:scale(.6);opacity:0}to{transform:scale(1);opacity:1}}
+
+    .timeover-emoji{font-size:64px;line-height:1;margin-bottom:10px;}
+    .timeover-box h2{margin:0 0 6px;font-size:30px;color:#e64980;letter-spacing:1px;text-transform:uppercase;}
+    .timeover-box p{color:#868e96;margin:0 0 24px;font-size:15px;}
+    .timeover-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+    .btn-restart{background:#e64980;color:#fff;border:none;border-radius:10px;padding:13px 26px;font-size:15px;font-weight:700;cursor:pointer;transition:background .2s,transform .15s;}
+    .btn-restart:hover{background:#c2255c;transform:scale(1.05);}
+    .btn-next{background:#40c057;color:#fff;border:none;border-radius:10px;padding:13px 26px;font-size:15px;font-weight:700;cursor:pointer;transition:background .2s,transform .15s;}
+    .btn-next:hover{background:#2f9e44;transform:scale(1.05);}
+
+    /* ── MODE SELECT ── */
+    .mode-select{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;}
+    .mode-btn{background:#fff0f6;border:2px solid #fcc2d7;border-radius:8px;padding:8px 18px;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;color:#e64980;}
+    .mode-btn.active,.mode-btn:hover{background:#e64980;border-color:#e64980;color:#fff;}
+
+    /* ── TOP CONTROLS ── */
+    .top-controls{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px;align-items:center;}
+    .top-controls button{background:#fff;border:2px solid #e64980;border-radius:8px;padding:6px 16px;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;color:#e64980;}
+    .top-controls button:hover{background:#e64980;color:#fff;}
+    .copy-msg{display:none;color:#40c057;font-weight:700;font-size:14px;}
+
+    /* ── GENERATE BUTTON ── */
+    .generate-btn{background:#e64980;color:#fff;border:none;border-radius:10px;padding:14px 40px;font-size:18px;font-weight:700;cursor:pointer;transition:all .2s;margin-top:6px;}
+    .generate-btn:hover{background:#c2255c;transform:scale(1.02);}
+
+    /* ── CARDS ── */
+    .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin-bottom:16px;width:100%;}
+    .card{background:#fff;border:2px solid #fcc2d7;border-radius:12px;padding:18px 16px;display:flex;align-items:center;gap:12px;transition:box-shadow .2s;}
+    .card:hover{box-shadow:0 4px 16px rgba(230,73,128,.12);}
+    .card-emoji{font-size:28px;}
+    .card p{margin:0;font-size:16px;font-weight:500;color:#222;}
+
+    .seo-text{font-size:16px;line-height:1.7;color:#444;}
+    .content-section{margin:40px 0;}
+    .how-to{background:#fff0f6;padding:24px 28px;border-radius:12px;margin:32px 0;}
+    .how-to p{font-size:15px;line-height:1.8;}
+    .category-title{font-size:26px;margin-bottom:4px;}
+    .subtitle{color:#666;font-size:16px;margin-top:0;}
+
+    @media(max-width:480px){.game-layout{flex-direction:row;}.timer-col{min-width:90px;}}
   </style>
 </head>
 <body>
-
+<!-- ── TIME OVER OVERLAY ─────────────────────────────────── -->
+<div id="timeOverOverlay">
+  <div class="timeover-box">
+    <div class="timeover-emoji">⏰</div>
+    <h2>Time's Up!</h2>
+    <p>30 seconds are over — did they guess the birthday activity?</p>
+    <div class="timeover-actions">
+      <button class="btn-restart" onclick="resetTimer(true)">▶ Play Again</button>
+      <button class="btn-next" onclick="generate()">⏭ Next Card</button>
+    </div>
+  </div>
+</div>
 
 <header class="header">
   <div class="header-inner">
@@ -133,34 +214,49 @@
     Birthday charades works for every age — young children love acting out cake and presents, teens enjoy party game challenges, and adults will laugh at milestone birthday reactions and party planning disasters. Pick your party mode, click Generate, and the celebration begins instantly on any device.
   </p>
 
+  <!-- GAME AREA -->
   <section class="tool" id="gameArea">
     <h2 class="category-title">Birthday Charades 🎂</h2>
-    <p class="subtitle">Click Generate to get a birthday charade 🎂</p>
+    <p class="subtitle">Click Generate to get a birthday charade to act out 🎂</p>
+
     <div class="top-controls">
       <button id="copyBtn" onclick="copyCharades()">📋 Copy</button>
       <button onclick="toggleFullScreen()">⛶ Full Screen</button>
       <span id="copyMsg" class="copy-msg">Copied!</span>
     </div>
-    <div class="quick-pick">
-      <button onclick="setCount(1)">1</button>
-      <button onclick="setCount(3)">3</button>
-      <button onclick="setCount(5)">5</button>
-      <button onclick="setCount(10)">10</button>
-      <button onclick="showCustom()">Custom</button>
-    </div>
+
     <div class="mode-select">
-      <button class="mode-btn active" data-mode="all"   onclick="setMode('all')">All</button>
-      <button class="mode-btn"        data-mode="kids"  onclick="setMode('kids')">Kids</button>
-      <button class="mode-btn"        data-mode="party" onclick="setMode('party')">Party</button>
-      <button class="mode-btn"        data-mode="adult" onclick="setMode('adult')">Adult</button>
-      <button class="mode-btn"        data-mode="funny" onclick="setMode('funny')">Funny</button>
+      <button class="mode-btn active" data-mode="all" onclick="setMode('all')">All</button>
+      <button class="mode-btn" data-mode="kids" onclick="setMode('kids')">Kids</button>
+      <button class="mode-btn" data-mode="party" onclick="setMode('party')">Party</button>
+      <button class="mode-btn" data-mode="adult" onclick="setMode('adult')">Adult</button>
+      <button class="mode-btn" data-mode="funny" onclick="setMode('funny')">Funny</button>
     </div>
-    <div id="customBox" class="custom-box hidden">
-      <input type="number" id="customInput" min="1" max="12" placeholder="Enter number">
-      <button onclick="applyCustom()">Apply</button>
+
+    <!-- round picker 1 / 2 / 3 -->
+    <div class="round-pick">
+      <button class="round-btn active" data-round="1" onclick="setRound(1)">1</button>
+      <button class="round-btn" data-round="2" onclick="setRound(2)">2</button>
+      <button class="round-btn" data-round="3" onclick="setRound(3)">3</button>
     </div>
-    <div id="cards" class="cards"></div>
-    <button class="generate-btn" onclick="generate()">Generate</button>
+
+    <!-- GAME LAYOUT: Timer LEFT | Cards RIGHT -->
+    <div class="game-layout">
+      <!-- LEFT — countdown ring -->
+      <div class="timer-col">
+        <div id="timerRing"></div>
+        <div class="timer-btn-row">
+          <button id="timerToggleBtn" onclick="timerRunning ? pauseTimer() : startTimer()">▶ Start</button>
+          <button id="timerResetBtn" onclick="resetTimer(false)">↺ Reset</button>
+        </div>
+      </div>
+
+      <!-- RIGHT — cards + generate -->
+      <div class="game-content">
+        <div id="cards" class="cards"></div>
+        <button class="generate-btn" onclick="generate()">🎂 Generate</button>
+      </div>
+    </div>
   </section>
 
   <div class="age-guide">
@@ -338,7 +434,7 @@
     <p><strong>2. Click Generate</strong><br>Hit Generate and birthday charades appear instantly. Let the birthday person go first — they read the card privately while everyone else looks away.</p>
     <p><strong>3. Use Full Screen</strong><br>Switch to Full Screen so only the actor sees the prompt. At a party, the glowing phone screen in someone's hands already creates excitement before the acting even starts.</p>
     <p><strong>4. Act the birthday moment fully</strong><br>Birthday charades reward emotional acting. Show the joy, embarrassment, surprise, or disappointment of the birthday moment as much as the physical action. Emotion communicates birthday context faster than mime alone.</p>
-    <p><strong>5. Set a 60-second timer</strong><br>Birthday charades moves fast — most charades get guessed within 30 seconds at parties because the theme is so familiar to everyone. Use 90 seconds for Adult and Funny mode charades.</p>
+    <p><strong>5. Set a 30-second timer</strong><br>Birthday charades moves fast — most charades get guessed within 30 seconds at parties because the theme is so familiar to everyone. Use 60 seconds for Adult and Funny mode charades.</p>
     <p><strong>6. Celebrate correct guesses</strong><br>At a birthday party, celebrate every correct guess like a mini victory — a cheer, a clap, a confetti throw. The celebration energy compounds throughout the game and keeps party spirits high.</p>
     <p><strong>7. Keep playing until the cake arrives</strong><br>Birthday charades fills time perfectly between party activities. Click Generate for unlimited charades and keep the game going until the next birthday tradition takes over.</p>
   </section>
