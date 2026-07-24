@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bollywood Charades Generator – 100+ Hindi Film Ideas to Act Out Free</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Free Bollywood Charades Generator with 100+ Hindi film prompts. Act out Bollywood movies, songs, dances and iconic scenes. Perfect for Desi families, parties and film lovers. No signup needed.">
+
+  <link rel="icon" type="image/x-icon" href="/assests/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assests/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assests/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assests/favicon-48x48.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assests/apple-touch-icon-180x180.png">
+  <link rel="apple-touch-icon" href="/assests/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assests/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assests/android-chrome-512x512.png">
+
+  <link rel="alternate" hreflang="en" href="https://charadegenerator.com/bollywood-charades.html" />
+  <link rel="alternate" hreflang="hi" href="https://charadegenerator.com/hi/bollywood-charades.html" />
+  <link rel="alternate" hreflang="ur" href="https://charadegenerator.com/ur/bollywood-charades.html" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Bollywood Charades Generator",
+        "url": "https://charadegenerator.com/bollywood-charades.html",
+        "description": "Free online Bollywood charades generator with 100+ Hindi film prompts covering movies, songs, dances, iconic scenes and famous dialogues.",
+        "applicationCategory": "GameApplication",
+        "operatingSystem": "Any",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type":"Question","name":"What is Bollywood charades?","acceptedAnswer":{"@type":"Answer","text":"Bollywood charades is a Hindi film-themed party game where players act out Bollywood movies, songs, dances and iconic scenes without speaking while others guess. Perfect for Desi gatherings, mehndi nights and family parties."}},
+          {"@type":"Question","name":"How long is each round in the timer?","acceptedAnswer":{"@type":"Answer","text":"Each charades round is 30 seconds on the built-in countdown timer. The timer starts automatically when you generate a new card and shows a colour-coded ring going from green to amber to red."}},
+          {"@type":"Question","name":"Is this Bollywood charades generator free?","acceptedAnswer":{"@type":"Answer","text":"Yes — completely free with no signup, no download, no time limit. Generate unlimited Bollywood charade prompts for any Desi party or family gathering."}}
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type":"ListItem","position":1,"name":"Home","item":"https://charadegenerator.com/"},
+          {"@type":"ListItem","position":2,"name":"Bollywood Charades","item":"https://charadegenerator.com/bollywood-charades.html"}
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ── Bollywood accent ───────────────────────────── */
+    :root { --accent:#e65100; --accent-light:#fff8e1; --accent-border:#ffe082; }
+
+    .lang-bar{background:var(--accent-light);border-bottom:1px solid var(--accent-border);padding:6px 16px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:13px;}
+    .lang-bar span{color:#555;font-weight:600;}
+    .lang-bar a{text-decoration:none;color:var(--accent);padding:2px 8px;border-radius:4px;transition:background .2s;}
+    .lang-bar a:hover{background:#fff3e0;}
+    .lang-bar a.active{background:var(--accent);color:#fff;}
+
+    .stats-bar{display:flex;gap:24px;flex-wrap:wrap;background:linear-gradient(135deg,#e65100 0%,#ff6f00 50%,#ffa000 100%);border-radius:12px;padding:20px 24px;margin:24px 0;color:#fff;}
+    .stat-item{text-align:center;flex:1;min-width:100px;}
+    .stat-num{font-size:28px;font-weight:700;}
+    .stat-label{font-size:12px;opacity:.9;margin-top:2px;}
+
+    /* ── GAME LAYOUT ────────────────────────────────── */
+    .game-layout{display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap;}
+
+    /* LEFT – timer */
+    .timer-col{display:flex;flex-direction:column;align-items:center;gap:10px;flex-shrink:0;min-width:110px;}
+    #timerRing{display:block;}
+    .timer-btn-row{display:flex;flex-direction:column;gap:8px;width:100%;}
+    #timerToggleBtn{background:#e65100;color:#fff;border:none;border-radius:8px;padding:8px 0;font-size:13px;font-weight:700;cursor:pointer;width:100%;transition:background .2s;}
+    #timerToggleBtn:hover{background:#bf360c;}
+    #timerResetBtn{background:#fff3e0;color:#bf360c;border:1px solid var(--accent-border);border-radius:8px;padding:7px 0;font-size:13px;font-weight:600;cursor:pointer;width:100%;transition:background .2s;}
+    #timerResetBtn:hover{background:#ffe0b2;}
+
+    /* RIGHT – content */
+    .game-content{flex:1;min-width:240px;}
+
+    /* cards FIRST, above generate */
+    #cards{margin-bottom:14px;min-height:60px;}
+
+    /* round picker */
+    .round-pick{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;}
+    .round-btn{background:#fff3e0;border:2px solid var(--accent-border);border-radius:8px;padding:8px 22px;font-size:16px;font-weight:700;cursor:pointer;transition:all .2s;color:#e65100;}
+    .round-btn.active,.round-btn:hover{background:var(--accent);border-color:var(--accent);color:#fff;}
+
+    /* ── TIME OVER OVERLAY ──────────────────────────── */
+    #timeOverOverlay{display:none;position:fixed;inset:0;background:rgba(10,5,0,.85);z-index:9999;align-items:center;justify-content:center;flex-direction:column;gap:20px;animation:fadeInBG .3s ease;}
+    @keyframes fadeInBG{from{opacity:0}to{opacity:1}}
+
+    .timeover-box{background:#fff;border-radius:22px;padding:40px 32px;text-align:center;box-shadow:0 28px 70px rgba(0,0,0,.4);max-width:340px;width:90%;animation:popIn .4s cubic-bezier(.34,1.56,.64,1);}
+    @keyframes popIn{from{transform:scale(.6);opacity:0}to{transform:scale(1);opacity:1}}
+
+    .timeover-emoji{font-size:64px;line-height:1;margin-bottom:10px;}
+    .timeover-box h2{margin:0 0 6px;font-size:30px;color:#e65100;letter-spacing:1px;text-transform:uppercase;}
+    .timeover-box p{color:#868e96;margin:0 0 24px;font-size:15px;}
+    .timeover-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+    .btn-restart{background:#e65100;color:#fff;border:none;border-radius:10px;padding:13px 26px;font-size:15px;font-weight:700;cursor:pointer;transition:background .2s,transform .15s;}
+    .btn-restart:hover{background:#bf360c;transform:scale(1.05);}
+    .btn-next{background:#40c057;color:#fff;border:none;border-radius:10px;padding:13px 26px;font-size:15px;font-weight:700;cursor:pointer;transition:background .2s,transform .15s;}
+    .btn-next:hover{background:#2f9e44;transform:scale(1.05);}
+
+    /* content sections */
+    .word-columns{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;margin-top:16px;}
+    .word-col h4{margin:0 0 8px;font-size:14px;text-transform:uppercase;letter-spacing:.5px;color:var(--accent);}
+    .word-col ul{margin:0;padding-left:18px;font-size:14px;line-height:1.9;color:#333;}
+    .tips-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-top:16px;}
+    .tip-card{background:var(--accent-light);border-left:4px solid var(--accent);border-radius:8px;padding:14px 16px;}
+    .tip-card h4{margin:0 0 6px;font-size:15px;}
+    .tip-card p{margin:0;font-size:13px;color:#555;line-height:1.6;}
+    .diff-table{width:100%;border-collapse:collapse;font-size:14px;margin-top:16px;}
+    .diff-table th{background:var(--accent);color:#fff;padding:10px 14px;text-align:left;}
+    .diff-table td{padding:10px 14px;border-bottom:1px solid #eee;}
+    .diff-table tr:nth-child(even) td{background:var(--accent-light);}
+    .age-guide{background:var(--accent-light);border:1px solid var(--accent-border);border-radius:10px;padding:20px 24px;margin:24px 0;}
+    .age-guide h3{margin-top:0;color:var(--accent);}
+    .age-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px;}
+    .age-card{flex:1;min-width:130px;background:#fff;border:1px solid var(--accent-border);border-radius:8px;padding:12px;text-align:center;font-size:13px;}
+    .age-card strong{display:block;font-size:15px;margin-bottom:4px;}
+    .decade-box{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:14px;margin-top:16px;}
+    .decade-card{background:#fff;border:2px solid var(--accent);border-radius:10px;padding:16px 12px;text-align:center;}
+    .decade-card .dy{font-size:20px;font-weight:800;color:var(--accent);margin-bottom:4px;}
+    .decade-card p{margin:0;font-size:12px;color:#555;line-height:1.5;}
+    .related-tools{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:12px;margin-top:16px;}
+    .rel-card{background:#fff;border:1px solid #dde4f5;border-radius:10px;padding:12px 10px;text-align:center;text-decoration:none;color:#222;font-size:13px;font-weight:500;transition:box-shadow .2s,transform .15s;display:flex;flex-direction:column;align-items:center;gap:5px;}
+    .rel-card:hover{box-shadow:0 4px 16px rgba(230,81,0,.15);transform:translateY(-2px);}
+    .rel-card .ri{font-size:22px;}
+    .rel-card .rn{font-weight:600;font-size:12px;}
+
+    @media(max-width:480px){.game-layout{flex-direction:row;}.timer-col{min-width:90px;}}
+  </style>
+</head>
+<body>
+
+<!-- ── TIME OVER OVERLAY ─────────────────────────────────── -->
+<div id="timeOverOverlay">
+  <div class="timeover-box">
+    <div class="timeover-emoji">🎬</div>
+    <h2>Time's Up!</h2>
+    <p>30 seconds are over — did they guess the Bollywood film?</p>
+    <div class="timeover-actions">
+      <button class="btn-restart" onclick="resetTimer(true)">▶ Play Again</button>
+      <button class="btn-next"    onclick="generate()">⏭ Next Card</button>
+    </div>
+  </div>
+</div>
+
+<div class="lang-bar">
+  <span>🌐 Language:</span>
+  <a href="/bollywood-charades.html" class="active">English</a>
+  <a href="/hi/bollywood-charades.html">हिंदी</a>
+  <a href="/ur/bollywood-charades.html">اردو</a>
+  <a href="/ar/bollywood-charades.html">العربية</a>
+  <a href="/es/bollywood-charades.html">Español</a>
+  <a href="/fr/bollywood-charades.html">Français</a>
+</div>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="logo"><a href="https://charadegenerator.com/" class="logo-link">🎭 <strong>Charades</strong>Generator</a></div>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <nav class="nav-desktop">
+      <a href="kids-charade-generator.html"><button>Kids Charades</button></a>
+      <a href="movie-charades.html"><button>Movie Charades</button></a>
+      <a href="character-charades.html"><button>Character Charades</button></a>
+      <a href="reverse-charades.html"><button>Reverse Charades</button></a>
+      <a href="christmas-charades.html"><button>Christmas Charades</button></a>
+      <a href="islamic-charades.html"><button>Islamic Charades</button></a>
+      <a href="animal-charades.html"><button>Animal Charades</button></a>
+    </nav>
+  </div>
+  <nav id="navMobile" class="nav-mobile">
+    <a href="kids-charade-generator.html"><button>Kids Charades</button></a>
+    <a href="movie-charades.html"><button>Movie Charades</button></a>
+    <a href="character-charades.html"><button>Character Charades</button></a>
+    <a href="reverse-charades.html"><button>Reverse Charades</button></a>
+    <a href="christmas-charades.html"><button>Christmas Charades</button></a>
+    <a href="islamic-charades.html"><button>Islamic Charades</button></a>
+    <a href="animal-charades.html"><button>Animal Charades</button></a>
+  </nav>
+</header>
+
+<main class="main">
+
+  <h1>Bollywood Charades Generator – 100+ Hindi Film Ideas to Act Out Free</h1>
+  <p class="seo-text">🎥 Play instantly • 30-sec timer • 100+ Bollywood prompts • 6 Hindi film categories</p>
+
+  <p class="seo-text">
+    Celebrate the magic of Hindi cinema with this free Bollywood Charades Generator — now with a built-in <strong>30-second countdown timer</strong> that auto-starts with every card and turns every round into a proper game. Act out iconic Bollywood movies, legendary songs, famous dance sequences, and unforgettable scenes before time runs out!
+  </p>
+
+  <div class="stats-bar">
+    <div class="stat-item"><div class="stat-num">100+</div><div class="stat-label">Bollywood Prompts</div></div>
+    <div class="stat-item"><div class="stat-num">30</div><div class="stat-label">Seconds Per Round</div></div>
+    <div class="stat-item"><div class="stat-num">6</div><div class="stat-label">Decades Covered</div></div>
+    <div class="stat-item"><div class="stat-num">100%</div><div class="stat-label">Free to Play</div></div>
+  </div>
+
+  <!-- ── GAME SECTION ──────────────────────────────────── -->
+  <section class="tool" id="gameArea">
+    <h2 class="category-title">Bollywood Charades 🎥</h2>
+    <p class="subtitle">Pick a mode, pick rounds, hit Generate — act before time runs out!</p>
+
+    <!-- top controls -->
+    <div class="top-controls">
+      <button id="copyBtn" onclick="copyCharades()">📋 Copy</button>
+      <button onclick="toggleFullScreen()">⛶ Full Screen</button>
+      <span id="copyMsg" class="copy-msg">Copied!</span>
+    </div>
+
+    <!-- mode buttons -->
+    <div class="mode-select">
+      <button class="mode-btn active" data-mode="all"     onclick="setMode('all')">All</button>
+      <button class="mode-btn"        data-mode="classic" onclick="setMode('classic')">Classic</button>
+      <button class="mode-btn"        data-mode="modern"  onclick="setMode('modern')">Modern</button>
+      <button class="mode-btn"        data-mode="songs"   onclick="setMode('songs')">Songs</button>
+      <button class="mode-btn"        data-mode="scenes"  onclick="setMode('scenes')">Scenes</button>
+    </div>
+
+    <!-- round picker 1 / 2 / 3 -->
+    <div class="round-pick">
+      <button class="round-btn active" data-round="1" onclick="setRound(1)">1</button>
+      <button class="round-btn"        data-round="2" onclick="setRound(2)">2</button>
+      <button class="round-btn"        data-round="3" onclick="setRound(3)">3</button>
+    </div>
+
+    <!-- GAME LAYOUT: Timer LEFT | Cards + Button RIGHT -->
+    <div class="game-layout">
+
+      <!-- LEFT — countdown ring -->
+      <div class="timer-col">
+        <div id="timerRing"></div>
+        <div class="timer-btn-row">
+          <button id="timerToggleBtn" onclick="timerRunning ? pauseTimer() : startTimer()">▶ Start</button>
+          <button id="timerResetBtn"  onclick="resetTimer(false)">↺ Reset</button>
+        </div>
+      </div>
+
+      <!-- RIGHT — cards shown ABOVE the generate button -->
+      <div class="game-content">
+        <div id="cards"></div>
+        <button class="generate-btn" onclick="generate()">Generate</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- DECADE BOX -->
+  <div class="age-guide">
+    <h3>🎯 Which Bollywood Mode Should You Pick?</h3>
+    <div class="age-row">
+      <div class="age-card"><strong>🎞️ Classic</strong>1950s–1990s<br>Sholay, DDLJ, Mughal-e-Azam.</div>
+      <div class="age-card"><strong>🎬 Modern</strong>2000s–Now<br>3 Idiots, Dangal, PK, Lagaan.</div>
+      <div class="age-card"><strong>🎵 Songs</strong>All ages<br>Iconic song moments to mime.</div>
+      <div class="age-card"><strong>🎭 Scenes</strong>Film fans<br>Famous cinematic moments.</div>
+    </div>
+  </div>
+
+  <section class="content-section">
+    <h2>🎬 Six Decades of Bollywood in Charades</h2>
+    <div class="decade-box">
+      <div class="decade-card"><div class="dy">1950s–60s</div><p>Mother India, Mughal-e-Azam, Pyaasa</p></div>
+      <div class="decade-card"><div class="dy">1970s</div><p>Sholay, Deewar, Amar Akbar Anthony</p></div>
+      <div class="decade-card"><div class="dy">1980s</div><p>Tezaab, Hero, Ram Teri Ganga Maili</p></div>
+      <div class="decade-card"><div class="dy">1990s</div><p>DDLJ, Kuch Kuch Hota Hai, Hum Aapke</p></div>
+      <div class="decade-card"><div class="dy">2000s</div><p>Lagaan, Devdas, Taare Zameen Par</p></div>
+      <div class="decade-card"><div class="dy">2010s+</div><p>3 Idiots, Dangal, PK, Bajrangi Bhaijaan</p></div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>100+ Bollywood Charades Word List by Category</h2>
+    <div class="word-columns">
+      <div class="word-col">
+        <h4>🎞️ Classic</h4>
+        <ul>
+          <li>Sholay — Gabbar Singh scene</li>
+          <li>DDLJ — mustard field run</li>
+          <li>Mother India — sacrifice</li>
+          <li>Mughal-e-Azam — royal court</li>
+          <li>Deewar — emotional dialogue</li>
+          <li>Don — villain swagger</li>
+          <li>Anand — spreading joy</li>
+          <li>Pyaasa — rejected poet</li>
+          <li>Bobby — young lovers eloping</li>
+          <li>Shree 420 — innocent in city</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>🎬 Modern</h4>
+        <ul>
+          <li>3 Idiots — All is Well chant</li>
+          <li>Dangal — wrestling daughters</li>
+          <li>PK — alien confused by customs</li>
+          <li>Bajrangi Bhaijaan — border crossing</li>
+          <li>Lagaan — cricket match</li>
+          <li>Taare Zameen Par — child drawing</li>
+          <li>Queen — solo honeymoon</li>
+          <li>Gully Boy — street rapper</li>
+          <li>Dil Chahta Hai — road trip</li>
+          <li>Andhadhun — blind pianist</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>🎵 Songs</h4>
+        <ul>
+          <li>Chaiyya Chaiyya — train dance</li>
+          <li>Mere Sapno Ki Rani — car chase</li>
+          <li>Dola Re Dola — heroines dancing</li>
+          <li>Jai Ho — celebration finale</li>
+          <li>London Thumakda — sangeet</li>
+          <li>Kajra Re — flirtatious eye dance</li>
+          <li>Malhari — victory dance</li>
+          <li>Kala Chashma — sunglasses pose</li>
+          <li>Nagada Sang Dhol — garba</li>
+          <li>Tum Hi Ho — devotion ballad</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>🎭 Scenes</h4>
+        <ul>
+          <li>DDLJ — Raj at train door</li>
+          <li>3 Idiots — graduation speech</li>
+          <li>Sholay — coin toss ritual</li>
+          <li>Lagaan — final cricket over</li>
+          <li>Dangal — Commonwealth gold</li>
+          <li>Bajrangi — mute girl's voice</li>
+          <li>Devdas — drinking alone</li>
+          <li>Pink — courtroom speech</li>
+          <li>Padmaavat — royal procession</li>
+          <li>Uri — surgical strike plan</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>💃 Dance Moves</h4>
+        <ul>
+          <li>Madhuri Dixit Ek Do Teen</li>
+          <li>Hrithik signature hand wave</li>
+          <li>Govinda hip sway dance</li>
+          <li>SRK arms spread romantic pose</li>
+          <li>Prabhu Deva fast footwork</li>
+          <li>Deepika Ramleela garba</li>
+          <li>Tiger Shroff high kick</li>
+          <li>Katrina Sheila Ki Jawani</li>
+          <li>Amitabh Jumma Chumma</li>
+          <li>Rekha mujra performance</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>😂 Funny Bollywood</h4>
+        <ul>
+          <li>Hera Pheri — Babu Bhaiya</li>
+          <li>Andaz Apna Apna — confusion</li>
+          <li>Munna Bhai — gangster studying</li>
+          <li>Golmaal — friends caught lying</li>
+          <li>Welcome — don family chaos</li>
+          <li>Bhool Bhulaiyaa — haunted haveli</li>
+          <li>Dhamaal — absurd road trip</li>
+          <li>Chupke Chupke — disguise comedy</li>
+          <li>Hungama — comedy of errors</li>
+          <li>Jaane Bhi Do Yaaron — chaos</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>🏆 Tips for Playing Bollywood Charades</h2>
+    <div class="tips-grid">
+      <div class="tip-card"><h4>Signal the Film First</h4><p>Spin your hand like a film reel before acting — this tells your team it is a Bollywood movie and narrows their thinking to Hindi cinema immediately.</p></div>
+      <div class="tip-card"><h4>Use the Iconic Pose</h4><p>Every Bollywood film has one defining pose. SRK's arms spread wide, Gabbar's menacing crouch, the Dangal wrestling stance. Lead with that single image.</p></div>
+      <div class="tip-card"><h4>Beat the 30-Second Timer</h4><p>The timer auto-starts the moment you hit Generate. Jump straight into the iconic pose — no warming up. The clock waits for nobody!</p></div>
+      <div class="tip-card"><h4>For Songs — Use the Dance Move</h4><p>The signature dance move of a Bollywood song communicates it faster than any plot clue. Chaiyya Chaiyya's rooftop stance is instantly recognisable.</p></div>
+      <div class="tip-card"><h4>Show the Emotion</h4><p>Bollywood is ALL about emotion. The heartbreak of Devdas, the joy of Jai Ho, the sacrifice of Mother India. Lean into the feeling — it communicates fast.</p></div>
+      <div class="tip-card"><h4>Best for Desi Gatherings</h4><p>Play after dinner at Eid, Diwali, mehndi or any family gathering. Requires no equipment — just the phone, and the shared Bollywood love every Desi family has.</p></div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>🎯 Mode Guide</h2>
+    <table class="diff-table">
+      <thead><tr><th>Mode</th><th>Best For</th><th>Prompt Types</th><th>Example</th></tr></thead>
+      <tbody>
+        <tr><td>🎞️ Classic</td><td>Older family, all ages</td><td>Golden era 1950s–1990s</td><td>Sholay — Gabbar Singh scene</td></tr>
+        <tr><td>🎬 Modern</td><td>Teens, young adults</td><td>2000s–present blockbusters</td><td>3 Idiots — All is Well chant</td></tr>
+        <tr><td>🎵 Songs</td><td>All ages, dance lovers</td><td>Iconic song moments to mime</td><td>Chaiyya Chaiyya train dance</td></tr>
+        <tr><td>🎭 Scenes</td><td>Film fans, competitive groups</td><td>Famous cinematic moments</td><td>DDLJ — Raj hand from train</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="how-to">
+    <h2>How to Play – Step by Step</h2>
+    <p><strong>1. Pick a mode</strong> — Classic for golden era films, Modern for recent hits, Songs for musical moments, Scenes for iconic film sequences.</p>
+    <p><strong>2. Pick rounds</strong> — Choose 1, 2 or 3 charade cards per round.</p>
+    <p><strong>3. Hit Generate</strong> — The card appears and the 30-second timer starts automatically.</p>
+    <p><strong>4. Act immediately</strong> — Signal "film reel" with your hand, then go straight into the iconic pose or moment before the ring turns red.</p>
+    <p><strong>5. When time runs out</strong> — A TIME'S UP screen appears. Hit <em>Play Again</em> to retry the same card or <em>Next Card</em> for a fresh prompt with a new 30-second countdown.</p>
+    <p><strong>6. Reset anytime</strong> — Hit the ↺ Reset button under the timer ring to restart the 30 seconds mid-round if needed.</p>
+  </section>
+
+  <section class="content-section">
+    <h2>Frequently Asked Questions</h2>
+    <p><strong>What is Bollywood charades?</strong><br>A Hindi film-themed party game where players act out movies, songs and scenes without speaking while others guess — now with a 30-second game timer.</p>
+    <p><strong>How does the 30-second timer work?</strong><br>It starts automatically the moment you hit Generate. The circular ring counts down from green (plenty of time) to amber (hurry up) to red (almost gone). When it hits zero, a TIME'S UP overlay appears with options to play again or move to the next card.</p>
+    <p><strong>What Bollywood movies are included?</strong><br>Classic films like Sholay, DDLJ, and Mughal-e-Azam alongside modern hits like 3 Idiots, Dangal, PK, Bajrangi Bhaijaan, and Lagaan — six decades of Hindi cinema.</p>
+    <p><strong>Is this generator free?</strong><br>Yes. Completely free with no signup, no download, and no time limit on how many rounds you play.</p>
+  </section>
+
+  <section class="content-section">
+    <h2>🎮 Explore All 25+ Charades Tools</h2>
+    <div class="related-tools">
+      <a href="kids-charade-generator.html" class="rel-card"><span class="ri">👦</span><span class="rn">Kids Charades</span></a>
+      <a href="movie-charades.html" class="rel-card"><span class="ri">🎬</span><span class="rn">Movie Charades</span></a>
+      <a href="character-charades.html" class="rel-card"><span class="ri">🦸</span><span class="rn">Character Charades</span></a>
+      <a href="reverse-charades.html" class="rel-card"><span class="ri">🔄</span><span class="rn">Reverse Charades</span></a>
+      <a href="christmas-charades.html" class="rel-card"><span class="ri">🎄</span><span class="rn">Christmas Charades</span></a>
+      <a href="islamic-charades.html" class="rel-card"><span class="ri">🕌</span><span class="rn">Islamic Charades</span></a>
+      <a href="animal-charades.html" class="rel-card"><span class="ri">🐾</span><span class="rn">Animal Charades</span></a>
+      <a href="funny-charades.html" class="rel-card"><span class="ri">😂</span><span class="rn">Funny Charades</span></a>
+      <a href="hard-charades.html" class="rel-card"><span class="ri">🧠</span><span class="rn">Hard Charades</span></a>
+      <a href="food-charades.html" class="rel-card"><span class="ri">🍕</span><span class="rn">Food Charades</span></a>
+      <a href="sports-charades.html" class="rel-card"><span class="ri">⚽</span><span class="rn">Sports Charades</span></a>
+      <a href="halloween-charades.html" class="rel-card"><span class="ri">🎃</span><span class="rn">Halloween Charades</span></a>
+      <a href="birthday-charades.html" class="rel-card"><span class="ri">🎂</span><span class="rn">Birthday Charades</span></a>
+      <a href="school-charades.html" class="rel-card"><span class="ri">🏫</span><span class="rn">School Charades</span></a>
+      <a href="emoji-charades.html" class="rel-card"><span class="ri">😀</span><span class="rn">Emoji Charades</span></a>
+      <a href="bible-charades.html" class="rel-card"><span class="ri">📖</span><span class="rn">Bible Charades</span></a>
+      <a href="thanksgiving-charades.html" class="rel-card"><span class="ri">🦃</span><span class="rn">Thanksgiving Charades</span></a>
+      <a href="valentines-charades.html" class="rel-card"><span class="ri">❤️</span><span class="rn">Valentine Charades</span></a>
+      <a href="summer-charades.html" class="rel-card"><span class="ri">☀️</span><span class="rn">Summer Charades</span></a>
+      <a href="superhero-charades.html" class="rel-card"><span class="ri">🦸‍♂️</span><span class="rn">Superhero Charades</span></a>
+      <a href="nature-charades.html" class="rel-card"><span class="ri">🌿</span><span class="rn">Nature Charades</span></a>
+      <a href="occupation-charades.html" class="rel-card"><span class="ri">👨‍⚕️</span><span class="rn">Occupation Charades</span></a>
+      <a href="fairy-tale-charades.html" class="rel-card"><span class="ri">🧚</span><span class="rn">Fairy Tale Charades</span></a>
+      <a href="ramadan-charades.html" class="rel-card"><span class="ri">🌙</span><span class="rn">Ramadan Charades</span></a>
+      <a href="index.html" class="rel-card"><span class="ri">🎭</span><span class="rn">All Charades</span></a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <a href="about-us.html">About Us</a>
+  <a href="contact-us.html">Contact Us</a>
+  <a href="privacy-policy.html">Privacy Policy</a>
+  <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+  <a href="disclaimer.html">Disclaimer</a>
+  <p>© CharadeGenerator 2026</p>
+</footer>
+
+<script src="js/bollywood-charades.js"></script>
+</body>
+</html>
