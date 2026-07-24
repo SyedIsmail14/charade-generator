@@ -298,89 +298,433 @@
       margin: 24px 0;
       color: #fff;
     }
-        /* ── GAME LAYOUT ────────────────────────────────── */
-    .game-layout{display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap;}
+
+    /* ── GAME LAYOUT ────────────────────────────────── */
+    .game-layout {
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
 
     /* LEFT – timer */
-    .timer-col{display:flex;flex-direction:column;align-items:center;gap:10px;flex-shrink:0;min-width:110px;}
-    #timerRing{display:block;}
-    .timer-btn-row{display:flex;flex-direction:column;gap:8px;width:100%;}
-    #timerToggleBtn{background:#e65100;color:#fff;border:none;border-radius:8px;padding:8px 0;font-size:13px;font-weight:700;cursor:pointer;width:100%;transition:background .2s;}
-    #timerToggleBtn:hover{background:#bf360c;}
-    #timerResetBtn{background:#fff3e0;color:#bf360c;border:1px solid var(--accent-border);border-radius:8px;padding:7px 0;font-size:13px;font-weight:600;cursor:pointer;width:100%;transition:background .2s;}
-    #timerResetBtn:hover{background:#ffe0b2;}
+    .timer-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+      min-width: 110px;
+    }
+    #timerRing { display: block; }
+    .timer-btn-row {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      width: 100%;
+    }
+    #timerToggleBtn {
+      background: #e65100;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 0;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      width: 100%;
+      transition: background .2s;
+    }
+    #timerToggleBtn:hover { background: #bf360c; }
+    #timerResetBtn {
+      background: #fff3e0;
+      color: #bf360c;
+      border: 1px solid #f59f00;
+      border-radius: 8px;
+      padding: 7px 0;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      width: 100%;
+      transition: background .2s;
+    }
+    #timerResetBtn:hover { background: #ffe0b2; }
 
     /* RIGHT – content */
-    .game-content{flex:1;min-width:240px;}
+    .game-content {
+      flex: 1;
+      min-width: 240px;
+    }
 
-    /* cards FIRST, above generate */
-    #cards{margin-bottom:14px;min-height:60px;}
+    /* cards */
+    #cards {
+      margin-bottom: 14px;
+      min-height: 60px;
+    }
 
     /* round picker */
-    .round-pick{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;}
-    .round-btn{background:#fff3e0;border:2px solid var(--accent-border);border-radius:8px;padding:8px 22px;font-size:16px;font-weight:700;cursor:pointer;transition:all .2s;color:#e65100;}
-    .round-btn.active,.round-btn:hover{background:var(--accent);border-color:var(--accent);color:#fff;}
+    .round-pick {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+    .round-btn {
+      background: #fff3e0;
+      border: 2px solid #f59f00;
+      border-radius: 8px;
+      padding: 8px 22px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all .2s;
+      color: #e65100;
+    }
+    .round-btn.active,
+    .round-btn:hover {
+      background: #e65100;
+      border-color: #e65100;
+      color: #fff;
+    }
 
     /* ── TIME OVER OVERLAY ──────────────────────────── */
-    #timeOverOverlay{display:none;position:fixed;inset:0;background:rgba(10,5,0,.85);z-index:9999;align-items:center;justify-content:center;flex-direction:column;gap:20px;animation:fadeInBG .3s ease;}
-    @keyframes fadeInBG{from{opacity:0}to{opacity:1}}
+    #timeOverOverlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 5, 0, .85);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 20px;
+      animation: fadeInBG .3s ease;
+    }
+    @keyframes fadeInBG {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
 
-    .timeover-box{background:#fff;border-radius:22px;padding:40px 32px;text-align:center;box-shadow:0 28px 70px rgba(0,0,0,.4);max-width:340px;width:90%;animation:popIn .4s cubic-bezier(.34,1.56,.64,1);}
-    @keyframes popIn{from{transform:scale(.6);opacity:0}to{transform:scale(1);opacity:1}}
+    .timeover-box {
+      background: #fff;
+      border-radius: 22px;
+      padding: 40px 32px;
+      text-align: center;
+      box-shadow: 0 28px 70px rgba(0, 0, 0, .4);
+      max-width: 340px;
+      width: 90%;
+      animation: popIn .4s cubic-bezier(.34, 1.56, .64, 1);
+    }
+    @keyframes popIn {
+      from { transform: scale(.6); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
 
-    .timeover-emoji{font-size:64px;line-height:1;margin-bottom:10px;}
-    .timeover-box h2{margin:0 0 6px;font-size:30px;color:#e65100;letter-spacing:1px;text-transform:uppercase;}
-    .timeover-box p{color:#868e96;margin:0 0 24px;font-size:15px;}
-    .timeover-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
-    .btn-restart{background:#e65100;color:#fff;border:none;border-radius:10px;padding:13px 26px;font-size:15px;font-weight:700;cursor:pointer;transition:background .2s,transform .15s;}
-    .btn-restart:hover{background:#bf360c;transform:scale(1.05);}
-    .btn-next{background:#40c057;color:#fff;border:none;border-radius:10px;padding:13px 26px;font-size:15px;font-weight:700;cursor:pointer;transition:background .2s,transform .15s;}
-    .btn-next:hover{background:#2f9e44;transform:scale(1.05);}
+    .timeover-emoji { font-size: 64px; line-height: 1; margin-bottom: 10px; }
+    .timeover-box h2 {
+      margin: 0 0 6px;
+      font-size: 30px;
+      color: #e65100;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .timeover-box p {
+      color: #868e96;
+      margin: 0 0 24px;
+      font-size: 15px;
+    }
+    .timeover-actions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-restart {
+      background: #e65100;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 13px 26px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background .2s, transform .15s;
+    }
+    .btn-restart:hover {
+      background: #bf360c;
+      transform: scale(1.05);
+    }
+    .btn-next {
+      background: #40c057;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 13px 26px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background .2s, transform .15s;
+    }
+    .btn-next:hover {
+      background: #2f9e44;
+      transform: scale(1.05);
+    }
 
     /* content sections */
-    .word-columns{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;margin-top:16px;}
-    .word-col h4{margin:0 0 8px;font-size:14px;text-transform:uppercase;letter-spacing:.5px;color:var(--accent);}
-    .word-col ul{margin:0;padding-left:18px;font-size:14px;line-height:1.9;color:#333;}
-    .tips-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-top:16px;}
-    .tip-card{background:var(--accent-light);border-left:4px solid var(--accent);border-radius:8px;padding:14px 16px;}
-    .tip-card h4{margin:0 0 6px;font-size:15px;}
-    .tip-card p{margin:0;font-size:13px;color:#555;line-height:1.6;}
-    .diff-table{width:100%;border-collapse:collapse;font-size:14px;margin-top:16px;}
-    .diff-table th{background:var(--accent);color:#fff;padding:10px 14px;text-align:left;}
-    .diff-table td{padding:10px 14px;border-bottom:1px solid #eee;}
-    .diff-table tr:nth-child(even) td{background:var(--accent-light);}
-    .age-guide{background:var(--accent-light);border:1px solid var(--accent-border);border-radius:10px;padding:20px 24px;margin:24px 0;}
-    .age-guide h3{margin-top:0;color:var(--accent);}
-    .age-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px;}
-    .age-card{flex:1;min-width:130px;background:#fff;border:1px solid var(--accent-border);border-radius:8px;padding:12px;text-align:center;font-size:13px;}
-    .age-card strong{display:block;font-size:15px;margin-bottom:4px;}
-    .decade-box{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:14px;margin-top:16px;}
-    .decade-card{background:#fff;border:2px solid var(--accent);border-radius:10px;padding:16px 12px;text-align:center;}
-    .decade-card .dy{font-size:20px;font-weight:800;color:var(--accent);margin-bottom:4px;}
-    .decade-card p{margin:0;font-size:12px;color:#555;line-height:1.5;}
-    .related-tools{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:12px;margin-top:16px;}
-    .rel-card{background:#fff;border:1px solid #dde4f5;border-radius:10px;padding:12px 10px;text-align:center;text-decoration:none;color:#222;font-size:13px;font-weight:500;transition:box-shadow .2s,transform .15s;display:flex;flex-direction:column;align-items:center;gap:5px;}
-    .rel-card:hover{box-shadow:0 4px 16px rgba(230,81,0,.15);transform:translateY(-2px);}
-    .rel-card .ri{font-size:22px;}
-    .rel-card .rn{font-weight:600;font-size:12px;}
+    .word-columns {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .word-col h4 {
+      margin: 0 0 8px;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      color: #e65100;
+    }
+    .word-col ul {
+      margin: 0;
+      padding-left: 18px;
+      font-size: 14px;
+      line-height: 1.9;
+      color: #333;
+    }
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .tip-card {
+      background: #fff3e0;
+      border-left: 4px solid #e65100;
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+    .tip-card h4 { margin: 0 0 6px; font-size: 15px; }
+    .tip-card p { margin: 0; font-size: 13px; color: #555; line-height: 1.6; }
+    .diff-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      margin-top: 16px;
+    }
+    .diff-table th {
+      background: #e65100;
+      color: #fff;
+      padding: 10px 14px;
+      text-align: left;
+    }
+    .diff-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid #eee;
+    }
+    .diff-table tr:nth-child(even) td { background: #fff3e0; }
+    .age-guide {
+      background: #fff3e0;
+      border: 1px solid #f59f00;
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin: 24px 0;
+    }
+    .age-guide h3 { margin-top: 0; color: #e65100; }
+    .age-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+    .age-card {
+      flex: 1;
+      min-width: 130px;
+      background: #fff;
+      border: 1px solid #f59f00;
+      border-radius: 8px;
+      padding: 12px;
+      text-align: center;
+      font-size: 13px;
+    }
+    .age-card strong { display: block; font-size: 15px; margin-bottom: 4px; }
+    .decade-box {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+    .decade-card {
+      background: #fff;
+      border: 2px solid #e65100;
+      border-radius: 10px;
+      padding: 16px 12px;
+      text-align: center;
+    }
+    .decade-card .dy {
+      font-size: 20px;
+      font-weight: 800;
+      color: #e65100;
+      margin-bottom: 4px;
+    }
+    .decade-card p { margin: 0; font-size: 12px; color: #555; line-height: 1.5; }
+    .related-tools {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .rel-card {
+      background: #fff;
+      border: 1px solid #dde4f5;
+      border-radius: 10px;
+      padding: 12px 10px;
+      text-align: center;
+      text-decoration: none;
+      color: #222;
+      font-size: 13px;
+      font-weight: 500;
+      transition: box-shadow .2s, transform .15s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+    }
+    .rel-card:hover {
+      box-shadow: 0 4px 16px rgba(230, 81, 0, .15);
+      transform: translateY(-2px);
+    }
+    .rel-card .ri { font-size: 22px; }
+    .rel-card .rn { font-weight: 600; font-size: 12px; }
 
-    @media(max-width:480px){.game-layout{flex-direction:row;}.timer-col{min-width:90px;}}
+    @media(max-width: 480px) {
+      .game-layout { flex-direction: row; }
+      .timer-col { min-width: 90px; }
+    }
 
     .stat-item { text-align: center; flex: 1; min-width: 100px; }
     .stat-num { font-size: 28px; font-weight: 700; }
     .stat-label { font-size: 12px; opacity: .8; margin-top: 2px; }
+
+    /* ── MODE SELECT ── */
+    .mode-select {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+    .mode-btn {
+      background: #fff3e0;
+      border: 2px solid #f59f00;
+      border-radius: 8px;
+      padding: 8px 18px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all .2s;
+      color: #e65100;
+    }
+    .mode-btn.active,
+    .mode-btn:hover {
+      background: #e65100;
+      border-color: #e65100;
+      color: #fff;
+    }
+
+    /* ── TOP CONTROLS ── */
+    .top-controls {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+      align-items: center;
+    }
+    .top-controls button {
+      background: #fff;
+      border: 2px solid #e65100;
+      border-radius: 8px;
+      padding: 6px 16px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all .2s;
+      color: #e65100;
+    }
+    .top-controls button:hover {
+      background: #e65100;
+      color: #fff;
+    }
+    .copy-msg {
+      display: none;
+      color: #40c057;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    /* ── GENERATE BUTTON ── */
+    .generate-btn {
+      background: #e65100;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 14px 40px;
+      font-size: 18px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all .2s;
+      margin-top: 6px;
+    }
+    .generate-btn:hover {
+      background: #bf360c;
+      transform: scale(1.02);
+    }
+
+    /* ── CARDS ── */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px;
+      margin-bottom: 16px;
+      width: 100%;
+    }
+    .card {
+      background: #fff;
+      border: 2px solid #f59f00;
+      border-radius: 12px;
+      padding: 18px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: box-shadow .2s;
+    }
+    .card:hover {
+      box-shadow: 0 4px 16px rgba(230, 81, 0, .12);
+    }
+    .card-icon { font-size: 28px; }
+    .card p {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 500;
+      color: #222;
+    }
+
+    .seo-text { font-size: 16px; line-height: 1.7; color: #444; }
+    .content-section { margin: 40px 0; }
+    .how-to { background: #f8faff; padding: 24px 28px; border-radius: 12px; margin: 32px 0; }
+    .how-to p { font-size: 15px; line-height: 1.8; }
+    .category-title { font-size: 26px; margin-bottom: 4px; }
+    .subtitle { color: #666; font-size: 16px; margin-top: 0; }
   </style>
 </head>
 <body>
 <!-- ── TIME OVER OVERLAY ─────────────────────────────────── -->
 <div id="timeOverOverlay">
   <div class="timeover-box">
-    <div class="timeover-emoji">🎬</div>
+    <div class="timeover-emoji">⏰</div>
     <h2>Time's Up!</h2>
-    <p>30 seconds are over — did they guess the Bollywood film?</p>
+    <p>30 seconds are over — did they guess the animal?</p>
     <div class="timeover-actions">
       <button class="btn-restart" onclick="resetTimer(true)">▶ Play Again</button>
-      <button class="btn-next"    onclick="generate()">⏭ Next Card</button>
+      <button class="btn-next" onclick="generate()">⏭ Next Card</button>
     </div>
   </div>
 </div>
@@ -430,43 +774,49 @@
     Just pick your mode, click Generate, and start acting. Works on any phone, tablet, or computer.
   </p>
 
-
-  <!-- GAME AREA — unchanged -->
+  <!-- GAME AREA -->
   <section class="tool" id="gameArea">
     <h2 class="category-title">Animal Charades 🐾</h2>
     <p class="subtitle">Click Generate to get an animal to act out 🎭</p>
+
     <div class="top-controls">
       <button id="copyBtn" onclick="copyCharades()">📋 Copy</button>
       <button onclick="toggleFullScreen()">⛶ Full Screen</button>
       <span id="copyMsg" class="copy-msg">Copied!</span>
     </div>
-       <div class="mode-select">
+
+    <div class="mode-select">
       <button class="mode-btn active" data-mode="default" onclick="setMode('default')">All</button>
-      <button class="mode-btn" data-mode="kids"   onclick="setMode('kids')">Kids</button>
-      <button class="mode-btn" data-mode="funny"  onclick="setMode('funny')">Funny</button>
-      <button class="mode-btn" data-mode="hard"   onclick="setMode('hard')">Hard</button>
-      <button class="mode-btn" data-mode="party"  onclick="setMode('party')">Party</button>
+      <button class="mode-btn" data-mode="kids" onclick="setMode('kids')">Kids</button>
+      <button class="mode-btn" data-mode="funny" onclick="setMode('funny')">Funny</button>
+      <button class="mode-btn" data-mode="hard" onclick="setMode('hard')">Hard</button>
+      <button class="mode-btn" data-mode="party" onclick="setMode('party')">Party</button>
     </div>
+
     <!-- round picker 1 / 2 / 3 -->
     <div class="round-pick">
       <button class="round-btn active" data-round="1" onclick="setRound(1)">1</button>
-      <button class="round-btn"        data-round="2" onclick="setRound(2)">2</button>
-      <button class="round-btn"        data-round="3" onclick="setRound(3)">3</button>
+      <button class="round-btn" data-round="2" onclick="setRound(2)">2</button>
+      <button class="round-btn" data-round="3" onclick="setRound(3)">3</button>
     </div>
 
-    <!-- GAME LAYOUT: Timer LEFT | Cards + Button RIGHT -->
+    <!-- GAME LAYOUT: Timer LEFT | Cards RIGHT -->
     <div class="game-layout">
-
       <!-- LEFT — countdown ring -->
       <div class="timer-col">
         <div id="timerRing"></div>
         <div class="timer-btn-row">
           <button id="timerToggleBtn" onclick="timerRunning ? pauseTimer() : startTimer()">▶ Start</button>
-          <button id="timerResetBtn"  onclick="resetTimer(false)">↺ Reset</button>
+          <button id="timerResetBtn" onclick="resetTimer(false)">↺ Reset</button>
         </div>
       </div>
-    <div id="cards" class="cards"></div>
-    <button class="generate-btn" onclick="generate()">Generate</button>
+
+      <!-- RIGHT — cards + generate -->
+      <div class="game-content">
+        <div id="cards" class="cards"></div>
+        <button class="generate-btn" onclick="generate()">🎯 Generate</button>
+      </div>
+    </div>
   </section>
 
   <!-- AGE GUIDE -->
@@ -720,8 +1070,8 @@
     <p><strong>4. Act without speaking</strong><br>
     Use your body only. No sounds, no mouthing words, no pointing to objects in the room. Show how the animal moves, eats, and behaves using gesture and expression alone.</p>
 
-    <p><strong>5. Set a 60-second timer</strong><br>
-    One round equals 60 seconds. If the team guesses correctly in time, they score a point. If not, the opposing team gets one chance to steal.</p>
+    <p><strong>5. Set a 30-second timer</strong><br>
+    One round equals 30 seconds. If the team guesses correctly in time, they score a point. If not, the opposing team gets one chance to steal.</p>
 
     <p><strong>6. Let the team guess</strong><br>
     First person to correctly name the animal wins the round. For action-based charades, they may need to name both the animal and the behaviour.</p>
@@ -789,7 +1139,6 @@
       <a href="christmas-charades.html" class="tool-card"><span class="tool-icon">🎄</span><span class="tool-name">Christmas Charades</span><span class="tool-desc">Holiday themed fun</span></a>
       <a href="islamic-charades.html" class="tool-card"><span class="tool-icon">🕌</span><span class="tool-name">Islamic Charades</span><span class="tool-desc">Islamic words & values</span></a>
       <a href="animal-charades.html" class="tool-card"><span class="tool-icon">🐾</span><span class="tool-name">Animal Charades</span><span class="tool-desc">Animals to act out</span></a>
-      <!-- PLACEHOLDER TOOLS — build these pages next -->
       <a href="funny-charades.html" class="tool-card"><span class="tool-icon">😂</span><span class="tool-name">Funny Charades</span><span class="tool-desc">Hilarious party charades</span></a>
       <a href="hard-charades.html" class="tool-card"><span class="tool-icon">🧠</span><span class="tool-name">Hard Charades</span><span class="tool-desc">Challenging for adults</span></a>
       <a href="food-charades.html" class="tool-card"><span class="tool-icon">🍕</span><span class="tool-name">Food Charades</span><span class="tool-desc">Dishes & ingredients</span></a>
