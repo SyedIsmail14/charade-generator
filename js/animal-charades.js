@@ -281,6 +281,15 @@ function setCount(n) {
   document.getElementById('customBox').classList.add('hidden');
 }
 
+// ── ROUND PICKER (1, 2, 3) ──────────────────────────────────────────────────
+function setRound(n) {
+  currentCount = n;
+  // Update round buttons
+  document.querySelectorAll('.round-btn').forEach(btn => {
+    btn.classList.toggle('active', parseInt(btn.dataset.round) === n);
+  });
+}
+
 function showCustom() {
   document.getElementById('customBox').classList.toggle('hidden');
 }
