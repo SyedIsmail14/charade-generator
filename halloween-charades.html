@@ -38,12 +38,12 @@
       {
         "@type": "FAQPage",
         "mainEntity": [
-          {"@type":"Question","name":"What is Halloween charades?","acceptedAnswer":{"@type":"Answer","text":"Halloween charades is a spooky themed version of the classic charades game where all charades are Halloween-related. Players act out monsters, ghosts, witches, vampires, Halloween traditions, and horror movie scenes without speaking while others guess. It is the perfect party game for Halloween events, trick-or-treat nights, and October gatherings."}},
-          {"@type":"Question","name":"What are good Halloween charades ideas?","acceptedAnswer":{"@type":"Answer","text":"Great Halloween charades ideas include: zombie walking slowly, witch stirring a cauldron, vampire turning into a bat, ghost floating through walls, mummy unwrapping itself, Frankenstein walking stiffly, werewolf howling at the moon, carving a jack-o-lantern, trick-or-treating door to door, and a black cat arching its back. Our generator has 100+ of these spooky charades ready to use instantly."}},
-          {"@type":"Question","name":"Is Halloween charades suitable for young children?","acceptedAnswer":{"@type":"Answer","text":"Yes. Kids mode uses fun and friendly Halloween actions that are spooky but not scary — carving a pumpkin, trick-or-treating, dressing up as a ghost, making a spider web, and acting like a friendly witch. Kids mode is suitable for children aged 4 and above and keeps the Halloween fun without any frightening content."}},
-          {"@type":"Question","name":"Can I use Halloween charades at a school Halloween party?","acceptedAnswer":{"@type":"Answer","text":"Yes. Kids mode and Spooky mode are both school-appropriate and create excellent Halloween party entertainment. The charades are themed around classic Halloween imagery rather than horror content, making them safe and fun for primary school and secondary school Halloween events."}},
-          {"@type":"Question","name":"Is this Halloween charades generator free?","acceptedAnswer":{"@type":"Answer","text":"Yes. Completely free with no signup, no download, and no time limit. Generate unlimited Halloween charade charades for any Halloween party or gathering."}},
-          {"@type":"Question","name":"What is Extreme Horror mode in Halloween charades?","acceptedAnswer":{"@type":"Answer","text":"Extreme Horror mode features charades from famous horror movies — scenes and characters from classic and modern horror films that adult horror fans will recognise. This mode is strictly for adults and older teens who are horror movie enthusiasts. It is not suitable for children or those sensitive to horror content."}}
+          {"@type":"Question","name":"What is Halloween charades?","acceptedAnswer":{"@type":"Answer","text":"Halloween charades is a spooky themed version of the classic charades game where all charades are Halloween-related."}},
+          {"@type":"Question","name":"What are good Halloween charades ideas?","acceptedAnswer":{"@type":"Answer","text":"Great Halloween charades ideas include: zombie walking slowly, witch stirring a cauldron, vampire turning into a bat, ghost floating through walls, mummy unwrapping itself."}},
+          {"@type":"Question","name":"Is Halloween charades suitable for young children?","acceptedAnswer":{"@type":"Answer","text":"Yes. Kids mode uses fun and friendly Halloween actions that are spooky but not scary — carving a pumpkin, trick-or-treating, dressing up as a ghost."}},
+          {"@type":"Question","name":"Can I use Halloween charades at a school Halloween party?","acceptedAnswer":{"@type":"Answer","text":"Yes. Kids mode and Spooky mode are both school-appropriate and create excellent Halloween party entertainment."}},
+          {"@type":"Question","name":"Is this Halloween charades generator free?","acceptedAnswer":{"@type":"Answer","text":"Yes. Completely free with no signup, no download, and no time limit."}},
+          {"@type":"Question","name":"What is Extreme Horror mode in Halloween charades?","acceptedAnswer":{"@type":"Answer","text":"Extreme Horror mode features charades from famous horror movies — scenes and characters from classic and modern horror films that adult horror fans will recognise."}}
         ]
       },
       {
@@ -89,9 +89,90 @@
     .rel-card:hover{box-shadow:0 4px 16px rgba(123,47,255,.15);transform:translateY(-2px);}
     .rel-card .ri{font-size:22px;}
     .rel-card .rn{font-weight:600;font-size:12px;}
+
+    /* ── GAME LAYOUT ────────────────────────────────── */
+    .game-layout{display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap;}
+
+    /* LEFT – timer */
+    .timer-col{display:flex;flex-direction:column;align-items:center;gap:10px;flex-shrink:0;min-width:110px;}
+    #timerRing{display:block;}
+    .timer-btn-row{display:flex;flex-direction:column;gap:8px;width:100%;}
+    #timerToggleBtn{background:#7b2fff;color:#fff;border:none;border-radius:8px;padding:8px 0;font-size:13px;font-weight:700;cursor:pointer;width:100%;transition:background .2s;}
+    #timerToggleBtn:hover{background:#6622cc;}
+    #timerResetBtn{background:#f5f0ff;color:#7b2fff;border:1px solid #d4b8ff;border-radius:8px;padding:7px 0;font-size:13px;font-weight:600;cursor:pointer;width:100%;transition:background .2s;}
+    #timerResetBtn:hover{background:#e5dbff;}
+
+    /* RIGHT – content */
+    .game-content{flex:1;min-width:240px;}
+
+    /* cards */
+    #cards{margin-bottom:14px;min-height:60px;}
+
+    /* round picker */
+    .round-pick{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;}
+    .round-btn{background:#f5f0ff;border:2px solid #d4b8ff;border-radius:8px;padding:8px 22px;font-size:16px;font-weight:700;cursor:pointer;transition:all .2s;color:#7b2fff;}
+    .round-btn.active,.round-btn:hover{background:#7b2fff;border-color:#7b2fff;color:#fff;}
+
+    /* ── TIME OVER OVERLAY ──────────────────────────── */
+    #timeOverOverlay{display:none;position:fixed;inset:0;background:rgba(10,5,0,.85);z-index:9999;align-items:center;justify-content:center;flex-direction:column;gap:20px;animation:fadeInBG .3s ease;}
+    @keyframes fadeInBG{from{opacity:0}to{opacity:1}}
+    .timeover-box{background:#fff;border-radius:22px;padding:40px 32px;text-align:center;box-shadow:0 28px 70px rgba(0,0,0,.4);max-width:340px;width:90%;animation:popIn .4s cubic-bezier(.34,1.56,.64,1);}
+    @keyframes popIn{from{transform:scale(.6);opacity:0}to{transform:scale(1);opacity:1}}
+    .timeover-emoji{font-size:64px;line-height:1;margin-bottom:10px;}
+    .timeover-box h2{margin:0 0 6px;font-size:30px;color:#7b2fff;letter-spacing:1px;text-transform:uppercase;}
+    .timeover-box p{color:#868e96;margin:0 0 24px;font-size:15px;}
+    .timeover-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+    .btn-restart{background:#7b2fff;color:#fff;border:none;border-radius:10px;padding:13px 26px;font-size:15px;font-weight:700;cursor:pointer;transition:background .2s,transform .15s;}
+    .btn-restart:hover{background:#6622cc;transform:scale(1.05);}
+    .btn-next{background:#40c057;color:#fff;border:none;border-radius:10px;padding:13px 26px;font-size:15px;font-weight:700;cursor:pointer;transition:background .2s,transform .15s;}
+    .btn-next:hover{background:#2f9e44;transform:scale(1.05);}
+
+    /* ── MODE SELECT ── */
+    .mode-select{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;}
+    .mode-btn{background:#f5f0ff;border:2px solid #d4b8ff;border-radius:8px;padding:8px 18px;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;color:#7b2fff;}
+    .mode-btn.active,.mode-btn:hover{background:#7b2fff;border-color:#7b2fff;color:#fff;}
+
+    /* ── TOP CONTROLS ── */
+    .top-controls{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px;align-items:center;}
+    .top-controls button{background:#fff;border:2px solid #7b2fff;border-radius:8px;padding:6px 16px;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;color:#7b2fff;}
+    .top-controls button:hover{background:#7b2fff;color:#fff;}
+    .copy-msg{display:none;color:#40c057;font-weight:700;font-size:14px;}
+
+    /* ── GENERATE BUTTON ── */
+    .generate-btn{background:#7b2fff;color:#fff;border:none;border-radius:10px;padding:14px 40px;font-size:18px;font-weight:700;cursor:pointer;transition:all .2s;margin-top:6px;}
+    .generate-btn:hover{background:#6622cc;transform:scale(1.02);}
+
+    /* ── CARDS ── */
+    .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin-bottom:16px;width:100%;}
+    .card{background:#fff;border:2px solid #d4b8ff;border-radius:12px;padding:18px 16px;display:flex;align-items:center;gap:12px;transition:box-shadow .2s;}
+    .card:hover{box-shadow:0 4px 16px rgba(123,47,255,.12);}
+    .card-emoji{font-size:28px;}
+    .card p{margin:0;font-size:16px;font-weight:500;color:#222;}
+
+    .seo-text{font-size:16px;line-height:1.7;color:#444;}
+    .content-section{margin:40px 0;}
+    .how-to{background:#f8faff;padding:24px 28px;border-radius:12px;margin:32px 0;}
+    .how-to p{font-size:15px;line-height:1.8;}
+    .category-title{font-size:26px;margin-bottom:4px;}
+    .subtitle{color:#666;font-size:16px;margin-top:0;}
+
+    @media(max-width:480px){.game-layout{flex-direction:row;}.timer-col{min-width:90px;}}
   </style>
 </head>
 <body>
+
+<!-- ── TIME OVER OVERLAY ─────────────────────────────────── -->
+<div id="timeOverOverlay">
+  <div class="timeover-box">
+    <div class="timeover-emoji">⏰</div>
+    <h2>Time's Up!</h2>
+    <p>30 seconds are over — did they guess the Halloween charade?</p>
+    <div class="timeover-actions">
+      <button class="btn-restart" onclick="resetTimer(true)">▶ Play Again</button>
+      <button class="btn-next" onclick="generate()">⏭ Next Card</button>
+    </div>
+  </div>
+</div>
 
 <header class="header">
   <div class="header-inner">
@@ -132,34 +213,49 @@
     Whether you are hosting a children's Halloween party, a teen sleepover, or an adult horror night — pick your scare level, click Generate, and let the Halloween fun begin. No preparation, no cards to write, just pure spooky entertainment on any device.
   </p>
 
+  <!-- GAME AREA -->
   <section class="tool" id="gameArea">
     <h2 class="category-title">Halloween Charades 🎃</h2>
-    <p class="subtitle">Click Generate to get a spooky charade 🎃</p>
+    <p class="subtitle" id="statusText">Ready to play! Generate your first spooky charade 🎃</p>
+
     <div class="top-controls">
       <button id="copyBtn" onclick="copyCharades()">📋 Copy</button>
       <button onclick="toggleFullScreen()">⛶ Full Screen</button>
       <span id="copyMsg" class="copy-msg">Copied!</span>
     </div>
-    <div class="quick-pick">
-      <button onclick="setCount(1)">1</button>
-      <button onclick="setCount(3)">3</button>
-      <button onclick="setCount(5)">5</button>
-      <button onclick="setCount(10)">10</button>
-      <button onclick="showCustom()">Custom</button>
-    </div>
+
     <div class="mode-select">
-      <button class="mode-btn active" data-mode="all"     onclick="setMode('all')">All</button>
-      <button class="mode-btn"        data-mode="kids"    onclick="setMode('kids')">Kids</button>
-      <button class="mode-btn"        data-mode="spooky"  onclick="setMode('spooky')">Spooky</button>
-      <button class="mode-btn"        data-mode="scary"   onclick="setMode('scary')">Scary</button>
-      <button class="mode-btn"        data-mode="horror"  onclick="setMode('horror')">Horror</button>
+      <button class="mode-btn active" data-mode="all" onclick="setMode('all')">All</button>
+      <button class="mode-btn" data-mode="kids" onclick="setMode('kids')">Kids</button>
+      <button class="mode-btn" data-mode="spooky" onclick="setMode('spooky')">Spooky</button>
+      <button class="mode-btn" data-mode="scary" onclick="setMode('scary')">Scary</button>
+      <button class="mode-btn" data-mode="horror" onclick="setMode('horror')">Horror</button>
     </div>
-    <div id="customBox" class="custom-box hidden">
-      <input type="number" id="customInput" min="1" max="12" placeholder="Enter number">
-      <button onclick="applyCustom()">Apply</button>
+
+    <!-- round picker 1 / 2 / 3 -->
+    <div class="round-pick">
+      <button class="round-btn active" data-round="1" onclick="setRound(1)">1</button>
+      <button class="round-btn" data-round="2" onclick="setRound(2)">2</button>
+      <button class="round-btn" data-round="3" onclick="setRound(3)">3</button>
     </div>
-    <div id="cards" class="cards"></div>
-    <button class="generate-btn" onclick="generate()">Generate</button>
+
+    <!-- GAME LAYOUT: Timer LEFT | Cards RIGHT -->
+    <div class="game-layout">
+      <!-- LEFT — countdown ring -->
+      <div class="timer-col">
+        <div id="timerRing"></div>
+        <div class="timer-btn-row">
+          <button id="timerToggleBtn" onclick="timerRunning ? pauseTimer() : startTimer()">▶ Start</button>
+          <button id="timerResetBtn" onclick="resetTimer(false)">↺ Reset</button>
+        </div>
+      </div>
+
+      <!-- RIGHT — cards + generate -->
+      <div class="game-content">
+        <div id="cards" class="cards"></div>
+        <button class="generate-btn" onclick="generate()">🎃 Generate</button>
+      </div>
+    </div>
   </section>
 
   <div class="age-guide">
@@ -181,14 +277,14 @@
         <ul>
           <li>Carving a jack-o-lantern</li>
           <li>Trick-or-treating door to door</li>
-          <li>Dressing up as a ghost</li>
+          <li>Dressing up as a friendly ghost</li>
           <li>Making a spider web with string</li>
-          <li>Bobbing for apples</li>
-          <li>Friendly witch on broomstick</li>
+          <li>Bobbing for apples in a barrel</li>
+          <li>Friendly witch flying on broomstick</li>
           <li>Black cat arching its back</li>
-          <li>Opening a big bag of sweets</li>
-          <li>Scarecrow standing still in field</li>
-          <li>Owl hooting on a branch</li>
+          <li>Opening a big bag of Halloween sweets</li>
+          <li>Scarecrow standing perfectly still in field</li>
+          <li>Owl hooting on a branch at night</li>
         </ul>
       </div>
       <div class="word-col">
@@ -198,72 +294,72 @@
           <li>Ghost floating through walls</li>
           <li>Vampire turning into a bat</li>
           <li>Witch stirring a bubbling cauldron</li>
-          <li>Frankenstein walking stiffly</li>
-          <li>Werewolf howling at full moon</li>
-          <li>Mummy unwrapping itself</li>
+          <li>Frankenstein walking stiffly with arms out</li>
+          <li>Werewolf howling at the full moon</li>
+          <li>Mummy unwrapping itself slowly</li>
           <li>Skeleton rattling its bones</li>
-          <li>Dracula sleeping in coffin</li>
-          <li>Invisible man bumping into things</li>
+          <li>Dracula sleeping in his coffin</li>
+          <li>Invisible man bumping into furniture</li>
         </ul>
       </div>
       <div class="word-col">
         <h4>🕷️ Spooky Scenes</h4>
         <ul>
-          <li>Walking through haunted house</li>
-          <li>Spider dropping from ceiling</li>
+          <li>Walking through a haunted house alone</li>
+          <li>Spider dropping suddenly from ceiling</li>
           <li>Bat swooping through dark cave</li>
-          <li>Cauldron bubbling over with potion</li>
-          <li>Shadow creeping along wall</li>
-          <li>Door creaking open slowly</li>
-          <li>Candle flame flickering and dying</li>
-          <li>Footsteps heard in empty house</li>
-          <li>Mirror showing wrong reflection</li>
-          <li>Jack-o-lantern face coming to life</li>
+          <li>Shadow creeping slowly along the wall</li>
+          <li>Door creaking open by itself slowly</li>
+          <li>Candle flame flickering and suddenly dying</li>
+          <li>Footsteps heard in completely empty house</li>
+          <li>Mirror showing the wrong reflection</li>
+          <li>Jack-o-lantern face slowly coming to life</li>
+          <li>Ghost appearing through the floor</li>
         </ul>
       </div>
       <div class="word-col">
         <h4>🔮 Witchcraft & Magic</h4>
         <ul>
           <li>Casting a powerful hex spell</li>
-          <li>Flying on broomstick at night</li>
-          <li>Potion turning person into frog</li>
-          <li>Crystal ball revealing the future</li>
+          <li>Flying on broomstick through night sky</li>
+          <li>Potion turning person into a frog</li>
+          <li>Crystal ball revealing the dark future</li>
           <li>Magic spell going badly wrong</li>
-          <li>Witch coven dancing around fire</li>
-          <li>Black cat familiar warning witch</li>
-          <li>Spell book pages turning alone</li>
+          <li>Witch coven dancing around bonfire</li>
+          <li>Black cat familiar warning the witch</li>
           <li>Wand shooting sparks wildly</li>
           <li>Turning someone into a pumpkin</li>
+          <li>Spell book pages turning by themselves</li>
         </ul>
       </div>
       <div class="word-col">
         <h4>🏚️ Haunted House</h4>
         <ul>
-          <li>Ghost appearing through floor</li>
-          <li>Rocking chair moving alone</li>
-          <li>Portrait eyes following you</li>
-          <li>Clown in basement grinning</li>
-          <li>Dumbwaiter moving by itself</li>
-          <li>Writing appearing on wall</li>
+          <li>Rocking chair moving with nobody in it</li>
+          <li>Portrait eyes following you around room</li>
+          <li>Writing appearing on the wall by itself</li>
           <li>Chandelier swinging dangerously</li>
-          <li>Secret passage behind bookcase</li>
-          <li>Basement door that should stay shut</li>
-          <li>Piano playing with no one there</li>
+          <li>Secret passage behind the bookcase</li>
+          <li>Basement door that must stay shut opening</li>
+          <li>Piano playing with nobody at keys</li>
+          <li>Clown appearing in dark basement</li>
+          <li>Dumbwaiter moving completely by itself</li>
+          <li>Chandelier crashing at midnight</li>
         </ul>
       </div>
       <div class="word-col">
         <h4>💀 Horror Movie</h4>
         <ul>
           <li>Running upstairs instead of outside</li>
-          <li>Checking if killer is still there</li>
-          <li>Phone with no signal in crisis</li>
-          <li>Car that will not start in horror</li>
-          <li>Tripping while running from monster</li>
-          <li>Splitting up from group — bad idea</li>
-          <li>Reading cursed book out loud</li>
-          <li>Opening door you should not open</li>
-          <li>Saying I will be right back</li>
+          <li>Checking if the killer is still there</li>
+          <li>Phone with zero signal in a crisis</li>
+          <li>Car that will not start while monster approaches</li>
+          <li>Tripping while running from the monster</li>
+          <li>Splitting up from the group — terrible idea</li>
+          <li>Reading the cursed book out loud</li>
+          <li>Opening the door you were told never to open</li>
           <li>Final girl turning to face the monster</li>
+          <li>Saying I will be right back</li>
         </ul>
       </div>
     </div>
@@ -324,7 +420,7 @@
       <li>🎃 100+ unique spooky charades across 6 Halloween categories</li>
       <li>🎉 Perfect for Halloween parties, trick-or-treat nights, school events and adult horror nights</li>
       <li>👨‍👩‍👧 Four scare levels from friendly Kids mode to adult Horror mode</li>
-      <li>⚡ One click generates 1, 3, 5, 10 or custom number instantly</li>
+      <li>⚡ One click generates 1, 2, or 3 charades instantly</li>
       <li>📱 Fully mobile-optimised — glowing phone screen adds Halloween atmosphere</li>
       <li>♾️ Generator avoids repeats — fresh scares every round all night</li>
       <li>🔒 No login, no ads during play, completely free</li>
@@ -338,7 +434,7 @@
     <p><strong>3. Dim the lights and use Full Screen</strong><br>Set the Halloween atmosphere with low lighting. Switch to Full Screen — the glowing phone screen in a dark room adds perfect Halloween ambience.</p>
     <p><strong>4. Signal the Halloween category</strong><br>Before acting, mime a cauldron for witchcraft, a coffin for vampires, a house shape for haunted house, or a film reel for horror movies. This narrows guessing dramatically.</p>
     <p><strong>5. Commit completely to the character</strong><br>Full commitment makes Halloween charades. A zombie needs dead eyes, a dragging leg, and reaching arms. A ghost needs floating movement and a surprised expression when touched. Half-hearted Halloween acting gets no laughs and no guesses.</p>
-    <p><strong>6. Set a 60-second timer</strong><br>One round equals 60 seconds. Horror movie charades may need 90 seconds for groups less familiar with the genre. A correct guess scores a point.</p>
+    <p><strong>6. Set a 30-second timer</strong><br>One round equals 30 seconds. Horror movie charades may need 60 seconds for groups less familiar with the genre. A correct guess scores a point.</p>
     <p><strong>7. Rotate and escalate the scare level</strong><br>Start with Spooky mode to warm up, then move to Scary and Horror as the evening darkens. Take turns so every player acts at least twice. Click Generate for unlimited Halloween charades all night.</p>
   </section>
 
