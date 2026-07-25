@@ -39,11 +39,11 @@
       {
         "@type": "FAQPage",
         "mainEntity": [
-          {"@type":"Question","name":"What is Islamic charades?","acceptedAnswer":{"@type":"Answer","text":"Islamic charades is a halal version of the classic charades game where players act out Islamic practices, values, and daily Muslim life without speaking while others guess. charades include Salah, Wudu, fasting, Hajj, Ramadan traditions, Islamic values, and madrasa activities. It combines fun with meaningful learning about Islam."}},
-          {"@type":"Question","name":"Is Islamic charades halal?","acceptedAnswer":{"@type":"Answer","text":"Yes. All charades are action-based and focus on Islamic practices, values, and daily Muslim life. There is no inappropriate content, no music, no images of living beings, and no charades that conflict with Islamic values. It is suitable for madrasas, Islamic schools, family gatherings, and Ramadan events."}},
-          {"@type":"Question","name":"Can I use this at a madrasa or Islamic school?","acceptedAnswer":{"@type":"Answer","text":"Yes. This generator is designed with madrasas and Islamic schools in mind. charades reinforce Islamic knowledge — students act out Wudu steps, Salah positions, Hajj rituals, and Islamic values. It makes Islamic learning memorable and enjoyable for children of all ages."}},
+          {"@type":"Question","name":"What is Islamic charades?","acceptedAnswer":{"@type":"Answer","text":"Islamic charades is a halal version of the classic charades game where players act out Islamic practices, values, and daily Muslim life without speaking while others guess."}},
+          {"@type":"Question","name":"Is Islamic charades halal?","acceptedAnswer":{"@type":"Answer","text":"Yes. All charades are action-based and focus on Islamic practices, values, and daily Muslim life. No inappropriate content, no music, no images of living beings."}},
+          {"@type":"Question","name":"Can I use this at a madrasa or Islamic school?","acceptedAnswer":{"@type":"Answer","text":"Yes. This generator is designed with madrasas and Islamic schools in mind. charades reinforce Islamic knowledge — students act out Wudu steps, Salah positions, Hajj rituals, and Islamic values."}},
           {"@type":"Question","name":"What Islamic topics are covered?","acceptedAnswer":{"@type":"Answer","text":"Six categories: the Five Pillars of Islam, Ramadan traditions, Hajj and Umrah rituals, daily Muslim life, Islamic values and character, and madrasa and Islamic education activities."}},
-          {"@type":"Question","name":"Is this good for Ramadan gatherings?","acceptedAnswer":{"@type":"Answer","text":"Yes. Ramadan mode covers fasting, Tarawih, Iftar, Laylatul Qadr, Suhoor, Zakat ul-Fitr, and Eid celebrations. A wholesome activity for Ramadan evenings between Maghrib and Isha."}},
+          {"@type":"Question","name":"Is this good for Ramadan gatherings?","acceptedAnswer":{"@type":"Answer","text":"Yes. Ramadan mode covers fasting, Tarawih, Iftar, Laylatul Qadr, Suhoor, Zakat ul-Fitr, and Eid celebrations."}},
           {"@type":"Question","name":"What age group is this suitable for?","acceptedAnswer":{"@type":"Answer","text":"All ages from 5 upward. Kids mode uses simple familiar Islamic actions. Family mode suits mixed-age gatherings. Madrasa mode is for students with detailed Islamic knowledge."}},
           {"@type":"Question","name":"Does this generator repeat the same charades?","acceptedAnswer":{"@type":"Answer","text":"No. The generator tracks shown charades and avoids repeating until the full pool is exhausted, ensuring every round is fresh throughout your gathering."}}
         ]
@@ -104,10 +104,90 @@
     .rel-card:hover { box-shadow:0 4px 16px rgba(26,122,60,0.13); transform:translateY(-2px); }
     .rel-card .ri { font-size:22px; }
     .rel-card .rn { font-weight:600; font-size:12px; }
+
+    /* ── GAME LAYOUT ────────────────────────────────── */
+    .game-layout{display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap;}
+
+    /* LEFT – timer */
+    .timer-col{display:flex;flex-direction:column;align-items:center;gap:10px;flex-shrink:0;min-width:110px;}
+    #timerRing{display:block;}
+    .timer-btn-row{display:flex;flex-direction:column;gap:8px;width:100%;}
+    #timerToggleBtn{background:#1a7a3c;color:#fff;border:none;border-radius:8px;padding:8px 0;font-size:13px;font-weight:700;cursor:pointer;width:100%;transition:background .2s;}
+    #timerToggleBtn:hover{background:#145c2f;}
+    #timerResetBtn{background:#f0f7f0;color:#1a7a3c;border:1px solid #c3dfc3;border-radius:8px;padding:7px 0;font-size:13px;font-weight:600;cursor:pointer;width:100%;transition:background .2s;}
+    #timerResetBtn:hover{background:#d4edda;}
+
+    /* RIGHT – content */
+    .game-content{flex:1;min-width:240px;}
+
+    /* cards */
+    #cards{margin-bottom:14px;min-height:60px;}
+
+    /* round picker */
+    .round-pick{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;}
+    .round-btn{background:#f0f7f0;border:2px solid #c3dfc3;border-radius:8px;padding:8px 22px;font-size:16px;font-weight:700;cursor:pointer;transition:all .2s;color:#1a7a3c;}
+    .round-btn.active,.round-btn:hover{background:#1a7a3c;border-color:#1a7a3c;color:#fff;}
+
+    /* ── TIME OVER OVERLAY ──────────────────────────── */
+    #timeOverOverlay{display:none;position:fixed;inset:0;background:rgba(10,5,0,.85);z-index:9999;align-items:center;justify-content:center;flex-direction:column;gap:20px;animation:fadeInBG .3s ease;}
+    @keyframes fadeInBG{from{opacity:0}to{opacity:1}}
+    .timeover-box{background:#fff;border-radius:22px;padding:40px 32px;text-align:center;box-shadow:0 28px 70px rgba(0,0,0,.4);max-width:340px;width:90%;animation:popIn .4s cubic-bezier(.34,1.56,.64,1);}
+    @keyframes popIn{from{transform:scale(.6);opacity:0}to{transform:scale(1);opacity:1}}
+    .timeover-emoji{font-size:64px;line-height:1;margin-bottom:10px;}
+    .timeover-box h2{margin:0 0 6px;font-size:30px;color:#1a7a3c;letter-spacing:1px;text-transform:uppercase;}
+    .timeover-box p{color:#868e96;margin:0 0 24px;font-size:15px;}
+    .timeover-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+    .btn-restart{background:#1a7a3c;color:#fff;border:none;border-radius:10px;padding:13px 26px;font-size:15px;font-weight:700;cursor:pointer;transition:background .2s,transform .15s;}
+    .btn-restart:hover{background:#145c2f;transform:scale(1.05);}
+    .btn-next{background:#40c057;color:#fff;border:none;border-radius:10px;padding:13px 26px;font-size:15px;font-weight:700;cursor:pointer;transition:background .2s,transform .15s;}
+    .btn-next:hover{background:#2f9e44;transform:scale(1.05);}
+
+    /* ── MODE SELECT ── */
+    .mode-select{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;}
+    .mode-btn{background:#f0f7f0;border:2px solid #c3dfc3;border-radius:8px;padding:8px 18px;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;color:#1a7a3c;}
+    .mode-btn.active,.mode-btn:hover{background:#1a7a3c;border-color:#1a7a3c;color:#fff;}
+
+    /* ── TOP CONTROLS ── */
+    .top-controls{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px;align-items:center;}
+    .top-controls button{background:#fff;border:2px solid #1a7a3c;border-radius:8px;padding:6px 16px;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;color:#1a7a3c;}
+    .top-controls button:hover{background:#1a7a3c;color:#fff;}
+    .copy-msg{display:none;color:#40c057;font-weight:700;font-size:14px;}
+
+    /* ── GENERATE BUTTON ── */
+    .generate-btn{background:#1a7a3c;color:#fff;border:none;border-radius:10px;padding:14px 40px;font-size:18px;font-weight:700;cursor:pointer;transition:all .2s;margin-top:6px;}
+    .generate-btn:hover{background:#145c2f;transform:scale(1.02);}
+
+    /* ── CARDS ── */
+    .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin-bottom:16px;width:100%;}
+    .card{background:#fff;border:2px solid #c3dfc3;border-radius:12px;padding:18px 16px;display:flex;align-items:center;gap:12px;transition:box-shadow .2s;}
+    .card:hover{box-shadow:0 4px 16px rgba(26,122,60,.12);}
+    .card-emoji{font-size:28px;}
+    .card p{margin:0;font-size:16px;font-weight:500;color:#222;}
+
+    .seo-text{font-size:16px;line-height:1.7;color:#444;}
+    .content-section{margin:40px 0;}
+    .how-to{background:#f8faff;padding:24px 28px;border-radius:12px;margin:32px 0;}
+    .how-to p{font-size:15px;line-height:1.8;}
+    .category-title{font-size:26px;margin-bottom:4px;}
+    .subtitle{color:#666;font-size:16px;margin-top:0;}
+
+    @media(max-width:480px){.game-layout{flex-direction:row;}.timer-col{min-width:90px;}}
   </style>
 </head>
 <body>
 
+<!-- ── TIME OVER OVERLAY ─────────────────────────────────── -->
+<div id="timeOverOverlay">
+  <div class="timeover-box">
+    <div class="timeover-emoji">⏰</div>
+    <h2>Time's Up!</h2>
+    <p>30 seconds are over — did they guess the Islamic charade?</p>
+    <div class="timeover-actions">
+      <button class="btn-restart" onclick="resetTimer(true)">▶ Play Again</button>
+      <button class="btn-next" onclick="generate()">⏭ Next Card</button>
+    </div>
+  </div>
+</div>
 
 <header class="header">
   <div class="header-inner">
@@ -148,34 +228,49 @@
     Islamic charades combines the joy of the classic guessing game with meaningful Islamic content. Players act out Islamic practices and values without speaking while others guess — a wholesome, screen-free activity perfect for Ramadan evenings, Eid gatherings, madrasa events, and family game nights throughout the year.
   </p>
 
+  <!-- GAME AREA -->
   <section class="tool" id="gameArea">
     <h2 class="category-title">Halal Islamic Charades 🕌</h2>
     <p class="subtitle" id="statusText">Ready to play! Generate your first halal charade 🕌</p>
+
     <div class="top-controls">
       <button id="copyBtn" onclick="copyCharades()">📋 Copy</button>
       <button onclick="toggleFullScreen()">⛶ Full Screen</button>
       <span id="copyMsg" class="copy-msg">Copied!</span>
     </div>
-    <div class="quick-pick">
-      <button onclick="setCount(1)">1</button>
-      <button onclick="setCount(3)">3</button>
-      <button onclick="setCount(5)">5</button>
-      <button onclick="setCount(10)">10</button>
-      <button onclick="showCustom()">Custom</button>
-    </div>
+
     <div class="mode-select">
       <button class="mode-btn active" data-mode="default" onclick="setMode('default')">All</button>
-      <button class="mode-btn" data-mode="kids"    onclick="setMode('kids')">Kids</button>
-      <button class="mode-btn" data-mode="family"  onclick="setMode('family')">Family</button>
+      <button class="mode-btn" data-mode="kids" onclick="setMode('kids')">Kids</button>
+      <button class="mode-btn" data-mode="family" onclick="setMode('family')">Family</button>
       <button class="mode-btn" data-mode="ramadan" onclick="setMode('ramadan')">Ramadan</button>
       <button class="mode-btn" data-mode="madrasa" onclick="setMode('madrasa')">Madrasa</button>
     </div>
-    <div id="customBox" class="custom-box hidden">
-      <input type="number" id="customInput" min="1" max="12" placeholder="Enter number">
-      <button onclick="applyCustom()">Apply</button>
+
+    <!-- round picker 1 / 2 / 3 -->
+    <div class="round-pick">
+      <button class="round-btn active" data-round="1" onclick="setRound(1)">1</button>
+      <button class="round-btn" data-round="2" onclick="setRound(2)">2</button>
+      <button class="round-btn" data-round="3" onclick="setRound(3)">3</button>
     </div>
-    <div id="cards" class="cards"></div>
-    <button class="generate-btn" onclick="generate()">Generate</button>
+
+    <!-- GAME LAYOUT: Timer LEFT | Cards RIGHT -->
+    <div class="game-layout">
+      <!-- LEFT — countdown ring -->
+      <div class="timer-col">
+        <div id="timerRing"></div>
+        <div class="timer-btn-row">
+          <button id="timerToggleBtn" onclick="timerRunning ? pauseTimer() : startTimer()">▶ Start</button>
+          <button id="timerResetBtn" onclick="resetTimer(false)">↺ Reset</button>
+        </div>
+      </div>
+
+      <!-- RIGHT — cards + generate -->
+      <div class="game-content">
+        <div id="cards" class="cards"></div>
+        <button class="generate-btn" onclick="generate()">🕌 Generate</button>
+      </div>
+    </div>
   </section>
 
   <div class="age-guide">
@@ -355,7 +450,7 @@
       <li>🎉 Perfect for Ramadan evenings, Eid gatherings, Islamic school events, and family nights</li>
       <li>👨‍👩‍👧 Four modes cover toddlers through adults and madrasa students</li>
       <li>📚 Reinforces Islamic knowledge through physical, memorable play</li>
-      <li>⚡ One click generates 1, 3, 5, 10 or custom number of halal charades instantly</li>
+      <li>⚡ One click generates 1, 2, or 3 halal charades instantly</li>
       <li>📱 Fully mobile-optimised with full-screen mode for group settings</li>
       <li>♾️ Generator avoids repeats — fresh charades every round all evening long</li>
       <li>🔒 No login, no ads during play, no download, completely free</li>
@@ -376,7 +471,7 @@
     <p><strong>3. Keep the card secret</strong><br>Only the actor reads the card. Use Full Screen mode — hold up the phone so only you see the prompt as you move to your acting spot.</p>
     <p><strong>4. Signal the category</strong><br>Before acting, show the team the type of prompt — mime Salah, circle for Hajj, or open a book for Quran charades. This instantly narrows the guessing.</p>
     <p><strong>5. Act without speaking</strong><br>Use body language, gestures, and facial expressions only. For Islamic practices, act the full sequence from beginning to end. Show the emotion and the setting.</p>
-    <p><strong>6. Set a 60-second timer</strong><br>One round equals 60 seconds. A correct guess scores a point. Brief Islamic discussion after each round adds educational value to the game.</p>
+    <p><strong>6. Set a 30-second timer</strong><br>One round equals 30 seconds. A correct guess scores a point. Brief Islamic discussion after each round adds educational value to the game.</p>
     <p><strong>7. Rotate and keep going</strong><br>Take turns so every family member or student acts at least once. Click Generate for unlimited fresh halal charades throughout your gathering.</p>
   </section>
 
@@ -392,8 +487,8 @@
 
   <section class="content-section">
     <h2>Frequently Asked Questions – Islamic Charades</h2>
-    <p><strong>What is Islamic charades?</strong><br>Islamic charades is a halal version of classic charades where players act out Islamic practices, values, and daily Muslim life without speaking. charades include Salah, Wudu, fasting, Hajj, Ramadan traditions, Islamic values, and madrasa activities — combining fun with meaningful Islamic learning.</p>
-    <p><strong>Is Islamic charades halal?</strong><br>Yes. All charades are action-based and focus on Islamic practices and values. No inappropriate content, no music, no images of living beings, and no charades conflicting with Islamic values. Suitable for madrasas, Islamic schools, and family gatherings.</p>
+    <p><strong>What is Islamic charades?</strong><br>Islamic charades is a halal version of classic charades where players act out Islamic practices, values, and daily Muslim life without speaking. charades include Salah, Wudu, fasting, Hajj, Ramadan traditions, Islamic values, and madrasa activities.</p>
+    <p><strong>Is Islamic charades halal?</strong><br>Yes. All charades are action-based and focus on Islamic practices and values. No inappropriate content, no music, no images of living beings, and no charades conflicting with Islamic values.</p>
     <p><strong>Can I use this at a madrasa or Islamic school?</strong><br>Yes. charades reinforce Islamic knowledge — students act out Wudu steps, Salah positions, Hajj rituals, and Islamic values. Makes Islamic learning memorable and enjoyable for all ages.</p>
     <p><strong>What Islamic topics are covered?</strong><br>Six categories: Five Pillars of Islam, Ramadan traditions, Hajj and Umrah rituals, daily Muslim life, Islamic values and character, and madrasa and Islamic education activities.</p>
     <p><strong>Is this good for Ramadan gatherings?</strong><br>Yes. Ramadan mode covers fasting, Tarawih, Iftar, Laylatul Qadr, Suhoor, Zakat ul-Fitr, and Eid celebrations. Wholesome activity for evenings between Maghrib and Isha.</p>
