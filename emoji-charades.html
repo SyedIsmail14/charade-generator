@@ -38,12 +38,12 @@
       {
         "@type": "FAQPage",
         "mainEntity": [
-          {"@type":"Question","name":"What is emoji charades?","acceptedAnswer":{"@type":"Answer","text":"Emoji charades is a modern twist on the classic charades game where players act out popular emojis instead of words or phrases. The actor must physically represent the emoji using facial expressions, gestures, and body language while others guess which emoji is being acted. It is hugely popular with teens and digital-native players who use emojis daily in their communication."}},
-          {"@type":"Question","name":"How do you act out an emoji in charades?","acceptedAnswer":{"@type":"Answer","text":"To act out an emoji in charades, recreate the emoji's expression and body language as precisely as possible. For the crying laughing emoji, laugh uncontrollably with tears streaming down your face. For the thinking emoji, hold your chin thoughtfully with a puzzled expression. For the fire emoji, use your hands and body to suggest rising, flickering flames. Facial expression is the most powerful tool in emoji charades."}},
-          {"@type":"Question","name":"Is emoji charades good for teenagers?","acceptedAnswer":{"@type":"Answer","text":"Yes. Emoji charades is one of the best games for teenagers because it connects the game to digital communication they use every day. Teens who are hesitant about traditional charades often engage enthusiastically with emoji charades because the charades feel relevant to their generation and daily language."}},
-          {"@type":"Question","name":"What emojis are easiest to act out in charades?","acceptedAnswer":{"@type":"Answer","text":"The easiest emojis to act in charades are the face emojis with strong expressions — crying laughing face, angry face, shocked face, heart eyes, sleeping face, and thinking face. These have clear, exaggerated facial expressions that are immediately recognisable. Action emojis like running, dancing, waving, and flexing muscles are also excellent for easy rounds."}},
-          {"@type":"Question","name":"Is this emoji charades generator free?","acceptedAnswer":{"@type":"Answer","text":"Yes. Completely free with no signup, no download, and no time limit. Generate unlimited emoji charade charades for any party, family night, or teen gathering."}},
-          {"@type":"Question","name":"What is Emoji Story mode?","acceptedAnswer":{"@type":"Answer","text":"Emoji Story mode gives players a sequence of 3-4 emojis to act out in order, telling a tiny story through mime. For example, person walking then rain then surprised face tells the story of someone getting caught in the rain. Story mode is the most creative and challenging emoji charades experience, perfect for groups who want more than single emoji rounds."}}
+          {"@type":"Question","name":"What is emoji charades?","acceptedAnswer":{"@type":"Answer","text":"Emoji charades is a modern twist on the classic charades game where players act out popular emojis instead of words or phrases."}},
+          {"@type":"Question","name":"How do you act out an emoji in charades?","acceptedAnswer":{"@type":"Answer","text":"To act out an emoji in charades, recreate the emoji's expression and body language as precisely as possible."}},
+          {"@type":"Question","name":"Is emoji charades good for teenagers?","acceptedAnswer":{"@type":"Answer","text":"Yes. Emoji charades is one of the best games for teenagers because it connects the game to digital communication they use every day."}},
+          {"@type":"Question","name":"What emojis are easiest to act out in charades?","acceptedAnswer":{"@type":"Answer","text":"The easiest emojis to act are the face emojis with strong expressions — crying laughing face, angry face, shocked face, heart eyes."}},
+          {"@type":"Question","name":"Is this emoji charades generator free?","acceptedAnswer":{"@type":"Answer","text":"Yes. Completely free with no signup, no download, and no time limit."}},
+          {"@type":"Question","name":"What is Emoji Story mode?","acceptedAnswer":{"@type":"Answer","text":"Emoji Story mode gives players a sequence of 3-4 emojis to act out in order, telling a tiny story through mime."}}
         ]
       },
       {
@@ -93,10 +93,90 @@
     .rel-card:hover{box-shadow:0 4px 16px rgba(245,159,0,.2);transform:translateY(-2px);}
     .rel-card .ri{font-size:22px;}
     .rel-card .rn{font-weight:600;font-size:12px;}
+
+    /* ── GAME LAYOUT ────────────────────────────────── */
+    .game-layout{display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap;}
+
+    /* LEFT – timer */
+    .timer-col{display:flex;flex-direction:column;align-items:center;gap:10px;flex-shrink:0;min-width:110px;}
+    #timerRing{display:block;}
+    .timer-btn-row{display:flex;flex-direction:column;gap:8px;width:100%;}
+    #timerToggleBtn{background:#f59f00;color:#fff;border:none;border-radius:8px;padding:8px 0;font-size:13px;font-weight:700;cursor:pointer;width:100%;transition:background .2s;}
+    #timerToggleBtn:hover{background:#d48900;}
+    #timerResetBtn{background:#fff9db;color:#f59f00;border:1px solid #ffe066;border-radius:8px;padding:7px 0;font-size:13px;font-weight:600;cursor:pointer;width:100%;transition:background .2s;}
+    #timerResetBtn:hover{background:#fff3bf;}
+
+    /* RIGHT – content */
+    .game-content{flex:1;min-width:240px;}
+
+    /* cards */
+    #cards{margin-bottom:14px;min-height:60px;}
+
+    /* round picker */
+    .round-pick{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;}
+    .round-btn{background:#fff9db;border:2px solid #ffe066;border-radius:8px;padding:8px 22px;font-size:16px;font-weight:700;cursor:pointer;transition:all .2s;color:#f59f00;}
+    .round-btn.active,.round-btn:hover{background:#f59f00;border-color:#f59f00;color:#fff;}
+
+    /* ── TIME OVER OVERLAY ──────────────────────────── */
+    #timeOverOverlay{display:none;position:fixed;inset:0;background:rgba(10,5,0,.85);z-index:9999;align-items:center;justify-content:center;flex-direction:column;gap:20px;animation:fadeInBG .3s ease;}
+    @keyframes fadeInBG{from{opacity:0}to{opacity:1}}
+    .timeover-box{background:#fff;border-radius:22px;padding:40px 32px;text-align:center;box-shadow:0 28px 70px rgba(0,0,0,.4);max-width:340px;width:90%;animation:popIn .4s cubic-bezier(.34,1.56,.64,1);}
+    @keyframes popIn{from{transform:scale(.6);opacity:0}to{transform:scale(1);opacity:1}}
+    .timeover-emoji{font-size:64px;line-height:1;margin-bottom:10px;}
+    .timeover-box h2{margin:0 0 6px;font-size:30px;color:#f59f00;letter-spacing:1px;text-transform:uppercase;}
+    .timeover-box p{color:#868e96;margin:0 0 24px;font-size:15px;}
+    .timeover-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+    .btn-restart{background:#f59f00;color:#fff;border:none;border-radius:10px;padding:13px 26px;font-size:15px;font-weight:700;cursor:pointer;transition:background .2s,transform .15s;}
+    .btn-restart:hover{background:#d48900;transform:scale(1.05);}
+    .btn-next{background:#40c057;color:#fff;border:none;border-radius:10px;padding:13px 26px;font-size:15px;font-weight:700;cursor:pointer;transition:background .2s,transform .15s;}
+    .btn-next:hover{background:#2f9e44;transform:scale(1.05);}
+
+    /* ── MODE SELECT ── */
+    .mode-select{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;}
+    .mode-btn{background:#fff9db;border:2px solid #ffe066;border-radius:8px;padding:8px 18px;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;color:#f59f00;}
+    .mode-btn.active,.mode-btn:hover{background:#f59f00;border-color:#f59f00;color:#fff;}
+
+    /* ── TOP CONTROLS ── */
+    .top-controls{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px;align-items:center;}
+    .top-controls button{background:#fff;border:2px solid #f59f00;border-radius:8px;padding:6px 16px;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;color:#f59f00;}
+    .top-controls button:hover{background:#f59f00;color:#fff;}
+    .copy-msg{display:none;color:#40c057;font-weight:700;font-size:14px;}
+
+    /* ── GENERATE BUTTON ── */
+    .generate-btn{background:#f59f00;color:#fff;border:none;border-radius:10px;padding:14px 40px;font-size:18px;font-weight:700;cursor:pointer;transition:all .2s;margin-top:6px;}
+    .generate-btn:hover{background:#d48900;transform:scale(1.02);}
+
+    /* ── CARDS ── */
+    .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin-bottom:16px;width:100%;}
+    .card{background:#fff;border:2px solid #ffe066;border-radius:12px;padding:18px 16px;display:flex;align-items:center;gap:12px;transition:box-shadow .2s;}
+    .card:hover{box-shadow:0 4px 16px rgba(245,159,0,.12);}
+    .card-emoji{font-size:28px;}
+    .card p{margin:0;font-size:16px;font-weight:500;color:#222;}
+
+    .seo-text{font-size:16px;line-height:1.7;color:#444;}
+    .content-section{margin:40px 0;}
+    .how-to{background:#f8faff;padding:24px 28px;border-radius:12px;margin:32px 0;}
+    .how-to p{font-size:15px;line-height:1.8;}
+    .category-title{font-size:26px;margin-bottom:4px;}
+    .subtitle{color:#666;font-size:16px;margin-top:0;}
+
+    @media(max-width:480px){.game-layout{flex-direction:row;}.timer-col{min-width:90px;}}
   </style>
 </head>
 <body>
 
+<!-- ── TIME OVER OVERLAY ─────────────────────────────────── -->
+<div id="timeOverOverlay">
+  <div class="timeover-box">
+    <div class="timeover-emoji">⏰</div>
+    <h2>Time's Up!</h2>
+    <p>30 seconds are over — did they guess the emoji?</p>
+    <div class="timeover-actions">
+      <button class="btn-restart" onclick="resetTimer(true)">▶ Play Again</button>
+      <button class="btn-next" onclick="generate()">⏭ Next Card</button>
+    </div>
+  </div>
+</div>
 
 <header class="header">
   <div class="header-inner">
@@ -137,36 +217,49 @@
     Emoji charades connects the classic guessing game to the visual language of modern communication. If you can send it as an emoji, you can act it in charades. No preparation needed — generate, act, and guess on any device instantly.
   </p>
 
- 
-
+  <!-- GAME AREA -->
   <section class="tool" id="gameArea">
     <h2 class="category-title">Emoji Charades 😀</h2>
-    <p class="subtitle">Click Generate to get an emoji to act out 😀</p>
+    <p class="subtitle" id="statusText">Ready to play! Generate your first emoji charade 😀</p>
+
     <div class="top-controls">
       <button id="copyBtn" onclick="copyCharades()">📋 Copy</button>
       <button onclick="toggleFullScreen()">⛶ Full Screen</button>
       <span id="copyMsg" class="copy-msg">Copied!</span>
     </div>
-    <div class="quick-pick">
-      <button onclick="setCount(1)">1</button>
-      <button onclick="setCount(3)">3</button>
-      <button onclick="setCount(5)">5</button>
-      <button onclick="setCount(10)">10</button>
-      <button onclick="showCustom()">Custom</button>
-    </div>
+
     <div class="mode-select">
-      <button class="mode-btn active" data-mode="all"   onclick="setMode('all')">All</button>
-      <button class="mode-btn"        data-mode="easy"  onclick="setMode('easy')">Easy Faces</button>
-      <button class="mode-btn"        data-mode="action" onclick="setMode('action')">Actions</button>
-      <button class="mode-btn"        data-mode="combo"  onclick="setMode('combo')">Combos</button>
-      <button class="mode-btn"        data-mode="story"  onclick="setMode('story')">Story</button>
+      <button class="mode-btn active" data-mode="all" onclick="setMode('all')">All</button>
+      <button class="mode-btn" data-mode="easy" onclick="setMode('easy')">Easy Faces</button>
+      <button class="mode-btn" data-mode="action" onclick="setMode('action')">Actions</button>
+      <button class="mode-btn" data-mode="combo" onclick="setMode('combo')">Combos</button>
+      <button class="mode-btn" data-mode="story" onclick="setMode('story')">Story</button>
     </div>
-    <div id="customBox" class="custom-box hidden">
-      <input type="number" id="customInput" min="1" max="12" placeholder="Enter number">
-      <button onclick="applyCustom()">Apply</button>
+
+    <!-- round picker 1 / 2 / 3 -->
+    <div class="round-pick">
+      <button class="round-btn active" data-round="1" onclick="setRound(1)">1</button>
+      <button class="round-btn" data-round="2" onclick="setRound(2)">2</button>
+      <button class="round-btn" data-round="3" onclick="setRound(3)">3</button>
     </div>
-    <div id="cards" class="cards"></div>
-    <button class="generate-btn" onclick="generate()">Generate</button>
+
+    <!-- GAME LAYOUT: Timer LEFT | Cards RIGHT -->
+    <div class="game-layout">
+      <!-- LEFT — countdown ring -->
+      <div class="timer-col">
+        <div id="timerRing"></div>
+        <div class="timer-btn-row">
+          <button id="timerToggleBtn" onclick="timerRunning ? pauseTimer() : startTimer()">▶ Start</button>
+          <button id="timerResetBtn" onclick="resetTimer(false)">↺ Reset</button>
+        </div>
+      </div>
+
+      <!-- RIGHT — cards + generate -->
+      <div class="game-content">
+        <div id="cards" class="cards"></div>
+        <button class="generate-btn" onclick="generate()">😀 Generate</button>
+      </div>
+    </div>
   </section>
 
   <div class="age-guide">
@@ -305,10 +398,10 @@
     <p>Animal emoji charades bridge emoji charades with the classic animal charades tradition. The penguin waddling, the octopus with all eight arms flailing, the bee performing its waggle dance — these animal emojis have distinctive physical signatures that players can identify from a single movement. Nature emoji rounds are the most universally accessible category for mixed-age groups because children and adults alike have strong visual associations with the animals and can both act and guess with equal confidence.</p>
 
     <h3>🔗 Emoji Combinations</h3>
-    <p>Combination charades are the most creative category in emoji charades. Acting out "deeply in love with pizza" (😍🍕) requires the actor to combine romantic heart-eyes with a food-related action in a single flowing performance. "Dying of laughter completely" (😂💀) needs escalating laughter that crosses the threshold into theatrical death. Combination rounds reward creative interpretation and produce the most inventive and entertaining acting performances of any emoji charades session. These are the rounds that generate the most post-game discussion and the most requests to see the combination acted a different way.</p>
+    <p>Combination charades are the most creative category in emoji charades. Acting out "deeply in love with pizza" (😍🍕) requires the actor to combine romantic heart-eyes with a food-related action in a single flowing performance. "Dying of laughter completely" (😂💀) needs escalating laughter that crosses the threshold into theatrical death. Combination rounds reward creative interpretation and produce the most inventive and entertaining acting performances of any emoji charades session.</p>
 
     <h3>📖 Emoji Stories</h3>
-    <p>Emoji story charades are the most sophisticated and entertaining mode. Instead of a single emoji, players act out a three-emoji sequence that tells a complete tiny story — walking then rain then shock (🚶🌧️😱) tells the story of getting caught in a downpour. Studying then falling asleep (📚😴💤) is every student's revision night. The story format requires actors to transition between distinct emotional and physical states while maintaining a narrative arc — the highest creative challenge in the entire generator and the most rewarding when correctly guessed.</p>
+    <p>Emoji story charades are the most sophisticated and entertaining mode. Instead of a single emoji, players act out a three-emoji sequence that tells a complete tiny story — walking then rain then shock (🚶🌧️😱) tells the story of getting caught in a downpour. The story format requires actors to transition between distinct emotional and physical states while maintaining a narrative arc — the highest creative challenge in the entire generator and the most rewarding when correctly guessed.</p>
 
     <h3>🎭 Hard Emoji Acts</h3>
     <p>Hard emoji charades challenge players to represent newer or more nuanced emojis that require specific facial control and physical precision. The upside-down smile — that specific expression of being fine when absolutely nothing is fine — is deceptively difficult to convey through mime. The melting face emoji (🫠) requires a slow physical dissolution that tests body control. The one-eyebrow-raised suspicion emoji needs precise facial muscle work. Hard emoji rounds reward emoji literacy and produce the most impressed reactions when an actor nails a particularly subtle expression.</p>
@@ -348,7 +441,7 @@
       <li>🎉 Perfect for teen parties, family nights, office events and digital-native groups</li>
       <li>👨‍👩‍👧 Four modes from simple face emojis to complex emoji stories</li>
       <li>📱 The most phone-generation-friendly charades game available</li>
-      <li>⚡ One click generates 1, 3, 5, 10 or custom number instantly</li>
+      <li>⚡ One click generates 1, 2, or 3 charades instantly</li>
       <li>♾️ Generator avoids repeats — fresh emoji every round</li>
       <li>🔒 No login, no ads during play, completely free</li>
     </ul>
@@ -361,17 +454,17 @@
     <p><strong>3. Use Full Screen</strong><br>Switch to Full Screen so only the actor sees the emoji and description as they move to their acting spot.</p>
     <p><strong>4. Draw the emoji shape first</strong><br>Before acting the expression, briefly trace the emoji's round face shape in the air. This signals to the team that they are guessing an emoji and should think in emoji terms.</p>
     <p><strong>5. Act with maximum facial commitment</strong><br>Exaggerate every expression to its absolute maximum. Emojis are already exaggerated versions of human expression — your physical performance needs to match or exceed that exaggeration level.</p>
-    <p><strong>6. Set a 60-second timer</strong><br>Emoji charades moves fast for Easy Face and Action modes — most charades get guessed in under 30 seconds. Use 90 seconds for Combo and Story modes which require more complex acting sequences.</p>
+    <p><strong>6. Set a 30-second timer</strong><br>Emoji charades moves fast for Easy Face and Action modes — most charades get guessed in under 30 seconds. Use 60 seconds for Combo and Story modes which require more complex acting sequences.</p>
     <p><strong>7. For Story mode — perform in sequence</strong><br>Act each emoji in the story sequence in order with a clear pause between each. The team shouts guesses as you transition between emojis. First correct guess of the full story wins the round.</p>
   </section>
 
   <section class="content-section">
     <h2>Frequently Asked Questions – Emoji Charades</h2>
-    <p><strong>What is emoji charades?</strong><br>Emoji charades is a modern version of classic charades where players act out popular emojis using facial expressions, gestures, and body language. Others guess which emoji is being performed. Hugely popular with teens and digital-native players.</p>
-    <p><strong>How do you act out an emoji?</strong><br>Recreate the emoji's expression as precisely as possible. For 😂 laugh uncontrollably with tears. For 🤔 hold your chin with a puzzled expression. For 💪 flex your biggest possible bicep. Facial expression is the most powerful tool.</p>
-    <p><strong>Is emoji charades good for teenagers?</strong><br>Yes. It connects the classic game to digital communication teens use every day. Teens who hesitate at traditional charades often engage enthusiastically with emoji charades because the charades feel immediately relevant.</p>
+    <p><strong>What is emoji charades?</strong><br>Emoji charades is a modern version of classic charades where players act out popular emojis using facial expressions, gestures, and body language. Others guess which emoji is being performed.</p>
+    <p><strong>How do you act out an emoji?</strong><br>Recreate the emoji's expression as precisely as possible. For 😂 laugh uncontrollably with tears. For 🤔 hold your chin with a puzzled expression. For 💪 flex your biggest possible bicep.</p>
+    <p><strong>Is emoji charades good for teenagers?</strong><br>Yes. It connects the classic game to digital communication teens use every day. Teens who hesitate at traditional charades often engage enthusiastically with emoji charades.</p>
     <p><strong>What emojis are easiest to act out?</strong><br>Face emojis with strong expressions — 😂 😱 😍 😴 🤔 😡 — are easiest. Action emojis like 💪 🤦 🤷 👋 are also excellent for easy rounds.</p>
-    <p><strong>What is Story mode?</strong><br>Story mode gives a sequence of 3 emojis to act in order, telling a tiny story through mime. For example 😴⏰😤 shows sleeping, alarm rings, waking up angry. The most creative and challenging emoji charades experience.</p>
+    <p><strong>What is Story mode?</strong><br>Story mode gives a sequence of 3 emojis to act in order, telling a tiny story through mime. For example 😴⏰😤 shows sleeping, alarm rings, waking up angry.</p>
     <p><strong>Is this generator free?</strong><br>Yes. Completely free with no signup, no download, and no time limit.</p>
   </section>
 
