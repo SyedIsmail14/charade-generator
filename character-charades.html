@@ -301,10 +301,105 @@
     .stat-item { text-align: center; flex: 1; min-width: 100px; }
     .stat-num { font-size: 28px; font-weight: 700; }
     .stat-label { font-size: 12px; opacity: .8; margin-top: 2px; }
+
+    /* ── GAME LAYOUT ────────────────────────────────── */
+    .game-layout{display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap;}
+
+    /* LEFT – timer */
+    .timer-col{display:flex;flex-direction:column;align-items:center;gap:10px;flex-shrink:0;min-width:110px;}
+    #timerRing{display:block;}
+    .timer-btn-row{display:flex;flex-direction:column;gap:8px;width:100%;}
+    #timerToggleBtn{background:#3b5bdb;color:#fff;border:none;border-radius:8px;padding:8px 0;font-size:13px;font-weight:700;cursor:pointer;width:100%;transition:background .2s;}
+    #timerToggleBtn:hover{background:#2b4ab5;}
+    #timerResetBtn{background:#f0f4ff;color:#3b5bdb;border:1px solid #dde4f5;border-radius:8px;padding:7px 0;font-size:13px;font-weight:600;cursor:pointer;width:100%;transition:background .2s;}
+    #timerResetBtn:hover{background:#dde4f5;}
+
+    /* RIGHT – content */
+    .game-content{flex:1;min-width:240px;}
+
+    /* cards */
+    #cards{margin-bottom:14px;min-height:60px;}
+
+    /* round picker */
+    .round-pick{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;}
+    .round-btn{background:#f0f4ff;border:2px solid #dde4f5;border-radius:8px;padding:8px 22px;font-size:16px;font-weight:700;cursor:pointer;transition:all .2s;color:#3b5bdb;}
+    .round-btn.active,.round-btn:hover{background:#3b5bdb;border-color:#3b5bdb;color:#fff;}
+
+    /* ── TIME OVER OVERLAY ──────────────────────────── */
+    #timeOverOverlay{display:none;position:fixed;inset:0;background:rgba(10,5,0,.85);z-index:9999;align-items:center;justify-content:center;flex-direction:column;gap:20px;animation:fadeInBG .3s ease;}
+    @keyframes fadeInBG{from{opacity:0}to{opacity:1}}
+
+    .timeover-box{background:#fff;border-radius:22px;padding:40px 32px;text-align:center;box-shadow:0 28px 70px rgba(0,0,0,.4);max-width:340px;width:90%;animation:popIn .4s cubic-bezier(.34,1.56,.64,1);}
+    @keyframes popIn{from{transform:scale(.6);opacity:0}to{transform:scale(1);opacity:1}}
+
+    .timeover-emoji{font-size:64px;line-height:1;margin-bottom:10px;}
+    .timeover-box h2{margin:0 0 6px;font-size:30px;color:#3b5bdb;letter-spacing:1px;text-transform:uppercase;}
+    .timeover-box p{color:#868e96;margin:0 0 24px;font-size:15px;}
+    .timeover-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+    .btn-restart{background:#3b5bdb;color:#fff;border:none;border-radius:10px;padding:13px 26px;font-size:15px;font-weight:700;cursor:pointer;transition:background .2s,transform .15s;}
+    .btn-restart:hover{background:#2b4ab5;transform:scale(1.05);}
+    .btn-next{background:#40c057;color:#fff;border:none;border-radius:10px;padding:13px 26px;font-size:15px;font-weight:700;cursor:pointer;transition:background .2s,transform .15s;}
+    .btn-next:hover{background:#2f9e44;transform:scale(1.05);}
+
+    /* ── MODE SELECT ── */
+    .mode-select{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;}
+    .mode-btn{background:#f0f4ff;border:2px solid #dde4f5;border-radius:8px;padding:8px 18px;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;color:#3b5bdb;}
+    .mode-btn.active,.mode-btn:hover{background:#3b5bdb;border-color:#3b5bdb;color:#fff;}
+
+    /* ── TOP CONTROLS ── */
+    .top-controls{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px;align-items:center;}
+    .top-controls button{background:#fff;border:2px solid #3b5bdb;border-radius:8px;padding:6px 16px;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;color:#3b5bdb;}
+    .top-controls button:hover{background:#3b5bdb;color:#fff;}
+    .copy-msg{display:none;color:#40c057;font-weight:700;font-size:14px;}
+
+    /* ── GENERATE BUTTON ── */
+    .generate-btn{background:#3b5bdb;color:#fff;border:none;border-radius:10px;padding:14px 40px;font-size:18px;font-weight:700;cursor:pointer;transition:all .2s;margin-top:6px;}
+    .generate-btn:hover{background:#2b4ab5;transform:scale(1.02);}
+
+    /* ── CARDS ── */
+    .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin-bottom:16px;width:100%;}
+    .card{background:#fff;border:2px solid #dde4f5;border-radius:12px;padding:18px 16px;display:flex;align-items:center;gap:12px;transition:box-shadow .2s;}
+    .card:hover{box-shadow:0 4px 16px rgba(59,91,219,.12);}
+    .card-emoji{font-size:28px;}
+    .card p{margin:0;font-size:16px;font-weight:500;color:#222;}
+
+    .seo-text{font-size:16px;line-height:1.7;color:#444;}
+    .content-section{margin:40px 0;}
+    .how-to{background:#f8faff;padding:24px 28px;border-radius:12px;margin:32px 0;}
+    .how-to p{font-size:15px;line-height:1.8;}
+    .category-title{font-size:26px;margin-bottom:4px;}
+    .subtitle{color:#666;font-size:16px;margin-top:0;}
+    .age-guide{background:#f0f4ff;border:1px solid #dde4f5;border-radius:10px;padding:20px 24px;margin:24px 0;}
+    .age-guide h3{margin-top:0;color:#3b5bdb;}
+    .age-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px;}
+    .age-card{flex:1;min-width:130px;background:#fff;border:1px solid #dde4f5;border-radius:8px;padding:12px;text-align:center;font-size:13px;}
+    .age-card strong{display:block;font-size:15px;margin-bottom:4px;}
+    .diff-table{width:100%;border-collapse:collapse;font-size:14px;margin-top:16px;}
+    .diff-table th{background:#3b5bdb;color:#fff;padding:10px 14px;text-align:left;}
+    .diff-table td{padding:10px 14px;border-bottom:1px solid #eee;}
+    .diff-table tr:nth-child(even) td{background:#f0f4ff;}
+    .related-tools{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:12px;margin-top:16px;}
+    .rel-card{background:#fff;border:1px solid #dde4f5;border-radius:10px;padding:12px 10px;text-align:center;text-decoration:none;color:#222;font-size:13px;font-weight:500;transition:box-shadow .2s,transform .15s;display:flex;flex-direction:column;align-items:center;gap:5px;}
+    .rel-card:hover{box-shadow:0 4px 16px rgba(59,91,219,.15);transform:translateY(-2px);}
+    .rel-card .ri{font-size:22px;}
+    .rel-card .rn{font-weight:600;font-size:12px;}
+
+    @media(max-width:480px){.game-layout{flex-direction:row;}.timer-col{min-width:90px;}}
   </style>
 </head>
 <body>
-
+<!-- ── TIME OVER OVERLAY ─────────────────────────────────── -->
+<div id="timeOverOverlay">
+  <div class="timeover-box">
+    <div class="timeover-emoji">⏰</div>
+    <h2>Time's Up!</h2>
+    <p>30 seconds are over — did they guess the character?</p>
+    <div class="timeover-actions">
+      <button class="btn-restart" onclick="resetTimer(true)">▶ Play Again</button>
+      <button class="btn-next" onclick="generate()">⏭ Next Card</button>
+    </div>
+  </div>
+</div>
 
 <!-- HEADER -->
 <header class="header">
@@ -351,36 +446,51 @@
     No preparation needed. Pick a mode, click Generate, and the game starts instantly on any device.
   </p>
 
-
-  <!-- GAME AREA — unchanged -->
+  <!-- GAME AREA -->
   <section class="tool" id="gameArea">
     <h2 class="category-title">Character Charades 🎭</h2>
     <p class="subtitle" id="statusText">Ready to play! Generate your first character 🎭</p>
+
     <div class="top-controls">
       <button id="copyBtn" onclick="copyCharades()">📋 Copy</button>
       <button onclick="toggleFullScreen()">⛶ Full Screen</button>
       <span id="copyMsg" class="copy-msg">Copied!</span>
     </div>
-    <div class="quick-pick">
-      <button onclick="setCount(1)">1</button>
-      <button onclick="setCount(3)">3</button>
-      <button onclick="setCount(5)">5</button>
-      <button onclick="setCount(10)">10</button>
-      <button onclick="showCustom()">Custom</button>
-    </div>
+
     <div class="mode-select">
       <button class="mode-btn active" data-mode="default" onclick="setMode('default')">All</button>
-      <button class="mode-btn" data-mode="kids"   onclick="setMode('kids')">Kids</button>
-      <button class="mode-btn" data-mode="funny"  onclick="setMode('funny')">Funny</button>
-      <button class="mode-btn" data-mode="hard"   onclick="setMode('hard')">Hard</button>
-      <button class="mode-btn" data-mode="party"  onclick="setMode('party')">Party</button>
+      <button class="mode-btn" data-mode="kids" onclick="setMode('kids')">Kids</button>
+      <button class="mode-btn" data-mode="superheroes" onclick="setMode('superheroes')">Superheroes</button>
+      <button class="mode-btn" data-mode="movies" onclick="setMode('movies')">Movies</button>
+      <button class="mode-btn" data-mode="fairy" onclick="setMode('fairy')">Fairy Tale</button>
+      <button class="mode-btn" data-mode="games" onclick="setMode('games')">Video Games</button>
+      <button class="mode-btn" data-mode="tv" onclick="setMode('tv')">Classic TV</button>
     </div>
-    <div id="customBox" class="custom-box hidden">
-      <input type="number" id="customInput" min="1" max="12" placeholder="Enter number">
-      <button onclick="applyCustom()">Apply</button>
+
+    <!-- round picker 1 / 2 / 3 -->
+    <div class="round-pick">
+      <button class="round-btn active" data-round="1" onclick="setRound(1)">1</button>
+      <button class="round-btn" data-round="2" onclick="setRound(2)">2</button>
+      <button class="round-btn" data-round="3" onclick="setRound(3)">3</button>
     </div>
-    <div id="cards" class="cards"></div>
-    <button class="generate-btn" onclick="generate()">Generate</button>
+
+    <!-- GAME LAYOUT: Timer LEFT | Cards RIGHT -->
+    <div class="game-layout">
+      <!-- LEFT — countdown ring -->
+      <div class="timer-col">
+        <div id="timerRing"></div>
+        <div class="timer-btn-row">
+          <button id="timerToggleBtn" onclick="timerRunning ? pauseTimer() : startTimer()">▶ Start</button>
+          <button id="timerResetBtn" onclick="resetTimer(false)">↺ Reset</button>
+        </div>
+      </div>
+
+      <!-- RIGHT — cards + generate -->
+      <div class="game-content">
+        <div id="cards" class="cards"></div>
+        <button class="generate-btn" onclick="generate()">🎭 Generate</button>
+      </div>
+    </div>
   </section>
 
   <!-- AGE / MODE GUIDE -->
@@ -388,9 +498,9 @@
     <h3>🎯 Which Mode Should You Pick?</h3>
     <div class="age-row">
       <div class="age-card"><strong>👶 Kids</strong>Ages 4–10<br>Cartoons, Disney, classic characters kids know well.</div>
-      <div class="age-card"><strong>😂 Funny</strong>All ages<br>Characters in absurd situations. Maximum laughs.</div>
-      <div class="age-card"><strong>🎉 Party</strong>Teens & Adults<br>Superheroes, movie icons, mixed energy rounds.</div>
-      <div class="age-card"><strong>🧠 Hard</strong>Adults<br>Obscure characters needing cultural knowledge to guess.</div>
+      <div class="age-card"><strong>🦸 Superheroes</strong>All ages<br>Marvel, DC, iconic heroes and villains.</div>
+      <div class="age-card"><strong>🎬 Movies</strong>Teens & Adults<br>Film characters from blockbusters to classics.</div>
+      <div class="age-card"><strong>🧚 Fairy Tale</strong>All ages<br>Classic stories, princesses, fairy tale creatures.</div>
     </div>
   </div>
 
@@ -544,9 +654,9 @@
       </thead>
       <tbody>
         <tr><td>🧒 Kids</td><td>Ages 4–10, classrooms</td><td>Disney, Pixar, cartoons, fairy tales</td><td>Elsa freezing everything</td></tr>
-        <tr><td>😂 Funny</td><td>All ages, party nights</td><td>Any character in absurd situation</td><td>Gollum trying to use a smartphone</td></tr>
-        <tr><td>🎉 Party</td><td>Teens, mixed adults</td><td>Superheroes, movie icons, TV characters</td><td>Jack Sparrow ordering coffee</td></tr>
-        <tr><td>🧠 Hard</td><td>Adults, film lovers</td><td>Obscure or complex characters</td><td>Sherlock Holmes in complete silence</td></tr>
+        <tr><td>🦸 Superheroes</td><td>All ages, action fans</td><td>Marvel, DC, superhero icons</td><td>Spider-Man shooting web</td></tr>
+        <tr><td>🎬 Movies</td><td>Teens & adults, film lovers</td><td>Blockbuster & classic film characters</td><td>Harry Potter casting spell</td></tr>
+        <tr><td>🧚 Fairy Tale</td><td>All ages, family groups</td><td>Princesses, fairy tale creatures</td><td>Cinderella losing glass slipper</td></tr>
       </tbody>
     </table>
   </section>
@@ -596,7 +706,7 @@
       <li>🎭 100+ unique character charades across 6 categories</li>
       <li>🎉 Perfect for birthday parties, family nights, classroom events, and virtual game nights</li>
       <li>👨‍👩‍👧 Four modes cover ages 4 through adult with appropriate difficulty at each level</li>
-      <li>⚡ One click generates 1, 3, 5, 10, or custom number of characters instantly</li>
+      <li>⚡ One click generates 1, 2, or 3 characters instantly</li>
       <li>📱 Fully mobile-optimised with full-screen mode for group play</li>
       <li>♾️ Generator avoids repeats until the full pool is exhausted</li>
       <li>🔒 No login, no ads during play, no download required</li>
@@ -608,7 +718,7 @@
     <h2>How to Play Character Charades – Step by Step</h2>
 
     <p><strong>1. Pick a mode and count</strong><br>
-    Choose how many characters you need using the number buttons. Then select a mode — All for mixed play, Kids for young children, Funny for party laughs, Hard for competitive adult groups.</p>
+    Choose how many characters you need using the number buttons. Then select a mode — All for mixed play, Kids for young children, Superheroes for action fans, Movies for film lovers, or Fairy Tale for family groups.</p>
 
     <p><strong>2. Click Generate</strong><br>
     Hit the Generate button and character charades appear instantly. Each card shows a famous character with an action or situation to act out.</p>
@@ -622,8 +732,8 @@
     <p><strong>5. Act without speaking</strong><br>
     Use body language, gestures, and facial expressions only. No sounds, no mouthing words, no writing in the air. The character's signature move is your most powerful clue.</p>
 
-    <p><strong>6. Set a 60-second timer</strong><br>
-    One round equals 60 seconds. A correct guess in time scores a point. If not, the opposing team gets one steal attempt.</p>
+    <p><strong>6. Set a 30-second timer</strong><br>
+    One round equals 30 seconds. A correct guess in time scores a point. If not, the opposing team gets one steal attempt.</p>
 
     <p><strong>7. Rotate and repeat</strong><br>
     Take turns clockwise so every player gets to act. Click Generate for unlimited fresh character charades — the tool avoids repeating characters until the full pool cycles through.</p>
@@ -637,9 +747,9 @@
     </p>
     <p>
       <strong>Kids Mode:</strong> Mickey Mouse waving his ears, Peppa Pig jumping in puddles, Pikachu using Thunderbolt, Winnie the Pooh stuck in a honey jar.<br>
-      <strong>Funny Mode:</strong> Gollum trying to use a smartphone, Homer Simpson on a diet, Elsa melting her own ice palace, Batman trying to parallel park the Batmobile.<br>
-      <strong>Party Mode:</strong> Jack Sparrow ordering coffee, Thor struggling to lift Mjolnir, Hermione answering every question, Shrek on a first date.<br>
-      <strong>Hard Mode:</strong> Sherlock Holmes deducing silently, Gandalf refusing to pass, Loki shapeshifting mid-conversation, Gollum having an argument with himself.
+      <strong>Superheroes Mode:</strong> Spider-Man shooting web, Batman throwing batarang, Thor swinging hammer, Black Panther doing Wakanda salute.<br>
+      <strong>Movies Mode:</strong> Harry Potter casting spell, Elsa freezing with palms, Jack Sparrow staggering, Gollum holding precious ring.<br>
+      <strong>Fairy Tale Mode:</strong> Cinderella losing glass slipper, Rapunzel letting hair down, Aladdin riding magic carpet, Pinocchio nose growing.
     </p>
     <p>
       Use the <strong>Copy</strong> button to share all generated characters via WhatsApp or any chat app for virtual game nights.
@@ -688,7 +798,6 @@
       <a href="christmas-charades.html" class="tool-card"><span class="tool-icon">🎄</span><span class="tool-name">Christmas Charades</span><span class="tool-desc">Holiday themed fun</span></a>
       <a href="islamic-charades.html" class="tool-card"><span class="tool-icon">🕌</span><span class="tool-name">Islamic Charades</span><span class="tool-desc">Islamic words & values</span></a>
       <a href="animal-charades.html" class="tool-card"><span class="tool-icon">🐾</span><span class="tool-name">Animal Charades</span><span class="tool-desc">Animals to act out</span></a>
-      <!-- PLACEHOLDER TOOLS — build these pages next -->
       <a href="funny-charades.html" class="tool-card"><span class="tool-icon">😂</span><span class="tool-name">Funny Charades</span><span class="tool-desc">Hilarious party charades</span></a>
       <a href="hard-charades.html" class="tool-card"><span class="tool-icon">🧠</span><span class="tool-name">Hard Charades</span><span class="tool-desc">Challenging for adults</span></a>
       <a href="food-charades.html" class="tool-card"><span class="tool-icon">🍕</span><span class="tool-name">Food Charades</span><span class="tool-desc">Dishes & ingredients</span></a>
