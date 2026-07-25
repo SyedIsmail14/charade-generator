@@ -38,12 +38,12 @@
       {
         "@type": "FAQPage",
         "mainEntity": [
-          {"@type":"Question","name":"What is summer charades?","acceptedAnswer":{"@type":"Answer","text":"Summer charades is a seasonal version of the classic charades game where all charades relate to summer activities — beach trips, pool fun, outdoor adventures, summer camp, and vacation moments. Players act these out without speaking while others guess. It is the perfect outdoor party game for summer barbecues, camp activities, and family vacations."}},
-          {"@type":"Question","name":"What are good summer charades ideas?","acceptedAnswer":{"@type":"Answer","text":"Great summer charades ideas include building a sandcastle, applying sunscreen, jumping into a swimming pool, catching fireflies at dusk, roasting marshmallows at a campfire, riding a rollercoaster, eating a dripping ice cream cone, and surfing a big wave. Our generator has 100+ summer charades ready to use instantly."}},
-          {"@type":"Question","name":"Is summer charades good for summer camp?","acceptedAnswer":{"@type":"Answer","text":"Yes. Summer charades is an excellent camp activity for rainy days, evening entertainment, or as an ice-breaker game for new campers. It needs no equipment, works for large groups, and the camp-themed charades feel directly relevant to the camp experience itself."}},
-          {"@type":"Question","name":"Is summer charades suitable for kids?","acceptedAnswer":{"@type":"Answer","text":"Yes. Kids mode uses simple, familiar summer activities like building sandcastles, eating ice cream, and splashing in a pool that children aged 4 and above can easily act and guess. It is a perfect screen-free activity for long summer afternoons and family vacations."}},
-          {"@type":"Question","name":"Is this summer charades generator free?","acceptedAnswer":{"@type":"Answer","text":"Yes. Completely free with no signup, no download, and no time limit. Generate unlimited summer charade charades for any beach trip, family vacation, or summer party."}},
-          {"@type":"Question","name":"Can I play summer charades at the beach?","acceptedAnswer":{"@type":"Answer","text":"Yes. Summer charades works perfectly at the beach since most charades are beach and outdoor themed. Use your phone's full screen mode to keep the prompt visible only to the actor even outdoors in bright sunlight, and enjoy a screen-free game once the round begins."}}
+          {"@type":"Question","name":"What is summer charades?","acceptedAnswer":{"@type":"Answer","text":"Summer charades is a seasonal version of the classic charades game where all charades relate to summer activities — beach trips, pool fun, outdoor adventures, summer camp, and vacation moments."}},
+          {"@type":"Question","name":"What are good summer charades ideas?","acceptedAnswer":{"@type":"Answer","text":"Great summer charades ideas include building a sandcastle, applying sunscreen, jumping into a swimming pool, catching fireflies at dusk, roasting marshmallows at a campfire, riding a rollercoaster, eating a dripping ice cream cone, and surfing a big wave."}},
+          {"@type":"Question","name":"Is summer charades good for summer camp?","acceptedAnswer":{"@type":"Answer","text":"Yes. Summer charades is an excellent camp activity for rainy days, evening entertainment, or as an ice-breaker game for new campers."}},
+          {"@type":"Question","name":"Is summer charades suitable for kids?","acceptedAnswer":{"@type":"Answer","text":"Yes. Kids mode uses simple, familiar summer activities like building sandcastles, eating ice cream, and splashing in a pool that children aged 4 and above can easily act and guess."}},
+          {"@type":"Question","name":"Is this summer charades generator free?","acceptedAnswer":{"@type":"Answer","text":"Yes. Completely free with no signup, no download, and no time limit."}},
+          {"@type":"Question","name":"Can I play summer charades at the beach?","acceptedAnswer":{"@type":"Answer","text":"Yes. Summer charades works perfectly at the beach since most charades are beach and outdoor themed. Use your phone's full screen mode to keep the prompt visible only to the actor even outdoors in bright sunlight."}}
         ]
       },
       {
@@ -89,10 +89,90 @@
     .rel-card:hover{box-shadow:0 4px 16px rgba(12,133,153,.15);transform:translateY(-2px);}
     .rel-card .ri{font-size:22px;}
     .rel-card .rn{font-weight:600;font-size:12px;}
+
+    /* ── GAME LAYOUT ────────────────────────────────── */
+    .game-layout{display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap;}
+
+    /* LEFT – timer */
+    .timer-col{display:flex;flex-direction:column;align-items:center;gap:10px;flex-shrink:0;min-width:110px;}
+    #timerRing{display:block;}
+    .timer-btn-row{display:flex;flex-direction:column;gap:8px;width:100%;}
+    #timerToggleBtn{background:#0c8599;color:#fff;border:none;border-radius:8px;padding:8px 0;font-size:13px;font-weight:700;cursor:pointer;width:100%;transition:background .2s;}
+    #timerToggleBtn:hover{background:#0a6b7a;}
+    #timerResetBtn{background:#e3fafc;color:#0c8599;border:1px solid #99e9f2;border-radius:8px;padding:7px 0;font-size:13px;font-weight:600;cursor:pointer;width:100%;transition:background .2s;}
+    #timerResetBtn:hover{background:#c5f6fa;}
+
+    /* RIGHT – content */
+    .game-content{flex:1;min-width:240px;}
+
+    /* cards */
+    #cards{margin-bottom:14px;min-height:60px;}
+
+    /* round picker */
+    .round-pick{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;}
+    .round-btn{background:#e3fafc;border:2px solid #99e9f2;border-radius:8px;padding:8px 22px;font-size:16px;font-weight:700;cursor:pointer;transition:all .2s;color:#0c8599;}
+    .round-btn.active,.round-btn:hover{background:#0c8599;border-color:#0c8599;color:#fff;}
+
+    /* ── TIME OVER OVERLAY ──────────────────────────── */
+    #timeOverOverlay{display:none;position:fixed;inset:0;background:rgba(10,5,0,.85);z-index:9999;align-items:center;justify-content:center;flex-direction:column;gap:20px;animation:fadeInBG .3s ease;}
+    @keyframes fadeInBG{from{opacity:0}to{opacity:1}}
+    .timeover-box{background:#fff;border-radius:22px;padding:40px 32px;text-align:center;box-shadow:0 28px 70px rgba(0,0,0,.4);max-width:340px;width:90%;animation:popIn .4s cubic-bezier(.34,1.56,.64,1);}
+    @keyframes popIn{from{transform:scale(.6);opacity:0}to{transform:scale(1);opacity:1}}
+    .timeover-emoji{font-size:64px;line-height:1;margin-bottom:10px;}
+    .timeover-box h2{margin:0 0 6px;font-size:30px;color:#0c8599;letter-spacing:1px;text-transform:uppercase;}
+    .timeover-box p{color:#868e96;margin:0 0 24px;font-size:15px;}
+    .timeover-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+    .btn-restart{background:#0c8599;color:#fff;border:none;border-radius:10px;padding:13px 26px;font-size:15px;font-weight:700;cursor:pointer;transition:background .2s,transform .15s;}
+    .btn-restart:hover{background:#0a6b7a;transform:scale(1.05);}
+    .btn-next{background:#40c057;color:#fff;border:none;border-radius:10px;padding:13px 26px;font-size:15px;font-weight:700;cursor:pointer;transition:background .2s,transform .15s;}
+    .btn-next:hover{background:#2f9e44;transform:scale(1.05);}
+
+    /* ── MODE SELECT ── */
+    .mode-select{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;}
+    .mode-btn{background:#e3fafc;border:2px solid #99e9f2;border-radius:8px;padding:8px 18px;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;color:#0c8599;}
+    .mode-btn.active,.mode-btn:hover{background:#0c8599;border-color:#0c8599;color:#fff;}
+
+    /* ── TOP CONTROLS ── */
+    .top-controls{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px;align-items:center;}
+    .top-controls button{background:#fff;border:2px solid #0c8599;border-radius:8px;padding:6px 16px;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;color:#0c8599;}
+    .top-controls button:hover{background:#0c8599;color:#fff;}
+    .copy-msg{display:none;color:#40c057;font-weight:700;font-size:14px;}
+
+    /* ── GENERATE BUTTON ── */
+    .generate-btn{background:#0c8599;color:#fff;border:none;border-radius:10px;padding:14px 40px;font-size:18px;font-weight:700;cursor:pointer;transition:all .2s;margin-top:6px;}
+    .generate-btn:hover{background:#0a6b7a;transform:scale(1.02);}
+
+    /* ── CARDS ── */
+    .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin-bottom:16px;width:100%;}
+    .card{background:#fff;border:2px solid #99e9f2;border-radius:12px;padding:18px 16px;display:flex;align-items:center;gap:12px;transition:box-shadow .2s;}
+    .card:hover{box-shadow:0 4px 16px rgba(12,133,153,.12);}
+    .card-emoji{font-size:28px;}
+    .card p{margin:0;font-size:16px;font-weight:500;color:#222;}
+
+    .seo-text{font-size:16px;line-height:1.7;color:#444;}
+    .content-section{margin:40px 0;}
+    .how-to{background:#f8faff;padding:24px 28px;border-radius:12px;margin:32px 0;}
+    .how-to p{font-size:15px;line-height:1.8;}
+    .category-title{font-size:26px;margin-bottom:4px;}
+    .subtitle{color:#666;font-size:16px;margin-top:0;}
+
+    @media(max-width:480px){.game-layout{flex-direction:row;}.timer-col{min-width:90px;}}
   </style>
 </head>
 <body>
 
+<!-- ── TIME OVER OVERLAY ─────────────────────────────────── -->
+<div id="timeOverOverlay">
+  <div class="timeover-box">
+    <div class="timeover-emoji">⏰</div>
+    <h2>Time's Up!</h2>
+    <p>30 seconds are over — did they guess the summer charade?</p>
+    <div class="timeover-actions">
+      <button class="btn-restart" onclick="resetTimer(true)">▶ Play Again</button>
+      <button class="btn-next" onclick="generate()">⏭ Next Card</button>
+    </div>
+  </div>
+</div>
 
 <header class="header">
   <div class="header-inner">
@@ -133,36 +213,49 @@
     Summer charades works anywhere the sun shines — at the beach, by the pool, around a campfire, or in the backyard. No equipment needed beyond your phone, and once the round starts, it is a completely screen-free, active outdoor game. Generate, act, and enjoy the season instantly.
   </p>
 
-
-
+  <!-- GAME AREA -->
   <section class="tool" id="gameArea">
     <h2 class="category-title">Summer Charades ☀️</h2>
-    <p class="subtitle">Click Generate to get a summer charade ☀️</p>
+    <p class="subtitle" id="statusText">Ready to play! Generate your first summer charade ☀️</p>
+
     <div class="top-controls">
       <button id="copyBtn" onclick="copyCharades()">📋 Copy</button>
       <button onclick="toggleFullScreen()">⛶ Full Screen</button>
       <span id="copyMsg" class="copy-msg">Copied!</span>
     </div>
-    <div class="quick-pick">
-      <button onclick="setCount(1)">1</button>
-      <button onclick="setCount(3)">3</button>
-      <button onclick="setCount(5)">5</button>
-      <button onclick="setCount(10)">10</button>
-      <button onclick="showCustom()">Custom</button>
-    </div>
+
     <div class="mode-select">
-      <button class="mode-btn active" data-mode="all"   onclick="setMode('all')">All</button>
-      <button class="mode-btn"        data-mode="kids"  onclick="setMode('kids')">Kids</button>
-      <button class="mode-btn"        data-mode="beach" onclick="setMode('beach')">Beach</button>
-      <button class="mode-btn"        data-mode="camp"  onclick="setMode('camp')">Camp</button>
-      <button class="mode-btn"        data-mode="funny" onclick="setMode('funny')">Funny</button>
+      <button class="mode-btn active" data-mode="all" onclick="setMode('all')">All</button>
+      <button class="mode-btn" data-mode="kids" onclick="setMode('kids')">Kids</button>
+      <button class="mode-btn" data-mode="beach" onclick="setMode('beach')">Beach</button>
+      <button class="mode-btn" data-mode="camp" onclick="setMode('camp')">Camp</button>
+      <button class="mode-btn" data-mode="funny" onclick="setMode('funny')">Funny</button>
     </div>
-    <div id="customBox" class="custom-box hidden">
-      <input type="number" id="customInput" min="1" max="12" placeholder="Enter number">
-      <button onclick="applyCustom()">Apply</button>
+
+    <!-- round picker 1 / 2 / 3 -->
+    <div class="round-pick">
+      <button class="round-btn active" data-round="1" onclick="setRound(1)">1</button>
+      <button class="round-btn" data-round="2" onclick="setRound(2)">2</button>
+      <button class="round-btn" data-round="3" onclick="setRound(3)">3</button>
     </div>
-    <div id="cards" class="cards"></div>
-    <button class="generate-btn" onclick="generate()">Generate</button>
+
+    <!-- GAME LAYOUT: Timer LEFT | Cards RIGHT -->
+    <div class="game-layout">
+      <!-- LEFT — countdown ring -->
+      <div class="timer-col">
+        <div id="timerRing"></div>
+        <div class="timer-btn-row">
+          <button id="timerToggleBtn" onclick="timerRunning ? pauseTimer() : startTimer()">▶ Start</button>
+          <button id="timerResetBtn" onclick="resetTimer(false)">↺ Reset</button>
+        </div>
+      </div>
+
+      <!-- RIGHT — cards + generate -->
+      <div class="game-content">
+        <div id="cards" class="cards"></div>
+        <button class="generate-btn" onclick="generate()">☀️ Generate</button>
+      </div>
+    </div>
   </section>
 
   <div class="age-guide">
@@ -276,22 +369,22 @@
     <h2>Summer Charades by Category – Full Guide</h2>
 
     <h3>🏖️ Kids Summer</h3>
-    <p>Kids summer charades capture the purest joys of childhood summer vacation. Eating a dripping ice cream cone before it melts down your hand, running through a garden sprinkler with shrieks of delight, and catching fireflies in jars at dusk are sensory-rich memories that every child treasures. These charades move fast and create enthusiastic guessing because the actions are drawn directly from the most exciting parts of being a kid with three months of summer freedom ahead.</p>
+    <p>Kids summer charades capture the purest joys of childhood summer vacation. Eating a dripping ice cream cone before it melts down your hand, running through a garden sprinkler with shrieks of delight, and catching fireflies in jars at dusk are sensory-rich memories that every child treasures.</p>
 
     <h3>🌊 Beach Activities</h3>
-    <p>Beach charades bring the specific physical comedy and joy of seaside fun to life. Surfing a wave with the inevitable wipeout, applying sunscreen to those impossible-to-reach back spots, and the dramatic full-body commitment of a cannonball dive — these are universal beach experiences that anyone who has visited the seaside recognises immediately. Beach rounds work especially well when actually played at the beach, where the real sand and sea create perfect atmosphere for the game.</p>
+    <p>Beach charades bring the specific physical comedy and joy of seaside fun to life. Surfing a wave with the inevitable wipeout, applying sunscreen to those impossible-to-reach back spots, and the dramatic full-body commitment of a cannonball dive — these are universal beach experiences.</p>
 
     <h3>🏕️ Summer Camp</h3>
-    <p>Summer camp charades celebrate the unique culture of camp life — the campfire songs, the scary stories told in hushed voices, the satisfying exhaustion after a long hike. Roasting marshmallows to the perfect golden brown, pitching a tent that keeps collapsing in the wind, and spotting wildlife on a quiet nature trail are activities that camp-goers of any generation recognise instantly. This category works brilliantly as an actual camp activity, especially on rainy days when outdoor activities are cancelled.</p>
+    <p>Summer camp charades celebrate the unique culture of camp life — the campfire songs, the scary stories told in hushed voices, the satisfying exhaustion after a long hike. Roasting marshmallows to the perfect golden brown, pitching a tent that keeps collapsing in the wind.</p>
 
     <h3>🎡 Summer Fun</h3>
-    <p>Summer fun charades capture the bigger seasonal events and celebrations that punctuate the summer months. Screaming on a rollercoaster, the sticky joy of cotton candy at a fair, and the communal wonder of watching fireworks light up the night sky are shared summer experiences that create universal recognition. These charades work brilliantly for Fourth of July parties, summer fairs, and any large outdoor gathering.</p>
+    <p>Summer fun charades capture the bigger seasonal events and celebrations that punctuate the summer months. Screaming on a rollercoaster, the sticky joy of cotton candy at a fair, and the communal wonder of watching fireworks light up the night sky.</p>
 
     <h3>✈️ Summer Vacation</h3>
-    <p>Summer vacation charades focus on the travel experiences that define family holidays. The chaos of packing a suitcase at the last minute, the singalong energy of a long road trip, and the universal frustration of getting lost using a paper map before smartphones existed are relatable travel moments. This category works especially well for families who travel together regularly and want to relive their shared vacation memories through playful acting.</p>
+    <p>Summer vacation charades focus on the travel experiences that define family holidays. The chaos of packing a suitcase at the last minute, the singalong energy of a long road trip, and the universal frustration of getting lost using a paper map.</p>
 
     <h3>😂 Funny Summer</h3>
-    <p>Funny summer charades celebrate the small disasters that accompany every summer season. Forgetting sunscreen and discovering a painful sunburn the next morning, ice cream melting faster than you can eat it, and the inevitable sand that finds its way into every crevice after a beach day — these universal summer mishaps create instant recognition and guaranteed laughter from anyone who has experienced a hot, sticky, glorious summer.</p>
+    <p>Funny summer charades celebrate the small disasters that accompany every summer season. Forgetting sunscreen and discovering a painful sunburn the next morning, ice cream melting faster than you can eat it, and the inevitable sand that finds its way into every crevice.</p>
   </section>
 
   <section class="content-section">
@@ -311,23 +404,21 @@
     <h2>🏆 Tips for Playing Summer Charades</h2>
     <div class="tips-grid">
       <div class="tip-card"><h4>Play at the Actual Beach or Pool</h4><p>Summer charades is most fun when played in the real summer setting it celebrates. Acting "applying sunscreen" while actually sitting on a beach towel, surrounded by real sand and sea, adds genuine atmosphere to every round.</p></div>
-      <div class="tip-card"><h4>Use the Heat to Your Advantage</h4><p>Many summer charades involve heat and sweat — lean into it. Exaggerated fanning, dramatic wiping of brow, desperate searching for shade all communicate "hot summer day" context that helps the team guess specific charades faster.</p></div>
-      <div class="tip-card"><h4>Great for Rainy Camp Days</h4><p>When outdoor camp activities get cancelled due to weather, summer charades is the perfect indoor alternative that still celebrates camp culture and keeps the camp spirit alive even when stuck inside.</p></div>
-      <div class="tip-card"><h4>Use Real Props When Available</h4><p>At a barbecue or beach day, use real available props — a beach towel as a surfboard, an actual ice cream cone as a prop, real sunglasses for sunbathing charades. Physical props make summer charades clearer and funnier.</p></div>
-      <div class="tip-card"><h4>Perfect for Road Trips</h4><p>Summer charades works brilliantly as a car game during family road trips. Use the Copy button to read charades aloud for whoever is acting in the back seat, while the driver and other passengers guess.</p></div>
-      <div class="tip-card"><h4>Play in the Evening for Camp Mode</h4><p>Camp charades feel most authentic when played in the evening, ideally near a real or imagined campfire. The golden hour lighting and cooler evening air perfectly match the campfire storytelling energy of this category.</p></div>
+      <div class="tip-card"><h4>Use the Heat to Your Advantage</h4><p>Many summer charades involve heat and sweat — lean into it. Exaggerated fanning, dramatic wiping of brow, desperate searching for shade all communicate "hot summer day" context.</p></div>
+      <div class="tip-card"><h4>Great for Rainy Camp Days</h4><p>When outdoor camp activities get cancelled due to weather, summer charades is the perfect indoor alternative that still celebrates camp culture.</p></div>
+      <div class="tip-card"><h4>Use Real Props When Available</h4><p>At a barbecue or beach day, use real available props — a beach towel as a surfboard, an actual ice cream cone as a prop, real sunglasses for sunbathing charades.</p></div>
+      <div class="tip-card"><h4>Perfect for Road Trips</h4><p>Summer charades works brilliantly as a car game during family road trips. Use the Copy button to read charades aloud for whoever is acting in the back seat.</p></div>
+      <div class="tip-card"><h4>Play in the Evening for Camp Mode</h4><p>Camp charades feel most authentic when played in the evening, ideally near a real or imagined campfire. The golden hour lighting perfectly matches the campfire storytelling energy.</p></div>
     </div>
   </section>
 
   <section class="content-section">
     <h2>Why Use This Summer Charades Generator?</h2>
-    <p>Summer is the season of outdoor play, family vacations, and long sunny days with no school schedule — making it the perfect season for a game that gets everyone moving, laughing, and acting together. Summer charades captures every aspect of the season, from beach trips to camp adventures to backyard barbecues, ensuring there is always a relevant, fresh prompt no matter how you are spending your summer.</p>
-    <p>This generator removes all preparation from your summer activities. Whether you are at the beach, by the pool, at camp, or simply looking for a screen-free activity to fill a long summer afternoon, one click gives you unlimited entertainment that matches the season perfectly.</p>
     <ul>
       <li>☀️ 100+ unique summer charades across 6 sunny categories</li>
       <li>🎉 Perfect for beach trips, family vacations, summer camps and backyard parties</li>
       <li>👨‍👩‍👧 Four modes cover young children through adults</li>
-      <li>⚡ One click generates 1, 3, 5, 10 or custom number instantly</li>
+      <li>⚡ One click generates 1, 2, or 3 charades instantly</li>
       <li>📱 Fully mobile-optimised — perfect for outdoor summer play</li>
       <li>♾️ Generator avoids repeats — fresh summer fun every round</li>
       <li>🔒 No login, no ads during play, completely free</li>
@@ -340,16 +431,16 @@
     <p><strong>2. Click Generate</strong><br>Hit Generate and summer charades appear instantly. The actor reads privately while everyone else looks away — even outdoors in bright sunlight, full screen mode keeps it private.</p>
     <p><strong>3. Use Full Screen</strong><br>Switch to Full Screen so only the actor sees the prompt clearly, even in bright outdoor light at the beach or pool.</p>
     <p><strong>4. Act with summer energy</strong><br>Summer charades reward enthusiastic, sun-soaked energy. Lean into the heat, the water, the outdoor freedom that defines the season.</p>
-    <p><strong>5. Set a 60-second timer</strong><br>One round equals 60 seconds. A correct guess scores a point. Summer charades tend to guess quickly because the activities are so universally familiar.</p>
+    <p><strong>5. Set a 30-second timer</strong><br>One round equals 30 seconds. A correct guess scores a point. Summer charades tend to guess quickly because the activities are so universally familiar.</p>
     <p><strong>6. Play it where it makes sense</strong><br>Beach charades work best at the beach, camp charades work best at camp or around a real fire. Match the setting to the mode for maximum atmosphere and fun.</p>
     <p><strong>7. Rotate and keep the summer vibes going</strong><br>Take turns so everyone acts at least once. Click Generate for unlimited fresh summer charades throughout your vacation, camp session, or backyard gathering.</p>
   </section>
 
   <section class="content-section">
     <h2>Frequently Asked Questions – Summer Charades</h2>
-    <p><strong>What is summer charades?</strong><br>Summer charades uses seasonal charades — beach trips, pool fun, outdoor adventures, summer camp — for players to act out without speaking while others guess. The perfect outdoor party game for the warm season.</p>
-    <p><strong>What are good summer charades ideas?</strong><br>Building a sandcastle, applying sunscreen, jumping into a pool, catching fireflies, roasting marshmallows, riding a rollercoaster, and eating a dripping ice cream cone all make great summer charades charades.</p>
-    <p><strong>Is summer charades good for summer camp?</strong><br>Yes. Excellent for rainy days, evening entertainment, or as an ice-breaker for new campers. Needs no equipment and works for large groups.</p>
+    <p><strong>What is summer charades?</strong><br>Summer charades uses seasonal charades — beach trips, pool fun, outdoor adventures, summer camp — for players to act out without speaking while others guess.</p>
+    <p><strong>What are good summer charades ideas?</strong><br>Building a sandcastle, applying sunscreen, jumping into a pool, catching fireflies, roasting marshmallows, riding a rollercoaster, and eating a dripping ice cream cone.</p>
+    <p><strong>Is summer charades good for summer camp?</strong><br>Yes. Excellent for rainy days, evening entertainment, or as an ice-breaker for new campers.</p>
     <p><strong>Is summer charades suitable for kids?</strong><br>Yes. Kids mode uses simple summer activities — sandcastles, ice cream, pool splashing — that children aged 4 and above can easily act and guess.</p>
     <p><strong>Can I play this at the beach?</strong><br>Yes. Most charades are beach and outdoor themed. Use full screen mode to keep charades visible only to the actor even in bright sunlight.</p>
     <p><strong>Is this generator free?</strong><br>Yes. Completely free with no signup, no download, and no time limit.</p>
@@ -357,7 +448,6 @@
 
   <section class="content-section">
     <h2>🎮 Explore All Charades Tools – 25+ Free Generators</h2>
-    <p>Try any of these free charades generators. Every tool is free, instant, and works on all devices.</p>
     <div class="related-tools">
       <a href="kids-charade-generator.html" class="rel-card"><span class="ri">👦</span><span class="rn">Kids Charades</span></a>
       <a href="movie-charades.html" class="rel-card"><span class="ri">🎬</span><span class="rn">Movie Charades</span></a>
