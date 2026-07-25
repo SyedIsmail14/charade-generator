@@ -38,12 +38,12 @@
       {
         "@type": "FAQPage",
         "mainEntity": [
-          {"@type":"Question","name":"What is school charades?","acceptedAnswer":{"@type":"Answer","text":"School charades is a classroom-themed version of the classic charades game where all charades are related to school life — subjects, teachers, students, school events, and classroom moments. It is an excellent educational activity that builds vocabulary, improves physical expression, and makes learning fun. Perfect for classroom ice-breakers, end-of-term parties, and educational game nights."}},
-          {"@type":"Question","name":"Can teachers use school charades in the classroom?","acceptedAnswer":{"@type":"Answer","text":"Yes. School charades is one of the best classroom activities for teachers. It works as a lesson warm-up, a subject review game, an end-of-term activity, or a reward game. All charades are curriculum-connected and classroom-safe. Primary mode is ideal for ages 5-10 and Secondary mode for ages 11-16."}},
-          {"@type":"Question","name":"What subjects are covered in school charades?","acceptedAnswer":{"@type":"Answer","text":"School charades covers all major school subjects including maths, science, English, history, geography, PE, art, music, and computing. Each subject has charades based on specific classroom activities and learning moments that students will immediately recognise from their school experience."}},
-          {"@type":"Question","name":"Is school charades suitable for all ages?","acceptedAnswer":{"@type":"Answer","text":"Yes. Primary mode uses simple school actions suitable for ages 5-10. Secondary mode covers secondary school subjects and student life for ages 11-16. Teacher mode is designed for adult educators at professional development events. Funny mode works for all ages and celebrates the universal comedy of school life."}},
-          {"@type":"Question","name":"Is this school charades generator free?","acceptedAnswer":{"@type":"Answer","text":"Yes. Completely free with no signup, no download, and no time limit. Generate unlimited school charade charades for any classroom activity, school event, or educational game night."}},
-          {"@type":"Question","name":"How can school charades help with learning?","acceptedAnswer":{"@type":"Answer","text":"School charades reinforces subject vocabulary through physical, embodied learning. When a student acts out photosynthesis, the water cycle, or long division, they create a physical memory of the concept that outlasts textbook reading. Research consistently shows that kinaesthetic learning — learning through physical movement — produces stronger long-term retention than passive study."}}
+          {"@type":"Question","name":"What is school charades?","acceptedAnswer":{"@type":"Answer","text":"School charades is a classroom-themed version of the classic charades game where all charades are related to school life — subjects, teachers, students, school events, and classroom moments."}},
+          {"@type":"Question","name":"Can teachers use school charades in the classroom?","acceptedAnswer":{"@type":"Answer","text":"Yes. School charades is one of the best classroom activities for teachers. It works as a lesson warm-up, a subject review game, an end-of-term activity, or a reward game."}},
+          {"@type":"Question","name":"What subjects are covered in school charades?","acceptedAnswer":{"@type":"Answer","text":"School charades covers all major school subjects including maths, science, English, history, geography, PE, art, music, and computing."}},
+          {"@type":"Question","name":"Is school charades suitable for all ages?","acceptedAnswer":{"@type":"Answer","text":"Yes. Primary mode uses simple school actions suitable for ages 5-10. Secondary mode covers secondary school subjects and student life for ages 11-16."}},
+          {"@type":"Question","name":"Is this school charades generator free?","acceptedAnswer":{"@type":"Answer","text":"Yes. Completely free with no signup, no download, and no time limit."}},
+          {"@type":"Question","name":"How can school charades help with learning?","acceptedAnswer":{"@type":"Answer","text":"School charades reinforces subject vocabulary through physical, embodied learning. When a student acts out photosynthesis, the water cycle, or long division, they create a physical memory of the concept."}}
         ]
       },
       {
@@ -89,10 +89,90 @@
     .rel-card:hover{box-shadow:0 4px 16px rgba(25,113,194,.15);transform:translateY(-2px);}
     .rel-card .ri{font-size:22px;}
     .rel-card .rn{font-weight:600;font-size:12px;}
+
+    /* ── GAME LAYOUT ────────────────────────────────── */
+    .game-layout{display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap;}
+
+    /* LEFT – timer */
+    .timer-col{display:flex;flex-direction:column;align-items:center;gap:10px;flex-shrink:0;min-width:110px;}
+    #timerRing{display:block;}
+    .timer-btn-row{display:flex;flex-direction:column;gap:8px;width:100%;}
+    #timerToggleBtn{background:#1971c2;color:#fff;border:none;border-radius:8px;padding:8px 0;font-size:13px;font-weight:700;cursor:pointer;width:100%;transition:background .2s;}
+    #timerToggleBtn:hover{background:#145a9e;}
+    #timerResetBtn{background:#e8f4fd;color:#1971c2;border:1px solid #b8d9f5;border-radius:8px;padding:7px 0;font-size:13px;font-weight:600;cursor:pointer;width:100%;transition:background .2s;}
+    #timerResetBtn:hover{background:#d0ebff;}
+
+    /* RIGHT – content */
+    .game-content{flex:1;min-width:240px;}
+
+    /* cards */
+    #cards{margin-bottom:14px;min-height:60px;}
+
+    /* round picker */
+    .round-pick{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;}
+    .round-btn{background:#e8f4fd;border:2px solid #b8d9f5;border-radius:8px;padding:8px 22px;font-size:16px;font-weight:700;cursor:pointer;transition:all .2s;color:#1971c2;}
+    .round-btn.active,.round-btn:hover{background:#1971c2;border-color:#1971c2;color:#fff;}
+
+    /* ── TIME OVER OVERLAY ──────────────────────────── */
+    #timeOverOverlay{display:none;position:fixed;inset:0;background:rgba(10,5,0,.85);z-index:9999;align-items:center;justify-content:center;flex-direction:column;gap:20px;animation:fadeInBG .3s ease;}
+    @keyframes fadeInBG{from{opacity:0}to{opacity:1}}
+    .timeover-box{background:#fff;border-radius:22px;padding:40px 32px;text-align:center;box-shadow:0 28px 70px rgba(0,0,0,.4);max-width:340px;width:90%;animation:popIn .4s cubic-bezier(.34,1.56,.64,1);}
+    @keyframes popIn{from{transform:scale(.6);opacity:0}to{transform:scale(1);opacity:1}}
+    .timeover-emoji{font-size:64px;line-height:1;margin-bottom:10px;}
+    .timeover-box h2{margin:0 0 6px;font-size:30px;color:#1971c2;letter-spacing:1px;text-transform:uppercase;}
+    .timeover-box p{color:#868e96;margin:0 0 24px;font-size:15px;}
+    .timeover-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+    .btn-restart{background:#1971c2;color:#fff;border:none;border-radius:10px;padding:13px 26px;font-size:15px;font-weight:700;cursor:pointer;transition:background .2s,transform .15s;}
+    .btn-restart:hover{background:#145a9e;transform:scale(1.05);}
+    .btn-next{background:#40c057;color:#fff;border:none;border-radius:10px;padding:13px 26px;font-size:15px;font-weight:700;cursor:pointer;transition:background .2s,transform .15s;}
+    .btn-next:hover{background:#2f9e44;transform:scale(1.05);}
+
+    /* ── MODE SELECT ── */
+    .mode-select{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;}
+    .mode-btn{background:#e8f4fd;border:2px solid #b8d9f5;border-radius:8px;padding:8px 18px;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;color:#1971c2;}
+    .mode-btn.active,.mode-btn:hover{background:#1971c2;border-color:#1971c2;color:#fff;}
+
+    /* ── TOP CONTROLS ── */
+    .top-controls{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px;align-items:center;}
+    .top-controls button{background:#fff;border:2px solid #1971c2;border-radius:8px;padding:6px 16px;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;color:#1971c2;}
+    .top-controls button:hover{background:#1971c2;color:#fff;}
+    .copy-msg{display:none;color:#40c057;font-weight:700;font-size:14px;}
+
+    /* ── GENERATE BUTTON ── */
+    .generate-btn{background:#1971c2;color:#fff;border:none;border-radius:10px;padding:14px 40px;font-size:18px;font-weight:700;cursor:pointer;transition:all .2s;margin-top:6px;}
+    .generate-btn:hover{background:#145a9e;transform:scale(1.02);}
+
+    /* ── CARDS ── */
+    .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin-bottom:16px;width:100%;}
+    .card{background:#fff;border:2px solid #b8d9f5;border-radius:12px;padding:18px 16px;display:flex;align-items:center;gap:12px;transition:box-shadow .2s;}
+    .card:hover{box-shadow:0 4px 16px rgba(25,113,194,.12);}
+    .card-emoji{font-size:28px;}
+    .card p{margin:0;font-size:16px;font-weight:500;color:#222;}
+
+    .seo-text{font-size:16px;line-height:1.7;color:#444;}
+    .content-section{margin:40px 0;}
+    .how-to{background:#f8faff;padding:24px 28px;border-radius:12px;margin:32px 0;}
+    .how-to p{font-size:15px;line-height:1.8;}
+    .category-title{font-size:26px;margin-bottom:4px;}
+    .subtitle{color:#666;font-size:16px;margin-top:0;}
+
+    @media(max-width:480px){.game-layout{flex-direction:row;}.timer-col{min-width:90px;}}
   </style>
 </head>
 <body>
 
+<!-- ── TIME OVER OVERLAY ─────────────────────────────────── -->
+<div id="timeOverOverlay">
+  <div class="timeover-box">
+    <div class="timeover-emoji">⏰</div>
+    <h2>Time's Up!</h2>
+    <p>30 seconds are over — did they guess the school charade?</p>
+    <div class="timeover-actions">
+      <button class="btn-restart" onclick="resetTimer(true)">▶ Play Again</button>
+      <button class="btn-next" onclick="generate()">⏭ Next Card</button>
+    </div>
+  </div>
+</div>
 
 <header class="header">
   <div class="header-inner">
@@ -133,35 +213,49 @@
     School charades makes learning physical and memorable. When students act out photosynthesis, the water cycle, or long division, they create kinaesthetic memories that outlast any textbook. Teachers love it as a lesson warm-up. Students love it as a reward game. Parents love it as an educational family activity that feels like pure fun.
   </p>
 
-
+  <!-- GAME AREA -->
   <section class="tool" id="gameArea">
     <h2 class="category-title">School Charades 🏫</h2>
-    <p class="subtitle">Click Generate to get a school charade 🏫</p>
+    <p class="subtitle" id="statusText">Ready to play! Generate your first school charade 🏫</p>
+
     <div class="top-controls">
       <button id="copyBtn" onclick="copyCharades()">📋 Copy</button>
       <button onclick="toggleFullScreen()">⛶ Full Screen</button>
       <span id="copyMsg" class="copy-msg">Copied!</span>
     </div>
-    <div class="quick-pick">
-      <button onclick="setCount(1)">1</button>
-      <button onclick="setCount(3)">3</button>
-      <button onclick="setCount(5)">5</button>
-      <button onclick="setCount(10)">10</button>
-      <button onclick="showCustom()">Custom</button>
-    </div>
+
     <div class="mode-select">
-      <button class="mode-btn active" data-mode="all"       onclick="setMode('all')">All</button>
-      <button class="mode-btn"        data-mode="primary"   onclick="setMode('primary')">Primary</button>
-      <button class="mode-btn"        data-mode="secondary" onclick="setMode('secondary')">Secondary</button>
-      <button class="mode-btn"        data-mode="teacher"   onclick="setMode('teacher')">Teacher</button>
-      <button class="mode-btn"        data-mode="funny"     onclick="setMode('funny')">Funny</button>
+      <button class="mode-btn active" data-mode="all" onclick="setMode('all')">All</button>
+      <button class="mode-btn" data-mode="primary" onclick="setMode('primary')">Primary</button>
+      <button class="mode-btn" data-mode="secondary" onclick="setMode('secondary')">Secondary</button>
+      <button class="mode-btn" data-mode="teacher" onclick="setMode('teacher')">Teacher</button>
+      <button class="mode-btn" data-mode="funny" onclick="setMode('funny')">Funny</button>
     </div>
-    <div id="customBox" class="custom-box hidden">
-      <input type="number" id="customInput" min="1" max="12" placeholder="Enter number">
-      <button onclick="applyCustom()">Apply</button>
+
+    <!-- round picker 1 / 2 / 3 -->
+    <div class="round-pick">
+      <button class="round-btn active" data-round="1" onclick="setRound(1)">1</button>
+      <button class="round-btn" data-round="2" onclick="setRound(2)">2</button>
+      <button class="round-btn" data-round="3" onclick="setRound(3)">3</button>
     </div>
-    <div id="cards" class="cards"></div>
-    <button class="generate-btn" onclick="generate()">Generate</button>
+
+    <!-- GAME LAYOUT: Timer LEFT | Cards RIGHT -->
+    <div class="game-layout">
+      <!-- LEFT — countdown ring -->
+      <div class="timer-col">
+        <div id="timerRing"></div>
+        <div class="timer-btn-row">
+          <button id="timerToggleBtn" onclick="timerRunning ? pauseTimer() : startTimer()">▶ Start</button>
+          <button id="timerResetBtn" onclick="resetTimer(false)">↺ Reset</button>
+        </div>
+      </div>
+
+      <!-- RIGHT — cards + generate -->
+      <div class="game-content">
+        <div id="cards" class="cards"></div>
+        <button class="generate-btn" onclick="generate()">🏫 Generate</button>
+      </div>
+    </div>
   </section>
 
   <div class="age-guide">
@@ -176,7 +270,7 @@
 
   <section class="content-section">
     <h2>100+ School Charades Word List by Category</h2>
-    <p>Every prompt is a specific school action or moment — not just a subject name — making each card immediately fun to act and educationally meaningful. From a teacher writing on the board to a student panicking in an exam, every round brings authentic school energy.</p>
+    <p>Every prompt is a specific school action or moment — not just a subject name — making each card immediately fun to act and educationally meaningful.</p>
     <div class="word-columns">
       <div class="word-col">
         <h4>📗 Primary School</h4>
@@ -275,22 +369,22 @@
     <h2>School Charades by Category – Full Guide</h2>
 
     <h3>📗 Primary School</h3>
-    <p>Primary school charades capture the warm, colourful world of early childhood education. A student raising their hand so urgently it threatens to leave their shoulder, lining up quietly for assembly while trying not to wobble, or doing show and tell with trembling excitement — these are universal primary school memories that both children and adults recognise with immediate warmth. Primary mode is the gentlest and most universally accessible school category, working for students currently in primary school and adults reliving their earliest educational memories.</p>
+    <p>Primary school charades capture the warm, colourful world of early childhood education. A student raising their hand so urgently it threatens to leave their shoulder, lining up quietly for assembly while trying not to wobble, or doing show and tell with trembling excitement — these are universal primary school memories.</p>
 
     <h3>📘 Secondary School</h3>
-    <p>Secondary school charades bring the more complex, subject-specific, and emotionally intense world of teenage education to life. Dissecting a frog in biology, performing Shakespeare in English, presenting a history project with varying confidence levels, or running a science experiment that goes slightly wrong — these are the shared academic experiences that unite every secondary school student. Secondary rounds work brilliantly for teenage groups, families with secondary school children, and adult groups reminiscing about their school years.</p>
+    <p>Secondary school charades bring the more complex, subject-specific, and emotionally intense world of teenage education to life. Dissecting a frog in biology, performing Shakespeare in English, presenting a history project with varying confidence levels — these are the shared academic experiences that unite every secondary school student.</p>
 
     <h3>🔬 School Subjects</h3>
-    <p>Subject-specific charades are the most educationally valuable category in school charades. Acting out photosynthesis — the absorption of sunlight through leaf-arm surfaces, the production of oxygen through breath — creates a kinaesthetic memory of the biological process that reading a textbook rarely achieves. The water cycle becomes a full-body journey from evaporation to precipitation. Long division becomes a physical sequence of steps. Subject charades reinforce curriculum content while making the learning process active, social, and genuinely fun.</p>
+    <p>Subject-specific charades are the most educationally valuable category. Acting out photosynthesis, the water cycle, or long division creates a kinaesthetic memory of the process that reading a textbook rarely achieves. Subject charades reinforce curriculum content while making the learning process active, social, and genuinely fun.</p>
 
     <h3>👩‍🏫 Teacher Moments</h3>
-    <p>Teacher moment charades give players the rare and delightful perspective of the educator rather than the student. Marking a towering pile of homework at 11pm, explaining the same concept in three completely different ways hoping one will land, or navigating a difficult parent evening conversation — these are the universal teacher experiences that educators find deeply relatable and students find fascinating. Teacher mode works brilliantly for teacher professional development events, school staff parties, and parent gatherings where adults want to celebrate the teaching profession with humour.</p>
+    <p>Teacher moment charades give players the rare and delightful perspective of the educator rather than the student. Marking a towering pile of homework at 11pm, explaining the same concept in three completely different ways, or navigating a difficult parent evening conversation — these are the universal teacher experiences.</p>
 
     <h3>📝 Exam &amp; Study</h3>
-    <p>Exam and study charades tap into the most universally shared and emotionally intense school experience — assessment anxiety. Panicking in the exam hall when the question paper is flipped over, the mind going completely blank mid-oral exam, realising with horror that you revised the wrong topic, and the explosive joy of walking out of your last exam — these are emotional peaks of school life that every student lives through. Exam charades produce the most committed and emotionally authentic acting performances of any school charades category.</p>
+    <p>Exam and study charades tap into the most universally shared and emotionally intense school experience — assessment anxiety. Panicking in the exam hall, the mind going completely blank, realising you revised the wrong topic — these are emotional peaks of school life that every student lives through.</p>
 
     <h3>😂 Funny School</h3>
-    <p>Funny school charades are the most universally beloved category because they celebrate the small, embarrassing, and chaotic moments that define real school life rather than the idealised version. Falling asleep in class and waking up confused, sitting in the wrong classroom for ten full minutes before realising, or tripping on stage during the school assembly — these are experiences that unite every student who has ever walked through a school gate. Funny school rounds create the most nostalgic and good-natured laughter of any school charades session.</p>
+    <p>Funny school charades are the most universally beloved category because they celebrate the small, embarrassing, and chaotic moments that define real school life. Falling asleep in class, sitting in the wrong classroom for ten minutes, or tripping on stage during assembly — these experiences unite every student.</p>
   </section>
 
   <section class="content-section">
@@ -310,24 +404,22 @@
     <h2>🏆 Tips for Playing School Charades</h2>
     <div class="tips-grid">
       <div class="tip-card"><h4>Signal the Subject First</h4><p>For subject charades, mime the subject before the concept — draw a beaker for science, a globe for geography, a musical note for music. Subject context helps the team narrow their guessing to the right curriculum area immediately.</p></div>
-      <div class="tip-card"><h4>Act the Student AND the Teacher</h4><p>For classroom charades, show both perspectives. A student raising their hand means nothing without the teacher choosing someone else. A teacher explaining a concept means nothing without showing the confused students. Context makes school charades richer.</p></div>
-      <div class="tip-card"><h4>Use as a Lesson Review</h4><p>For classroom use, generate subject-specific charades after a lesson to review key concepts. Students acting out photosynthesis, the water cycle, or historical events create physical memories that reinforce classroom learning effectively.</p></div>
-      <div class="tip-card"><h4>Show the Emotion of School Life</h4><p>School is deeply emotional — the anxiety of exams, the joy of understanding a difficult concept, the embarrassment of getting an answer wrong publicly. Emotional acting communicates school scenarios faster and more authentically than physical action alone.</p></div>
-      <div class="tip-card"><h4>Use Full Screen for Classroom Play</h4><p>When playing in a classroom, generate a prompt on Full Screen and walk to the front of the class. The phone screen facing the actor is naturally hidden from other students, making it a perfect classroom game without any extra setup.</p></div>
-      <div class="tip-card"><h4>End-of-Term Best Use</h4><p>School charades works best as an end-of-term or pre-holiday classroom activity. Students are energised, academic pressure has lifted, and the school-themed charades create perfect nostalgia for the year just completed together.</p></div>
+      <div class="tip-card"><h4>Act the Student AND the Teacher</h4><p>For classroom charades, show both perspectives. A student raising their hand means nothing without the teacher choosing someone else. A teacher explaining a concept means nothing without showing the confused students.</p></div>
+      <div class="tip-card"><h4>Use as a Lesson Review</h4><p>For classroom use, generate subject-specific charades after a lesson to review key concepts. Students acting out photosynthesis, the water cycle, or historical events create physical memories that reinforce classroom learning.</p></div>
+      <div class="tip-card"><h4>Show the Emotion of School Life</h4><p>School is deeply emotional — the anxiety of exams, the joy of understanding a difficult concept, the embarrassment of getting an answer wrong publicly.</p></div>
+      <div class="tip-card"><h4>Use Full Screen for Classroom Play</h4><p>When playing in a classroom, generate a prompt on Full Screen and walk to the front of the class. The phone screen facing the actor is naturally hidden from other students.</p></div>
+      <div class="tip-card"><h4>End-of-Term Best Use</h4><p>School charades works best as an end-of-term or pre-holiday classroom activity. Students are energised, academic pressure has lifted, and the school-themed charades create perfect nostalgia for the year.</p></div>
     </div>
   </section>
 
   <section class="content-section">
     <h2>Why Use This School Charades Generator?</h2>
-    <p>School charades sits at the perfect intersection of education and entertainment. It is active, social, curriculum-connected, and genuinely funny — four things that rarely appear together in educational settings. For teachers, it provides a structured, no-prep activity that students request to play again. For parents, it turns study time into family game time. For students, it makes school feel less like obligation and more like shared experience.</p>
-    <p>This generator covers the full spectrum of school life — from the simplest primary classroom actions to the most intense exam room emotions — ensuring that every player, regardless of age or education level, finds charades that resonate with their own school experience.</p>
     <ul>
       <li>🏫 100+ unique school charades across 6 classroom categories</li>
       <li>🎉 Perfect for classrooms, school events, end-of-term parties and family nights</li>
       <li>👩‍🏫 Four modes cover primary students through to teachers and educators</li>
       <li>📚 Subject charades reinforce curriculum content through kinaesthetic learning</li>
-      <li>⚡ One click generates 1, 3, 5, 10 or custom number instantly</li>
+      <li>⚡ One click generates 1, 2, or 3 charades instantly</li>
       <li>📱 Full Screen mode works perfectly for classroom front-of-class play</li>
       <li>♾️ Generator avoids repeats — fresh school moments every round</li>
       <li>🔒 No login, no ads during play, completely free</li>
@@ -336,28 +428,27 @@
 
   <section class="how-to">
     <h2>How to Play School Charades – Step by Step</h2>
-    <p><strong>1. Pick a classroom mode and count</strong><br>Choose Primary for young children, Secondary for teens, Teacher for educator groups, or Funny for end-of-term parties and family nights.</p>
-    <p><strong>2. Click Generate</strong><br>Hit Generate and school charades appear instantly. The actor reads privately while everyone else looks away — just like the real school experience of waiting for your turn.</p>
-    <p><strong>3. Use Full Screen for classroom play</strong><br>Switch to Full Screen and walk to the front. The phone faces the actor naturally, keeping the prompt hidden from the class. No extra setup needed.</p>
-    <p><strong>4. Signal the subject or school category</strong><br>Before acting, mime whether it is a science, maths, English, or PE prompt. Category context helps the class narrow their guessing to the right subject area immediately.</p>
-    <p><strong>5. Act the school moment completely</strong><br>Show both the action and the emotion. Exam panic needs both the physical pen-over-paper and the wide-eyed frozen expression. Teacher explaining needs both the gesture to the board and the patient expression trying every available approach.</p>
-    <p><strong>6. Set a 60-second timer</strong><br>School charades moves fast when the group shares school experience. Use 60 seconds for Primary and Funny modes and 90 seconds for Subject-specific and Teacher charades.</p>
-    <p><strong>7. Discuss after subject charades</strong><br>For educational use, briefly discuss the school concept after each subject prompt is guessed. This review moment consolidates the kinaesthetic learning created by the acting into lasting subject knowledge.</p>
+    <p><strong>1. Pick a classroom mode and count</strong><br>Choose Primary for young children, Secondary for teens, Teacher for educator groups, or Funny for end-of-term parties.</p>
+    <p><strong>2. Click Generate</strong><br>Hit Generate and school charades appear instantly. The actor reads privately while everyone else looks away.</p>
+    <p><strong>3. Use Full Screen for classroom play</strong><br>Switch to Full Screen and walk to the front. The phone faces the actor naturally, keeping the prompt hidden from the class.</p>
+    <p><strong>4. Signal the subject or school category</strong><br>Before acting, mime whether it is a science, maths, English, or PE prompt. Category context helps the class narrow their guessing.</p>
+    <p><strong>5. Act the school moment completely</strong><br>Show both the action and the emotion. Exam panic needs both the physical pen-over-paper and the wide-eyed frozen expression.</p>
+    <p><strong>6. Set a 30-second timer</strong><br>School charades moves fast when the group shares school experience. Use 30 seconds for Primary and Funny modes and 45 seconds for Subject-specific and Teacher charades.</p>
+    <p><strong>7. Discuss after subject charades</strong><br>For educational use, briefly discuss the school concept after each subject prompt is guessed. This review moment consolidates the kinaesthetic learning.</p>
   </section>
 
   <section class="content-section">
     <h2>Frequently Asked Questions – School Charades</h2>
-    <p><strong>What is school charades?</strong><br>School charades uses school-themed charades — subjects, teacher moments, student life, and school events. Players act without speaking while others guess. An excellent educational activity and classroom game for all ages.</p>
-    <p><strong>Can teachers use this in the classroom?</strong><br>Yes. Works as a lesson warm-up, subject review game, end-of-term activity, or reward game. All charades are curriculum-connected and classroom-safe. Primary mode for ages 5-10, Secondary for ages 11-16.</p>
-    <p><strong>What subjects are covered?</strong><br>Maths, science, English, history, geography, PE, art, music, and computing — all with specific classroom action charades that students will immediately recognise from their school experience.</p>
-    <p><strong>How does school charades help with learning?</strong><br>Acting out photosynthesis, the water cycle, or long division creates kinaesthetic memories that outlast textbook reading. Physical, embodied learning produces stronger long-term retention than passive study.</p>
-    <p><strong>Is this suitable for all ages?</strong><br>Yes. Primary mode for ages 5-10, Secondary for ages 11-16, Teacher mode for adult educators, and Funny mode for all ages at school events and family nights.</p>
+    <p><strong>What is school charades?</strong><br>School charades uses school-themed charades — subjects, teacher moments, student life, and school events.</p>
+    <p><strong>Can teachers use this in the classroom?</strong><br>Yes. Works as a lesson warm-up, subject review game, end-of-term activity, or reward game.</p>
+    <p><strong>What subjects are covered?</strong><br>Maths, science, English, history, geography, PE, art, music, and computing.</p>
+    <p><strong>How does school charades help with learning?</strong><br>Acting out concepts creates kinaesthetic memories that outlast textbook reading.</p>
+    <p><strong>Is this suitable for all ages?</strong><br>Yes. Primary mode for ages 5-10, Secondary for ages 11-16.</p>
     <p><strong>Is this generator free?</strong><br>Yes. Completely free with no signup, no download, and no time limit.</p>
   </section>
 
   <section class="content-section">
     <h2>🎮 Explore All Charades Tools – 25+ Free Generators</h2>
-    <p>Try any of these free charades generators. Every tool is free, instant, and works on all devices.</p>
     <div class="related-tools">
       <a href="kids-charade-generator.html" class="rel-card"><span class="ri">👦</span><span class="rn">Kids Charades</span></a>
       <a href="movie-charades.html" class="rel-card"><span class="ri">🎬</span><span class="rn">Movie Charades</span></a>
