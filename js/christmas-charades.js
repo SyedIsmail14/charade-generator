@@ -1,85 +1,277 @@
-/* =====================================================
-   CHRISTMAS CHARADES – FESTIVE & FAMILY FRIENDLY
-   ===================================================== */
+// ============================================================
+//  christmas-charades.js  –  Christmas Charades Generator
+//  Includes: 30-sec game timer, round picker (1/2/3),
+//            TIME'S UP overlay, auto-start on generate
+// ============================================================
 
-const CHARADES = [
-"Decorating Tree","Wrapping Gifts","Opening Presents","Hanging Stockings","Building Snowman","Throwing Snowballs","Singing Carols","Baking Cookies","Drinking Hot Chocolate","Wearing Santa Hat","Ringing Bells","Lighting Candles","Posting Letters","Waiting for Santa","Climbing Chimney","Shaking Snow Globe","Opening Advent Calendar","Watching Christmas Movie","Exchanging Gifts","Laughing Elf","Flying Reindeer","Pulling Sleigh","Decorating House","Setting Dinner Table","Unpacking Decorations","Trimming Branches","Stringing Lights","Placing Star","Hanging Ornaments","Wrapping Garland","Tying Ribbons","Making Bows","Stuffing Stockings","Hanging Wreaths","Decorating Mantel","Placing Nativity","Arranging Figures","Lighting Fireplace","Roasting Chestnuts","Making Eggnog","Stirring Cider","Frosting Cookies","Cutting Shapes","Decorating Gingerbread","Building House","Icing Roof","Adding Candies","Making Fudge","Stirring Pudding","Preparing Turkey","Basting Bird","Carving Ham","Mashing Potatoes","Making Gravy","Baking Pie","Rolling Dough","Crimping Edges","Whipping Cream","Serving Dessert","Pouring Wine","Toasting Glasses","Cracking Nuts","Peeling Oranges","Eating Candy Canes","Sucking Peppermint","Licking Lollipop","Unwrapping Chocolates","Opening Crackers","Wearing Sweater","Putting Scarf","Wearing Mittens","Bundling Up","Sledding Down","Ice Skating","Making Angels","Catching Snowflakes","Building Fort","Having Snowball Fight","Rolling Snowball","Stacking Snowballs","Adding Carrot Nose","Placing Coal Eyes","Wrapping Scarf","Adding Hat","Making Ice Castle","Decorating Yard","Inflating Santa","Setting Reindeer","Plugging Lights","Testing Bulbs","Replacing Fuse","Untangling Lights","Climbing Ladder","Hanging Icicles","Draping Garland","Placing Figurines","Arranging Village","Setting Train","Winding Track","Starting Engine","Blowing Whistle","Watching Parade","Waving Float","Catching Candy","Cheering Santa","Meeting Elves","Taking Photos","Sitting Lap","Whispering Wishes","Pulling Beard","Hugging Santa","Feeding Reindeer","Leaving Carrots","Setting Cookies","Pouring Milk","Writing Letter","Sealing Envelope","Mailing Wish","Checking List","Marking Calendar","Counting Days","Shaking Presents","Guessing Gifts","Peeking Tags","Rattling Boxes","Measuring Ribbon","Cutting Paper","Folding Corners","Taping Edges","Sticking Bow","Labeling Gifts","Hiding Presents","Sneaking Peek","Finding Hiding Spot","Decorating Cookies","Sprinkling Sugar","Adding Sprinkles","Piping Frosting","Making Snowflakes","Cutting Paper","Folding Design","Hanging Window","Decorating Door","Making Garland","Stringing Popcorn","Threading Cranberries","Hanging Chains","Making Centerpiece","Arranging Pinecones","Adding Berries","Placing Candles","Lighting Menorah","Spinning Dreidel","Opening Crackers","Wearing Crown","Reading Joke","Pulling Cracker","Snapping Sound","Finding Prize","Wearing Hat","Telling Joke","Laughing Together","Clinking Glasses","Making Toast","Singing Songs","Holding Hands","Saying Grace","Carving Turkey","Passing Dishes","Serving Plates","Refilling Drinks","Clearing Table","Washing Dishes","Drying Plates","Storing Leftovers","Brewing Coffee","Serving Tea","Opening Chocolates","Watching Parade","Changing Channel","Napping Couch","Playing Games","Building Puzzle","Playing Charades","Singing Karaoke","Dancing Party","Wearing Costume","Taking Selfie","Video Calling","Waving Screen","Sending Wishes","Opening Card","Reading Message","Hanging Card","Displaying Photos","Remembering Memories","Hugging Family","Kissing Mistletoe","Hanging Mistletoe","Standing Under","Catching Kiss","Blushing Cheeks","Holding Hands","Walking Snow","Admiring Lights","Window Shopping","Browsing Store","Trying Clothes","Buying Gifts","Carrying Bags","Wrapping Station","Adding Tag","Giving Gift","Receiving Present","Thanking Giver","Hugging Thanks","Smiling Joy","Crying Happy","Celebrating Together"
+// ── PROMPT DATA ───────────────────────────────────────────
+const charadesData = {
+  santa: [
+    "Santa sliding down chimney",
+    "Santa checking naughty list",
+    "Elf wrapping presents fast",
+    "Rudolph guiding the sleigh",
+    "Elf testing toys in workshop",
+    "Reindeer taking off runway",
+    "Santa eating milk and cookies",
+    "Mrs Claus knitting by fire",
+    "Elf on the shelf spying",
+    "Santa ho-ho-ho laughing",
+    "Santa getting stuck in chimney",
+    "Rudolph with glowing red nose",
+    "Elves making toys in workshop",
+    "Santa climbing down chimney",
+    "Reindeer flying in formation"
+  ],
+  traditions: [
+    "Decorating Christmas tree",
+    "Hanging stockings by fireplace",
+    "Opening presents at dawn",
+    "Kissing under mistletoe",
+    "Carollers singing in snow",
+    "Putting star on tree top",
+    "Writing letter to Santa",
+    "Leaving cookies for Santa",
+    "Wrapping presents with ribbon",
+    "Lighting advent calendar candle",
+    "Drinking hot chocolate",
+    "Building a snowman",
+    "Making snow angels",
+    "Having snowball fight",
+    "Sledging down steep hill"
+  ],
+  movies: [
+    "Home Alone booby trap",
+    "Kevin screaming face mirror",
+    "Buddy the Elf eating cotton balls",
+    "Jack Skellington stealing Christmas",
+    "Grinch stealing Christmas tree",
+    "Scrooge counting gold coins",
+    "Elf tasting all candy",
+    "Die Hard running barefoot glass",
+    "Polar Express train whistle",
+    "Christmas Story leg lamp",
+    "Grinch heart growing three sizes",
+    "Rudolph saving Christmas",
+    "Charlie Brown Christmas tree",
+    "Frosty the Snowman melting",
+    "Muppet Christmas Carol"
+  ],
+  winter: [
+    "Building a snowman",
+    "Ice skating gracefully",
+    "Having snowball fight",
+    "Making snow angel",
+    "Sledging down steep hill",
+    "Slipping on black ice",
+    "Warming hands by fire",
+    "Skiing down slope",
+    "Catching snowflakes tongue",
+    "Scraping ice off car",
+    "Walking through deep snow",
+    "Throwing snowballs",
+    "Making snow forts",
+    "Catching snowflakes",
+    "Shivering in cold"
+  ],
+  food: [
+    "Baking gingerbread cookies",
+    "Decorating Christmas cake",
+    "Pulling Christmas cracker",
+    "Carving Christmas turkey",
+    "Stirring Christmas pudding",
+    "Drinking hot chocolate",
+    "Eating candy cane slowly",
+    "Rolling mince pie dough",
+    "Popping Christmas popcorn",
+    "Tasting mulled wine",
+    "Mixing eggnog",
+    "Roasting chestnuts",
+    "Frosting cookies",
+    "Making gingerbread house",
+    "Whipping cream"
+  ],
+  carols: [
+    "Jingle Bells horse sleigh",
+    "12 Days of Christmas gifts",
+    "Frosty the Snowman melting",
+    "Rudolph red nose glowing",
+    "Silent Night candle prayer",
+    "We Wish You Merry Carol",
+    "Little Drummer Boy drumming",
+    "Deck the Halls holly branch",
+    "Good King Wenceslas marching",
+    "Away in a Manger cradle rock",
+    "Hark the Herald Angels singing",
+    "O Holy Night kneeling",
+    "Joy to the World celebration",
+    "O Come All Ye Faithful",
+    "While Shepherds Watched"
+  ]
+};
+
+charadesData.all = [
+  ...charadesData.santa,
+  ...charadesData.traditions,
+  ...charadesData.movies,
+  ...charadesData.winter,
+  ...charadesData.food,
+  ...charadesData.carols
 ];
 
-/* SHUFFLE */
-CHARADES.sort(() => Math.random() - 0.5);
+// ── GAME STATE ────────────────────────────────────────────
+let currentMode  = 'default';
+let roundCount   = 1;
+let usedIndices  = {};
 
-/* STATE */
-let currentCount = 1;
+// ── TIMER STATE ───────────────────────────────────────────
+const TIMER_TOTAL = 30;
+let timeLeft      = TIMER_TOTAL;
+let timerInterval = null;
+let timerRunning  = false;
 
-/* MENU */
-function toggleMenu() {
-  document.getElementById("navMobile").classList.toggle("open");
+// ── TIMER FUNCTIONS ───────────────────────────────────────
+function drawTimer(seconds) {
+  const radius = 44;
+  const circ   = 2 * Math.PI * radius;
+  const dash   = (seconds / TIMER_TOTAL) * circ;
+  const colour = seconds > 15 ? '#40c057' : seconds > 8 ? '#f59f00' : '#fa5252';
+  const el = document.getElementById('timerRing');
+  if (!el) return;
+  el.innerHTML = `
+    <svg width="110" height="110" viewBox="0 0 110 110">
+      <circle cx="55" cy="55" r="${radius}" fill="none" stroke="#e9ecef" stroke-width="8"/>
+      <circle cx="55" cy="55" r="${radius}" fill="none" stroke="${colour}" stroke-width="8"
+        stroke-linecap="round"
+        stroke-dasharray="${dash} ${circ}"
+        stroke-dashoffset="0"
+        transform="rotate(-90 55 55)"
+        style="transition:stroke-dasharray .35s ease,stroke .35s"/>
+      <text x="55" y="50" text-anchor="middle" font-size="26" font-weight="700"
+        fill="${colour}" font-family="system-ui,sans-serif">${seconds}</text>
+      <text x="55" y="68" text-anchor="middle" font-size="11" fill="#868e96"
+        font-family="system-ui,sans-serif">sec</text>
+    </svg>`;
 }
 
-/* COUNT */
-function setCount(n) {
-  currentCount = n;
-  generate();
+function startTimer() {
+  if (timerRunning) return;
+  timerRunning = true;
+  updateTimerBtn();
+  timerInterval = setInterval(() => {
+    timeLeft--;
+    drawTimer(timeLeft);
+    if (timeLeft <= 0) timeUp();
+  }, 1000);
 }
 
-function showCustom() {
-  document.getElementById("customBox").classList.remove("hidden");
+function pauseTimer() {
+  clearInterval(timerInterval);
+  timerRunning = false;
+  updateTimerBtn();
 }
 
-function applyCustom() {
-  let n = parseInt(document.getElementById("customInput").value);
-  if (isNaN(n) || n < 1) return;
-  if (n > 12) n = 12;
-  currentCount = n;
-  generate();
+function resetTimer(autoStart) {
+  clearInterval(timerInterval);
+  timerRunning = false;
+  timeLeft = TIMER_TOTAL;
+  drawTimer(timeLeft);
+  hideTimeOver();
+  updateTimerBtn();
+  if (autoStart) startTimer();
 }
 
-/* GENERATE */
+function timeUp() {
+  pauseTimer();
+  showTimeOver();
+}
+
+function updateTimerBtn() {
+  const btn = document.getElementById('timerToggleBtn');
+  if (btn) btn.textContent = timerRunning ? '⏸ Pause' : '▶ Start';
+}
+
+function showTimeOver() {
+  const el = document.getElementById('timeOverOverlay');
+  if (el) el.style.display = 'flex';
+}
+
+function hideTimeOver() {
+  const el = document.getElementById('timeOverOverlay');
+  if (el) el.style.display = 'none';
+}
+
+// ── MODE & ROUND ──────────────────────────────────────────
+function setMode(mode) {
+  currentMode = mode;
+  usedIndices[mode] = usedIndices[mode] || [];
+  document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
+  const btn = document.querySelector(`[data-mode="${mode}"]`);
+  if (btn) btn.classList.add('active');
+}
+
+function setRound(n) {
+  roundCount = n;
+  document.querySelectorAll('.round-btn').forEach(b => b.classList.remove('active'));
+  const btn = document.querySelector(`[data-round="${n}"]`);
+  if (btn) btn.classList.add('active');
+}
+
+// ── PROMPT ENGINE ─────────────────────────────────────────
+function getPrompts(mode, n) {
+  const pool = charadesData[mode] || charadesData.all;
+  if (!usedIndices[mode]) usedIndices[mode] = [];
+  if (usedIndices[mode].length >= pool.length) usedIndices[mode] = [];
+  const available = pool.map((_, i) => i).filter(i => !usedIndices[mode].includes(i));
+  const shuffled  = available.sort(() => Math.random() - 0.5);
+  const selected  = shuffled.slice(0, Math.min(n, available.length));
+  usedIndices[mode].push(...selected);
+  return selected.map(i => pool[i]);
+}
+
+// ── GENERATE ──────────────────────────────────────────────
 function generate() {
-  const box = document.getElementById("cards");
-  const status = document.getElementById("statusText");
-
-  box.innerHTML = "";
-
-  for (let i = 0; i < currentCount; i++) {
-    const charade = CHARADES[Math.floor(Math.random() * CHARADES.length)];
-    const div = document.createElement("div");
-    div.className = "card";
-    div.textContent = charade;
-    box.appendChild(div);
-  }
-
-  status.innerText =
-    currentCount === 1
-      ? "Ready to play! New charade"
-      : `Ready to play! ${currentCount} new charades`;
+  const prompts = getPrompts(currentMode, roundCount);
+  const container = document.getElementById('cards');
+  if (!container) return;
+  container.innerHTML = '';
+  prompts.forEach(p => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.innerHTML = `<span class="card-emoji">🎄</span><p>${p}</p>`;
+    container.appendChild(card);
+  });
+  resetTimer(true);
 }
 
-/* COPY */
+// ── COPY ──────────────────────────────────────────────────
 function copyCharades() {
-  const btn = document.getElementById("copyBtn");
-  const text = [...document.querySelectorAll(".card")]
-    .map(c => c.textContent)
-    .join(", ");
-
-  navigator.clipboard.writeText(text);
-  btn.innerText = "Copied";
-
-  setTimeout(() => {
-    btn.innerText = "Copy charades";
-  }, 4000);
+  const cards = document.querySelectorAll('#cards .card p');
+  if (!cards.length) return;
+  const text = Array.from(cards).map(c => c.textContent).join('\n');
+  navigator.clipboard.writeText(text).then(() => {
+    const msg = document.getElementById('copyMsg');
+    if (msg) { msg.style.display = 'inline'; setTimeout(() => msg.style.display = 'none', 2000); }
+  });
 }
 
-/* FULL SCREEN */
+// ── FULLSCREEN ────────────────────────────────────────────
 function toggleFullScreen() {
-  const elem = document.getElementById("gameArea");
-  if (!document.fullscreenElement) {
-    elem.requestFullscreen();
-  } else {
-    document.exitFullscreen();
-  }
+  const area = document.getElementById('gameArea');
+  if (!area) return;
+  if (!document.fullscreenElement) area.requestFullscreen && area.requestFullscreen();
+  else document.exitFullscreen && document.exitFullscreen();
 }
 
-/* INIT */
-generate();
+// ── NAV ───────────────────────────────────────────────────
+function toggleMenu() {
+  const nav = document.getElementById('navMobile');
+  if (nav) nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+}
+
+// ── INIT ──────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  setMode('default');
+  setRound(1);
+  drawTimer(TIMER_TOTAL);
+});
