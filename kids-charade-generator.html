@@ -46,69 +46,20 @@
       {
         "@type": "FAQPage",
         "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "What is a kids charades generator?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "A kids charades generator is an online tool that randomly picks simple, age-appropriate words and actions for children to act out in the game of charades. Unlike standard charades, kids charades use short, familiar charades that children aged 4 to 12 can easily understand and perform without any preparation or adult help."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What age is kids charades suitable for?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Kids charades is suitable for children aged 4 and above. The Animals and Fantasy categories work best for ages 4 to 7, as the charades are visual and physical. The People and Actions categories work well for ages 6 to 12, where children have more vocabulary and life experience to draw from when acting."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can I use kids charades in a classroom?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. Kids charades is an excellent classroom activity for primary school teachers. It builds vocabulary, improves physical expression, encourages teamwork, and keeps children engaged without screens. Use the Animals category for science lessons and the People category for social studies or community topics."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How do I make charades easier for very young children?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "For very young children aged 4 to 6, select the Animals category and generate only 1 charade at a time. Allow the child to make sounds if needed for the first few rounds to build confidence. Encourage rather than correct. The goal at this age is participation and laughter, not perfect mime technique."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Is this kids charades generator free?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. This kids charades generator is completely free to use with no signup, no download, and no time limit. Generate unlimited kid-friendly charade ideas for classrooms, birthday parties, and family game nights at any time."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What categories does the kids charades generator have?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The kids charades generator has four categories: Animals (farm animals, wild animals, and pets), People (jobs, family roles, and everyday people children know), Fantasy (superheroes, fairy tale characters, and magical creatures), and All (a mixed pool from all categories for variety)."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can kids charades be played at a birthday party?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. Kids charades is one of the best birthday party games because it needs no equipment, creates lots of laughter, and works for any group size. Generate 5 or 10 charades at once for party rounds. Use the Fantasy category for themed birthday parties and Animals for younger children's parties."
-            }
-          }
+          {"@type":"Question","name":"What is a kids charades generator?","acceptedAnswer":{"@type":"Answer","text":"A kids charades generator is an online tool that randomly picks simple, age-appropriate words and actions for children to act out in the game of charades."}},
+          {"@type":"Question","name":"What age is kids charades suitable for?","acceptedAnswer":{"@type":"Answer","text":"Kids charades is suitable for children aged 4 and above. The Animals and Fantasy categories work best for ages 4 to 7, while People and Actions work well for ages 6 to 12."}},
+          {"@type":"Question","name":"Can I use kids charades in a classroom?","acceptedAnswer":{"@type":"Answer","text":"Yes. Kids charades is an excellent classroom activity for primary school teachers. It builds vocabulary, improves physical expression, encourages teamwork, and keeps children engaged without screens."}},
+          {"@type":"Question","name":"How do I make charades easier for very young children?","acceptedAnswer":{"@type":"Answer","text":"For very young children aged 4 to 6, select the Animals category and generate only 1 charade at a time. Allow the child to make sounds if needed for the first few rounds to build confidence."}},
+          {"@type":"Question","name":"Is this kids charades generator free?","acceptedAnswer":{"@type":"Answer","text":"Yes. This kids charades generator is completely free to use with no signup, no download, and no time limit."}},
+          {"@type":"Question","name":"What categories does the kids charades generator have?","acceptedAnswer":{"@type":"Answer","text":"The kids charades generator has four categories: Animals, People, Fantasy, and All (a mixed pool from all categories for variety)."}},
+          {"@type":"Question","name":"Can kids charades be played at a birthday party?","acceptedAnswer":{"@type":"Answer","text":"Yes. Kids charades is one of the best birthday party games because it needs no equipment, creates lots of laughter, and works for any group size."}}
         ]
       },
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://charadegenerator.com/" },
-          { "@type": "ListItem", "position": 2, "name": "Kids Charades", "item": "https://charadegenerator.com/kids-charade-generator.html" }
+          {"@type":"ListItem","position":1,"name":"Home","item":"https://charadegenerator.com/"},
+          {"@type":"ListItem","position":2,"name":"Kids Charades","item":"https://charadegenerator.com/kids-charade-generator.html"}
         ]
       }
     ]
@@ -160,10 +111,90 @@
     .rel-card:hover { box-shadow:0 4px 16px rgba(245,124,0,0.15); transform:translateY(-2px); }
     .rel-card .ri { font-size:22px; }
     .rel-card .rn { font-weight:600; font-size:12px; }
+
+    /* ── GAME LAYOUT ────────────────────────────────── */
+    .game-layout{display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap;}
+
+    /* LEFT – timer */
+    .timer-col{display:flex;flex-direction:column;align-items:center;gap:10px;flex-shrink:0;min-width:110px;}
+    #timerRing{display:block;}
+    .timer-btn-row{display:flex;flex-direction:column;gap:8px;width:100%;}
+    #timerToggleBtn{background:#f57c00;color:#fff;border:none;border-radius:8px;padding:8px 0;font-size:13px;font-weight:700;cursor:pointer;width:100%;transition:background .2s;}
+    #timerToggleBtn:hover{background:#e06b00;}
+    #timerResetBtn{background:#fff8e1;color:#f57c00;border:1px solid #ffe082;border-radius:8px;padding:7px 0;font-size:13px;font-weight:600;cursor:pointer;width:100%;transition:background .2s;}
+    #timerResetBtn:hover{background:#fff3cd;}
+
+    /* RIGHT – content */
+    .game-content{flex:1;min-width:240px;}
+
+    /* cards */
+    #cards{margin-bottom:14px;min-height:60px;}
+
+    /* round picker */
+    .round-pick{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;}
+    .round-btn{background:#fff8e1;border:2px solid #ffe082;border-radius:8px;padding:8px 22px;font-size:16px;font-weight:700;cursor:pointer;transition:all .2s;color:#f57c00;}
+    .round-btn.active,.round-btn:hover{background:#f57c00;border-color:#f57c00;color:#fff;}
+
+    /* ── TIME OVER OVERLAY ──────────────────────────── */
+    #timeOverOverlay{display:none;position:fixed;inset:0;background:rgba(10,5,0,.85);z-index:9999;align-items:center;justify-content:center;flex-direction:column;gap:20px;animation:fadeInBG .3s ease;}
+    @keyframes fadeInBG{from{opacity:0}to{opacity:1}}
+    .timeover-box{background:#fff;border-radius:22px;padding:40px 32px;text-align:center;box-shadow:0 28px 70px rgba(0,0,0,.4);max-width:340px;width:90%;animation:popIn .4s cubic-bezier(.34,1.56,.64,1);}
+    @keyframes popIn{from{transform:scale(.6);opacity:0}to{transform:scale(1);opacity:1}}
+    .timeover-emoji{font-size:64px;line-height:1;margin-bottom:10px;}
+    .timeover-box h2{margin:0 0 6px;font-size:30px;color:#f57c00;letter-spacing:1px;text-transform:uppercase;}
+    .timeover-box p{color:#868e96;margin:0 0 24px;font-size:15px;}
+    .timeover-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+    .btn-restart{background:#f57c00;color:#fff;border:none;border-radius:10px;padding:13px 26px;font-size:15px;font-weight:700;cursor:pointer;transition:background .2s,transform .15s;}
+    .btn-restart:hover{background:#e06b00;transform:scale(1.05);}
+    .btn-next{background:#40c057;color:#fff;border:none;border-radius:10px;padding:13px 26px;font-size:15px;font-weight:700;cursor:pointer;transition:background .2s,transform .15s;}
+    .btn-next:hover{background:#2f9e44;transform:scale(1.05);}
+
+    /* ── MODE SELECT ── */
+    .mode-select{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;}
+    .mode-btn{background:#fff8e1;border:2px solid #ffe082;border-radius:8px;padding:8px 18px;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;color:#f57c00;}
+    .mode-btn.active,.mode-btn:hover{background:#f57c00;border-color:#f57c00;color:#fff;}
+
+    /* ── TOP CONTROLS ── */
+    .top-controls{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px;align-items:center;}
+    .top-controls button{background:#fff;border:2px solid #f57c00;border-radius:8px;padding:6px 16px;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;color:#f57c00;}
+    .top-controls button:hover{background:#f57c00;color:#fff;}
+    .copy-msg{display:none;color:#40c057;font-weight:700;font-size:14px;}
+
+    /* ── GENERATE BUTTON ── */
+    .generate-btn{background:#f57c00;color:#fff;border:none;border-radius:10px;padding:14px 40px;font-size:18px;font-weight:700;cursor:pointer;transition:all .2s;margin-top:6px;}
+    .generate-btn:hover{background:#e06b00;transform:scale(1.02);}
+
+    /* ── CARDS ── */
+    .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin-bottom:16px;width:100%;}
+    .card{background:#fff;border:2px solid #ffe082;border-radius:12px;padding:18px 16px;display:flex;align-items:center;gap:12px;transition:box-shadow .2s;}
+    .card:hover{box-shadow:0 4px 16px rgba(245,124,0,.12);}
+    .card-emoji{font-size:28px;}
+    .card p{margin:0;font-size:16px;font-weight:500;color:#222;}
+
+    .seo-text{font-size:16px;line-height:1.7;color:#444;}
+    .content-section{margin:40px 0;}
+    .how-to{background:#f8faff;padding:24px 28px;border-radius:12px;margin:32px 0;}
+    .how-to p{font-size:15px;line-height:1.8;}
+    .category-title{font-size:26px;margin-bottom:4px;}
+    .subtitle{color:#666;font-size:16px;margin-top:0;}
+
+    @media(max-width:480px){.game-layout{flex-direction:row;}.timer-col{min-width:90px;}}
   </style>
 </head>
 <body>
 
+<!-- ── TIME OVER OVERLAY ─────────────────────────────────── -->
+<div id="timeOverOverlay">
+  <div class="timeover-box">
+    <div class="timeover-emoji">⏰</div>
+    <h2>Time's Up!</h2>
+    <p>30 seconds are over — did they guess the kids charade?</p>
+    <div class="timeover-actions">
+      <button class="btn-restart" onclick="resetTimer(true)">▶ Play Again</button>
+      <button class="btn-next" onclick="generate()">⏭ Next Card</button>
+    </div>
+  </div>
+</div>
 
 <header class="header">
   <div class="header-inner">
@@ -204,34 +235,48 @@
     Kids charades is one of the best screen-free activities for classrooms, birthday parties, family game nights, and rainy afternoon fun at home. Children develop creativity, body language, vocabulary, and teamwork while laughing together — all in one simple game that starts with one click.
   </p>
 
-  <!-- GAME AREA — unchanged -->
+  <!-- GAME AREA -->
   <section class="tool" id="gameArea">
     <h2 class="category-title">Fun Kids Charades 🎉</h2>
     <p class="subtitle" id="statusText">Ready to play! Generate your first charade 🎉</p>
+
     <div class="top-controls">
       <button id="copyBtn" onclick="copyCharades()">📋 Copy</button>
       <button onclick="toggleFullScreen()">⛶ Full Screen</button>
       <span id="copyMsg" class="copy-msg">Copied!</span>
     </div>
-    <div class="quick-pick">
-      <button onclick="setCount(1)">1</button>
-      <button onclick="setCount(3)">3</button>
-      <button onclick="setCount(5)">5</button>
-      <button onclick="setCount(10)">10</button>
-      <button onclick="showCustom()">Custom</button>
-    </div>
+
     <div class="mode-select">
-      <button class="mode-btn active" onclick="setCategory('all')">All</button>
-      <button class="mode-btn" onclick="setCategory('animals')">Animals</button>
-      <button class="mode-btn" onclick="setCategory('people')">People</button>
-      <button class="mode-btn" onclick="setCategory('fantasy')">Fantasy</button>
+      <button class="mode-btn active" data-mode="all" onclick="setCategory('all')">All</button>
+      <button class="mode-btn" data-mode="animals" onclick="setCategory('animals')">Animals</button>
+      <button class="mode-btn" data-mode="people" onclick="setCategory('people')">People</button>
+      <button class="mode-btn" data-mode="fantasy" onclick="setCategory('fantasy')">Fantasy</button>
     </div>
-    <div id="customBox" class="custom-box hidden">
-      <input type="number" id="customInput" min="1" max="12" placeholder="Enter number">
-      <button onclick="applyCustom()">Apply</button>
+
+    <!-- round picker 1 / 2 / 3 -->
+    <div class="round-pick">
+      <button class="round-btn active" data-round="1" onclick="setRound(1)">1</button>
+      <button class="round-btn" data-round="2" onclick="setRound(2)">2</button>
+      <button class="round-btn" data-round="3" onclick="setRound(3)">3</button>
     </div>
-    <div id="cards" class="cards"></div>
-    <button class="generate-btn" onclick="generate()">Generate</button>
+
+    <!-- GAME LAYOUT: Timer LEFT | Cards RIGHT -->
+    <div class="game-layout">
+      <!-- LEFT — countdown ring -->
+      <div class="timer-col">
+        <div id="timerRing"></div>
+        <div class="timer-btn-row">
+          <button id="timerToggleBtn" onclick="timerRunning ? pauseTimer() : startTimer()">▶ Start</button>
+          <button id="timerResetBtn" onclick="resetTimer(false)">↺ Reset</button>
+        </div>
+      </div>
+
+      <!-- RIGHT — cards + generate -->
+      <div class="game-content">
+        <div id="cards" class="cards"></div>
+        <button class="generate-btn" onclick="generate()">🎉 Generate</button>
+      </div>
+    </div>
   </section>
 
   <!-- AGE GUIDE -->
@@ -265,8 +310,6 @@
           <li>Jumping kangaroo</li>
           <li>Slithering snake</li>
           <li>Galloping horse</li>
-          <li>Scratching monkey</li>
-          <li>Slow tortoise walking</li>
         </ul>
       </div>
       <div class="word-col">
@@ -282,8 +325,6 @@
           <li>Builder hammering nails</li>
           <li>Singer performing on stage</li>
           <li>Postman delivering letters</li>
-          <li>Dentist looking in mouth</li>
-          <li>Clown making funny faces</li>
         </ul>
       </div>
       <div class="word-col">
@@ -299,8 +340,6 @@
           <li>Knight fighting sword</li>
           <li>Robot moving stiffly</li>
           <li>Unicorn prancing around</li>
-          <li>Pirate looking for treasure</li>
-          <li>Princess waving gracefully</li>
         </ul>
       </div>
       <div class="word-col">
@@ -316,8 +355,6 @@
           <li>Opening a present</li>
           <li>Dancing at a party</li>
           <li>Climbing a tree</li>
-          <li>Driving a toy car</li>
-          <li>Drawing a picture</li>
         </ul>
       </div>
     </div>
@@ -328,34 +365,23 @@
     <h2>Kids Charades by Category – Full Guide</h2>
 
     <h3>🐾 Animals Category</h3>
-    <p>
-      The Animals category is the most popular starting point for kids charades, especially for children aged 4 to 7. Every child knows what a dog, cat, frog, or lion looks like — and they have an instinct for how to act those animals out with their whole body. The best animal charades are those with a signature movement: a frog hops, a penguin waddles, a snake slithers. These distinctive physical signatures make guessing fast and satisfying for young players. Animals is always the recommended starting category for the very first time any child plays charades.
-    </p>
+    <p>The Animals category is the most popular starting point for kids charades, especially for children aged 4 to 7. Every child knows what a dog, cat, frog, or lion looks like — and they have an instinct for how to act those animals out with their whole body. The best animal charades are those with a signature movement: a frog hops, a penguin waddles, a snake slithers. These distinctive physical signatures make guessing fast and satisfying for young players.</p>
 
     <h3>👩‍🍳 People &amp; Jobs Category</h3>
-    <p>
-      The People and Jobs category introduces children to community helpers and social roles through physical play. Acting like a firefighter spraying a hose, a chef stirring a giant pot, or a doctor checking a heartbeat gives children a kinaesthetic connection to the world of work that classroom lessons alone cannot provide. This category works brilliantly as a supplement to early years and primary school learning about community helpers, and is the most naturally educational of the four categories.
-    </p>
+    <p>The People and Jobs category introduces children to community helpers and social roles through physical play. Acting like a firefighter spraying a hose, a chef stirring a giant pot, or a doctor checking a heartbeat gives children a kinaesthetic connection to the world of work that classroom lessons alone cannot provide.</p>
 
     <h3>🧚 Fantasy &amp; Characters Category</h3>
-    <p>
-      Fantasy charades are consistently the most exciting and imaginative category for children aged 5 to 12. The freedom to become a dragon, a wizard, or a mermaid unleashes creativity that everyday classroom activities rarely allow. Children who are shy or reluctant to speak in class often transform completely when given a fantasy character to embody — the character gives them permission to be big, loud, and expressive. Fantasy rounds create the most memorable moments and the biggest laughs of any kids charades session.
-    </p>
+    <p>Fantasy charades are consistently the most exciting and imaginative category for children aged 5 to 12. The freedom to become a dragon, a wizard, or a mermaid unleashes creativity that everyday classroom activities rarely allow. Children who are shy often transform completely when given a fantasy character to embody.</p>
 
     <h3>🏃 Actions &amp; Activities Category</h3>
-    <p>
-      Actions and everyday activities are the most relatable charades for children because they draw from experiences every child has had. Blowing out birthday candles, jumping on a trampoline, or opening a Christmas present are universal childhood moments that every player can immediately visualise and act. This category bridges the game to real life in a way that makes guessing feel natural and fast, perfect for younger players who may find animals and fantasy characters harder to represent physically.
-    </p>
+    <p>Actions and everyday activities are the most relatable charades for children because they draw from experiences every child has had. Blowing out birthday candles, jumping on a trampoline, or opening a Christmas present are universal childhood moments that every player can immediately visualise and act.</p>
   </section>
 
   <!-- AGE-BY-AGE TABLE -->
   <section class="content-section">
     <h2>🎯 Kids Charades by Age Group</h2>
-    <p>Use this guide to choose the right charades for the age of the children in your group.</p>
     <table class="diff-table">
-      <thead>
-        <tr><th>Age Group</th><th>Best Category</th><th>Count</th><th>Example Prompt</th></tr>
-      </thead>
+      <thead><tr><th>Age Group</th><th>Best Category</th><th>Count</th><th>Example Prompt</th></tr></thead>
       <tbody>
         <tr><td>Ages 4–5</td><td>Animals only</td><td>1 at a time</td><td>Barking dog</td></tr>
         <tr><td>Ages 6–7</td><td>Animals + Fantasy</td><td>1–3 at a time</td><td>Hopping frog / Flying fairy</td></tr>
@@ -369,106 +395,66 @@
   <!-- BENEFITS -->
   <section class="content-section">
     <h2>Why Kids Love Charades – 6 Real Benefits</h2>
-    <p>Charades is not just fun — it is one of the most developmentally rich games children can play. Here is what your child develops every time they play.</p>
     <div class="benefit-grid">
-      <div class="benefit-card"><div class="bi">🧠</div><h4>Creative Thinking</h4><p>Children must invent a physical representation of a word — a different kind of problem-solving that builds imagination and flexible thinking.</p></div>
-      <div class="benefit-card"><div class="bi">🗣️</div><h4>Communication Skills</h4><p>Acting without words teaches children that communication is about more than talking — body language, eye contact, and gesture are powerful tools.</p></div>
-      <div class="benefit-card"><div class="bi">👥</div><h4>Teamwork</h4><p>Charades is inherently collaborative. Children learn to read each other's signals, encourage teammates, and celebrate collective success.</p></div>
-      <div class="benefit-card"><div class="bi">📚</div><h4>Vocabulary Growth</h4><p>Hearing and guessing new words in a physical, contextual setting builds vocabulary far more effectively than reading definitions from a page.</p></div>
-      <div class="benefit-card"><div class="bi">😊</div><h4>Confidence Building</h4><p>Standing up and performing in front of peers — even in a playful setting — builds the stage confidence that helps children in school and social situations.</p></div>
-      <div class="benefit-card"><div class="bi">📵</div><h4>Screen-Free Fun</h4><p>Charades replaces screen time with active, social, physical play — one of the most valuable gifts any parent or teacher can offer children today.</p></div>
+      <div class="benefit-card"><div class="bi">🧠</div><h4>Creative Thinking</h4><p>Children must invent a physical representation of a word — a different kind of problem-solving that builds imagination.</p></div>
+      <div class="benefit-card"><div class="bi">🗣️</div><h4>Communication Skills</h4><p>Acting without words teaches children that communication is about more than talking — body language and gesture are powerful tools.</p></div>
+      <div class="benefit-card"><div class="bi">👥</div><h4>Teamwork</h4><p>Charades is inherently collaborative. Children learn to read each other's signals and encourage teammates.</p></div>
+      <div class="benefit-card"><div class="bi">📚</div><h4>Vocabulary Growth</h4><p>Hearing and guessing new words in a physical, contextual setting builds vocabulary far more effectively than reading definitions.</p></div>
+      <div class="benefit-card"><div class="bi">😊</div><h4>Confidence Building</h4><p>Standing up and performing in front of peers builds the stage confidence that helps children in school and social situations.</p></div>
+      <div class="benefit-card"><div class="bi">📵</div><h4>Screen-Free Fun</h4><p>Charades replaces screen time with active, social, physical play — one of the most valuable gifts any parent can offer.</p></div>
     </div>
   </section>
 
   <!-- TIPS -->
   <section class="content-section">
     <h2>🏆 Tips for Playing Kids Charades</h2>
-    <p>These tips will help parents and teachers run a smooth, fun, and inclusive kids charades session that every child enjoys.</p>
     <div class="tips-grid">
-      <div class="tip-card"><h4>Let Young Kids Make Sounds</h4><p>For children aged 4 to 6, allow animal sounds in the first few rounds to build confidence. Gradually move to silent acting as children become comfortable with the game.</p></div>
-      <div class="tip-card"><h4>Always Encourage, Never Correct</h4><p>If a child's acting is unclear, never say it is wrong. Cheer every attempt. The goal for young children is participation and confidence, not perfect mime technique.</p></div>
-      <div class="tip-card"><h4>Use Full Screen for the Actor</h4><p>Hold up the phone in full screen so only the acting child can see the prompt. This keeps the word secret naturally without needing adult help to manage the card.</p></div>
-      <div class="tip-card"><h4>Start with 1 Card Only</h4><p>For first-time players and younger children, generate just 1 charade at a time. This keeps the game simple and prevents overwhelm. Increase to 3 or 5 as children get comfortable.</p></div>
-      <div class="tip-card"><h4>Give a 30-Second Timer</h4><p>For children aged 4 to 8, use 30 seconds instead of 60. Shorter rounds keep energy high and ensure every child gets multiple turns during a party or classroom session.</p></div>
-      <div class="tip-card"><h4>Copy and Share for Virtual Play</h4><p>Use the Copy button to share generated charades via WhatsApp or Zoom chat for virtual birthday parties or remote family game nights with grandparents and cousins.</p></div>
+      <div class="tip-card"><h4>Let Young Kids Make Sounds</h4><p>For children aged 4 to 6, allow animal sounds in the first few rounds to build confidence. Gradually move to silent acting as children become comfortable.</p></div>
+      <div class="tip-card"><h4>Always Encourage, Never Correct</h4><p>If a child's acting is unclear, never say it is wrong. Cheer every attempt. The goal is participation and confidence, not perfect mime technique.</p></div>
+      <div class="tip-card"><h4>Use Full Screen for the Actor</h4><p>Hold up the phone in full screen so only the acting child can see the prompt. This keeps the word secret naturally.</p></div>
+      <div class="tip-card"><h4>Start with 1 Card Only</h4><p>For first-time players and younger children, generate just 1 charade at a time. Increase to 3 as children get comfortable.</p></div>
+      <div class="tip-card"><h4>Give a 30-Second Timer</h4><p>For children aged 4 to 8, use 30 seconds instead of 60. Shorter rounds keep energy high and ensure every child gets multiple turns.</p></div>
+      <div class="tip-card"><h4>Copy and Share for Virtual Play</h4><p>Use the Copy button to share generated charades via WhatsApp or Zoom chat for virtual birthday parties or remote family game nights.</p></div>
     </div>
   </section>
 
   <!-- HOW TO PLAY -->
   <section class="how-to">
     <h2>How to Play Kids Charades – Step by Step</h2>
-
-    <p><strong>1. Pick a category and count</strong><br>
-    Choose how many charades you need using the number buttons. For young children start with 1. Select a category — Animals for the youngest players, or All for mixed ages.</p>
-
-    <p><strong>2. Click Generate</strong><br>
-    Hit Generate and kid-friendly charade charades appear instantly. Each card shows a simple word or action to act out.</p>
-
-    <p><strong>3. Show the card to the actor only</strong><br>
-    Use Full Screen mode and hold the phone up so only the acting child can see the prompt. Everyone else looks away until the round starts.</p>
-
-    <p><strong>4. The child acts without speaking</strong><br>
-    The actor uses body language, gestures, and expressions only. For ages 4 to 6, allow animal sounds to help build early confidence. From age 7 upward, silent acting only.</p>
-
-    <p><strong>5. Set a 30 to 60 second timer</strong><br>
-    Use 30 seconds for young children (ages 4 to 7) and 60 seconds for older children (ages 8 to 12). Shorter rounds keep everyone engaged and ensure more turns per player.</p>
-
-    <p><strong>6. Let the group guess</strong><br>
-    First child to correctly name the word or action wins the round. Award a sticker, a point, or simply a big cheer — the reward keeps energy high throughout.</p>
-
-    <p><strong>7. Rotate and keep going</strong><br>
-    Take turns so every child gets to act at least twice. Click Generate for unlimited fresh charades. The tool avoids repeating until the full pool cycles through.</p>
+    <p><strong>1. Pick a category and count</strong><br>Choose how many charades you need using the number buttons. For young children start with 1. Select a category — Animals for the youngest players, or All for mixed ages.</p>
+    <p><strong>2. Click Generate</strong><br>Hit Generate and kid-friendly charade charades appear instantly. Each card shows a simple word or action to act out.</p>
+    <p><strong>3. Show the card to the actor only</strong><br>Use Full Screen mode and hold the phone up so only the acting child can see the prompt.</p>
+    <p><strong>4. The child acts without speaking</strong><br>The actor uses body language, gestures, and expressions only. For ages 4 to 6, allow animal sounds to help build early confidence.</p>
+    <p><strong>5. Set a 30-second timer</strong><br>Use 30 seconds for young children (ages 4 to 7) and 60 seconds for older children (ages 8 to 12).</p>
+    <p><strong>6. Let the group guess</strong><br>First child to correctly name the word or action wins the round. Award a sticker, a point, or simply a big cheer.</p>
+    <p><strong>7. Rotate and keep going</strong><br>Take turns so every child gets to act at least twice. Click Generate for unlimited fresh charades.</p>
   </section>
 
   <!-- WHAT YOU GET -->
   <section class="content-section">
     <h2>Example Kids Charades You Will Get</h2>
-    <p>Each card shows a simple, clear action that children can act immediately without reading long instructions. Here are samples from each category:</p>
-    <p>
-      <strong>Animals:</strong> Barking dog, sleeping cat, hopping frog, waddling penguin, roaring lion, swimming fish.<br>
-      <strong>People:</strong> Firefighter spraying water, chef cooking big pot, doctor checking heartbeat, pilot flying aeroplane, postman delivering letters.<br>
-      <strong>Fantasy:</strong> Wizard casting a spell, dragon breathing fire, fairy sprinkling dust, robot moving stiffly, pirate looking for treasure.<br>
-      <strong>Actions:</strong> Eating ice cream fast, jumping on trampoline, blowing out birthday candles, climbing a tree, dancing at a party.
-    </p>
-    <p>
-      Use the <strong>Copy</strong> button to share all generated charades via WhatsApp for virtual birthday parties.
-      The <strong>Full Screen</strong> button turns any phone into a perfect game card for classroom and party play.
-    </p>
+    <p><strong>Animals:</strong> Barking dog, sleeping cat, hopping frog, waddling penguin, roaring lion.<br>
+    <strong>People:</strong> Firefighter spraying water, chef cooking big pot, doctor checking heartbeat, pilot flying aeroplane.<br>
+    <strong>Fantasy:</strong> Wizard casting a spell, dragon breathing fire, fairy sprinkling dust, robot moving stiffly.<br>
+    <strong>Actions:</strong> Eating ice cream fast, jumping on trampoline, blowing out birthday candles, dancing at a party.</p>
+    <p>Use the <strong>Copy</strong> button to share all generated charades via WhatsApp for virtual birthday parties. The <strong>Full Screen</strong> button turns any phone into a perfect game card.</p>
   </section>
 
   <!-- FAQ -->
   <section class="content-section">
     <h2>Frequently Asked Questions – Kids Charades</h2>
-
-    <p><strong>What is a kids charades generator?</strong><br>
-    A kids charades generator randomly picks simple, age-appropriate words and actions for children to act out. Unlike standard charades, kids charades use short, familiar words that children aged 4 to 12 can easily understand and perform without any preparation.</p>
-
-    <p><strong>What age is kids charades suitable for?</strong><br>
-    From age 4 upward. Animals and Fantasy work best for ages 4 to 7. People and Actions work well for ages 6 to 12. Mixed groups work with All category selected.</p>
-
-    <p><strong>Can I use kids charades in a classroom?</strong><br>
-    Yes. It builds vocabulary, physical expression, teamwork, and keeps children engaged without screens. Use Animals for science lessons and People for social studies topics.</p>
-
-    <p><strong>How do I make charades easier for very young children?</strong><br>
-    Select Animals, generate 1 charade at a time, allow sounds for the first few rounds, and always encourage rather than correct. At this age participation matters more than perfect acting.</p>
-
-    <p><strong>Is this generator free?</strong><br>
-    Yes. Completely free with no signup, no download, and no time limit. Generate unlimited kid-friendly charade ideas any time.</p>
-
-    <p><strong>What categories does this generator have?</strong><br>
-    Four categories: Animals (farm animals, wild animals, pets), People (jobs, community helpers), Fantasy (superheroes, fairy tale characters, magical creatures), and All (mixed pool for variety).</p>
-
-    <p><strong>Can kids charades be played at a birthday party?</strong><br>
-    Yes. No equipment needed, creates lots of laughter, and works for any group size. Generate 5 or 10 charades at once for party rounds. Use Fantasy for themed parties and Animals for younger children.</p>
-
-    <p><strong>Does this work on mobile phones?</strong><br>
-    Yes. Fully mobile-optimised. Full Screen mode is especially useful for holding up the phone so only the acting child sees the prompt.</p>
+    <p><strong>What is a kids charades generator?</strong><br>A kids charades generator randomly picks simple, age-appropriate words and actions for children to act out.</p>
+    <p><strong>What age is kids charades suitable for?</strong><br>From age 4 upward. Animals and Fantasy work best for ages 4 to 7. People and Actions work well for ages 6 to 12.</p>
+    <p><strong>Can I use kids charades in a classroom?</strong><br>Yes. It builds vocabulary, physical expression, teamwork, and keeps children engaged without screens.</p>
+    <p><strong>How do I make charades easier for very young children?</strong><br>Select Animals, generate 1 charade at a time, allow sounds for the first few rounds, and always encourage rather than correct.</p>
+    <p><strong>Is this generator free?</strong><br>Yes. Completely free with no signup, no download, and no time limit.</p>
+    <p><strong>What categories does this generator have?</strong><br>Four categories: Animals, People, Fantasy, and All (mixed pool for variety).</p>
+    <p><strong>Can kids charades be played at a birthday party?</strong><br>Yes. No equipment needed, creates lots of laughter, and works for any group size.</p>
   </section>
 
   <!-- 25 TOOLS -->
   <section class="content-section">
     <h2>🎮 Explore All Charades Tools – 25+ Free Generators</h2>
-    <p>Try any of these free charades generators. Every tool is free, instant, and works on all devices.</p>
     <div class="related-tools">
       <a href="movie-charades.html" class="rel-card"><span class="ri">🎬</span><span class="rn">Movie Charades</span></a>
       <a href="character-charades.html" class="rel-card"><span class="ri">🦸</span><span class="rn">Character Charades</span></a>
@@ -500,12 +486,8 @@
 
   <section class="content-section">
     <h2>Start Playing Kids Charades Right Now</h2>
-    <p>
-      Kids charades is the kind of game that children ask to play again and again. It is simple enough for a four-year-old, exciting enough for a twelve-year-old, and entertaining enough that parents end up wanting to join in. It needs no equipment, no preparation, and no budget — just one phone and a group of children ready to laugh.
-    </p>
-    <p>
-      Scroll up, pick your category, click Generate, and turn any moment into a memorable game. 🎉
-    </p>
+    <p>Kids charades is the kind of game that children ask to play again and again. It is simple enough for a four-year-old, exciting enough for a twelve-year-old, and entertaining enough that parents end up wanting to join in. It needs no equipment, no preparation, and no budget — just one phone and a group of children ready to laugh.</p>
+    <p>Scroll up, pick your category, click Generate, and turn any moment into a memorable game. 🎉</p>
   </section>
 
 </main>
