@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dumb Charades Generator – 100+ Bollywood & Funny Movie Names to Act Out Free</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Free Dumb Charades Generator with 100+ Bollywood and Hindi movie titles to act out. Perfect for Indian game nights, parties and family gatherings. No signup needed.">
+
+  <link rel="icon" type="image/x-icon" href="/assests/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assests/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assests/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assests/favicon-48x48.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assests/apple-touch-icon-180x180.png">
+  <link rel="apple-touch-icon" href="/assests/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assests/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assests/android-chrome-512x512.png">
+
+  <link rel="alternate" hreflang="en" href="https://charadegenerator.com/dumb-charades.html" />
+  <link rel="alternate" hreflang="hi" href="https://charadegenerator.com/hi/dumb-charades.html" />
+  <link rel="alternate" hreflang="ur" href="https://charadegenerator.com/ur/dumb-charades.html" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Dumb Charades Generator",
+        "url": "https://charadegenerator.com/dumb-charades.html",
+        "description": "Free online dumb charades generator with 100+ Bollywood and Hindi movie titles. Act out film names for parties, family gatherings and game nights.",
+        "applicationCategory": "GameApplication",
+        "operatingSystem": "Any",
+        "browserRequirements": "Requires JavaScript.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "author": { "@type": "Person", "name": "CharadeGenerator Team", "url": "https://charadegenerator.com/about-us.html" },
+        "featureList": ["100+ Bollywood movie titles","Hindi films, classics, blockbusters","Easy, Medium, Hard modes","Full-screen mode","Copy to clipboard","Mobile-friendly"]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type":"Question","name":"What is dumb charades?","acceptedAnswer":{"@type":"Answer","text":"Dumb charades is a popular Indian version of the classic charades game where players act out Bollywood and Hindi movie titles without speaking while others guess. It is a staple game at Indian parties, family gatherings, and social events. The name 'dumb' comes from the fact that the actor cannot speak — they must remain silent while acting."}},
+          {"@type":"Question","name":"What movies are included in this generator?","acceptedAnswer":{"@type":"Answer","text":"The generator includes a wide range of Bollywood movies from classic Hindi films to modern blockbusters. Titles include Sholay, Dilwale Dulhania Le Jayenge, 3 Idiots, Dangal, Kabhi Khushi Kabhie Gham, Lagaan, and many more. It covers all eras of Hindi cinema."}},
+          {"@type":"Question","name":"How do you play dumb charades?","acceptedAnswer":{"@type":"Answer","text":"To play dumb charades, one player acts out a Bollywood movie title without speaking while the rest of the group guesses. The actor uses hand signals to indicate the number of words, which word they are acting, and uses gestures to communicate the meaning. The guesser must identify the correct movie title."}},
+          {"@type":"Question","name":"Is dumb charades different from regular charades?","acceptedAnswer":{"@type":"Answer","text":"Dumb charades is the Indian version of charades that specifically focuses on Bollywood and Hindi movie titles. While regular charades covers all types of words, dumb charades is exclusively about film titles. It is a beloved party game across India and among South Asian communities worldwide."}},
+          {"@type":"Question","name":"Is this dumb charades generator free?","acceptedAnswer":{"@type":"Answer","text":"Yes. Completely free with no signup, no download, and no time limit. Generate unlimited Bollywood movie charades for any party or gathering."}},
+          {"@type":"Question","name":"What are the hand signals used in dumb charades?","acceptedAnswer":{"@type":"Answer","text":"Common dumb charades hand signals include: holding up fingers for word count, pointing to a finger to indicate which word you are acting, tugging your ear for 'sounds like,' making a book shape for a book, and spinning a film reel for a movie. Our generator helps you practice these signals with every round."}}
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type":"ListItem","position":1,"name":"Home","item":"https://charadegenerator.com/"},
+          {"@type":"ListItem","position":2,"name":"Dumb Charades","item":"https://charadegenerator.com/dumb-charades.html"}
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .lang-bar{background:#fef3e8;border-bottom:1px solid #fdd3a8;padding:6px 16px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:13px;}
+    .lang-bar span{color:#555;font-weight:600;}
+    .lang-bar a{text-decoration:none;color:#d97706;padding:2px 8px;border-radius:4px;transition:background .2s;}
+    .lang-bar a:hover{background:#fde8d0;}
+    .lang-bar a.active{background:#d97706;color:#fff;}
+    .stats-bar{display:flex;gap:24px;flex-wrap:wrap;background:linear-gradient(135deg,#d97706 0%,#f59e0b 100%);border-radius:12px;padding:20px 24px;margin:24px 0;color:#fff;}
+    .stat-item{text-align:center;flex:1;min-width:100px;}
+    .stat-num{font-size:28px;font-weight:700;}
+    .stat-label{font-size:12px;opacity:.9;margin-top:2px;}
+    .word-columns{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;margin-top:16px;}
+    .word-col h4{margin:0 0 8px;font-size:14px;text-transform:uppercase;letter-spacing:.5px;color:#d97706;}
+    .word-col ul{margin:0;padding-left:18px;font-size:14px;line-height:1.9;color:#333;}
+    .tips-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-top:16px;}
+    .tip-card{background:#fef3e8;border-left:4px solid #d97706;border-radius:8px;padding:14px 16px;}
+    .tip-card h4{margin:0 0 6px;font-size:15px;}
+    .tip-card p{margin:0;font-size:13px;color:#555;line-height:1.6;}
+    .diff-table{width:100%;border-collapse:collapse;font-size:14px;margin-top:16px;}
+    .diff-table th{background:#d97706;color:#fff;padding:10px 14px;text-align:left;}
+    .diff-table td{padding:10px 14px;border-bottom:1px solid #eee;}
+    .diff-table tr:nth-child(even) td{background:#fef3e8;}
+    .age-guide{background:#fef3e8;border:1px solid #fdd3a8;border-radius:10px;padding:20px 24px;margin:24px 0;}
+    .age-guide h3{margin-top:0;color:#d97706;}
+    .age-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px;}
+    .age-card{flex:1;min-width:130px;background:#fff;border:1px solid #fdd3a8;border-radius:8px;padding:12px;text-align:center;font-size:13px;}
+    .age-card strong{display:block;font-size:15px;margin-bottom:4px;}
+    .related-tools{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:12px;margin-top:16px;}
+    .rel-card{background:#fff;border:1px solid #dde4f5;border-radius:10px;padding:12px 10px;text-align:center;text-decoration:none;color:#222;font-size:13px;font-weight:500;transition:box-shadow .2s,transform .15s;display:flex;flex-direction:column;align-items:center;gap:5px;}
+    .rel-card:hover{box-shadow:0 4px 16px rgba(217,119,6,.15);transform:translateY(-2px);}
+    .rel-card .ri{font-size:22px;}
+    .rel-card .rn{font-weight:600;font-size:12px;}
+
+    /* ── GAME LAYOUT ────────────────────────────────── */
+    .game-layout{display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap;}
+
+    /* LEFT – timer */
+    .timer-col{display:flex;flex-direction:column;align-items:center;gap:10px;flex-shrink:0;min-width:110px;}
+    #timerRing{display:block;}
+    .timer-btn-row{display:flex;flex-direction:column;gap:8px;width:100%;}
+    #timerToggleBtn{background:#d97706;color:#fff;border:none;border-radius:8px;padding:8px 0;font-size:13px;font-weight:700;cursor:pointer;width:100%;transition:background .2s;}
+    #timerToggleBtn:hover{background:#b85e05;}
+    #timerResetBtn{background:#fef3e8;color:#d97706;border:1px solid #fdd3a8;border-radius:8px;padding:7px 0;font-size:13px;font-weight:600;cursor:pointer;width:100%;transition:background .2s;}
+    #timerResetBtn:hover{background:#fde8d0;}
+
+    /* RIGHT – content */
+    .game-content{flex:1;min-width:240px;}
+
+    /* cards */
+    #cards{margin-bottom:14px;min-height:60px;}
+
+    /* round picker */
+    .round-pick{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;}
+    .round-btn{background:#fef3e8;border:2px solid #fdd3a8;border-radius:8px;padding:8px 22px;font-size:16px;font-weight:700;cursor:pointer;transition:all .2s;color:#d97706;}
+    .round-btn.active,.round-btn:hover{background:#d97706;border-color:#d97706;color:#fff;}
+
+    /* ── TIME OVER OVERLAY ──────────────────────────── */
+    #timeOverOverlay{display:none;position:fixed;inset:0;background:rgba(10,5,0,.85);z-index:9999;align-items:center;justify-content:center;flex-direction:column;gap:20px;animation:fadeInBG .3s ease;}
+    @keyframes fadeInBG{from{opacity:0}to{opacity:1}}
+    .timeover-box{background:#fff;border-radius:22px;padding:40px 32px;text-align:center;box-shadow:0 28px 70px rgba(0,0,0,.4);max-width:340px;width:90%;animation:popIn .4s cubic-bezier(.34,1.56,.64,1);}
+    @keyframes popIn{from{transform:scale(.6);opacity:0}to{transform:scale(1);opacity:1}}
+    .timeover-emoji{font-size:64px;line-height:1;margin-bottom:10px;}
+    .timeover-box h2{margin:0 0 6px;font-size:30px;color:#d97706;letter-spacing:1px;text-transform:uppercase;}
+    .timeover-box p{color:#868e96;margin:0 0 24px;font-size:15px;}
+    .timeover-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+    .btn-restart{background:#d97706;color:#fff;border:none;border-radius:10px;padding:13px 26px;font-size:15px;font-weight:700;cursor:pointer;transition:background .2s,transform .15s;}
+    .btn-restart:hover{background:#b85e05;transform:scale(1.05);}
+    .btn-next{background:#40c057;color:#fff;border:none;border-radius:10px;padding:13px 26px;font-size:15px;font-weight:700;cursor:pointer;transition:background .2s,transform .15s;}
+    .btn-next:hover{background:#2f9e44;transform:scale(1.05);}
+
+    /* ── MODE SELECT ── */
+    .mode-select{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;}
+    .mode-btn{background:#fef3e8;border:2px solid #fdd3a8;border-radius:8px;padding:8px 18px;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;color:#d97706;}
+    .mode-btn.active,.mode-btn:hover{background:#d97706;border-color:#d97706;color:#fff;}
+
+    /* ── TOP CONTROLS ── */
+    .top-controls{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px;align-items:center;}
+    .top-controls button{background:#fff;border:2px solid #d97706;border-radius:8px;padding:6px 16px;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;color:#d97706;}
+    .top-controls button:hover{background:#d97706;color:#fff;}
+    .copy-msg{display:none;color:#40c057;font-weight:700;font-size:14px;}
+
+    /* ── GENERATE BUTTON ── */
+    .generate-btn{background:#d97706;color:#fff;border:none;border-radius:10px;padding:14px 40px;font-size:18px;font-weight:700;cursor:pointer;transition:all .2s;margin-top:6px;}
+    .generate-btn:hover{background:#b85e05;transform:scale(1.02);}
+
+    /* ── CARDS ── */
+    .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin-bottom:16px;width:100%;}
+    .card{background:#fff;border:2px solid #fdd3a8;border-radius:12px;padding:18px 16px;display:flex;align-items:center;gap:12px;transition:box-shadow .2s;}
+    .card:hover{box-shadow:0 4px 16px rgba(217,119,6,.12);}
+    .card-emoji{font-size:28px;}
+    .card p{margin:0;font-size:16px;font-weight:500;color:#222;}
+
+    .seo-text{font-size:16px;line-height:1.7;color:#444;}
+    .content-section{margin:40px 0;}
+    .how-to{background:#f8faff;padding:24px 28px;border-radius:12px;margin:32px 0;}
+    .how-to p{font-size:15px;line-height:1.8;}
+    .category-title{font-size:26px;margin-bottom:4px;}
+    .subtitle{color:#666;font-size:16px;margin-top:0;}
+
+    @media(max-width:480px){.game-layout{flex-direction:row;}.timer-col{min-width:90px;}}
+  </style>
+</head>
+<body>
+
+<!-- ── TIME OVER OVERLAY ─────────────────────────────────── -->
+<div id="timeOverOverlay">
+  <div class="timeover-box">
+    <div class="timeover-emoji">⏰</div>
+    <h2>Time's Up!</h2>
+    <p>30 seconds are over — did they guess the dumb charade?</p>
+    <div class="timeover-actions">
+      <button class="btn-restart" onclick="resetTimer(true)">▶ Play Again</button>
+      <button class="btn-next" onclick="generate()">⏭ Next Card</button>
+    </div>
+  </div>
+</div>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="logo"><a href="https://charadegenerator.com/" class="logo-link">🎭 <strong>Charades</strong>Generator</a></div>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <nav class="nav-desktop">
+      <a href="kids-charade-generator.html"><button>Kids Charades</button></a>
+      <a href="movie-charades.html"><button>Movie Charades</button></a>
+      <a href="character-charades.html"><button>Character Charades</button></a>
+      <a href="reverse-charades.html"><button>Reverse Charades</button></a>
+      <a href="christmas-charades.html"><button>Christmas Charades</button></a>
+      <a href="islamic-charades.html"><button>Islamic Charades</button></a>
+      <a href="animal-charades.html"><button>Animal Charades</button></a>
+    </nav>
+  </div>
+  <nav id="navMobile" class="nav-mobile">
+    <a href="kids-charade-generator.html"><button>Kids Charades</button></a>
+    <a href="movie-charades.html"><button>Movie Charades</button></a>
+    <a href="character-charades.html"><button>Character Charades</button></a>
+    <a href="reverse-charades.html"><button>Reverse Charades</button></a>
+    <a href="christmas-charades.html"><button>Christmas Charades</button></a>
+    <a href="islamic-charades.html"><button>Islamic Charades</button></a>
+    <a href="animal-charades.html"><button>Animal Charades</button></a>
+  </nav>
+</header>
+
+<main class="main">
+
+  <h1>Dumb Charades Generator – 100+ Bollywood Movies to Act Out Free</h1>
+  <p class="seo-text">🎬 Play instantly • No signup • 100+ Bollywood movie titles</p>
+
+  <p class="seo-text">
+    Dumb charades is the beloved Indian party game where players act out Bollywood movie titles without speaking. This free generator gives you unlimited Hindi film charades instantly — from timeless classics to modern blockbusters.
+    With over <strong>100 unique movie titles</strong> across categories, every round is a fresh challenge for Bollywood fans of all ages.
+  </p>
+
+  <p class="seo-text">
+    Whether you are playing at a family gathering, a party with friends, or a Diwali celebration, dumb charades brings everyone together through the shared love of Hindi cinema. No preparation needed — generate, act, and guess instantly on any device.
+  </p>
+
+  <!-- GAME AREA -->
+  <section class="tool" id="gameArea">
+    <h2 class="category-title">Dumb Charades 🎬</h2>
+    <p class="subtitle" id="statusText">Ready to play! Generate your first Bollywood movie 🎬</p>
+
+    <div class="top-controls">
+      <button id="copyBtn" onclick="copyCharades()">📋 Copy</button>
+      <button onclick="toggleFullScreen()">⛶ Full Screen</button>
+      <span id="copyMsg" class="copy-msg">Copied!</span>
+    </div>
+
+    <div class="mode-select">
+      <button class="mode-btn active" data-mode="all" onclick="setMode('all')">All</button>
+      <button class="mode-btn" data-mode="easy" onclick="setMode('easy')">Easy</button>
+      <button class="mode-btn" data-mode="medium" onclick="setMode('medium')">Medium</button>
+      <button class="mode-btn" data-mode="hard" onclick="setMode('hard')">Hard</button>
+    </div>
+
+    <!-- round picker 1 / 2 / 3 -->
+    <div class="round-pick">
+      <button class="round-btn active" data-round="1" onclick="setRound(1)">1</button>
+      <button class="round-btn" data-round="2" onclick="setRound(2)">2</button>
+      <button class="round-btn" data-round="3" onclick="setRound(3)">3</button>
+    </div>
+
+    <!-- GAME LAYOUT: Timer LEFT | Cards RIGHT -->
+    <div class="game-layout">
+      <!-- LEFT — countdown ring -->
+      <div class="timer-col">
+        <div id="timerRing"></div>
+        <div class="timer-btn-row">
+          <button id="timerToggleBtn" onclick="timerRunning ? pauseTimer() : startTimer()">▶ Start</button>
+          <button id="timerResetBtn" onclick="resetTimer(false)">↺ Reset</button>
+        </div>
+      </div>
+
+      <!-- RIGHT — cards + generate -->
+      <div class="game-content">
+        <div id="cards" class="cards"></div>
+        <button class="generate-btn" onclick="generate()">🎬 Generate</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="age-guide">
+    <h3>🎯 Which Mode Should You Pick?</h3>
+    <div class="age-row">
+      <div class="age-card"><strong>🟢 Easy</strong>Family & kids<br>Well-known movies everyone has seen.</div>
+      <div class="age-card"><strong>🟡 Medium</strong>Bollywood fans<br>Popular films needing some movie knowledge.</div>
+      <div class="age-card"><strong>🔴 Hard</strong>Cinephiles<br>Classic and lesser-known film titles.</div>
+    </div>
+  </div>
+
+  <section class="content-section">
+    <h2>100+ Bollywood Movies for Dumb Charades</h2>
+    <p>Below is a sample of the movie titles in our generator. Every title is a Bollywood film — from classic Hindi cinema to modern blockbusters.</p>
+    <div class="word-columns">
+      <div class="word-col">
+        <h4>🎬 Classics</h4>
+        <ul>
+          <li>Sholay</li>
+          <li>Mughal-e-Azam</li>
+          <li>Mother India</li>
+          <li>Deewar</li>
+          <li>Amar Akbar Anthony</li>
+          <li>Pyaasa</li>
+          <li>Guide</li>
+          <li>Anand</li>
+          <li>Kabhi Kabhie</li>
+          <li>Trishul</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>🎭 90s Hits</h4>
+        <ul>
+          <li>DDLJ</li>
+          <li>Hum Aapke Hain Koun</li>
+          <li>Dil To Pagal Hai</li>
+          <li>Kuch Kuch Hota Hai</li>
+          <li>Raja Hindustani</li>
+          <li>Judwaa</li>
+          <li>Biwi No.1</li>
+          <li>Pardes</li>
+          <li>Jeans</li>
+          <li>Chandramukhi</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>🌟 2000s Hits</h4>
+        <ul>
+          <li>Kabhi Khushi Kabhie Gham</li>
+          <li>Devdas</li>
+          <li>Lagaan</li>
+          <li>Dil Chahta Hai</li>
+          <li>Kal Ho Naa Ho</li>
+          <li>Taare Zameen Par</li>
+          <li>Chak De India</li>
+          <li>Om Shanti Om</li>
+          <li>Rab Ne Bana Di Jodi</li>
+          <li>3 Idiots</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>🔥 Blockbusters</h4>
+        <ul>
+          <li>Dangal</li>
+          <li>Bajrangi Bhaijaan</li>
+          <li>PK</li>
+          <li>Padmaavat</li>
+          <li>Sanju</li>
+          <li>Gully Boy</li>
+          <li>War</li>
+          <li>Kabir Singh</li>
+          <li>Article 15</li>
+          <li>Uri</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>🎵 Musical Hits</h4>
+        <ul>
+          <li>Rockstar</li>
+          <li>Bajirao Mastani</li>
+          <li>Devdas</li>
+          <li>Hum Dil De Chuke Sanam</li>
+          <li>Saajan</li>
+          <li>Aashiqui 2</li>
+          <li>Yeh Jawaani Hai Deewani</li>
+          <li>Wake Up Sid</li>
+          <li>Barfi</li>
+          <li>Queen</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>🎯 Comedy Hits</h4>
+        <ul>
+          <li>Andaz Apna Apna</li>
+          <li>Hera Pheri</li>
+          <li>Phir Hera Pheri</li>
+          <li>Golmaal</li>
+          <li>Dhamaal</li>
+          <li>Welcome</li>
+          <li>Singh Is Kinng</li>
+          <li>3 Idiots</li>
+          <li>Housefull</li>
+          <li>Total Dhamaal</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>🎯 Dumb Charades Difficulty Guide</h2>
+    <table class="diff-table">
+      <thead><tr><th>Mode</th><th>Best For</th><th>Movie Types</th><th>Example</th></tr></thead>
+      <tbody>
+        <tr><td>🟢 Easy</td><td>Family, kids, parties</td><td>Well-known movies everyone knows</td><td>Sholay</td></tr>
+        <tr><td>🟡 Medium</td><td>Bollywood fans</td><td>Popular films needing some knowledge</td><td>Devdas</td></tr>
+        <tr><td>🔴 Hard</td><td>Cinephiles, experts</td><td>Classic and obscure titles</td><td>Mughal-e-Azam</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="how-to">
+    <h2>How to Play Dumb Charades – Step by Step</h2>
+    <p><strong>1. Pick a mode and count</strong><br>Choose Easy for family and kids, Medium for Bollywood fans, or Hard for movie experts. Select how many movies per round.</p>
+    <p><strong>2. Click Generate</strong><br>Hit Generate and Bollywood movie titles appear instantly. The actor reads privately while everyone else looks away.</p>
+    <p><strong>3. Use Full Screen</strong><br>Switch to Full Screen so only the actor sees the movie title as they prepare to act.</p>
+    <p><strong>4. Show the word count</strong><br>Hold up fingers for the number of words in the title. Point to each finger as you act each word.</p>
+    <p><strong>5. Act without speaking</strong><br>Use body language and gestures only. Tug your ear for "sounds like." Use classic dumb charades signals.</p>
+    <p><strong>6. Set a 30-second timer</strong><br>One round equals 30 seconds. A correct guess scores a point. If time runs out, the other team can steal.</p>
+    <p><strong>7. Rotate and keep going</strong><br>Take turns so everyone acts at least twice. Click Generate for unlimited fresh Bollywood movie titles.</p>
+  </section>
+
+  <section class="content-section">
+    <h2>Frequently Asked Questions – Dumb Charades</h2>
+    <p><strong>What is dumb charades?</strong><br>Dumb charades is the Indian version of charades where players act out Bollywood and Hindi movie titles without speaking. A beloved party game across India and South Asian communities.</p>
+    <p><strong>What movies are included?</strong><br>Classic Hindi films to modern Bollywood blockbusters — Sholay, DDLJ, 3 Idiots, Dangal, Kabhi Khushi Kabhie Gham, and many more.</p>
+    <p><strong>How do you play dumb charades?</strong><br>One player acts out a Bollywood movie title without speaking while the group guesses. The actor uses hand signals for word count and "sounds like."</p>
+    <p><strong>Is this generator free?</strong><br>Yes. Completely free with no signup, no download, and no time limit.</p>
+  </section>
+
+  <section class="content-section">
+    <h2>🎮 Explore All Charades Tools – 25+ Free Generators</h2>
+    <div class="related-tools">
+      <a href="kids-charade-generator.html" class="rel-card"><span class="ri">👦</span><span class="rn">Kids Charades</span></a>
+      <a href="movie-charades.html" class="rel-card"><span class="ri">🎬</span><span class="rn">Movie Charades</span></a>
+      <a href="character-charades.html" class="rel-card"><span class="ri">🦸</span><span class="rn">Character Charades</span></a>
+      <a href="reverse-charades.html" class="rel-card"><span class="ri">🔄</span><span class="rn">Reverse Charades</span></a>
+      <a href="christmas-charades.html" class="rel-card"><span class="ri">🎄</span><span class="rn">Christmas Charades</span></a>
+      <a href="islamic-charades.html" class="rel-card"><span class="ri">🕌</span><span class="rn">Islamic Charades</span></a>
+      <a href="animal-charades.html" class="rel-card"><span class="ri">🐾</span><span class="rn">Animal Charades</span></a>
+      <a href="funny-charades.html" class="rel-card"><span class="ri">😂</span><span class="rn">Funny Charades</span></a>
+      <a href="hard-charades.html" class="rel-card"><span class="ri">🧠</span><span class="rn">Hard Charades</span></a>
+      <a href="food-charades.html" class="rel-card"><span class="ri">🍕</span><span class="rn">Food Charades</span></a>
+      <a href="sports-charades.html" class="rel-card"><span class="ri">⚽</span><span class="rn">Sports Charades</span></a>
+      <a href="halloween-charades.html" class="rel-card"><span class="ri">🎃</span><span class="rn">Halloween Charades</span></a>
+      <a href="birthday-charades.html" class="rel-card"><span class="ri">🎂</span><span class="rn">Birthday Charades</span></a>
+      <a href="school-charades.html" class="rel-card"><span class="ri">🏫</span><span class="rn">School Charades</span></a>
+      <a href="emoji-charades.html" class="rel-card"><span class="ri">😀</span><span class="rn">Emoji Charades</span></a>
+      <a href="bible-charades.html" class="rel-card"><span class="ri">📖</span><span class="rn">Bible Charades</span></a>
+      <a href="thanksgiving-charades.html" class="rel-card"><span class="ri">🦃</span><span class="rn">Thanksgiving Charades</span></a>
+      <a href="valentines-charades.html" class="rel-card"><span class="ri">❤️</span><span class="rn">Valentine Charades</span></a>
+      <a href="summer-charades.html" class="rel-card"><span class="ri">☀️</span><span class="rn">Summer Charades</span></a>
+      <a href="superhero-charades.html" class="rel-card"><span class="ri">🦸‍♂️</span><span class="rn">Superhero Charades</span></a>
+      <a href="nature-charades.html" class="rel-card"><span class="ri">🌿</span><span class="rn">Nature Charades</span></a>
+      <a href="occupation-charades.html" class="rel-card"><span class="ri">👨‍⚕️</span><span class="rn">Occupation Charades</span></a>
+      <a href="fairy-tale-charades.html" class="rel-card"><span class="ri">🧚</span><span class="rn">Fairy Tale Charades</span></a>
+      <a href="ramadan-charades.html" class="rel-card"><span class="ri">🌙</span><span class="rn">Ramadan Charades</span></a>
+      <a href="index.html" class="rel-card"><span class="ri">🎭</span><span class="rn">All Charades</span></a>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>Start Playing Dumb Charades Right Now</h2>
+    <p>Dumb charades is the heart of every Indian party. When someone perfectly mimes Sholay's iconic scene or nails the dramatic gestures of a classic Bollywood film, the room erupts with the joy of recognition. No other party game captures the spirit of Hindi cinema quite like dumb charades.</p>
+    <p>Scroll up, pick your mode, click Generate, and let the Bollywood magic begin. 🎬🎉</p>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <a href="about-us.html">About Us</a>
+  <a href="contact-us.html">Contact Us</a>
+  <a href="privacy-policy.html">Privacy Policy</a>
+  <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+  <a href="disclaimer.html">Disclaimer</a>
+  <p>© CharadeGenerator 2026</p>
+</footer>
+
+<script src="js/dumb-charades.js"></script>
+</body>
+</html>
