@@ -1,106 +1,106 @@
 // ============================================================
-//  school-charades.js  –  School Charades Generator
+//  sports-charades.js  –  Sports Charades Generator
 //  Includes: 30-sec game timer, round picker (1/2/3),
 //            TIME'S UP overlay, auto-start on generate
 // ============================================================
 
 // ── PROMPT DATA ───────────────────────────────────────────
 const charadesData = {
-  primary: [
-    "Teacher writing on blackboard",
-    "Student raising hand to answer",
-    "Reading a big book aloud",
-    "Painting a picture carefully",
-    "Lining up quietly for assembly",
-    "Counting on fingers in maths",
-    "Singing in school choir",
-    "Playing at break time",
-    "Putting on PE kit quickly",
-    "Show and tell presentation",
-    "Eating lunch from packed box",
-    "Sharpening a pencil noisily",
-    "Walking in a straight line",
-    "Playing musical chairs",
-    "Sitting cross-legged on carpet",
-    "Drawing a rainbow picture",
-    "Spelling words out loud",
-    "Doing a group project together",
-    "Cleaning the classroom floor",
-    "Practising handwriting carefully"
+  easy: [
+    "Kicking a football into goal",
+    "Hitting a cricket six over boundary",
+    "Shooting a basketball into hoop",
+    "Swimming freestyle in a pool",
+    "Running a sprint race",
+    "Serving a tennis ball",
+    "Jumping rope very fast",
+    "Doing a forward roll",
+    "Riding a bicycle uphill",
+    "Throwing a javelin",
+    "Catching a cricket ball",
+    "Heading a football",
+    "Doing a cartwheel",
+    "High five after scoring",
+    "Warming up by stretching",
+    "Dribbling a basketball",
+    "Batting in cricket",
+    "Doing star jumps",
+    "Throwing a ball underarm",
+    "Skipping across finish line"
   ],
-  secondary: [
-    "Dissecting a frog in science",
-    "Performing a Shakespeare play",
-    "Presenting a history project",
-    "Doing a geography fieldwork survey",
-    "Playing in school orchestra",
-    "Running a science experiment",
-    "Doing long division on board",
-    "Debating in English class",
-    "Making pottery in art class",
-    "Coding first computer programme",
-    "Solving a physics equation",
-    "Writing a chemistry report",
-    "Doing a Spanish conversation",
-    "Acting in a school play",
-    "Conducting a psychology study",
-    "Performing a music recital",
-    "Building a model volcano",
-    "Writing a persuasive essay",
-    "Studying for a history test",
-    "Presenting a business pitch"
+  team: [
+    "Goalkeeper diving for penalty",
+    "Cricket bowler full run-up",
+    "Rugby player breaking through tackles",
+    "Basketball slam dunk celebration",
+    "Volleyball spike at the net",
+    "Hockey player dribbling fast",
+    "American football quarterback throw",
+    "Water polo player treading water",
+    "Rowing team in perfect sync",
+    "Tug of war team pulling hard",
+    "Cricket fielder taking a catch",
+    "Football free kick curling round wall",
+    "Basketball player triple threat stance",
+    "Rugby lineout throw and lift",
+    "Football team celebrating a goal",
+    "Cricket wicketkeeper taking stumping",
+    "Basketball fast break play",
+    "Kabaddi player raiding and retreating",
+    "Hockey penalty corner drag flick",
+    "Handball player shooting at goal"
   ],
-  teacher: [
-    "Marking a huge pile of homework",
-    "Explaining concept three different ways",
-    "Calling on student who is not listening",
-    "Writing report cards late at night",
-    "Parent evening difficult conversation",
-    "Projector not working before lesson",
-    "Whole class silent reading",
-    "Taking register at start of day",
-    "Breaking up playground argument",
-    "Staying after school for detention",
-    "Preparing lesson plan at 6am",
-    "Carrying a pile of books to class",
-    "Setting up a science demonstration",
-    "Waiting for the bell to ring",
-    "Handing back marked test papers",
-    "Calming a nervous student before exam",
-    "Managing a chaotic classroom",
-    "Having a coffee in the staffroom",
-    "Dealing with a parent complaint",
-    "Running an after-school sports team"
+  solo: [
+    "Boxer skipping rope fast",
+    "Gymnast on balance beam wobbling",
+    "Golfer watching ball roll into bunker",
+    "Tennis player disputing a line call",
+    "Long jump athlete landing in sand pit",
+    "Weightlifter failing to lift bar",
+    "Swimmer diving off starting block",
+    "Pole vaulter clearing the bar",
+    "Cyclist climbing a steep mountain",
+    "Marathon runner hitting the wall",
+    "Diver entering water with no splash",
+    "High jumper doing Fosbury flop",
+    "Discus thrower spinning and releasing",
+    "Triple jumper hop step and jump",
+    "Sprinter crossing finish line",
+    "Wrestler going for a submission hold",
+    "Fencer lunging with épée",
+    "Archer drawing bow and releasing",
+    "Judo throw lifting opponent overhead",
+    "Boxer throwing combination punches"
   ],
-  funny: [
-    "Falling asleep in class",
-    "Autocorrect ruining school project",
-    "Printer jamming before deadline",
-    "Wrong classroom for ten minutes",
-    "Lunch box opening exploding",
-    "Pen exploding all over face",
-    "Chair scraping in silent exam",
-    "Tripping on stage at assembly",
-    "Forgetting PE kit on sports day",
-    "Getting name wrong by teacher all year",
-    "Teacher saying your name wrong all year",
-    "Spilling water all over project",
-    "Laptop freezing during presentation",
-    "Zipper stuck on school bag",
-    "Trousers ripping in PE lesson",
-    "Paper jamming in photocopier",
-    "Message in wrong group chat",
-    "Meeting cancelled after arriving",
-    "Phone ringing in silent library",
-    "Wearing uniform inside out all day"
+  extreme: [
+    "Skydiver free falling from plane",
+    "Surfer riding a giant wave",
+    "Skateboarder landing a big trick",
+    "Rock climber reaching the summit",
+    "Bungee jumper at the edge hesitating",
+    "Snowboarder hitting a half pipe",
+    "Parkour athlete jumping between rooftops",
+    "Base jumper leaping off a cliff",
+    "Motocross rider catching big air",
+    "Kitesurfer pulled hard by the wind",
+    "BMX rider doing backflip",
+    "Wingsuit flyer gliding through mountains",
+    "Ice climber hammering ice axe",
+    "Whitewater kayaker in rapids",
+    "Cliff diver leaping from high rock",
+    "Free solo climber with no rope",
+    "Zorbing rolling down a hill",
+    "Slacklining between two trees",
+    "Wakeboarding behind a speedboat",
+    "Paraglider launching off mountain"
   ]
 };
 
 charadesData.all = [
-  ...charadesData.primary,
-  ...charadesData.secondary,
-  ...charadesData.teacher,
-  ...charadesData.funny
+  ...charadesData.easy,
+  ...charadesData.team,
+  ...charadesData.solo,
+  ...charadesData.extreme
 ];
 
 // ── GAME STATE ────────────────────────────────────────────
@@ -222,7 +222,7 @@ function generate() {
   prompts.forEach(p => {
     const card = document.createElement('div');
     card.className = 'card';
-    card.innerHTML = `<span class="card-emoji">🏫</span><p>${p}</p>`;
+    card.innerHTML = `<span class="card-emoji">⚽</span><p>${p}</p>`;
     container.appendChild(card);
   });
   resetTimer(true);
