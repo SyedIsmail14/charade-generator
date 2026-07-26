@@ -137,10 +137,9 @@ function setRound(n) {
 function getRandomMovie() {
   const pool = getFilteredMovies();
   
-  // If pool is empty, reset usedMovies and try again
+  // If pool is empty, return a fallback
   if (pool.length === 0) {
-    usedMovies = [];
-    return getRandomMovie();
+    return "Movie Not Found";
   }
   
   // If all movies have been used, reset
@@ -148,15 +147,16 @@ function getRandomMovie() {
     usedMovies = [];
   }
   
-  let movie;
-  let attempts = 0;
-  const maxAttempts = 50;
-
-  do {
-    movie = pool[Math.floor(Math.random() * pool.length)];
-    attempts++;
-  } while (usedMovies.includes(movie) && attempts < maxAttempts);
-
+  // Get available movies
+  const available = pool.filter(m => !usedMovies.includes(m));
+  
+  // If no available movies, reset and try again
+  if (available.length === 0) {
+    usedMovies = [];
+    return getRandomMovie();
+  }
+  
+  const movie = available[Math.floor(Math.random() * available.length)];
   usedMovies.push(movie);
   return movie;
 }
@@ -177,7 +177,8 @@ function generate() {
   }
 
   if (status) {
-    status.textContent = `${currentCount} movie charades ready 🎬`;
+    const modeName = currentMode === 'default' ? 'All' : currentMode.charAt(0).toUpperCase() + currentMode.slice(1);
+    status.textContent = `${currentCount} ${modeName} movie charades ready 🎬`;
   }
 
   resetTimer(true);
