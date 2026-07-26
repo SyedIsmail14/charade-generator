@@ -10,10 +10,10 @@
 
 /* MOVIE LIST (SAFE, TEXT ONLY) */
 const MOVIES = [
-  "Titanic","Avatar","Inception","The Lion King","Jurassic Park","The Avengers","Spider Man","Batman Begins","Harry Potter","Home Alone","Frozen","Toy Story","Finding Nemo","Jumanji","Kung Fu Panda","Pirates of the Caribbean","The Matrix","Iron Man","Black Panther","Jurassic World","Minions","Coco","Up","Aladdin","The Jungle Book","Zootopia","Shrek","Madagascar","Despicable Me","Doctor Strange","Star Wars","E.T.","Jaws","The Godfather","Forrest Gump","The Dark Knight","Gladiator","The Wizard of Oz","Gone with the Wind","Casablanca","Citizen Kane","Pulp Fiction","Schindler's List","The Shawshank Redemption","Fight Club","Goodfellas","The Silence of the Lambs","Saving Private Ryan","Braveheart","The Green Mile","Rocky","Raiders of the Lost Ark","Back to the Future","Ghostbusters","Terminator","Alien","Predator","Die Hard","Lethal Weapon","Beverly Hills Cop","Top Gun","Mission Impossible","James Bond","Indiana Jones","Transformers","Fast and Furious","Jurassic Park III","King Kong","Godzilla","Pacific Rim","Independence Day","Men in Black","Interstellar","Gravity","The Martian","Apollo 13","Armageddon","Deep Impact","2012","The Day After Tomorrow","Twister","Volcano","Dante's Peak","Earthquake","San Andreas","Pompeii","Troy","300","Ben Hur","Cleopatra","Spartacus","Alexander","The Ten Commandments","The Prince of Egypt","Noah","Exodus","Moses","The Passion of the Christ","The Chronicles of Narnia","Lord of the Rings","The Hobbit","Percy Jackson","Clash of the Titans","Wrath of the Titans","Immortals","Hercules","Thor","Wonder Woman","Superman","Man of Steel","Justice League","Suicide Squad","Aquaman","Shazam","Captain Marvel","Captain America","Guardians of the Galaxy","Ant Man","Deadpool","Wolverine","X Men","Fantastic Four","The Incredible Hulk","Venom","Morbius","Ghost Rider","Daredevil","Elektra","The Punisher","Blade","Hellboy","Constantine","V for Vendetta","Watchmen","Sin City","300 Rise of an Empire","The Expendables","Rambo","Commando","Predator 2","Alien vs Predator","Total Recall","RoboCop","Judge Dredd","Demolition Man","The Fifth Element","Blade Runner","Mad Max","Waterworld","The Postman","I Am Legend","World War Z","Zombieland","The Walking Dead","28 Days Later","Dawn of the Dead","Night of the Living Dead","Resident Evil","Silent Hill","The Ring","The Grudge","The Exorcist","The Omen","Rosemary's Baby","Carrie","The Shining","Poltergeist","A Nightmare on Elm Street","Friday the 13th","Halloween","Scream","Saw","The Conjuring","Insidious","Sinister","Paranormal Activity","The Blair Witch Project","Cloverfield","Get Out","Us","A Quiet Place","Bird Box","Don't Breathe","The Purge","Escape Room","Ready or Not","Midsommar","Hereditary","It","It Chapter Two","Pet Sematary","The Mist","Carrie","Misery"
+  "Titanic","Avatar","Inception","The Lion King","Jurassic Park","The Avengers","Spider Man","Batman Begins","Harry Potter","Home Alone","Frozen","Toy Story","Finding Nemo","Jumanji","Kung Fu Panda","Pirates of the Caribbean","The Matrix","Iron Man","Black Panther","Jurassic World","Minions","Coco","Up","Aladdin","The Jungle Book","Zootopia","Shrek","Madagascar","Despicable Me","Doctor Strange","Star Wars","E.T.","Jaws","The Godfather","Forrest Gump","The Dark Knight","Gladiator","The Wizard of Oz","Gone with the Wind","Casablanca","Citizen Kane","Pulp Fiction","Schindler's List","The Shawshank Redemption","Fight Club","Goodfellas","The Silence of the Lambs","Saving Private Ryan","Braveheart","The Green Mile","Rocky","Raiders of the Lost Ark","Back to the Future","Ghostbusters","Terminator","Alien","Predator","Die Hard","Lethal Weapon","Beverly Hills Cop","Top Gun","Mission Impossible","James Bond","Indiana Jones","Transformers","Fast and Furious","Jurassic Park III","King Kong","Godzilla","Pacific Rim","Independence Day","Men in Black","Interstellar","Gravity","The Martian","Apollo 13","Armageddon","Deep Impact","2012","The Day After Tomorrow","Twister","Volcano","Dante's Peak","Earthquake","San Andreas","Pompeii","Troy","300","Ben Hur","Cleopatra","Spartacus","Alexander","The Ten Commandments","The Prince of Egypt","Noah","Exodus","Moses","The Passion of the Christ","The Chronicles of Narnia","Lord of the Rings","The Hobbit","Percy Jackson","Clash of the Titans","Wrath of the Titans","Immortals","Hercules","Thor","Wonder Woman","Superman","Man of Steel","Justice League","Suicide Squad","Aquaman","Shazam","Captain Marvel","Captain America","Guardians of the Galaxy","Ant Man","Deadpool","Wolverine","X Men","Fantastic Four","The Incredible Hulk","Venom","Morbius","Ghost Rider","Daredevil","Elektra","The Punisher","Blade","Hellboy","Constantine","V for Vendetta","Watchmen","Sin City","300 Rise of an Empire","The Expendables","Rambo","Commando","Predator 2","Alien vs Predator","Total Recall","RoboCop","Judge Dredd","Demolition Man","The Fifth Element","Blade Runner","Mad Max","Waterworld","The Postman","I Am Legend","World War Z","Zombieland","The Walking Dead","28 Days Later","Dawn of the Dead","Night of the Living Dead","Resident Evil","Silent Hill","The Ring","The Grudge","The Exorcist","The Omen","Rosemary's Baby","Carrie","The Shining","Poltergeist","A Nightmare on Elm Street","Friday the 13th","Halloween","Scream","Saw","The Conjuring","Insidious","Sinister","Paranormal Activity","The Blair Witch Project","Cloverfield","Get Out","Us","A Quiet Place","Bird Box","Don't Breathe","The Purge","Escape Room","Ready or Not","Midsommar","Hereditary","It","It Chapter Two","Pet Sematary","The Mist","Misery"
 ];
 
-/* ── GAME STATE ──────────────────────────────────────────── */
+// ── GAME STATE ────────────────────────────────────────────
 let currentMode  = 'default';
 let roundCount   = 1;
 let currentCount = 1;
@@ -98,6 +98,7 @@ function hideTimeOver() {
 
 // ── MODE FILTER ────────────────────────────────────────────
 function getFilteredMovies() {
+  // Default mode returns ALL movies
   let filtered = MOVIES;
 
   if (currentMode === 'easy') {
@@ -114,9 +115,10 @@ function getFilteredMovies() {
     );
   } else if (currentMode === 'hard') {
     filtered = MOVIES.filter(m => 
-      ['Citizen Kane','Gone with the Wind','Schindler's List','Rear Window','Some Like It Hot','Lawrence of Arabia','Ben-Hur','Sunset Boulevard','12 Angry Men','The Seventh Seal','8½','The Bicycle Thief','Rashomon','Seven Samurai','Tokyo Story','The Rules of the Game','The 400 Blows','Breathless','Persona','Stalker'].includes(m)
+      ['Citizen Kane','Gone with the Wind','Schindler\'s List','Rear Window','Some Like It Hot','Lawrence of Arabia','Ben-Hur','Sunset Boulevard','12 Angry Men','The Seventh Seal','8½','The Bicycle Thief','Rashomon','Seven Samurai','Tokyo Story','The Rules of the Game','The 400 Blows','Breathless','Persona','Stalker'].includes(m)
     );
   }
+  // 'default' mode returns all movies (no filter)
 
   return filtered;
 }
@@ -134,13 +136,26 @@ function setRound(n) {
 // ── UNIQUE GENERATION ─────────────────────────────────────
 function getRandomMovie() {
   const pool = getFilteredMovies();
+  
+  // If pool is empty, reset usedMovies and try again
+  if (pool.length === 0) {
+    usedMovies = [];
+    return getRandomMovie();
+  }
+  
+  // If all movies have been used, reset
+  if (usedMovies.length >= pool.length) {
+    usedMovies = [];
+  }
+  
   let movie;
   let attempts = 0;
+  const maxAttempts = 50;
 
   do {
     movie = pool[Math.floor(Math.random() * pool.length)];
     attempts++;
-  } while (usedMovies.includes(movie) && attempts < 20);
+  } while (usedMovies.includes(movie) && attempts < maxAttempts);
 
   usedMovies.push(movie);
   return movie;
@@ -230,8 +245,24 @@ function toggleMenu() {
 }
 
 // ── INIT ──────────────────────────────────────────────────
-document.addEventListener("DOMContentLoaded", () => {
-  setMode('default');
-  setRound(1);
+document.addEventListener("DOMContentLoaded", function() {
+  // Set default mode and round
+  currentMode = 'default';
+  roundCount = 1;
+  currentCount = 1;
+  
+  // Activate the default mode button
+  document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
+  const defaultBtn = document.querySelector(`[data-mode="default"]`);
+  if (defaultBtn) defaultBtn.classList.add('active');
+  
+  // Activate the round 1 button
+  document.querySelectorAll('.round-btn').forEach(b => b.classList.remove('active'));
+  const roundBtn = document.querySelector(`[data-round="1"]`);
+  if (roundBtn) roundBtn.classList.add('active');
+  
   drawTimer(TIMER_TOTAL);
+  
+  // Generate initial charades
+  generate();
 });
