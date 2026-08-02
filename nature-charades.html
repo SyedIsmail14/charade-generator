@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Nature Charades Generator – 100+ Outdoor & Weather Ideas Free</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Free Nature Charades Generator with 100+ nature charades. Act out weather, plants, seasons, landscapes and natural phenomena. Perfect for kids, families and classrooms. No signup needed.">
+  <meta name="description" content="Free Nature Charades Generator with 100+ nature charades. Act out weather, plants, seasons, landscapes and natural phenomena. Perfect for easy, families and classrooms. No signup needed.">
 
   <link rel="icon" type="image/x-icon" href="/assests/favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="/assests/favicon-16x16.png">
@@ -27,13 +27,13 @@
         "@type": "WebApplication",
         "name": "Nature Charades Generator",
         "url": "https://charadegenerator.com/nature-charades.html",
-        "description": "Free online nature charades generator with 100+ charades covering weather, plants, seasons, landscapes, and natural phenomena. Perfect for kids, families, classrooms and outdoor education.",
+        "description": "Free online nature charades generator with 100+ charades covering weather, plants, seasons, landscapes, and natural phenomena. Perfect for easy, families, classrooms and outdoor education.",
         "applicationCategory": "GameApplication",
         "operatingSystem": "Any",
         "browserRequirements": "Requires JavaScript.",
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
         "author": { "@type": "Person", "name": "CharadeGenerator Team", "url": "https://charadegenerator.com/about-us.html" },
-        "featureList": ["100+ nature charade charades","6 nature categories","Kids, Weather, Plants, Phenomena modes","Full-screen mode","Copy to clipboard","Mobile-friendly"]
+        "featureList": ["100+ nature charade charades","6 nature categories","easy, Weather, Plants, Phenomena modes","Full-screen mode","Copy to clipboard","Mobile-friendly"]
       },
       {
         "@type": "FAQPage",
@@ -41,7 +41,7 @@
           {"@type":"Question","name":"What is nature charades?","acceptedAnswer":{"@type":"Answer","text":"Nature charades is a themed version of the classic charades game where all charades relate to the natural world — weather, plants, seasons, landscapes, and natural phenomena."}},
           {"@type":"Question","name":"What are good nature charades ideas?","acceptedAnswer":{"@type":"Answer","text":"Great nature charades ideas include a thunderstorm rolling in, a flower blooming slowly, a volcano erupting, leaves falling in autumn, a river flowing downhill, and the northern lights dancing."}},
           {"@type":"Question","name":"Is nature charades good for science classes?","acceptedAnswer":{"@type":"Answer","text":"Yes. Nature charades is an excellent science classroom activity. Acting out the water cycle, photosynthesis, or seasonal changes creates kinaesthetic learning."}},
-          {"@type":"Question","name":"Is nature charades suitable for kids?","acceptedAnswer":{"@type":"Answer","text":"Yes. Kids mode uses simple, familiar nature actions like rain falling, a flower growing, and a butterfly flying that children aged 4 and above can easily act and guess."}},
+          {"@type":"Question","name":"Is nature charades suitable for easy?","acceptedAnswer":{"@type":"Answer","text":"Yes. easy mode uses simple, familiar nature actions like rain falling, a flower growing, and a butterfly flying that children aged 4 and above can easily act and guess."}},
           {"@type":"Question","name":"Is this nature charades generator free?","acceptedAnswer":{"@type":"Answer","text":"Yes. Completely free with no signup, no download, and no time limit."}},
           {"@type":"Question","name":"What is Phenomena mode in nature charades?","acceptedAnswer":{"@type":"Answer","text":"Phenomena mode features dramatic and complex natural events like volcanic eruptions, earthquakes, tornadoes, the northern lights, and tidal waves."}}
         ]
@@ -179,23 +179,21 @@
     <div class="logo"><a href="https://charadegenerator.com/" class="logo-link">🎭 <strong>Charades</strong>Generator</a></div>
     <button class="menu-btn" onclick="toggleMenu()">☰</button>
     <nav class="nav-desktop">
-      <a href="kids-charade-generator.html"><button>Kids Charades</button></a>
+      <a href="easy-charade-generator.html"><button>easy Charades</button></a>
       <a href="movie-charades.html"><button>Movie Charades</button></a>
       <a href="character-charades.html"><button>Character Charades</button></a>
       <a href="reverse-charades.html"><button>Reverse Charades</button></a>
       <a href="christmas-charades.html"><button>Christmas Charades</button></a>
       <a href="islamic-charades.html"><button>Islamic Charades</button></a>
-      <a href="animal-charades.html"><button>Animal Charades</button></a>
     </nav>
   </div>
   <nav id="navMobile" class="nav-mobile">
-    <a href="kids-charade-generator.html"><button>Kids Charades</button></a>
+    <a href="easy-charade-generator.html"><button>easy Charades</button></a>
     <a href="movie-charades.html"><button>Movie Charades</button></a>
     <a href="character-charades.html"><button>Character Charades</button></a>
     <a href="reverse-charades.html"><button>Reverse Charades</button></a>
     <a href="christmas-charades.html"><button>Christmas Charades</button></a>
     <a href="islamic-charades.html"><button>Islamic Charades</button></a>
-    <a href="animal-charades.html"><button>Animal Charades</button></a>
   </nav>
 </header>
 
@@ -226,7 +224,7 @@
 
     <div class="mode-select">
       <button class="mode-btn active" data-mode="all" onclick="setMode('all')">All</button>
-      <button class="mode-btn" data-mode="kids" onclick="setMode('kids')">Kids</button>
+      <button class="mode-btn" data-mode="easy" onclick="setMode('easy')">easy</button>
       <button class="mode-btn" data-mode="weather" onclick="setMode('weather')">Weather</button>
       <button class="mode-btn" data-mode="plants" onclick="setMode('plants')">Plants</button>
       <button class="mode-btn" data-mode="phenomena" onclick="setMode('phenomena')">Phenomena</button>
@@ -261,10 +259,10 @@
   <div class="age-guide">
     <h3>🎯 Which Mode Should You Pick?</h3>
     <div class="age-row">
-      <div class="age-card"><strong>🌱 Kids</strong>Ages 4–10<br>Simple nature actions — rain, flowers, butterflies.</div>
+      <div class="age-card"><strong>🌱 easy</strong>Ages 4–10<br>Simple nature actions — rain, flowers, butterflies.</div>
       <div class="age-card"><strong>🌦️ Weather</strong>All ages<br>Rain, snow, wind, storms and weather patterns.</div>
       <div class="age-card"><strong>🌳 Plants</strong>All ages<br>Growth, seasons, trees and plant life cycles.</div>
-      <div class="age-card"><strong>🌋 Phenomena</strong>Older kids & adults<br>Volcanoes, earthquakes, auroras and dramatic events.</div>
+      <div class="age-card"><strong>🌋 Phenomena</strong>Older easy & adults<br>Volcanoes, earthquakes, auroras and dramatic events.</div>
     </div>
   </div>
 
@@ -273,7 +271,7 @@
     <p>Every prompt is a specific natural action or process — not just a nature word — making each card immediately engaging to act and a wonderful way to build connection with the natural world.</p>
     <div class="word-columns">
       <div class="word-col">
-        <h4>🌱 Kids Nature</h4>
+        <h4>🌱 easy Nature</h4>
         <ul>
           <li>Rain falling gently from clouds</li>
           <li>Flower blooming slowly open</li>
@@ -325,7 +323,6 @@
           <li>Autumn leaves swirling in the wind</li>
           <li>Winter snow covering the ground</li>
           <li>Trees losing their leaves slowly</li>
-          <li>Animals hibernating for winter</li>
           <li>Birds migrating south for winter</li>
           <li>Ice melting as spring arrives</li>
           <li>Harvest time gathering crops</li>
@@ -368,8 +365,8 @@
   <section class="content-section">
     <h2>Nature Charades by Category – Full Guide</h2>
 
-    <h3>🌱 Kids Nature</h3>
-    <p>Kids nature charades use the gentlest, most familiar natural processes that children encounter daily. Rain falling gently, a flower blooming open petal by petal, and a butterfly fluttering from flower to flower are visually simple actions that young children can perform with joyful, expressive movement.</p>
+    <h3>🌱 easy Nature</h3>
+    <p>easy nature charades use the gentlest, most familiar natural processes that children encounter daily. Rain falling gently, a flower blooming open petal by petal, and a butterfly fluttering from flower to flower are visually simple actions that young children can perform with joyful, expressive movement.</p>
 
     <h3>🌦️ Weather Patterns</h3>
     <p>Weather charades capture the dramatic, ever-changing moods of the sky. A thunderstorm rolling in with building tension and sudden lightning strikes, fog rolling slowly and mysteriously across a field, and the satisfying release of a heavy downpour after a long drizzle are weather experiences that everyone recognises.</p>
@@ -378,7 +375,7 @@
     <p>Plant charades focus on the patient, transformative processes of growth that often happen too slowly for the eye to notice in real time. Acting out a seed sprouting into a shoot, a sunflower slowly turning to track the sun, or a vine climbing a wall helps players appreciate biological processes through embodied movement.</p>
 
     <h3>🍂 Seasons</h3>
-    <p>Season charades capture the broader cyclical changes that define our experience of time throughout the year. Autumn leaves swirling dramatically in the wind, animals curling up to hibernate through winter, and birds gathering to migrate south are seasonal transitions that connect to both scientific understanding and cultural traditions.</p>
+    <p>Season charades capture the broader cyclical changes that define our experience of time throughout the year. Autumn leaves swirling dramatically in the wind, curling up to hibernate through winter, and birds gathering to migrate south are seasonal transitions that connect to both scientific understanding and cultural traditions.</p>
 
     <h3>🏞️ Landscapes</h3>
     <p>Landscape charades challenge players to represent large-scale geological and geographic features through physical mime. A waterfall crashing powerfully into a pool below, a glacier's imperceptibly slow carving of a valley, and a geyser building pressure before erupting are landscape processes that operate on vastly different timescales.</p>
@@ -392,10 +389,10 @@
     <table class="diff-table">
       <thead><tr><th>Mode</th><th>Best For</th><th>Prompt Types</th><th>Example</th></tr></thead>
       <tbody>
-        <tr><td>🌱 Kids</td><td>Ages 4–10, outdoor play</td><td>Simple weather, plants, animals</td><td>Flower blooming slowly open</td></tr>
+        <tr><td>🌱 easy</td><td>Ages 4–10, outdoor play</td><td>Simple weather, plants, animals</td><td>Flower blooming slowly open</td></tr>
         <tr><td>🌦️ Weather</td><td>All ages, science classes</td><td>Storms, rain, snow, wind patterns</td><td>Thunderstorm rolling in with lightning</td></tr>
         <tr><td>🌳 Plants</td><td>All ages, biology lessons</td><td>Growth cycles, seasons, trees</td><td>Seed sprouting into a tiny shoot</td></tr>
-        <tr><td>🌋 Phenomena</td><td>Older kids, adults, earth science</td><td>Volcanoes, earthquakes, dramatic events</td><td>Volcano erupting with lava flow</td></tr>
+        <tr><td>🌋 Phenomena</td><td>Older easy, adults, earth science</td><td>Volcanoes, earthquakes, dramatic events</td><td>Volcano erupting with lava flow</td></tr>
       </tbody>
     </table>
   </section>
@@ -428,7 +425,7 @@
 
   <section class="how-to">
     <h2>How to Play Nature Charades – Step by Step</h2>
-    <p><strong>1. Pick a mode and count</strong><br>Choose Kids for young children, Weather or Plants for broader nature themes, or Phenomena for older students studying earth science.</p>
+    <p><strong>1. Pick a mode and count</strong><br>Choose easy for young children, Weather or Plants for broader nature themes, or Phenomena for older students studying earth science.</p>
     <p><strong>2. Click Generate</strong><br>Hit Generate and nature charades appear instantly. The actor reads privately while everyone else looks away.</p>
     <p><strong>3. Use Full Screen</strong><br>Switch to Full Screen so only the actor sees the prompt — perfect for outdoor settings.</p>
     <p><strong>4. Use scale and pace appropriately</strong><br>Slow motion for growth processes, full-body energy for dramatic phenomena. Match your physical performance to the real timescale and power of the natural event.</p>
@@ -442,7 +439,7 @@
     <p><strong>What is nature charades?</strong><br>Nature charades uses weather, plants, seasons, and natural phenomena charades for players to act out without speaking while others guess.</p>
     <p><strong>What are good nature charades ideas?</strong><br>A thunderstorm rolling in, a flower blooming slowly, a volcano erupting, leaves falling in autumn, a river flowing downhill, and the northern lights dancing.</p>
     <p><strong>Is nature charades good for science classes?</strong><br>Yes. Acting out the water cycle, photosynthesis, or seasonal changes creates kinaesthetic learning that reinforces science vocabulary.</p>
-    <p><strong>Is nature charades suitable for kids?</strong><br>Yes. Kids mode uses simple nature actions — rain falling, flowers growing, butterflies flying — that children aged 4 and above can easily act and guess.</p>
+    <p><strong>Is nature charades suitable for easy?</strong><br>Yes. easy mode uses simple nature actions — rain falling, flowers growing, butterflies flying — that children aged 4 and above can easily act and guess.</p>
     <p><strong>What is Phenomena mode?</strong><br>Phenomena mode features dramatic natural events like volcanic eruptions, earthquakes, tornadoes, and the northern lights.</p>
     <p><strong>Is this generator free?</strong><br>Yes. Completely free with no signup, no download, and no time limit.</p>
   </section>
@@ -450,13 +447,12 @@
   <section class="content-section">
     <h2>🎮 Explore All Charades Tools – 25+ Free Generators</h2>
     <div class="related-tools">
-      <a href="kids-charade-generator.html" class="rel-card"><span class="ri">👦</span><span class="rn">Kids Charades</span></a>
+      <a href="easy-charade-generator.html" class="rel-card"><span class="ri">👦</span><span class="rn">easy Charades</span></a>
       <a href="movie-charades.html" class="rel-card"><span class="ri">🎬</span><span class="rn">Movie Charades</span></a>
       <a href="character-charades.html" class="rel-card"><span class="ri">🦸</span><span class="rn">Character Charades</span></a>
       <a href="reverse-charades.html" class="rel-card"><span class="ri">🔄</span><span class="rn">Reverse Charades</span></a>
       <a href="christmas-charades.html" class="rel-card"><span class="ri">🎄</span><span class="rn">Christmas Charades</span></a>
       <a href="islamic-charades.html" class="rel-card"><span class="ri">🕌</span><span class="rn">Islamic Charades</span></a>
-      <a href="animal-charades.html" class="rel-card"><span class="ri">🐾</span><span class="rn">Animal Charades</span></a>
       <a href="funny-charades.html" class="rel-card"><span class="ri">😂</span><span class="rn">Funny Charades</span></a>
       <a href="hard-charades.html" class="rel-card"><span class="ri">🧠</span><span class="rn">Hard Charades</span></a>
       <a href="food-charades.html" class="rel-card"><span class="ri">🍕</span><span class="rn">Food Charades</span></a>
