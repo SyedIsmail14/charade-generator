@@ -33,14 +33,14 @@
         "browserRequirements": "Requires JavaScript.",
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
         "author": { "@type": "Person", "name": "CharadeGenerator Team", "url": "https://charadegenerator.com/about-us.html" },
-        "featureList": ["100+ Bible charade charades","6 scripture categories","Kids, Old Testament, New Testament, Parables modes","Full-screen mode","Copy to clipboard","Mobile-friendly"]
+        "featureList": ["100+ Bible charade charades","6 scripture categories","easys, Old Testament, New Testament, Parables modes","Full-screen mode","Copy to clipboard","Mobile-friendly"]
       },
       {
         "@type": "FAQPage",
         "mainEntity": [
           {"@type":"Question","name":"What is Bible charades?","acceptedAnswer":{"@type":"Answer","text":"Bible charades is a scripture-themed version of the classic charades game where players act out Bible stories, characters, miracles, and parables without speaking while others guess. It is an engaging way to reinforce Bible knowledge and is perfect for Sunday school, church youth groups, Vacation Bible School, and Christian family game nights."}},
           {"@type":"Question","name":"What Bible stories are included in this generator?","acceptedAnswer":{"@type":"Answer","text":"The generator includes Old Testament stories like Noah's Ark, David and Goliath, Moses parting the Red Sea, and Daniel in the lion's den, alongside New Testament stories like Jesus walking on water, the feeding of the 5000, the Good Samaritan, and the Prodigal Son. It covers major Bible characters, miracles, and parables across both testaments."}},
-          {"@type":"Question","name":"Is Bible charades suitable for Sunday school?","acceptedAnswer":{"@type":"Answer","text":"Yes. Bible charades is an excellent Sunday school activity. It reinforces scripture knowledge through physical, memorable play. Kids mode uses simple, well-known stories suitable for ages 5 and above. Teachers can use specific categories to review lessons on particular Bible themes or testament sections."}},
+          {"@type":"Question","name":"Is Bible charades suitable for Sunday school?","acceptedAnswer":{"@type":"Answer","text":"Yes. Bible charades is an excellent Sunday school activity. It reinforces scripture knowledge through physical, memorable play. easys mode uses simple, well-known stories suitable for ages 5 and above. Teachers can use specific categories to review lessons on particular Bible themes or testament sections."}},
           {"@type":"Question","name":"How do you act out a Bible story in charades?","acceptedAnswer":{"@type":"Answer","text":"To act out a Bible story, focus on the most recognisable single moment of that story. For Noah's Ark, mime animals entering two by two. For David and Goliath, mime a small person facing a giant with a slingshot. For the parting of the Red Sea, mime water dramatically splitting apart. The most iconic visual moment of each story is the fastest path to a correct guess."}},
           {"@type":"Question","name":"Is this Bible charades generator free?","acceptedAnswer":{"@type":"Answer","text":"Yes. Completely free with no signup, no download, and no time limit. Generate unlimited Bible charade charades for any church event, Sunday school class, or Christian family gathering."}},
           {"@type":"Question","name":"Can this be used for youth group activities?","acceptedAnswer":{"@type":"Answer","text":"Yes. Bible charades is a popular church youth group activity because it combines physical fun with scripture engagement. Parables mode and New Testament mode work especially well for teenage youth groups studying the life and teachings of Jesus."}}
@@ -180,23 +180,21 @@
     <div class="logo"><a href="https://charadegenerator.com/" class="logo-link">🎭 <strong>Charades</strong>Generator</a></div>
     <button class="menu-btn" onclick="toggleMenu()">☰</button>
     <nav class="nav-desktop">
-      <a href="kids-charade-generator.html"><button>Kids Charades</button></a>
+      <a href="easy-charade-generator.html"><button>easys Charades</button></a>
       <a href="movie-charades.html"><button>Movie Charades</button></a>
       <a href="character-charades.html"><button>Character Charades</button></a>
       <a href="reverse-charades.html"><button>Reverse Charades</button></a>
       <a href="christmas-charades.html"><button>Christmas Charades</button></a>
       <a href="islamic-charades.html"><button>Islamic Charades</button></a>
-      <a href="animal-charades.html"><button>Animal Charades</button></a>
     </nav>
   </div>
   <nav id="navMobile" class="nav-mobile">
-    <a href="kids-charade-generator.html"><button>Kids Charades</button></a>
+    <a href="easy-charade-generator.html"><button>easys Charades</button></a>
     <a href="movie-charades.html"><button>Movie Charades</button></a>
     <a href="character-charades.html"><button>Character Charades</button></a>
     <a href="reverse-charades.html"><button>Reverse Charades</button></a>
     <a href="christmas-charades.html"><button>Christmas Charades</button></a>
     <a href="islamic-charades.html"><button>Islamic Charades</button></a>
-    <a href="animal-charades.html"><button>Animal Charades</button></a>
   </nav>
 </header>
 
@@ -227,7 +225,7 @@
 
     <div class="mode-select">
       <button class="mode-btn active" data-mode="all" onclick="setMode('all')">All</button>
-      <button class="mode-btn" data-mode="kids" onclick="setMode('kids')">Kids</button>
+      <button class="mode-btn" data-mode="easys" onclick="setMode('easys')">easys</button>
       <button class="mode-btn" data-mode="old" onclick="setMode('old')">Old Testament</button>
       <button class="mode-btn" data-mode="new" onclick="setMode('new')">New Testament</button>
       <button class="mode-btn" data-mode="parables" onclick="setMode('parables')">Parables</button>
@@ -262,7 +260,7 @@
   <div class="age-guide">
     <h3>🎯 Which Mode Should You Pick?</h3>
     <div class="age-row">
-      <div class="age-card"><strong>👶 Kids</strong>Ages 5–12<br>Well-known Bible stories simple enough for children.</div>
+      <div class="age-card"><strong>👶 easys</strong>Ages 5–12<br>Well-known Bible stories simple enough for children.</div>
       <div class="age-card"><strong>📜 Old Testament</strong>All ages<br>Creation, Moses, David, prophets and Israelite history.</div>
       <div class="age-card"><strong>✝️ New Testament</strong>All ages<br>Jesus, the apostles, miracles and early church.</div>
       <div class="age-card"><strong>📝 Parables</strong>Youth & adults<br>Jesus's teaching stories and their meanings.</div>
@@ -274,7 +272,7 @@
     <p>Every prompt is a specific Bible moment — not just a name — making each card immediately meaningful to act and a wonderful way to reinforce scripture knowledge through physical, memorable play.</p>
     <div class="word-columns">
       <div class="word-col">
-        <h4>👶 Kids Bible Stories</h4>
+        <h4>👶 easys Bible Stories</h4>
         <ul>
           <li>Noah building the ark</li>
           <li>Animals entering ark two by two</li>
@@ -369,8 +367,8 @@
   <section class="content-section">
     <h2>Bible Charades by Category – Full Guide</h2>
 
-    <h3>👶 Kids Bible Stories</h3>
-    <p>Kids Bible story charades use the most beloved, colourful, and physically expressive stories that form the foundation of early childhood faith education. Noah building the ark, animals entering two by two, and Daniel calmly praying surrounded by lions are stories every Sunday school child knows and loves. These charades work brilliantly because the visual imagery is so distinctive — a child miming an elephant walking onto a boat or a lion sitting peacefully nearby creates instant recognition and joyful guessing.</p>
+    <h3>👶 easys Bible Stories</h3>
+    <p>easys Bible story charades use the most beloved, colourful, and physically expressive stories that form the foundation of early childhood faith education. Noah building the ark, animals entering two by two, and Daniel calmly praying surrounded by lions are stories every Sunday school child knows and loves. These charades work brilliantly because the visual imagery is so distinctive — a child miming an elephant walking onto a boat or a lion sitting peacefully nearby creates instant recognition and joyful guessing.</p>
 
     <h3>📜 Old Testament</h3>
     <p>Old Testament charades cover the dramatic, large-scale narrative of God's relationship with Israel. Moses parting the Red Sea — arms raised, water dramatically splitting — is one of the most visually powerful images in scripture and translates beautifully into physical performance. David facing Goliath with nothing but a sling and faith, Samson's incredible strength bringing down the temple pillars, Elijah calling down fire from heaven — these are dramatic, large-scale moments that reward committed, theatrical acting and create memorable Sunday school review sessions.</p>
@@ -393,7 +391,7 @@
     <table class="diff-table">
       <thead><tr><th>Mode</th><th>Best For</th><th>Prompt Types</th><th>Example</th></tr></thead>
       <tbody>
-        <tr><td>👶 Kids</td><td>Ages 5–12, Sunday school</td><td>Well-known simple Bible stories</td><td>Noah building the ark</td></tr>
+        <tr><td>👶 easys</td><td>Ages 5–12, Sunday school</td><td>Well-known simple Bible stories</td><td>Noah building the ark</td></tr>
         <tr><td>📜 Old Testament</td><td>All ages, Bible study</td><td>Creation, Moses, David, prophets</td><td>Moses parting the Red Sea</td></tr>
         <tr><td>✝️ New Testament</td><td>All ages, church groups</td><td>Jesus, miracles, apostles, early church</td><td>Jesus walking on water</td></tr>
         <tr><td>📝 Parables</td><td>Youth groups, adults</td><td>Jesus's teaching stories</td><td>Good Samaritan helping injured man</td></tr>
@@ -408,7 +406,7 @@
       <div class="tip-card"><h4>Act the Faith, Not Just the Action</h4><p>Bible stories are about faith as much as action. Show the trust in Daniel's calm prayer, the courage in David facing Goliath, the humility in the Prodigal Son's return. Emotional and spiritual authenticity makes Bible charades meaningful, not just entertaining.</p></div>
       <div class="tip-card"><h4>Use for Sunday School Review</h4><p>Generate charades related to a recent lesson and have students act them out as a review activity. This kinaesthetic reinforcement helps children remember Bible stories far longer than discussion alone.</p></div>
       <div class="tip-card"><h4>Discuss the Meaning After Guessing</h4><p>For parables and values charades, briefly discuss the deeper spiritual meaning after each correct guess. This transforms the game from simple entertainment into a meaningful faith formation activity.</p></div>
-      <div class="tip-card"><h4>Mix Generations at Family Gatherings</h4><p>Bible charades works beautifully across generations — grandparents who know every Old Testament story well play alongside grandchildren learning Bible basics. Mix Kids and Old Testament modes for the most inclusive family Bible study game.</p></div>
+      <div class="tip-card"><h4>Mix Generations at Family Gatherings</h4><p>Bible charades works beautifully across generations — grandparents who know every Old Testament story well play alongside grandchildren learning Bible basics. Mix easys and Old Testament modes for the most inclusive family Bible study game.</p></div>
       <div class="tip-card"><h4>Perfect for VBS and Youth Groups</h4><p>Vacation Bible School and youth group leaders can use this generator as a no-prep activity between lessons or as a fun review game at the end of a themed week. It requires zero materials and works in any space.</p></div>
     </div>
   </section>
@@ -431,7 +429,7 @@
 
   <section class="how-to">
     <h2>How to Play Bible Charades – Step by Step</h2>
-    <p><strong>1. Pick a mode and count</strong><br>Choose Kids for young children, Old Testament or New Testament for broader Bible study, or Parables for youth groups and adults exploring deeper meaning.</p>
+    <p><strong>1. Pick a mode and count</strong><br>Choose easys for young children, Old Testament or New Testament for broader Bible study, or Parables for youth groups and adults exploring deeper meaning.</p>
     <p><strong>2. Click Generate</strong><br>Hit Generate and Bible charades appear instantly. The actor reads privately while everyone else looks away.</p>
     <p><strong>3. Use Full Screen</strong><br>Switch to Full Screen so only the actor sees the prompt — perfect for classroom and church settings where the phone naturally stays private to the actor.</p>
     <p><strong>4. Lead with the defining moment</strong><br>Act the single most iconic image of that Bible story first — the sling, the ark, the parted sea, the empty tomb. This communicates the story fastest.</p>
@@ -444,7 +442,7 @@
     <h2>Frequently Asked Questions – Bible Charades</h2>
     <p><strong>What is Bible charades?</strong><br>Bible charades uses scripture-themed charades — Bible stories, characters, miracles, and parables — for players to act out without speaking while others guess. An engaging way to reinforce Bible knowledge for Sunday school, youth groups, and Christian families.</p>
     <p><strong>What Bible stories are included?</strong><br>Old Testament stories like Noah's Ark, David and Goliath, and Moses parting the Red Sea, alongside New Testament stories like Jesus walking on water, the feeding of the 5000, and the Good Samaritan.</p>
-    <p><strong>Is Bible charades suitable for Sunday school?</strong><br>Yes. It reinforces scripture knowledge through physical, memorable play. Kids mode uses simple, well-known stories suitable for ages 5 and above.</p>
+    <p><strong>Is Bible charades suitable for Sunday school?</strong><br>Yes. It reinforces scripture knowledge through physical, memorable play. easys mode uses simple, well-known stories suitable for ages 5 and above.</p>
     <p><strong>How do you act out a Bible story?</strong><br>Focus on the most recognisable single moment — Noah's animals entering two by two, David's sling facing Goliath, the Red Sea dramatically splitting. The iconic visual moment is the fastest path to a correct guess.</p>
     <p><strong>Can this be used for youth group activities?</strong><br>Yes. Parables and New Testament modes work especially well for teenage youth groups studying the life and teachings of Jesus.</p>
     <p><strong>Is this generator free?</strong><br>Yes. Completely free with no signup, no download, and no time limit.</p>
@@ -454,13 +452,12 @@
     <h2>🎮 Explore All Charades Tools – 25+ Free Generators</h2>
     <p>Try any of these free charades generators. Every tool is free, instant, and works on all devices.</p>
     <div class="related-tools">
-      <a href="kids-charade-generator.html" class="rel-card"><span class="ri">👦</span><span class="rn">Kids Charades</span></a>
+      <a href="easy-charade-generator.html" class="rel-card"><span class="ri">👦</span><span class="rn">easys Charades</span></a>
       <a href="movie-charades.html" class="rel-card"><span class="ri">🎬</span><span class="rn">Movie Charades</span></a>
       <a href="character-charades.html" class="rel-card"><span class="ri">🦸</span><span class="rn">Character Charades</span></a>
       <a href="reverse-charades.html" class="rel-card"><span class="ri">🔄</span><span class="rn">Reverse Charades</span></a>
       <a href="christmas-charades.html" class="rel-card"><span class="ri">🎄</span><span class="rn">Christmas Charades</span></a>
       <a href="islamic-charades.html" class="rel-card"><span class="ri">🕌</span><span class="rn">Islamic Charades</span></a>
-      <a href="animal-charades.html" class="rel-card"><span class="ri">🐾</span><span class="rn">Animal Charades</span></a>
       <a href="funny-charades.html" class="rel-card"><span class="ri">😂</span><span class="rn">Funny Charades</span></a>
       <a href="hard-charades.html" class="rel-card"><span class="ri">🧠</span><span class="rn">Hard Charades</span></a>
       <a href="food-charades.html" class="rel-card"><span class="ri">🍕</span><span class="rn">Food Charades</span></a>
