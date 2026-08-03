@@ -34,7 +34,7 @@
         "browserRequirements": "Requires JavaScript.",
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
         "author": { "@type": "Person", "name": "CharadeGenerator Team", "url": "https://charadegenerator.com/about-us.html" },
-        "featureList": ["100+ Ramadan charade charades","6 holy month categories","Kids, Fasting, Tarawih, Eid modes","Full-screen mode","Copy to clipboard","Mobile-friendly"]
+        "featureList": ["100+ Ramadan charade charades","6 holy month categories","easy, Fasting, Tarawih, Eid modes","Full-screen mode","Copy to clipboard","Mobile-friendly"]
       },
       {
         "@type": "FAQPage",
@@ -42,7 +42,7 @@
           {"@type":"Question","name":"What is Ramadan charades?","acceptedAnswer":{"@type":"Answer","text":"Ramadan charades is a halal, holy month themed version of the classic charades game where players act out fasting, Iftar, Suhoor, Tarawih prayers, and Eid traditions without speaking while others guess."}},
           {"@type":"Question","name":"Is Ramadan charades halal?","acceptedAnswer":{"@type":"Answer","text":"Yes. This Ramadan charades generator is designed to be fully halal. All charades are action-based and focus on Ramadan practices, traditions, and values."}},
           {"@type":"Question","name":"What are good Ramadan charades ideas?","acceptedAnswer":{"@type":"Answer","text":"Great Ramadan charades ideas include waking up for Suhoor before dawn, breaking the fast with dates at Iftar, praying Tarawih in the mosque, searching for Laylatul Qadr, giving Zakat ul-Fitr, and celebrating Eid morning with family."}},
-          {"@type":"Question","name":"Is Ramadan charades suitable for children?","acceptedAnswer":{"@type":"Answer","text":"Yes. Kids mode uses simple, familiar Ramadan actions like helping prepare Iftar, counting down to sunset, and decorating for Eid that children aged 5 and above can easily understand and act out."}},
+          {"@type":"Question","name":"Is Ramadan charades suitable for children?","acceptedAnswer":{"@type":"Answer","text":"Yes. easy mode uses simple, familiar Ramadan actions like helping prepare Iftar, counting down to sunset, and decorating for Eid that children aged 5 and above can easily understand and act out."}},
           {"@type":"Question","name":"Is this Ramadan charades generator free?","acceptedAnswer":{"@type":"Answer","text":"Yes. Completely free with no signup, no download, and no time limit."}},
           {"@type":"Question","name":"When should we play Ramadan charades?","acceptedAnswer":{"@type":"Answer","text":"The best time to play Ramadan charades is between Maghrib and Isha after Iftar, when the family is gathered and relaxed before Tarawih prayers."}}
         ]
@@ -185,23 +185,21 @@
     <div class="logo"><a href="https://charadegenerator.com/" class="logo-link">🎭 <strong>Charades</strong>Generator</a></div>
     <button class="menu-btn" onclick="toggleMenu()">☰</button>
     <nav class="nav-desktop">
-      <a href="kids-charade-generator.html"><button>Kids Charades</button></a>
+      <a href="easy-charade-generator.html"><button>Easy Charades</button></a>
       <a href="movie-charades.html"><button>Movie Charades</button></a>
       <a href="character-charades.html"><button>Character Charades</button></a>
       <a href="reverse-charades.html"><button>Reverse Charades</button></a>
       <a href="christmas-charades.html"><button>Christmas Charades</button></a>
       <a href="islamic-charades.html"><button>Islamic Charades</button></a>
-      <a href="animal-charades.html"><button>Animal Charades</button></a>
     </nav>
   </div>
   <nav id="navMobile" class="nav-mobile">
-    <a href="kids-charade-generator.html"><button>Kids Charades</button></a>
+    <a href="easy-charade-generator.html"><button>Easy Charades</button></a>
     <a href="movie-charades.html"><button>Movie Charades</button></a>
     <a href="character-charades.html"><button>Character Charades</button></a>
     <a href="reverse-charades.html"><button>Reverse Charades</button></a>
     <a href="christmas-charades.html"><button>Christmas Charades</button></a>
     <a href="islamic-charades.html"><button>Islamic Charades</button></a>
-    <a href="animal-charades.html"><button>Animal Charades</button></a>
   </nav>
 </header>
 
@@ -232,7 +230,7 @@
 
     <div class="mode-select">
       <button class="mode-btn active" data-mode="all" onclick="setMode('all')">All</button>
-      <button class="mode-btn" data-mode="kids" onclick="setMode('kids')">Kids</button>
+      <button class="mode-btn" data-mode="easy" onclick="setMode('easy')">easy</button>
       <button class="mode-btn" data-mode="fasting" onclick="setMode('fasting')">Fasting</button>
       <button class="mode-btn" data-mode="tarawih" onclick="setMode('tarawih')">Tarawih</button>
       <button class="mode-btn" data-mode="eid" onclick="setMode('eid')">Eid</button>
@@ -267,7 +265,7 @@
   <div class="age-guide">
     <h3>🎯 Which Mode Should You Pick?</h3>
     <div class="age-row">
-      <div class="age-card"><strong>👶 Kids</strong>Ages 5–12<br>Simple Ramadan actions children can easily enjoy.</div>
+      <div class="age-card"><strong>👶 easy</strong>Ages 5–12<br>Simple Ramadan actions children can easily enjoy.</div>
       <div class="age-card"><strong>🌙 Fasting</strong>All ages<br>Suhoor, Iftar, fasting and daily Ramadan life.</div>
       <div class="age-card"><strong>🕌 Tarawih</strong>All ages<br>Night prayers, Quran recitation, mosque worship.</div>
       <div class="age-card"><strong>🎉 Eid</strong>All ages<br>Eid celebrations, new clothes, family festivities.</div>
@@ -293,7 +291,7 @@
     <p>Every prompt is action-based and fully halal — not just a word — making each card immediately meaningful to act and a wonderful way to celebrate the spirit of Ramadan together as a family.</p>
     <div class="word-columns">
       <div class="word-col">
-        <h4>👶 Kids Ramadan</h4>
+        <h4>👶 easy Ramadan</h4>
         <ul>
           <li>Waking up sleepily for Suhoor</li>
           <li>Helping set the Iftar table</li>
@@ -388,8 +386,8 @@
   <section class="content-section">
     <h2>Ramadan Charades by Category – Full Guide</h2>
 
-    <h3>👶 Kids Ramadan</h3>
-    <p>Kids Ramadan charades capture the joyful, accessible side of the holy month from a child's perspective. Waking up sleepily for Suhoor, decorating the house with Ramadan lanterns, and excitedly checking for the moon sighting are warm, family-centred moments that children genuinely look forward to each year.</p>
+    <h3>👶 easy Ramadan</h3>
+    <p>easy Ramadan charades capture the joyful, accessible side of the holy month from a child's perspective. Waking up sleepily for Suhoor, decorating the house with Ramadan lanterns, and excitedly checking for the moon sighting are warm, family-centred moments that children genuinely look forward to each year.</p>
 
     <h3>🌙 Fasting &amp; Daily Life</h3>
     <p>Fasting charades capture the personal, internal experience of observing the fast throughout the day. The pre-dawn alertness of Suhoor, the gradual thirst building through a hot afternoon, the watchful clock-checking as Iftar approaches, and the deep gratitude felt at the first sip of water after sunset are universal experiences shared by every fasting Muslim.</p>
@@ -412,7 +410,7 @@
     <table class="diff-table">
       <thead><tr><th>Mode</th><th>Best For</th><th>Prompt Types</th><th>Example</th></tr></thead>
       <tbody>
-        <tr><td>👶 Kids</td><td>Ages 5–12, family evenings</td><td>Simple, joyful Ramadan actions</td><td>Helping set the Iftar table</td></tr>
+        <tr><td>👶 easy</td><td>Ages 5–12, family evenings</td><td>Simple, joyful Ramadan actions</td><td>Helping set the Iftar table</td></tr>
         <tr><td>🌙 Fasting</td><td>All ages, daily reflection</td><td>Suhoor, Iftar, fasting experience</td><td>Breaking fast with a date</td></tr>
         <tr><td>🕌 Tarawih</td><td>All ages, madrasa and mosque</td><td>Night prayers, Quran, worship</td><td>Praying Tarawih standing in rows</td></tr>
         <tr><td>🎉 Eid</td><td>All ages, end of Ramadan</td><td>Eid celebrations and festivities</td><td>Wearing brand new Eid clothes</td></tr>
@@ -448,7 +446,7 @@
 
   <section class="how-to">
     <h2>How to Play Ramadan Charades – Step by Step</h2>
-    <p><strong>1. Pick a mode and count</strong><br>Choose Kids for younger family members, Fasting for daily Ramadan reflection, Tarawih for worship-focused rounds, or Eid for end-of-month celebration.</p>
+    <p><strong>1. Pick a mode and count</strong><br>Choose easy for younger family members, Fasting for daily Ramadan reflection, Tarawih for worship-focused rounds, or Eid for end-of-month celebration.</p>
     <p><strong>2. Click Generate</strong><br>Hit Generate and Ramadan charades appear instantly. The actor reads privately while everyone else looks away.</p>
     <p><strong>3. Use Full Screen</strong><br>Switch to Full Screen so only the actor sees the prompt — perfect for family gatherings and madrasa settings.</p>
     <p><strong>4. Act the full sequence with feeling</strong><br>Show the complete moment from beginning to end, with genuine emotion — the patience of fasting, the joy of Iftar, the peace of prayer.</p>
@@ -462,7 +460,7 @@
     <p><strong>What is Ramadan charades?</strong><br>Ramadan charades uses halal, holy month themed charades — fasting, Iftar, Tarawih, and Eid traditions — for players to act out without speaking while others guess.</p>
     <p><strong>Is Ramadan charades halal?</strong><br>Yes. All charades are action-based and focus on Ramadan practices and values. No inappropriate content, no music.</p>
     <p><strong>What are good Ramadan charades ideas?</strong><br>Waking up for Suhoor, breaking the fast with dates, praying Tarawih, searching for Laylatul Qadr, giving Zakat ul-Fitr, and celebrating Eid morning.</p>
-    <p><strong>Is Ramadan charades suitable for children?</strong><br>Yes. Kids mode uses simple, familiar Ramadan actions that children aged 5 and above can easily understand and act out.</p>
+    <p><strong>Is Ramadan charades suitable for children?</strong><br>Yes. easy mode uses simple, familiar Ramadan actions that children aged 5 and above can easily understand and act out.</p>
     <p><strong>When should we play Ramadan charades?</strong><br>The best time is between Maghrib and Isha after Iftar, when the family is gathered and relaxed before Tarawih prayers.</p>
     <p><strong>Is this generator free?</strong><br>Yes. Completely free with no signup, no download, and no time limit.</p>
   </section>
@@ -470,13 +468,12 @@
   <section class="content-section">
     <h2>🎮 Explore All Charades Tools – 25+ Free Generators</h2>
     <div class="related-tools">
-      <a href="kids-charade-generator.html" class="rel-card"><span class="ri">👦</span><span class="rn">Kids Charades</span></a>
+      <a href="easy-charade-generator.html" class="rel-card"><span class="ri">👦</span><span class="rn">Easy Charades</span></a>
       <a href="movie-charades.html" class="rel-card"><span class="ri">🎬</span><span class="rn">Movie Charades</span></a>
       <a href="character-charades.html" class="rel-card"><span class="ri">🦸</span><span class="rn">Character Charades</span></a>
       <a href="reverse-charades.html" class="rel-card"><span class="ri">🔄</span><span class="rn">Reverse Charades</span></a>
       <a href="christmas-charades.html" class="rel-card"><span class="ri">🎄</span><span class="rn">Christmas Charades</span></a>
       <a href="islamic-charades.html" class="rel-card"><span class="ri">🕌</span><span class="rn">Islamic Charades</span></a>
-      <a href="animal-charades.html" class="rel-card"><span class="ri">🐾</span><span class="rn">Animal Charades</span></a>
       <a href="funny-charades.html" class="rel-card"><span class="ri">😂</span><span class="rn">Funny Charades</span></a>
       <a href="hard-charades.html" class="rel-card"><span class="ri">🧠</span><span class="rn">Hard Charades</span></a>
       <a href="food-charades.html" class="rel-card"><span class="ri">🍕</span><span class="rn">Food Charades</span></a>
