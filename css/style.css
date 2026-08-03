@@ -368,4 +368,14 @@ h2 {
     position: sticky;
     bottom: 10px;
   }
+  .charades-disclaimer {
+  border: 1px solid #ddd;
+  background: #f9f9f9;
+  border-radius: 6px;
+  padding: 16px 20px;
+  margin: 24px 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #333;
+}
 }
