@@ -1,6 +1,11 @@
-/* Food Charades Generator — game engine */
+// ============================================================
+//  food-charades.js  –  Food Charades Generator
+//  Includes: 30-sec game timer, round picker (1/2/3),
+//            TIME'S UP overlay, auto-start on generate
+// ============================================================
 
-const FOOD_WORDS = {
+// ── PROMPT DATA ───────────────────────────────────────────
+const FOOD_DATA = {
   easy: [
     { emoji: "🍌", text: "Peeling and eating a banana" },
     { emoji: "🍎", text: "Biting into a juicy apple" },
@@ -75,146 +80,175 @@ const FOOD_WORDS = {
   ]
 };
 
-const MODE_CATEGORIES = {
-  all: ["easy", "popular", "desserts", "cooking", "international", "restaurant"],
-  easy: ["easy"],
-  popular: ["popular", "international"],
-  desserts: ["desserts"],
-  cooking: ["cooking", "restaurant"]
-};
+// ── GAME STATE ────────────────────────────────────────────
+let currentMode  = 'all';
+let roundCount   = 1;
+let usedIndices  = {};
 
-let currentMode = "all";
-let currentRound = 1;
-let recentWords = [];
-let currentCards = [];
-
-// ── Timer state ──────────────────────────────────────
+// ── TIMER STATE ───────────────────────────────────────────
 const TIMER_TOTAL = 30;
-let timerSeconds = TIMER_TOTAL;
-let timerRunning = false;
+let timeLeft      = TIMER_TOTAL;
 let timerInterval = null;
-const RING_RADIUS = 42;
-const RING_CIRC = 2 * Math.PI * RING_RADIUS;
+let timerRunning  = false;
 
-function renderRing() {
-  const ring = document.getElementById("timerRing");
-  if (!ring) return;
-  const pct = timerSeconds / TIMER_TOTAL;
-  const offset = RING_CIRC * (1 - pct);
-  const color = timerSeconds <= 5 ? "#e03131" : "#e8590c";
-  ring.innerHTML = `
-    <svg width="100" height="100" viewBox="0 0 100 100">
-      <circle cx="50" cy="50" r="${RING_RADIUS}" fill="none" stroke="#ffe8cc" stroke-width="8"/>
-      <circle cx="50" cy="50" r="${RING_RADIUS}" fill="none" stroke="${color}" stroke-width="8"
-        stroke-linecap="round" stroke-dasharray="${RING_CIRC}" stroke-dashoffset="${offset}"
-        transform="rotate(-90 50 50)" style="transition:stroke-dashoffset .3s linear,stroke .3s;"/>
-      <text x="50" y="57" text-anchor="middle" font-size="24" font-weight="700" fill="#333">${timerSeconds}</text>
+// ── MODE FILTER ────────────────────────────────────────────
+function getFilteredFoods() {
+  if (currentMode === 'easy')     return FOOD_DATA.easy;
+  if (currentMode === 'popular')  return [...FOOD_DATA.popular, ...FOOD_DATA.international];
+  if (currentMode === 'desserts') return FOOD_DATA.desserts;
+  if (currentMode === 'cooking')  return [...FOOD_DATA.cooking, ...FOOD_DATA.restaurant];
+
+  // 'all'
+  return [
+    ...FOOD_DATA.easy, ...FOOD_DATA.popular, ...FOOD_DATA.desserts,
+    ...FOOD_DATA.cooking, ...FOOD_DATA.international, ...FOOD_DATA.restaurant
+  ];
+}
+
+// ── TIMER FUNCTIONS ───────────────────────────────────────
+function drawTimer(seconds) {
+  const radius = 44;
+  const circ   = 2 * Math.PI * radius;
+  const dash   = (seconds / TIMER_TOTAL) * circ;
+  const colour = seconds > 15 ? '#40c057' : seconds > 8 ? '#f59f00' : '#fa5252';
+  const el = document.getElementById('timerRing');
+  if (!el) return;
+  el.innerHTML = `
+    <svg width="110" height="110" viewBox="0 0 110 110">
+      <circle cx="55" cy="55" r="${radius}" fill="none" stroke="#ffe8cc" stroke-width="8"/>
+      <circle cx="55" cy="55" r="${radius}" fill="none" stroke="${colour}" stroke-width="8"
+        stroke-linecap="round"
+        stroke-dasharray="${dash} ${circ}"
+        stroke-dashoffset="0"
+        transform="rotate(-90 55 55)"
+        style="transition:stroke-dasharray .35s ease,stroke .35s"/>
+      <text x="55" y="50" text-anchor="middle" font-size="26" font-weight="700"
+        fill="${colour}" font-family="system-ui,sans-serif">${seconds}</text>
+      <text x="55" y="68" text-anchor="middle" font-size="11" fill="#868e96"
+        font-family="system-ui,sans-serif">sec</text>
     </svg>`;
 }
 
 function startTimer() {
+  if (timerRunning) return;
   timerRunning = true;
-  document.getElementById("timerToggleBtn").textContent = "⏸ Pause";
+  updateTimerBtn();
   timerInterval = setInterval(() => {
-    timerSeconds--;
-    renderRing();
-    if (timerSeconds <= 0) {
-      clearInterval(timerInterval);
-      timerRunning = false;
-      document.getElementById("timerToggleBtn").textContent = "▶ Start";
-      document.getElementById("timeOverOverlay").style.display = "flex";
-    }
+    timeLeft--;
+    drawTimer(timeLeft);
+    if (timeLeft <= 0) timeUp();
   }, 1000);
 }
 
 function pauseTimer() {
-  timerRunning = false;
   clearInterval(timerInterval);
-  document.getElementById("timerToggleBtn").textContent = "▶ Start";
+  timerRunning = false;
+  updateTimerBtn();
 }
 
 function resetTimer(autoStart) {
   clearInterval(timerInterval);
   timerRunning = false;
-  timerSeconds = TIMER_TOTAL;
-  document.getElementById("timerToggleBtn").textContent = "▶ Start";
-  document.getElementById("timeOverOverlay").style.display = "none";
-  renderRing();
+  timeLeft = TIMER_TOTAL;
+  drawTimer(timeLeft);
+  hideTimeOver();
+  updateTimerBtn();
   if (autoStart) startTimer();
 }
 
-// ── Mode & round selection ───────────────────────────
+function timeUp() {
+  pauseTimer();
+  showTimeOver();
+}
+
+function updateTimerBtn() {
+  const btn = document.getElementById('timerToggleBtn');
+  if (btn) btn.textContent = timerRunning ? '⏸ Pause' : '▶ Start';
+}
+
+function showTimeOver() {
+  const el = document.getElementById('timeOverOverlay');
+  if (el) el.style.display = 'flex';
+}
+
+function hideTimeOver() {
+  const el = document.getElementById('timeOverOverlay');
+  if (el) el.style.display = 'none';
+}
+
+// ── MODE & ROUND ──────────────────────────────────────────
 function setMode(mode) {
   currentMode = mode;
-  document.querySelectorAll(".mode-btn").forEach(btn => {
-    btn.classList.toggle("active", btn.dataset.mode === mode);
-  });
+  usedIndices[mode] = usedIndices[mode] || [];
+  document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
+  const btn = document.querySelector(`[data-mode="${mode}"]`);
+  if (btn) btn.classList.add('active');
+  generate();
 }
 
-function setRound(round) {
-  currentRound = round;
-  document.querySelectorAll(".round-btn").forEach(btn => {
-    btn.classList.toggle("active", Number(btn.dataset.round) === round);
-  });
+function setRound(n) {
+  roundCount = n;
+  document.querySelectorAll('.round-btn').forEach(b => b.classList.remove('active'));
+  const btn = document.querySelector(`[data-round="${n}"]`);
+  if (btn) btn.classList.add('active');
+  generate();
 }
 
-// ── Card generation ──────────────────────────────────
-function pickWord() {
-  const cats = MODE_CATEGORIES[currentMode] || MODE_CATEGORIES.all;
-  const pool = cats.flatMap(cat => FOOD_WORDS[cat]);
-  let available = pool.filter(w => !recentWords.includes(w.text));
-  if (available.length === 0) {
-    recentWords = [];
-    available = pool;
-  }
-  const word = available[Math.floor(Math.random() * available.length)];
-  recentWords.push(word.text);
-  if (recentWords.length > 15) recentWords.shift();
-  return word;
+// ── PROMPT ENGINE ─────────────────────────────────────────
+function getPrompts(n) {
+  const pool = getFilteredFoods();
+  if (!usedIndices[currentMode]) usedIndices[currentMode] = [];
+  if (usedIndices[currentMode].length >= pool.length) usedIndices[currentMode] = [];
+  const available = pool.map((_, i) => i).filter(i => !usedIndices[currentMode].includes(i));
+  const shuffled  = available.sort(() => Math.random() - 0.5);
+  const selected  = shuffled.slice(0, Math.min(n, available.length));
+  usedIndices[currentMode].push(...selected);
+  return selected.map(i => pool[i]);
 }
 
+// ── GENERATE ──────────────────────────────────────────────
 function generate() {
-  document.getElementById("timeOverOverlay").style.display = "none";
-  const count = currentRound;
-  currentCards = Array.from({ length: count }, () => pickWord());
-
-  const cardsEl = document.getElementById("cards");
-  cardsEl.innerHTML = currentCards
-    .map(w => `<div class="card"><span class="card-emoji">${w.emoji}</span><p>${w.text}</p></div>`)
-    .join("");
-
-  document.getElementById("statusText").textContent =
-    count === 1 ? "Act it out! 🍽️" : `Act out all ${count} — go! 🍽️`;
-
-  resetTimer(false);
+  const prompts = getPrompts(roundCount);
+  const container = document.getElementById('cards');
+  if (!container) return;
+  container.innerHTML = '';
+  prompts.forEach(p => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.innerHTML = `<span class="card-emoji">${p.emoji}</span><p>${p.text}</p>`;
+    container.appendChild(card);
+  });
+  resetTimer(true);
 }
 
-// ── Copy / fullscreen ────────────────────────────────
+// ── COPY ──────────────────────────────────────────────────
 function copyCharades() {
-  if (!currentCards.length) return;
-  const text = currentCards.map(w => `${w.emoji} ${w.text}`).join("\n");
+  const cards = document.querySelectorAll('#cards .card p');
+  if (!cards.length) return;
+  const text = Array.from(cards).map(c => c.textContent).join('\n');
   navigator.clipboard.writeText(text).then(() => {
-    const msg = document.getElementById("copyMsg");
-    msg.style.display = "inline";
-    setTimeout(() => (msg.style.display = "none"), 1500);
+    const msg = document.getElementById('copyMsg');
+    if (msg) { msg.style.display = 'inline'; setTimeout(() => msg.style.display = 'none', 2000); }
   });
 }
 
+// ── FULLSCREEN ────────────────────────────────────────────
 function toggleFullScreen() {
-  const el = document.getElementById("gameArea");
-  if (!document.fullscreenElement) {
-    el.requestFullscreen?.();
-  } else {
-    document.exitFullscreen?.();
-  }
+  const area = document.getElementById('gameArea');
+  if (!area) return;
+  if (!document.fullscreenElement) area.requestFullscreen && area.requestFullscreen();
+  else document.exitFullscreen && document.exitFullscreen();
 }
 
+// ── NAV ───────────────────────────────────────────────────
 function toggleMenu() {
-  const nav = document.getElementById("navMobile");
-  if (nav) nav.classList.toggle("open");
+  const nav = document.getElementById('navMobile');
+  if (nav) nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
 }
 
-// ── Init ──────────────────────────────────────────────
-document.addEventListener("DOMContentLoaded", () => {
-  renderRing();
+// ── INIT ──────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  setMode('all');
+  setRound(1);
+  drawTimer(TIMER_TOTAL);
 });
