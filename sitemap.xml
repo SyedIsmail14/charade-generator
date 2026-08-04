@@ -1,72 +1,197 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+<?xml-stylesheet type="text/css" href="https://www.xml-sitemaps.com/css/sitemap.css"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
-
-<url>
-  <loc>https://charadegenerator.com/</loc>
-  <lastmod>2026-01-05T14:03:01+00:00</lastmod>
-  <priority>1.00</priority>
-</url>
-<url>
-  <loc>https://charadegenerator.com/kids-charade-generator.html</loc>
-  <lastmod>2026-01-05T14:03:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://charadegenerator.com/movie-charades.html</loc>
-  <lastmod>2026-01-05T14:03:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://charadegenerator.com/character-charades.html</loc>
-  <lastmod>2026-01-05T14:03:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://charadegenerator.com/reverse-charades.html</loc>
-  <lastmod>2026-01-05T14:03:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://charadegenerator.com/christmas-charades.html</loc>
-  <lastmod>2026-01-05T14:03:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://charadegenerator.com/islamic-charades.html</loc>
-  <lastmod>2026-01-05T14:03:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://charadegenerator.com/about-us.html</loc>
-  <lastmod>2026-01-05T14:03:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://charadegenerator.com/contact-us.html</loc>
-  <lastmod>2026-01-05T14:03:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://charadegenerator.com/privacy-policy.html</loc>
-  <lastmod>2026-01-05T14:03:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://charadegenerator.com/terms-and-conditions.html</loc>
-  <lastmod>2026-01-05T14:03:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://charadegenerator.com/disclaimer.html</loc>
-  <lastmod>2026-01-05T14:03:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-
-
+  <url>
+       <loc>https://charadegenerator.com/</loc>
+       <lastmod>2026-08-04T11:12:00+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>1.0000</priority>
+  </url>
+  <url>
+       <loc>https://charadegenerator.com/easy-charade-generator.html</loc>
+       <lastmod>2026-08-04T11:12:00+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://charadegenerator.com/movie-charades.html</loc>
+       <lastmod>2026-08-04T11:12:00+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://charadegenerator.com/character-charades.html</loc>
+       <lastmod>2026-08-04T11:12:00+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://charadegenerator.com/reverse-charades.html</loc>
+       <lastmod>2026-08-04T11:12:00+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://charadegenerator.com/christmas-charades.html</loc>
+       <lastmod>2026-08-04T11:12:00+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://charadegenerator.com/islamic-charades.html</loc>
+       <lastmod>2026-08-04T11:12:00+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://charadegenerator.com/funny-charades.html</loc>
+       <lastmod>2026-08-04T11:12:00+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://charadegenerator.com/hard-charades.html</loc>
+       <lastmod>2026-08-04T11:12:00+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://charadegenerator.com/food-charades.html</loc>
+       <lastmod>2026-08-04T11:12:00+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://charadegenerator.com/sports-charades.html</loc>
+       <lastmod>2026-08-04T11:12:00+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://charadegenerator.com/halloween-charades.html</loc>
+       <lastmod>2026-08-04T11:12:00+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://charadegenerator.com/birthday-charades.html</loc>
+       <lastmod>2026-08-04T11:12:00+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://charadegenerator.com/school-charades.html</loc>
+       <lastmod>2026-08-04T11:12:00+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://charadegenerator.com/emoji-charades.html</loc>
+       <lastmod>2026-08-04T11:12:00+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://charadegenerator.com/bollywood-charades.html</loc>
+       <lastmod>2026-08-04T11:12:00+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://charadegenerator.com/bible-charades.html</loc>
+       <lastmod>2026-08-04T11:12:00+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://charadegenerator.com/thanksgiving-charades.html</loc>
+       <lastmod>2026-08-04T11:12:00+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://charadegenerator.com/valentines-charades.html</loc>
+       <lastmod>2026-08-04T11:12:00+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://charadegenerator.com/summer-charades.html</loc>
+       <lastmod>2026-08-04T11:12:00+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://charadegenerator.com/superhero-charades.html</loc>
+       <lastmod>2026-08-04T11:12:00+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://charadegenerator.com/nature-charades.html</loc>
+       <lastmod>2026-08-04T11:12:00+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://charadegenerator.com/occupation-charades.html</loc>
+       <lastmod>2026-08-04T11:12:00+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://charadegenerator.com/fairy-tale-charades.html</loc>
+       <lastmod>2026-08-04T11:12:00+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://charadegenerator.com/ramadan-charades.html</loc>
+       <lastmod>2026-08-04T11:12:00+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://charadegenerator.com/dumb-charades.html</loc>
+       <lastmod>2026-08-04T11:12:00+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://charadegenerator.com/about-us.html</loc>
+       <lastmod>2026-08-04T11:12:00+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://charadegenerator.com/contact-us.html</loc>
+       <lastmod>2026-08-04T11:12:00+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://charadegenerator.com/privacy-policy.html</loc>
+       <lastmod>2026-08-04T11:12:00+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://charadegenerator.com/terms-and-conditions.html</loc>
+       <lastmod>2026-08-04T11:12:00+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://charadegenerator.com/disclaimer.html</loc>
+       <lastmod>2026-08-04T11:12:00+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://charadegenerator.com/index.html</loc>
+       <lastmod>2026-08-04T11:12:00+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
+  </url>
 </urlset>
