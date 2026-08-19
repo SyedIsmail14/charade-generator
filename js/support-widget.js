@@ -27,10 +27,12 @@
     "display:flex;align-items:center;gap:6px;}" +
     ".support-widget__links a:hover{text-decoration:underline;}" +
     ".support-widget__icon{font-size:15px;}" +
+    
+    /* Desktop: Fixed sidebar position */
     "@media (min-width:769px){.support-widget{position:fixed;top:140px;right:20px;width:230px;}" +
     ".support-fab{display:none;}}" +
 
-    /* ---------- Mobile: catchy floating action button ---------- */
+    /* Mobile: Floating action button */
     "@media (max-width:768px){" +
     ".support-widget{display:none;}" +
     ".support-fab{position:fixed;bottom:18px;right:16px;z-index:1000;" +
@@ -57,11 +59,11 @@
 
   var linksHTML =
     '<li><a href="https://buymeacoffee.com/charadegenerator" target="_blank" rel="noopener noreferrer">' +
-    '<span class="support-widget__icon">\u2615</span> Caffeinate us!</a></li>' +
+    '<span class="support-widget__icon">☕</span> Caffeinate us!</a></li>' +
     '<li><a href="https://payhip.com/Charadegenerator" target="_blank" rel="noopener noreferrer">' +
-    '<span class="support-widget__icon">\uD83D\uDCC4</span> Buy printables</a></li>' +
+    '<span class="support-widget__icon">📄</span> Buy printables</a></li>' +
     '<li><a href="https://amzn.to/45xaM8j" target="_blank" rel="noopener noreferrer">' +
-    '<span class="support-widget__icon">\uD83C\uDFB2</span> Browse games on Amazon</a></li>';
+    '<span class="support-widget__icon">🎲</span> Browse games on Amazon</a></li>';
 
   // Desktop/tablet sidebar box
   var sidebar = document.createElement("div");
@@ -70,13 +72,15 @@
   sidebar.innerHTML =
     '<p class="support-widget__title">Support Charade Generator!</p>' +
     '<ul class="support-widget__links">' + linksHTML + "</ul>";
+  
+  // Append to body (will be positioned fixed, so it won't affect footer)
   document.body.appendChild(sidebar);
 
   // Mobile floating action button + expandable panel
   var fab = document.createElement("button");
   fab.className = "support-fab";
   fab.setAttribute("aria-label", "Support us");
-  fab.innerHTML = "\uD83D\uDC9C";
+  fab.innerHTML = "💜";
 
   var panel = document.createElement("div");
   panel.className = "support-fab-panel";
