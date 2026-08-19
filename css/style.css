@@ -381,78 +381,37 @@ h2 {
 }
 
 /* ============================================ */
-/* SUPPORT WIDGET - ONLY SHOW AS FLOATING ELEMENT */
+/* SUPPORT WIDGET - FIXED POSITION ONLY */
 /* ============================================ */
 
-/* Force hide any support widget in footer */
+/* Hide widget if it appears in footer */
+.footer #support-widget-container,
 .footer .support-widget,
 .footer .support-fab,
-.footer .support-fab-panel,
-.footer #support-widget-container {
+.footer .support-fab-panel {
   display: none !important;
 }
 
-/* Desktop: Fixed sidebar */
-.support-widget {
+/* Desktop styles */
+#support-widget-container .support-widget {
   position: fixed !important;
   top: 140px;
   right: 20px;
   width: 230px;
   z-index: 999;
-  background: #f6f1ff;
-  border: 1px solid #d9c8f7;
-  border-radius: 12px;
-  padding: 14px 16px;
-  box-shadow: 0 4px 18px rgba(122, 63, 214, 0.18);
-  font-family: inherit;
-  box-sizing: border-box;
 }
 
-.support-widget__title {
-  font-weight: 700;
-  color: #1a1a1a;
-  margin: 0 0 10px 0;
-  font-size: 15px;
-}
-
-.support-widget__links {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.support-widget__links li {
-  margin-bottom: 8px;
-}
-
-.support-widget__links a {
-  color: #7a3fd6;
-  text-decoration: none;
-  font-size: 14px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.support-widget__links a:hover {
-  text-decoration: underline;
-}
-
-.support-widget__icon {
-  font-size: 15px;
-}
-
-.support-fab {
+#support-widget-container .support-fab {
   display: none;
 }
 
-/* Mobile: Floating action button */
+/* Mobile styles */
 @media (max-width: 768px) {
-  .support-widget {
+  #support-widget-container .support-widget {
     display: none !important;
   }
   
-  .support-fab {
+  #support-widget-container .support-fab {
     position: fixed !important;
     bottom: 18px;
     right: 16px;
@@ -471,7 +430,7 @@ h2 {
     animation: support-pulse 2.4s ease-in-out infinite;
   }
   
-  .support-fab-panel {
+  #support-widget-container .support-fab-panel {
     position: fixed !important;
     bottom: 82px;
     right: 16px;
@@ -486,7 +445,7 @@ h2 {
     box-sizing: border-box;
   }
   
-  .support-fab-panel.open {
+  #support-widget-container .support-fab-panel.open {
     display: block !important;
   }
 }

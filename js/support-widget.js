@@ -14,22 +14,22 @@
   });
   if (isExcluded) return;
 
-  // Check if widget already exists to prevent duplicates
-  if (document.getElementById("support-widget")) {
-    return;
-  }
-
-  // Check if we're on a game page (not just any page)
-  var isGamePage = window.location.pathname === "/" || 
-                   window.location.pathname === "/index.html" ||
-                   window.location.pathname.includes("charade") ||
-                   window.location.pathname.includes("charades");
+  // ONLY show on game pages (pages with charades content)
+  var isGamePage = path === "/" || 
+                   path === "/index.html" ||
+                   path.includes("charade") ||
+                   path.includes("charades") ||
+                   path.includes("game");
 
   if (!isGamePage) return;
 
+  // Prevent duplicate widget
+  if (document.getElementById("support-widget-container")) {
+    return;
+  }
+
   var style = document.createElement("style");
   style.textContent =
-    /* ---------- Desktop / tablet sidebar box ---------- */
     ".support-widget{background:#f6f1ff;border:1px solid #d9c8f7;border-radius:12px;" +
     "padding:14px 16px;box-shadow:0 4px 18px rgba(122,63,214,0.18);font-family:inherit;" +
     "z-index:999;box-sizing:border-box;}" +
@@ -74,39 +74,38 @@
     '<li><a href="https://amzn.to/45xaM8j" target="_blank" rel="noopener noreferrer">' +
     '<span class="support-widget__icon">🎲</span> Browse games on Amazon</a></li>';
 
-  // Create widget container
-  var widgetContainer = document.createElement("div");
-  widgetContainer.id = "support-widget-container";
+  // Create container
+  var container = document.createElement("div");
+  container.id = "support-widget-container";
 
-  // Desktop/tablet sidebar box
+  // Desktop sidebar
   var sidebar = document.createElement("div");
   sidebar.className = "support-widget";
   sidebar.id = "support-widget";
   sidebar.innerHTML =
     '<p class="support-widget__title">Support Us</p>' +
     '<ul class="support-widget__links">' + linksHTML + "</ul>";
-  
-  widgetContainer.appendChild(sidebar);
+  container.appendChild(sidebar);
 
-  // Mobile floating action button + expandable panel
+  // Mobile FAB
   var fab = document.createElement("button");
   fab.className = "support-fab";
   fab.setAttribute("aria-label", "Support us");
   fab.innerHTML = "💜";
+  container.appendChild(fab);
 
+  // Mobile panel
   var panel = document.createElement("div");
   panel.className = "support-fab-panel";
   panel.innerHTML =
     '<p class="support-fab-panel__title">Support Us</p>' +
     "<ul>" + linksHTML + "</ul>";
+  container.appendChild(panel);
 
   fab.addEventListener("click", function () {
     panel.classList.toggle("open");
   });
 
-  widgetContainer.appendChild(fab);
-  widgetContainer.appendChild(panel);
-
-  // Append everything to body
-  document.body.appendChild(widgetContainer);
+  // Append to body
+  document.body.appendChild(container);
 })();
