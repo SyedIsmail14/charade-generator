@@ -68,7 +68,7 @@
   sidebar.className = "support-widget";
   sidebar.id = "support-widget";
   sidebar.innerHTML =
-    '<p class="support-widget__title">Support GetCharadesIdeas!</p>' +
+    '<p class="support-widget__title">Support Charade Generator!</p>' +
     '<ul class="support-widget__links">' + linksHTML + "</ul>";
   document.body.appendChild(sidebar);
 
