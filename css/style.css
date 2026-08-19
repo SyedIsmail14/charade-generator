@@ -344,9 +344,19 @@ h2 {
   display: none;
 }
 
+.charades-disclaimer {
+  border: 1px solid #ddd;
+  background: #f9f9f9;
+  border-radius: 6px;
+  padding: 16px 20px;
+  margin: 24px 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #333;
+}
+
 /* RESPONSIVE */
 @media (max-width: 768px) {
-
   .menu-btn { display: block; }
   .nav-desktop { display: none; }
   .nav-mobile.open { display: block; }
@@ -368,36 +378,36 @@ h2 {
     position: sticky;
     bottom: 10px;
   }
-  .charades-disclaimer {
-  border: 1px solid #ddd;
-  background: #f9f9f9;
-  border-radius: 6px;
-  padding: 16px 20px;
-  margin: 24px 0;
-  font-size: 0.9rem;
-  line-height: 1.5;
-  color: #333;
 }
-  /* Remove the duplicate footer widget if it exists */
-.footer .support-widget {
+
+/* ============================================ */
+/* SUPPORT WIDGET STYLES - FIXED DUPLICATE ISSUE */
+/* ============================================ */
+
+/* Force hide any support widget in footer */
+.footer .support-widget,
+.footer .support-fab,
+.footer .support-fab-panel {
   display: none !important;
 }
 
-/* Ensure the fixed widget doesn't overlap footer on desktop */
-@media (min-width: 769px) {
-  .support-widget {
-    position: fixed;
-    top: 140px;
-    right: 20px;
-    width: 230px;
-    z-index: 999;
-  }
+/* Desktop: Fixed sidebar */
+.support-widget {
+  position: fixed !important;
+  top: 140px;
+  right: 20px;
+  width: 230px;
+  z-index: 999;
 }
 
-/* Mobile: Make sure FAB doesn't interfere with footer */
+/* Mobile: Floating action button */
 @media (max-width: 768px) {
+  .support-widget {
+    display: none !important;
+  }
+  
   .support-fab {
-    position: fixed;
+    position: fixed !important;
     bottom: 18px;
     right: 16px;
     z-index: 1000;
@@ -406,7 +416,7 @@ h2 {
     border-radius: 50%;
     background: linear-gradient(135deg, #8b5cf6, #6d28d9);
     box-shadow: 0 6px 20px rgba(109, 40, 217, 0.45);
-    display: flex;
+    display: flex !important;
     align-items: center;
     justify-content: center;
     font-size: 26px;
@@ -416,7 +426,7 @@ h2 {
   }
   
   .support-fab-panel {
-    position: fixed;
+    position: fixed !important;
     bottom: 82px;
     right: 16px;
     z-index: 1000;
@@ -429,5 +439,13 @@ h2 {
     display: none;
     box-sizing: border-box;
   }
+  
+  .support-fab-panel.open {
+    display: block !important;
+  }
 }
+
+@keyframes support-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
 }

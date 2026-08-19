@@ -14,6 +14,15 @@
   });
   if (isExcluded) return;
 
+  // Check if we're on a page where the widget should appear
+  // Only show on main game pages, not on footer-only pages
+  var shouldShow = window.location.pathname === "/" || 
+                   window.location.pathname === "/index.html" ||
+                   window.location.pathname.includes("charade") ||
+                   window.location.pathname.includes("charades");
+
+  if (!shouldShow) return;
+
   var style = document.createElement("style");
   style.textContent =
     /* ---------- Desktop / tablet sidebar box ---------- */
@@ -27,10 +36,15 @@
     "display:flex;align-items:center;gap:6px;}" +
     ".support-widget__links a:hover{text-decoration:underline;}" +
     ".support-widget__icon{font-size:15px;}" +
+    
+    /* Hide widget in footer */
+    ".footer .support-widget, .footer .support-fab, .footer .support-fab-panel { display: none !important; }" +
+    
+    /* Desktop: Fixed sidebar position */
     "@media (min-width:769px){.support-widget{position:fixed;top:140px;right:20px;width:230px;}" +
     ".support-fab{display:none;}}" +
 
-    /* ---------- Mobile: catchy floating action button ---------- */
+    /* Mobile: Floating action button */
     "@media (max-width:768px){" +
     ".support-widget{display:none;}" +
     ".support-fab{position:fixed;bottom:18px;right:16px;z-index:1000;" +
@@ -57,37 +71,42 @@
 
   var linksHTML =
     '<li><a href="https://buymeacoffee.com/charadegenerator" target="_blank" rel="noopener noreferrer">' +
-    '<span class="support-widget__icon">\u2615</span> Caffeinate us!</a></li>' +
+    '<span class="support-widget__icon">☕</span> Caffeinate us!</a></li>' +
     '<li><a href="https://payhip.com/Charadegenerator" target="_blank" rel="noopener noreferrer">' +
-    '<span class="support-widget__icon">\uD83D\uDCC4</span> Buy printables</a></li>' +
+    '<span class="support-widget__icon">📄</span> Buy printables</a></li>' +
     '<li><a href="https://amzn.to/45xaM8j" target="_blank" rel="noopener noreferrer">' +
-    '<span class="support-widget__icon">\uD83C\uDFB2</span> Browse games on Amazon</a></li>';
+    '<span class="support-widget__icon">🎲</span> Browse games on Amazon</a></li>';
 
-  // Desktop/tablet sidebar box
-  var sidebar = document.createElement("div");
-  sidebar.className = "support-widget";
-  sidebar.id = "support-widget";
-  sidebar.innerHTML =
-    '<p class="support-widget__title">Support Us</p>' +
-    '<ul class="support-widget__links">' + linksHTML + "</ul>";
-  document.body.appendChild(sidebar);
+  // Only create the widget if it doesn't already exist
+  if (!document.getElementById("support-widget")) {
+    // Desktop/tablet sidebar box
+    var sidebar = document.createElement("div");
+    sidebar.className = "support-widget";
+    sidebar.id = "support-widget";
+    sidebar.innerHTML =
+      '<p class="support-widget__title">Support Us</p>' +
+      '<ul class="support-widget__links">' + linksHTML + "</ul>";
+    
+    // Append to body (will be positioned fixed, so it won't affect footer)
+    document.body.appendChild(sidebar);
 
-  // Mobile floating action button + expandable panel
-  var fab = document.createElement("button");
-  fab.className = "support-fab";
-  fab.setAttribute("aria-label", "Support us");
-  fab.innerHTML = "\uD83D\uDC9C";
+    // Mobile floating action button + expandable panel
+    var fab = document.createElement("button");
+    fab.className = "support-fab";
+    fab.setAttribute("aria-label", "Support us");
+    fab.innerHTML = "💜";
 
-  var panel = document.createElement("div");
-  panel.className = "support-fab-panel";
-  panel.innerHTML =
-    '<p class="support-fab-panel__title">Support Us</p>' +
-    "<ul>" + linksHTML + "</ul>";
+    var panel = document.createElement("div");
+    panel.className = "support-fab-panel";
+    panel.innerHTML =
+      '<p class="support-fab-panel__title">Support Us</p>' +
+      "<ul>" + linksHTML + "</ul>";
 
-  fab.addEventListener("click", function () {
-    panel.classList.toggle("open");
-  });
+    fab.addEventListener("click", function () {
+      panel.classList.toggle("open");
+    });
 
-  document.body.appendChild(fab);
-  document.body.appendChild(panel);
+    document.body.appendChild(fab);
+    document.body.appendChild(panel);
+  }
 })();
