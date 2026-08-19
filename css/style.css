@@ -378,4 +378,56 @@ h2 {
   line-height: 1.5;
   color: #333;
 }
+  /* Remove the duplicate footer widget if it exists */
+.footer .support-widget {
+  display: none !important;
+}
+
+/* Ensure the fixed widget doesn't overlap footer on desktop */
+@media (min-width: 769px) {
+  .support-widget {
+    position: fixed;
+    top: 140px;
+    right: 20px;
+    width: 230px;
+    z-index: 999;
+  }
+}
+
+/* Mobile: Make sure FAB doesn't interfere with footer */
+@media (max-width: 768px) {
+  .support-fab {
+    position: fixed;
+    bottom: 18px;
+    right: 16px;
+    z-index: 1000;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+    box-shadow: 0 6px 20px rgba(109, 40, 217, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    cursor: pointer;
+    border: none;
+    animation: support-pulse 2.4s ease-in-out infinite;
+  }
+  
+  .support-fab-panel {
+    position: fixed;
+    bottom: 82px;
+    right: 16px;
+    z-index: 1000;
+    background: #fff;
+    border: 1px solid #e3d6fb;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
+    padding: 12px 14px;
+    width: 200px;
+    display: none;
+    box-sizing: border-box;
+  }
+}
 }
