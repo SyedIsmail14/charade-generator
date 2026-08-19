@@ -14,14 +14,18 @@
   });
   if (isExcluded) return;
 
-  // Check if we're on a page where the widget should appear
-  // Only show on main game pages, not on footer-only pages
-  var shouldShow = window.location.pathname === "/" || 
+  // Check if widget already exists to prevent duplicates
+  if (document.getElementById("support-widget")) {
+    return;
+  }
+
+  // Check if we're on a game page (not just any page)
+  var isGamePage = window.location.pathname === "/" || 
                    window.location.pathname === "/index.html" ||
                    window.location.pathname.includes("charade") ||
                    window.location.pathname.includes("charades");
 
-  if (!shouldShow) return;
+  if (!isGamePage) return;
 
   var style = document.createElement("style");
   style.textContent =
@@ -36,15 +40,8 @@
     "display:flex;align-items:center;gap:6px;}" +
     ".support-widget__links a:hover{text-decoration:underline;}" +
     ".support-widget__icon{font-size:15px;}" +
-    
-    /* Hide widget in footer */
-    ".footer .support-widget, .footer .support-fab, .footer .support-fab-panel { display: none !important; }" +
-    
-    /* Desktop: Fixed sidebar position */
     "@media (min-width:769px){.support-widget{position:fixed;top:140px;right:20px;width:230px;}" +
     ".support-fab{display:none;}}" +
-
-    /* Mobile: Floating action button */
     "@media (max-width:768px){" +
     ".support-widget{display:none;}" +
     ".support-fab{position:fixed;bottom:18px;right:16px;z-index:1000;" +
@@ -77,36 +74,39 @@
     '<li><a href="https://amzn.to/45xaM8j" target="_blank" rel="noopener noreferrer">' +
     '<span class="support-widget__icon">🎲</span> Browse games on Amazon</a></li>';
 
-  // Only create the widget if it doesn't already exist
-  if (!document.getElementById("support-widget")) {
-    // Desktop/tablet sidebar box
-    var sidebar = document.createElement("div");
-    sidebar.className = "support-widget";
-    sidebar.id = "support-widget";
-    sidebar.innerHTML =
-      '<p class="support-widget__title">Support Us</p>' +
-      '<ul class="support-widget__links">' + linksHTML + "</ul>";
-    
-    // Append to body (will be positioned fixed, so it won't affect footer)
-    document.body.appendChild(sidebar);
+  // Create widget container
+  var widgetContainer = document.createElement("div");
+  widgetContainer.id = "support-widget-container";
 
-    // Mobile floating action button + expandable panel
-    var fab = document.createElement("button");
-    fab.className = "support-fab";
-    fab.setAttribute("aria-label", "Support us");
-    fab.innerHTML = "💜";
+  // Desktop/tablet sidebar box
+  var sidebar = document.createElement("div");
+  sidebar.className = "support-widget";
+  sidebar.id = "support-widget";
+  sidebar.innerHTML =
+    '<p class="support-widget__title">Support Us</p>' +
+    '<ul class="support-widget__links">' + linksHTML + "</ul>";
+  
+  widgetContainer.appendChild(sidebar);
 
-    var panel = document.createElement("div");
-    panel.className = "support-fab-panel";
-    panel.innerHTML =
-      '<p class="support-fab-panel__title">Support Us</p>' +
-      "<ul>" + linksHTML + "</ul>";
+  // Mobile floating action button + expandable panel
+  var fab = document.createElement("button");
+  fab.className = "support-fab";
+  fab.setAttribute("aria-label", "Support us");
+  fab.innerHTML = "💜";
 
-    fab.addEventListener("click", function () {
-      panel.classList.toggle("open");
-    });
+  var panel = document.createElement("div");
+  panel.className = "support-fab-panel";
+  panel.innerHTML =
+    '<p class="support-fab-panel__title">Support Us</p>' +
+    "<ul>" + linksHTML + "</ul>";
 
-    document.body.appendChild(fab);
-    document.body.appendChild(panel);
-  }
+  fab.addEventListener("click", function () {
+    panel.classList.toggle("open");
+  });
+
+  widgetContainer.appendChild(fab);
+  widgetContainer.appendChild(panel);
+
+  // Append everything to body
+  document.body.appendChild(widgetContainer);
 })();
