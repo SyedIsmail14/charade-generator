@@ -14,98 +14,70 @@
   });
   if (isExcluded) return;
 
-  // ONLY show on game pages (pages with charades content)
-  var isGamePage = path === "/" || 
-                   path === "/index.html" ||
-                   path.includes("charade") ||
-                   path.includes("charades") ||
-                   path.includes("game");
-
-  if (!isGamePage) return;
-
   // Prevent duplicate widget
   if (document.getElementById("support-widget-container")) {
     return;
   }
 
-  var style = document.createElement("style");
-  style.textContent =
-    ".support-widget{background:#f6f1ff;border:1px solid #d9c8f7;border-radius:12px;" +
-    "padding:14px 16px;box-shadow:0 4px 18px rgba(122,63,214,0.18);font-family:inherit;" +
-    "z-index:999;box-sizing:border-box;}" +
-    ".support-widget__title{font-weight:700;color:#1a1a1a;margin:0 0 10px 0;font-size:15px;}" +
-    ".support-widget__links{list-style:none;margin:0;padding:0;}" +
-    ".support-widget__links li{margin-bottom:8px;}" +
-    ".support-widget__links a{color:#7a3fd6;text-decoration:none;font-size:14px;" +
-    "display:flex;align-items:center;gap:6px;}" +
-    ".support-widget__links a:hover{text-decoration:underline;}" +
-    ".support-widget__icon{font-size:15px;}" +
-    "@media (min-width:769px){.support-widget{position:fixed;top:140px;right:20px;width:230px;}" +
-    ".support-fab{display:none;}}" +
-    "@media (max-width:768px){" +
-    ".support-widget{display:none;}" +
-    ".support-fab{position:fixed;bottom:18px;right:16px;z-index:1000;" +
-    "width:56px;height:56px;border-radius:50%;" +
-    "background:linear-gradient(135deg,#8b5cf6,#6d28d9);" +
-    "box-shadow:0 6px 20px rgba(109,40,217,0.45);" +
-    "display:flex;align-items:center;justify-content:center;" +
-    "font-size:26px;cursor:pointer;border:none;" +
-    "animation:support-pulse 2.4s ease-in-out infinite;}" +
-    "@keyframes support-pulse{0%,100%{transform:scale(1);}50%{transform:scale(1.08);}}" +
-    ".support-fab-panel{position:fixed;bottom:82px;right:16px;z-index:1000;" +
-    "background:#fff;border:1px solid #e3d6fb;border-radius:14px;" +
-    "box-shadow:0 10px 30px rgba(0,0,0,0.22);padding:12px 14px;width:200px;" +
-    "display:none;box-sizing:border-box;}" +
-    ".support-fab-panel.open{display:block;}" +
-    ".support-fab-panel__title{font-weight:700;color:#1a1a1a;margin:0 0 8px 0;font-size:13px;}" +
-    ".support-fab-panel ul{list-style:none;margin:0;padding:0;}" +
-    ".support-fab-panel li{margin-bottom:8px;}" +
-    ".support-fab-panel a{color:#7a3fd6;text-decoration:none;font-size:13px;" +
-    "display:flex;align-items:center;gap:6px;}" +
-    ".support-fab-panel a:hover{text-decoration:underline;}" +
-    "}";
-  document.head.appendChild(style);
+  var isMobile = (window.innerWidth || document.documentElement.clientWidth) <= 768;
 
   var linksHTML =
-    '<li><a href="https://buymeacoffee.com/charadegenerator" target="_blank" rel="noopener noreferrer">' +
-    '<span class="support-widget__icon">☕</span> Caffeinate us!</a></li>' +
-    '<li><a href="https://payhip.com/Charadegenerator" target="_blank" rel="noopener noreferrer">' +
-    '<span class="support-widget__icon">📄</span> Buy printables</a></li>' +
-    '<li><a href="https://amzn.to/45xaM8j" target="_blank" rel="noopener noreferrer">' +
-    '<span class="support-widget__icon">🎲</span> Browse games on Amazon</a></li>';
+    '<li style="margin-bottom:8px;list-style:none;"><a href="https://buymeacoffee.com/charadegenerator" target="_blank" rel="noopener noreferrer" style="color:#7a3fd6;text-decoration:none;font-size:14px;display:flex;align-items:center;gap:6px;">' +
+    '<span style="font-size:15px;">\u2615</span> Caffeinate us!</a></li>' +
+    '<li style="margin-bottom:8px;list-style:none;"><a href="https://payhip.com/Charadegenerator" target="_blank" rel="noopener noreferrer" style="color:#7a3fd6;text-decoration:none;font-size:14px;display:flex;align-items:center;gap:6px;">' +
+    '<span style="font-size:15px;">\uD83D\uDCC4</span> Buy printables</a></li>' +
+    '<li style="margin-bottom:0;list-style:none;"><a href="https://amzn.to/45xaM8j" target="_blank" rel="noopener noreferrer" style="color:#7a3fd6;text-decoration:none;font-size:14px;display:flex;align-items:center;gap:6px;">' +
+    '<span style="font-size:15px;">\uD83C\uDFB2</span> Browse games on Amazon</a></li>';
 
-  // Create container
   var container = document.createElement("div");
   container.id = "support-widget-container";
+  // Inline-styled so positioning never depends on any external/injected CSS.
+  container.style.cssText =
+    "position:fixed !important;" +
+    (isMobile
+      ? "right:16px !important;bottom:18px !important;"
+      : "top:140px !important;right:20px !important;width:230px !important;") +
+    "z-index:99999 !important;" +
+    "background:#f6f1ff;border:1px solid #d9c8f7;border-radius:12px;" +
+    "padding:14px 16px;box-shadow:0 4px 18px rgba(122,63,214,0.18);" +
+    "font-family:system-ui,Arial,sans-serif;box-sizing:border-box;" +
+    (isMobile ? "width:auto;max-width:200px;" : "");
 
-  // Desktop sidebar
-  var sidebar = document.createElement("div");
-  sidebar.className = "support-widget";
-  sidebar.id = "support-widget";
-  sidebar.innerHTML =
-    '<p class="support-widget__title">Support Us</p>' +
-    '<ul class="support-widget__links">' + linksHTML + "</ul>";
-  container.appendChild(sidebar);
+  if (isMobile) {
+    // Mobile: small floating button that expands a panel on tap.
+    var fab = document.createElement("button");
+    fab.setAttribute("aria-label", "Support us");
+    fab.innerHTML = "\uD83D\uDC9C";
+    fab.style.cssText =
+      "position:fixed !important;bottom:18px !important;right:16px !important;" +
+      "z-index:99999 !important;width:56px;height:56px;border-radius:50%;" +
+      "background:linear-gradient(135deg,#8b5cf6,#6d28d9);" +
+      "box-shadow:0 6px 20px rgba(109,40,217,0.45);" +
+      "display:flex;align-items:center;justify-content:center;" +
+      "font-size:26px;cursor:pointer;border:none;color:#fff;padding:0;";
 
-  // Mobile FAB
-  var fab = document.createElement("button");
-  fab.className = "support-fab";
-  fab.setAttribute("aria-label", "Support us");
-  fab.innerHTML = "💜";
-  container.appendChild(fab);
+    var panel = document.createElement("div");
+    panel.style.cssText =
+      "position:fixed !important;bottom:82px !important;right:16px !important;" +
+      "z-index:99999 !important;background:#fff;border:1px solid #e3d6fb;" +
+      "border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,0.22);" +
+      "padding:12px 14px;width:200px;box-sizing:border-box;" +
+      "font-family:system-ui,Arial,sans-serif;display:none;";
+    panel.innerHTML =
+      '<p style="font-weight:700;color:#1a1a1a;margin:0 0 8px 0;font-size:13px;">Support Us</p>' +
+      '<ul style="list-style:none;margin:0;padding:0;">' + linksHTML + "</ul>";
 
-  // Mobile panel
-  var panel = document.createElement("div");
-  panel.className = "support-fab-panel";
-  panel.innerHTML =
-    '<p class="support-fab-panel__title">Support Us</p>' +
-    "<ul>" + linksHTML + "</ul>";
-  container.appendChild(panel);
+    fab.addEventListener("click", function () {
+      panel.style.display = panel.style.display === "none" ? "block" : "none";
+    });
 
-  fab.addEventListener("click", function () {
-    panel.classList.toggle("open");
-  });
-
-  // Append to body
-  document.body.appendChild(container);
+    document.body.appendChild(fab);
+    document.body.appendChild(panel);
+  } else {
+    // Desktop/tablet: fixed sidebar box.
+    container.innerHTML =
+      '<p style="font-weight:700;color:#1a1a1a;margin:0 0 10px 0;font-size:15px;">Support Us</p>' +
+      '<ul style="list-style:none;margin:0;padding:0;">' + linksHTML + "</ul>";
+    document.body.appendChild(container);
+  }
 })();
