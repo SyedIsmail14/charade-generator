@@ -344,19 +344,9 @@ h2 {
   display: none;
 }
 
-.charades-disclaimer {
-  border: 1px solid #ddd;
-  background: #f9f9f9;
-  border-radius: 6px;
-  padding: 16px 20px;
-  margin: 24px 0;
-  font-size: 0.9rem;
-  line-height: 1.5;
-  color: #333;
-}
-
 /* RESPONSIVE */
 @media (max-width: 768px) {
+
   .menu-btn { display: block; }
   .nav-desktop { display: none; }
   .nav-mobile.open { display: block; }
@@ -378,79 +368,14 @@ h2 {
     position: sticky;
     bottom: 10px;
   }
+  .charades-disclaimer {
+  border: 1px solid #ddd;
+  background: #f9f9f9;
+  border-radius: 6px;
+  padding: 16px 20px;
+  margin: 24px 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #333;
 }
-
-/* ============================================ */
-/* SUPPORT WIDGET - FIXED POSITION ONLY */
-/* ============================================ */
-
-/* Hide widget if it appears in footer */
-.footer #support-widget-container,
-.footer .support-widget,
-.footer .support-fab,
-.footer .support-fab-panel {
-  display: none !important;
-}
-
-/* Desktop styles */
-#support-widget-container .support-widget {
-  position: fixed !important;
-  top: 140px;
-  right: 20px;
-  width: 230px;
-  z-index: 999;
-}
-
-#support-widget-container .support-fab {
-  display: none;
-}
-
-/* Mobile styles */
-@media (max-width: 768px) {
-  #support-widget-container .support-widget {
-    display: none !important;
-  }
-  
-  #support-widget-container .support-fab {
-    position: fixed !important;
-    bottom: 18px;
-    right: 16px;
-    z-index: 1000;
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #8b5cf6, #6d28d9);
-    box-shadow: 0 6px 20px rgba(109, 40, 217, 0.45);
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-    font-size: 26px;
-    cursor: pointer;
-    border: none;
-    animation: support-pulse 2.4s ease-in-out infinite;
-  }
-  
-  #support-widget-container .support-fab-panel {
-    position: fixed !important;
-    bottom: 82px;
-    right: 16px;
-    z-index: 1000;
-    background: #fff;
-    border: 1px solid #e3d6fb;
-    border-radius: 14px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
-    padding: 12px 14px;
-    width: 200px;
-    display: none;
-    box-sizing: border-box;
-  }
-  
-  #support-widget-container .support-fab-panel.open {
-    display: block !important;
-  }
-}
-
-@keyframes support-pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.08); }
 }
