@@ -80,4 +80,5 @@
       '<ul style="list-style:none;margin:0;padding:0;">' + linksHTML + "</ul>";
     document.body.appendChild(container);
   }
-})();
+})():
+
