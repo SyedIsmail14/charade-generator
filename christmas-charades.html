@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Christmas Charades – Festive Acting Game for Family Nights</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Festive charades covering nativity, reindeer, winter traditions and gift-giving. Pick a category, act it out, no signup needed — built for holiday game nights.">
+
+  <link rel="icon" type="image/x-icon" href="/assests/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assests/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assests/apple-touch-icon-180x180.png">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    .xm-hero{background:linear-gradient(135deg,#7a0c0c 0%,#b3141f 55%,#0d5c33 130%);border-radius:20px;padding:48px 32px;margin:28px 0;color:#fff;text-align:center;position:relative;overflow:hidden;}
+    .xm-hero::before{content:"❄";position:absolute;top:10px;left:20px;font-size:26px;opacity:.35;}
+    .xm-hero::after{content:"❄";position:absolute;bottom:14px;right:26px;font-size:34px;opacity:.3;}
+    .xm-hero h1{margin:0 0 10px;font-size:clamp(24px,5vw,36px);font-weight:800;}
+    .xm-hero p{margin:0;font-size:clamp(14px,2.4vw,17px);opacity:.93;max-width:620px;margin-left:auto;margin-right:auto;}
+
+    .xm-intro{font-size:16px;line-height:1.75;color:#3a2a1a;background:#fdf3d8;border-radius:12px;padding:20px 24px;margin:30px 0;}
+
+    .xm-set{border:2px solid #f0d78c;border-radius:16px;overflow:hidden;margin-bottom:26px;box-shadow:0 6px 18px rgba(122,12,12,.08);}
+    .xm-set-head{padding:16px 22px;font-size:19px;font-weight:800;color:#fff;display:flex;align-items:center;gap:10px;}
+    .xm-set-head span{font-size:24px;}
+    .xm-set.nativity .xm-set-head{background:#3a2a6d;}
+    .xm-set.santa .xm-set-head{background:#7a0c0c;}
+    .xm-set.winter .xm-set-head{background:#0b6ea8;}
+    .xm-set.family .xm-set-head{background:#0d5c33;}
+    .xm-set-body{background:#fffdf5;padding:6px 0;}
+    .xm-row{display:flex;align-items:center;gap:14px;padding:13px 22px;border-bottom:1px solid #f4ead0;font-size:15.5px;color:#2a2018;font-weight:600;}
+    .xm-row:last-child{border-bottom:none;}
+    .xm-row:nth-child(even){background:#fbf4e2;}
+    .xm-num{flex-shrink:0;width:26px;height:26px;border-radius:50%;background:#f0d78c;color:#5c3d00;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;}
+
+    .xm-howto{margin:44px 0;background:#fff;border:2px solid #f0d78c;border-radius:16px;padding:26px 28px;}
+    .xm-howto h2{margin-top:0;color:#0d5c33;font-size:clamp(20px,4vw,24px);font-weight:800;}
+    .xm-howto p{font-size:15px;line-height:1.75;color:#333;margin:0;}
+
+    .xm-related{background:#fdf3d8;border-radius:16px;padding:24px;margin:40px 0;text-align:center;}
+    .xm-related h2{margin-top:0;color:#7a0c0c;font-size:20px;font-weight:800;}
+    .xm-related-grid{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:14px;}
+    .xm-related-link{background:#7a0c0c;color:#fff;text-decoration:none;padding:12px 24px;border-radius:30px;font-weight:700;font-size:14px;transition:background .2s,transform .15s;}
+    .xm-related-link:hover{background:#5c0909;transform:translateY(-2px);}
+
+    @media(max-width:600px){
+      .xm-hero{padding:32px 20px;}
+      .xm-row{padding:12px 16px;font-size:14.5px;}
+      .xm-set-head{font-size:17px;padding:14px 16px;}
+    }
+  </style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8Q5RPKL818"></script>
+<script src="/js/analytics.js"></script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="logo">
+      <a href="https://charadegenerator.com/" class="logo-link">
+        🎭 <strong>Charades</strong>Generator
+      </a>
+    </div>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <nav class="nav-desktop">
+      <a href="character-charades.html"><button>Character Charades</button></a>
+      <a href="islamic-charades.html"><button>Islamic Charades</button></a>
+      <a href="christmas-charades.html"><button>Christmas Charades</button></a>
+    </nav>
+  </div>
+  <nav id="navMobile" class="nav-mobile">
+    <a href="character-charades.html"><button>Character Charades</button></a>
+    <a href="islamic-charades.html"><button>Islamic Charades</button></a>
+    <a href="christmas-charades.html"><button>Christmas Charades</button></a>
+  </nav>
+</header>
+
+<main class="main">
+
+  <section class="xm-hero">
+    <h1>🎄 Christmas Charades</h1>
+    <p>Nativity, Santa, winter and family — pick a set below and start acting.</p>
+  </section>
+
+  <p class="xm-intro">
+    Christmas charades works because everyone at the table already knows the material — the nativity, Santa's routine, snow, unwrapping presents — so rounds move fast and nobody needs a warm-up.
+    Pick a set below, act one out silently, and let your team guess. Mix all four for a longer game, or stick to one if your group has a favorite.
+  </p>
+
+  <section class="xm-set nativity">
+    <div class="xm-set-head"><span>⭐</span>Nativity</div>
+    <div class="xm-set-body">
+      <div class="xm-row"><span class="xm-num">1</span>Following the star to Bethlehem</div>
+      <div class="xm-row"><span class="xm-num">2</span>A shepherd watching the flock</div>
+      <div class="xm-row"><span class="xm-num">3</span>A wise man carrying a gift</div>
+      <div class="xm-row"><span class="xm-num">4</span>Knocking on the inn door, no room left</div>
+      <div class="xm-row"><span class="xm-num">5</span>Sleeping in a stable</div>
+      <div class="xm-row"><span class="xm-num">6</span>An angel delivering the news</div>
+      <div class="xm-row"><span class="xm-num">7</span>Presenting gold, frankincense, or myrrh</div>
+      <div class="xm-row"><span class="xm-num">8</span>Riding a camel across the desert</div>
+    </div>
+  </section>
+
+  <section class="xm-set santa">
+    <div class="xm-set-head"><span>🎅</span>Santa &amp; Reindeer</div>
+    <div class="xm-set-body">
+      <div class="xm-row"><span class="xm-num">1</span>Sliding down a chimney</div>
+      <div class="xm-row"><span class="xm-num">2</span>Checking a list twice</div>
+      <div class="xm-row"><span class="xm-num">3</span>A reindeer with a glowing red nose</div>
+      <div class="xm-row"><span class="xm-num">4</span>Loading up the sleigh</div>
+      <div class="xm-row"><span class="xm-num">5</span>Sneaking a cookie left on the plate</div>
+      <div class="xm-row"><span class="xm-num">6</span>Flying across the night sky</div>
+      <div class="xm-row"><span class="xm-num">7</span>Squeezing through a tight chimney</div>
+      <div class="xm-row"><span class="xm-num">8</span>Falling asleep waiting for Santa</div>
+    </div>
+  </section>
+
+  <section class="xm-set winter">
+    <div class="xm-set-head"><span>❄️</span>Winter</div>
+    <div class="xm-set-body">
+      <div class="xm-row"><span class="xm-num">1</span>Building a snowman</div>
+      <div class="xm-row"><span class="xm-num">2</span>Catching snowflakes on your tongue</div>
+      <div class="xm-row"><span class="xm-num">3</span>Sledding down a hill</div>
+      <div class="xm-row"><span class="xm-num">4</span>Shivering in the cold</div>
+      <div class="xm-row"><span class="xm-num">5</span>Wrapping up in a scarf</div>
+      <div class="xm-row"><span class="xm-num">6</span>Warming hands on a hot drink</div>
+      <div class="xm-row"><span class="xm-num">7</span>Scraping ice off a windshield</div>
+      <div class="xm-row"><span class="xm-num">8</span>Ice skating and nearly falling</div>
+    </div>
+  </section>
+
+  <section class="xm-set family">
+    <div class="xm-set-head"><span>🎁</span>Family &amp; Gift-Giving</div>
+    <div class="xm-set-body">
+      <div class="xm-row"><span class="xm-num">1</span>Unwrapping a present too fast</div>
+      <div class="xm-row"><span class="xm-num">2</span>Hanging a stocking by the fire</div>
+      <div class="xm-row"><span class="xm-num">3</span>Decorating the Christmas tree</div>
+      <div class="xm-row"><span class="xm-num">4</span>Setting out cookies and milk</div>
+      <div class="xm-row"><span class="xm-num">5</span>Posing for a family photo</div>
+      <div class="xm-row"><span class="xm-num">6</span>Singing around the table</div>
+      <div class="xm-row"><span class="xm-num">7</span>Lighting candles for dinner</div>
+      <div class="xm-row"><span class="xm-num">8</span>Hugging a relative hello</div>
+    </div>
+  </section>
+
+  <section class="xm-howto">
+    <h2>How to Play</h2>
+    <p>Pick a set, act one line out silently — no talking, no mouthing words — and let your team call out guesses until they land on it or you agree on a time cap. Move to the next line down, pass the actor role to someone new, and switch sets whenever you're ready for a change of pace.</p>
+  </section>
+
+  <section class="xm-related">
+    <h2>More to play</h2>
+    <div class="xm-related-grid">
+      <a href="index.html" class="xm-related-link">🎭 Main Charades</a>
+      <a href="character-charades.html" class="xm-related-link">🦸 Character Charades</a>
+      <a href="islamic-charades.html" class="xm-related-link">🕌 Islamic Charades</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <a href="about-us.html">About Us</a>
+  <a href="contact-us.html">Contact Us</a>
+  <a href="privacy-policy.html">Privacy Policy</a>
+  <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+  <a href="disclaimer.html">Disclaimer</a>
+  <p>© CharadeGenerator 2026</p>
+</footer>
+
+<script src="js/support-widget.js?v=2"></script>
+<script type="text/javascript">
+var infolinks_pid = 3447226;
+var infolinks_wsid = 0;
+</script>
+<script type="text/javascript" src="http://resources.infolinks.com/js/infolinks_main.js"></script>
+</body>
+</html>
