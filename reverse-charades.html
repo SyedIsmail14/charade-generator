@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Reverse Charades – Whole Group Acts, One Player Guesses</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Reverse charades flips the classic game: the whole group acts out a scene together while one player guesses. 32 group scenes across four categories, plus a full how-to guide.">
+
+  <link rel="icon" type="image/x-icon" href="/assests/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assests/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assests/apple-touch-icon-180x180.png">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* ===== Reverse Charades — independent CSS namespace "rc-" ===== */
+
+    .rc-hero{background:linear-gradient(135deg,#1a1a4d 0%,#3d1e6d 55%,#7a1e5e 130%);border-radius:20px;padding:48px 32px;margin:28px 0;color:#fff;text-align:center;}
+    .rc-hero h1{margin:0 0 10px;font-size:clamp(24px,5vw,34px);font-weight:800;}
+    .rc-hero p{margin:0;font-size:clamp(14px,2.2vw,17px);opacity:.92;max-width:600px;margin-left:auto;margin-right:auto;}
+
+    .rc-article{font-size:16px;line-height:1.8;color:#2b2b38;}
+    .rc-article p{margin:0 0 18px;}
+    .rc-article h2{font-size:clamp(20px,4vw,24px);color:#3d1e6d;font-weight:800;margin:40px 0 14px;border-bottom:3px solid #f0c9e8;padding-bottom:8px;}
+
+    .rc-set{border-radius:16px;overflow:hidden;margin:22px 0 34px;box-shadow:0 6px 18px rgba(61,30,109,.1);}
+    .rc-set-head{padding:15px 22px;font-size:16px;font-weight:800;color:#fff;}
+    .rc-set.everyday .rc-set-head{background:#2b6ea8;}
+    .rc-set.party .rc-set-head{background:#7a1e5e;}
+    .rc-set.animals .rc-set-head{background:#1e7a4d;}
+    .rc-set.disaster .rc-set-head{background:#b3401f;}
+    .rc-set-body{background:#fdfaff;padding:4px 0;}
+    .rc-row{display:flex;align-items:center;gap:14px;padding:12px 22px;border-bottom:1px solid #f0e8f7;font-size:15px;color:#2b2b38;font-weight:600;}
+    .rc-row:last-child{border-bottom:none;}
+    .rc-row:nth-child(even){background:#f7f2fb;}
+    .rc-num{flex-shrink:0;width:24px;height:24px;border-radius:50%;background:#e8d5f0;color:#5c2a70;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;}
+
+    .rc-tips{background:#f7f2fb;border-left:5px solid #7a1e5e;border-radius:10px;padding:22px 26px;margin:36px 0;font-size:15px;line-height:1.8;color:#2b2b38;}
+
+    .rc-related{background:#f7f2fb;border-radius:16px;padding:24px;margin:40px 0;text-align:center;}
+    .rc-related h2{margin-top:0;color:#3d1e6d;font-size:20px;font-weight:800;border:none;padding:0;}
+    .rc-related-grid{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:14px;}
+    .rc-related-link{background:#3d1e6d;color:#fff;text-decoration:none;padding:12px 24px;border-radius:30px;font-weight:700;font-size:14px;transition:background .2s,transform .15s;}
+    .rc-related-link:hover{background:#2b1550;transform:translateY(-2px);}
+
+    @media(max-width:600px){
+      .rc-hero{padding:32px 20px;}
+      .rc-row{padding:11px 16px;font-size:14px;}
+      .rc-set-head{font-size:15px;padding:13px 16px;}
+    }
+  </style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8Q5RPKL818"></script>
+<script src="/js/analytics.js"></script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="logo">
+      <a href="https://charadegenerator.com/" class="logo-link">
+        🎭 <strong>Charades</strong>Generator
+      </a>
+    </div>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <nav class="nav-desktop">
+      <a href="character-charades.html"><button>Character Charades</button></a>
+      <a href="islamic-charades.html"><button>Islamic Charades</button></a>
+      <a href="christmas-charades.html"><button>Christmas Charades</button></a>
+      <a href="reverse-charades.html"><button>Reverse Charades</button></a>
+    </nav>
+  </div>
+  <nav id="navMobile" class="nav-mobile">
+    <a href="character-charades.html"><button>Character Charades</button></a>
+    <a href="islamic-charades.html"><button>Islamic Charades</button></a>
+    <a href="christmas-charades.html"><button>Christmas Charades</button></a>
+    <a href="reverse-charades.html"><button>Reverse Charades</button></a>
+  </nav>
+</header>
+
+<main class="main">
+
+  <section class="rc-hero">
+    <h1>🔄 Reverse Charades</h1>
+    <p>The whole group acts together while one player guesses — built for big gatherings and kids who don't love acting solo.</p>
+  </section>
+
+  <article class="rc-article">
+    <p>Reverse charades flips the classic game on its head. Instead of one person acting while a team guesses, the whole group acts together while a single player tries to guess. It works especially well for big gatherings — birthday parties, youth groups, family reunions — because everyone gets to join in on every single round instead of standing around waiting for a turn.</p>
+
+    <p>The dynamic changes the entire feel of the game. A lone actor has to be precise and deliberate. A group acting together naturally turns chaotic and funny — people bump into each other, improvise around what teammates are doing, and the energy builds fast. It's a better fit for larger groups and younger kids who don't love being the center of attention alone.</p>
+
+    <h2>How a Round Works</h2>
+    <p>One player is chosen as the guesser and steps out of the room, or simply closes their eyes for a few seconds. While they're away, the rest of the group picks a card from the list below and quietly agrees on how they'll act it out together. When the guesser returns, the whole group starts acting the scene out silently and simultaneously — no talking, no sound effects, no mouthing words. The guesser watches the group and calls out guesses until they land on the right answer. Whoever is closest to guessing correctly (or the guesser themselves, depending on how you want to run it) picks the next person to guess and the next card.</p>
+
+    <p>Because it's a full-group scene rather than a single mimed word, reverse charades tends to work best with short scenarios and scenes rather than single objects — something with movement and multiple roles that a group can spread across.</p>
+
+    <h2>Everyday Action Scenes</h2>
+    <p>These work well as a warm-up round, since they're familiar and easy for a group to coordinate on the fly.</p>
+    <div class="rc-set everyday">
+      <div class="rc-set-head">🎬 Everyday Actions</div>
+      <div class="rc-set-body">
+        <div class="rc-row"><span class="rc-num">1</span>Cooking a big meal together</div>
+        <div class="rc-row"><span class="rc-num">2</span>Washing a car</div>
+        <div class="rc-row"><span class="rc-num">3</span>Fishing on a lake</div>
+        <div class="rc-row"><span class="rc-num">4</span>Cleaning the entire house</div>
+        <div class="rc-row"><span class="rc-num">5</span>Playing in a rock band</div>
+        <div class="rc-row"><span class="rc-num">6</span>Swimming in the ocean</div>
+        <div class="rc-row"><span class="rc-num">7</span>Shopping on a busy street</div>
+        <div class="rc-row"><span class="rc-num">8</span>Painting a mural together</div>
+      </div>
+    </div>
+
+    <h2>Party and Group Scenes</h2>
+    <p>These lean into the chaos a full group can create — good for when the energy in the room needs a boost.</p>
+    <div class="rc-set party">
+      <div class="rc-set-head">🎉 Party &amp; Group Scenes</div>
+      <div class="rc-set-body">
+        <div class="rc-row"><span class="rc-num">1</span>Dancing at a wedding</div>
+        <div class="rc-row"><span class="rc-num">2</span>Throwing a surprise birthday party</div>
+        <div class="rc-row"><span class="rc-num">3</span>Performing a concert</div>
+        <div class="rc-row"><span class="rc-num">4</span>Celebrating a championship win</div>
+        <div class="rc-row"><span class="rc-num">5</span>Running away with the circus</div>
+        <div class="rc-row"><span class="rc-num">6</span>Launching a rocket into space</div>
+        <div class="rc-row"><span class="rc-num">7</span>Working at a zoo</div>
+        <div class="rc-row"><span class="rc-num">8</span>Putting on a school play</div>
+      </div>
+    </div>
+
+    <h2>Animal and Wild Scenes</h2>
+    <p>Great for kids' groups — everyone picks an animal role and finds their own way to act it within the scene.</p>
+    <div class="rc-set animals">
+      <div class="rc-set-head">🐾 Animals &amp; Wild Scenes</div>
+      <div class="rc-set-body">
+        <div class="rc-row"><span class="rc-num">1</span>A herd of elephants at a watering hole</div>
+        <div class="rc-row"><span class="rc-num">2</span>A swarm of bees defending the hive</div>
+        <div class="rc-row"><span class="rc-num">3</span>Penguins waddling across the ice</div>
+        <div class="rc-row"><span class="rc-num">4</span>Gorillas in the jungle</div>
+        <div class="rc-row"><span class="rc-num">5</span>A pack of wolves hunting</div>
+        <div class="rc-row"><span class="rc-num">6</span>Birds migrating south</div>
+        <div class="rc-row"><span class="rc-num">7</span>An octopus escaping a tank</div>
+        <div class="rc-row"><span class="rc-num">8</span>Dinosaurs stomping through a forest</div>
+      </div>
+    </div>
+
+    <h2>High-Energy Disaster Scenes</h2>
+    <p>Save these for later in the game, once the group is warmed up — they tend to produce the biggest laughs because everyone's moving at once.</p>
+    <div class="rc-set disaster">
+      <div class="rc-set-head">🌊 High-Energy Disaster Scenes</div>
+      <div class="rc-set-body">
+        <div class="rc-row"><span class="rc-num">1</span>Escaping a tornado</div>
+        <div class="rc-row"><span class="rc-num">2</span>Putting out a house fire</div>
+        <div class="rc-row"><span class="rc-num">3</span>Sailors on a sinking ship</div>
+        <div class="rc-row"><span class="rc-num">4</span>Riding a rollercoaster together</div>
+        <div class="rc-row"><span class="rc-num">5</span>Building a skyscraper</div>
+        <div class="rc-row"><span class="rc-num">6</span>Training for a boxing match</div>
+        <div class="rc-row"><span class="rc-num">7</span>Passengers on a runaway train</div>
+        <div class="rc-row"><span class="rc-num">8</span>Evacuating a volcano eruption</div>
+      </div>
+    </div>
+
+    <h2>Tips for Running a Smooth Round</h2>
+    <div class="rc-tips">
+      Give the group a few seconds to actually plan before they start acting — a scene with zero coordination usually just looks like random movement rather than a recognizable scene. Encourage people to take on distinct roles within the scene rather than everyone doing the same motion, since that variety is what actually helps the guesser figure it out. And keep scenes short — 20 to 30 seconds is usually enough before either the guesser gets it or the group runs out of ideas to keep the scene going.
+    </div>
+  </article>
+
+  <section class="rc-related">
+    <h2>More to play</h2>
+    <div class="rc-related-grid">
+      <a href="index.html" class="rc-related-link">🎭 Main Charades</a>
+      <a href="character-charades.html" class="rc-related-link">🦸 Character Charades</a>
+      <a href="islamic-charades.html" class="rc-related-link">🕌 Islamic Charades</a>
+      <a href="christmas-charades.html" class="rc-related-link">🎄 Christmas Charades</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <a href="about-us.html">About Us</a>
+  <a href="contact-us.html">Contact Us</a>
+  <a href="privacy-policy.html">Privacy Policy</a>
+  <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+  <a href="disclaimer.html">Disclaimer</a>
+  <p>© CharadeGenerator 2026</p>
+</footer>
+
+<script src="js/support-widget.js?v=2"></script>
+<script type="text/javascript">
+var infolinks_pid = 3447226;
+var infolinks_wsid = 0;
+</script>
+<script type="text/javascript" src="http://resources.infolinks.com/js/infolinks_main.js"></script>
+</body>
+</html>
