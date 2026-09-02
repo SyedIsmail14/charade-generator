@@ -5,16 +5,16 @@
   <title>About Us | Charade Generator</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="icon" type="image/x-icon" href="/assests/favicon.ico">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assests/favicon-16x16.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assests/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="48x48" href="/assests/favicon-48x48.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assests/apple-touch-icon-180x180.png">
-  <link rel="apple-touch-icon" href="/assests/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/assests/android-chrome-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/assests/android-chrome-512x512.png">
+  <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon-180x180.png">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/android-chrome-512x512.png">
 
-  <meta name="description" content="Learn more about Charade Generator, created by Syed Ismail, a web developer specializing in useful and interactive online tools.">
+  <meta name="description" content="Learn more about Charade Generator, created by Syed Ismail, a web developer building free interactive charades tools for family game nights, classrooms, and get-togethers.">
 
   <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -200,8 +200,16 @@
       font-size: 16px;
       color: #3730a3;
       font-style: italic;
-      margin: 0;
+      margin: 0 0 8px;
       line-height: 1.7;
+    }
+
+    .about-quote cite {
+      display: block;
+      font-size: 13px;
+      font-style: normal;
+      color: #6366f1;
+      font-weight: 600;
     }
 
     /* SOCIAL LINKS */
@@ -247,6 +255,28 @@
 
     .social-icons .icon-instagram {
       font-size: 16px;
+    }
+
+    /* LEGAL NOTE (short pointer, not full duplicate) */
+    .about-legal-note {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 20px 24px;
+      margin-bottom: 40px;
+      font-size: 14px;
+      color: #64748b;
+      line-height: 1.7;
+    }
+
+    .about-legal-note a {
+      color: #6366f1;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .about-legal-note a:hover {
+      text-decoration: underline;
     }
 
     /* CTA */
@@ -348,7 +378,7 @@
     <div class="about-hero fade-up">
       <span class="eyebrow">Who We Are</span>
       <h1>Built for People,<br>Powered by Play</h1>
-      <p class="lead">We create free, simple, and genuinely fun web tools that bring people together — no downloads, no sign-ups, just good times.</p>
+      <p class="lead">We build free, no-signup charades tools for family nights, classrooms, and get-togethers — designed to be picked up and played in under a minute.</p>
     </div>
 
     <div class="about-divider"></div>
@@ -356,12 +386,12 @@
     <!-- STATS -->
     <div class="about-stats">
       <div class="stat-card fade-up">
-        <div class="stat-num">24+</div>
-        <div class="stat-label">Game Categories</div>
+        <div class="stat-num">100%</div>
+        <div class="stat-label">Free, No Sign-Up</div>
       </div>
       <div class="stat-card fade-up">
-        <div class="stat-num">100%</div>
-        <div class="stat-label">Free to Play</div>
+        <div class="stat-num">0</div>
+        <div class="stat-label">Accounts Required</div>
       </div>
     </div>
 
@@ -370,7 +400,7 @@
       <div class="value-card fade-up">
         <span class="value-icon">🎯</span>
         <p class="value-title">Original & In-House</p>
-        <p class="value-desc">Every tool is built from scratch, thoroughly tested, and regularly updated — no shortcuts, no borrowed content.</p>
+        <p class="value-desc">Every word list and game mode on this site is written and tested by us — nothing scraped or bought in from elsewhere.</p>
       </div>
       <div class="value-card fade-up">
         <span class="value-icon">🔒</span>
@@ -388,18 +418,19 @@
     <div class="about-story fade-up">
       <h2>Our Story</h2>
       <p>
-        We are a passionate <strong>web tools and games development team</strong> dedicated to building simple, reliable, and genuinely useful online experiences. This platform is independently developed and managed by <strong>Syed Ismail</strong>, with a strong commitment to quality content, original development, and long-term user value.
+        Charade Generator started from a simple annoyance: most charades word lists online are either a single static page you have to scroll through by hand, or a generator so generic it repeats the same twenty words all night. This site is independently built and maintained by <strong>Syed Ismail</strong>, a web developer who wanted a charades tool that actually adapts to who's playing.
+      </p>
+      <p>
+        That's why the site isn't one generator — it's five. The main <strong>Character Charades</strong> tool lets you filter by superheroes, movies, fairy tales, video games, or classic TV and pulls a fresh, non-repeating character each round, with a built-in 30-second timer for group play. <strong>Christmas Charades</strong> and <strong>Islamic Charades</strong> are curated, ready-to-print lists for holiday nights and family or madrasa gatherings, organized by theme rather than randomized, since those settings usually call for a set you can plan around rather than one you leave to chance. <strong>Reverse Charades</strong> flips the format entirely — the whole group acts while one player guesses — for parties and younger kids who'd rather not act solo.
       </p>
 
       <div class="about-quote">
-        <p>"Our mission is to provide free, accessible tools that bring people together — whether for fun, learning, or everyday creativity."</p>
+        <p>"I built the version of this game I kept wishing existed — one that actually fits the group you're playing with, instead of a single one-size-fits-all word list."</p>
+        <cite>— Syed Ismail, creator of Charade Generator</cite>
       </div>
 
       <p>
-        The <strong>Charades Generator</strong> is our flagship tool — an engaging group game experience with no complicated setup. It encourages creativity, communication, and meaningful social interaction through thoughtfully curated word categories that work for every occasion.
-      </p>
-      <p>
-        We also comply with all applicable advertising and content guidelines to maintain a safe, respectful, and trustworthy environment. Our long-term vision is to expand our collection of interactive experiences that support <strong>learning, entertainment, and everyday creativity</strong>.
+        Everything here is free with no account required. Next up: expanding the Character Charades pool with more video game and classic TV entries, based on what people have asked for so far.
       </p>
     </div>
 
@@ -410,8 +441,12 @@
         <a href="https://www.instagram.com/isyed4862026/" target="_blank" rel="noopener noreferrer">
           <span class="icon-instagram">📸</span> Instagram
         </a>
-        <!-- Add more social links here later, e.g. Facebook, X/Twitter, YouTube -->
       </div>
+    </div>
+
+    <!-- LEGAL NOTE (pointer only — full text lives on the dedicated pages) -->
+    <div class="about-legal-note fade-up">
+      This site is provided for entertainment purposes and uses third-party advertising. For full details on data use, liability, and site terms, see our <a href="privacy-policy.html">Privacy Policy</a>, <a href="terms-and-conditions.html">Terms &amp; Conditions</a>, and <a href="disclaimer.html">Disclaimer</a>.
     </div>
 
     <!-- CTA -->
@@ -423,27 +458,14 @@
 
   </div>
 </main>
-<div class="charades-disclaimer">
-  <strong>Disclaimer</strong>
-  <p><strong>General:</strong> Charade Generator is a game of charades provided for entertainment and gameplay purposes only. The content on this site, including all charades words, phrases, categories (such as "Kids" and "Animals"), and the built-in timer, is intended solely to help you play and enjoy the game. Nothing on this site constitutes professional, educational, medical, legal, or safety advice.</p>
-  <p><strong>Charades Words &amp; Categories</strong></p>
-  <ul>
-    <li>All prompts are randomly generated or selected from a curated word list.</li>
-    <li>Categories like "Animals" and "Kids" are labeled by theme (i.e., words that are easy for children to act out or are animal-related) and are not a certification that content has been reviewed against every regional child-content regulation. Parents/guardians should supervise use by young children, as with any game.</li>
-    <li>We do not guarantee that every word will suit every age group, region, or audience. Users are responsible for choosing categories appropriate to their group.</li>
-  </ul>
-  <p><strong>Timer Feature:</strong> The countdown timer is included solely to support gameplay (e.g., timing a turn or round). It is not intended for any other timing, scheduling, or safety-critical use, and we make no guarantees about its precision for purposes outside casual gameplay.</p>
-  <p><strong>Advertising &amp; Affiliate Links:</strong> This website uses third-party advertising services (such as ad networks) to display ads, and it may contain affiliate links. If you click an affiliate link and make a purchase, we may earn a commission at no extra cost to you. Third-party advertisers and ad networks may use cookies and similar technologies to serve ads based on your visits to this and other websites. We do not control the content of third-party ads or the sites they link to, and their inclusion does not constitute our endorsement. Please refer to our Privacy Policy for more information on how third-party vendors use data.</p>
-  <p><strong>No Warranty:</strong> This site is provided "as is." We do not guarantee it will be error-free, uninterrupted, or fit for any particular purpose beyond casual entertainment.</p>
-  <p><strong>Limitation of Liability:</strong> Charade Generator and its owners are not liable for any damages, disputes, or issues (including but not limited to disagreements during gameplay, misuse of the timer, reliance on word content, or interactions with third-party ads or affiliate links) arising from use of this site.</p>
-</div>
-  <!-- COMMON FOOTER -->
+
+<!-- COMMON FOOTER -->
 <footer class="footer">
   <div class="footer-links">
     <a href="about-us.html">About Us</a>
     <a href="contact-us.html">Contact Us</a>
     <a href="privacy-policy.html">Privacy Policy</a>
-    <a href="terms-and-conditions.html">Terms & Conditions</a>
+    <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
     <a href="disclaimer.html">Disclaimer</a>
   </div>
   <p>© CharadeGenerator 2026</p>
