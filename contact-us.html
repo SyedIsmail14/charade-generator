@@ -5,14 +5,14 @@
   <title>Contact Us | Charade Generator</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="icon" type="image/x-icon" href="/assests/favicon.ico">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assests/favicon-16x16.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assests/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="48x48" href="/assests/favicon-48x48.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assests/apple-touch-icon-180x180.png">
-  <link rel="apple-touch-icon" href="/assests/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/assests/android-chrome-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/assests/android-chrome-512x512.png">
+  <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon-180x180.png">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/android-chrome-512x512.png">
 
   <meta name="description" content="Contact Charade Generator for feedback, suggestions, or support.">
 
@@ -324,6 +324,7 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 14px;
+      margin-bottom: 40px;
     }
 
     .trust-item {
@@ -332,6 +333,15 @@
       border-radius: 12px;
       padding: 18px 16px;
       text-align: center;
+      text-decoration: none;
+      display: block;
+      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+
+    .trust-item:hover {
+      border-color: #c7d2fe;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(99,102,241,0.10);
     }
 
     .trust-item .t-icon {
@@ -352,6 +362,28 @@
       font-size: 14px;
       color: #1e293b;
       margin-bottom: 4px;
+    }
+
+    /* LEGAL NOTE (short pointer, full text lives on the dedicated pages) */
+    .contact-legal-note {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 20px 24px;
+      margin-bottom: 8px;
+      font-size: 14px;
+      color: #64748b;
+      line-height: 1.7;
+    }
+
+    .contact-legal-note a {
+      color: #6366f1;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .contact-legal-note a:hover {
+      text-decoration: underline;
     }
 
     /* Animations */
@@ -428,7 +460,12 @@
       <p class="form-sub">Fill out the form below and it'll land straight in our inbox.</p>
 
       <form id="contactForm">
-        <!-- Web3Forms access key: get a free one at https://web3forms.com and paste it here -->
+        <!--
+          SETUP REQUIRED: get a free access key at https://web3forms.com
+          and replace YOUR_WEB3FORMS_ACCESS_KEY below. The form will not
+          send messages until this is done — right now it will show the
+          "Something went wrong" error on every submit.
+        -->
         <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
         <input type="hidden" name="subject" value="New message from Charade Generator contact form">
         <input type="hidden" name="from_name" value="Charade Generator Website">
@@ -504,47 +541,40 @@
       <p><strong>Tip for faster replies:</strong> Include a clear description of your query. If reporting a bug, mention your device and browser so we can investigate and fix it faster.</p>
     </div>
 
-    <!-- TRUST STRIP -->
+    <!-- TRUST STRIP (now real links) -->
     <div class="contact-trust fade-up">
-      <div class="trust-item">
+      <a class="trust-item" href="privacy-policy.html">
         <span class="t-icon">📄</span>
         <strong>Privacy Policy</strong>
         <p>How we handle your data</p>
-      </div>
-      <div class="trust-item">
+      </a>
+      <a class="trust-item" href="terms-and-conditions.html">
         <span class="t-icon">📋</span>
-        <strong>Terms & Conditions</strong>
+        <strong>Terms &amp; Conditions</strong>
         <p>Acceptable use guidelines</p>
-      </div>
-      <div class="trust-item">
+      </a>
+      <a class="trust-item" href="disclaimer.html">
         <span class="t-icon">⚠️</span>
         <strong>Disclaimer</strong>
         <p>Platform limitations</p>
-      </div>
+      </a>
+    </div>
+
+    <!-- LEGAL NOTE (pointer only — full text lives on the dedicated pages) -->
+    <div class="contact-legal-note fade-up">
+      Charade Generator is provided for entertainment purposes and uses third-party advertising. For full details on data use, liability, and site terms, see our <a href="privacy-policy.html">Privacy Policy</a>, <a href="terms-and-conditions.html">Terms &amp; Conditions</a>, and <a href="disclaimer.html">Disclaimer</a>.
     </div>
 
   </div>
 </main>
-<div class="charades-disclaimer">
-  <strong>Disclaimer</strong>
-  <p><strong>General:</strong> The content on Charade Generator, including all charades words, phrases, categories (such as "Kids" and "Animals"), and the built-in timer, is provided for entertainment and gameplay purposes only. Nothing on this site constitutes professional, educational, medical, legal, or safety advice.</p>
-  <p><strong>Charades Words &amp; Categories</strong></p>
-  <ul>
-    <li>All prompts are randomly generated or selected from a curated word list intended for casual, family-friendly play.</li>
-    <li>Categories like "Animals" and "Kids" are labeled by theme (i.e., words that are easy for children to act out or are animal-related) and are not a certification that content has been reviewed against every regional child-content regulation. Parents/guardians should supervise use by young children, as with any game.</li>
-    <li>We do not guarantee that every word will suit every age group, region, or audience. Users are responsible for choosing categories appropriate to their group.</li>
-  </ul>
-  <p><strong>Timer Feature:</strong> The countdown timer is included solely to support gameplay (e.g., timing a turn or round). It is not intended for any other timing, scheduling, or safety-critical use, and we make no guarantees about its precision for purposes outside casual gameplay.</p>
-  <p><strong>No Warranty:</strong> This site is provided "as is." We do not guarantee it will be error-free, uninterrupted, or fit for any particular purpose beyond casual entertainment.</p>
-  <p><strong>Limitation of Liability:</strong> Charade Generator and its owners are not liable for any damages, disputes, or issues (including but not limited to disagreements during gameplay, misuse of the timer, or reliance on word content) arising from use of this site.</p>
-</div>
-  <!-- COMMON FOOTER -->
+
+<!-- COMMON FOOTER -->
 <footer class="footer">
   <div class="footer-links">
     <a href="about-us.html">About Us</a>
     <a href="contact-us.html">Contact Us</a>
     <a href="privacy-policy.html">Privacy Policy</a>
-    <a href="terms-and-conditions.html">Terms & Conditions</a>
+    <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
     <a href="disclaimer.html">Disclaimer</a>
   </div>
   <p>© CharadeGenerator 2026</p>
@@ -594,7 +624,6 @@
     }
   });
 </script>
-
 
 </body>
 </html>
