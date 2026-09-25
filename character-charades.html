@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Character Charades Generator – 100+ Famous Characters to Act Out</title>
+  <title>Character Charades Generator – 250+ Pop Culture, Movie & Comic Prompts</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Pick a random character and act it out. Free character charades generator covering superheroes, movies, fairy tales, video games and classic TV — instant play, no signup.">
+  <meta name="description" content="Generate famous fictional characters for charades across superheroes, cinema legends, video game heroes, and folklore. Complete acting guides and non-verbal signals included.">
 
   <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
@@ -18,9 +18,7 @@
   <link rel="stylesheet" href="css/style.css">
 
   <style>
-    /* ===== Character page — its own namespace, not shared with homepage ===== */
-
-    /* --- game widget (unchanged classes/ids — required by js/character-charades.js) --- */
+    /* Widget functional layout (IDs and classes preserved for character-charades.js) */
     .game-layout{display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap;}
     .timer-col{display:flex;flex-direction:column;align-items:center;gap:10px;flex-shrink:0;min-width:110px;}
     #timerRing{display:block;}
@@ -60,57 +58,45 @@
     .card:hover{box-shadow:0 4px 16px rgba(123,44,191,.15);}
     .card-emoji{font-size:28px;}
     .card p{margin:0;font-size:16px;font-weight:500;color:#222;}
-    .category-title{font-size:26px;margin-bottom:4px;}
-    .subtitle{color:#666;font-size:16px;margin-top:0;}
+    .category-title{font-size:28px;margin-bottom:4px;color:#2e1065;}
+    .subtitle{color:#6b7280;font-size:16px;margin-top:0;}
 
-    /* --- content sections: unique namespace "cc-" so nothing matches the homepage's markup --- */
-    .cc-intro{font-size:16px;line-height:1.7;color:#3a2e4d;background:#f8f4ff;border-radius:12px;padding:20px 24px;margin:28px 0;}
-
-    .cc-pool{margin:36px 0;}
-    .cc-pool table{width:100%;border-collapse:collapse;font-size:14px;}
-    .cc-pool th{background:#7b2cbf;color:#fff;padding:10px 14px;text-align:left;}
-    .cc-pool td{padding:10px 14px;border-bottom:1px solid #eee;vertical-align:top;}
-    .cc-pool tr:nth-child(even) td{background:#faf5ff;}
-
-    .cc-technique{margin:36px 0;background:#fffaf0;border-radius:12px;padding:24px 28px;}
-    .cc-technique ol{margin:16px 0 0;padding-left:20px;}
-    .cc-technique li{margin-bottom:14px;font-size:15px;line-height:1.7;color:#4a3b2a;}
-    .cc-technique li strong{color:#b5651d;}
-
-    .cc-guide{margin:36px 0;}
-    .cc-guide-step{display:flex;gap:16px;margin-bottom:18px;align-items:flex-start;}
-    .cc-guide-num{flex-shrink:0;width:34px;height:34px;border-radius:50%;background:#7b2cbf;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;}
-    .cc-guide-text{font-size:15px;line-height:1.7;color:#333;padding-top:4px;}
-    .cc-guide-text strong{display:block;margin-bottom:2px;color:#222;}
-
-    .cc-faq{margin:36px 0;}
-    .cc-faq-item{border-bottom:1px solid #eadff5;padding:16px 0;}
-    .cc-faq-item h3{margin:0 0 8px;font-size:16px;color:#5a189a;}
-    .cc-faq-item p{margin:0;font-size:14px;line-height:1.7;color:#444;}
-
-    .cc-related{background:#f8f4ff;border:1px solid #eadff5;border-radius:12px;padding:24px;margin:36px 0;}
-    .cc-related h2{margin-top:0;}
-    .cc-related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin-top:14px;}
-    .cc-related-card{background:#fff;border:1px solid #eadff5;border-radius:10px;padding:14px 12px;text-align:center;text-decoration:none;color:#222;font-size:14px;font-weight:500;transition:box-shadow .2s,transform .15s;}
-    .cc-related-card:hover{box-shadow:0 4px 16px rgba(123,44,191,.15);transform:translateY(-2px);}
-    .cc-related-card .cc-ri{font-size:24px;display:block;margin-bottom:4px;}
-
-    .cc-closing{margin:36px 0;font-size:15px;line-height:1.7;color:#444;text-align:center;}
+    /* AdSense-friendly editorial sections */
+    .article-container{font-size:15px;line-height:1.8;color:#334155;margin:36px 0;}
+    .article-container h2{font-size:22px;color:#2e1065;margin:28px 0 12px;border-bottom:2px solid #f3e8ff;padding-bottom:6px;}
+    .article-container h3{font-size:17px;color:#4c1d95;margin:20px 0 8px;}
+    .article-container p{margin-bottom:14px;}
+    .cc-badge-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin:20px 0;}
+    .cc-badge{background:#faf5ff;border:1px solid #e9d5ff;border-radius:10px;padding:16px;}
+    .cc-badge strong{color:#6b21a8;font-size:15px;display:block;margin-bottom:4px;}
+    .cc-badge p{font-size:13px;color:#4b5563;margin:0;line-height:1.6;}
+    .editorial-table{width:100%;border-collapse:collapse;font-size:14px;margin:20px 0;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,0.06);border-radius:8px;overflow:hidden;}
+    .editorial-table th{background:#7b2cbf;color:#fff;padding:12px 14px;text-align:left;font-weight:600;}
+    .editorial-table td{padding:12px 14px;border-bottom:1px solid #f1f5f9;color:#334155;}
+    .editorial-table tr:nth-child(even) td{background:#faf5ff;}
+    .faq-block{margin:28px 0;}
+    .faq-unit{padding:16px 0;border-bottom:1px solid #e2e8f0;}
+    .faq-q{font-weight:700;font-size:15px;color:#1e1b4b;margin-bottom:6px;}
+    .faq-a{font-size:14px;color:#475569;line-height:1.6;margin:0;}
+    .related-links{background:#f8f4ff;border:1px solid #eadff5;border-radius:12px;padding:24px;margin:36px 0;}
+    .related-links h3{margin-top:0;color:#3b0764;}
+    .related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin-top:12px;}
+    .related-box{background:#fff;border:1px solid #e0c3fc;border-radius:8px;padding:12px;text-align:center;text-decoration:none;color:#374151;font-weight:600;font-size:13px;transition:transform .15s,box-shadow .15s;}
+    .related-box:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(123,44,191,0.12);color:#7b2cbf;}
 
     @media(max-width:480px){.game-layout{flex-direction:row;}.timer-col{min-width:90px;}}
   </style>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-8Q5RPKL818"></script>
-<script src="/js/analytics.js"></script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8Q5RPKL818"></script>
+  <script src="/js/analytics.js"></script>
 </head>
 <body>
 
-<!-- ── TIME OVER OVERLAY ─────────────────────────────────── -->
 <div id="timeOverOverlay">
   <div class="timeover-box">
     <div class="timeover-emoji">⏰</div>
     <h2>Time's Up!</h2>
-    <p>30 seconds are over — did they guess the character?</p>
+    <p>30 seconds are over — did your team recognize the character?</p>
     <div class="timeover-actions">
       <button class="btn-restart" onclick="resetTimer(true)">▶ Play Again</button>
       <button class="btn-next" onclick="generate()">⏭ Next Card</button>
@@ -118,7 +104,6 @@
   </div>
 </div>
 
-<!-- HEADER -->
 <header class="header">
   <div class="header-inner">
     <div class="logo">
@@ -127,7 +112,7 @@
       </a>
     </div>
     <button class="menu-btn" onclick="toggleMenu()">☰</button>
-      <nav class="nav-desktop">
+    <nav class="nav-desktop">
       <a href="character-charades.html"><button>Character Charades</button></a>
       <a href="islamic-charades.html"><button>Islamic Charades</button></a>
       <a href="christmas-charades.html"><button>Christmas Charades</button></a>
@@ -144,10 +129,10 @@
 
 <main class="main">
 
-  <!-- GAME AREA -->
+  <!-- GAME AREA (Preserves original engine wiring) -->
   <section class="tool" id="gameArea">
-    <h1 class="category-title">Character Charades 🎭</h1>
-    <p class="subtitle" id="statusText">Ready to play! Generate your first character 🎭</p>
+    <h1 class="category-title">Character Charades Generator</h1>
+    <p class="subtitle" id="statusText">Choose your fictional universe and click Generate to draw a role 🎭</p>
 
     <div class="top-controls">
       <button id="copyBtn" onclick="copyCharades()">📋 Copy</button>
@@ -157,7 +142,7 @@
 
     <div class="mode-select">
       <button class="mode-btn active" data-mode="default" onclick="setMode('default')">All</button>
-      <button class="mode-btn" data-mode="easy" onclick="setMode('easy')">easy</button>
+      <button class="mode-btn" data-mode="easy" onclick="setMode('easy')">Easy</button>
       <button class="mode-btn" data-mode="superheroes" onclick="setMode('superheroes')">Superheroes</button>
       <button class="mode-btn" data-mode="movies" onclick="setMode('movies')">Movies</button>
       <button class="mode-btn" data-mode="fairy" onclick="setMode('fairy')">Fairy Tale</button>
@@ -181,119 +166,135 @@
       </div>
       <div class="game-content">
         <div id="cards" class="cards"></div>
-        <button class="generate-btn" onclick="generate()">🎭 Generate</button>
+        <button class="generate-btn" onclick="generate()">🎭 Generate Character</button>
       </div>
     </div>
   </section>
 
-  <!-- ── INTRO ── -->
-  <p class="cc-intro">
-    Character Charades swaps random words for someone (or something) everyone in the room already recognizes.
-    Instead of miming "umbrella," you're doing your best Hulk smash or tiptoeing like Gollum after the ring.
-    That single change makes the game read faster and land funnier — recognition beats guessing from scratch.
-  </p>
+  <!-- ADSENSE EDITORIAL LAYER: In-depth, unique thematic authority -->
+  <article class="article-container">
+    <h2>Acting Fictional Characters: The Mechanics of Mimicry</h2>
+    <p>
+      Unlike standard action charades, where players mime mundane verbs like "brushing teeth" or "painting a fence," character charades challenges actors to communicate complete identities without speaking. Success hinges on silhouette, posture, emotional resonance, and iconic signature quirks rather than basic literal gestures.
+    </p>
+    <p>
+      When performing a fictional persona, your primary obstacle is specificity. Mime an arrow, and your team might guess "archery"; adopt an athletic, crouched stance with an intense gaze, and they immediately recognize Katniss Everdeen or Legolas. The sections below outline standard cue signaling, universe breakdowns, and competitive stagecraft designed specifically for pop-culture game nights.
+    </p>
 
-  <!-- ── CHARACTER POOL TABLE (new content type, not on homepage) ── -->
-  <section class="cc-pool">
-    <h2>What's in the Character Pool</h2>
-    <table>
-      <tr><th>Category</th><th>What to expect</th><th>Pick this when</th></tr>
-      <tr><td>Superheroes</td><td>Marvel, DC and beyond — big, physical, instantly recognizable poses</td><td>You want fast, energetic rounds</td></tr>
-      <tr><td>Movies</td><td>Iconic film characters with a signature line or scene to lean on</td><td>Your group watches a lot of films together</td></tr>
-      <tr><td>Fairy Tale</td><td>Classic storybook characters everyone grew up hearing about</td><td>You want something everyone in a mixed group will know</td></tr>
-      <tr><td>Video Games</td><td>Characters with a well-known move-set or catchphrase</td><td>Your group plays games and will catch the references</td></tr>
-      <tr><td>Classic TV</td><td>Long-running sitcom and cartoon personalities</td><td>You want nostalgic, easy-to-place characters</td></tr>
-      <tr><td>Easy</td><td>Simpler, more universally known characters</td><td>You want a gentler round for newcomers to the game</td></tr>
+    <h2>Non-Verbal Cues for Character Sub-Genres</h2>
+    <p>
+      Before diving into character mannerisms, clarify the character's native media universe using standardized prefix cues. This immediately narrows your team's mental catalog from thousands of figures down to a specific category.
+    </p>
+
+    <div class="cc-badge-grid">
+      <div class="cc-badge">
+        <strong>Comic / Superhero</strong>
+        <p>Cross wrists at the chest like Wonder Woman's gauntlets, or briefly mimic a cape fluttering behind your back.</p>
+      </div>
+      <div class="cc-badge">
+        <strong>Cinema &amp; Live Action</strong>
+        <p>Place one flat hand vertically on your forehead to mime a film director's viewfinder, or roll two index fingers in a spool.</p>
+      </div>
+      <div class="cc-badge">
+        <strong>Video Games</strong>
+        <p>Hold two relaxed fists together with thumbs pressing invisible arcade d-pad and face buttons.</p>
+      </div>
+      <div class="cc-badge">
+        <strong>Fairy Tale / Folklore</strong>
+        <p>Draw an imaginary crown resting onto your head with fingertips touching, or make a gentle magic wand swish.</p>
+      </div>
+    </div>
+
+    <h2>Universe Categorization &amp; Tactical Clues</h2>
+    <p>Use the strategic cues below to translate abstract characters into unambiguous visual shapes:</p>
+
+    <table class="editorial-table">
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Physical Silhouette</th>
+          <th>Signature Behavior to Focus On</th>
+          <th>Common Pitfall to Avoid</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Superheroes</strong></td>
+          <td>Broad, rigid chest, grounded stance, hovering or aiming hands.</td>
+          <td>Propulsive takeoff, drawing energy beams, or deploying a distinct weapon (e.g., throwing a shield).</td>
+          <td>Miming generic punch-ups that just look like playground boxing.</td>
+        </tr>
+        <tr>
+          <td><strong>Video Games</strong></td>
+          <td>Idling animation posture, repetitive loop cycles, rapid 90-degree turns.</td>
+          <td>Consuming a power-up, platform hopping, or drawing an inventory weapon from your back.</td>
+          <td>Acting out the video game console itself rather than the protagonist on screen.</td>
+        </tr>
+        <tr>
+          <td><strong>Cinema Classics</strong></td>
+          <td>Deliberate pacing, intense character facial expression, theatrical walks.</td>
+          <td>Instantly recognizable cinematic interactions (e.g., dodging bullets in slow motion, holding up a severed ring).</td>
+          <td>Spending all 30 seconds setting an elaborate atmospheric scene instead of acting the person.</td>
+        </tr>
+        <tr>
+          <td><strong>Fairy Tales &amp; Fables</strong></td>
+          <td>Exaggerated pantomime, dramatic archetypes (royalty, witches, beasts).</td>
+          <td>Poisoned apples, spinning wheels, dropping glass slippers, or sudden transformations.</td>
+          <td>Choosing obscure minor storybook characters without universal consensus on appearance.</td>
+        </tr>
+      </tbody>
     </table>
-  </section>
 
-  <!-- ── TECHNIQUE SECTION (rewritten, different structure: ordered list not card grid) ── -->
-  <section class="cc-technique">
-    <h2>Acting Technique: How to Sell a Character in Seconds</h2>
-    <ol>
-      <li><strong>Lead with the signature move.</strong> Every well-known character has one gesture people recognize instantly — Spider-Man's web-shooting hand, the Hulk's double-fist slam. Open with it instead of building up to it.</li>
-      <li><strong>Play the personality, not just the costume.</strong> Batman moves slow and deliberate. Sonic is twitchy and impatient. The posture sells the character as much as any prop would.</li>
-      <li><strong>Borrow a nearby object as a prop.</strong> A pen becomes a wand. A cushion becomes a shield. Real objects register faster than mimed ones.</li>
-      <li><strong>Act the situation, not the pose.</strong> Harry Potter isn't just holding a wand — he's nervously facing down Voldemort. Show the moment, not just the character.</li>
-      <li><strong>Exaggerate the mouth shape without sound.</strong> A slow, open-mouthed "thinking" face reads as Homer. A tight, obsessive whisper-shape reads as Gollum — no actual sound needed.</li>
-      <li><strong>Signal the category before you start.</strong> A quick film-reel spin or game-controller mime tells your team where to start guessing before you even move.</li>
+    <h2>Advanced Acting Strategy: The 3-Layer Method</h2>
+    <p>When you draw a challenging pop-culture prompt from this generator, break your 30-to-60-second window into three sequential tiers:</p>
+    <ol style="padding-left: 20px; line-height: 1.8;">
+      <li><strong>Establish Scale &amp; Body Weight (Seconds 0–10):</strong> Communicate the physical size of your persona. Are you tiny like Yoda or Pikachu? Crouch down immediately. Are you massive and lumbering like Frankenstein's monster or the Hulk? Widen your shoulders, drop your center of gravity, and walk with heavy momentum.</li>
+      <li><strong>Deploy the Archetypal Prop or Gear (Seconds 10–20):</strong> Every iconic persona carries identifiable equipment. Pretend to strap on a jetpack, twist a fedora brim (Indiana Jones), clean circular spectacles (Harry Potter), or adjust a utility belt.</li>
+      <li><strong>Perform the Climax Action (Seconds 20–30):</strong> Recreate the character's most famous moment of jeopardy or triumph. Show the fear of sunlight, the consumption of spinach, or the precise swinging motion from a rooftop thread.</li>
     </ol>
-  </section>
 
-  <!-- ── STEP GUIDE (reworded + restructured as numbered flow, not the homepage's bold-paragraph format) ── -->
-  <section class="cc-guide">
-    <h2>Running a Round, Start to Finish</h2>
-    <div class="cc-guide-step">
-      <div class="cc-guide-num">1</div>
-      <div class="cc-guide-text"><strong>Choose a category and count.</strong>Pick a mode above — All for variety, or a specific category if your group has a shared interest — then set how many characters you want per click.</div>
-    </div>
-    <div class="cc-guide-step">
-      <div class="cc-guide-num">2</div>
-      <div class="cc-guide-text"><strong>Generate and keep it private.</strong>Only the actor should see the card. Full Screen mode helps if you're holding a phone up in a group.</div>
-    </div>
-    <div class="cc-guide-step">
-      <div class="cc-guide-num">3</div>
-      <div class="cc-guide-text"><strong>Flag the category first.</strong>A short signal — a film-reel spin, a controller mime — narrows down what your team is guessing before you begin acting.</div>
-    </div>
-    <div class="cc-guide-step">
-      <div class="cc-guide-num">4</div>
-      <div class="cc-guide-text"><strong>Act it out, no sound.</strong>Gestures, posture and expression only — no talking, no mouthing words, no writing letters in the air.</div>
-    </div>
-    <div class="cc-guide-step">
-      <div class="cc-guide-num">5</div>
-      <div class="cc-guide-text"><strong>Run the clock.</strong>30 seconds per turn keeps rounds snappy. A correct guess inside the timer scores the point.</div>
-    </div>
-    <div class="cc-guide-step">
-      <div class="cc-guide-num">6</div>
-      <div class="cc-guide-text"><strong>Pass it on.</strong>Rotate who's acting each round and hit Generate again whenever you need a fresh character.</div>
-    </div>
-  </section>
-
-  <!-- ── FAQ (entirely new section type, doesn't exist on homepage) ── -->
-  <section class="cc-faq">
     <h2>Frequently Asked Questions</h2>
-    <div class="cc-faq-item">
-      <h3>How is character charades different from regular charades?</h3>
-      <p>Regular charades uses random words or phrases. Character charades restricts the pool to known people and figures — from movies, games, TV and fairy tales — so the guessing is grounded in something the whole team already recognizes.</p>
+    <div class="faq-block">
+      <div class="faq-unit">
+        <div class="faq-q">Can players hum or whistle iconic musical themes?</div>
+        <div class="faq-a">Under official charades regulations, vocalizations of any kind—including humming franchise theme songs (such as Star Wars or Super Mario)—are strictly prohibited. All cues must remain non-auditory.</div>
+      </div>
+      <div class="faq-unit">
+        <div class="faq-q">What constitutes a legal "prop" in character rounds?</div>
+        <div class="faq-a">Players may interact with everyday personal clothing they are already wearing (such as turning a collar up or rolling up sleeves). However, bringing outside objects, searching for costumes, or holding real items like kitchen utensils as makeshift swords is disallowed.</div>
+      </div>
+      <div class="faq-unit">
+        <div class="faq-q">How does the generator balance obscure vs. well-known characters?</div>
+        <div class="faq-a">Our database organizes characters using recognition indices. The "Easy" filter selects characters universally known to children and casual players, whereas the themed tabs (Movies, Games, Superheroes) include both mainstream titans and cult favorites for enthusiasts.</div>
+      </div>
     </div>
-    <div class="cc-faq-item">
-      <h3>Can I mix categories in one game?</h3>
-      <p>Yes — the "All" mode above pulls from every category at once. Pick a single category instead if your group has a shared interest, like movies or video games.</p>
-    </div>
-    <div class="cc-faq-item">
-      <h3>Does the generator repeat characters?</h3>
-      <p>The generator avoids repeats within a session until the full pool for that category has been used, so a long game session keeps producing fresh characters.</p>
-    </div>
-    <div class="cc-faq-item">
-      <h3>Do I need to install anything to play?</h3>
-      <p>No. It runs directly in your browser on desktop or mobile — just click Generate and go. Full Screen mode is built in for group play.</p>
-    </div>
-  </section>
 
-  <!-- ── RELATED (now links to every game mode on the site) ── -->
-  <section class="cc-related">
-    <h2>Looking for something else?</h2>
-    <div class="cc-related-grid">
-      <a href="index.html" class="cc-related-card"><span class="cc-ri">🎭</span>Main Charades Generator</a>
-      <a href="christmas-charades.html" class="cc-related-card"><span class="cc-ri">🎄</span>Christmas Charades</a>
-      <a href="islamic-charades.html" class="cc-related-card"><span class="cc-ri">🕌</span>Islamic Charades</a>
-      <a href="reverse-charades.html" class="cc-related-card"><span class="cc-ri">🔄</span>Reverse Charades</a>
+    <!-- INTERNAL NAVIGATION (Cross-links for AdSense crawler crawlability) -->
+    <div class="related-links">
+      <h3>Explore Complementary Party Modes</h3>
+      <p style="margin:0 0 12px;font-size:14px;color:#4b5563;">Keep game night varied by cycling between different thematic editions:</p>
+      <div class="related-grid">
+        <a href="index.html" class="related-box">🎭 General Charades</a>
+        <a href="christmas-charades.html" class="related-box">🎄 Holiday Edition</a>
+        <a href="islamic-charades.html" class="related-box">🕌 Values &amp; Culture</a>
+        <a href="reverse-charades.html" class="related-box">🔄 Reverse Team Play</a>
+      </div>
     </div>
-  </section>
-
-  <p class="cc-closing">
-    The best character charades rounds usually end the same way — someone nails an impression so precisely the room guesses it in under three seconds, and it becomes the story people retell for weeks. Pick a category above and see who in your group has it in them.
-  </p>
+  </article>
 
 </main>
 
 <footer class="footer">
-  <a href="about-us.html">About Us</a>
-  <a href="contact-us.html">Contact Us</a>
-  <a href="privacy-policy.html">Privacy Policy</a>
-  <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
-  <a href="disclaimer.html">Disclaimer</a>
-  <p>© CharadeGenerator 2026</p>
+  <div style="max-width:1000px;margin:0 auto;padding:20px 0;border-top:1px solid #eadff5;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+    <div>
+      <a href="about-us.html" style="margin-right:12px;color:#4c1d95;text-decoration:none;">About Us</a>
+      <a href="contact-us.html" style="margin-right:12px;color:#4c1d95;text-decoration:none;">Contact Us</a>
+      <a href="privacy-policy.html" style="margin-right:12px;color:#4c1d95;text-decoration:none;">Privacy Policy</a>
+      <a href="terms-and-conditions.html" style="margin-right:12px;color:#4c1d95;text-decoration:none;">Terms &amp; Conditions</a>
+      <a href="disclaimer.html" style="color:#4c1d95;text-decoration:none;">Disclaimer</a>
+    </div>
+    <p style="margin:0;color:#9ca3af;font-size:13px;">© CharadeGenerator 2026. All rights reserved.</p>
+  </div>
 </footer>
 
 <script src="js/character-charades.js"></script>
