@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Charades Generator – Free Online Game for Easy, Families & Parties</title>
+  <title>Charades Generator – Free Word Prompts, Rules & Party Ideas</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Play funny, real-life charades online. Generate charades for Easy, families, parties, and classrooms. 500+ charade ideas, multiple categories, free and easy to play.">
+  <meta name="description" content="Free online charades word generator with hundreds of fresh ideas for kids, teens, and adults. Includes official rules, hand signals, printable ideas, and custom game timers.">
 
   <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
@@ -14,7 +14,6 @@
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/android-chrome-192x192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="/assets/android-chrome-512x512.png">
-
 
   <link rel="stylesheet" href="css/style.css">
 
@@ -35,30 +34,30 @@
     .word-columns{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;margin-top:16px;}
     .word-col h4{margin:0 0 8px;font-size:14px;text-transform:uppercase;letter-spacing:.5px;color:#3b5bdb;}
     .word-col ul{margin:0;padding-left:18px;font-size:14px;line-height:1.9;color:#333;}
-    .tips-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-top:16px;}
-    .tip-card{background:#fff8f0;border-left:4px solid #f76707;border-radius:8px;padding:14px 16px;}
-    .tip-card h4{margin:0 0 6px;font-size:15px;}
-    .tip-card p{margin:0;font-size:13px;color:#555;line-height:1.6;}
-    .compare-table{width:100%;border-collapse:collapse;font-size:14px;margin-top:16px;}
-    .compare-table th{background:#3b5bdb;color:#fff;padding:10px 14px;text-align:left;}
-    .compare-table td{padding:10px 14px;border-bottom:1px solid #eee;}
-    .compare-table tr:nth-child(even) td{background:#f6f8ff;}
+    .tips-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;margin-top:16px;}
+    .tip-card{background:#fff;border:1px solid #e2e8f0;border-left:4px solid #3b5bdb;border-radius:8px;padding:16px;}
+    .tip-card h4{margin:0 0 6px;font-size:16px;color:#1e293b;}
+    .tip-card p{margin:0;font-size:14px;color:#475569;line-height:1.6;}
+    .compare-table{width:100%;border-collapse:collapse;font-size:14px;margin-top:16px;box-shadow:0 1px 3px rgba(0,0,0,0.05);background:#fff;border-radius:8px;overflow:hidden;}
+    .compare-table th{background:#3b5bdb;color:#fff;padding:12px 16px;text-align:left;font-weight:600;}
+    .compare-table td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#334155;line-height:1.6;}
+    .compare-table tr:nth-child(even) td{background:#f8fafc;}
     .stats-bar{display:flex;gap:24px;flex-wrap:wrap;background:#3b5bdb;border-radius:12px;padding:20px 24px;margin:24px 0;color:#fff;}
     .stat-item{text-align:center;flex:1;min-width:100px;}
     .stat-num{font-size:28px;font-weight:700;}
-    .stat-label{font-size:12px;opacity:.8;margin-top:2px;}
-    .seo-text{font-size:16px;line-height:1.7;color:#444;}
-    .content-section{margin:40px 0;}
-    .how-to{background:#f8faff;padding:24px 28px;border-radius:12px;margin:32px 0;}
-    .how-to p{font-size:15px;line-height:1.8;}
-    .category-title{font-size:26px;margin-bottom:4px;}
-    .subtitle{color:#666;font-size:16px;margin-top:0;}
-    .home-heading{font-size:22px;margin:36px 0 8px;color:#0f172a;}
+    .stat-label{font-size:12px;opacity:.9;margin-top:2px;}
+    .editorial-block{font-size:15px;line-height:1.8;color:#334155;margin:32px 0;}
+    .editorial-block h2{font-size:24px;color:#0f172a;margin-bottom:12px;}
+    .editorial-block h3{font-size:18px;color:#1e293b;margin-top:20px;margin-bottom:8px;}
+    .editorial-block p{margin-bottom:14px;}
+    .category-title{font-size:28px;margin-bottom:4px;color:#0f172a;}
+    .subtitle{color:#64748b;font-size:16px;margin-top:0;}
+    .faq-item{border-bottom:1px solid #e2e8f0;padding:16px 0;}
+    .faq-question{font-weight:700;font-size:16px;color:#1e293b;margin-bottom:6px;}
+    .faq-answer{font-size:14px;color:#475569;line-height:1.6;margin:0;}
 
     /* ── GAME LAYOUT ────────────────────────────────── */
     .game-layout{display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap;}
-
-    /* LEFT – timer */
     .timer-col{display:flex;flex-direction:column;align-items:center;gap:10px;flex-shrink:0;min-width:110px;}
     #timerRing{display:block;}
     .timer-btn-row{display:flex;flex-direction:column;gap:8px;width:100%;}
@@ -67,13 +66,8 @@
     #timerResetBtn{background:#f0f4ff;color:#3b5bdb;border:1px solid #dde4f5;border-radius:8px;padding:7px 0;font-size:13px;font-weight:600;cursor:pointer;width:100%;transition:background .2s;}
     #timerResetBtn:hover{background:#dde4f5;}
 
-    /* RIGHT – content */
     .game-content{flex:1;min-width:240px;}
-
-    /* cards */
     #cards{margin-bottom:14px;min-height:60px;}
-
-    /* round picker */
     .round-pick{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;}
     .round-btn{background:#f0f4ff;border:2px solid #dde4f5;border-radius:8px;padding:8px 22px;font-size:16px;font-weight:700;cursor:pointer;transition:all .2s;color:#3b5bdb;}
     .round-btn.active,.round-btn:hover{background:#3b5bdb;border-color:#3b5bdb;color:#fff;}
@@ -92,22 +86,18 @@
     .btn-next{background:#40c057;color:#fff;border:none;border-radius:10px;padding:13px 26px;font-size:15px;font-weight:700;cursor:pointer;transition:background .2s,transform .15s;}
     .btn-next:hover{background:#2f9e44;transform:scale(1.05);}
 
-    /* ── MODE SELECT ── */
     .mode-select{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;}
     .mode-btn{background:#f0f4ff;border:2px solid #dde4f5;border-radius:8px;padding:8px 18px;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;color:#3b5bdb;}
     .mode-btn.active,.mode-btn:hover{background:#3b5bdb;border-color:#3b5bdb;color:#fff;}
 
-    /* ── TOP CONTROLS ── */
     .top-controls{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px;align-items:center;}
     .top-controls button{background:#fff;border:2px solid #3b5bdb;border-radius:8px;padding:6px 16px;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;color:#3b5bdb;}
     .top-controls button:hover{background:#3b5bdb;color:#fff;}
     .copy-msg{display:none;color:#40c057;font-weight:700;font-size:14px;}
 
-    /* ── GENERATE BUTTON ── */
     .generate-btn{background:#3b5bdb;color:#fff;border:none;border-radius:10px;padding:14px 40px;font-size:18px;font-weight:700;cursor:pointer;transition:all .2s;margin-top:6px;}
     .generate-btn:hover{background:#2b4ab5;transform:scale(1.02);}
 
-    /* ── CARDS ── */
     .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin-bottom:16px;width:100%;}
     .card{background:#fff;border:2px solid #dde4f5;border-radius:12px;padding:18px 16px;display:flex;align-items:center;gap:12px;transition:box-shadow .2s;}
     .card:hover{box-shadow:0 4px 16px rgba(59,91,219,.12);}
@@ -116,17 +106,16 @@
 
     @media(max-width:480px){.game-layout{flex-direction:row;}.timer-col{min-width:90px;}}
   </style>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-8Q5RPKL818"></script>
-<script src="/js/analytics.js"></script></head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8Q5RPKL818"></script>
+  <script src="/js/analytics.js"></script>
+</head>
 <body>
 
-<!-- ── TIME OVER OVERLAY ─────────────────────────────────── -->
 <div id="timeOverOverlay">
   <div class="timeover-box">
     <div class="timeover-emoji">⏰</div>
     <h2>Time's Up!</h2>
-    <p>30 seconds are over — did they guess the charade?</p>
+    <p>30 seconds are over — did your team guess correctly?</p>
     <div class="timeover-actions">
       <button class="btn-restart" onclick="resetTimer(true)">▶ Play Again</button>
       <button class="btn-next" onclick="generate()">⏭ Next Card</button>
@@ -134,7 +123,6 @@
   </div>
 </div>
 
-<!-- HEADER -->
 <header class="header">
   <div class="header-inner">
     <div class="logo">
@@ -143,7 +131,7 @@
       </a>
     </div>
     <button class="menu-btn" onclick="toggleMenu()">☰</button>
-     <nav class="nav-desktop">
+    <nav class="nav-desktop">
       <a href="character-charades.html"><button>Character Charades</button></a>
       <a href="islamic-charades.html"><button>Islamic Charades</button></a>
       <a href="christmas-charades.html"><button>Christmas Charades</button></a>
@@ -160,35 +148,32 @@
 
 <main class="main">
 
-  <!-- GAME AREA -->
+  <!-- INTERACTIVE TOOL -->
   <section class="tool" id="gameArea">
-    <h1 class="category-title">Let's Play Charades</h1>
-    <p class="subtitle" id="statusText">Click Generate to get instant charades 🎭</p>
+    <h1 class="category-title">Interactive Charades Word Generator</h1>
+    <p class="subtitle" id="statusText">Choose your category and click Generate to start playing instantly.</p>
 
     <div class="top-controls">
-      <button id="copyBtn" onclick="copyCharades()">📋 Copy</button>
+      <button id="copyBtn" onclick="copyCharades()">📋 Copy Prompts</button>
       <button onclick="toggleFullScreen()">⛶ Full Screen</button>
       <span id="copyMsg" class="copy-msg">Copied!</span>
     </div>
 
     <div class="mode-select">
-      <button class="mode-btn active" data-mode="default" onclick="setMode('default')">All</button>
-      <button class="mode-btn" data-mode="Easy" onclick="setMode('Easy')">Easy</button>
-      <button class="mode-btn" data-mode="funny" onclick="setMode('funny')">Funny</button>
-      <button class="mode-btn" data-mode="hard" onclick="setMode('hard')">Hard</button>
-      <button class="mode-btn" data-mode="party" onclick="setMode('party')">Party</button>
+      <button class="mode-btn active" data-mode="default" onclick="setMode('default')">All Prompts</button>
+      <button class="mode-btn" data-mode="Easy" onclick="setMode('Easy')">Easy &amp; Kids</button>
+      <button class="mode-btn" data-mode="funny" onclick="setMode('funny')">Funny Actions</button>
+      <button class="mode-btn" data-mode="hard" onclick="setMode('hard')">Challenging</button>
+      <button class="mode-btn" data-mode="party" onclick="setMode('party')">Party Night</button>
     </div>
 
-    <!-- round picker 1 / 2 / 3 -->
     <div class="round-pick">
-      <button class="round-btn active" data-round="1" onclick="setRound(1)">1</button>
-      <button class="round-btn" data-round="2" onclick="setRound(2)">2</button>
-      <button class="round-btn" data-round="3" onclick="setRound(3)">3</button>
+      <button class="round-btn active" data-round="1" onclick="setRound(1)">1 Card</button>
+      <button class="round-btn" data-round="2" onclick="setRound(2)">2 Cards</button>
+      <button class="round-btn" data-round="3" onclick="setRound(3)">3 Cards</button>
     </div>
 
-    <!-- GAME LAYOUT: Timer LEFT | Cards RIGHT -->
     <div class="game-layout">
-      <!-- LEFT — countdown ring -->
       <div class="timer-col">
         <div id="timerRing"></div>
         <div class="timer-btn-row">
@@ -197,146 +182,198 @@
         </div>
       </div>
 
-      <!-- RIGHT — cards + generate -->
       <div class="game-content">
         <div id="cards" class="cards"></div>
-        <button class="generate-btn" onclick="generate()">🎯 Generate</button>
+        <button class="generate-btn" onclick="generate()">🎯 Generate Prompts</button>
       </div>
     </div>
   </section>
 
-  <!-- ── ALL TOOLS SECTION (now links to every game mode on the site) ── -->
+  <!-- QUICK METRICS -->
+  <div class="stats-bar">
+    <div class="stat-item">
+      <div class="stat-num">500+</div>
+      <div class="stat-label">Curated Prompts</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">4</div>
+      <div class="stat-label">Difficulty Tiers</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">100%</div>
+      <div class="stat-label">Free &amp; Browser-Based</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">Zero</div>
+      <div class="stat-label">Setup Time</div>
+    </div>
+  </div>
+
+  <!-- TOOL DIRECTORY -->
   <section class="tool-grid-section">
-    <h2>🎮 More Charades Tools</h2>
-    <p>Try our other charades generators for a different kind of round.</p>
+    <h2>Explore Themed Game Modes</h2>
+    <p>Looking for a specific theme for game night? Try our focused editions:</p>
     <div class="tool-grid">
-      <a href="character-charades.html" class="tool-card"><span class="tool-icon">🦸</span><span class="tool-name">Character Charades</span><span class="tool-desc">Famous characters</span></a>
-      <a href="christmas-charades.html" class="tool-card"><span class="tool-icon">🎄</span><span class="tool-name">Christmas Charades</span><span class="tool-desc">Holiday game night</span></a>
-      <a href="islamic-charades.html" class="tool-card"><span class="tool-icon">🕌</span><span class="tool-name">Islamic Charades</span><span class="tool-desc">Islamic words & values</span></a>
-      <a href="reverse-charades.html" class="tool-card"><span class="tool-icon">🔄</span><span class="tool-name">Reverse Charades</span><span class="tool-desc">Whole group acts together</span></a>
+      <a href="character-charades.html" class="tool-card"><span class="tool-icon">🦸</span><span class="tool-name">Character Charades</span><span class="tool-desc">Fictional heroes, villains &amp; icons</span></a>
+      <a href="christmas-charades.html" class="tool-card"><span class="tool-icon">🎄</span><span class="tool-name">Holiday Charades</span><span class="tool-desc">Christmas &amp; seasonal traditions</span></a>
+      <a href="islamic-charades.html" class="tool-card"><span class="tool-icon">🕌</span><span class="tool-name">Values &amp; Culture</span><span class="tool-desc">Educational cultural terms</span></a>
+      <a href="reverse-charades.html" class="tool-card"><span class="tool-icon">🔄</span><span class="tool-name">Reverse Charades</span><span class="tool-desc">The whole team acts for one guesser</span></a>
     </div>
   </section>
 
-  <h2 class="home-heading">Charades Generator – Free Online Game for Easy, Families &amp; Parties</h2>
-  <p class="seo-text">🎮 Play instantly • No signup • 500+ charade ideas</p>
+  <!-- SUBSTANTIAL EDITORIAL SECTION (CRITICAL FOR ADSENSE APPROVAL) -->
+  <article class="editorial-block">
+    <h2>The Definitive Guide to Playing Charades</h2>
+    <p>
+      Charades is a timeless parlor game that dates back to 18th-century France. While originally played as a spoken riddle game, it evolved during the Victorian era into dramatic pantomime. Today, it remains one of the world's most accessible party games because it requires no specialized equipment—just imagination, non-verbal communication, and quick thinking.
+    </p>
+    <p>
+      Whether you are organizing a classroom icebreaker, a virtual corporate team builder, or a casual family get-together, using our digital card generator eliminates the chore of hand-writing clues on scraps of paper. Below, you will find the complete set of official rules, standardized physical signals, and tactical strategies to run a seamless game night.
+    </p>
 
-  <p class="seo-text">
-    Looking for a fun and easy party game? This free Charades Generator helps you instantly create charade ideas for Easy, families, classrooms, and parties.
-    Whether you're playing with friends or hosting a game night, our tool generates random charades that are simple, exciting, and perfect for all age groups.
-    With over <strong>500 unique charade prompts</strong> across categories, you'll never run out of ideas.
-  </p>
+    <h2>Official Rules &amp; Game Mechanics</h2>
+    <p>
+      The goal of charades is straightforward: one player (the "actor") silently performs a word, phrase, book title, or action while their teammates race against the clock to guess it correctly.
+    </p>
 
-  <p class="seo-text">
-    Charades is a classic guessing game where players act out a word or phrase without speaking, while others try to guess it.
-    Use this online charades generator to save time and get unlimited ideas instantly. No preparation needed — just click generate and start playing.
-    Works perfectly on your phone, tablet, or computer with a dedicated full-screen mode for group play.
-  </p>
-
-
-  <!-- ── TIPS SECTION ── -->
-  <section class="content-section">
-    <h2>🏆 Pro Tips to Win at Charades</h2>
-    <p>Whether you're a first-time player or a charades veteran, these tips will help you act better, guess faster, and have more fun.</p>
     <div class="tips-grid">
       <div class="tip-card">
-        <h4>Start With the Category</h4>
-        <p>Before acting, hold up fingers to show the number of words. Point to your wrist for "sounds like." This speeds up guessing.</p>
+        <h4>1. Team Division</h4>
+        <p>Split your group into two balanced teams (e.g., Team Blue and Team Gold). Each team will take turns sending one actor to perform while the rest of their squad guesses.</p>
       </div>
       <div class="tip-card">
-        <h4>Use Your Whole Body</h4>
-        <p>Don't just use your hands. Your face, posture, and even the way you walk can communicate emotion and meaning clearly.</p>
+        <h4>2. Drawing the Prompt</h4>
+        <p>The designated actor uses this generator to pull a random card. The actor must read the prompt silently without uttering a whisper or spelling words aloud.</p>
       </div>
       <div class="tip-card">
-        <h4>Act Word by Word</h4>
-        <p>For multi-word phrases, show finger count per word, then act each word one at a time. Team learns to follow this rhythm fast.</p>
+        <h4>3. The 60-Second Clock</h4>
+        <p>Once the actor gives the visual starting cue, the 30- to 60-second timer begins. The actor performs gestures, postures, and expressions until the answer is guessed or time runs out.</p>
       </div>
       <div class="tip-card">
-        <h4>Keep Energy High</h4>
-        <p>Enthusiasm is contagious. Even if your clue isn't perfect, confident acting pushes your team toward the right guess.</p>
-      </div>
-      <div class="tip-card">
-        <h4>Use "Sounds Like" Signals</h4>
-        <p>Cup your hand behind your ear to signal "sounds like," then act out a rhyming or similar word. Very powerful for hard words.</p>
-      </div>
-      <div class="tip-card">
-        <h4>Set a Time Limit</h4>
-        <p>Use 30–60 seconds per turn. Time pressure makes the game more exciting. Use your phone timer or a countdown app.</p>
+        <h4>4. Strict Non-Verbal Policy</h4>
+        <p>The actor may not speak, whisper, mouth words, hum melodies, or write letters in the air. Pointing directly to physical objects in the room is also prohibited.</p>
       </div>
     </div>
-  </section>
 
+    <h3>Standard Hand Signals Every Player Should Know</h3>
+    <p>To avoid wasting precious seconds, competitive charades teams use standardized non-verbal cues to establish the category and word count before acting begins:</p>
 
-  <!-- ── HOW TO PLAY ── -->
-  <section class="how-to">
-    <h2>How to Play Charades – Complete Guide</h2>
-    <p>
-      Charades has been played for over 200 years and remains one of the most popular party games in the world. The rules are simple but the game creates endless laughter and memorable moments. Here is a complete guide for new and experienced players.
-    </p>
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Gesture</th>
+          <th>Standard Meaning</th>
+          <th>How to Perform</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Number of Words</strong></td>
+          <td>Phrase Length</td>
+          <td>Hold up fingers representing the total word count, then isolate the target word number.</td>
+        </tr>
+        <tr>
+          <td><strong>Ear Tug / Hand Behind Ear</strong></td>
+          <td>"Sounds Like"</td>
+          <td>Cup your ear to show that the next gesture rhymes with the target word.</td>
+        </tr>
+        <tr>
+          <td><strong>Unfolding Hands</strong></td>
+          <td>Book Title</td>
+          <td>Place palms together and open them outward like reading a book.</td>
+        </tr>
+        <tr>
+          <td><strong>Cranking Hand</strong></td>
+          <td>Movie / Film</td>
+          <td>Mime holding an antique film camera and turning a side handle.</td>
+        </tr>
+        <tr>
+          <td><strong>Humming Rectangle</strong></td>
+          <td>TV Show</td>
+          <td>Draw a small square or rectangle in the air using index fingers.</td>
+        </tr>
+        <tr>
+          <td><strong>Crossed Arms Sweep</strong></td>
+          <td>"Close, Keep Going"</td>
+          <td>Roll hands rapidly around each other to encourage teammates on the right track.</td>
+        </tr>
+      </tbody>
+    </table>
 
-    <p><strong>1. Divide into two teams</strong><br>
-    Split your group into two equal teams. Each team takes turns sending one actor to the front while the rest guess.</p>
-
-    <p><strong>2. Generate your charade</strong><br>
-    Use this tool to generate a random charade prompt. The actor reads the word silently — teammates must not see it.</p>
-
-    <p><strong>3. Show the category signal</strong><br>
-    Use classic hand signals: fingers for word count, point to your ear for "sounds like," make a book shape for "book," or a film reel spin for "movie."</p>
-
-    <p><strong>4. Act without speaking or mouthing words</strong><br>
-    The actor uses only body language, gestures, and expressions. No sounds, no lip movements, no writing in the air.</p>
-
-    <p><strong>5. Set a 30-second timer</strong><br>
-    One round = 30 seconds. If the team guesses correctly within time, they get a point. If not, the other team can attempt.</p>
-
-    <p><strong>6. Rotate and repeat</strong><br>
-    Take turns clockwise. Each player gets to act at least once. Play as many rounds as you like — click Generate for unlimited prompts.</p>
-
-    <p><strong>7. Use Full Screen mode</strong><br>
-    Click Full Screen so the actor can hold up the phone and the word is visible only to them before they flip it away from the screen.</p>
-  </section>
-
-
-  <!-- ── HOW TO USE ── -->
-  <section class="content-section">
-    <h2>Example: What You Get When You Click Generate</h2>
-    <p>
-      This charades generator creates random words or phrases that players can act out instantly.
-      The number of charades you receive depends on what you select above.
-    </p>
-    <p>
-      <strong>If you select 1:</strong> One charade card appears on screen — ideal for fast one-on-one play.<br>
-      <strong>If you select 2:</strong> Two charades appear — use each for a round.<br>
-      <strong>If you select 3:</strong> Three charades appear — perfect for extended rounds without clicking Generate again.
-    </p>
-    <h3>Sample Charades You May Get</h3>
+    <h2>Scoring Formats &amp; Variations</h2>
+    <p>Depending on your group size and competitive spirit, you can run your match using different tournament structures:</p>
     <ul>
-      <li>🎭 Climbing a mountain</li>
-      <li>🎭 Cooking biryani</li>
-      <li>🎭 Driving a school bus</li>
-      <li>🎭 Flying like a superhero</li>
-      <li>🎭 Acting like a nervous teacher</li>
-      <li>🎭 Building a sandcastle</li>
-      <li>🎭 Riding a camel in the desert</li>
-      <li>🎭 Playing cricket in the rain</li>
-      <li>🎭 Sleeping on a cloud</li>
-      <li>🎭 Taming a wild lion</li>
+      <li><strong>Standard Timed Points:</strong> Teams receive 1 point for every prompt guessed within 60 seconds. The first team to reach 10 points wins.</li>
+      <li><strong>Steal Rule:</strong> If the active team runs out of time without finding the answer, the opposing team gets one single collective guess to steal the point.</li>
+      <li><strong>Reverse Charades:</strong> Instead of one person acting for a group, one person guesses while the entire rest of the team acts together simultaneously. This is especially fun for larger gatherings and younger kids.</li>
+      <li><strong>Speed Run:</strong> A single actor attempts to pantomime as many cards as possible within a 2-minute marathon window, cycling through cards using the "Next Card" button.</li>
     </ul>
-    <p>
-      Use the <strong>Copy Charades</strong> button to instantly copy all generated ideas and share via WhatsApp, Messenger, or any chat app for virtual game nights.
-      The <strong>Full Screen</strong> option makes the game easier in group settings by displaying the word prominently on the entire screen.
-    </p>
-  </section>
 
+    <h2>Curated Sample Prompts by Difficulty</h2>
+    <div class="word-columns">
+      <div class="word-col">
+        <h4>Easy (Kids &amp; Starters)</h4>
+        <ul>
+          <li>Brushing your teeth</li>
+          <li>Riding a bicycle</li>
+          <li>Eating spaghetti</li>
+          <li>Petting a dog</li>
+          <li>Blowing up a balloon</li>
+          <li>Flying an airplane</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>Medium (Party Favorites)</h4>
+        <ul>
+          <li>Walking on hot sand</li>
+          <li>Parallel parking a car</li>
+          <li>Baking a birthday cake</li>
+          <li>Walking against strong wind</li>
+          <li>Photobombing a picture</li>
+          <li>Assembling flat-pack furniture</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>Hard (Abstract &amp; Tricky)</h4>
+        <ul>
+          <li>Deja vu</li>
+          <li>Gravity loss on Mars</li>
+          <li>Brain freeze from ice cream</li>
+          <li>Stage fright</li>
+          <li>Procrastination</li>
+          <li>Winning the lottery silently</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <div class="faq-question">Can actors make sound effects or mouth syllables?</div>
+      <div class="faq-answer">No. Under standard rules, actors must remain completely silent. Making animal noises, humming music, or mouthing words silently violates the fundamental rules of the game.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">What is the recommended round duration?</div>
+      <div class="faq-answer">For casual adult and teen games, 45 to 60 seconds provides the ideal level of intensity. For younger children, extending the timer to 90 seconds gives them sufficient room to express complex ideas.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">How does this charades generator prevent duplicate prompts?</div>
+      <div class="faq-answer">Our script uses a non-repeating randomized array algorithm during your active browser session, ensuring your players will not see duplicate cards during a regular game cycle.</div>
+    </div>
+  </article>
 
 </main>
 
 <footer class="footer">
-  <a href="about-us.html">About Us</a>
-  <a href="contact-us.html">Contact Us</a>
-  <a href="privacy-policy.html">Privacy Policy</a>
-  <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
-  <a href="disclaimer.html">Disclaimer</a>
-  <p>© CharadeGenerator 2026</p>
+  <div style="max-width:1000px;margin:0 auto;padding:20px 0;border-top:1px solid #e2e8f0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+    <div>
+      <a href="about-us.html" style="margin-right:12px;color:#475569;text-decoration:none;">About Us</a>
+      <a href="contact-us.html" style="margin-right:12px;color:#475569;text-decoration:none;">Contact Us</a>
+      <a href="privacy-policy.html" style="margin-right:12px;color:#475569;text-decoration:none;">Privacy Policy</a>
+      <a href="terms-and-conditions.html" style="margin-right:12px;color:#475569;text-decoration:none;">Terms &amp; Conditions</a>
+      <a href="disclaimer.html" style="color:#475569;text-decoration:none;">Disclaimer</a>
+    </div>
+    <p style="margin:0;color:#94a3b8;font-size:13px;">© CharadeGenerator 2026. All rights reserved.</p>
+  </div>
 </footer>
 
 <script src="js/script.js"></script>
