@@ -1,7 +1,7 @@
 // ============================================================
 //  script.js  –  Main Charades Generator
 //  Includes: 30-sec game timer, round picker (1/2/3),
-//            TIME'S UP overlay, auto-start on generate
+//            TIME'S UP overlay, auto-start on Generate
 // ============================================================
 
 /* =====================================================
@@ -45,16 +45,16 @@ const VERBS = [
   "Magic trick","Pull rabbit from hat","Saw person in half","Card trick","Disappear","Reappear","Levitate","Escape handcuffs","Sword swallow","Fire breathe",
   "Juggle fire","Walk tightrope","Unicycle","Trapeze","Clown around","Mime","Invisible wall","Invisible box","Pulling rope","Walking down stairs",
   "Swipe screen","Pinch zoom","Scroll","Double tap","Long press","Shake phone","Take screenshot","Charge phone","Plug in headphones","Adjust volume",
-  "Play video game","Press buttons","Move joystick","Aim","Shoot","Reload","Throw grenade","Drive racing game","Fight combo","Victory dance",
+  "Play video game","Press buttons","Move joystick","Drive racing game","Fight combo","Victory dance",
   "Stream","Record video","Edit video","Upload","Post","Like","Comment","Share","Subscribe","Unbox",
   "Take temperature","Check pulse","Listen with stethoscope","Give injection","Take blood pressure","X-ray","CT scan","MRI","Ultrasound","Surgery",
   "Swallow pill","Apply bandage","Put on cast","Use crutches","Wheelchair","Physical therapy","Stretch injury","Ice injury","Heat therapy","Massage",
   "Sneeze","Cough","Blow nose","Check throat","Take medicine","Gargle","Use inhaler","Put in eye drops","Swab test","Get vaccine",
-  "Floss dance","Dab","Whip","Nae nae","Twerk","Shuffle","Sprinkler dance","Shopping cart dance","Running man","Carlton dance",
+  "Floss dance","Dab","Whip","Nae nae","Shuffle","Sprinkler dance","Shopping cart dance","Running man","Carlton dance",
   "Chicken dance","Macarena","YMCA","Cha cha slide","Electric slide","Thriller dance","Gangnam style","Harlem shake","Mannequin challenge","Bottle flip",
   "Dab on haters","Flex muscles","Strike pose","Voguing","Catwalk","Model turn","Blue steel look","Smize","Hair flip","Strut",
   "Photobomb","Planking","Owling","Batmanning","Teapot pose","Scarecrow pose","Flamingo stand","Tree pose","Warrior pose","Downward dog",
-  "Zombie walk","Frankenstein walk","Mummy walk","Vampire bite","Werewolf howl","Ghost float","Witch cackle","Monster stomp","Alien probe","Bigfoot stomp",
+  "Zombie walk","Frankenstein walk","Mummy walk","Vampire bite","Werewolf howl","Ghost float","Witch cackle","Monster stomp","Bigfoot stomp",
   "Text message","Emoji reaction","Video call","Take boomerang","TikTok dance","Instagram story","Snapchat filter","Twitter rant","Facebook stalk","Google search",
   "Binge watch","Pause","Rewind","Fast forward","Skip intro","Change channel","Adjust antenna","DVD menu","Eject disc","Buffer wait",
   "Microwave food","Set timer","Open fridge","Close drawer","Lock door","Unlock door","Ring doorbell","Knock","Peek through keyhole","Open package",
@@ -67,7 +67,7 @@ const STYLES = [
   "like a Grandpa","like a sleepy baby","like a scared cat","like a happy dog","like a monkey",
   "like a penguin","like an old person","like a confused man","like a dancing chicken","like a proud peacock",
   "like a slithering snake","like a hopping kangaroo","like a waddling duck","like a prowling tiger","like a charging rhino",
-  "like a lazy sloth","like a hyper chipmunk","like a grumpy bear","like a elegant swan","like a silly goose",
+  "like a lazy sloth","like a hyper chipmunk","like a grumpy bear","like an elegant swan","like a silly goose",
   "like a scratching chicken","like a bucking bronco","like a galloping horse","like a sneaky fox","like a wise owl",
   "like a bouncing rabbit","like a slippery fish","like a flying eagle","like a buzzing bee","like a crawling caterpillar",
   "like a leaping frog","like a stretching giraffe","like a stampeding elephant","like a spinning flamingo","like a pecking bird",
@@ -75,12 +75,12 @@ const STYLES = [
   "like a majestic deer","like a stubborn mule","like a curious raccoon","like a waddling tortoise","like a hopping bunny",
   "like a slinking panther","like a flapping seagull","like a diving dolphin","like a splashing whale","like a snapping crocodile",
   "like you are late","like it is too hot","like it is too cold","like a robot","like you won a prize",
-  "like you lost something","like you're drunk","like you're dizzy","like you're sleepwalking","like you're blindfolded",
+  "like you lost something","like you're dizzy","like you're sleepwalking","like you're blindfolded",
   "like you're in slow motion","like you're in fast forward","like you're underwater","like you're on the moon","like you're in zero gravity",
   "like you're stuck in mud","like you're on ice","like you're on a tightrope","like you're in quicksand","like you're magnetic",
   "like you're a puppet","like you're invisible","like you're melting","like you're freezing solid","like you're elastic",
   "like you're made of jello","like you're a balloon deflating","like you're inflating","like you're on fire","like you're electric shocked",
-  "like you're ticklish everywhere","like you have hiccups","like you're holding in pee","like you stubbed your toe","like you smell something bad",
+  "like you're ticklish everywhere","like you have hiccups","like you stubbed your toe","like you smell something bad",
   "like you smell something amazing","like you're trying to be quiet","like you're trying to be loud","like you're exhausted","like you're super energized",
   "like you drank 10 coffees","like you haven't slept in 3 days","like you just woke up","like you're half asleep","like you're daydreaming",
   "like you're spacing out","like you forgot what you're doing","like you just remembered","like you're having déjà vu","like you're confused about reality",
@@ -92,7 +92,7 @@ const STYLES = [
   "like a chef","like a waiter","like a bartender","like a janitor","like a construction worker",
   "like a teacher","like a principal","like a student taking test","like a politician","like a news anchor",
   "like a game show host","like a street performer","like a statue performer","like a mime artist","like a breakdancer",
-  "like a opera singer","like a rapper","like a rock star","like a DJ","like a conductor",
+  "like an opera singer","like a rapper","like a rock star","like a DJ","like a conductor",
   "like a referee","like a coach","like an athlete celebrating","like a cheerleader","like a mascot",
   "like Frankenstein's monster","like Dracula","like a werewolf transforming","like King Kong","like Godzilla",
   "like T-Rex","like a velociraptor","like Indiana Jones","like James Bond","like Mission Impossible",
@@ -165,6 +165,41 @@ const STYLES = [
   "like synchronized swimmer","like figure skater","like gymnast","like tightrope walker","like contortionist",
   "like escape artist","like stunt double","like daredevil","like thrill seeker","like adrenaline junkie"
 ];
+
+// ── MODE SETTINGS ─────────────────────────────────────────
+const MODE_LABELS = {
+  default: "All Prompts",
+  Easy:    "Easy & Kids",
+  kids:    "Easy & Kids",
+  funny:   "Funny Actions",
+  hard:    "Challenging",
+  party:   "Party Night"
+};
+
+const KIDS_STYLE_WORDS = [
+  "baby","monkey","happy","dog","cat","penguin","duck","bunny","rabbit","frog",
+  "elephant","giraffe","kangaroo","chicken","goose","bear","sloth","koala","otter","puppet","balloon"
+];
+const KIDS_VERB_BLOCK = [
+  "drink","dead","wrestle","box","surgery","injection","blood","shave","fire","sword","escape","vaccine","swab"
+];
+const FUNNY_STYLE_WORDS = [
+  "clown","silly","goose","chicken","monkey","hiccups","ticklish","jello","balloon","melting",
+  "coffee","stubbed","elastic","puppet","mud","sloth","penguin","duck","zombie","caterpillar","shock","lazy"
+];
+const HARD_STYLE_WORDS = [
+  "scientist","detective","spy","robot","mime","statue","contortionist","tightrope",
+  "slow motion","underwater","zero gravity","blindfolded","invisible","quicksand","sleepwalking","magnetic"
+];
+const PARTY_STYLE_WORDS = [
+  "dance","dancing","celebrat","party","victory","dj","rock star","disco","breakdancer",
+  "raver","funk","cheerleader","mascot","touchdown","karaoke"
+];
+
+function hasAny(text, words) {
+  const t = text.toLowerCase();
+  return words.some(w => t.includes(w));
+}
 
 // ── GAME STATE ────────────────────────────────────────────
 let currentMode  = 'default';
@@ -255,56 +290,38 @@ function setRound(n) {
   document.querySelectorAll('.round-btn').forEach(b => b.classList.remove('active'));
   const btn = document.querySelector(`[data-round="${n}"]`);
   if (btn) btn.classList.add('active');
-  generate();
+  generate(false);
 }
 
 // ── MODE FILTER LOGIC ─────────────────────────────────────
 function getModeFilteredData() {
-  if (currentMode === "kids") {
+  if (currentMode === "Easy" || currentMode === "kids") {
     return {
       verbs: VERBS.filter(v =>
-        v.length < 12 && !v.includes("drink") && !v.includes("dead")
+        v.length < 12 && !hasAny(v, KIDS_VERB_BLOCK)
       ),
-      styles: STYLES.filter(s =>
-        s.includes("baby") || s.includes("monkey") || s.includes("happy") || s.includes("dog") || s.includes("cat")
-      )
+      styles: STYLES.filter(s => hasAny(s, KIDS_STYLE_WORDS))
     };
   }
 
   if (currentMode === "funny") {
     return {
       verbs: VERBS,
-      styles: STYLES.filter(s =>
-        s.includes("drunk") ||
-        s.includes("crazy") ||
-        s.includes("clown") ||
-        s.includes("funny") ||
-        s.includes("silly")
-      )
+      styles: STYLES.filter(s => hasAny(s, FUNNY_STYLE_WORDS))
     };
   }
 
   if (currentMode === "hard") {
     return {
       verbs: VERBS.filter(v => v.split(" ").length > 1),
-      styles: STYLES.filter(s =>
-        s.includes("scientist") ||
-        s.includes("detective") ||
-        s.includes("spy") ||
-        s.includes("robot")
-      )
+      styles: STYLES.filter(s => hasAny(s, HARD_STYLE_WORDS))
     };
   }
 
   if (currentMode === "party") {
     return {
       verbs: VERBS,
-      styles: STYLES.filter(s =>
-        s.includes("dance") ||
-        s.includes("celebrat") ||
-        s.includes("party") ||
-        s.includes("victory")
-      )
+      styles: STYLES.filter(s => hasAny(s, PARTY_STYLE_WORDS))
     };
   }
 
@@ -320,7 +337,9 @@ function getRandomCharade() {
 }
 
 // ── GENERATE UI ───────────────────────────────────────────
-function generate() {
+// autoStart = true  → timer starts right away (Generate / Next Card buttons)
+// autoStart = false → cards refresh, timer waits for the Start button
+function generate(autoStart = true) {
   const box = document.getElementById("cards");
   const status = document.getElementById("statusText");
   if (!box) return;
@@ -335,10 +354,14 @@ function generate() {
   }
 
   if (status) {
-    status.textContent = `${currentCount} ${currentMode} charades ready 🎭`;
+    const label = MODE_LABELS[currentMode] || currentMode;
+    const noun  = currentCount === 1 ? "prompt" : "prompts";
+    status.textContent = autoStart
+      ? `${label}: ${currentCount} ${noun} ready. The 30-second timer is running 🎭`
+      : `${label}: ${currentCount} ${noun} ready. Press Start, or press Generate Prompts to begin with the timer 🎭`;
   }
 
-  resetTimer(true);
+  resetTimer(autoStart === true);
 }
 
 // ── MODE SWITCH ────────────────────────────────────────────
@@ -347,7 +370,7 @@ function setMode(mode) {
   document.querySelectorAll(".mode-btn").forEach(btn => btn.classList.remove("active"));
   const btn = document.querySelector(`[data-mode="${mode}"]`);
   if (btn) btn.classList.add("active");
-  generate();
+  generate(false);
 }
 
 // ── COUNT ──────────────────────────────────────────────────
@@ -357,24 +380,27 @@ function setCount(n) {
   document.querySelectorAll('.round-btn').forEach(b => b.classList.remove('active'));
   const btn = document.querySelector(`[data-round="${n}"]`);
   if (btn) btn.classList.add('active');
-  generate();
+  generate(false);
 }
 
 // ── CUSTOM INPUT ───────────────────────────────────────────
 function showCustom() {
-  document.getElementById("customBox").classList.remove("hidden");
+  const box = document.getElementById("customBox");
+  if (box) box.classList.remove("hidden");
 }
 
 function applyCustom() {
   const input = document.getElementById("customInput");
+  if (!input) return;
   let n = parseInt(input.value, 10);
   if (isNaN(n) || n < 1) n = 1;
   if (n > 12) n = 12;
   currentCount = n;
   roundCount = n;
   input.value = n;
-  document.getElementById("customBox").classList.add("hidden");
-  generate();
+  const box = document.getElementById("customBox");
+  if (box) box.classList.add("hidden");
+  generate(false);
 }
 
 // ── COPY ──────────────────────────────────────────────────
@@ -382,15 +408,19 @@ function copyCharades() {
   const cards = document.querySelectorAll('#cards .card p');
   if (!cards.length) return;
   const text = Array.from(cards).map(c => c.textContent).join('\n');
-  navigator.clipboard.writeText(text).then(() => {
+  const showCopied = () => {
     const msg = document.getElementById('copyMsg');
     if (msg) { msg.style.display = 'inline'; setTimeout(() => msg.style.display = 'none', 2000); }
-  });
+  };
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(showCopied).catch(() => {});
+  }
 }
 
 // ── FULL SCREEN ────────────────────────────────────────────
 function toggleFullScreen() {
   const elem = document.getElementById("gameArea");
+  if (!elem || !elem.requestFullscreen) return;
   if (!document.fullscreenElement) {
     elem.requestFullscreen();
   } else {
@@ -400,12 +430,14 @@ function toggleFullScreen() {
 
 // ── MENU ───────────────────────────────────────────────────
 function toggleMenu() {
-  document.getElementById("navMobile").classList.toggle("open");
+  const nav = document.getElementById("navMobile");
+  if (nav) nav.classList.toggle("open");
 }
 
 // ── INIT ──────────────────────────────────────────────────
+// Show the first prompt on load, but do NOT start the timer
+// until the visitor presses Start or Generate Prompts.
 document.addEventListener("DOMContentLoaded", () => {
-  setMode('default');
-  setRound(1);
   drawTimer(TIMER_TOTAL);
+  generate(false);
 });
