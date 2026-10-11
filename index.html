@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Charades Generator – Free Word Prompts, Rules & Party Ideas</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Free online charades word generator with hundreds of fresh ideas for kids, teens, and adults. Includes official rules, hand signals, printable ideas, and custom game timers.">
+  <meta name="description" content="Free online charades word generator with fresh prompts for kids, teens, and adults. Includes game rules, hand signals, scoring variations, and a built-in 30-second timer.">
 
   <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
@@ -104,6 +104,8 @@
     .card-emoji{font-size:28px;}
     .card p{margin:0;font-size:16px;font-weight:500;color:#222;}
 
+    #gameArea:fullscreen{background:#fff;overflow:auto;padding:24px;}
+
     @media(max-width:480px){.game-layout{flex-direction:row;}.timer-col{min-width:90px;}}
   </style>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9278946234890215"
@@ -123,18 +125,6 @@
 </script>
 </head>
 <body>
-
-<div id="timeOverOverlay">
-  <div class="timeover-box">
-    <div class="timeover-emoji">⏰</div>
-    <h2>Time's Up!</h2>
-    <p>30 seconds are over — did your team guess correctly?</p>
-    <div class="timeover-actions">
-      <button class="btn-restart" onclick="resetTimer(true)">▶ Play Again</button>
-      <button class="btn-next" onclick="generate()">⏭ Next Card</button>
-    </div>
-  </div>
-</div>
 
 <header class="header">
   <div class="header-inner">
@@ -163,6 +153,19 @@
 
   <!-- INTERACTIVE TOOL -->
   <section class="tool" id="gameArea">
+
+    <div id="timeOverOverlay">
+      <div class="timeover-box">
+        <div class="timeover-emoji">⏰</div>
+        <h2>Time's Up!</h2>
+        <p>30 seconds are over — did your team guess correctly?</p>
+        <div class="timeover-actions">
+          <button class="btn-restart" onclick="resetTimer(true)">▶ Play Again</button>
+          <button class="btn-next" onclick="generate()">⏭ Next Card</button>
+        </div>
+      </div>
+    </div>
+
     <h1 class="category-title">Interactive Charades Word Generator</h1>
     <p class="subtitle" id="statusText">Choose your category and click Generate to start playing instantly.</p>
 
@@ -205,20 +208,20 @@
   <!-- QUICK METRICS -->
   <div class="stats-bar">
     <div class="stat-item">
-      <div class="stat-num">500+</div>
-      <div class="stat-label">Curated Prompts</div>
+      <div class="stat-num">All Ages</div>
+      <div class="stat-label">Kids, Teens &amp; Adults</div>
     </div>
     <div class="stat-item">
-      <div class="stat-num">4</div>
-      <div class="stat-label">Difficulty Tiers</div>
+      <div class="stat-num">5</div>
+      <div class="stat-label">Game Modes</div>
     </div>
     <div class="stat-item">
-      <div class="stat-num">100%</div>
-      <div class="stat-label">Free &amp; Browser-Based</div>
+      <div class="stat-num">30s</div>
+      <div class="stat-label">Built-in Timer</div>
     </div>
     <div class="stat-item">
-      <div class="stat-num">Zero</div>
-      <div class="stat-label">Setup Time</div>
+      <div class="stat-num">Free</div>
+      <div class="stat-label">No Signup Needed</div>
     </div>
   </div>
 
@@ -228,13 +231,13 @@
     <p>Looking for a specific theme for game night? Try our focused editions:</p>
     <div class="tool-grid">
       <a href="character-charades.html" class="tool-card"><span class="tool-icon">🦸</span><span class="tool-name">Character Charades</span><span class="tool-desc">Fictional heroes, villains &amp; icons</span></a>
-      <a href="christmas-charades.html" class="tool-card"><span class="tool-icon">🎄</span><span class="tool-name">Holiday Charades</span><span class="tool-desc">Christmas &amp; seasonal traditions</span></a>
-      <a href="islamic-charades.html" class="tool-card"><span class="tool-icon">🕌</span><span class="tool-name">Values &amp; Culture</span><span class="tool-desc">Educational cultural terms</span></a>
+      <a href="christmas-charades.html" class="tool-card"><span class="tool-icon">🎄</span><span class="tool-name">Christmas Charades</span><span class="tool-desc">Festive &amp; seasonal traditions</span></a>
+      <a href="islamic-charades.html" class="tool-card"><span class="tool-icon">🕌</span><span class="tool-name">Islamic Charades</span><span class="tool-desc">Faith &amp; culture-themed prompts</span></a>
       <a href="reverse-charades.html" class="tool-card"><span class="tool-icon">🔄</span><span class="tool-name">Reverse Charades</span><span class="tool-desc">The whole team acts for one guesser</span></a>
     </div>
   </section>
 
-  <!-- SUBSTANTIAL EDITORIAL SECTION (CRITICAL FOR ADSENSE APPROVAL) -->
+  <!-- GUIDE -->
   <article class="editorial-block">
     <h2>The Definitive Guide to Playing Charades</h2>
     <p>
@@ -242,6 +245,21 @@
     </p>
     <p>
       Whether you are organizing a classroom icebreaker, a virtual corporate team builder, or a casual family get-together, using our digital card generator eliminates the chore of hand-writing clues on scraps of paper. Below, you will find the complete set of official rules, standardized physical signals, and tactical strategies to run a seamless game night.
+    </p>
+
+    <h2>How This Charades Generator Works</h2>
+    <p>
+      Each card combines an action with a style, such as "Skip like a penguin" or "Bake like a ninja". The generator draws from hundreds of actions and hundreds of styles, so the number of possible cards runs into the tens of thousands. Pick a mode to change the type of cards you get:
+    </p>
+    <ul>
+      <li><strong>All Prompts:</strong> every action and every style, mixed together.</li>
+      <li><strong>Easy &amp; Kids:</strong> short, simple actions paired with animal and baby styles.</li>
+      <li><strong>Funny Actions:</strong> silly styles such as clowns, geese, hiccups, and jello legs.</li>
+      <li><strong>Challenging:</strong> multi-word actions paired with tricky styles like spies, robots, and mad scientists.</li>
+      <li><strong>Party Night:</strong> dancing, celebrations, and victory moments.</li>
+    </ul>
+    <p>
+      Choose 1, 2, or 3 cards at a time. Press Generate Prompts to reveal new cards and start the 30-second timer automatically, or use the Start button if you want to start the clock yourself.
     </p>
 
     <h2>Official Rules &amp; Game Mechanics</h2>
@@ -259,12 +277,12 @@
         <p>The designated actor uses this generator to pull a random card. The actor must read the prompt silently without uttering a whisper or spelling words aloud.</p>
       </div>
       <div class="tip-card">
-        <h4>3. The 60-Second Clock</h4>
-        <p>Once the actor gives the visual starting cue, the 30- to 60-second timer begins. The actor performs gestures, postures, and expressions until the answer is guessed or time runs out.</p>
+        <h4>3. The 30-Second Clock</h4>
+        <p>Press Generate Prompts and the 30-second timer starts automatically. The actor performs gestures, postures, and expressions until the answer is guessed or time runs out. Use Pause or Reset if you need a break. Playing with younger kids? Simply agree to give them extra time.</p>
       </div>
       <div class="tip-card">
         <h4>4. Strict Non-Verbal Policy</h4>
-        <p>The actor may not speak, whisper, mouth words, hum melodies, or write letters in the air. Pointing directly to physical objects in the room is also prohibited.</p>
+        <p>The actor may not speak, whisper, mouth words, hum melodies, or write letters in the air. Agree before the game whether pointing at objects in the room is allowed.</p>
       </div>
     </div>
 
@@ -281,34 +299,34 @@
       </thead>
       <tbody>
         <tr>
-          <td><strong>Number of Words</strong></td>
-          <td>Phrase Length</td>
-          <td>Hold up fingers representing the total word count, then isolate the target word number.</td>
+          <td><strong>Fingers Held Up</strong></td>
+          <td>Number of Words</td>
+          <td>Hold up fingers for the total word count. Then tap that many fingers on your forearm to show which word you are acting.</td>
         </tr>
         <tr>
-          <td><strong>Ear Tug / Hand Behind Ear</strong></td>
+          <td><strong>Cupped Hand at Ear</strong></td>
           <td>"Sounds Like"</td>
-          <td>Cup your ear to show that the next gesture rhymes with the target word.</td>
+          <td>Cup your hand behind your ear, then act out a word that sounds like the target.</td>
         </tr>
         <tr>
-          <td><strong>Unfolding Hands</strong></td>
+          <td><strong>Open Palms</strong></td>
           <td>Book Title</td>
-          <td>Place palms together and open them outward like reading a book.</td>
+          <td>Press your palms together, then open them like the pages of a book.</td>
         </tr>
         <tr>
-          <td><strong>Cranking Hand</strong></td>
+          <td><strong>Cranking Motion</strong></td>
           <td>Movie / Film</td>
-          <td>Mime holding an antique film camera and turning a side handle.</td>
+          <td>Hold one hand to your eye like a camera lens and crank the other hand beside it.</td>
         </tr>
         <tr>
-          <td><strong>Humming Rectangle</strong></td>
+          <td><strong>Rectangle in the Air</strong></td>
           <td>TV Show</td>
-          <td>Draw a small square or rectangle in the air using index fingers.</td>
+          <td>Trace a screen shape in the air with your index fingers.</td>
         </tr>
         <tr>
-          <td><strong>Crossed Arms Sweep</strong></td>
-          <td>"Close, Keep Going"</td>
-          <td>Roll hands rapidly around each other to encourage teammates on the right track.</td>
+          <td><strong>Beckoning Hands</strong></td>
+          <td>"Keep Going, You're Close"</td>
+          <td>Wave both hands toward yourself to tell teammates they are on the right track.</td>
         </tr>
       </tbody>
     </table>
@@ -316,10 +334,10 @@
     <h2>Scoring Formats &amp; Variations</h2>
     <p>Depending on your group size and competitive spirit, you can run your match using different tournament structures:</p>
     <ul>
-      <li><strong>Standard Timed Points:</strong> Teams receive 1 point for every prompt guessed within 60 seconds. The first team to reach 10 points wins.</li>
+      <li><strong>Standard Timed Points:</strong> Teams receive 1 point for every prompt guessed before the 30-second timer ends. The first team to reach 10 points wins.</li>
       <li><strong>Steal Rule:</strong> If the active team runs out of time without finding the answer, the opposing team gets one single collective guess to steal the point.</li>
       <li><strong>Reverse Charades:</strong> Instead of one person acting for a group, one person guesses while the entire rest of the team acts together simultaneously. This is especially fun for larger gatherings and younger kids.</li>
-      <li><strong>Speed Run:</strong> A single actor attempts to pantomime as many cards as possible within a 2-minute marathon window, cycling through cards using the "Next Card" button.</li>
+      <li><strong>Speed Run:</strong> A single actor attempts to pantomime as many cards as possible within a 2-minute marathon window, cycling through cards using the "Generate Prompts" button.</li>
     </ul>
 
     <h2>Curated Sample Prompts by Difficulty</h2>
@@ -359,6 +377,192 @@
       </div>
     </div>
 
+    <h2>Charades Ideas by Category</h2>
+    <p>Not sure what to act out? Here are more than 100 ideas, grouped by theme. Use them as a printed list, or press Generate Prompts above for random action-and-style cards such as "Skip like a penguin".</p>
+
+    <div class="word-columns">
+      <div class="word-col">
+        <h4>Animals</h4>
+        <ul>
+          <li>Elephant</li>
+          <li>Monkey</li>
+          <li>Penguin</li>
+          <li>Kangaroo</li>
+          <li>Snake</li>
+          <li>Frog</li>
+          <li>Giraffe</li>
+          <li>Crab</li>
+          <li>Butterfly</li>
+          <li>Gorilla</li>
+          <li>Chicken</li>
+          <li>Snail</li>
+          <li>Bat</li>
+          <li>Octopus</li>
+          <li>Lion</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>Everyday Actions</h4>
+        <ul>
+          <li>Making a sandwich</li>
+          <li>Taking a selfie</li>
+          <li>Folding laundry</li>
+          <li>Texting while walking</li>
+          <li>Opening a stubborn jar</li>
+          <li>Sneezing</li>
+          <li>Mopping the floor</li>
+          <li>Tying shoelaces</li>
+          <li>Watering plants</li>
+          <li>Ironing a shirt</li>
+          <li>Taking out the trash</li>
+          <li>Waiting for a late bus</li>
+          <li>Using an umbrella in the rain</li>
+          <li>Washing a car</li>
+          <li>Locking the front door</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>Jobs</h4>
+        <ul>
+          <li>Doctor</li>
+          <li>Chef</li>
+          <li>Firefighter</li>
+          <li>Pilot</li>
+          <li>Dentist</li>
+          <li>Barber</li>
+          <li>Photographer</li>
+          <li>Farmer</li>
+          <li>Mechanic</li>
+          <li>Teacher</li>
+          <li>Magician</li>
+          <li>Construction worker</li>
+          <li>Plumber</li>
+          <li>Lifeguard</li>
+          <li>Astronaut</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>Sports &amp; Hobbies</h4>
+        <ul>
+          <li>Swimming</li>
+          <li>Playing tennis</li>
+          <li>Skateboarding</li>
+          <li>Bowling</li>
+          <li>Archery</li>
+          <li>Fishing</li>
+          <li>Doing yoga</li>
+          <li>Lifting weights</li>
+          <li>Playing guitar</li>
+          <li>Painting a picture</li>
+          <li>Knitting</li>
+          <li>Surfing</li>
+          <li>Rock climbing</li>
+          <li>Playing chess</li>
+          <li>Ice skating</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>Emotions &amp; Feelings</h4>
+        <ul>
+          <li>Surprised</li>
+          <li>Embarrassed</li>
+          <li>Jealous</li>
+          <li>Exhausted</li>
+          <li>Nervous</li>
+          <li>Proud</li>
+          <li>Confused</li>
+          <li>Excited</li>
+          <li>Bored</li>
+          <li>Disgusted</li>
+          <li>Relieved</li>
+          <li>Shy</li>
+          <li>Grumpy</li>
+          <li>Heartbroken</li>
+          <li>Overjoyed</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>Funny Actions</h4>
+        <ul>
+          <li>Slipping on a banana peel</li>
+          <li>Chasing a runaway chicken</li>
+          <li>Being tickled</li>
+          <li>Sleepwalking</li>
+          <li>Sinking in quicksand</li>
+          <li>Singing karaoke</li>
+          <li>Catching a fly with your hand</li>
+          <li>Sitting on a whoopee cushion</li>
+          <li>Stuck in a revolving door</li>
+          <li>Holding in a sneeze</li>
+          <li>Dodging a bee</li>
+          <li>Walking on ice</li>
+          <li>Pretending to be a robot</li>
+          <li>Dancing with two left feet</li>
+          <li>Trying to stay awake in class</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>Food &amp; Cooking</h4>
+        <ul>
+          <li>Flipping a pancake</li>
+          <li>Eating a very hot pepper</li>
+          <li>Slurping noodles</li>
+          <li>Kneading pizza dough</li>
+          <li>Peeling an onion</li>
+          <li>Drinking a thick smoothie</li>
+          <li>Roasting marshmallows</li>
+          <li>Carving a pumpkin</li>
+          <li>Eating corn on the cob</li>
+          <li>Squeezing a lemon</li>
+          <li>Cracking an egg</li>
+          <li>Licking a melting ice cream</li>
+          <li>Chopping vegetables</li>
+          <li>Making popcorn</li>
+          <li>Tasting something sour</li>
+        </ul>
+      </div>
+      <div class="word-col">
+        <h4>Places &amp; Travel</h4>
+        <ul>
+          <li>Camping in a tent</li>
+          <li>Riding a roller coaster</li>
+          <li>Climbing a mountain</li>
+          <li>Going through airport security</li>
+          <li>Rowing a boat</li>
+          <li>Snorkeling</li>
+          <li>Riding a camel</li>
+          <li>Building a sandcastle</li>
+          <li>Hiking in the rain</li>
+          <li>Driving a bus</li>
+          <li>Hailing a taxi</li>
+          <li>Skiing downhill</li>
+          <li>Paddling a canoe</li>
+          <li>Parachuting</li>
+          <li>Getting lost with a paper map</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>How to Choose the Right Prompts for Your Group</h2>
+    <div class="tips-grid">
+      <div class="tip-card">
+        <h4>For Young Kids</h4>
+        <p>Stick to animals, simple actions, and big emotions. Short, concrete ideas like "Elephant" or "Eating spaghetti" work best, because kids can act them out with their whole body.</p>
+      </div>
+      <div class="tip-card">
+        <h4>For Teens</h4>
+        <p>Mix funny actions with hobbies and sports. Teens enjoy exaggerated, silly prompts, so "Slipping on a banana peel" usually gets bigger reactions than a plain job title.</p>
+      </div>
+      <div class="tip-card">
+        <h4>For Adults</h4>
+        <p>Add emotions and everyday situations, which are harder to act without words. Abstract prompts like "Relieved" or "Getting lost with a paper map" lead to some of the funniest guesses.</p>
+      </div>
+      <div class="tip-card">
+        <h4>For Mixed Groups</h4>
+        <p>Use the Easy &amp; Kids mode for the first round, then switch to Challenging once everyone has warmed up. Pair younger players with older ones so nobody feels stuck.</p>
+      </div>
+    </div>
+
     <h2>Frequently Asked Questions</h2>
     <div class="faq-item">
       <div class="faq-question">Can actors make sound effects or mouth syllables?</div>
@@ -366,11 +570,11 @@
     </div>
     <div class="faq-item">
       <div class="faq-question">What is the recommended round duration?</div>
-      <div class="faq-answer">For casual adult and teen games, 45 to 60 seconds provides the ideal level of intensity. For younger children, extending the timer to 90 seconds gives them sufficient room to express complex ideas.</div>
+      <div class="faq-answer">The built-in timer is set to 30 seconds, which keeps rounds fast for casual games. For younger children or harder prompts, many groups agree to a longer limit (60 to 90 seconds) and simply keep time themselves.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-question">How does this charades generator prevent duplicate prompts?</div>
-      <div class="faq-answer">Our script uses a non-repeating randomized array algorithm during your active browser session, ensuring your players will not see duplicate cards during a regular game cycle.</div>
+      <div class="faq-question">Will I see the same prompt twice?</div>
+      <div class="faq-answer">Each card combines a random action with a random style, and there are tens of thousands of possible combinations, so repeats are rare but possible. Press Generate Prompts at any time to skip a card you have already seen.</div>
     </div>
   </article>
 
