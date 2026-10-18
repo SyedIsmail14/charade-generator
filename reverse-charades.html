@@ -1,107 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Reverse Charades – Group Acting Rules, Team Prompts &amp; Party Guide</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Master reverse charades: the fast-paced party game where the entire team acts together for a single guesser. Explore 30+ group scene prompts, staging tips, and rules.">
-
-  <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon-180x180.png">
-  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/assets/android-chrome-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/android-chrome-512x512.png">
-
-  <link rel="stylesheet" href="css/style.css">
-
-  <style>
-    /* ===== Reverse Charades — independent CSS namespace "rc-" ===== */
-
-    .rc-hero{background:linear-gradient(135deg,#1a1a4d 0%,#3d1e6d 55%,#7a1e5e 130%);border-radius:20px;padding:48px 32px;margin:28px 0;color:#fff;text-align:center;}
-    .rc-hero h1{margin:0 0 10px;font-size:clamp(24px,5vw,34px);font-weight:800;}
-    .rc-hero p{margin:0;font-size:clamp(14px,2.2vw,17px);opacity:.92;max-width:600px;margin-left:auto;margin-right:auto;}
-
-    .rc-article{font-size:15px;line-height:1.8;color:#2b2b38;}
-    .rc-article p{margin:0 0 16px;}
-    .rc-article h2{font-size:clamp(20px,4vw,24px);color:#3d1e6d;font-weight:800;margin:38px 0 14px;border-bottom:3px solid #f0c9e8;padding-bottom:8px;}
-    .rc-article h3{font-size:18px;color:#1a1a4d;margin:22px 0 8px;}
-
-    .rc-set{border-radius:16px;overflow:hidden;margin:22px 0 34px;box-shadow:0 6px 18px rgba(61,30,109,.1);}
-    .rc-set-head{padding:15px 22px;font-size:16px;font-weight:800;color:#fff;}
-    .rc-set.everyday .rc-set-head{background:#2b6ea8;}
-    .rc-set.party .rc-set-head{background:#7a1e5e;}
-    .rc-set.animals .rc-set-head{background:#1e7a4d;}
-    .rc-set.disaster .rc-set-head{background:#b3401f;}
-    .rc-set-body{background:#fdfaff;padding:4px 0;}
-    .rc-row{display:flex;align-items:center;gap:14px;padding:12px 22px;border-bottom:1px solid #f0e8f7;font-size:15px;color:#2b2b38;font-weight:600;}
-    .rc-row:last-child{border-bottom:none;}
-    .rc-row:nth-child(even){background:#f7f2fb;}
-    .rc-num{flex-shrink:0;width:24px;height:24px;border-radius:50%;background:#e8d5f0;color:#5c2a70;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;}
-
-    .rc-tips{background:#f7f2fb;border-left:5px solid #7a1e5e;border-radius:10px;padding:22px 26px;margin:32px 0;font-size:14.5px;line-height:1.8;color:#2b2b38;}
-
-    /* AdSense Informational Assets */
-    .rc-table{width:100%;border-collapse:collapse;margin:22px 0;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.05);}
-    .rc-table th{background:#3d1e6d;color:#fff;padding:12px 16px;text-align:left;font-size:14px;font-weight:700;}
-    .rc-table td{padding:12px 16px;border-bottom:1px solid #f1f5f9;font-size:14px;color:#334155;}
-    .rc-table tr:nth-child(even) td{background:#faf7fc;}
-
-    .rc-grid-tactics{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;margin:20px 0;}
-    .rc-tactic-card{background:#fff;border:1px solid #eadff5;border-left:4px solid #3d1e6d;border-radius:8px;padding:16px;}
-    .rc-tactic-card h4{margin:0 0 6px;color:#3d1e6d;font-size:15px;}
-    .rc-tactic-card p{margin:0;font-size:13.5px;color:#4a5568;line-height:1.6;}
-
-    .rc-faq-unit{border-bottom:1px solid #f0e8f7;padding:16px 0;}
-    .rc-faq-q{font-weight:700;color:#3d1e6d;font-size:15.5px;margin-bottom:6px;}
-    .rc-faq-a{color:#4a5568;font-size:14px;line-height:1.6;margin:0;}
-
-    .rc-related{background:#f7f2fb;border-radius:16px;padding:24px;margin:40px 0;text-align:center;}
-    .rc-related h2{margin-top:0;color:#3d1e6d;font-size:20px;font-weight:800;border:none;padding:0;}
-    .rc-related-grid{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:14px;}
-    .rc-related-link{background:#3d1e6d;color:#fff;text-decoration:none;padding:12px 24px;border-radius:30px;font-weight:700;font-size:14px;transition:background .2s,transform .15s;}
-    .rc-related-link:hover{background:#2b1550;transform:translateY(-2px);}
-
-    @media(max-width:600px){
-      .rc-hero{padding:32px 20px;}
-      .rc-row{padding:11px 16px;font-size:14px;}
-      .rc-set-head{font-size:15px;padding:13px 16px;}
-    }
-  </style>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9278946234890215"
-     crossorigin="anonymous"></script>
-
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8Q5RPKL818"></script>
-  <script src="/js/analytics.js"></script>
-  <link rel="canonical" href="https://charadegenerator.com/reverse-charades.html">
+<meta charset="UTF-8">
+<title>Reverse Charades – How to Play, Group Scene Prompts &amp; Team Rules</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Reverse charades is the party game where the whole team acts together while one person guesses. Get the rules, 32 group scene prompts, staging tips, scoring formats and a random scene picker with timer.">
+<link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon-180x180.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/assets/android-chrome-512x512.png">
+<link rel="canonical" href="https://charadegenerator.com/reverse-charades.html">
+<link rel="stylesheet" href="css/style.css">
 
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Reverse Charades – Group Acting Rules, Team Prompts & Party Guide",
-  "url": "https://charadegenerator.com/reverse-charades.html",
-  "description": "Learn how to play Reverse Charades with group acting rules, team prompts, scoring formats and party game ideas.",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "CharadeGenerator",
-    "url": "https://charadegenerator.com/"
-  }
-}
+{"@context":"https://schema.org","@graph":[
+{"@type":"WebPage","name":"Reverse Charades – How to Play, Group Scene Prompts & Team Rules","url":"https://charadegenerator.com/reverse-charades.html","description":"How to play reverse charades, with group scene prompts, staging tips, scoring formats and a random scene picker.","isPartOf":{"@type":"WebSite","name":"CharadeGenerator","url":"https://charadegenerator.com/"}},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Can actors talk before the round starts?","acceptedAnswer":{"@type":"Answer","text":"Yes. Give the team a short planning huddle of about 5 seconds to assign roles. When the timer starts and the guesser looks up, everyone stays silent."}},
+{"@type":"Question","name":"Can the guesser ask yes-or-no questions?","acceptedAnswer":{"@type":"Answer","text":"In the standard rules the guesser just calls out guesses. Actors may nod, shake their heads or beckon to show whether the guess is close."}},
+{"@type":"Question","name":"How many players do you need?","acceptedAnswer":{"@type":"Answer","text":"One guesser and at least three actors. Four to seven actors works best. Larger groups can split into two teams."}}]},
+{"@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Home","item":"https://charadegenerator.com/"},
+{"@type":"ListItem","position":2,"name":"Reverse Charades","item":"https://charadegenerator.com/reverse-charades.html"}]}]}
 </script>
+
+<style>
+:root{--d:#3d1e6d;--dd:#1a1a4d;--m:#7a1e5e;--soft:#f7f2fb;--txt:#2b2b38}
+*,*::before,*::after{box-sizing:border-box}
+img,svg{max-width:100%;height:auto}
+button:focus-visible,a:focus-visible,select:focus-visible{outline:3px solid #f59e0b;outline-offset:2px}
+.rc-hero{background:linear-gradient(135deg,#1a1a4d,#3d1e6d 55%,#7a1e5e 130%);border-radius:20px;padding:clamp(28px,6vw,48px) clamp(18px,4vw,32px);margin:24px 0;color:#fff;text-align:center}
+.rc-hero h1{margin:0 0 10px;font-size:clamp(26px,6vw,34px);line-height:1.2}
+.rc-hero p{margin:0 auto;font-size:clamp(14px,2.4vw,17px);max-width:600px;opacity:.95}
+.rc-article{font-size:16px;line-height:1.8;color:var(--txt)}
+.rc-article p{margin:0 0 14px}
+.rc-article h2{font-size:clamp(20px,4vw,24px);line-height:1.3;color:var(--d);margin:36px 0 14px;border-bottom:3px solid #f0c9e8;padding-bottom:8px}
+.rc-article h3{font-size:18px;color:var(--dd);margin:22px 0 8px}
+.rc-article li{margin-bottom:8px}
+.rc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:14px;margin:18px 0}
+.rc-card{background:#fff;border:1px solid #eadff5;border-left:4px solid var(--d);border-radius:8px;padding:16px}
+.rc-card h4{margin:0 0 6px;color:var(--d);font-size:15px}
+.rc-card p{margin:0;font-size:14px;color:#4a5568;line-height:1.6}
+.rc-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:18px 0;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.rc-table{width:100%;min-width:560px;border-collapse:collapse;background:#fff;font-size:14px}
+.rc-table th{background:var(--d);color:#fff;padding:12px 14px;text-align:left}
+.rc-table td{padding:12px 14px;border-bottom:1px solid #f1f5f9;vertical-align:top}
+.rc-table tr:nth-child(even) td{background:#faf7fc}
+.rc-table tr.me td{background:#fdeaf7;font-weight:600}
+.rc-set{border-radius:16px;overflow:hidden;margin:20px 0 30px;box-shadow:0 6px 18px rgba(61,30,109,.1);background:#fdfaff}
+.rc-set h3{margin:0;padding:14px 20px;font-size:16px;color:#fff}
+.rc-set.everyday h3{background:#2b6ea8}.rc-set.party h3{background:#7a1e5e}.rc-set.animals h3{background:#1e7a4d}.rc-set.disaster h3{background:#b3401f}
+.rc-set ol{list-style:none;counter-reset:n;margin:0;padding:4px 0}
+.rc-set li{counter-increment:n;display:flex;gap:12px;align-items:flex-start;padding:12px 20px;border-bottom:1px solid #f0e8f7;font-size:15px;font-weight:600;line-height:1.5;margin:0}
+.rc-set li:nth-child(even){background:var(--soft)}
+.rc-set li:last-child{border-bottom:0}
+.rc-set li::before{content:counter(n);flex:0 0 24px;height:24px;border-radius:50%;background:#e8d5f0;color:#5c2a70;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.rc-pick{background:var(--soft);border:2px solid #e0c3fc;border-radius:16px;padding:20px;text-align:center;margin:30px 0}
+.rc-pick h2{border:0;margin:0 0 12px;padding:0}
+.rc-pick select,.rc-pick button{font-size:15px;padding:10px 16px;border-radius:8px;border:2px solid var(--d);font-weight:700}
+.rc-pick button{background:var(--d);color:#fff;cursor:pointer}
+.rc-pick button.alt{background:#fff;color:var(--d)}
+.rc-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+#rcPrompt{min-height:64px;margin:16px 0 6px;font-size:clamp(17px,3.5vw,21px);font-weight:700;color:var(--dd);line-height:1.4}
+#rcTime{font-size:15px;color:#6b7280;margin:0}
+.rc-tips{background:var(--soft);border-left:5px solid var(--m);border-radius:10px;padding:18px 22px;margin:30px 0;font-size:15px;line-height:1.8}
+.rc-faq div{border-bottom:1px solid #f0e8f7;padding:16px 0}
+.rc-faq h3{margin:0 0 6px;font-size:16px;color:var(--d)}
+.rc-faq p{margin:0;font-size:15px;line-height:1.7;color:#4a5568}
+.rc-related{background:var(--soft);border-radius:16px;padding:22px;margin:40px 0;text-align:center}
+.rc-related h2{margin:0 0 12px;color:var(--d);font-size:20px}
+.rc-links{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.rc-links a{background:var(--d);color:#fff;text-decoration:none;padding:12px 22px;border-radius:30px;font-weight:700;font-size:14px}
+.rc-links a:hover{background:#2b1550}
+.ft{max-width:1000px;margin:0 auto;padding:20px 16px;border-top:1px solid #f0e8f7;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.ft a{margin-right:12px;color:var(--d);text-decoration:none;display:inline-block;padding:4px 0}
+@media(max-width:600px){.rc-article{font-size:15px}.rc-set li{padding:11px 14px}.rc-links a,.rc-pick button,.rc-pick select{width:100%;text-align:center}}
+@media print{.header,.footer,.rc-pick,.rc-related,.ft{display:none!important}.rc-set{break-inside:avoid;box-shadow:none}body{font-size:12px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9278946234890215" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8Q5RPKL818"></script>
+<script src="/js/analytics.js"></script>
 </head>
 <body>
 
 <header class="header">
   <div class="header-inner">
-    <div class="logo">
-      <a href="https://charadegenerator.com/" class="logo-link">
-        🎭 <strong>Charades</strong>Generator
-      </a>
-    </div>
-    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <div class="logo"><a href="https://charadegenerator.com/" class="logo-link">🎭 <strong>Charades</strong>Generator</a></div>
+    <button class="menu-btn" onclick="toggleMenu()" aria-label="Open menu">☰</button>
     <nav class="nav-desktop">
       <a href="character-charades.html"><button>Character Charades</button></a>
       <a href="islamic-charades.html"><button>Islamic Charades</button></a>
@@ -119,192 +110,199 @@
 
 <main class="main">
 
-  <section class="rc-hero">
-    <h1>🔄 Reverse Charades</h1>
-    <p>The whole team acts out complex scenes simultaneously while one person guesses — ideal for icebreakers and large gatherings.</p>
-  </section>
+<section class="rc-hero">
+  <h1>🔄 Reverse Charades</h1>
+  <p>The whole team acts out a scene together while one person guesses. Great for icebreakers, classrooms and large groups.</p>
+</section>
 
-  <article class="rc-article">
-    <p>
-      In standard parlor charades, a single performer carries the entire pressure of communicating an abstract phrase while a roomful of spectators watches. <strong>Reverse Charades</strong> completely turns this dynamic inside out: one player sits in the hot seat as the solitary guesser, while their entire squad (anywhere from three to ten performers) improvises a collaborative pantomime together without speaking.
-    </p>
-    <p>
-      This inversion transforms the energy of party games. Shy participants and younger children who experience stage fright when isolated on stage thrive because they blend naturally into an ensemble. Instead of relying on a single gesture, the guesser is presented with an entire living diorama of physical clues, moving parts, and comical character interactions.
-    </p>
+<article class="rc-article">
+  <p>
+    In classic charades, one performer carries the whole turn while everyone else watches. <strong>Reverse Charades</strong> flips that around: one player sits in the hot seat as the guesser, and the rest of the team (three to seven people works best) acts out a scene together in silence.
+  </p>
+  <p>
+    The change makes the game friendlier. Shy players and younger children who dislike being on stage alone can blend into the group, and the guesser gets a whole scene of clues instead of one person's gestures.
+  </p>
 
-    <h2>Classic Charades vs. Reverse Charades: Core Differences</h2>
+  <h2>How This Page Is Different</h2>
+  <p>Our other pages focus on one actor at a time. This one is about teamwork, so everything here is designed for groups:</p>
+  <div class="rc-grid">
+    <div class="rc-card"><h4>Scenes, not single words</h4><p>All 32 prompts are situations with several roles, so every actor has something to do.</p></div>
+    <div class="rc-card"><h4>Staging advice</h4><p>A guide to dividing roles and positions so the guesser sees clear clues instead of noise.</p></div>
+    <div class="rc-card"><h4>Rules for groups</h4><p>Huddle time, team size, hints and two scoring formats for competitive play.</p></div>
+    <div class="rc-card"><h4>Picker and print layout</h4><p>Draw a random scene with a 60-second timer, or print the lists to play without screens.</p></div>
+  </div>
+  <div class="rc-wrap">
     <table class="rc-table">
-      <thead>
-        <tr>
-          <th>Mechanic</th>
-          <th>Standard Charades</th>
-          <th>Reverse Charades</th>
-        </tr>
-      </thead>
+      <thead><tr><th>Page</th><th>What you get</th><th>Best for</th></tr></thead>
       <tbody>
-        <tr>
-          <td><strong>Acting Dynamic</strong></td>
-          <td>Single performer acting in isolation.</td>
-          <td>Collaborative ensemble acting simultaneously.</td>
-        </tr>
-        <tr>
-          <td><strong>Guesser Role</strong></td>
-          <td>Entire audience calls out guesses.</td>
-          <td>One player observes and shouts possible answers.</td>
-        </tr>
-        <tr>
-          <td><strong>Ideal Prompt Type</strong></td>
-          <td>Short idioms, isolated words, famous titles.</td>
-          <td>Dynamic group situations, environments, scenarios.</td>
-        </tr>
-        <tr>
-          <td><strong>Average Turn Duration</strong></td>
-          <td>45 to 60 seconds per card.</td>
-          <td>60 seconds per multi-card sprint.</td>
-        </tr>
+        <tr><td><a href="index.html">General Charades</a></td><td>Random action-and-style cards with a 30-second timer, for one actor at a time.</td><td>Any group, any age</td></tr>
+        <tr><td><a href="character-charades.html">Character Charades</a></td><td>Famous fictional characters by universe, plus acting tips.</td><td>Pop-culture game nights</td></tr>
+        <tr><td><a href="islamic-charades.html">Islamic Charades</a></td><td>Curated halal prompt sets and a madrasa lesson plan.</td><td>Families, Eid, Islamic schools</td></tr>
+        <tr><td><a href="christmas-charades.html">Christmas Charades</a></td><td>Festive and seasonal prompts.</td><td>Holiday parties</td></tr>
+        <tr class="me"><td>Reverse Charades (this page)</td><td>Group scene prompts, ensemble staging guide, team rules and scoring.</td><td>Large groups, icebreakers, classrooms, mixed ages</td></tr>
       </tbody>
     </table>
+  </div>
 
-    <h2>Curated Reverse Charades Scenario Sets</h2>
-    <p>Because ensemble pantomime relies on multi-person collaboration, prompt design must focus on scenarios where each actor can inhabit a unique station or perspective:</p>
+  <h2>Classic vs. Reverse Charades</h2>
+  <div class="rc-wrap">
+    <table class="rc-table">
+      <thead><tr><th>Mechanic</th><th>Standard Charades</th><th>Reverse Charades</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Acting</strong></td><td>One performer acts alone.</td><td>The whole team acts together.</td></tr>
+        <tr><td><strong>Guessing</strong></td><td>The audience calls out guesses.</td><td>One player guesses.</td></tr>
+        <tr><td><strong>Best prompts</strong></td><td>Words, titles and idioms.</td><td>Scenes, places and situations.</td></tr>
+        <tr><td><strong>Pressure</strong></td><td>All on one person.</td><td>Shared across the team.</td></tr>
+        <tr><td><strong>Typical turn</strong></td><td>30 to 60 seconds per card.</td><td>60 seconds per scene, or per sprint of several scenes.</td></tr>
+      </tbody>
+    </table>
+  </div>
 
-    <!-- SET 1 -->
-    <div class="rc-set everyday">
-      <div class="rc-set-head">🎬 Everyday Action Scenes</div>
-      <div class="rc-set-body">
-        <div class="rc-row"><span class="rc-num">1</span>Cooking a chaotic Thanksgiving meal in a crowded kitchen</div>
-        <div class="rc-row"><span class="rc-num">2</span>Working together in a manual car wash assembly line</div>
-        <div class="rc-row"><span class="rc-num">3</span>Fishing together on a small boat that begins rocking</div>
-        <div class="rc-row"><span class="rc-num">4</span>Cleaning the entire house under a strict 5-minute timer</div>
-        <div class="rc-row"><span class="rc-num">5</span>Performing live as an energetic 4-piece rock band</div>
-        <div class="rc-row"><span class="rc-num">6</span>Catching waves and dodging sea creatures while surfing</div>
-        <div class="rc-row"><span class="rc-num">7</span>Navigating a bustling open-air market on Black Friday</div>
-        <div class="rc-row"><span class="rc-num">8</span>Painting an enormous public mural on a high scaffold</div>
-      </div>
+  <h2>How to Play</h2>
+  <ol>
+    <li><strong>Pick the guesser.</strong> One person sits facing the team. Everyone else is an actor. Aim for four to seven actors; split bigger groups into two teams.</li>
+    <li><strong>Draw a scene.</strong> Use the picker below, or point to a line on a printed sheet. The guesser must not see it.</li>
+    <li><strong>Huddle for about 5 seconds.</strong> Actors may whisper to assign roles, for example "I'm the pilot, you two are passengers".</li>
+    <li><strong>Act in silence.</strong> The guesser looks up and the timer starts. No talking, humming or sound effects.</li>
+    <li><strong>Guess.</strong> The guesser calls out full guesses. Actors may nod, shake their heads or beckon to show warm or cold.</li>
+    <li><strong>Score and rotate.</strong> One point if the scene is guessed in time. Pick a new guesser and repeat.</li>
+  </ol>
+
+  <div class="rc-pick" id="picker">
+    <h2>Random Scene Picker</h2>
+    <div class="rc-row">
+      <select id="rcSet" aria-label="Scene set">
+        <option value="all">All scenes</option><option value="0">Everyday Action Scenes</option><option value="1">Party &amp; Group Scenes</option><option value="2">Animals &amp; Wild Habitats</option><option value="3">High-Stakes Action</option>
+      </select>
+      <button id="rcDraw" type="button">Draw a scene</button>
+      <button id="rcStart" class="alt" type="button">Start 60s</button>
     </div>
+    <div id="rcPrompt" aria-live="polite">Hide this from the guesser, then press "Draw a scene".</div>
+    <p id="rcTime"></p>
+  </div>
 
-    <!-- SET 2 -->
-    <div class="rc-set party">
-      <div class="rc-set-head">🎉 Party &amp; Group Scenes</div>
-      <div class="rc-set-body">
-        <div class="rc-row"><span class="rc-num">1</span>Doing a synchronized routine on a crowded dance floor</div>
-        <div class="rc-row"><span class="rc-num">2</span>Hiding behind furniture for a surprise birthday reveal</div>
-        <div class="rc-row"><span class="rc-num">3</span>Orchestra musicians obeying a furious classical conductor</div>
-        <div class="rc-row"><span class="rc-num">4</span>Lifting a heavy trophy after a nail-biting sports final</div>
-        <div class="rc-row"><span class="rc-num">5</span>Circus performers: juggler, tightrope walker, and ringmaster</div>
-        <div class="rc-row"><span class="rc-num">6</span>Mission Control team coordinating an intense rocket launch</div>
-        <div class="rc-row"><span class="rc-num">7</span>Zoo veterinary team capturing and examining an unruly animal</div>
-        <div class="rc-row"><span class="rc-num">8</span>Backstage crew frantically fixing a collapsing theatrical set</div>
-      </div>
-    </div>
+  <h2>Group Scene Prompts</h2>
+  <p>Each scene gives several actors something different to do. Use them as a printed list or with the picker above.</p>
 
-    <!-- SET 3 -->
-    <div class="rc-set animals">
-      <div class="rc-set-head">🐾 Animals &amp; Wild Habitats</div>
-      <div class="rc-set-body">
-        <div class="rc-row"><span class="rc-num">1</span>A herd of elephants quenching thirst at a muddy watering hole</div>
-        <div class="rc-row"><span class="rc-num">2</span>A hive of defensive worker bees swarming a honey badger</div>
-        <div class="rc-row"><span class="rc-num">3</span>Colony of penguins slipping and waddling along icy cliffs</div>
-        <div class="rc-row"><span class="rc-num">4</span>Troop of gorillas peeling fruit and beating chests in a rainforest</div>
-        <div class="rc-row"><span class="rc-num">5</span>A wolf pack coordinating an ambush in deep snow</div>
-        <div class="rc-row"><span class="rc-num">6</span>A flock of geese flying in V-formation battling headwinds</div>
-        <div class="rc-row"><span class="rc-num">7</span>Giant sea turtle hatchlings racing across the beach to water</div>
-        <div class="rc-row"><span class="rc-num">8</span>Herbivore dinosaurs fleeing a rumbling volcanic tremor</div>
-      </div>
-    </div>
+  <div class="rc-set everyday" data-set="0"><h3>🎬 Everyday Action Scenes</h3><ol>
+    <li>Cooking a chaotic Thanksgiving meal in a crowded kitchen</li>
+    <li>Working together in a manual car wash assembly line</li>
+    <li>Fishing together on a small boat that begins rocking</li>
+    <li>Cleaning the entire house under a strict 5-minute timer</li>
+    <li>Performing live as an energetic 4-piece rock band</li>
+    <li>Catching waves and dodging sea creatures while surfing</li>
+    <li>Navigating a bustling open-air market on Black Friday</li>
+    <li>Painting an enormous public mural on a high scaffold</li>
+  </ol></div>
 
-    <!-- SET 4 -->
-    <div class="rc-set disaster">
-      <div class="rc-set-head">🌊 High-Stakes Action &amp; Emergency Scenarios</div>
-      <div class="rc-set-body">
-        <div class="rc-row"><span class="rc-num">1</span>Securing shutters and bracing furniture against a tornado</div>
-        <div class="rc-row"><span class="rc-num">2</span>Firefighting crew carrying hoses and breaking down doors</div>
-        <div class="rc-row"><span class="rc-num">3</span>Sailors throwing buckets of water off a listing deck</div>
-        <div class="rc-row"><span class="rc-num">4</span>Passengers on a bumpy rollercoaster clutching the safety bar</div>
-        <div class="rc-row"><span class="rc-num">5</span>Ironworkers balancing beams on a windy skyscraper frame</div>
-        <div class="rc-row"><span class="rc-num">6</span>A pit crew performing a rapid 3-second Formula 1 tire change</div>
-        <div class="rc-row"><span class="rc-num">7</span>Passengers dodging luggage aboard a runaway mountain train</div>
-        <div class="rc-row"><span class="rc-num">8</span>Archeologists outrunning a rolling boulder inside a cavern</div>
-      </div>
-    </div>
+  <div class="rc-set party" data-set="1"><h3>🎉 Party &amp; Group Scenes</h3><ol>
+    <li>Doing a synchronized routine on a crowded dance floor</li>
+    <li>Hiding behind furniture for a surprise birthday reveal</li>
+    <li>Orchestra musicians obeying a furious classical conductor</li>
+    <li>Lifting a heavy trophy after a nail-biting sports final</li>
+    <li>Circus performers: juggler, tightrope walker, and ringmaster</li>
+    <li>Mission Control team coordinating an intense rocket launch</li>
+    <li>Zoo veterinary team capturing and examining an unruly animal</li>
+    <li>Backstage crew frantically fixing a collapsing theatrical set</li>
+  </ol></div>
 
-    <h2>Ensemble Staging: The "Divide &amp; Conquer" Strategy</h2>
-    <p>
-      The biggest mistake teams make in Reverse Charades is mirror-miming—every actor performing the exact same gesture at the exact same time. This turns the stage into visual noise. To give your guesser distinct visual clues, apply theatrical blocking principles:
-    </p>
+  <div class="rc-set animals" data-set="2"><h3>🐾 Animals &amp; Wild Habitats</h3><ol>
+    <li>A herd of elephants quenching thirst at a muddy watering hole</li>
+    <li>A hive of defensive worker bees swarming a honey badger</li>
+    <li>Colony of penguins slipping and waddling along icy cliffs</li>
+    <li>Troop of gorillas peeling fruit and beating chests in a rainforest</li>
+    <li>A wolf pack coordinating an ambush in deep snow</li>
+    <li>A flock of geese flying in V-formation battling headwinds</li>
+    <li>Giant sea turtle hatchlings racing across the beach to water</li>
+    <li>Herbivore dinosaurs fleeing a rumbling volcanic tremor</li>
+  </ol></div>
 
-    <div class="rc-grid-tactics">
-      <div class="rc-tactic-card">
-        <h4>1. Background Atmosphere</h4>
-        <p>Assign one or two actors to establish the setting (e.g., swaying like trees in a hurricane, or acting as the rollercoaster cart).</p>
-      </div>
-      <div class="rc-tactic-card">
-        <h4>2. Focal Interactions</h4>
-        <p>Have two actors directly engage in conflict or teamwork (e.g., a chef flipping dough while another rolls pastry).</p>
-      </div>
-      <div class="rc-tactic-card">
-        <h4>3. The 3-Second Strategy Huddle</h4>
-        <p>Before stepping into the acting circle, the ensemble gets three whispered seconds to assign roles before silence falls.</p>
-      </div>
-      <div class="rc-tactic-card">
-        <h4>4. Staggered Heights</h4>
-        <p>Keep the guesser's field of view clear by having some actors crouch, kneel, or sit while taller performers remain upright.</p>
-      </div>
-    </div>
+  <div class="rc-set disaster" data-set="3"><h3>🌊 High-Stakes Action &amp; Emergency Scenarios</h3><ol>
+    <li>Securing shutters and bracing furniture against a tornado</li>
+    <li>Firefighting crew carrying hoses and breaking down doors</li>
+    <li>Sailors throwing buckets of water off a listing deck</li>
+    <li>Passengers on a bumpy rollercoaster clutching the safety bar</li>
+    <li>Ironworkers balancing beams on a windy skyscraper frame</li>
+    <li>A pit crew performing a rapid 3-second Formula 1 tire change</li>
+    <li>Passengers dodging luggage aboard a runaway mountain train</li>
+    <li>Archeologists outrunning a rolling boulder inside a cavern</li>
+  </ol></div>
 
-    <h2>Tournament Scoring Formats</h2>
-    <p>
-      For competitive game nights, corporate retreats, or classroom tournaments, consider these proven timing formats:
-    </p>
-    <ul>
-      <li><strong>The 60-Second Blitz:</strong> The team designates one guesser who stands at the front. The group draws as many prompt cards as possible in 60 seconds. Each correctly guessed scene awards 1 point. Teams swap guessers each round for 3 cycles.</li>
-      <li><strong>Sudden Death Pass:</strong> Each squad gets one complex scenario. A stopwatch counts upward. The moment the guesser solves the scene, the timer stops. The team that solved their scene in the fewest seconds wins the round.</li>
-    </ul>
+  <h2>Staging: Divide and Conquer</h2>
+  <p>
+    The most common mistake is mirror-miming, where every actor does the same gesture at once. It looks like visual noise. Borrow a few ideas from theater instead:
+  </p>
+  <div class="rc-grid">
+    <div class="rc-card"><h4>Set the background</h4><p>Assign one or two actors to create the setting, such as swaying like trees in a storm or forming the rollercoaster cart.</p></div>
+    <div class="rc-card"><h4>Create a focal interaction</h4><p>Have two actors work together or clash, like a chef flipping dough while another rolls pastry.</p></div>
+    <div class="rc-card"><h4>Use different heights</h4><p>Let some actors crouch or kneel while others stand, so the guesser can see everyone.</p></div>
+    <div class="rc-card"><h4>Repeat the key clue</h4><p>If the guesser is stuck, one actor can make the most telling action bigger and slower instead of everyone changing at once.</p></div>
+  </div>
 
-    <h2>Frequently Asked Questions</h2>
-    <div class="rc-faq-unit">
-      <div class="rc-faq-q">Can actors talk during the pre-round huddle?</div>
-      <div class="rc-faq-a">Yes. Teams are permitted a brief 5-second planning window to assign characters (e.g., "I'm the pilot, you two are the passengers"). However, the moment the timer starts and the guesser looks up, absolute silence must be maintained.</div>
-    </div>
-    <div class="rc-faq-unit">
-      <div class="rc-faq-q">Can the guesser ask yes-or-no questions?</div>
-      <div class="rc-faq-a">In standard rules, no. The guesser simply shouts out full guesses while watching the scene unfold. However, actors may nod or shake their heads to indicate whether the guesser is warm or cold.</div>
-    </div>
-    <div class="rc-faq-unit">
-      <div class="rc-faq-q">What is the optimal team size for Reverse Charades?</div>
-      <div class="rc-faq-a">The ideal group size is between 4 and 7 performers acting for 1 guesser. Groups larger than 8 should consider splitting into two competing teams to keep stage areas unobstructed.</div>
-    </div>
+  <h2>Scoring Formats</h2>
+  <ul>
+    <li><strong>60-Second Blitz:</strong> One guesser stands at the front. The team acts out as many scenes as possible in 60 seconds. Each scene guessed scores 1 point. Rotate guessers for three rounds.</li>
+    <li><strong>Sudden Death Race:</strong> Each team gets one scene and a stopwatch counts up. The team whose guesser solves it in the fewest seconds wins the round.</li>
+  </ul>
 
-    <div class="rc-tips">
-      <strong>Pro Tip for Organizers:</strong> Reverse Charades is especially effective as an opener for mixed-age parties. Because individual players are never singled out under the spotlight, it breaks the ice quickly and gets everyone laughing without social pressure.
-    </div>
-  </article>
+  <h2>Adapting the Game</h2>
+  <div class="rc-grid">
+    <div class="rc-card"><h4>With young children</h4><p>Use the Animals set, give 90 seconds, and let an adult act as one of the team.</p></div>
+    <div class="rc-card"><h4>In the classroom</h4><p>Use it as an icebreaker or a review activity. Write your own scenes from the topic being studied.</p></div>
+    <div class="rc-card"><h4>At work</h4><p>Mix people from different teams in each group. The shared silly task helps people loosen up.</p></div>
+  </div>
 
-  <section class="rc-related">
-    <h2>Explore Complementary Game Modes</h2>
-    <div class="rc-related-grid">
-      <a href="index.html" class="rc-related-link">🎭 Main Charades Generator</a>
-      <a href="character-charades.html" class="rc-related-link">🦸 Famous Characters</a>
-      <a href="islamic-charades.html" class="rc-related-link">🕌 Islamic Charades</a>
-      <a href="christmas-charades.html" class="rc-related-link">🎄 Christmas Charades</a>
-    </div>
-  </section>
+  <h2>Frequently Asked Questions</h2>
+  <div class="rc-faq">
+    <div><h3>Can actors talk before the round starts?</h3><p>Yes. Give the team a short huddle of about 5 seconds to assign roles. As soon as the timer starts and the guesser looks up, everyone stays silent.</p></div>
+    <div><h3>Can the guesser ask yes-or-no questions?</h3><p>In the standard rules, no. The guesser calls out guesses and actors may nod, shake their heads or beckon to show how close they are.</p></div>
+    <div><h3>How many players do you need?</h3><p>One guesser and at least three actors. Four to seven actors works best. With eight or more, split into two teams so the space stays clear.</p></div>
+    <div><h3>Can we make our own scenes?</h3><p>Yes. A good scene is a place or situation with at least three roles. Think "airport baggage claim" or "a bakery at 5 a.m.".</p></div>
+  </div>
+
+  <div class="rc-tips">
+    <strong>Tip for hosts:</strong> Reverse Charades works well as the first game of the night. Nobody is singled out, so it relaxes mixed-age groups quickly and gets everyone laughing before the competitive rounds.
+  </div>
+</article>
+
+<section class="rc-related">
+  <h2>Explore Other Charades Pages</h2>
+  <div class="rc-links">
+    <a href="index.html">🎭 General Charades</a>
+    <a href="character-charades.html">🦸 Character Charades</a>
+    <a href="islamic-charades.html">🕌 Islamic Charades</a>
+    <a href="christmas-charades.html">🎄 Christmas Charades</a>
+  </div>
+</section>
 
 </main>
 
 <footer class="footer">
-  <div style="max-width:1000px;margin:0 auto;padding:20px 0;border-top:1px solid #f0e8f7;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+  <div class="ft">
     <div>
-      <a href="about-us.html" style="margin-right:12px;color:#3d1e6d;text-decoration:none;">About Us</a>
-      <a href="contact-us.html" style="margin-right:12px;color:#3d1e6d;text-decoration:none;">Contact Us</a>
-      <a href="privacy-policy.html" style="margin-right:12px;color:#3d1e6d;text-decoration:none;">Privacy Policy</a>
-      <a href="terms-and-conditions.html" style="margin-right:12px;color:#3d1e6d;text-decoration:none;">Terms &amp; Conditions</a>
-      <a href="disclaimer.html" style="color:#3d1e6d;text-decoration:none;">Disclaimer</a>
+      <a href="about-us.html">About Us</a>
+      <a href="contact-us.html">Contact Us</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+      <a href="disclaimer.html">Disclaimer</a>
     </div>
-    <p style="margin:0;color:#8a8394;font-size:13px;">© CharadeGenerator 2026. All rights reserved.</p>
+    <p style="margin:0;color:#6b7280;font-size:13px;">© CharadeGenerator 2026. All rights reserved.</p>
   </div>
 </footer>
 
+<script>
+(function(){
+  var sets=document.querySelectorAll('.rc-set'),sel=document.getElementById('rcSet'),
+      out=document.getElementById('rcPrompt'),tm=document.getElementById('rcTime'),t=null,s=0;
+  function pool(){var v=sel.value,a=[];sets.forEach(function(el){
+    if(v==='all'||el.getAttribute('data-set')===v){el.querySelectorAll('li').forEach(function(li){a.push(li.textContent)})}});return a}
+  function stop(){clearInterval(t);t=null}
+  document.getElementById('rcDraw').onclick=function(){var p=pool();out.textContent=p[Math.floor(Math.random()*p.length)];stop();tm.textContent=''};
+  document.getElementById('rcStart').onclick=function(){
+    stop();s=60;tm.textContent='Time left: '+s+'s';
+    t=setInterval(function(){s--;tm.textContent=s>0?'Time left: '+s+'s':"Time's up!";if(s<=0)stop()},1000)};
+})();
+</script>
 <script src="js/support-widget.js?v=2"></script>
 </body>
 </html>
