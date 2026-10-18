@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Character Charades Generator – 250+ Pop Culture, Movie & Comic Prompts</title>
+  <title>Character Charades Generator – Famous Characters to Act Out</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Generate famous fictional characters for charades across superheroes, cinema legends, video game heroes, and folklore. Complete acting guides and non-verbal signals included.">
+  <meta name="description" content="Free character charades generator with famous superheroes, movie icons, fairy tale figures, video game heroes and classic TV characters. Includes acting tips, hand signals and a 30-second timer.">
 
   <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
@@ -18,102 +18,131 @@
   <link rel="stylesheet" href="css/style.css">
 
   <style>
-    /* Widget functional layout (IDs and classes preserved for character-charades.js) */
+    :root{--p:#7b2cbf;--pd:#5a189a;--pl:#f3e8ff;--pb:#e0c3fc;--ink:#2e1065;--txt:#334155;--mut:#6b7280;}
+    *,*::before,*::after{box-sizing:border-box;}
+    img,svg{max-width:100%;height:auto;}
+
+    /* ── Game widget (IDs/classes used by character-charades.js) ── */
+    .category-title{font-size:clamp(24px,5vw,34px);line-height:1.2;margin:0 0 6px;color:var(--ink);}
+    .subtitle{color:var(--mut);font-size:clamp(14px,2.5vw,16px);margin:0 0 16px;}
+    .top-controls,.mode-select,.round-pick{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;align-items:center;}
+    .top-controls button{background:#fff;border:2px solid var(--p);border-radius:8px;padding:8px 16px;font-size:14px;font-weight:600;cursor:pointer;color:var(--p);transition:all .2s;}
+    .top-controls button:hover{background:var(--p);color:#fff;}
+    .copy-msg{display:none;color:#2f9e44;font-weight:700;font-size:14px;}
+    .mode-btn,.round-btn{background:var(--pl);border:2px solid var(--pb);border-radius:8px;font-weight:600;cursor:pointer;transition:all .2s;color:var(--p);}
+    .mode-btn{padding:8px 16px;font-size:14px;}
+    .round-btn{padding:8px 22px;font-size:16px;font-weight:700;}
+    .mode-btn.active,.mode-btn:hover,.round-btn.active,.round-btn:hover{background:var(--p);border-color:var(--p);color:#fff;}
+    button:focus-visible,a:focus-visible{outline:3px solid #f59e0b;outline-offset:2px;}
+
     .game-layout{display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap;}
-    .timer-col{display:flex;flex-direction:column;align-items:center;gap:10px;flex-shrink:0;min-width:110px;}
+    .timer-col{display:flex;flex-direction:column;align-items:center;gap:10px;flex:0 0 110px;}
     #timerRing{display:block;}
     .timer-btn-row{display:flex;flex-direction:column;gap:8px;width:100%;}
-    #timerToggleBtn{background:#7b2cbf;color:#fff;border:none;border-radius:8px;padding:8px 0;font-size:13px;font-weight:700;cursor:pointer;width:100%;transition:background .2s;}
-    #timerToggleBtn:hover{background:#5a189a;}
-    #timerResetBtn{background:#f3e8ff;color:#7b2cbf;border:1px solid #e0c3fc;border-radius:8px;padding:7px 0;font-size:13px;font-weight:600;cursor:pointer;width:100%;transition:background .2s;}
-    #timerResetBtn:hover{background:#e0c3fc;}
-    .game-content{flex:1;min-width:240px;}
-    #cards{margin-bottom:14px;min-height:60px;}
-    .round-pick{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;}
-    .round-btn{background:#f3e8ff;border:2px solid #e0c3fc;border-radius:8px;padding:8px 22px;font-size:16px;font-weight:700;cursor:pointer;transition:all .2s;color:#7b2cbf;}
-    .round-btn.active,.round-btn:hover{background:#7b2cbf;border-color:#7b2cbf;color:#fff;}
-    #timeOverOverlay{display:none;position:fixed;inset:0;background:rgba(10,5,0,.85);z-index:9999;align-items:center;justify-content:center;flex-direction:column;gap:20px;animation:fadeInBG .3s ease;}
-    @keyframes fadeInBG{from{opacity:0}to{opacity:1}}
-    .timeover-box{background:#fff;border-radius:22px;padding:40px 32px;text-align:center;box-shadow:0 28px 70px rgba(0,0,0,.4);max-width:340px;width:90%;animation:popIn .4s cubic-bezier(.34,1.56,.64,1);}
-    @keyframes popIn{from{transform:scale(.6);opacity:0}to{transform:scale(1);opacity:1}}
-    .timeover-emoji{font-size:64px;line-height:1;margin-bottom:10px;}
-    .timeover-box h2{margin:0 0 6px;font-size:30px;color:#7b2cbf;letter-spacing:1px;text-transform:uppercase;}
-    .timeover-box p{color:#868e96;margin:0 0 24px;font-size:15px;}
-    .timeover-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
-    .btn-restart{background:#7b2cbf;color:#fff;border:none;border-radius:10px;padding:13px 26px;font-size:15px;font-weight:700;cursor:pointer;transition:background .2s,transform .15s;}
-    .btn-restart:hover{background:#5a189a;transform:scale(1.05);}
-    .btn-next{background:#40c057;color:#fff;border:none;border-radius:10px;padding:13px 26px;font-size:15px;font-weight:700;cursor:pointer;transition:background .2s,transform .15s;}
-    .btn-next:hover{background:#2f9e44;transform:scale(1.05);}
-    .mode-select{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;}
-    .mode-btn{background:#f3e8ff;border:2px solid #e0c3fc;border-radius:8px;padding:8px 18px;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;color:#7b2cbf;}
-    .mode-btn.active,.mode-btn:hover{background:#7b2cbf;border-color:#7b2cbf;color:#fff;}
-    .top-controls{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px;align-items:center;}
-    .top-controls button{background:#fff;border:2px solid #7b2cbf;border-radius:8px;padding:6px 16px;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;color:#7b2cbf;}
-    .top-controls button:hover{background:#7b2cbf;color:#fff;}
-    .copy-msg{display:none;color:#40c057;font-weight:700;font-size:14px;}
-    .generate-btn{background:#7b2cbf;color:#fff;border:none;border-radius:10px;padding:14px 40px;font-size:18px;font-weight:700;cursor:pointer;transition:all .2s;margin-top:6px;}
-    .generate-btn:hover{background:#5a189a;transform:scale(1.02);}
-    .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin-bottom:16px;width:100%;}
-    .card{background:#fff;border:2px solid #e0c3fc;border-radius:12px;padding:18px 16px;display:flex;align-items:center;gap:12px;transition:box-shadow .2s;}
+    #timerToggleBtn{background:var(--p);color:#fff;border:none;border-radius:8px;padding:9px 0;font-size:13px;font-weight:700;cursor:pointer;width:100%;}
+    #timerToggleBtn:hover{background:var(--pd);}
+    #timerResetBtn{background:var(--pl);color:var(--p);border:1px solid var(--pb);border-radius:8px;padding:8px 0;font-size:13px;font-weight:600;cursor:pointer;width:100%;}
+    #timerResetBtn:hover{background:var(--pb);}
+    .game-content{flex:1;min-width:0;}
+    .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr));gap:12px;margin-bottom:16px;min-height:60px;}
+    .card{background:#fff;border:2px solid var(--pb);border-radius:12px;padding:18px 16px;display:flex;align-items:center;gap:12px;transition:box-shadow .2s;}
     .card:hover{box-shadow:0 4px 16px rgba(123,44,191,.15);}
     .card-emoji{font-size:28px;}
-    .card p{margin:0;font-size:16px;font-weight:500;color:#222;}
-    .category-title{font-size:28px;margin-bottom:4px;color:#2e1065;}
-    .subtitle{color:#6b7280;font-size:16px;margin-top:0;}
+    .card p{margin:0;font-size:16px;font-weight:500;color:#222;overflow-wrap:anywhere;}
+    .generate-btn{background:var(--p);color:#fff;border:none;border-radius:10px;padding:14px 40px;font-size:18px;font-weight:700;cursor:pointer;transition:all .2s;}
+    .generate-btn:hover{background:var(--pd);transform:scale(1.02);}
+    #gameArea:fullscreen{background:#fff;overflow:auto;padding:24px;}
 
-    /* AdSense-friendly editorial sections */
-    .article-container{font-size:15px;line-height:1.8;color:#334155;margin:36px 0;}
-    .article-container h2{font-size:22px;color:#2e1065;margin:28px 0 12px;border-bottom:2px solid #f3e8ff;padding-bottom:6px;}
-    .article-container h3{font-size:17px;color:#4c1d95;margin:20px 0 8px;}
-    .article-container p{margin-bottom:14px;}
-    .cc-badge-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin:20px 0;}
-    .cc-badge{background:#faf5ff;border:1px solid #e9d5ff;border-radius:10px;padding:16px;}
-    .cc-badge strong{color:#6b21a8;font-size:15px;display:block;margin-bottom:4px;}
-    .cc-badge p{font-size:13px;color:#4b5563;margin:0;line-height:1.6;}
-    .editorial-table{width:100%;border-collapse:collapse;font-size:14px;margin:20px 0;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,0.06);border-radius:8px;overflow:hidden;}
-    .editorial-table th{background:#7b2cbf;color:#fff;padding:12px 14px;text-align:left;font-weight:600;}
-    .editorial-table td{padding:12px 14px;border-bottom:1px solid #f1f5f9;color:#334155;}
+    /* Time's up overlay */
+    #timeOverOverlay{display:none;position:fixed;inset:0;background:rgba(10,5,0,.85);z-index:9999;align-items:center;justify-content:center;flex-direction:column;animation:fadeInBG .3s ease;}
+    @keyframes fadeInBG{from{opacity:0}to{opacity:1}}
+    .timeover-box{background:#fff;border-radius:22px;padding:36px 28px;text-align:center;box-shadow:0 28px 70px rgba(0,0,0,.4);max-width:340px;width:90%;animation:popIn .4s cubic-bezier(.34,1.56,.64,1);}
+    @keyframes popIn{from{transform:scale(.6);opacity:0}to{transform:scale(1);opacity:1}}
+    .timeover-emoji{font-size:60px;line-height:1;margin-bottom:10px;}
+    .timeover-box h2{margin:0 0 6px;font-size:28px;color:var(--p);text-transform:uppercase;}
+    .timeover-box p{color:#868e96;margin:0 0 22px;font-size:15px;}
+    .timeover-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+    .btn-restart,.btn-next{color:#fff;border:none;border-radius:10px;padding:13px 24px;font-size:15px;font-weight:700;cursor:pointer;}
+    .btn-restart{background:var(--p);}.btn-restart:hover{background:var(--pd);}
+    .btn-next{background:#40c057;}.btn-next:hover{background:#2f9e44;}
+
+    /* ── Editorial content ── */
+    .article-container{font-size:16px;line-height:1.8;color:var(--txt);margin:36px 0;}
+    .article-container h2{font-size:clamp(20px,4vw,24px);line-height:1.3;color:var(--ink);margin:32px 0 12px;border-bottom:2px solid var(--pl);padding-bottom:6px;}
+    .article-container h3{font-size:18px;color:#4c1d95;margin:20px 0 8px;}
+    .article-container p{margin:0 0 14px;}
+    .article-container ol,.article-container ul{padding-left:22px;}
+    .article-container li{margin-bottom:8px;}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:14px;margin:18px 0;}
+    .box{background:#faf5ff;border:1px solid #e9d5ff;border-radius:10px;padding:16px;}
+    .box strong,.box h4{color:#6b21a8;font-size:15px;display:block;margin:0 0 6px;}
+    .box p,.box ul{font-size:14px;color:#4b5563;margin:0;line-height:1.6;}
+    .box ul{padding-left:18px;}
+    .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:18px 0;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.08);}
+    .editorial-table{width:100%;min-width:560px;border-collapse:collapse;font-size:14px;background:#fff;}
+    .editorial-table th{background:var(--p);color:#fff;padding:12px 14px;text-align:left;font-weight:600;}
+    .editorial-table td{padding:12px 14px;border-bottom:1px solid #f1f5f9;vertical-align:top;}
     .editorial-table tr:nth-child(even) td{background:#faf5ff;}
-    .faq-block{margin:28px 0;}
     .faq-unit{padding:16px 0;border-bottom:1px solid #e2e8f0;}
-    .faq-q{font-weight:700;font-size:15px;color:#1e1b4b;margin-bottom:6px;}
-    .faq-a{font-size:14px;color:#475569;line-height:1.6;margin:0;}
-    .related-links{background:#f8f4ff;border:1px solid #eadff5;border-radius:12px;padding:24px;margin:36px 0;}
+    .faq-q{font-weight:700;font-size:16px;color:#1e1b4b;margin-bottom:6px;}
+    .faq-a{font-size:15px;color:#475569;line-height:1.7;margin:0;}
+    .related-links{background:#f8f4ff;border:1px solid #eadff5;border-radius:12px;padding:20px;margin:36px 0 0;}
     .related-links h3{margin-top:0;color:#3b0764;}
-    .related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin-top:12px;}
-    .related-box{background:#fff;border:1px solid #e0c3fc;border-radius:8px;padding:12px;text-align:center;text-decoration:none;color:#374151;font-weight:600;font-size:13px;transition:transform .15s,box-shadow .15s;}
-    .related-box:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(123,44,191,0.12);color:#7b2cbf;}
+    .related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,160px),1fr));gap:12px;margin-top:12px;}
+    .related-box{background:#fff;border:1px solid var(--pb);border-radius:8px;padding:12px;text-align:center;text-decoration:none;color:#374151;font-weight:600;font-size:14px;transition:transform .15s,box-shadow .15s;}
+    .related-box:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(123,44,191,.12);color:var(--p);}
 
-    @media(max-width:480px){.game-layout{flex-direction:row;}.timer-col{min-width:90px;}}
+    .footer-inner{max-width:1000px;margin:0 auto;padding:20px 16px;border-top:1px solid #eadff5;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+    .footer-inner a{margin-right:12px;color:#4c1d95;text-decoration:none;display:inline-block;padding:4px 0;}
+
+    /* ── Responsive ── */
+    @media(max-width:600px){
+      .game-layout{flex-direction:column;align-items:stretch;}
+      .timer-col{flex:none;flex-direction:row;justify-content:center;gap:16px;}
+      .timer-btn-row{width:auto;min-width:110px;}
+      .generate-btn{width:100%;padding:16px;}
+      .mode-select{flex-wrap:nowrap;overflow-x:auto;padding-bottom:6px;-webkit-overflow-scrolling:touch;}
+      .mode-btn{white-space:nowrap;flex:0 0 auto;}
+      .article-container{font-size:15px;}
+    }
+    @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}}
   </style>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9278946234890215"
-     crossorigin="anonymous"></script>
 
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9278946234890215" crossorigin="anonymous"></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-8Q5RPKL818"></script>
   <script src="/js/analytics.js"></script>
   <link rel="canonical" href="https://charadegenerator.com/character-charades.html">
+
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Character Charades Generator – 100+ Famous Characters to Act Out",
-  "url": "https://charadegenerator.com/character-charades.html",
-  "description": "Play Character Charades with famous characters from movies, superheroes, fairy tales, video games and classic TV. Free online charades generator for groups and parties.",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "CharadeGenerator",
-    "url": "https://charadegenerator.com/"
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "Character Charades Generator – Famous Characters to Act Out",
+        "url": "https://charadegenerator.com/character-charades.html",
+        "description": "Free character charades generator with superheroes, movie icons, fairy tale figures, video game heroes and classic TV characters.",
+        "isPartOf": {"@type": "WebSite", "name": "CharadeGenerator", "url": "https://charadegenerator.com/"}
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "Can players hum or whistle theme songs in character charades?", "acceptedAnswer": {"@type": "Answer", "text": "No. In standard charades the actor stays silent, which includes humming, whistling and sound effects. All clues must be visual."}},
+          {"@type": "Question", "name": "Can I use props in character charades?", "acceptedAnswer": {"@type": "Answer", "text": "Most groups play with no props and let actors mime imaginary ones. Agree on this before the first round so it stays fair."}},
+          {"@type": "Question", "name": "Which mode is best for kids?", "acceptedAnswer": {"@type": "Answer", "text": "Use the Easy mode, which sticks to widely known characters, then move to the themed modes once everyone has warmed up."}}
+        ]
+      }
+    ]
   }
-}
-</script>
+  </script>
 </head>
 <body>
 
 <div id="timeOverOverlay">
-  <div class="timeover-box">
+  <div class="timeover-box" role="dialog" aria-modal="true" aria-labelledby="toTitle">
     <div class="timeover-emoji">⏰</div>
-    <h2>Time's Up!</h2>
-    <p>30 seconds are over — did your team recognize the character?</p>
+    <h2 id="toTitle">Time's Up!</h2>
+    <p>30 seconds are over. Did your team recognize the character?</p>
     <div class="timeover-actions">
       <button class="btn-restart" onclick="resetTimer(true)">▶ Play Again</button>
       <button class="btn-next" onclick="generate()">⏭ Next Card</button>
@@ -124,11 +153,9 @@
 <header class="header">
   <div class="header-inner">
     <div class="logo">
-      <a href="https://charadegenerator.com/" class="logo-link">
-        🎭 <strong>Charades</strong>Generator
-      </a>
+      <a href="https://charadegenerator.com/" class="logo-link">🎭 <strong>Charades</strong>Generator</a>
     </div>
-    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <button class="menu-btn" onclick="toggleMenu()" aria-label="Open menu">☰</button>
     <nav class="nav-desktop">
       <a href="character-charades.html"><button>Character Charades</button></a>
       <a href="islamic-charades.html"><button>Islamic Charades</button></a>
@@ -146,10 +173,10 @@
 
 <main class="main">
 
-  <!-- GAME AREA (Preserves original engine wiring) -->
+  <!-- GAME AREA -->
   <section class="tool" id="gameArea">
     <h1 class="category-title">Character Charades Generator</h1>
-    <p class="subtitle" id="statusText">Choose your fictional universe and click Generate to draw a role 🎭</p>
+    <p class="subtitle" id="statusText">Pick a universe, then click Generate to draw a character 🎭</p>
 
     <div class="top-controls">
       <button id="copyBtn" onclick="copyCharades()">📋 Copy</button>
@@ -188,113 +215,106 @@
     </div>
   </section>
 
-  <!-- ADSENSE EDITORIAL LAYER: In-depth, unique thematic authority -->
+  <!-- EDITORIAL CONTENT -->
   <article class="article-container">
-    <h2>Acting Fictional Characters: The Mechanics of Mimicry</h2>
+
+    <h2>How Character Charades Works</h2>
     <p>
-      Unlike standard action charades, where players mime mundane verbs like "brushing teeth" or "painting a fence," character charades challenges actors to communicate complete identities without speaking. Success hinges on silhouette, posture, emotional resonance, and iconic signature quirks rather than basic literal gestures.
+      Standard charades asks you to mime actions like "brushing teeth" or "painting a fence". Character charades asks you to act out a whole identity: a superhero, a movie icon, a fairy tale villain or a video game mascot. The actor stays silent while teammates guess the name before the timer runs out.
     </p>
     <p>
-      When performing a fictional persona, your primary obstacle is specificity. Mime an arrow, and your team might guess "archery"; adopt an athletic, crouched stance with an intense gaze, and they immediately recognize Katniss Everdeen or Legolas. The sections below outline standard cue signaling, universe breakdowns, and competitive stagecraft designed specifically for pop-culture game nights.
+      This generator draws a random character from the mode you choose. Press Generate to reveal 1, 2 or 3 cards and use the built-in 30-second timer to keep each turn fast. Choose Easy for family games, or pick a themed mode (Superheroes, Movies, Fairy Tale, Video Games or Classic TV) to match the evening.
     </p>
 
-    <h2>Non-Verbal Cues for Character Sub-Genres</h2>
-    <p>
-      Before diving into character mannerisms, clarify the character's native media universe using standardized prefix cues. This immediately narrows your team's mental catalog from thousands of figures down to a specific category.
-    </p>
-
-    <div class="cc-badge-grid">
-      <div class="cc-badge">
-        <strong>Comic / Superhero</strong>
-        <p>Cross wrists at the chest like Wonder Woman's gauntlets, or briefly mimic a cape fluttering behind your back.</p>
-      </div>
-      <div class="cc-badge">
-        <strong>Cinema &amp; Live Action</strong>
-        <p>Place one flat hand vertically on your forehead to mime a film director's viewfinder, or roll two index fingers in a spool.</p>
-      </div>
-      <div class="cc-badge">
-        <strong>Video Games</strong>
-        <p>Hold two relaxed fists together with thumbs pressing invisible arcade d-pad and face buttons.</p>
-      </div>
-      <div class="cc-badge">
-        <strong>Fairy Tale / Folklore</strong>
-        <p>Draw an imaginary crown resting onto your head with fingertips touching, or make a gentle magic wand swish.</p>
-      </div>
+    <h2>Game Modes Explained</h2>
+    <div class="grid">
+      <div class="box"><h4>All</h4><p>A mix of every category. Best for groups with different tastes.</p></div>
+      <div class="box"><h4>Easy</h4><p>Characters almost everyone knows, suited to kids and first-time players.</p></div>
+      <div class="box"><h4>Superheroes</h4><p>Comic book and film heroes and villains with strong silhouettes and signature moves.</p></div>
+      <div class="box"><h4>Movies</h4><p>Famous cinema characters, from adventurers to animated favorites.</p></div>
+      <div class="box"><h4>Fairy Tale</h4><p>Princesses, witches, beasts and other storybook archetypes.</p></div>
+      <div class="box"><h4>Video Games</h4><p>Gaming heroes and mascots known for distinctive movement and gear.</p></div>
+      <div class="box"><h4>Classic TV</h4><p>Well-loved characters from TV shows across the decades.</p></div>
     </div>
 
-    <h2>Universe Categorization &amp; Tactical Clues</h2>
-    <p>Use the strategic cues below to translate abstract characters into unambiguous visual shapes:</p>
+    <h2>Category Cues: Tell Your Team Where to Look</h2>
+    <p>Before you act the character, signal the category. This narrows your team's guesses from thousands of names to a small group. Agree on these gestures with your group first.</p>
+    <div class="grid">
+      <div class="box"><strong>Comic / Superhero</strong><p>Cross your wrists at the chest, or flick an imaginary cape behind your shoulders.</p></div>
+      <div class="box"><strong>Movie</strong><p>Hold one hand to your eye like a camera and crank the other hand beside it.</p></div>
+      <div class="box"><strong>Video Game</strong><p>Hold an imaginary controller and tap the buttons with both thumbs.</p></div>
+      <div class="box"><strong>Fairy Tale</strong><p>Place an imaginary crown on your head, or swish a magic wand.</p></div>
+      <div class="box"><strong>TV Show</strong><p>Trace a rectangle in the air with your index fingers to draw a screen.</p></div>
+    </div>
 
-    <table class="editorial-table">
-      <thead>
-        <tr>
-          <th>Category</th>
-          <th>Physical Silhouette</th>
-          <th>Signature Behavior to Focus On</th>
-          <th>Common Pitfall to Avoid</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Superheroes</strong></td>
-          <td>Broad, rigid chest, grounded stance, hovering or aiming hands.</td>
-          <td>Propulsive takeoff, drawing energy beams, or deploying a distinct weapon (e.g., throwing a shield).</td>
-          <td>Miming generic punch-ups that just look like playground boxing.</td>
-        </tr>
-        <tr>
-          <td><strong>Video Games</strong></td>
-          <td>Idling animation posture, repetitive loop cycles, rapid 90-degree turns.</td>
-          <td>Consuming a power-up, platform hopping, or drawing an inventory weapon from your back.</td>
-          <td>Acting out the video game console itself rather than the protagonist on screen.</td>
-        </tr>
-        <tr>
-          <td><strong>Cinema Classics</strong></td>
-          <td>Deliberate pacing, intense character facial expression, theatrical walks.</td>
-          <td>Instantly recognizable cinematic interactions (e.g., dodging bullets in slow motion, holding up a severed ring).</td>
-          <td>Spending all 30 seconds setting an elaborate atmospheric scene instead of acting the person.</td>
-        </tr>
-        <tr>
-          <td><strong>Fairy Tales &amp; Fables</strong></td>
-          <td>Exaggerated pantomime, dramatic archetypes (royalty, witches, beasts).</td>
-          <td>Poisoned apples, spinning wheels, dropping glass slippers, or sudden transformations.</td>
-          <td>Choosing obscure minor storybook characters without universal consensus on appearance.</td>
-        </tr>
-      </tbody>
-    </table>
+    <h2>What to Focus On for Each Type of Character</h2>
+    <div class="table-wrap">
+      <table class="editorial-table">
+        <thead>
+          <tr><th>Category</th><th>Body Shape</th><th>Signature Move to Act Out</th><th>Common Mistake</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Superheroes</strong></td><td>Broad chest, planted stance, arms ready to fire or fly.</td><td>Their power or weapon: throwing a shield, shooting a web, taking off in flight.</td><td>Throwing generic punches that look like a playground fight.</td></tr>
+          <tr><td><strong>Video Games</strong></td><td>Repeated loop-style movements and quick turns.</td><td>Jumping on platforms, grabbing a power-up, drawing a weapon from your back.</td><td>Miming the console instead of the character.</td></tr>
+          <tr><td><strong>Movies</strong></td><td>Deliberate pacing, strong facial expression, a recognizable walk.</td><td>The character's most famous action or moment.</td><td>Spending the whole turn setting a scene instead of acting the person.</td></tr>
+          <tr><td><strong>Fairy Tales</strong></td><td>Exaggerated pantomime: royalty, witches, beasts.</td><td>The story's turning point: a spinning wheel, a dropped slipper, a transformation.</td><td>Choosing a minor character the group may not picture the same way.</td></tr>
+          <tr><td><strong>Classic TV</strong></td><td>Posture and mannerisms from the show.</td><td>A catchphrase action (without saying it) or a recurring habit.</td><td>Acting the show's setting rather than the character.</td></tr>
+        </tbody>
+      </table>
+    </div>
 
-    <h2>Advanced Acting Strategy: The 3-Layer Method</h2>
-    <p>When you draw a challenging pop-culture prompt from this generator, break your 30-to-60-second window into three sequential tiers:</p>
-    <ol style="padding-left: 20px; line-height: 1.8;">
-      <li><strong>Establish Scale &amp; Body Weight (Seconds 0–10):</strong> Communicate the physical size of your persona. Are you tiny like Yoda or Pikachu? Crouch down immediately. Are you massive and lumbering like Frankenstein's monster or the Hulk? Widen your shoulders, drop your center of gravity, and walk with heavy momentum.</li>
-      <li><strong>Deploy the Archetypal Prop or Gear (Seconds 10–20):</strong> Every iconic persona carries identifiable equipment. Pretend to strap on a jetpack, twist a fedora brim (Indiana Jones), clean circular spectacles (Harry Potter), or adjust a utility belt.</li>
-      <li><strong>Perform the Climax Action (Seconds 20–30):</strong> Recreate the character's most famous moment of jeopardy or triumph. Show the fear of sunlight, the consumption of spinach, or the precise swinging motion from a rooftop thread.</li>
+    <h2>The 3-Step Method for a 30-Second Turn</h2>
+    <ol>
+      <li><strong>Show size and posture (first 10 seconds).</strong> Crouch if the character is small. Widen your shoulders and walk heavily if they are huge. Posture alone can rule out most wrong guesses.</li>
+      <li><strong>Add the signature item (next 10 seconds).</strong> Mime putting on glasses, tipping a hat, drawing a sword or strapping on a jetpack. Pick the one item people associate with the character.</li>
+      <li><strong>Perform the famous moment (last 10 seconds).</strong> Act out what the character is best known for: swinging between buildings, hopping through a pipe, or running from a clock striking midnight.</li>
     </ol>
+    <p>If your team is stuck, switch to a different step instead of repeating the same gesture. A new angle often unlocks the answer.</p>
+
+    <h2>Sample Characters by Theme</h2>
+    <p>These examples show the kind of characters you can expect. The generator contains many more in each mode.</p>
+    <div class="grid">
+      <div class="box"><h4>Superheroes</h4><ul><li>Spider-Man</li><li>Batman</li><li>Superman</li><li>Wonder Woman</li><li>Iron Man</li><li>The Hulk</li></ul></div>
+      <div class="box"><h4>Movies</h4><ul><li>Indiana Jones</li><li>Harry Potter</li><li>Yoda</li><li>Jack Sparrow</li><li>Woody</li><li>Elsa</li></ul></div>
+      <div class="box"><h4>Fairy Tale</h4><ul><li>Cinderella</li><li>Snow White</li><li>Little Red Riding Hood</li><li>Rapunzel</li><li>The Big Bad Wolf</li><li>Pinocchio</li></ul></div>
+      <div class="box"><h4>Video Games</h4><ul><li>Mario</li><li>Pac-Man</li><li>Sonic</li><li>Link</li><li>Pikachu</li><li>Lara Croft</li></ul></div>
+      <div class="box"><h4>Classic TV</h4><ul><li>Homer Simpson</li><li>SpongeBob</li><li>Scooby-Doo</li><li>Mr. Bean</li><li>Bugs Bunny</li><li>Tom and Jerry</li></ul></div>
+    </div>
+
+    <h2>Rules for a Fair Game</h2>
+    <ul>
+      <li><strong>No sound.</strong> No speaking, whispering, humming theme songs or sound effects.</li>
+      <li><strong>No spelling or writing.</strong> No tracing letters in the air or on surfaces.</li>
+      <li><strong>No props.</strong> Mime imaginary objects. Agree beforehand if clothing you are already wearing can be used, such as turning up a collar.</li>
+      <li><strong>Scoring.</strong> One point per correct guess within the time limit. If time runs out, you can let the other team steal with one guess.</li>
+      <li><strong>Longer turns for younger players.</strong> Agree on 60 seconds for kids and keep time yourself.</li>
+    </ul>
 
     <h2>Frequently Asked Questions</h2>
-    <div class="faq-block">
-      <div class="faq-unit">
-        <div class="faq-q">Can players hum or whistle iconic musical themes?</div>
-        <div class="faq-a">Under official charades regulations, vocalizations of any kind—including humming franchise theme songs (such as Star Wars or Super Mario)—are strictly prohibited. All cues must remain non-auditory.</div>
-      </div>
-      <div class="faq-unit">
-        <div class="faq-q">What constitutes a legal "prop" in character rounds?</div>
-        <div class="faq-a">Players may interact with everyday personal clothing they are already wearing (such as turning a collar up or rolling up sleeves). However, bringing outside objects, searching for costumes, or holding real items like kitchen utensils as makeshift swords is disallowed.</div>
-      </div>
-      <div class="faq-unit">
-        <div class="faq-q">How does the generator balance obscure vs. well-known characters?</div>
-        <div class="faq-a">Our database organizes characters using recognition indices. The "Easy" filter selects characters universally known to children and casual players, whereas the themed tabs (Movies, Games, Superheroes) include both mainstream titans and cult favorites for enthusiasts.</div>
-      </div>
+    <div class="faq-unit">
+      <div class="faq-q">Can players hum or whistle theme songs?</div>
+      <p class="faq-a">No. In standard charades the actor stays silent, which includes humming, whistling and sound effects. All clues must be visual.</p>
+    </div>
+    <div class="faq-unit">
+      <div class="faq-q">Can I use props?</div>
+      <p class="faq-a">Most groups play without props and let actors mime imaginary ones. Agree on this before the first round so it stays fair.</p>
+    </div>
+    <div class="faq-unit">
+      <div class="faq-q">Which mode is best for kids?</div>
+      <p class="faq-a">Start with Easy, which sticks to widely known characters, then move to the themed modes once everyone has warmed up.</p>
+    </div>
+    <div class="faq-unit">
+      <div class="faq-q">What if nobody knows the character?</div>
+      <p class="faq-a">Press Generate to draw a new card. Skipping a character is better than letting the turn stall.</p>
     </div>
 
-    <!-- INTERNAL NAVIGATION (Cross-links for AdSense crawler crawlability) -->
     <div class="related-links">
-      <h3>Explore Complementary Party Modes</h3>
-      <p style="margin:0 0 12px;font-size:14px;color:#4b5563;">Keep game night varied by cycling between different thematic editions:</p>
+      <h3>Try Other Charades Modes</h3>
       <div class="related-grid">
         <a href="index.html" class="related-box">🎭 General Charades</a>
-        <a href="christmas-charades.html" class="related-box">🎄 Holiday Edition</a>
-        <a href="islamic-charades.html" class="related-box">🕌 Values &amp; Culture</a>
-        <a href="reverse-charades.html" class="related-box">🔄 Reverse Team Play</a>
+        <a href="christmas-charades.html" class="related-box">🎄 Christmas Charades</a>
+        <a href="islamic-charades.html" class="related-box">🕌 Islamic Charades</a>
+        <a href="reverse-charades.html" class="related-box">🔄 Reverse Charades</a>
       </div>
     </div>
   </article>
@@ -302,15 +322,15 @@
 </main>
 
 <footer class="footer">
-  <div style="max-width:1000px;margin:0 auto;padding:20px 0;border-top:1px solid #eadff5;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+  <div class="footer-inner">
     <div>
-      <a href="about-us.html" style="margin-right:12px;color:#4c1d95;text-decoration:none;">About Us</a>
-      <a href="contact-us.html" style="margin-right:12px;color:#4c1d95;text-decoration:none;">Contact Us</a>
-      <a href="privacy-policy.html" style="margin-right:12px;color:#4c1d95;text-decoration:none;">Privacy Policy</a>
-      <a href="terms-and-conditions.html" style="margin-right:12px;color:#4c1d95;text-decoration:none;">Terms &amp; Conditions</a>
-      <a href="disclaimer.html" style="color:#4c1d95;text-decoration:none;">Disclaimer</a>
+      <a href="about-us.html">About Us</a>
+      <a href="contact-us.html">Contact Us</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+      <a href="disclaimer.html">Disclaimer</a>
     </div>
-    <p style="margin:0;color:#9ca3af;font-size:13px;">© CharadeGenerator 2026. All rights reserved.</p>
+    <p style="margin:0;color:#6b7280;font-size:13px;">© CharadeGenerator 2026. All rights reserved.</p>
   </div>
 </footer>
 
